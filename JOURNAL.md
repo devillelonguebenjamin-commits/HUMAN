@@ -119,3 +119,7 @@ Réponses de Benjamin aux questions 1 à 4, puis lancement du plan à 30 jours. 
 **Branche.** `main` créée sur le premier commit du dossier, pull request ouverte depuis la branche de travail.
 
 **Questions encore ouvertes avant le jour 1.** La 2 (durée sans revenu, droits au chômage) et la 3 (production hebdomadaire de contenus).
+
+## 2026-11-12 : Analyse de HAVEN sur captures d'écran
+
+Benjamin a fourni huit captures de HAVEN. Voir `08_analyse_haven.md`. Trois corrections au dossier : HAVEN a déjà une interface en français (le contenu reste anglais et américain), son socle gratuit couvre presque tout ce que le "pack" devait vendre, et son étendue ne peut pas être égalée par une personne seule. Probabilité de franchir les seuils du test ramenée de 35 à 45 % vers 25 à 35 %. Axe de différenciation proposé : contenu français vérifié, sécurité toujours gratuite, périmètre étroit. Livrables de la phase 1 à adapter après réponses de Benjamin (liste en section 6 de l'analyse).
