@@ -87,7 +87,7 @@ Fixés maintenant, pour ne pas être négociés plus tard. Un seul critère atte
 |---|---|---|
 | Jour 20 | Moins de 3 % d'inscription à la liste d'attente sur 1 000 visiteurs, après deux versions du message | 2 500 € |
 | Jour 20 | Coût par inscrit supérieur à 8 € sur les deux vagues | 2 500 € |
-| Jour 30 | Moins de 12 entretiens sur 20 où la personne se dit prête à payer 79 € ou plus pour le pack | 2 500 € |
+| Jour 30 | Moins de 8 entretiens sur 20 où la personne se dit prête à payer 79 € ou plus pour le pack | 2 500 € |
 | Jour 30 | Avis d'avocat : la revente de téléphones est impossible sans statut de fabricant, et le pack seul n'a pas atteint ses seuils | 4 600 € |
 | Jour 60 | Moins de 15 précommandes payées en trois semaines | 8 000 à 10 000 € |
 | Jour 120 | Moins de 70 % d'installations réussies sans aide, ou plus de 12 % de retours sur les téléphones | 15 000 € |
