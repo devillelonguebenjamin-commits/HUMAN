@@ -100,3 +100,22 @@ Regroupées dans `questions_ouvertes.md`. Les quatre premières conditionnent le
 ## Prochaine décision attendue
 
 Réponses de Benjamin aux questions 1 à 4, puis lancement du plan à 30 jours. Décision go, no-go ou variante au jour 30, à consigner ici.
+
+## 2026-11-12 : Décisions du fondateur après lecture de la synthèse
+
+| Question | Décision de Benjamin |
+|---|---|
+| 1. Pivot | Accepté. Le projet devient une application locale pour téléphones ordinaires. Le téléphone durci n'est plus au coeur du projet |
+| 4. Nom de travail | MECUM |
+| Orientation produit | S'inspirer de HAVEN, en particulier de son modèle à partie gratuite |
+
+**Conséquences à instruire.**
+
+1. Modèle gratuit avec version payante : la partie gratuite devient le principal canal d'acquisition, ce qui répond au problème central du dossier (coût d'acquisition payant proche de la marge). Le modèle financier doit être refait autour de trois hypothèses nouvelles : installations gratuites par mois, taux de passage au payant, prix de la version complète.
+2. Le pack sur carte mémoire et le téléphone prêt à l'emploi passent au rang d'options à tester plus tard.
+3. La distribution par Google Play devient prioritaire, avec sa commission à intégrer.
+4. L'analyse détaillée de HAVEN reste à faire : l'application n'est pas accessible depuis l'environnement de travail. Benjamin fournit des captures d'écran.
+
+**Branche.** `main` créée sur le premier commit du dossier, pull request ouverte depuis la branche de travail.
+
+**Questions encore ouvertes avant le jour 1.** La 2 (durée sans revenu, droits au chômage) et la 3 (production hebdomadaire de contenus).
