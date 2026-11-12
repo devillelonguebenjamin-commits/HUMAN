@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MECUM : le savoir utile, sans réseau</title>
+<meta name="description" content="Une bibliothèque de savoirs pratiques, vérifiés et en français, qui fonctionne sans connexion sur un téléphone. Produit en préparation : rejoignez la liste d'attente.">
+<meta name="robots" content="noindex">
+<!--
+  PAGE DE TEST DE DEMANDE (projet HUMAN, phase 1)
+  Avant publication, régler le bloc CONFIG en bas de page et compléter les mentions légales.
+  Variantes de test par l'adresse :  ?m=famille | pleinair | education   et   ?p=bas | haut
+  Sans paramètre p, le niveau de prix est tiré au sort et mémorisé pour le visiteur.
+  Mesure d'audience : ajouter ici le script d'un outil sans traceur (voir README.md).
+-->
+<style>
+  :root {
+    --fond: #f6f4ee; --carte: #ffffff; --encre: #1c2a2b; --doux: #55676a;
+    --accent: #1f6f5c; --accent-fonce: #164f42; --trait: #dcd8cc; --alerte: #8a5a00; --fond-alerte: #fff6e0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --fond: #111a1b; --carte: #18252633; --encre: #e9efec; --doux: #a9b8b6;
+            --accent: #5fc3a7; --accent-fonce: #7fd4bb; --trait: #2b3a3b; --alerte: #f1c56b; --fond-alerte: #2a2414; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--fond); color: var(--encre);
+         font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  .page { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  header { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
+  .marque { font-weight: 800; letter-spacing: .18em; font-size: 1.05rem; }
+  .etat { font-size: .85rem; color: var(--doux); border: 1px solid var(--trait); border-radius: 999px; padding: 4px 12px; }
+  h1 { font-size: clamp(2rem, 5.2vw, 3.3rem); line-height: 1.12; margin: 28px 0 16px; letter-spacing: -.01em; }
+  h2 { font-size: clamp(1.4rem, 3vw, 1.9rem); line-height: 1.25; margin: 0 0 14px; }
+  h3 { font-size: 1.08rem; margin: 0 0 6px; }
+  p { margin: 0 0 14px; }
+  .chapo { font-size: 1.2rem; color: var(--doux); max-width: 44ch; }
+  .hero { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; padding: 18px 0 56px; }
+  section { padding: 52px 0; border-top: 1px solid var(--trait); }
+  .grille { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .grille-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grille-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .carte { background: var(--carte); border: 1px solid var(--trait); border-radius: 14px; padding: 20px; }
+  .carte p { color: var(--doux); font-size: .97rem; margin: 0; }
+  .num { display: inline-flex; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff;
+         align-items: center; justify-content: center; font-weight: 700; font-size: .95rem; margin-bottom: 10px; }
+  .bouton { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; text-decoration: none;
+            border: 0; border-radius: 10px; padding: 14px 22px; font-size: 1.02rem; cursor: pointer; }
+  .bouton:hover, .bouton:focus { background: var(--accent-fonce); }
+  @media (prefers-color-scheme: dark) { .bouton { color: #0c1516; } .num { color: #0c1516; } }
+  .note { font-size: .88rem; color: var(--doux); }
+  .ecran { background: #0e1718; color: #dfeae6; border-radius: 26px; padding: 22px 18px; border: 6px solid #223234;
+           font-size: .93rem; box-shadow: 0 18px 40px rgba(0,0,0,.18); max-width: 330px; margin: 0 auto; }
+  .ecran .barre { display: flex; justify-content: space-between; font-size: .75rem; color: #8fa5a1; margin-bottom: 14px; }
+  .ecran .question { background: #1b2a2c; border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; }
+  .ecran .reponse { border-left: 3px solid #5fc3a7; padding-left: 12px; }
+  .ecran .source { color: #8fa5a1; font-size: .8rem; margin-top: 10px; }
+  .prix { font-size: 1.7rem; font-weight: 800; margin: 6px 0 2px; }
+  .liste { margin: 10px 0 0; padding-left: 18px; color: var(--doux); font-size: .97rem; }
+  .liste li { margin-bottom: 4px; }
+  .franc { background: var(--fond-alerte); border: 1px solid var(--trait); border-radius: 14px; padding: 22px; }
+  .franc h2 { color: var(--alerte); }
+  form { background: var(--carte); border: 1px solid var(--trait); border-radius: 16px; padding: 24px; max-width: 620px; }
+  label { display: block; font-weight: 600; margin: 14px 0 6px; }
+  input[type=email], select { width: 100%; padding: 13px 12px; border-radius: 10px; border: 1px solid var(--trait);
+          font: inherit; background: var(--fond); color: var(--encre); }
+  .choix { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .choix label { font-weight: 500; margin: 0; border: 1px solid var(--trait); border-radius: 10px; padding: 10px 12px;
+          display: flex; gap: 8px; align-items: flex-start; cursor: pointer; font-size: .96rem; }
+  .accord { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: .9rem; color: var(--doux); }
+  .accord input { margin-top: 5px; }
+  .message { margin-top: 14px; padding: 12px 14px; border-radius: 10px; display: none; }
+  .message.ok { display: block; background: #e3f3ec; color: #14503f; }
+  .message.erreur { display: block; background: #fbe6e3; color: #7a2318; }
+  details { border-bottom: 1px solid var(--trait); padding: 14px 0; }
+  summary { font-weight: 600; cursor: pointer; }
+  details p { color: var(--doux); margin: 10px 0 0; }
+  footer { padding: 34px 0 60px; color: var(--doux); font-size: .86rem; border-top: 1px solid var(--trait); }
+  footer a { color: inherit; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 28px; padding-bottom: 40px; }
+    .grille { grid-template-columns: repeat(2, 1fr); }
+    .grille-3, .grille-2, .choix { grid-template-columns: 1fr; }
+    section { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="marque" data-marque>MECUM</div>
+    <div class="etat">Produit en préparation</div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1 id="titre">Le savoir utile, même quand le réseau s'en va.</h1>
+        <p class="chapo" id="chapo">Premiers gestes, eau, cartes, encyclopédie : tout ce qu'il faut savoir tient dans votre téléphone et fonctionne sans connexion. En français, vérifié, prêt en cinq minutes.</p>
+        <p><a class="bouton" href="#liste">Rejoindre la liste d'attente</a></p>
+        <p class="note">Aucun paiement aujourd'hui. Nous vous écrivons seulement pour vous prévenir du lancement et vous demander votre avis.</p>
+      </div>
+      <div class="ecran" aria-label="Exemple d'écran de l'application">
+        <div class="barre"><span>Mode avion</span><span>Batterie 87 %</span></div>
+        <div class="question">Plus de courant depuis ce matin, que faire avec le congélateur ?</div>
+        <div class="reponse">
+          <strong>Coupure de courant : les premières heures</strong><br>
+          Ouvrez-le le moins possible. Plein et fermé, un congélateur garde le froid environ deux jours.
+          <div class="source">Fiche relue. Source : guide officiel "Tous responsables". Voir aussi : rendre une eau potable.</div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h2>Ce qu'il y a dedans</h2>
+      <div class="grille">
+        <div class="carte"><h3>Des fiches réflexes</h3><p>Premiers secours, eau, feu, abri, orientation, coupure de courant, inondation. Courtes, illustrées, relues par des professionnels.</p></div>
+        <div class="carte"><h3>Une encyclopédie complète</h3><p>Les contenus de Wikipédia en français, une encyclopédie médicale, des manuels et un rayon pour les enfants.</p></div>
+        <div class="carte"><h3>Les cartes de France</h3><p>Routes, sentiers, relief, points d'eau. Votre position s'affiche sans réseau grâce au GPS du téléphone.</p></div>
+        <div class="carte"><h3>Une recherche qui cite ses sources</h3><p>Vous posez votre question en langage courant. L'application retrouve la bonne fiche et vous dit d'où vient l'information.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Comment cela fonctionne</h2>
+      <div class="grille-3">
+        <div class="carte"><div class="num">1</div><h3>Vous recevez le pack</h3><p>En téléchargement, ou sur une carte mémoire prête à l'emploi avec son guide papier.</p></div>
+        <div class="carte"><div class="num">2</div><h3>Vous l'installez en cinq minutes</h3><p>Sur votre téléphone Android actuel, ou sur un ancien téléphone que vous rangez avec votre matériel.</p></div>
+        <div class="carte"><div class="num">3</div><h3>Il est là quand il faut</h3><p>En randonnée, en mer, pendant une coupure. Sans réseau, sans compte, sans abonnement, sans collecte de données.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Deux façons de l'avoir</h2>
+      <div class="grille-2">
+        <div class="carte">
+          <h3>Le pack</h3>
+          <div class="prix"><span data-prix-pack>89</span>&nbsp;€</div>
+          <p>Prix envisagé, sur carte mémoire. Version à télécharger : <span data-prix-num>49</span>&nbsp;€.</p>
+          <ul class="liste"><li>Fiches, encyclopédie, cartes, recherche</li><li>Pour votre téléphone Android</li><li>Mises à jour incluses pendant deux ans</li></ul>
+        </div>
+        <div class="carte">
+          <h3>Le téléphone prêt à l'emploi</h3>
+          <div class="prix">à partir de <span data-prix-tel>319</span>&nbsp;€</div>
+          <p>Prix envisagé. Un téléphone durci du commerce, livré avec le pack.</p>
+          <ul class="liste"><li>Etanche et résistant aux chocs</li><li>Version grande autonomie : plusieurs semaines en usage sobre, mesure publiée avant la vente</li><li>Garantie légale de deux ans, assistance en France</li></ul>
+        </div>
+      </div>
+      <p class="note" style="margin-top:14px">Ces prix sont des hypothèses. Votre réponse au formulaire nous aide à les fixer.</p>
+    </section>
+
+    <section>
+      <div class="franc">
+        <h2>Ce que nous ne promettons pas</h2>
+        <p>Ce n'est pas un médecin de poche. Les fiches de santé donnent une information générale et renvoient toujours vers le 15 et le 112.</p>
+        <p>Ce n'est pas un moyen de communiquer sans réseau. C'est un moyen de savoir sans réseau.</p>
+        <p style="margin:0">Presque tout ce contenu existe gratuitement, et nous publierons le tutoriel pour l'installer vous-même. Nous vendons le tri, la vérification, la simplicité et l'assistance.</p>
+      </div>
+    </section>
+
+    <section id="liste">
+      <h2>Rejoindre la liste d'attente</h2>
+      <p class="note">Le produit est en préparation. Si le projet se confirme, les premières livraisons sont visées au printemps 2027. Vous serez prévenu en premier, sans engagement.</p>
+      <form id="formulaire" novalidate>
+        <label for="email">Votre adresse électronique</label>
+        <input type="email" id="email" name="email" autocomplete="email" required placeholder="prenom@exemple.fr">
+
+        <label>Ce qui vous intéresse</label>
+        <div class="choix">
+          <label><input type="checkbox" name="interet" value="pack_numerique"> Le pack à télécharger</label>
+          <label><input type="checkbox" name="interet" value="pack_carte"> Le pack sur carte mémoire</label>
+          <label><input type="checkbox" name="interet" value="telephone"> Le téléphone prêt à l'emploi</label>
+          <label><input type="checkbox" name="interet" value="boitier_familial"> Un boîtier pour toute la maison, qui partage la bibliothèque en Wi-Fi</label>
+        </div>
+
+        <label for="prix">Au prix indiqué plus haut, vous diriez</label>
+        <select id="prix" name="avis_prix" required>
+          <option value="">Choisir</option>
+          <option value="achete">Je l'achète</option>
+          <option value="hesite">J'hésite</option>
+          <option value="trop_cher">C'est trop cher pour moi</option>
+          <option value="pas_besoin">Je n'en ai pas l'usage</option>
+        </select>
+
+        <label for="usage">Vous l'utiliseriez surtout</label>
+        <select id="usage" name="usage">
+          <option value="">Choisir (facultatif)</option>
+          <option value="maison">A la maison, en cas de coupure ou d'imprévu</option>
+          <option value="pleinair">En randonnée, en mer, en voyage</option>
+          <option value="enfants">Pour les enfants</option>
+          <option value="organisation">Pour une association, une entreprise, une commune</option>
+        </select>
+
+        <label class="accord" style="margin-top:18px">
+          <input type="checkbox" id="accord" required>
+          <span>J'accepte de recevoir des messages au sujet de ce projet. Mon adresse ne sert à rien d'autre, n'est transmise à personne, et je peux me désinscrire à tout moment.</span>
+        </label>
+
+        <input type="hidden" name="message" id="champ-message">
+        <input type="hidden" name="niveau_prix" id="champ-prix">
+        <input type="text" name="site" id="piege" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+        <p style="margin:18px 0 0"><button class="bouton" type="submit">Je m'inscris</button></p>
+        <div class="message" id="retour" role="status"></div>
+      </form>
+    </section>
+
+    <section>
+      <h2>Questions fréquentes</h2>
+      <details><summary>Est-ce que cela fonctionne vraiment sans aucune connexion ?</summary><p>Oui. Après l'installation, l'application ne demande aucun accès au réseau. Vous pouvez le vérifier dans les réglages de votre téléphone.</p></details>
+      <details><summary>Sur quels téléphones ?</summary><p>Sur les téléphones Android récents. La recherche fonctionne partout. L'assistant qui rédige des réponses demandera un téléphone avec 8 Go de mémoire. Pas de version iPhone prévue au lancement.</p></details>
+      <details><summary>Y a-t-il une intelligence artificielle ?</summary><p>Une recherche d'abord : elle retrouve des fiches écrites et relues par des personnes. Un assistant viendra ensuite, en option. Il citera toujours ses sources et ne rédigera jamais rien sur les sujets de santé.</p></details>
+      <details><summary>Pourquoi payer si les contenus sont libres ?</summary><p>Pour gagner du temps et de la sérénité : contenus triés, fiches vérifiées, une seule application, une installation de cinq minutes, des mises à jour et une assistance. Si vous préférez tout faire vous-même, notre tutoriel sera gratuit.</p></details>
+      <details><summary>Que faites-vous de mes données ?</summary><p>L'application n'en collecte aucune. Cette page n'enregistre que ce que vous saisissez dans le formulaire.</p></details>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong data-marque>MECUM</strong> est un projet en phase de test. Aucune vente n'est proposée sur cette page.</p>
+    <p>Editeur de la page : [nom et prénom], [adresse], [adresse électronique de contact]. Hébergeur : [nom et adresse de l'hébergeur].</p>
+    <p>Données personnelles : les informations du formulaire sont utilisées uniquement pour vous informer du projet et recueillir votre avis. Elles sont conservées douze mois au plus et supprimées sur simple demande à l'adresse de contact. Vous disposez d'un droit d'accès, de rectification et d'effacement, et pouvez saisir la CNIL.</p>
+    <p>Les contenus encyclopédiques proviennent de projets libres (licence CC BY-SA) et les cartes d'OpenStreetMap (licence ODbL). Ce projet n'est affilié à aucun de ces organismes.</p>
+  </footer>
+</div>
+
+<script>
+/* ------------------------------------------------------------------
+   CONFIG : à régler avant publication
+------------------------------------------------------------------- */
+var CONFIG = {
+  marque: "MECUM",
+  // Adresse qui reçoit les inscriptions (outil d'emailing, service de formulaires ou fonction maison).
+  // Laisser vide pour le mode démonstration : rien n'est envoyé, le visiteur en est informé.
+  adresseDeCollecte: "",
+  // Deux niveaux de prix testés. Le visiteur n'en voit qu'un.
+  prix: {
+    bas:  { pack: 79, num: 39, tel: 299 },
+    haut: { pack: 99, num: 49, tel: 329 }
+  },
+  // Trois messages testés, choisis par le paramètre ?m= de l'adresse (un par annonce).
+  messages: {
+    famille: {
+      titre: "Le savoir utile, même quand le réseau s'en va.",
+      chapo: "Premiers gestes, eau, cartes, encyclopédie : tout ce qu'il faut savoir tient dans votre téléphone et fonctionne sans connexion. En français, vérifié, prêt en cinq minutes."
+    },
+    pleinair: {
+      titre: "Cartes, gestes utiles, encyclopédie : tout, sans réseau.",
+      chapo: "En randonnée, en mer ou sur la route, votre téléphone devient une bibliothèque de terrain. Position GPS sur carte hors ligne, fiches pratiques, réponses sourcées."
+    },
+    education: {
+      titre: "Une bibliothèque entière dans la poche, sans écran connecté.",
+      chapo: "L'encyclopédie, des manuels et des fiches pratiques pour toute la famille, sans connexion, sans publicité et sans collecte de données."
+    }
+  }
+};
+
+(function () {
+  function parametre(nom) {
+    try { return new URLSearchParams(window.location.search).get(nom); } catch (e) { return null; }
+  }
+  function memoire(cle, valeur) {
+    try {
+      if (valeur === undefined) { return window.localStorage.getItem(cle); }
+      window.localStorage.setItem(cle, valeur);
+    } catch (e) { /* stockage indisponible : on continue sans */ }
+    return valeur;
+  }
+
+  // Marque
+  document.querySelectorAll("[data-marque]").forEach(function (el) { el.textContent = CONFIG.marque; });
+  document.title = CONFIG.marque + " : le savoir utile, sans réseau";
+
+  // Message
+  var m = parametre("m");
+  if (!CONFIG.messages[m]) { m = "famille"; }
+  document.getElementById("titre").textContent = CONFIG.messages[m].titre;
+  document.getElementById("chapo").textContent = CONFIG.messages[m].chapo;
+
+  // Niveau de prix : imposé par l'adresse, sinon tiré au sort une fois par visiteur
+  var p = parametre("p");
+  if (!CONFIG.prix[p]) { p = memoire("niveau_prix"); }
+  if (!CONFIG.prix[p]) { p = Math.random() < 0.5 ? "bas" : "haut"; }
+  memoire("niveau_prix", p);
+  document.querySelectorAll("[data-prix-pack]").forEach(function (el) { el.textContent = CONFIG.prix[p].pack; });
+  document.querySelectorAll("[data-prix-num]").forEach(function (el) { el.textContent = CONFIG.prix[p].num; });
+  document.querySelectorAll("[data-prix-tel]").forEach(function (el) { el.textContent = CONFIG.prix[p].tel; });
+  document.getElementById("champ-message").value = m;
+  document.getElementById("champ-prix").value = p;
+
+  // Formulaire
+  var formulaire = document.getElementById("formulaire");
+  var retour = document.getElementById("retour");
+  function afficher(type, texte) { retour.className = "message " + type; retour.textContent = texte; }
+
+  formulaire.addEventListener("submit", function (evenement) {
+    evenement.preventDefault();
+    if (document.getElementById("piege").value) { return; }           // robot
+    var email = document.getElementById("email").value.trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { afficher("erreur", "Merci de vérifier votre adresse électronique."); return; }
+    if (!document.getElementById("prix").value) { afficher("erreur", "Merci d'indiquer votre avis sur le prix : c'est la question qui nous aide le plus."); return; }
+    if (!document.getElementById("accord").checked) { afficher("erreur", "Merci de cocher la case d'accord pour que nous puissions vous écrire."); return; }
+
+    var interets = [];
+    formulaire.querySelectorAll("input[name=interet]:checked").forEach(function (c) { interets.push(c.value); });
+    var donnees = {
+      email: email,
+      interets: interets.join(","),
+      avis_prix: document.getElementById("prix").value,
+      usage: document.getElementById("usage").value,
+      message: m,
+      niveau_prix: p,
+      origine: parametre("utm_source") || "",
+      date: new Date().toISOString()
+    };
+
+    if (!CONFIG.adresseDeCollecte) {
+      afficher("ok", "Mode démonstration : la collecte n'est pas encore branchée, rien n'a été envoyé.");
+      return;
+    }
+    fetch(CONFIG.adresseDeCollecte, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(donnees)
+    }).then(function (reponse) {
+      if (!reponse.ok) { throw new Error("Réponse " + reponse.status); }
+      formulaire.reset();
+      afficher("ok", "C'est noté, merci. Vous recevrez un premier message d'ici quelques jours, avec deux ou trois questions pour nous aider à bien faire.");
+    }).catch(function () {
+      afficher("erreur", "L'inscription n'a pas pu être enregistrée. Réessayez dans un instant, ou écrivez-nous à l'adresse indiquée en bas de page.");
+    });
+  });
+})();
+</script>
+</body>
+</html>

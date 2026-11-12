@@ -49,7 +49,7 @@ Les promesses des fabricants ("deux semaines") sont du même ordre [S41]. Aucune
 | Achat direct à la marque (service B2B d'Ulefone) | 50 à 100 pièces [HYP] | Environ 15 % de moins [HYP, H09] | Importateur | Oui à partir de l'année 2, avec mise en conformité |
 | Fabricant sous marque blanche à Shenzhen [S46] | 100 à 1 000 pièces | 172 à 185 USD pour un modèle d'entrée de gamme | Fabricant | Non : obligations hors de portée |
 
-Recommandation : rester distributeur tant que les volumes sont inférieurs à 500 téléphones par an. Le passage à l'import fait gagner environ 20 € par appareil après redevance pour copie privée, pour un coût fixe de mise en conformité de l'ordre de 6 000 € [EST]. Il se rentabilise au-delà de 300 unités par an.
+Recommandation : rester distributeur tant que les volumes sont inférieurs à 500 téléphones par an. Le passage à l'import fait gagner 9 à 21 € par appareil après redevance pour copie privée, pour un coût fixe de mise en conformité de l'ordre de 6 000 € [EST]. Il se rentabilise au-delà de 400 à 450 unités par an.
 
 ## 3. Logiciel
 
