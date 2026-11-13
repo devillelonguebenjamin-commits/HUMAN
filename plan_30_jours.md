@@ -14,7 +14,7 @@ Deux contraintes de calendrier :
 | Poste | Montant | Engagé quand |
 |---|---|---|
 | Nom de domaine, outil d'emailing, hébergement de la page | 150 € | Jour 1 |
-| iPhone d'occasion compatible Apple Intelligence (iPhone 15 Pro ou plus récent) | 550 € | Jour 2, si tu n'en as pas déjà un |
+| iPhone d'occasion compatible Apple Intelligence (iPhone 15 Pro ou plus récent) | 550 € | Jour 2, seulement si ta tablette n'est pas un iPad Pro M1 et que tu n'as pas d'iPhone récent |
 | Publicité de test, vague 1 | 500 € | Jour 6 |
 | Publicité de test, vague 2 | 700 € | Jour 15 |
 | Entretiens (bons d'achat de 10 € pour les particuliers) | 200 € | Jours 8 à 19 |
@@ -53,7 +53,7 @@ Règles de lecture :
 
 | Jour | Actions | Livrable | Dépense |
 |---|---|---|---|
-| J1, lundi | Vérifier le nom MECUM sur la base de marques de l'INPI (gratuit, 20 minutes). Réserver le domaine. Ouvrir emailing et mesure d'audience. Faire le point sur ton revenu à partir du mois 4 (chômage, temps partiel) | Domaine, comptes, note sur le revenu | 150 € |
+| J1, lundi | Vérifier le nom MECUM sur la base de marques de l'INPI (gratuit, 20 minutes). Réserver le domaine. Ouvrir emailing et mesure d'audience. Demander à France Travail le relevé de tes droits restants. Vérifier le modèle de ta tablette | Domaine, comptes, relevé de droits | 150 € |
 | J2, mardi | Acheter l'iPhone de test si besoin. Lister 30 communes de ton département soumises à un plan de sauvegarde (site de la préfecture) | iPhone, liste de communes | 550 € |
 | J3, mercredi | Adapter la page de `prototype/landing/` : nom, mentions légales, collecte. Tester sur iPhone. Publier | Page en ligne | 0 € |
 | J4, jeudi | Recruter 20 personnes sur iPhone : 12 familles, 8 pratiquants de plein air. Préparer le guide d'entretien | 20 rendez-vous entre J8 et J19 | 0 € |
@@ -87,12 +87,12 @@ Règles de lecture :
 
 | Jour | Actions | Livrable | Dépense |
 |---|---|---|---|
-| J22 | Expert-comptable : forme sociale, chômage, temps partiel. Contact avec la plateforme locale de prêts d'honneur | Notes | 0 € |
+| J22 | Expert-comptable et conseiller France Travail : forme sociale, maintien des allocations ou ARCE, ACRE, achat du Mac, temps partiel. Contact avec la plateforme locale de prêts d'honneur | Notes, choix des aides | 0 € |
 | J23 | Envoyer `prototype/mvp_logiciel/SPECIFICATION.md` à trois développeurs iOS indépendants | Trois demandes de devis | 0 € |
 | J24 | Demander deux devis de relecture des fiches et un devis de graphiste (identité visuelle) | Demandes envoyées | 0 € |
 | J25 | Si une commune est intéressée : lui proposer un essai à prix réduit sur 6 mois, par écrit | Proposition | 0 € |
 | J26 | Mettre à jour `modele_financier.xlsx` : coût par inscrit, prix accepté, part famille, intérêt des communes | Modèle actualisé | 0 € |
-| J27 | Choisir ton organisation à partir du mois 4 : temps plein avec chômage, ou temps partiel avec un emploi | Décision écrite | 0 € |
+| J27 | Fixer ton organisation : jours garantis à MECUM (deux et demi au minimum), place de tes autres projets | Décision écrite | 0 € |
 | J28 | Note de décision d'une page | Note | 0 € |
 | J29 | Séance de décision : go grand public, pivot collectivités, ou no-go | Décision dans `JOURNAL.md` | 0 € |
 | J30 | En cas de go : société, marque, choix du développeur. En cas de no-go : écrire à la liste, revendre l'iPhone, archiver | Suite lancée ou projet clos | 0 à 2 100 € |

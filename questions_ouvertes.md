@@ -12,16 +12,20 @@ Mis à jour le 13 novembre 2026.
 | 4 | Nom de travail ? | MECUM |
 | Nouvelle | Plateforme ? | iPhone d'abord, pas d'Android au lancement |
 | Nouvelle | Identité visuelle ? | Ne pas faire "IA". A traiter dans un second temps |
+| A | Mac ? | Pas encore. Une tablette de 2021. Achat d'un MacBook Pro au Black Friday |
+| B | Chômage ? | Environ 1 000 € par mois. Demande de révision et d'ARCE envisagée (estimation : 20 000 € en deux fois) |
+| C | Après le mois 4 ? | Temps partiel, avec d'autres projets de création |
 
-## Questions nouvelles, à trancher avant le jour 1
+## A vérifier maintenant
 
 | N° | Question | Pourquoi elle compte |
 |---|---|---|
-| A | As-tu un Mac ? | Obligatoire pour développer et publier sur iPhone. Sinon 800 € à prévoir |
-| B | As-tu des droits au chômage, et lesquels ? | C'est ce qui peut financer ta période sans revenu au-delà du mois 4 |
-| C | A partir du mois 4 : temps partiel salarié, ou tout sur MECUM avec prêt d'honneur ? | Le scénario central ne te paie pas avant le mois 30 |
-| D | As-tu un iPhone 15 Pro ou plus récent ? | Sinon l'iPhone de test (550 €) est nécessaire pour tester l'assistant |
+| D | Quel est le modèle exact de ta tablette ? As-tu un iPhone 15 Pro ou plus récent ? | Un iPad Pro M1 ou un iPhone récent évite d'acheter un iPhone de test (550 €) |
 | E | Connais-tu des élus ou des secrétaires de mairie dans ton département ? | Accélère le test de la piste des communes |
+| F | Quel est le montant exact de tes droits restants (France Travail) ? | Ton estimation de 20 000 € d'ARCE me paraît trop haute : avec 1 000 € par mois et 18 mois maximum, l'ARCE plafonnerait vers 10 800 € |
+| G | Maintien des allocations ou ARCE ? | Exclusifs. Je recommande le maintien. Décision à prendre avec France Travail et l'expert-comptable avant la création |
+| H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour MECUM |
+| I | Combien de jours par semaine garantis-tu à MECUM une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
 
 ## Questions initiales (12 novembre 2026)
 

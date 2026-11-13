@@ -137,3 +137,11 @@ Benjamin a fourni huit captures de HAVEN. Voir `08_analyse_haven.md`. Trois corr
 **Piste ajoutée.** Module pour les communes (plan de sauvegarde hors ligne pour les habitants), testé dès le plan à 30 jours. Elle exploite l'expérience de Benjamin en vente aux collectivités.
 
 **Livrables mis à jour.** `09_application_iphone.md` (nouveau), `00_SYNTHESE_DECISION.md`, `modele_financier.xlsx`, spécification iOS, page de test, plan à 30 jours, questions ouvertes, registre (section F), bandeaux de renvoi dans 02, 03, 05 et 06.
+
+## 2026-11-13 (soir) : financement personnel
+
+**Réponses de Benjamin.** Pas de Mac (tablette de 2021), achat d'un MacBook Pro prévu au Black Friday. Allocations chômage d'environ 1 000 € par mois, demande de révision et d'ARCE envisagée, estimée à 20 000 € en deux fois sur 6 mois. Après le lancement : temps partiel avec d'autres projets de création.
+
+**Analyse.** La contrainte des 3 à 4 mois est levée par les allocations. Incohérence signalée : 20 000 € d'ARCE supposent environ 33 000 € de droits restants, soit 33 mois à 1 000 €, au-delà de la durée maximale d'indemnisation (18 mois avant 53 ans, à confirmer). Estimation plus réaliste : 10 800 € au plus. Recommandation : maintien des allocations plutôt qu'ARCE, choix à faire avant la création de la société avec France Travail et l'expert-comptable. Un MacBook Air de 16 Go suffit pour MECUM. Si la tablette est un iPad Pro M1, elle remplace l'iPhone de test. Risque nouveau : dispersion entre plusieurs projets, parade proposée de deux jours et demi par semaine minimum.
+
+**Modèle financier.** Inchangé : il ne porte que sur la société. La ligne de 800 € pour un Mac devient inutile.

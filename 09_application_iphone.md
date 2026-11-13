@@ -17,7 +17,7 @@ Rédigé le 13 novembre 2026. Ce document remplace, pour le produit, la platefor
 
 1. **Le choix de l'iPhone est défendable, mais pas pour la raison avancée.** L'iPhone représente environ 34 à 36 % des smartphones en France, Android près de 65 % [FAIT, StatCounter mars et avril 2026, via presse]. Ce n'est donc pas "la plupart" des Français. En revanche, la cible (foyers aisés, 60 % des détenteurs de kit d'urgence sont de catégories supérieures) est probablement plus équipée en iPhone que la moyenne, les utilisateurs d'iPhone paient davantage dans les applications, et l'iPhone apporte gratuitement une IA locale en français (section 4). Je valide l'iPhone d'abord, et la page de test mesurera la demande Android.
 2. **Le modèle à achat unique rapporte peu par client.** A 24,99 € TTC, Apple reverse la TVA et garde 15 % : il reste 21,24 € par achat [FAIT pour la commission, Apple, août 2026]. Une installation rapporte en moyenne 1,69 € dans le scénario central. Il faut des dizaines de milliers d'installations pour faire vivre une personne.
-3. **Le projet ne peut pas te payer dans tes 3 à 4 mois de réserve.** Il faut un mois de test et trois à quatre mois de développement avant le premier euro. Dans le scénario central, le projet peut te verser l'équivalent de 1 500 € nets à partir du mois 30. Il faut donc organiser un revenu à côté à partir du mois 4 (section 8). C'est le point le plus important de ce document.
+3. **Le projet ne peut pas te payer avant longtemps.** Dans le scénario central, il peut te verser l'équivalent de 1 500 € nets à partir du mois 30. Tes allocations chômage (environ 1 000 € par mois) et un temps partiel couvrent cette période : voir la section 8, mise à jour le 13/11/2026 au soir.
 
 ## 3. HAVEN : ce que la nouvelle capture apprend
 
@@ -134,21 +134,52 @@ Ton métier, c'est la vente aux grands comptes et aux collectivités. Le modèle
 
 Concurrence : des applications communales d'information et d'alerte existent déjà (IntraMuros, Illiwap, Alerte Citoyens) [FAIT]. Elles diffusent des messages en ligne. Aucune ne semble proposer un contenu de préparation hors ligne, mais elles peuvent l'ajouter. Le modèle n'en tient compte que modestement (12 à 21 000 € par an en année 3 dans le central). Si dix rendez-vous en mairie montrent un intérêt réel, cette piste peut devenir le moteur du projet. Elle est testée dès le plan à 30 jours.
 
-## 8. Ton temps et ton revenu
+## 8. Ton temps et ton revenu (mis à jour le 13/11/2026 au soir)
 
-| Période | Ce qui se passe | Ton revenu |
+### Ce que tu as indiqué
+
+| Sujet | Situation |
+|---|---|
+| Matériel | Une tablette de 2021. Achat d'un MacBook Pro prévu au Black Friday (27 novembre 2026) |
+| Chômage | Allocations d'environ 1 000 € par mois. Tu comptes demander une révision et l'aide à la reprise ou à la création d'entreprise (ARCE), que tu estimes à 20 000 € en deux versements sur 6 mois |
+| Après le lancement | Temps partiel, avec d'autres projets de création d'entreprise |
+
+### Ce que cela change
+
+Ta période de développement est financée : la contrainte des 3 à 4 mois disparaît si l'une des deux options ci-dessous se confirme. C'est la meilleure nouvelle du dossier depuis le début.
+
+### Deux points à vérifier avant de compter dessus
+
+1. **Le montant de 20 000 € me paraît trop élevé.** L'ARCE vaut 60 % des droits restants le jour de la création, versés en deux fois à environ 6 mois d'intervalle [FAIT, France Travail]. Avec 1 000 € par mois, 20 000 € d'ARCE supposent environ 33 000 € de droits restants, soit 33 mois d'allocations. Or la durée maximale d'indemnisation est de 18 mois avant 53 ans [de mémoire, A CONFIRMER]. Avec 18 mois de droits pleins, l'ARCE serait au plus d'environ 10 800 € (moins une petite retenue), et moins si des mois ont déjà été consommés. Demande à France Travail le montant exact de ton reliquat.
+2. **Le montant des allocations ne se négocie pas.** Il découle de tes salaires passés. Si tu penses qu'il est mal calculé (primes, variable non pris en compte), tu peux le contester avec tes justificatifs. Ce n'est pas une "demande d'augmentation".
+
+### ARCE ou maintien des allocations : il faut choisir
+
+Les deux options sont exclusives [FAIT, France Travail].
+
+| | Maintien des allocations | ARCE |
 |---|---|---|
-| Mois 1 | Test de demande, entretiens, devis | Ta réserve |
-| Mois 2 à 4 | Société, développement de la v1, fiches, identité visuelle | Ta réserve, épuisée vers le mois 4 |
-| Mois 5 à 12 | Sortie, contenus chaque semaine, améliorations | Il faut un revenu extérieur |
-| Année 2 | Croissance si les seuils sont franchis | 1 000 € chargés par mois dans le central, insuffisant seul |
+| Ce que tu reçois | Environ 1 000 € par mois tant que tes droits durent et que tu ne te verses pas de salaire | 60 % de tes droits restants, en deux fois |
+| Pour qui | Un projet qui mettra du temps à rapporter | Un projet qui a besoin de trésorerie au démarrage |
+| Pour MECUM | Adapté : le scénario central ne te paie pas avant le mois 30 | Utile si tu l'apportes à la société, mais tu perds 40 % de tes droits et ton revenu mensuel |
+| Mon avis | **Recommandé** : il sécurise ta vie pendant le développement, et tes 10 000 € initiaux suffisent au test et à une bonne partie de la v1 | A choisir seulement si un besoin de trésorerie précis apparaît (stock B2B, recrutement) |
 
-Options, de la plus sûre à la plus risquée :
+Point de calendrier : le choix se fait au moment de la création de la société. Vois un conseiller France Travail et l'expert-comptable avant de créer la SASU (semaine 4 du plan). Attention aussi à l'aide aux créateurs (ACRE), qui conditionne l'ARCE : la demande se fait au moment de la création.
 
-1. **Un emploi ou une mission à temps partiel à partir du mois 4**, dans la vente B2B que tu connais. MECUM devient un projet de deux à trois jours par semaine. C'est ma recommandation.
-2. **Les allocations chômage, si tu y as droit.** Elles changent tout : le maintien des allocations pendant la création finance le développement sans pression. Je ne sais pas si c'est ton cas (question ouverte).
-3. **Le prêt d'honneur.** Il est fait pour cela : jusqu'à quelques dizaines de milliers d'euros à taux zéro, à la personne. Il ne se décroche qu'avec des premiers résultats, donc pas avant le mois 6 au mieux.
-4. **Tout miser sur le projet sans revenu.** Je le déconseille : il te mettrait en difficulté personnelle vers le mois 5, au moment exact où le projet a besoin de calme et de régularité.
+### Le Mac
+
+- Il est indispensable pour développer et publier sur iPhone. Le développeur que tu engageras aura le sien : le tien sert à compiler, tester, publier et suivre le projet.
+- Un MacBook Air récent avec 16 Go de mémoire suffit. Le MacBook Pro n'est pas nécessaire pour MECUM ; il ne se justifie que pour tes autres usages.
+- Acheté avant la création de la société, il sera à ton nom. L'expert-comptable te dira s'il vaut mieux l'apporter à la société (apport en nature) ou attendre pour l'acheter au nom de la société, ce qui permettrait de récupérer la TVA (environ 400 à 500 € sur un MacBook Pro). Pose-lui la question avant le Black Friday si possible.
+- Le budget du projet prévoyait 800 € pour un Mac : cette ligne disparaît, le besoin de trésorerie du projet baisse d'autant.
+
+### Ta tablette
+
+Si c'est un iPad Pro de 2021 (puce M1), elle prend en charge Apple Intelligence et peut servir à tester l'assistant : l'iPhone de test (550 €) devient inutile. Si c'est un iPad standard ou un iPad mini de 2021, elle ne le prend pas en charge. Regarde dans Réglages, Général, Informations, Nom du modèle.
+
+### Temps partiel et autres projets
+
+C'est raisonnable, à une condition : MECUM vit de la régularité (contenus chaque semaine, mises à jour, réponses aux utilisateurs). Fixe dès maintenant un minimum de deux jours et demi par semaine pour MECUM, et inscris-le dans les critères d'arrêt : si ce rythme n'est pas tenu trois semaines de suite, on arrête ou on met en pause, sans culpabilité. Autre point : l'ARCE et l'ACRE sont liées à une création d'entreprise. Si tu as d'autres projets, réfléchis à les porter dans la même société (une SASU peut avoir plusieurs activités) pour ne pas gâcher ces aides sur le mauvais projet.
 
 ## 9. Recommandation mise à jour
 
@@ -157,7 +188,7 @@ Options, de la plus sûre à la plus risquée :
 1. des iPhoniens français préfèrent-ils une application française vérifiée à HAVEN, au point d'envisager de payer 24,99 € ? (page de test et entretiens) ;
 2. des communes paieraient-elles un module de plan de sauvegarde hors ligne ? (dix rendez-vous en mairie)
 
-Engagement maximal avant la décision : 2 100 € (page, publicité de test, iPhone d'occasion pour tester l'assistant, entretiens).
+Engagement maximal avant la décision : 2 100 € (page, publicité de test, iPhone d'occasion pour tester l'assistant, entretiens), ou 1 550 € si ta tablette est un iPad Pro M1.
 
 Niveaux de confiance mis à jour [INT] :
 

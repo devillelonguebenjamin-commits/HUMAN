@@ -18,7 +18,7 @@ Version 2 du 13 novembre 2026, après tes décisions et l'analyse de HAVEN. Dét
 1. des Français sur iPhone préfèrent-ils MECUM à HAVEN au point d'envisager de payer la version complète ?
 2. des communes paieraient-elles un module qui met leur plan de sauvegarde hors ligne dans la poche de leurs habitants ?
 
-**Et une condition personnelle :** organiser dès maintenant un revenu à partir du mois 4. Le projet ne peut pas te payer pendant ta réserve de 3 à 4 mois.
+**Ta situation personnelle est réglée sur le principe :** tes allocations chômage (environ 1 000 € par mois) puis un temps partiel couvrent la période où le projet ne peut pas te payer. Je recommande le maintien des allocations plutôt que l'ARCE, et je pense que ton estimation de 20 000 € d'ARCE est trop haute (plutôt 10 800 € au plus) : à vérifier auprès de France Travail.
 
 Confiance : 25 à 35 % que l'application grand public franchisse les seuils. Inconnue pour les communes, c'est ce que le test doit dire. 10 à 15 % que le projet te verse un revenu complet avant 24 mois.
 
@@ -43,7 +43,7 @@ Confiance : 25 à 35 % que l'application grand public franchisse les seuils. Inc
 |---|---|---|
 | HAVEN, déjà traduit en français, suffit aux utilisateurs | Contenu français vérifié, calme, plus simple | Moins de 8 entretiens sur 20 préfèrent MECUM |
 | Pas assez d'installations gratuites | Référencement App Store, contenus chaque semaine, presse régionale, créateurs | Coût par inscrit au-dessus de 6 €, moins de 3 % d'inscription |
-| Ta réserve s'épuise avant le premier revenu | Temps partiel ou allocations à partir du mois 4 | Pas de solution décidée au jour 27 |
+| Ton temps se disperse entre MECUM et tes autres projets | Deux jours et demi par semaine minimum pour MECUM, inscrits dans les critères d'arrêt | Rythme de publication non tenu trois semaines de suite |
 | L'assistant donne un conseil dangereux | Aucune génération sur la santé, citations obligatoires, relecture médicale | Moins de 27 bonnes réponses sur 30 au test |
 | Un produit qui "fait IA" et perd la confiance | Graphiste, photos réelles, aucune image générée | Remarques en entretien sur l'aspect |
 
@@ -60,4 +60,4 @@ Le détail jour par jour est dans `plan_30_jours.md`.
 
 ## Ce que j'attends encore de toi
 
-Trois réponses, détaillées dans `questions_ouvertes.md` : as-tu un Mac ? As-tu des droits au chômage ? Préfères-tu, à partir du mois 4, un temps partiel salarié ou tout miser sur MECUM avec un prêt d'honneur ?
+Trois vérifications, détaillées dans `questions_ouvertes.md` : le montant exact de tes droits restants auprès de France Travail, le modèle de ta tablette (un iPad Pro M1 évite d'acheter un iPhone de test), et l'avis de l'expert-comptable sur l'achat du Mac avant ou après la création de la société.
