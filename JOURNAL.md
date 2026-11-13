@@ -145,3 +145,7 @@ Benjamin a fourni huit captures de HAVEN. Voir `08_analyse_haven.md`. Trois corr
 **Analyse.** La contrainte des 3 à 4 mois est levée par les allocations. Incohérence signalée : 20 000 € d'ARCE supposent environ 33 000 € de droits restants, soit 33 mois à 1 000 €, au-delà de la durée maximale d'indemnisation (18 mois avant 53 ans, à confirmer). Estimation plus réaliste : 10 800 € au plus. Recommandation : maintien des allocations plutôt qu'ARCE, choix à faire avant la création de la société avec France Travail et l'expert-comptable. Un MacBook Air de 16 Go suffit pour MECUM. Si la tablette est un iPad Pro M1, elle remplace l'iPhone de test. Risque nouveau : dispersion entre plusieurs projets, parade proposée de deux jours et demi par semaine minimum.
 
 **Modèle financier.** Inchangé : il ne porte que sur la société. La ligne de 800 € pour un Mac devient inutile.
+
+## 2026-11-13 (suite)
+
+Tablette : iPad standard de 2021, sans Apple Intelligence. L'iPhone de test reste au budget, sauf iPhone récent déjà possédé. Droits France Travail pas encore connus : n'empêche pas de lancer le test, à obtenir avant le jour 22.
