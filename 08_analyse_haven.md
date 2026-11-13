@@ -28,7 +28,8 @@ Rédigé le 12 novembre 2026 à partir de huit captures d'écran fournies par Be
 |---|---|---|
 | Gratuit | 0 | Acquisition et habitude : premiers secours, cartes, bibliothèque, famille, inventaire, petit assistant |
 | Pro à vie | 29,99 USD [FAIT, capture de l'accueil] | Déblocage unique : 16 scénarios, identification de plantes, analyse par photo |
-| Watch | Abonnement, prix non visible | Revenu récurrent sur un service en ligne |
+| Pro Family | 59,99 € [FAIT, capture du 13/11/2026] | Pro pour un cercle familial |
+| Watch | 29,99 € par an ou 3,99 € par mois, essai de 7 jours, Pro inclus [FAIT, capture du 13/11/2026] | Revenu récurrent : veille des conflits, alertes, suivi de la posture nucléaire |
 
 Enseignement : la partie gratuite est très généreuse. Presque tout ce que le dossier de phase 1 prévoyait de vendre dans le "pack" (fiches, cartes, bibliothèque) est gratuit chez HAVEN. On ne peut donc plus faire payer le socle.
 
@@ -52,7 +53,7 @@ Enseignement : la partie gratuite est très généreuse. Presque tout ce que le 
 | Contenu américain | Tornades, manuel de l'armée américaine, chasse nord-américaine [FAIT] | Risques, numéros, règles et saisons de France |
 | La peur est derrière le péage | Guerre mondiale, nucléaire, zone de combat verrouillés en Pro. Veille des zones de conflit en abonnement [FAIT] | L'inverse : tout ce qui touche à la sécurité est gratuit. On fait payer le confort et la profondeur. C'est ton positionnement d'origine, et c'est un vrai contraste |
 | Assistant fragile | Modèle de 450 millions de paramètres, risque de fermeture annoncé [FAIT]. Un modèle de cette taille invente souvent [EST] | Recherche dans des fiches validées d'abord. Assistant seulement sur les téléphones capables, avec citations |
-| Aucune source ni relecteur visible | Rien sur les écrans fournis [FAIT, à confirmer en ouvrant un guide] | Chaque fiche signée, datée, sourcée |
+| Aucune source ni relecteur | Confirmé par Benjamin le 13/11/2026 : ni source, ni auteur, ni date. Contenu en anglais par défaut, traduction en option [FAIT] | Chaque fiche signée, datée, sourcée |
 | Etendue qui disperse | Neuf entrées de menu, des libellés tronqués, un onglet actif erroné sur l'écran de l'assistant [FAIT] | Quatre entrées, lisibles en situation de stress |
 | Droits incertains sur certains livres | "Where There Is No Doctor" n'est libre qu'en usage non commercial [source S52 du dossier] | Corpus aux licences vérifiées |
 | Maillage Bluetooth limité aux téléphones HAVEN | Ecran "aucun téléphone HAVEN connecté" [FAIT] | Ne pas le copier : coûteux à développer et inutile sans masse d'utilisateurs |

@@ -1,6 +1,6 @@
 # Registre des hypothèses
 
-Mis à jour le 12 novembre 2026. Chaque hypothèse structurante du dossier est listée avec sa source ou sa méthode de validation, son niveau de confiance et son effet sur la décision. Les identifiants S renvoient à `sources.md`.
+Mis à jour le 13 novembre 2026. Les sections A à E datent du 12 novembre (modèle pack et téléphone). La section F couvre l'application iPhone et prime en cas de contradiction. Chaque hypothèse structurante du dossier est listée avec sa source ou sa méthode de validation, son niveau de confiance et son effet sur la décision. Les identifiants S renvoient à `sources.md`.
 
 Confiance : forte (donnée sourcée et recoupée), moyenne (une source ou une estimation solide), faible (supposition à tester).
 Effet sur la décision : critique (peut inverser la recommandation), important (change les chiffres), secondaire.
@@ -70,3 +70,24 @@ Effet sur la décision : critique (peut inverser la recommandation), important (
 ## Lecture
 
 Onze hypothèses sont critiques. Neuf d'entre elles (H03, H04, H19, H21, H22, H23, H35, H36, H37) peuvent être levées en 30 à 60 jours pour moins de 3 000 €. H11 demande un avis d'avocat. H30 demande une réponse de Benjamin. Aucune ne nécessite d'acheter du stock ou de créer une société.
+
+## F. Application iPhone gratuite avec version complète (13 novembre 2026)
+
+| ID | Hypothèse | Source ou méthode de validation | Confiance | Effet sur la décision |
+|---|---|---|---|---|
+| H30 | Le fondateur ne se rémunère pas la première année | Allocations chômage d'environ 1 000 € par mois, puis temps partiel (réponse du 13/11/2026) | Validée sous réserve | Le projet n'a pas à payer le fondateur en année 1 |
+| H35 | Benjamin produit des contenus chaque semaine | Répondu : oui. A vérifier par le rythme tenu pendant le test | Moyenne | Critique |
+| H36 | Benjamin accepte un produit logiciel | Répondu : oui | Validée | |
+| H37 | Benjamin peut tenir 12 mois sans revenu tiré du projet | 3 à 4 mois sur ses réserves, prolongés par les allocations et un temps partiel | Moyenne | Critique : dépend de la durée réelle des droits |
+| H38 | Les Français visés sont surtout sur iPhone | iOS : 34 à 36 % des smartphones en France (StatCounter 2026). Plus élevé chez les foyers aisés, non mesuré. Validation : part Android sur la page | Moyenne | Important |
+| H39 | 3,5 % des nouveaux utilisateurs achètent la version complète dans le mois | Aucune donnée. Validation : acceptation du prix sur la page, puis données réelles après la sortie | Faible | Critique |
+| H40 | 500 installations organiques le premier mois, puis 10 % de croissance mensuelle | Aucune donnée. Validation : taille de la liste d'attente, référencement | Faible | Critique |
+| H41 | Une installation payante coûte 2,50 € | Aucune donnée française. Validation : annonces de test | Faible | Important : au-dessus de 1,69 €, la publicité perd de l'argent |
+| H42 | Le prix de 24,99 € est accepté | Repère HAVEN 29,99 USD. Validation : test à 19,99 et 29,99 € | Faible | Important |
+| H43 | Des utilisateurs préfèrent MECUM à HAVEN | Validation : entretiens avec démonstration côte à côte | Faible | Critique |
+| H44 | Le modèle local d'Apple répond correctement en français à partir de nos fiches | Validation : 30 questions sur l'iPhone de test | Moyenne | Secondaire : l'assistant est une option |
+| H45 | Une application v1 iOS coûte 6 000 à 8 000 € | Estimation. Validation : trois devis | Faible | Important |
+| H46 | Des communes paient 600 à 1 200 € par an pour un module de plan de sauvegarde hors ligne | Aucune donnée. Concurrents d'alerte existants. Validation : 30 contacts, rendez-vous | Faible | Potentiellement critique : peut devenir le moteur du projet |
+| H47 | Construire notre propre base encyclopédique évite la contrainte de licence GPL sur l'App Store | Raisonnement, à confirmer avec l'avocat | Moyenne | Secondaire |
+| H48 | L'ARCE atteint 20 000 € | Estimation du fondateur. 60 % du reliquat, deux versements [FAIT, France Travail]. Avec 1 000 € par mois et 18 mois maximum [A CONFIRMER], plafond vers 10 800 €. Validation : relevé de droits France Travail | Faible | Important si l'ARCE est choisie. Recommandation : maintien des allocations |
+| H49 | Benjamin consacre au moins deux jours et demi par semaine à MECUM en temps partiel | Engagement à prendre. Validation : rythme de publication | Moyenne | Critique : l'acquisition gratuite en dépend |

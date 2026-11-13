@@ -1,5 +1,7 @@
 # 02. Concurrence et substituts
 
+> **Mise à jour du 13/11/2026.** Le produit a changé : application iPhone gratuite avec version complète. Pour HAVEN, la référence est désormais `09_application_iphone.md`. Ce document reste valable pour le reste de la cartographie. Correction : HAVEN propose une interface en français (traduction en option), avec un contenu resté en anglais et sans source, auteur ni date. Voir `08_analyse_haven.md`.
+
 Document de la phase 1 du projet HUMAN, rédigé le 12 novembre 2026. Les identifiants S renvoient à `sources.md`, les identifiants H à `registre_hypotheses.md`. Marqueurs : [FAIT], [EST], [HYP], [INT].
 
 ## 1. Conclusion

@@ -1,5 +1,7 @@
 # Page d'atterrissage de test
 
+Version du 13/11/2026 : application iPhone gratuite avec version complète. C'est une page fonctionnelle de test, pas l'identité visuelle de MECUM : elle sera redessinée avec un graphiste avant le lancement.
+
 Page unique, sans dépendance externe, prête à publier sur n'importe quel hébergement de fichiers statiques. Elle sert à mesurer la demande avant tout investissement (voir `plan_30_jours.md`). Elle ne vend rien et le dit.
 
 ## Avant de publier
@@ -22,11 +24,11 @@ Page unique, sans dépendance externe, prête à publier sur n'importe quel héb
 
 Exemple : `https://exemple.fr/?m=pleinair&utm_source=meta_v1`
 
-Niveaux de prix testés (modifiables dans `CONFIG.prix`) : pack carte à 79 ou 99 €, pack numérique à 39 ou 49 €, téléphone à partir de 299 ou 329 €.
+Niveaux de prix testés (modifiables dans `CONFIG.prix`) : version complète à 19,99 ou 29,99 €, version famille à 39,99 ou 59,99 €. L'application gratuite est affichée à 0 € dans les deux cas.
 
 ## Données enregistrées par inscription
 
-Adresse électronique, produits qui intéressent le visiteur (dont l'option "boîtier familial", qui mesure la variante classée deuxième), avis sur le prix affiché, usage envisagé, message vu, niveau de prix vu, canal d'origine, date. Rien d'autre.
+Adresse électronique, intérêts cochés (application gratuite, version complète, famille, demande Android, collectivité, utilisateur d'une application concurrente), avis sur le prix de la version complète, usage envisagé, message vu, niveau de prix vu, canal d'origine, date. Rien d'autre.
 
 ## Ce qu'il faut regarder
 

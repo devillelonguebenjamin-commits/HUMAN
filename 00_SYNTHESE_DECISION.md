@@ -1,54 +1,63 @@
-# Synthèse de décision : projet HUMAN, phase 1
+# Synthèse de décision : MECUM
 
-12 novembre 2026. Détail dans les documents 01 à 07. Montants hors taxe sauf mention contraire.
+Version 2 du 13 novembre 2026, après tes décisions et l'analyse de HAVEN. Détail dans `09_application_iphone.md` (produit, plateforme, finances) et `08_analyse_haven.md`. Les documents 01 à 07 restent valables pour le marché, le légal, la charte et les risques. Montants hors taxe sauf mention contraire.
+
+## Où nous en sommes
+
+| Question | Réponse |
+|---|---|
+| Produit | Une application iPhone hors ligne, en français : fiches signées et datées, préparation du foyer, cartes, bibliothèque, assistant qui cite ses sources |
+| Modèle | Gratuit pour tout ce qui protège. Version complète en achat unique (24,99 € à tester), version famille (49,99 €) |
+| Différence avec HAVEN | Contenu français, vérifié et sourcé (HAVEN n'a ni source, ni auteur, ni date). Aucune peur derrière le péage. Assistant qui ne plante pas, grâce au modèle intégré aux iPhone récents |
+| Ecarté | Téléphone à notre marque, téléphone revendu, carte mémoire, place de marché, Android au lancement |
 
 ## Recommandation
 
-**No-go sur la thèse telle quelle. Pivot recommandé. Go pour 30 jours de test, 2 500 € au plus avant la décision.**
+**Go pour 30 jours de test, 2 100 € engagés au plus, avec deux questions :**
 
-1. Ne pas lancer de smartphone durci à notre marque. Le statut de fabricant impose cinq ans de mises à jour, sept ans de pièces détachées et des essais radio : hors de portée de 10 000 à 40 000 €. Et le produit existe déjà aux Etats-Unis à 349,99 USD.
-2. Ne pas lancer de place de marché. L'offre est abondante et la commission trop faible.
-3. Pivoter vers ce qui manque réellement : la référence francophone du savoir hors ligne. Un pack (fiches validées, encyclopédie, cartes, recherche, assistant qui cite ses sources) vendu en téléchargement et sur carte mémoire, avec un téléphone du commerce prêt à l'emploi en option et quelques accessoires. C'est le modèle hybride, resserré.
-4. Avant tout engagement, acheter une preuve de demande : page d'atterrissage, liste d'attente, 20 entretiens. Décision au jour 30 sur des seuils fixés à l'avance.
+1. des Français sur iPhone préfèrent-ils MECUM à HAVEN au point d'envisager de payer la version complète ?
+2. des communes paieraient-elles un module qui met leur plan de sauvegarde hors ligne dans la poche de leurs habitants ?
 
-Confiance : élevée sur le rejet de la thèse initiale (85 à 90 %). Faible à moyenne sur le succès du pivot (35 à 45 % de chances de franchir les seuils, puis 40 % d'atteindre le scénario central). Ce projet a environ une chance sur six de devenir une petite entreprise rentable. Le test se justifie parce qu'il coûte peu.
+**Ta situation personnelle est réglée sur le principe :** tes allocations chômage (environ 1 000 € par mois) puis un temps partiel couvrent la période où le projet ne peut pas te payer. Je recommande le maintien des allocations plutôt que l'ARCE, et je pense que ton estimation de 20 000 € d'ARCE est trop haute (plutôt 10 800 € au plus) : à vérifier auprès de France Travail.
+
+Confiance : 25 à 35 % que l'application grand public franchisse les seuils. Inconnue pour les communes, c'est ce que le test doit dire. 10 à 15 % que le projet te verse un revenu complet avant 24 mois.
 
 ## Dix chiffres clés
 
 | N° | Chiffre | Ce qu'il dit |
 |---|---|---|
-| 1 | 10 % des foyers français ont un kit d'urgence, contre 51 % aux Pays-Bas | Potentiel réel, mais aucun décollage mesuré en France |
-| 2 | 349,99 USD | Prix du smartphone durci avec IA de survie hors ligne déjà en vente aux Etats-Unis |
-| 3 | 0 | Offre équivalente en français trouvée. La place à prendre est locale |
-| 4 | 272 € TTC | Prix public du téléphone 22 000 mAh que nous revendrions. Le client le voit aussi |
-| 5 | 93 %, 40 %, 17 % | Marge de contribution du pack numérique, du pack carte, du téléphone revendu |
-| 6 | 43 € contre 40 € | Marge par commande contre coût d'acquisition payant. La publicité ne peut pas porter la croissance |
-| 7 | 24 commandes par mois | Point mort de la première année, sans rémunération du fondateur |
-| 8 | 90 000 € puis 440 000 € | Chiffre d'affaires central en année 1 et en année 3, avec 16 500 € d'EBITDA après 30 000 € de rémunération |
-| 9 | 3 à 7 M€ par an | Marché adressable français estimé pour ce type de produit. Une niche |
-| 10 | 2 500 € et 12 300 € | Coût du test à 30 jours, et perte si l'on arrête au mois 6 dans le scénario prudent |
+| 1 | 34 à 36 % | Part de l'iPhone en France. Pas "la plupart", mais probablement plus parmi les foyers aisés visés |
+| 2 | 21,24 € | Ce qu'il reste d'un achat à 24,99 € après TVA et commission Apple de 15 % |
+| 3 | 1,69 € | Revenu attendu par installation dans le scénario central |
+| 4 | 0,68 € | Revenu par euro de publicité dans le central. La publicité ne paie pas, l'acquisition doit être gratuite |
+| 5 | 3 700 | Installations par mois nécessaires pour couvrir les charges de l'année 2 |
+| 6 | 29,99 USD, 59,99 €, 29,99 € par an | Prix de HAVEN : Pro à vie, Pro Family, abonnement Watch |
+| 7 | 44 000 € | Revenu net de l'application en année 3 dans le central, plus 21 000 € de licences communes |
+| 8 | Mois 30 | Premier mois où le central peut te verser 1 500 € nets |
+| 9 | 35 000 € | Fonds propres consommés dans le central, perte cumulée maximale de 28 800 € |
+| 10 | 2 100 € | Coût du test de 30 jours, environ 1 650 € perdus en cas d'arrêt |
 
 ## Cinq risques majeurs
 
 | Risque | Parade | Signal d'alerte |
 |---|---|---|
-| Le client assemble gratuitement l'équivalent (Kiwix, cartes libres, IA gratuite) | Valeur propre : fiches validées en français, cinq minutes d'installation. Test avant investissement | Moins de 3 % d'inscription à la liste d'attente |
-| Coût d'acquisition supérieur à la marge | Contenus gratuits, créateurs à la commission, liste d'adresses | Marge négative par commande payante deux mois de suite |
-| Un éditeur américain traduit son application | Vitesse, contenus réellement français, partenariats locaux | Fiche en français sur les boutiques d'applications |
-| L'IA donne un conseil dangereux | Aucune génération sur la santé, citations obligatoires, relecture médicale, assurance | Moins de 95 % de réussite sur 100 questions de test |
-| Assimilation au commerce de la peur | Charte éditoriale stricte, alignement sur le guide officiel | Article ou vidéo critique |
+| HAVEN, déjà traduit en français, suffit aux utilisateurs | Contenu français vérifié, calme, plus simple | Moins de 8 entretiens sur 20 préfèrent MECUM |
+| Pas assez d'installations gratuites | Référencement App Store, contenus chaque semaine, presse régionale, créateurs | Coût par inscrit au-dessus de 6 €, moins de 3 % d'inscription |
+| Ton temps se disperse entre MECUM et tes autres projets | Deux jours et demi par semaine minimum pour MECUM, inscrits dans les critères d'arrêt | Rythme de publication non tenu trois semaines de suite |
+| L'assistant donne un conseil dangereux | Aucune génération sur la santé, citations obligatoires, relecture médicale | Moins de 27 bonnes réponses sur 30 au test |
+| Un produit qui "fait IA" et perd la confiance | Graphiste, photos réelles, aucune image générée | Remarques en entretien sur l'aspect |
 
-## Plan des 30 premiers jours
+## Les 30 prochains jours
 
-| Période | Actions | Budget | Résultat attendu |
-|---|---|---|---|
-| Jours 1 à 7 | Trancher les questions ouvertes. Publier la page. Commander trois téléphones de test. Demander les devis. Recruter 20 personnes à interroger | 1 100 € | Page en ligne, mesures techniques lancées |
-| Jours 6 à 12 | Première vague de publicité (trois messages, deux prix). Dix entretiens | 600 € | 500 visiteurs, premier taux d'inscription |
-| Jours 13 à 20 | Correction du message. Seconde vague avec vidéo réelle. Dix entretiens. Test d'installation par cinq personnes non techniciennes | 800 € | 1 000 visiteurs cumulés, coût par inscrit |
-| Jours 21 à 30 | Avocat et expert-comptable si les seuils sont tenus. Devis de développement. Mise à jour du modèle. Décision | 0 à 2 100 € | Go, no-go ou variante suivante |
+| Période | Actions | Budget |
+|---|---|---|
+| Jours 1 à 7 | Nom et domaine, page en ligne, iPhone de test, démonstration assemblée, 20 entretiens et 30 communes repérés, test de l'assistant d'Apple | 1 200 € |
+| Jours 8 à 14 | Vague de publicité 1, dix entretiens, 30 contacts en mairie, premiers contenus | 600 € |
+| Jours 15 à 21 | Vague 2 avec vidéo réelle, dix entretiens, rendez-vous en mairie, tests de prise en main | 800 € |
+| Jours 22 à 30 | Expert-comptable, devis de trois développeurs iOS et d'un graphiste, décision sur ton revenu, décision go ou no-go | 0 € |
 
-Seuils au jour 20 : arrêt sous 3 % d'inscription ou au-dessus de 8 € par inscrit. Poursuite au-dessus de 8 % et sous 4 €. Entre les deux, une troisième vague ciblée.
+Le détail jour par jour est dans `plan_30_jours.md`.
 
-## Ce que j'attends de toi
+## Ce que j'attends encore de toi
 
-Quatre réponses avant le jour 1, détaillées dans `questions_ouvertes.md` : acceptes-tu que le projet devienne un produit logiciel et de contenu ? Combien de mois peux-tu tenir sans revenu de l'entreprise ? Es-tu prêt à produire toi-même des vidéos et des articles chaque semaine ? Quel nom de travail retiens-tu ?
+Trois vérifications, détaillées dans `questions_ouvertes.md` : le montant exact de tes droits restants auprès de France Travail, le modèle de ta tablette (un iPad Pro M1 évite d'acheter un iPhone de test), et l'avis de l'expert-comptable sur l'achat du Mac avant ou après la création de la société.

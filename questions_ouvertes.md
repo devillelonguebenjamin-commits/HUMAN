@@ -1,6 +1,35 @@
 # Questions ouvertes
 
-Rédigé le 12 novembre 2026. Ce que toi seul peux trancher, classé par effet sur la décision. Pour chaque question, j'indique l'hypothèse que j'ai retenue en attendant ta réponse, et ce qui change si tu réponds autrement.
+Mis à jour le 13 novembre 2026.
+
+## Réponses reçues
+
+| N° | Question | Réponse de Benjamin |
+|---|---|---|
+| 1 | Produit logiciel plutôt que matériel ? | Oui : application locale sur téléphones ordinaires, inspirée de HAVEN, avec partie gratuite |
+| 2 | Durée sans revenu ? | 3 à 4 mois. Conséquence : un revenu est à organiser à partir du mois 4 |
+| 3 | Contenus chaque semaine ? | Oui |
+| 4 | Nom de travail ? | MECUM |
+| Nouvelle | Plateforme ? | iPhone d'abord, pas d'Android au lancement |
+| Nouvelle | Identité visuelle ? | Ne pas faire "IA". A traiter dans un second temps |
+| A | Mac ? | Pas encore. Une tablette de 2021. Achat d'un MacBook Pro au Black Friday |
+| B | Chômage ? | Environ 1 000 € par mois. Demande de révision et d'ARCE envisagée (estimation : 20 000 € en deux fois) |
+| C | Après le mois 4 ? | Temps partiel, avec d'autres projets de création |
+
+## A vérifier maintenant
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| D | Quel téléphone as-tu ? | Ta tablette est un iPad standard de 2021 (réponse du 13/11/2026), sans Apple Intelligence. Sauf si tu as un iPhone 15 Pro ou plus récent, l'iPhone de test (550 €) est nécessaire |
+| E | Connais-tu des élus ou des secrétaires de mairie dans ton département ? | Accélère le test de la piste des communes |
+| F | Quel est le montant exact de tes droits restants (France Travail) ? En attente au 13/11/2026, ne bloque pas le test | Ton estimation de 20 000 € d'ARCE me paraît trop haute : avec 1 000 € par mois et 18 mois maximum, l'ARCE plafonnerait vers 10 800 € |
+| G | Maintien des allocations ou ARCE ? | Exclusifs. Je recommande le maintien. Décision à prendre avec France Travail et l'expert-comptable avant la création |
+| H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour MECUM |
+| I | Combien de jours par semaine garantis-tu à MECUM une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
+
+## Questions initiales (12 novembre 2026)
+
+Les questions 1 à 4 ci-dessous sont tranchées. Les suivantes restent ouvertes. Ce que toi seul peux trancher, classé par effet sur la décision. Pour chaque question, j'indique l'hypothèse que j'ai retenue en attendant ta réponse, et ce qui change si tu réponds autrement.
 
 ## Priorité 1 : à trancher avant le jour 1
 

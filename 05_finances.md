@@ -1,5 +1,7 @@
 # 05. Modèle économique et finances
 
+> **Mise à jour du 13/11/2026.** Le produit a changé : application iPhone gratuite avec version complète. Pour les prix, les scénarios et l'emploi des fonds (modèle version 2), la référence est désormais `09_application_iphone.md`. Ce document reste valable pour la comparaison des modèles A, B et C et la méthode de financement par étapes. Les chiffres ci-dessous sont ceux du modèle version 1, archivé dans `archives/`.
+
 Document de la phase 1 du projet HUMAN, rédigé le 12 novembre 2026. Tous les chiffres proviennent de `modele_financier.xlsx` (6 762 formules, recalculées sans erreur). Montants en euros hors taxe sauf mention contraire. Les identifiants S renvoient à `sources.md`, les identifiants H à `registre_hypotheses.md`. Marqueurs : [FAIT], [EST], [HYP].
 
 Ces chiffres sont des scénarios, pas des prévisions. Presque toutes les hypothèses de demande sont à valider. Le classeur est fait pour être modifié : changez une cellule bleue de la feuille `Hypotheses`, tout se recalcule.
