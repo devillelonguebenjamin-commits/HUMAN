@@ -1,6 +1,31 @@
 # Questions ouvertes
 
-Rédigé le 12 novembre 2026. Ce que toi seul peux trancher, classé par effet sur la décision. Pour chaque question, j'indique l'hypothèse que j'ai retenue en attendant ta réponse, et ce qui change si tu réponds autrement.
+Mis à jour le 13 novembre 2026.
+
+## Réponses reçues
+
+| N° | Question | Réponse de Benjamin |
+|---|---|---|
+| 1 | Produit logiciel plutôt que matériel ? | Oui : application locale sur téléphones ordinaires, inspirée de HAVEN, avec partie gratuite |
+| 2 | Durée sans revenu ? | 3 à 4 mois. Conséquence : un revenu est à organiser à partir du mois 4 |
+| 3 | Contenus chaque semaine ? | Oui |
+| 4 | Nom de travail ? | MECUM |
+| Nouvelle | Plateforme ? | iPhone d'abord, pas d'Android au lancement |
+| Nouvelle | Identité visuelle ? | Ne pas faire "IA". A traiter dans un second temps |
+
+## Questions nouvelles, à trancher avant le jour 1
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| A | As-tu un Mac ? | Obligatoire pour développer et publier sur iPhone. Sinon 800 € à prévoir |
+| B | As-tu des droits au chômage, et lesquels ? | C'est ce qui peut financer ta période sans revenu au-delà du mois 4 |
+| C | A partir du mois 4 : temps partiel salarié, ou tout sur MECUM avec prêt d'honneur ? | Le scénario central ne te paie pas avant le mois 30 |
+| D | As-tu un iPhone 15 Pro ou plus récent ? | Sinon l'iPhone de test (550 €) est nécessaire pour tester l'assistant |
+| E | Connais-tu des élus ou des secrétaires de mairie dans ton département ? | Accélère le test de la piste des communes |
+
+## Questions initiales (12 novembre 2026)
+
+Les questions 1 à 4 ci-dessous sont tranchées. Les suivantes restent ouvertes. Ce que toi seul peux trancher, classé par effet sur la décision. Pour chaque question, j'indique l'hypothèse que j'ai retenue en attendant ta réponse, et ce qui change si tu réponds autrement.
 
 ## Priorité 1 : à trancher avant le jour 1
 

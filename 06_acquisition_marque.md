@@ -1,5 +1,7 @@
 # 06. Acquisition et marque
 
+> **Mise à jour du 13/11/2026.** Le produit a changé : application iPhone gratuite avec version complète. Pour l'offre et les prix testés, la référence est désormais `09_application_iphone.md`. Ce document reste valable pour la charte éditoriale, les canaux, les formats et les noms de marque.
+
 Document de la phase 1 du projet HUMAN, rédigé le 12 novembre 2026. Les identifiants S renvoient à `sources.md`, les identifiants H à `registre_hypotheses.md`. Marqueurs : [FAIT], [EST], [HYP], [INT].
 
 ## 1. Conclusion

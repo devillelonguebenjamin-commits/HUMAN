@@ -123,3 +123,17 @@ Réponses de Benjamin aux questions 1 à 4, puis lancement du plan à 30 jours. 
 ## 2026-11-12 : Analyse de HAVEN sur captures d'écran
 
 Benjamin a fourni huit captures de HAVEN. Voir `08_analyse_haven.md`. Trois corrections au dossier : HAVEN a déjà une interface en français (le contenu reste anglais et américain), son socle gratuit couvre presque tout ce que le "pack" devait vendre, et son étendue ne peut pas être égalée par une personne seule. Probabilité de franchir les seuils du test ramenée de 35 à 45 % vers 25 à 35 %. Axe de différenciation proposé : contenu français vérifié, sécurité toujours gratuite, périmètre étroit. Livrables de la phase 1 à adapter après réponses de Benjamin (liste en section 6 de l'analyse).
+
+## 2026-11-13 : iPhone d'abord, modèle financier version 2
+
+**Réponses de Benjamin.** iPhone d'abord, pas d'Android au lancement. Les guides de HAVEN n'ont ni source, ni auteur, ni date, et sont en anglais par défaut. Prix de HAVEN relevés sur capture : Pro Family 59,99 €, Watch 29,99 € par an ou 3,99 € par mois. Ce qu'il apprécie : la prise en main par questions et le téléchargement immédiat de la carte et du modèle. Ce qui le gêne : l'esthétique "faite avec une IA" de l'application et de sa fiche App Store. Réserve personnelle : 3 à 4 mois sans revenu. Contenus chaque semaine : oui.
+
+**Correction signalée.** L'iPhone ne représente pas "la plupart" des Français : 34 à 36 % des smartphones en 2026 (StatCounter). Le choix reste défendable pour la cible aisée et pour le modèle local d'Apple, gratuit et en français sur iPhone 15 Pro et suivants.
+
+**Modèle financier version 2.** Application gratuite, version complète en achat unique, licences communes optionnelles. Scénario central : 34 000 installations et 2 070 achats en année 3, EBITDA de 6 900 € après 24 000 € de rémunération, revenu de 1 500 € nets possible au mois 30 seulement, 35 000 € de fonds propres consommés. La publicité ne paie pas (0,68 € par euro). L'ancien modèle est archivé.
+
+**Conséquence la plus importante.** La réserve de 3 à 4 mois ne couvre que le test et le développement. Recommandation : un revenu extérieur à partir du mois 4.
+
+**Piste ajoutée.** Module pour les communes (plan de sauvegarde hors ligne pour les habitants), testé dès le plan à 30 jours. Elle exploite l'expérience de Benjamin en vente aux collectivités.
+
+**Livrables mis à jour.** `09_application_iphone.md` (nouveau), `00_SYNTHESE_DECISION.md`, `modele_financier.xlsx`, spécification iOS, page de test, plan à 30 jours, questions ouvertes, registre (section F), bandeaux de renvoi dans 02, 03, 05 et 06.

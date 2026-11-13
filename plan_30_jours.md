@@ -1,42 +1,51 @@
 # Plan des 30 premiers jours
 
-Rédigé le 12 novembre 2026. Objectif unique : savoir, pour 2 500 €, si des clients français veulent payer pour du savoir hors ligne prêt à l'emploi. Aucun stock, aucune société, aucun encaissement pendant ces 30 jours.
+Version 2 du 13 novembre 2026 (application iPhone gratuite avec version complète). Objectif : savoir, pour 2 100 €, si des Français sur iPhone préfèrent MECUM à HAVEN au point d'envisager de payer la version complète, et si des communes paieraient un module de plan de sauvegarde. Aucune société, aucun développement, aucun encaissement pendant ces 30 jours.
 
-Calendrier indicatif : jour 1 le lundi 16 novembre 2026, jour 30 le mardi 15 décembre 2026. Décale tout d'un bloc si tu démarres plus tard.
+Calendrier indicatif : jour 1 le lundi 16 novembre 2026, jour 30 le mardi 15 décembre 2026.
 
-Attention au calendrier publicitaire : le vendredi 27 novembre est le jour des grandes promotions de fin d'année. Les coûts publicitaires montent pendant cette période. Un coût par inscrit mesuré fin novembre sera plutôt pessimiste. Les seuils ci-dessous en tiennent compte : n'en retire pas d'excuse, mais lis un résultat tout juste sous le seuil avec indulgence, et un résultat franchement mauvais sans indulgence.
+Deux contraintes de calendrier :
+
+- fin novembre, les promotions de fin d'année font monter les coûts publicitaires. Un coût par inscrit mesuré à ce moment sera plutôt pessimiste ;
+- ta réserve couvre 3 à 4 mois. Le jour 30 doit aussi trancher la question de ton revenu à partir du mois 4 (voir `09_application_iphone.md`, section 8).
 
 ## Budget
 
 | Poste | Montant | Engagé quand |
 |---|---|---|
 | Nom de domaine, outil d'emailing, hébergement de la page | 150 € | Jour 1 |
-| Trois téléphones de test et trois cartes mémoire | 950 € | Jour 2 |
+| iPhone d'occasion compatible Apple Intelligence (iPhone 15 Pro ou plus récent) | 550 € | Jour 2, si tu n'en as pas déjà un |
 | Publicité de test, vague 1 | 500 € | Jour 6 |
 | Publicité de test, vague 2 | 700 € | Jour 15 |
-| Entretiens (bons d'achat de 10 € pour les participants) | 200 € | Jours 8 à 19 |
-| **Total engagé avant la décision** | **2 500 €** | |
-| Avocat : statut distributeur, mentions santé, conditions de vente | 1 500 € | Jour 21, seulement si les seuils d'arrêt ne sont pas atteints |
-| Recherche d'antériorité et dépôt de marque | 600 € | Jour 30, seulement en cas de go |
-| **Total maximal sur 30 jours** | **4 600 €** | |
+| Entretiens (bons d'achat de 10 € pour les particuliers) | 200 € | Jours 8 à 19 |
+| **Total engagé avant la décision** | **2 100 €** | |
+| Avocat : mentions santé, licences des contenus, conditions de vente | 1 500 € | Après le jour 30, en cas de go |
+| Recherche d'antériorité et dépôt de la marque | 600 € | Après le jour 30, en cas de go |
 
-Les téléphones de test se revendent d'occasion à environ 60 % de leur prix en cas d'arrêt [EST]. La perte nette d'un no-go au jour 20 est donc proche de 2 100 €.
+L'iPhone de test se revend à environ 80 % de son prix en cas d'arrêt [EST]. Perte nette d'un no-go : environ 1 650 €.
 
 ## Indicateurs et seuils de décision
 
 | Indicateur | Mesuré comment | Arrêt | Zone grise | Poursuite |
 |---|---|---|---|---|
-| Visiteurs uniques de la page | Outil de mesure d'audience sans traceur | Moins de 600 : refaire le test | | 1 000 ou plus |
-| Taux d'inscription à la liste d'attente | Inscrits divisés par visiteurs uniques | Moins de 3 % | 3 à 8 % | 8 % ou plus |
-| Coût par inscrit sur le trafic payant | Dépense divisée par inscrits venus des annonces | Plus de 8 € | 4 à 8 € | Moins de 4 € |
-| Acceptation du prix affiché | Réponse à la question de prix du formulaire | Moins de 25 % | 25 à 40 % | 40 % ou plus |
-| Entretiens : prêts à payer 79 € ou plus pour le pack | Réponse spontanée, puis à prix annoncé | Moins de 8 sur 20 | 8 à 11 | 12 ou plus |
-| Entretiens : ont déjà installé seuls une encyclopédie ou des cartes hors ligne | Question directe | Plus de 12 sur 20 (le substitut gratuit domine) | 6 à 12 | Moins de 6 |
-| Installation de la carte par 5 personnes non techniciennes | Chronométrée, sans aide | Moins de 3 réussites | 3 | 4 ou 5, en moins de 10 minutes |
-| Vitesse de l'assistant sur le téléphone de test | Jetons par seconde, réponse de 150 mots | Moins de 3 | 3 à 5 | Plus de 5 |
-| Rythme de publication tenu par Benjamin | 2 textes et 1 vidéo par semaine pendant 3 semaines | Non tenu | | Tenu |
+| Visiteurs uniques de la page | Mesure d'audience sans traceur | Moins de 600 : refaire le test | | 1 000 ou plus |
+| Taux d'inscription à la liste d'attente | Inscrits divisés par visiteurs | Moins de 3 % | 3 à 8 % | 8 % ou plus |
+| Coût par inscrit (trafic payant) | Dépense divisée par inscrits venus des annonces | Plus de 6 € | 3 à 6 € | Moins de 3 € |
+| Acceptation du prix de la version complète | "Je l'achète" parmi les réponses, par niveau de prix | Moins de 15 % | 15 à 30 % | 30 % ou plus |
+| Part des inscrits sur Android | Case cochée | Information : plus de 40 % pose la question d'Android plus tôt | | |
+| Entretiens : préfèrent MECUM à HAVEN après les avoir vus tous deux | Démonstration côte à côte | Moins de 8 sur 20 | 8 à 11 | 12 ou plus |
+| Entretiens : paieraient 24,99 € la version complète | Réponse à prix annoncé | Moins de 5 sur 20 | 5 à 7 | 8 ou plus |
+| Communes : rendez-vous obtenus sur 30 contacts | Appels et courriels | Moins de 3 | 3 à 5 | 6 ou plus |
+| Communes : intérêt écrit pour un essai payant (600 à 1 200 € par an) | Courriel ou compte rendu validé | 0 | 1 | 2 ou plus |
+| Prise en main du "MVP zéro" par 5 personnes non techniciennes | Chronométrée, sans aide | Moins de 3 réussites | 3 | 4 ou 5 |
+| Assistant d'Apple sur 30 questions, avec les fiches en contexte | Réponses correctes et sourcées | Moins de 20 | 20 à 26 | 27 ou plus |
+| Rythme de publication tenu par toi | 2 textes et 1 vidéo par semaine pendant 3 semaines | Non tenu | | Tenu |
 
-Règle de lecture : un indicateur en zone d'arrêt après les deux vagues entraîne un no-go sur cette variante. Trois indicateurs ou plus en zone grise entraînent une troisième vague de 400 € sur le meilleur message, pas un go.
+Règles de lecture :
+
+- un indicateur grand public en zone d'arrêt après les deux vagues : no-go sur l'application grand public seule ;
+- si le grand public échoue mais que deux communes ou plus se montrent intéressées : pivot vers une offre pour les collectivités, à instruire ;
+- trois indicateurs ou plus en zone grise : une troisième vague de 400 € sur le meilleur message, pas un go.
 
 ## Jour par jour
 
@@ -44,74 +53,82 @@ Règle de lecture : un indicateur en zone d'arrêt après les deux vagues entra�
 
 | Jour | Actions | Livrable | Dépense |
 |---|---|---|---|
-| J1, lundi | Lire `00_SYNTHESE_DECISION.md` et `questions_ouvertes.md`. Trancher les questions 1 à 4. Vérifier le nom de travail sur la base de marques de l'INPI (gratuit, 20 minutes). Réserver le domaine. Ouvrir les comptes : emailing, mesure d'audience sans traceur, hébergement de page statique | Questions tranchées, domaine réservé | 150 € |
-| J2, mardi | Commander trois téléphones : un modèle à très grosse batterie, un modèle d'entrée de gamme à 8 Go, un téléphone Android ordinaire d'occasion. Commander trois cartes de 256 Go. Demander trois devis de téléphones à des distributeurs européens et deux devis de cartes. Lancer le téléchargement des fichiers Kiwix en français et noter leur taille | Commandes passées, cinq demandes de devis, tailles réelles du corpus | 950 € |
-| J3, mercredi | Adapter la page de `prototype/landing/` : nom, textes, mentions légales, branchement du formulaire. Tester sur trois téléphones. Publier | Page en ligne | 0 € |
-| J4, jeudi | Ecrire le guide d'entretien (12 questions). Recruter 20 personnes : 12 du segment "familles préparées", 8 du segment "plein air". Canaux : entourage élargi, groupes locaux, clubs de randonnée et de voile | 20 rendez-vous pris entre J8 et J19 | 0 € |
-| J5, vendredi | Créer trois annonces (famille et autonomie, plein air, éducation) en image et en vidéo d'écran. Paramétrer la campagne : trois messages, deux prix tirés au sort par la page. Relever Google Trends sur 24 mois pour cinq requêtes | Campagne prête, relevé de tendances | 0 € |
-| J6, samedi | Lancer la vague 1 pour six jours. Réception des téléphones : installation manuelle de Kiwix, des cartes, d'une application d'IA locale et de dix fiches en PDF | Vague 1 en cours, "MVP zéro" assemblé | 500 € |
-| J7, dimanche | Mesures sur les téléphones : vitesse de l'assistant, réception FM, début du test d'autonomie sur 30 jours (mode avion, une heure d'écran par jour) | Première fiche de mesures | 0 € |
+| J1, lundi | Vérifier le nom MECUM sur la base de marques de l'INPI (gratuit, 20 minutes). Réserver le domaine. Ouvrir emailing et mesure d'audience. Faire le point sur ton revenu à partir du mois 4 (chômage, temps partiel) | Domaine, comptes, note sur le revenu | 150 € |
+| J2, mardi | Acheter l'iPhone de test si besoin. Lister 30 communes de ton département soumises à un plan de sauvegarde (site de la préfecture) | iPhone, liste de communes | 550 € |
+| J3, mercredi | Adapter la page de `prototype/landing/` : nom, mentions légales, collecte. Tester sur iPhone. Publier | Page en ligne | 0 € |
+| J4, jeudi | Recruter 20 personnes sur iPhone : 12 familles, 8 pratiquants de plein air. Préparer le guide d'entretien | 20 rendez-vous entre J8 et J19 | 0 € |
+| J5, vendredi | Créer trois annonces (famille, plein air, éducation). Relever Google Trends sur 24 mois pour cinq requêtes | Campagne prête, relevé | 0 € |
+| J6, samedi | Lancer la vague 1. Assembler le "MVP zéro" sur l'iPhone : Kiwix, Organic Maps, carte du département, dix fiches en PDF. Installer HAVEN pour la comparaison | Vague 1 en cours, démonstration prête | 500 € |
+| J7, dimanche | Tester l'assistant d'Apple sur 30 questions en lui donnant les fiches en contexte (avec l'application Raccourcis ou un prototype Swift simple). Noter les réponses | Fiche de mesures | 0 € |
 
 ### Semaine 2 : mesurer la première vague
 
 | Jour | Actions | Livrable | Dépense |
 |---|---|---|---|
-| J8, lundi | Deux entretiens. Suivi de la campagne sans rien modifier. Rédiger deux fiches réflexes au format du prototype | Notes d'entretien | 20 € |
-| J9, mardi | Deux entretiens. Publier un premier article utile et gratuit ("Installer Wikipédia hors ligne en 20 minutes") | Article publié | 20 € |
-| J10, mercredi | Deux entretiens. Rédiger deux fiches. Brancher les fiches sur le moteur de `prototype/mvp_logiciel/` et tester dix questions | Dix fiches interrogeables | 20 € |
-| J11, jeudi | Deux entretiens. Lister 30 chaînes de créateurs et relever leurs audiences | Tableau des créateurs | 20 € |
-| J12, vendredi | Deux entretiens. Fin de la vague 1. Relever : visiteurs, inscrits, coût par inscrit par message, acceptation du prix par niveau | Tableau de résultats de la vague 1 | 20 € |
-| J13, samedi | Bilan intermédiaire. Réviser les seuils si nécessaire, par écrit, avant la vague 2. Garder les deux meilleurs messages. Corriger la page selon les objections entendues | Note d'une page, page corrigée | 0 € |
-| J14, dimanche | Tourner la vidéo de démonstration réelle de 90 secondes avec le "MVP zéro" | Vidéo | 0 € |
+| J8 à J12 | Deux entretiens par jour. Dix appels ou courriels à des mairies par jour sur J9 à J11 (secrétaire général ou adjoint chargé de la sécurité) | 10 entretiens, 30 contacts en mairie | 100 € |
+| J9 | Publier un premier article utile ("Le kit de 72 heures du guide officiel, objet par objet") | Article | 0 € |
+| J10 | Rédiger deux fiches au format du prototype et lancer `tests_recherche.py` | Fiches et tests | 0 € |
+| J11 | Lister 30 créateurs francophones (préparation, randonnée, voile, technologie) avec leurs audiences | Tableau des créateurs | 0 € |
+| J12 | Fin de la vague 1. Tableau : visiteurs, inscrits, coût par inscrit par message, acceptation du prix, part Android | Résultats vague 1 | 0 € |
+| J13 | Bilan écrit. Réviser les seuils si nécessaire, avant la vague 2. Corriger la page | Note d'une page | 0 € |
+| J14 | Tourner une vidéo réelle de 90 secondes du "MVP zéro" en mode avion | Vidéo | 0 € |
 
 ### Semaine 3 : confirmer ou infirmer
 
 | Jour | Actions | Livrable | Dépense |
 |---|---|---|---|
-| J15, lundi | Lancer la vague 2 pour six jours avec la vidéo réelle. Premier message à la liste : trois questions (usage, prix, pack ou téléphone) | Vague 2 en cours | 700 € |
-| J16, mardi | Deux entretiens. Premier contact avec dix créateurs, sans engagement | Dix messages envoyés | 20 € |
-| J17, mercredi | Deux entretiens. Test d'installation de la carte par deux personnes non techniciennes | Chronos et points de blocage | 20 € |
-| J18, jeudi | Deux entretiens. Test d'installation par trois autres personnes. Publier un deuxième article | Cinq tests d'installation | 20 € |
-| J19, vendredi | Quatre derniers entretiens. Synthèse des 20 entretiens : objections classées, vocabulaire des clients, prix cités | Synthèse d'entretiens | 40 € |
-| J20, samedi | Fin de la vague 2. Tableau complet des indicateurs contre les seuils | Tableau de bord final | 0 € |
-| J21, dimanche | Lecture à froid. Si un seuil d'arrêt est atteint : aller directement à J28. Sinon : prendre rendez-vous avec un avocat et un expert-comptable | Décision d'étape | 0 € |
+| J15 | Lancer la vague 2 avec la vidéo. Premier message à la liste : trois questions | Vague 2 en cours | 700 € |
+| J16 à J19 | Dix derniers entretiens. Rendez-vous en mairie obtenus. Cinq tests de prise en main par des personnes non techniciennes | Synthèse des entretiens, comptes rendus de mairie | 100 € |
+| J18 | Deuxième article, deuxième vidéo | Publications | 0 € |
+| J20 | Fin de la vague 2. Tableau complet contre les seuils | Tableau de bord | 0 € |
+| J21 | Lecture à froid. Si un seuil d'arrêt grand public est atteint et aucune commune n'est intéressée : aller à J28 | Décision d'étape | 0 € |
 
 ### Semaine 4 : préparer la décision
 
 | Jour | Actions | Livrable | Dépense |
 |---|---|---|---|
-| J22, lundi | Rendez-vous avec un expert-comptable : forme sociale, droits au chômage, calendrier. Prise de contact avec la plateforme locale de prêts d'honneur | Notes, calendrier de création | 0 € |
-| J23, mardi | Demander deux devis à des développeurs Android indépendants, sur la base de `prototype/mvp_logiciel/SPECIFICATION.md` | Deux demandes envoyées | 0 € |
-| J24, mercredi | Demander deux devis de relecture des fiches (formateur de secourisme, médecin). Contacter une association agréée de sécurité civile | Demandes envoyées | 0 € |
-| J25, jeudi | Rendez-vous avec l'avocat : statut de distributeur avec préinstallation, mentions santé, conditions de vente et précommandes | Avis écrit | 1 500 € |
-| J26, vendredi | Cinq appels de prospection B2B : une entreprise, une association, trois mairies de moins de 5 000 habitants | Notes, intérêt mesuré | 0 € |
-| J27, samedi | Mettre à jour `modele_financier.xlsx` avec les données réelles : prix d'achat, coût par inscrit, prix acceptés, mix souhaité | Modèle actualisé | 0 € |
-| J28, dimanche | Rédiger la note de décision d'une page : résultats contre seuils, risques confirmés ou levés | Note de décision | 0 € |
-| J29, lundi | Séance de décision. Trois issues possibles : go, no-go, test de la variante suivante (boîtier familial) | Décision écrite dans `JOURNAL.md` | 0 € |
-| J30, mardi | En cas de go : lancer la création de la société, déposer la marque, ouvrir les précommandes au plus tard au jour 45. En cas de no-go : écrire honnêtement à la liste, revendre les téléphones, archiver | Suite lancée ou projet clos | 0 à 600 € |
+| J22 | Expert-comptable : forme sociale, chômage, temps partiel. Contact avec la plateforme locale de prêts d'honneur | Notes | 0 € |
+| J23 | Envoyer `prototype/mvp_logiciel/SPECIFICATION.md` à trois développeurs iOS indépendants | Trois demandes de devis | 0 € |
+| J24 | Demander deux devis de relecture des fiches et un devis de graphiste (identité visuelle) | Demandes envoyées | 0 € |
+| J25 | Si une commune est intéressée : lui proposer un essai à prix réduit sur 6 mois, par écrit | Proposition | 0 € |
+| J26 | Mettre à jour `modele_financier.xlsx` : coût par inscrit, prix accepté, part famille, intérêt des communes | Modèle actualisé | 0 € |
+| J27 | Choisir ton organisation à partir du mois 4 : temps plein avec chômage, ou temps partiel avec un emploi | Décision écrite | 0 € |
+| J28 | Note de décision d'une page | Note | 0 € |
+| J29 | Séance de décision : go grand public, pivot collectivités, ou no-go | Décision dans `JOURNAL.md` | 0 € |
+| J30 | En cas de go : société, marque, choix du développeur. En cas de no-go : écrire à la liste, revendre l'iPhone, archiver | Suite lancée ou projet clos | 0 à 2 100 € |
 
-## Guide d'entretien (30 minutes)
+## Guide d'entretien (30 minutes, particuliers sur iPhone)
 
-1. Racontez-moi la dernière fois que vous vous êtes retrouvé sans réseau ou sans courant. Qu'est-ce qui vous a manqué ?
+1. Racontez-moi la dernière fois que vous avez été sans réseau ou sans courant. Qu'est-ce qui vous a manqué ?
 2. Avez-vous chez vous de quoi tenir trois jours ? Qu'avez-vous acheté, quand, pour combien ?
-3. Qu'y a-t-il sur votre téléphone qui fonctionne sans réseau ?
-4. Avez-vous déjà installé une encyclopédie ou des cartes hors ligne ? Sinon, pourquoi ?
-5. (Démonstration de deux minutes du "MVP zéro".) Qu'en pensez-vous ? Qu'est-ce qui vous étonne, qu'est-ce qui vous manque ?
-6. A qui cela servirait-il chez vous ?
-7. Feriez-vous confiance à une réponse donnée par une IA sans connexion ? Dans quels cas non ?
-8. Combien cela vaut-il, selon vous ? (Laisser répondre avant d'annoncer un prix.)
-9. A 89 € sur une carte prête à l'emploi : vous achetez, vous hésitez, vous passez ? Pourquoi ?
-10. Préférez-vous l'ajouter à votre téléphone, ou avoir un téléphone dédié rangé avec votre matériel ?
+3. Qu'y a-t-il sur votre iPhone qui fonctionne sans réseau ?
+4. Avez-vous déjà payé une application ? Laquelle, combien, pourquoi ?
+5. (Démonstration de MECUM "zéro", puis de HAVEN, deux minutes chacune, dans un ordre qui alterne d'un entretien à l'autre.) Laquelle garderiez-vous ? Pourquoi ?
+6. Feriez-vous confiance à une réponse donnée par une IA sans connexion ? Dans quels cas non ?
+7. Que pensez-vous des scénarios de guerre et de la veille des conflits proposés par HAVEN ?
+8. Qu'est-ce qui devrait être gratuit, selon vous ? Qu'est-ce qui mériterait de payer ?
+9. A 24,99 € en achat unique pour la version complète : vous achetez, vous hésitez, vous passez ?
+10. Et la version famille à 49,99 € ?
 11. Qu'est-ce qui vous ferait dire que c'est une arnaque ?
-12. Où chercheriez-vous ce genre de produit ? A qui demanderiez-vous conseil ?
+12. Où entendriez-vous parler de ce genre d'application ?
 
-Règles : ne pas vendre, ne pas expliquer, noter les mots exacts. Une promesse d'achat n'est pas un achat : seules comptent les réponses sur les comportements passés (questions 2, 3, 4) et l'inscription réelle à la liste d'attente.
+Règles : ne pas vendre, noter les mots exacts. Seuls comptent vraiment les comportements passés (questions 2 à 4) et l'inscription réelle.
 
-## Après le jour 30, en cas de go
+## Guide d'appel en mairie (15 minutes)
+
+1. Votre commune a-t-elle un plan communal de sauvegarde et un document d'information des habitants sur les risques ? Quand ont-ils été mis à jour ?
+2. Comment vos habitants en connaissent-ils le contenu aujourd'hui ?
+3. Que se passerait-il pour eux pendant une coupure de réseau et d'électricité de 24 heures ?
+4. Utilisez-vous une application communale (IntraMuros, Illiwap ou autre) ? Pour quoi ?
+5. (Présentation du module : le plan de la commune disponible hors ligne dans une application gratuite pour les habitants.) Est-ce utile ? Qui déciderait ? Sur quel budget ?
+6. A 600 à 1 200 € par an, accepteriez-vous un essai de six mois ?
+
+## Après le jour 30, en cas de go grand public
 
 | Période | Jalon | Seuil |
 |---|---|---|
-| Jours 31 à 45 | Société créée, conditions de vente, ouverture des précommandes du pack | |
-| Jours 45 à 60 | Précommandes | 40 payées pour acheter le stock de cartes, 15 téléphones pour acheter le premier lot |
-| Jours 60 à 75 | Application v1, fiches relues, premières livraisons | 90 % d'installations réussies |
-| Jours 75 à 120 | Avis clients, deuxième série de contenus, cinq créateurs actifs | 25 commandes organiques par mois |
+| Jours 31 à 45 | Société créée, compte développeur Apple, développeur choisi, graphiste engagé | |
+| Jours 45 à 105 | Développement de la v1, 30 fiches relues, cartes par département | Version de test fonctionnelle au jour 90 |
+| Jours 90 à 105 | Test fermé (TestFlight) avec 50 personnes de la liste | 9 sur 10 terminent la prise en main sans aide |
+| Mois 5 | Sortie sur l'App Store | |
+| Mois 5 à 8 | Contenus chaque semaine, relances de la liste, presse régionale | 3 % de passage au payant, note de 4,5 |
