@@ -175,3 +175,13 @@ Recherche INPI "AUKAZOU" : 0 marque, 1 entreprise (non identifiée). Mais AUKAZO
 | O'kazou (n° 4299916, semi-figurative, renouvelée) | Une personne physique (département 67) | 16/09/2016 | 19, 35, 36, 37, 41, 42, 45 | Dont éducation, formation, logiciels, SaaS, services de sécurité |
 
 **Conclusion : rouge aussi.** Le territoire sonore "o-ka-ou / o-ka-zou" est saturé : quatre marques en vigueur (OKAOU 2022, OKAOU C LA 2017, OKAZOU 2026, O'kazou 2016) dans les classes logiciel, formation ou sécurité. Le plan B doit abandonner cette sonorité et probablement l'expression "au cas où". Prochain contrôle : vérifier MECUM dans la base des marques (jamais fait) et préparer une liste de noms à sonorité différente.
+
+## 2026-11-18 (fin) : nom choisi, PARÉ (sous réserve)
+
+**Décision de Benjamin.** MECUM abandonné (il ne l'aime pas), OKAOU et AUKAZOU écartés (sonorité saturée). Nom retenu : **PARÉ** (« être paré », prêt). Un export de la base des marques lui a été fourni.
+
+**Lecture de l'export.** 500 lignes (plafond d'export), uniquement du 11/08/2025 au 27/10/2026. Les marques plus anciennes ne sont pas dans le fichier : **vérification incomplète**. Dans la fenêtre, 29 marques contiennent le mot PARE ou PARÉ isolé. La grande majorité sont des « pare-brise » (classes 12 et 37), hors sujet. A noter : PARÉS (marque de l'Union européenne n° 019311682, 2026, articles de sport, classes 10, 18, 21, 25, 28, 35, 41) et « MOUSSE OU CAPITAINE ? PARÉ À VIRER ! » (n° 5298375, classes 9 et 28, demande publiée). Aucune marque PARÉ seule en classes 9, 42 ou 45 dans la fenêtre.
+
+**Réserves.** Recherche filtrée à refaire (classes de Nice, tranches de dates), contrôle de l'Union européenne et de l'OMPI, onglet Entreprises, domaines. Risques propres au nom : bruit de recherche (« pare » donne pare-brise et pare-feu), évocation d'Ambroise Paré (chirurgien, hôpitaux et cliniques), accent absent des noms de domaine.
+
+**Règle.** Dossier non renommé tant que la recherche filtrée n'est pas propre. Si elle l'est, renommage global en une opération. Aucun engagement (graphiste, développeur, compte Apple, publicité) avant l'avis écrit du conseil.
