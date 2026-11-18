@@ -237,3 +237,13 @@ Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à
 **Décision de Benjamin.** Direction visuelle A (signalétique de sécurité) pour la maquette. Photos libres de droits ou achetées à fournir plus tard par Benjamin pour les loisirs et le premium.
 
 **Travail fait.** Maquette HTML et PDF en version 0.2 : 30 pictogrammes dessinés à la main, code couleur des panneaux de sécurité (rouge secours, jaune danger, vert sécurité, bleu eau), scénarios de crise en tuiles. Le PDF 0.1 est retiré du dépôt (il reste dans l'historique).
+
+## 2026-11-18 : demande d'un module de communication hors réseau
+
+**Demande de Benjamin.** Messagerie de proximité sans réseau, sur le principe du talkie-walkie : maillage Bluetooth et Wi-Fi entre téléphones, longue portée LoRa avec des boîtiers Meshtastic, relais et alertes officielles des communes. Plan à valider avant tout code.
+
+**Travail fait.** `11_module_communication_hors_reseau.md` : analyse du dépôt (aucun code d'application), 8 incohérences avec l'existant, 5 limites techniques, architecture, 6 étapes chiffrées, 7 décisions à prendre.
+
+**Points saillants.** (1) Un iPhone en arrière-plan relaie mal : le maillage entre téléphones fonctionne surtout application ouverte, le boîtier LoRa porte l'arrière-plan. (2) Multipeer et Wi-Fi Direct ne se parlent pas : Wi-Fi Aware (iOS 26 et Android) proposé à la place. (3) Meshtastic est sous GPL-3.0 : avis de l'avocat avant l'étape 3. (4) Charge totale estimée de 75 à 125 jours, hors du budget actuel de la v1. (5) Le réseau de relais LoRa peut devenir une offre payante pour les communes.
+
+**En attente.** Validation de Benjamin (décisions R1 à R7). Aucun code écrit.

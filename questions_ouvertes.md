@@ -27,6 +27,20 @@ Mis à jour le 18 novembre 2026.
 | H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour SIJAMAIS |
 | I | Combien de jours par semaine garantis-tu à SIJAMAIS une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
 
+## Module de communication hors réseau (18 novembre 2026)
+
+Détail et recommandations dans `11_module_communication_hors_reseau.md`, section 11.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| R1 | Module dans la v1 ou dans une v1.1 ? | v1.1, étape 0 en parallèle |
+| R2 | Wi-Fi Aware à la place de Multipeer et de Wi-Fi Direct ? | Oui |
+| R3 | Relais iPhone fiable surtout application ouverte, LoRa pour l'arrière-plan ? | Oui, limite imposée par Apple |
+| R4 | Abandon du canal internet pour l'instant ? | Oui |
+| R5 | Meshtastic sous GPL-3.0 : autorisation, logiciel libre ou renvoi vers l'application officielle ? | Avocat et demande écrite à Meshtastic |
+| R6 | Lancer l'étape 0 (cœur testable sans Mac) ? | Oui |
+| R7 | Offre payante « réseau de relais » pour les communes ? | Oui, à chiffrer |
+
 ## Collectivités et recommandations officielles (18 novembre 2026)
 
 | N° | Question | Pourquoi elle compte |
