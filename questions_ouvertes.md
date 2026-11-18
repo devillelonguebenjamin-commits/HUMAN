@@ -27,6 +27,14 @@ Mis à jour le 13 novembre 2026.
 | H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour MECUM |
 | I | Combien de jours par semaine garantis-tu à MECUM une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
 
+## Nom de marque : OKAOU (18 novembre 2026)
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| J | Veux-tu tenter d'acquérir ou de licencier la marque OKAOU n° 4881052 par l'intermédiaire d'un conseil en propriété industrielle ? | Seule voie réaliste pour garder le nom. Deux titulaires sont concernés : voir `JOURNAL.md` |
+| K | Quel budget maximal pour un rachat ou une licence ? | Une marque se cède de quelques centaines à plusieurs milliers d'euros [EST faible] |
+| L | Quel plan B retiens-tu si aucun accord avant le jour 22 ? | MECUM par défaut, ou un nom qui change la sonorité |
+
 ## Questions initiales (12 novembre 2026)
 
 Les questions 1 à 4 ci-dessous sont tranchées. Les suivantes restent ouvertes. Ce que toi seul peux trancher, classé par effet sur la décision. Pour chaque question, j'indique l'hypothèse que j'ai retenue en attendant ta réponse, et ce qui change si tu réponds autrement.

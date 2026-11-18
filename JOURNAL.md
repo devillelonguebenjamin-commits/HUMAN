@@ -149,3 +149,18 @@ Benjamin a fourni huit captures de HAVEN. Voir `08_analyse_haven.md`. Trois corr
 ## 2026-11-13 (suite)
 
 Tablette : iPad standard de 2021, sans Apple Intelligence. L'iPhone de test reste au budget, sauf iPhone récent déjà possédé. Droits France Travail pas encore connus : n'empêche pas de lancer le test, à obtenir avant le jour 22.
+
+## 2026-11-18 : vérification du nom OKAOU
+
+Benjamin souhaite garder OKAOU (jeu de mots sur "au cas où"). Il a exporté deux recherches du portail de l'INPI (entreprises, puis marques).
+
+**Résultat : rouge.** Deux marques verbales françaises en vigueur couvrent déjà une application :
+
+| Marque | Titulaire | Classes | Pourquoi c'est bloquant |
+|---|---|---|---|
+| OKAOU (n° 4881052, 2022) | Une personne physique (département 41) | 9, 35, 38, 42, 45 | Signe identique, "logiciels" en classe 9, développement et SaaS en classe 42, services de sécurité en classe 45 |
+| OKAOU C LA (n° 4333844, 2017) | Société de Chassieu (69) | 41, 42, 45 | Formation, logiciels, services de sécurité pour les biens et les personnes. Dix ans le 31/01/2027 : renouvellement à surveiller |
+
+Les autres marques (produits chimiques, alimentaire, construction, boissons, anciennes marques expirées de La Redoute et de Gan) sont dans d'autres secteurs.
+
+**Conséquence.** OKAOU ne peut pas être utilisé publiquement pour l'application sans accord écrit, et il faudrait en principe deux accords. Toute variante qui se prononce "okaou" est exposée au même risque (similitude phonétique). Règle posée : aucun engagement (graphiste, développeur, compte Apple, publicité, deck) sous le nom OKAOU sans accord écrit. Le test de 30 jours et le deck pour les mairies restent sous MECUM. Date butoir : jour 22 du plan. Sans accord à cette date, plan B avec un nom qui change la sonorité.
