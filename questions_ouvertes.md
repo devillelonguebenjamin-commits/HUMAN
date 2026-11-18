@@ -1,6 +1,6 @@
 # Questions ouvertes
 
-Mis à jour le 13 novembre 2026.
+Mis à jour le 18 novembre 2026.
 
 ## Réponses reçues
 
@@ -26,6 +26,14 @@ Mis à jour le 13 novembre 2026.
 | G | Maintien des allocations ou ARCE ? | Exclusifs. Je recommande le maintien. Décision à prendre avec France Travail et l'expert-comptable avant la création |
 | H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour SIJAMAIS |
 | I | Combien de jours par semaine garantis-tu à SIJAMAIS une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
+
+## Collectivités et recommandations officielles (18 novembre 2026)
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| O | Acceptes-tu la règle : tout contenu issu d'une source publique reste gratuit, y compris dans les modes voyage, mer et montagne ? | Condition pour qu'une mairie ou une préfecture recommande l'application. Le premium porte alors sur nos outils et nos contenus propres |
+| P | Te rappelles-tu où tu as vu les « kits envoyés par l'État » (courrier, télévision, mairie) ? | Je n'ai trouvé ni envoi de kits ni envoi postal du guide. Si ta mairie a distribué quelque chose, c'est une source locale à intégrer |
+| Q | Connais-tu une association agréée de sécurité civile (Croix-Rouge, Protection civile, sapeurs-pompiers) prête à relire les fiches ? | Caution qui convainc les collectivités |
 
 ## Nom de marque (18 novembre 2026) : résolu, SIJAMAIS retenu
 
