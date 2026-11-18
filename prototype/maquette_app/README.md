@@ -30,3 +30,8 @@ Le panneau de gauche (sur ordinateur) permet de changer de thème, de simuler un
 ## Navigation
 
 Les écrans sont reliés par de simples liens internes (`#e-accueil`, `#e-urgence`...). La maquette reste navigable même si la visionneuse n'exécute pas JavaScript. Le script ne gère que les compléments : messages de démonstration, cases à cocher, thème, simulation d'abonné, barres de téléchargement.
+
+## Carte et PDF (18 novembre 2026)
+
+- La carte de l'onglet Carte montre la presqu'île guérandaise et Saint-Nazaire. Les contours des communes viennent de l'IGN (Admin Express 2018, Licence Ouverte), via le projet france-geojson. Les positions des hôpitaux, centres de secours, défibrillateurs et points de rassemblement sont **indicatives** et placées à la main : elles ne doivent pas servir en situation réelle.
+- `SIJAMAIS_maquette_0.1.pdf` : les 20 écrans, une couverture et la carte agrandie en annexe (22 pages A4). Les écrans longs sont présentés en deux colonnes.
