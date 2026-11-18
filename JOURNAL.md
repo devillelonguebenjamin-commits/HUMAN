@@ -223,3 +223,11 @@ Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à
 **Travail fait.** `10_veille_officielle.md` : 15 sources officielles civiles, 6 jeux de données publiques, règles de réutilisation (Licence Ouverte, droits des tiers, interdiction du logo de l'État), organisation de la veille.
 
 **Conclusions.** (1) Tout contenu issu d'une source publique reste gratuit, condition d'une recommandation par une collectivité. (2) Pas d'équivalent public français du manuel de survie de l'armée américaine : le TTA 150 est un manuel militaire de combat ; en France, la protection des civils relève de la sécurité civile et du SGDSN. (3) Aucune trace d'un envoi de kits ou du guide aux foyers par l'État : le guide a été diffusé en ligne. (4) Cible de visibilité : Journée nationale de la résilience du 13 octobre 2027.
+
+## 2026-11-18 : validation de toutes les propositions et maquette 0.1
+
+**Décision de Benjamin.** « D'accord avec absolument tout. » Sont donc validés : les 37 propositions de la maquette (iPhone, 5 onglets, sombre par défaut, 6 modes sans chasse, scénarios de crise tous gratuits, pas de Bible ni de catégorie défense, pas d'équivalent de HAVEN Watch, abonnement 3,99 € par mois ou 29,99 € par an, famille 5,99 € ou 44,99 €), la règle de gratuité des contenus publics et la stratégie de veille officielle.
+
+**Travail fait.** `prototype/maquette_app/index.html` : maquette cliquable de 17 écrans, thèmes sombre et clair, simulation gratuit et premium, vérifiée dans un navigateur sans erreur.
+
+**Prochaine étape.** Mettre à jour le modèle financier pour l'abonnement, puis aligner les textes des fiches sur les sources officielles.

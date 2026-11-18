@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIJAMAIS maquette</title>
+<meta name="description" content="Maquette cliquable de l'application iPhone SIJAMAIS, version 0.1. Données fictives.">
+<style>
+:root{
+  --foret:#1F3B2D; --balise:#E0662A; --lichen:#F3F4EF; --nuit:#17241C;
+  --bg:#17241C; --surface:#1F3B2D; --surface2:#264636; --ligne:#335443;
+  --texte:#F3F4EF; --texte2:#B9C4BC; --accent:#E0662A; --accent-texte:#17241C;
+  --ok:#7FB08F; --alerte:#E9B949; --danger:#E0662A;
+  --page:#0f1813;
+}
+:root[data-theme="light"]{
+  --bg:#F3F4EF; --surface:#FFFFFF; --surface2:#E7EAE2; --ligne:#D5DBD2;
+  --texte:#17241C; --texte2:#4E5E54; --accent:#C9541C; --accent-texte:#FFFFFF;
+  --ok:#2F6B45; --alerte:#9A6A00; --danger:#C9541C;
+  --page:#dfe3da;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--page);color:var(--texte);font:15px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+.scene{min-height:100%;display:flex;gap:32px;align-items:center;justify-content:center;padding:24px 16px}
+.notes{max-width:300px;color:var(--texte2);font-size:13px}
+.notes h1{font-size:18px;color:var(--texte);margin-bottom:8px}
+.notes p{margin-bottom:10px}
+.notes .ctrl{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.notes .ctrl button{border:1px solid var(--ligne);border-radius:10px;padding:8px 12px;color:var(--texte);background:var(--surface)}
+.phone{width:390px;height:844px;border-radius:52px;background:var(--bg);position:relative;overflow:hidden;box-shadow:0 0 0 10px #0b110d,0 30px 80px rgba(0,0,0,.45);display:flex;flex-direction:column}
+.statusbar{height:50px;flex:none;display:flex;justify-content:space-between;align-items:flex-end;padding:0 30px 6px;font-weight:600;font-size:15px}
+.statusbar .reseau{font-size:12px;color:var(--alerte);font-weight:600}
+.ecran{flex:1;overflow-y:auto;display:none;padding:6px 18px 24px}
+.ecran.actif{display:block}
+.ecran::-webkit-scrollbar{display:none}
+.tabbar{flex:none;height:84px;display:flex;justify-content:space-around;padding-top:8px;border-top:1px solid var(--ligne);background:var(--bg)}
+.tabbar button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--texte2);width:68px}
+.tabbar button.on{color:var(--accent)}
+.tabbar svg{width:25px;height:25px}
+.tabbar.cache{display:none}
+h2{font-size:30px;font-weight:700;letter-spacing:-.4px;margin:6px 0 14px}
+h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--texte2);margin:20px 0 8px}
+.carte{background:var(--surface);border-radius:16px;padding:14px;margin-bottom:10px}
+.liste{background:var(--surface);border-radius:16px;overflow:hidden;margin-bottom:10px}
+.ligne{display:flex;align-items:center;gap:12px;padding:13px 14px;border-bottom:1px solid var(--ligne);width:100%}
+.ligne:last-child{border-bottom:0}
+.ligne .t{flex:1}
+.ligne .s{font-size:12.5px;color:var(--texte2)}
+.chev{color:var(--texte2)}
+.ico{width:34px;height:34px;border-radius:9px;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex:none}
+.ico svg{width:19px;height:19px}
+.pill{font-size:11px;font-weight:600;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.gratuit{background:rgba(127,176,143,.18);color:var(--ok)}
+.premium{background:rgba(224,102,42,.16);color:var(--accent)}
+.bientot{background:var(--surface2);color:var(--texte2)}
+.source{font-size:11.5px;color:var(--texte2);margin-top:8px}
+.btn{display:block;width:100%;text-align:center;border-radius:14px;padding:15px;font-weight:600;font-size:16px}
+.btn-p{background:var(--accent);color:var(--accent-texte)}
+.btn-s{background:var(--surface2)}
+.grille{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.tuile{background:var(--surface);border-radius:16px;padding:14px;min-height:92px;display:flex;flex-direction:column;justify-content:space-between}
+.tuile b{font-size:15px}
+.tuile span{font-size:12px;color:var(--texte2)}
+.urgence-btn{background:var(--danger);color:#fff;border-radius:18px;padding:16px;display:flex;align-items:center;gap:14px;width:100%;margin-bottom:12px}
+.urgence-btn b{font-size:18px;display:block}
+.urgence-btn span{font-size:13px;opacity:.9}
+.jauge{height:8px;background:var(--surface2);border-radius:8px;overflow:hidden;margin:8px 0 4px}
+.jauge i{display:block;height:100%;background:var(--accent);border-radius:8px}
+.check{width:24px;height:24px;border-radius:7px;border:2px solid var(--ligne);flex:none;display:flex;align-items:center;justify-content:center}
+.check.ok{background:var(--ok);border-color:var(--ok);color:var(--bg)}
+.verrou{opacity:.55}
+.retour{color:var(--accent);font-size:16px;padding:4px 0;display:inline-flex;align-items:center;gap:4px}
+.appels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.appels button{background:var(--surface);border-radius:14px;padding:12px 4px;text-align:center}
+.appels b{display:block;font-size:22px;color:var(--accent)}
+.appels span{font-size:10.5px;color:var(--texte2)}
+.etape{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--ligne)}
+.etape:last-child{border:0}
+.num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-texte);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none}
+.choix{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.choix button{border:1.5px solid var(--ligne);border-radius:22px;padding:9px 14px;background:var(--surface)}
+.choix button.on{border-color:var(--accent);color:var(--accent)}
+.progress{margin:10px 0}
+.bulle{max-width:85%;padding:10px 13px;border-radius:16px;margin-bottom:8px;font-size:14.5px}
+.bulle.moi{background:var(--accent);color:var(--accent-texte);margin-left:auto;border-bottom-right-radius:4px}
+.bulle.ia{background:var(--surface);border-bottom-left-radius:4px}
+.saisie{display:flex;gap:8px;margin-top:10px}
+.saisie div{flex:1;background:var(--surface);border-radius:22px;padding:11px 15px;color:var(--texte2)}
+.map{height:430px;border-radius:16px;overflow:hidden;position:relative;background:var(--surface)}
+.map svg{width:100%;height:100%}
+.calques{position:absolute;left:10px;right:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px}
+.calques span{background:var(--bg);border-radius:10px;padding:6px 9px;font-size:11.5px;border:1px solid var(--ligne)}
+.vigil{display:flex;align-items:center;gap:10px}
+.pastille{width:12px;height:12px;border-radius:50%;background:var(--alerte);flex:none}
+.regle{border:1.5px solid var(--ok);color:var(--ok);border-radius:14px;padding:12px;font-weight:600;text-align:center;margin-bottom:14px}
+.offre{border:1.5px solid var(--ligne);border-radius:16px;padding:14px;margin-bottom:10px}
+.offre.on{border-color:var(--accent)}
+.offre .prix{font-size:20px;font-weight:700}
+.mini{font-size:12.5px;color:var(--texte2)}
+.toast{position:absolute;left:18px;right:18px;bottom:96px;background:var(--texte);color:var(--bg);border-radius:14px;padding:12px 14px;font-size:14px;display:none;z-index:5}
+.toast.on{display:block}
+.logo-row{display:flex;align-items:center;gap:10px;margin:4px 0 10px}
+.logo-row b{font-size:20px;letter-spacing:.3px}
+.logo-row b em{font-style:normal;color:var(--accent)}
+.fictif{font-size:11px;color:var(--alerte);border:1px dashed var(--alerte);border-radius:8px;padding:6px 9px;margin-bottom:10px}
+@media (max-width:860px){
+  .notes{display:none}
+  .scene{padding:0}
+  .phone{width:100%;height:100vh;height:100dvh;border-radius:0;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="scene">
+  <aside class="notes">
+    <h1>SIJAMAIS, maquette 0.1</h1>
+    <p>Maquette cliquable, sans vraies données. Elle sert à valider l'organisation des écrans et la frontière entre gratuit et premium avant le développement.</p>
+    <p>Règle de l'application : tout ce qui protège est gratuit. Les contenus tirés des sources publiques restent gratuits dans tous les modes.</p>
+    <p>L'espace « Ma commune » montre La Baule-Escoublac comme exemple fictif : aucune donnée n'a été validée par la commune.</p>
+    <div class="ctrl">
+      <button onclick="basculerTheme()">Changer de thème (sombre ou clair)</button>
+      <button onclick="basculerPremium()" id="bt-prem">Simuler un abonné premium</button>
+      <button onclick="relancer()">Revoir la prise en main</button>
+    </div>
+  </aside>
+
+  <div class="phone" id="phone">
+    <div class="statusbar"><span>9:41</span><span class="reseau" id="reseau">Hors réseau</span></div>
+
+    <!-- ================= PRISE EN MAIN ================= -->
+    <section class="ecran actif" id="e-onb1">
+      <div style="text-align:center;margin-top:60px">
+        <svg width="96" height="96" viewBox="0 0 100 100" aria-label="Logo SIJAMAIS"><rect width="100" height="100" rx="24" fill="#1F3B2D"/><path d="M50 18c-14 0-24 10-24 24 0 15 24 40 24 40s24-25 24-40c0-14-10-24-24-24z" fill="#F3F4EF"/><path d="M50 30 L62 52 H38 Z" fill="#1F3B2D"/><path d="M50 40 L55 52 H45 Z" fill="#E0662A"/></svg>
+        <h2 style="font-size:34px;margin-top:18px"><span style="color:var(--accent)">SI</span>JAMAIS</h2>
+        <p style="color:var(--texte2);font-size:17px">Prêt, même hors réseau.</p>
+      </div>
+      <div style="position:absolute;left:18px;right:18px;bottom:40px">
+        <p class="mini" style="text-align:center;margin-bottom:14px">Trois questions, une minute. Aucun compte, aucune donnée envoyée.</p>
+        <button class="btn btn-p" onclick="va('e-onb2')">Commencer</button>
+      </div>
+    </section>
+
+    <section class="ecran" id="e-onb2">
+      <p class="mini" style="margin-top:10px">Question 1 sur 3</p>
+      <h2>Pour quoi voulez-vous être prêt ?</h2>
+      <p class="mini">Plusieurs choix possibles. Vous pourrez changer plus tard.</p>
+      <div class="choix" data-multi>
+        <button class="on">La maison et les crises</button><button>Randonnée et montagne</button><button>Mer et voile</button><button>Voyage à l'étranger</button><button>Camping et van</button><button>Coupure prolongée</button>
+      </div>
+      <h3>Où habitez-vous ?</h3>
+      <div class="liste"><div class="ligne"><span class="t">Loire-Atlantique (44)<div class="s">La Baule-Escoublac</div></span><span class="chev">›</span></div></div>
+      <p class="mini">Sert à télécharger la carte et les risques de votre territoire. Reste sur votre téléphone.</p>
+      <div style="margin-top:24px"><button class="btn btn-p" onclick="va('e-onb3')">Continuer</button></div>
+    </section>
+
+    <section class="ecran" id="e-onb3">
+      <p class="mini" style="margin-top:10px">Question 2 sur 3</p>
+      <h2>Votre foyer</h2>
+      <div class="liste">
+        <div class="ligne"><span class="t">Adultes</span><b>2</b></div>
+        <div class="ligne"><span class="t">Enfants</span><b>1</b></div>
+        <div class="ligne"><span class="t">Personnes âgées ou fragiles</span><b>0</b></div>
+        <div class="ligne"><span class="t">Animaux</span><b>1</b></div>
+      </div>
+      <p class="mini">Ajuste les quantités du kit de 72 heures recommandé par l'État.</p>
+      <p class="mini" style="margin-top:20px">Question 3 sur 3</p>
+      <h3 style="margin-top:6px">Assistant hors ligne</h3>
+      <div class="carte">
+        <b>Activer l'assistant</b>
+        <p class="mini" style="margin:6px 0 10px">Il fonctionne sur votre iPhone, sans internet. Disponible sur iPhone 15 Pro et modèles plus récents.</p>
+        <div class="choix" style="margin:0"><button class="on">Oui</button><button>Plus tard</button></div>
+      </div>
+      <div style="margin-top:18px"><button class="btn btn-p" onclick="va('e-onb4');telecharger()">Préparer mon téléphone</button></div>
+    </section>
+
+    <section class="ecran" id="e-onb4">
+      <h2 style="margin-top:30px">Préparation en cours</h2>
+      <p class="mini">Gardez l'application ouverte, en Wi-Fi si possible.</p>
+      <div class="carte progress"><b>Carte de la Loire-Atlantique</b><div class="jauge"><i id="p1" style="width:0"></i></div><span class="mini">180 Mo</span></div>
+      <div class="carte progress"><b>Fiches de sécurité et guides officiels</b><div class="jauge"><i id="p2" style="width:0"></i></div><span class="mini">24 Mo</span></div>
+      <div class="carte progress"><b>Risques de votre commune</b><div class="jauge"><i id="p3" style="width:0"></i></div><span class="mini">Source : Géorisques</span></div>
+      <div style="margin-top:22px"><button class="btn btn-p" id="bt-fin" style="opacity:.4" onclick="finOnb()">C'est prêt</button></div>
+    </section>
+
+    <!-- ================= ACCUEIL ================= -->
+    <section class="ecran" id="e-accueil">
+      <div class="logo-row">
+        <svg width="30" height="30" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#1F3B2D"/><path d="M50 18c-14 0-24 10-24 24 0 15 24 40 24 40s24-25 24-40c0-14-10-24-24-24z" fill="#F3F4EF"/><path d="M50 30 L62 52 H38 Z" fill="#1F3B2D"/><path d="M50 40 L55 52 H45 Z" fill="#E0662A"/></svg>
+        <b><em>SI</em>JAMAIS</b>
+        <span style="flex:1"></span>
+        <button onclick="va('e-reglages')" aria-label="Réglages"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+      </div>
+      <button class="urgence-btn" onclick="onglet('urgence')">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
+        <div><b>Urgence</b><span>Numéros, 6 réflexes, que faire maintenant</span></div>
+      </button>
+
+      <div class="carte vigil" onclick="toast('Vigilance officielle : données Météo-France, conservées hors ligne depuis la dernière connexion.')">
+        <span class="pastille"></span>
+        <div style="flex:1"><b>Vigilance jaune vent violent</b><div class="mini">Loire-Atlantique · mise à jour hier 18 h, hors ligne depuis</div></div>
+        <span class="pill gratuit">Officiel</span>
+      </div>
+
+      <div class="carte">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><b>Préparation du foyer</b><span style="font-size:22px;font-weight:700">46<span class="mini"> / 100</span></span></div>
+        <div class="jauge"><i style="width:46%"></i></div>
+        <div class="mini">Niveau Prévoyant · prochain niveau : Paré à 70</div>
+      </div>
+
+      <h3>Cette semaine</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Stocker 6 litres d'eau de plus<div class="s">Kit 72 heures</div></span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Fixer un point de rendez-vous familial<div class="s">Plan du foyer</div></span></button>
+        <button class="ligne" onclick="va('e-exercice')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span class="t">Exercice : couper l'électricité<div class="s">5 minutes, guidé</div></span><span class="chev">›</span></button>
+      </div>
+
+      <h3>Accès rapides</h3>
+      <div class="grille">
+        <button class="tuile" onclick="va('e-famille')"><b>Famille</b><span>Plan, rendez-vous, je suis en sécurité</span></button>
+        <button class="tuile" onclick="va('e-assistant')"><b>Assistant</b><span>Hors ligne, sur l'iPhone</span></button>
+        <button class="tuile" onclick="va('e-commune')"><b>Ma commune</b><span>La Baule-Escoublac</span></button>
+        <button class="tuile" onclick="toast('Lampe torche et signal lumineux SOS. Gratuit.')"><b>Lampe et SOS</b><span>Signal lumineux</span></button>
+      </div>
+
+      <div class="carte" style="display:flex;align-items:center;gap:12px">
+        <div style="flex:1"><b>Batterie 64 %</b><div class="mini">Environ 9 h d'usage en mode économie</div></div>
+        <button class="pill bientot" onclick="toast('Mode économie : écran sombre, localisation coupée, synchronisation suspendue.')">Économiser</button>
+      </div>
+
+      <button class="carte" style="width:100%;display:flex;align-items:center;gap:12px" onclick="va('e-premium')" id="bandeau-prem">
+        <div style="flex:1"><b>Partir hors réseau ?</b><div class="mini">Cartes de France, randonnée, mer, voyage. Premium.</div></div><span class="chev">›</span>
+      </button>
+    </section>
+
+    <!-- ================= URGENCE ================= -->
+    <section class="ecran" id="e-urgence">
+      <h2>Urgence</h2>
+      <div class="appels">
+        <button onclick="toast('Appel du 112 (démonstration)')"><b>112</b><span>Urgences</span></button>
+        <button onclick="toast('Appel du 15 (démonstration)')"><b>15</b><span>Samu</span></button>
+        <button onclick="toast('Appel du 18 (démonstration)')"><b>18</b><span>Pompiers</span></button>
+        <button onclick="toast('Appel du 17 (démonstration)')"><b>17</b><span>Police</span></button>
+      </div>
+      <p class="mini" style="margin:-4px 0 12px">114 par SMS pour les personnes sourdes ou malentendantes.</p>
+
+      <button class="liste" style="width:100%" onclick="va('e-reflexes')"><div class="ligne"><span class="ico" style="background:var(--danger);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M5 11V7l7-4 7 4v4M6 11v9h12v-9"/></svg></span><span class="t"><b>La sirène retentit</b><div class="s">Les 6 réflexes officiels</div></span><span class="chev">›</span></div></button>
+
+      <h3>Que se passe-t-il ?</h3>
+      <div class="liste">
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Coupure d'électricité ou de réseau</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Inondation ou submersion marine</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Tempête</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Canicule ou grand froid</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Feu de forêt</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Séisme</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Accident industriel ou nucléaire</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Conflit ou attaque</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Épidémie</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-scenario')"><span class="t">Évacuation</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+      </div>
+
+      <h3>Premiers secours</h3>
+      <div class="liste">
+        <button class="ligne" onclick="va('e-fiche')"><span class="t">Arrêt cardiaque<div class="s">Alerter, masser, défibriller</div></span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-fiche')"><span class="t">Saignement abondant</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-fiche')"><span class="t">Personne inconsciente qui respire</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-fiche')"><span class="t">Brûlure</span><span class="chev">›</span></button>
+      </div>
+      <p class="source">Fiches établies d'après les recommandations PSC1 et « gestes qui sauvent » du ministère de l'Intérieur, édition décembre 2023.</p>
+    </section>
+
+    <section class="ecran" id="e-reflexes">
+      <button class="retour" onclick="retour()">‹ Urgence</button>
+      <h2>La sirène retentit</h2>
+      <div class="carte">
+        <b>Reconnaître le signal</b>
+        <p class="mini" style="margin-top:4px">Son montant et descendant, trois fois 1 minute 41 secondes, séparées de 5 secondes.</p>
+        <button class="btn btn-s" style="margin-top:10px" onclick="toast('Lecture du signal national d\'alerte (démonstration)')">Écouter le signal</button>
+      </div>
+      <h3>Les 6 réflexes</h3>
+      <div class="carte">
+        <div class="etape"><span class="num">1</span><div><b>Se mettre en sécurité</b><div class="mini">Rejoindre sans délai un bâtiment, sauf consigne d'évacuation.</div></div></div>
+        <div class="etape"><span class="num">2</span><div><b>S'informer</b><div class="mini">Radio, télévision, FR-Alert, comptes officiels de la préfecture.</div></div></div>
+        <div class="etape"><span class="num">3</span><div><b>Ne pas aller chercher ses enfants à l'école</b><div class="mini">L'école les met en sécurité.</div></div></div>
+        <div class="etape"><span class="num">4</span><div><b>Ne pas téléphoner sauf urgence</b><div class="mini">Laisser les lignes aux secours.</div></div></div>
+        <div class="etape"><span class="num">5</span><div><b>Ne pas aller sur les lieux</b><div class="mini">Vous vous exposeriez et gêneriez les secours.</div></div></div>
+        <div class="etape"><span class="num">6</span><div><b>Respecter les consignes des autorités</b><div class="mini">Évacuation, confinement, comprimés d'iode sur ordre du préfet.</div></div></div>
+      </div>
+      <p class="source">Source : préfectures, « 6 réflexes pour bien réagir ». Version vérifiée le 18/11/2026. Fin d'alerte : son continu de 30 secondes.</p>
+    </section>
+
+    <section class="ecran" id="e-scenario">
+      <button class="retour" onclick="retour()">‹ Retour</button>
+      <h2>Coupure d'électricité</h2>
+      <span class="pill gratuit">Gratuit pour toujours</span>
+      <h3>Maintenant</h3>
+      <div class="carte">
+        <div class="etape"><span class="num">1</span><div><b>Vérifiez si la coupure est générale</b><div class="mini">Voisins, éclairage public. Si c'est chez vous seulement : tableau électrique.</div></div></div>
+        <div class="etape"><span class="num">2</span><div><b>Débranchez les appareils sensibles</b><div class="mini">Laissez une lampe allumée pour voir le retour du courant.</div></div></div>
+        <div class="etape"><span class="num">3</span><div><b>Gardez le froid</b><div class="mini">Ne pas ouvrir le congélateur : il tient environ 24 à 48 heures fermé.</div></div></div>
+        <div class="etape"><span class="num">4</span><div><b>Jamais de groupe électrogène ni de barbecue à l'intérieur</b><div class="mini">Risque d'intoxication au monoxyde de carbone.</div></div></div>
+      </div>
+      <h3>Si cela dure</h3>
+      <div class="liste">
+        <button class="ligne" onclick="onglet('preparer')"><span class="t">Votre kit : 2,5 jours d'eau</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="va('e-famille')"><span class="t">Prévenir la famille quand le réseau revient</span><span class="chev">›</span></button>
+        <button class="ligne" onclick="toast('Personnes sous assistance respiratoire : contactez votre prestataire et signalez-vous en mairie.')"><span class="t">Personne dépendante d'un appareil médical</span><span class="chev">›</span></button>
+      </div>
+      <p class="source">D'après le guide « Tous responsables » (SGDSN, 20/11/2025). Relu le 18/11/2026. Texte de démonstration, à valider.</p>
+    </section>
+
+    <section class="ecran" id="e-fiche">
+      <button class="retour" onclick="retour()">‹ Urgence</button>
+      <h2>Arrêt cardiaque</h2>
+      <div class="carte" style="border:1.5px solid var(--danger)"><b>La personne ne répond pas et ne respire pas</b></div>
+      <div class="carte">
+        <div class="etape"><span class="num">1</span><div><b>Alertez</b><div class="mini">Appelez le 15 ou le 112, mettez le haut-parleur.</div></div></div>
+        <div class="etape"><span class="num">2</span><div><b>Massez</b><div class="mini">Au centre de la poitrine, bras tendus, 100 à 120 compressions par minute.</div></div></div>
+        <div class="etape"><span class="num">3</span><div><b>Défibrillez</b><div class="mini">Faites chercher un défibrillateur, suivez ses instructions vocales.</div></div></div>
+      </div>
+      <button class="btn btn-s" onclick="toast('Métronome à 110 battements par minute (démonstration)')">Lancer le rythme de massage</button>
+      <button class="btn btn-s" style="margin-top:8px" onclick="onglet('carte')">Défibrillateur le plus proche</button>
+      <p class="source">Recommandations PSC1, ministère de l'Intérieur, édition décembre 2023. Fiche relue par : à désigner.</p>
+    </section>
+
+    <section class="ecran" id="e-exercice">
+      <button class="retour" onclick="retour()">‹ Accueil</button>
+      <h2>Exercice de la semaine</h2>
+      <p class="mini">Savoir couper l'électricité, l'eau et le gaz de son logement.</p>
+      <div class="liste" style="margin-top:14px">
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Trouver le tableau électrique</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Repérer le disjoncteur général</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Trouver le robinet d'arrivée d'eau</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Repérer la vanne de gaz</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Prendre une photo de chaque emplacement</span></button>
+      </div>
+      <p class="mini">Gratuit. +5 points de préparation.</p>
+    </section>
+
+    <!-- ================= PRÉPARER ================= -->
+    <section class="ecran" id="e-preparer">
+      <h2>Préparer</h2>
+      <div class="carte">
+        <b>Kit de 72 heures</b> <span class="pill gratuit">Recommandé par l'État</span>
+        <div class="jauge"><i style="width:58%"></i></div>
+        <div class="mini">Foyer de 3 personnes et 1 animal · 7 éléments sur 12</div>
+        <div class="grille" style="margin:12px 0 0">
+          <div class="tuile" style="background:var(--surface2);min-height:70px"><b>2,5 jours</b><span>d'eau (22 L sur 27 L)</span></div>
+          <div class="tuile" style="background:var(--surface2);min-height:70px"><b>3,5 jours</b><span>de nourriture</span></div>
+        </div>
+      </div>
+      <h3>Eau et nourriture</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Eau potable<div class="s">9 litres par personne pour 3 jours</div></span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Conserves et aliments sans cuisson</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Nourriture de l'animal</span></button>
+      </div>
+      <h3>Énergie et information</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Lampe torche et piles</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Radio à piles ou à manivelle</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Batterie externe chargée</span></button>
+      </div>
+      <h3>Santé et documents</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Trousse de premiers secours</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Médicaments et ordonnances</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Copies des papiers d'identité</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Argent liquide</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Double des clés</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Vêtements chauds et couverture</span></button>
+      </div>
+      <p class="source">Liste du guide « Tous responsables » (SGDSN, 2025), adaptée à votre foyer.</p>
+
+      <h3>Aller plus loin</h3>
+      <div class="liste prem-zone">
+        <button class="ligne" onclick="premiumOu('Objectif 14 jours activé')"><span class="t">Objectif 14 jours</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Rappel de péremption créé')"><span class="t">Dates de péremption et rappels</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Appareil photo ouvert pour lire le code-barres')"><span class="t">Ajouter par code-barres</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Inventaire partagé avec le foyer')"><span class="t">Inventaire partagé et plusieurs logements</span><span class="pill premium">Premium</span></button>
+      </div>
+    </section>
+
+    <!-- ================= CARTE ================= -->
+    <section class="ecran" id="e-carte">
+      <h2>Carte</h2>
+      <div class="map">
+        <svg viewBox="0 0 360 430" preserveAspectRatio="xMidYMid slice">
+          <rect width="360" height="430" fill="var(--surface2)"/>
+          <path d="M0 300 C60 280 90 320 150 300 S260 260 360 290 V430 H0Z" fill="#3E6D8A" opacity=".55"/>
+          <path d="M40 0 L70 120 L60 260" stroke="var(--ligne)" stroke-width="6" fill="none"/>
+          <path d="M0 160 C100 150 200 190 360 140" stroke="var(--ligne)" stroke-width="8" fill="none"/>
+          <path d="M210 0 L190 140 L230 290" stroke="var(--ligne)" stroke-width="5" fill="none"/>
+          <path d="M120 60 h50 v40 h-50z M250 60 h60 v50 h-60z M100 190 h70 v60 h-70z M250 190 h50 v50 h-50z" fill="var(--surface)" opacity=".8"/>
+          <g font-size="11" font-family="-apple-system,Arial" font-weight="600">
+            <circle cx="150" cy="215" r="11" fill="#C0392B"/><text x="146" y="219" fill="#fff">H</text>
+            <circle cx="268" cy="85" r="11" fill="#2E7D4F"/><text x="263" y="89" fill="#fff">D</text>
+            <circle cx="95" cy="120" r="11" fill="#2E7D4F"/><text x="90" y="124" fill="#fff">D</text>
+            <circle cx="270" cy="215" r="11" fill="#B5651D"/><text x="266" y="219" fill="#fff">P</text>
+            <circle cx="200" cy="105" r="11" fill="#E0662A"/><text x="196" y="109" fill="#fff">R</text>
+            <circle cx="180" cy="170" r="8" fill="#3B82F6" stroke="#fff" stroke-width="3"/>
+          </g>
+        </svg>
+        <div class="calques"><span>H Hôpital</span><span>D Défibrillateur</span><span>P Pompiers</span><span>R Rassemblement</span></div>
+      </div>
+      <p class="mini" style="margin:8px 0">Carte de la Loire-Atlantique téléchargée · fonctionne sans réseau. Données OpenStreetMap, GéoDAE, commune (fictif).</p>
+      <h3>Gratuit</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Carte de votre département</span><span class="pill gratuit">Inclus</span></div>
+        <div class="ligne"><span class="t">Hôpitaux, pompiers, défibrillateurs, points d'eau</span><span class="pill gratuit">Inclus</span></div>
+        <div class="ligne"><span class="t">Points de rassemblement de la commune</span><span class="pill gratuit">Inclus</span></div>
+      </div>
+      <h3>Premium</h3>
+      <div class="liste">
+        <button class="ligne" onclick="premiumOu('Téléchargement de la carte de France lancé')"><span class="t">France entière et autres pays</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Fond topographique activé')"><span class="t">Fond topographique pour la randonnée</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Itinéraire calculé hors ligne')"><span class="t">Itinéraires hors ligne</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Enregistrement de la trace démarré')"><span class="t">Enregistrer une trace</span><span class="pill premium">Premium</span></button>
+      </div>
+    </section>
+
+    <!-- ================= SAVOIR ================= -->
+    <section class="ecran" id="e-savoir">
+      <h2>Savoir</h2>
+      <div class="carte" style="display:flex;gap:10px;align-items:center;color:var(--texte2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Rechercher, même hors réseau</div>
+      <h3>Sources officielles</h3>
+      <div class="liste">
+        <button class="ligne" onclick="va('e-guide')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/></svg></span><span class="t">Tous responsables : face aux risques, agissons<div class="s">SGDSN · 2025 · 27 pages</div></span><span class="pill gratuit">Gratuit</span></button>
+        <button class="ligne" onclick="va('e-fiche')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span><span class="t">Premiers secours (PSC1)<div class="s">Ministère de l'Intérieur · déc. 2023</div></span><span class="pill gratuit">Gratuit</span></button>
+        <button class="ligne" onclick="va('e-reflexes')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20z"/></svg></span><span class="t">Alerte et 6 réflexes<div class="s">Préfectures</div></span><span class="pill gratuit">Gratuit</span></button>
+        <button class="ligne" onclick="toast('Conseils officiels du ministère de l\'Europe et des Affaires étrangères, gratuits même dans le mode voyage.')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span class="t">Conseils aux voyageurs<div class="s">Ministère des Affaires étrangères</div></span><span class="pill gratuit">Gratuit</span></button>
+        <button class="ligne" onclick="va('e-commune')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span><span class="t">Risques de ma commune (DICRIM)<div class="s">La Baule-Escoublac · fictif</div></span><span class="pill gratuit">Gratuit</span></button>
+      </div>
+      <p class="source">Chaque document indique sa source, sa date et sa dernière vérification. <button style="color:var(--accent);font-size:11.5px" onclick="va('e-journal')">Journal des mises à jour</button></p>
+      <h3>Mes documents</h3>
+      <div class="liste"><button class="ligne" onclick="toast('Import d\'un PDF depuis Fichiers. Gratuit.')"><span class="t">Importer un PDF</span><span class="pill gratuit">Gratuit</span></button></div>
+      <h3>Bibliothèque premium</h3>
+      <div class="liste">
+        <button class="ligne" onclick="premiumOu('Encyclopédie ouverte')"><span class="t">Encyclopédie en français<div class="s">Hors ligne, 12 Go</div></span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Guides randonnée et montagne ouverts')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Guides mer et voile ouverts')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Rayon enfants ouvert')"><span class="t">Rayon enfants</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Guides pratiques ouverts')"><span class="t">Faire soi-même</span><span class="pill premium">Premium</span></button>
+      </div>
+      <p class="mini">Les consignes de sécurité contenues dans ces guides restent consultables gratuitement.</p>
+    </section>
+
+    <section class="ecran" id="e-guide">
+      <button class="retour" onclick="retour()">‹ Savoir</button>
+      <h2>Tous responsables</h2>
+      <p class="mini">Secrétariat général de la défense et de la sécurité nationale · publié le 20/11/2025 · Licence Ouverte</p>
+      <div class="liste" style="margin-top:14px">
+        <div class="ligne"><span class="t">1. Connaître les risques</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">2. Se préparer : le kit de 72 heures</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">3. Réagir en cas d'alerte</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">4. S'engager et aider les autres</span><span class="chev">›</span></div>
+      </div>
+      <p class="source">Plan indicatif, à aligner sur le document officiel. SIJAMAIS n'est pas une publication officielle : nous citons la source et renvoyons vers le document d'origine.</p>
+    </section>
+
+    <section class="ecran" id="e-journal">
+      <button class="retour" onclick="retour()">‹ Savoir</button>
+      <h2>Mises à jour</h2>
+      <div class="liste">
+        <div class="ligne"><span class="t">18/11/2026<div class="s">Vérification des 6 réflexes et du signal d'alerte. Aucun changement.</div></span></div>
+        <div class="ligne"><span class="t">18/11/2026<div class="s">Ajout du guide « Tous responsables » (SGDSN, 2025).</div></span></div>
+        <div class="ligne"><span class="t">18/11/2026<div class="s">Fiches de premiers secours alignées sur l'édition décembre 2023.</div></span></div>
+      </div>
+      <p class="mini">Exemple. Journal public de la veille des recommandations officielles.</p>
+    </section>
+
+    <!-- ================= FAMILLE ================= -->
+    <section class="ecran" id="e-famille">
+      <button class="retour" onclick="retour()">‹ Retour</button>
+      <h2>Famille</h2>
+      <button class="btn btn-p" onclick="toast('SMS « Je suis en sécurité » préparé. Il partira dès que le réseau reviendra.')">Je suis en sécurité</button>
+      <p class="mini" style="margin:6px 0 4px">Le message part automatiquement au retour du réseau.</p>
+      <h3>Plan du foyer</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Point de rendez-vous 1<div class="s">Devant la maison</div></span><span class="pill gratuit">Gratuit</span></div>
+        <div class="ligne"><span class="t">Point de rendez-vous 2<div class="s">Place de la mairie</div></span><span class="pill gratuit">Gratuit</span></div>
+        <div class="ligne"><span class="t">Contact hors région<div class="s">Une personne à prévenir loin d'ici</div></span><span class="pill gratuit">Gratuit</span></div>
+        <div class="ligne"><span class="t">École de l'enfant<div class="s">Consignes : ne pas aller le chercher</div></span><span class="pill gratuit">Gratuit</span></div>
+      </div>
+      <h3>Membres</h3>
+      <div class="liste">
+        <div class="ligne"><span class="ico">A</span><span class="t">Adulte 1<div class="s">Vous</div></span></div>
+        <div class="ligne"><span class="ico">A</span><span class="t">Adulte 2</span></div>
+        <div class="ligne"><span class="ico">E</span><span class="t">Enfant</span></div>
+      </div>
+      <h3>Famille premium</h3>
+      <div class="liste">
+        <button class="ligne" onclick="premiumOu('Premium partagé avec 2 personnes')"><span class="t">Partager le premium, jusqu'à 5 personnes</span><span class="pill premium">Famille</span></button>
+        <button class="ligne" onclick="premiumOu('Carte familiale affichée')"><span class="t">Carte familiale</span><span class="pill premium">Famille</span></button>
+        <button class="ligne" onclick="premiumOu('Messagerie familiale ouverte')"><span class="t">Messagerie familiale</span><span class="pill premium">Famille</span></button>
+        <div class="ligne"><span class="t">Messages entre téléphones sans réseau<div class="s">Bluetooth, à l'étude</div></span><span class="pill bientot">Bientôt</span></div>
+      </div>
+    </section>
+
+    <!-- ================= ASSISTANT ================= -->
+    <section class="ecran" id="e-assistant">
+      <button class="retour" onclick="retour()">‹ Retour</button>
+      <h2>Assistant</h2>
+      <p class="mini" style="margin-bottom:12px">Fonctionne sur votre iPhone, sans internet. Il s'appuie sur les fiches relues et cite ses sources.</p>
+      <div class="bulle moi">L'eau du robinet est coupée depuis hier, comment rendre l'eau d'un ruisseau buvable ?</div>
+      <div class="bulle ia">Faites-la bouillir à gros bouillons pendant au moins une minute, puis laissez refroidir couvert. Si l'eau est trouble, filtrez-la d'abord à travers un linge propre.<br><br>Si la mairie diffuse une consigne sur l'eau, elle prime.<div class="source">Fiche « Eau potable » · relue le 18/11/2026</div></div>
+      <div class="bulle moi">J'ai mal à la poitrine depuis une heure</div>
+      <div class="bulle ia" style="border:1.5px solid var(--danger)">Appelez le 15 maintenant. Je ne peux pas évaluer une douleur à la poitrine.<button class="btn btn-p" style="margin-top:10px;padding:11px" onclick="toast('Appel du 15 (démonstration)')">Appeler le 15</button></div>
+      <div class="saisie"><div>Posez une question</div></div>
+      <p class="mini" style="margin-top:10px">Sécurité et premiers secours : gratuit. Questions de loisir (randonnée, voile, voyage) : premium.</p>
+    </section>
+
+    <!-- ================= MA COMMUNE ================= -->
+    <section class="ecran" id="e-commune">
+      <button class="retour" onclick="retour()">‹ Retour</button>
+      <h2>Ma commune</h2>
+      <div class="fictif">Exemple fictif. La Baule-Escoublac n'a validé aucun contenu.</div>
+      <div class="carte"><b>La Baule-Escoublac</b><div class="mini">Informations fournies par la commune · mises à jour par elle</div></div>
+      <h3>Risques identifiés</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Submersion marine</span></div>
+        <div class="ligne"><span class="t">Tempête</span></div>
+        <div class="ligne"><span class="t">Feu de forêt</span></div>
+      </div>
+      <h3>En cas d'alerte</h3>
+      <div class="liste">
+        <button class="ligne" onclick="onglet('carte')"><span class="t">Points de rassemblement<div class="s">3 lieux sur la carte</div></span><span class="chev">›</span></button>
+        <div class="ligne"><span class="t">Numéro de la mairie</span><span class="mini">exemple</span></div>
+        <div class="ligne"><span class="t">Radio locale à écouter</span><span class="mini">exemple</span></div>
+      </div>
+      <p class="source">Source envisagée : DICRIM 2025 et plan communal de sauvegarde, transmis par la commune. Gratuit pour les habitants.</p>
+    </section>
+
+    <!-- ================= PREMIUM ================= -->
+    <section class="ecran" id="e-premium">
+      <button class="retour" onclick="retour()">‹ Retour</button>
+      <h2>Partez hors réseau</h2>
+      <div class="regle">Tout ce qui protège est gratuit, pour toujours.</div>
+      <p class="mini" style="margin-bottom:14px">Le premium sert vos loisirs : vacances à la campagne, randonnée, mer, voyage.</p>
+      <div class="liste" style="margin-bottom:14px">
+        <div class="ligne"><span class="t">Cartes de France et d'autres pays, fond topographique</span></div>
+        <div class="ligne"><span class="t">Modes randonnée, mer, voyage, camping</span></div>
+        <div class="ligne"><span class="t">Encyclopédie et guides hors ligne</span></div>
+        <div class="ligne"><span class="t">Inventaire 14 jours et rappels</span></div>
+        <div class="ligne"><span class="t">Assistant pour vos activités</span></div>
+      </div>
+      <button class="offre on" style="width:100%" onclick="choisir(this)"><div style="display:flex;justify-content:space-between"><b>Premium</b><span class="prix">29,99 € / an</span></div><div class="mini">ou 3,99 € par mois · 1 personne</div></button>
+      <button class="offre" style="width:100%" onclick="choisir(this)"><div style="display:flex;justify-content:space-between"><b>Famille</b><span class="prix">44,99 € / an</span></div><div class="mini">ou 5,99 € par mois · jusqu'à 5 personnes</div></button>
+      <button class="btn btn-p" style="margin-top:6px" onclick="activerPremium()">Essayer 7 jours gratuitement</button>
+      <p class="mini" style="text-align:center;margin-top:8px">Sans engagement. Résiliable dans les réglages de l'iPhone. Prix à tester.</p>
+    </section>
+
+    <!-- ================= RÉGLAGES ================= -->
+    <section class="ecran" id="e-reglages">
+      <button class="retour" onclick="retour()">‹ Accueil</button>
+      <h2>Réglages</h2>
+      <h3>Mes modes</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Maison et crises</span><span class="pill gratuit">Toujours actif</span></div>
+        <button class="ligne" onclick="premiumOu('Mode randonnée activé')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Mode mer activé')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Mode voyage activé')"><span class="t">Voyage à l'étranger</span><span class="pill premium">Premium</span></button>
+        <button class="ligne" onclick="premiumOu('Mode camping activé')"><span class="t">Camping et van</span><span class="pill premium">Premium</span></button>
+        <div class="ligne"><span class="t">Coupure prolongée</span><span class="pill gratuit">Gratuit</span></div>
+      </div>
+      <h3>Affichage</h3>
+      <div class="liste">
+        <button class="ligne" onclick="basculerTheme()"><span class="t">Thème</span><span class="mini" id="lib-theme">Sombre</span></button>
+        <div class="ligne"><span class="t">Taille du texte</span><span class="mini">Réglage de l'iPhone</span></div>
+      </div>
+      <h3>Données et stockage</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Espace utilisé<div class="s">Carte 180 Mo · fiches 24 Mo · assistant intégré à l'iPhone</div></span></div>
+        <div class="ligne"><span class="t">Données personnelles<div class="s">Aucune donnée envoyée. Tout reste sur votre téléphone.</div></span></div>
+      </div>
+      <h3>Aide</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Nous écrire</span><span class="mini">Courriel</span></div>
+        <div class="ligne"><span class="t">Sources et licences</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">Proposer une fonctionnalité</span><span class="pill bientot">Bientôt</span></div>
+      </div>
+      <p class="mini" style="text-align:center;margin-top:10px">SIJAMAIS 0.1 · maquette</p>
+    </section>
+
+    <div class="toast" id="toast"></div>
+
+    <nav class="tabbar cache" id="tabbar">
+      <button data-t="accueil" onclick="onglet('accueil')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Accueil</button>
+      <button data-t="urgence" onclick="onglet('urgence')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>Urgence</button>
+      <button data-t="preparer" onclick="onglet('preparer')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16"/></svg>Préparer</button>
+      <button data-t="carte" onclick="onglet('carte')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Carte</button>
+      <button data-t="savoir" onclick="onglet('savoir')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></svg>Savoir</button>
+    </nav>
+  </div>
+</div>
+
+<script>
+let pile=[], premium=false, timer;
+const $=id=>document.getElementById(id);
+function montrer(id){
+  document.querySelectorAll('.ecran').forEach(e=>e.classList.remove('actif'));
+  $(id).classList.add('actif'); $(id).scrollTop=0;
+  const t=id.replace('e-','');
+  document.querySelectorAll('.tabbar button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
+}
+function va(id){ const cur=document.querySelector('.ecran.actif'); if(cur) pile.push(cur.id); montrer(id); }
+function retour(){ montrer(pile.pop()||'e-accueil'); }
+function onglet(t){ pile=[]; montrer('e-'+t); }
+function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); clearTimeout(timer); timer=setTimeout(()=>t.classList.remove('on'),2600); }
+function cocher(l){ const c=l.querySelector('.check'); c.classList.toggle('ok'); c.textContent=c.classList.contains('ok')?'✓':''; }
+function premiumOu(msg){ premium?toast(msg):va('e-premium'); }
+function choisir(b){ document.querySelectorAll('.offre').forEach(o=>o.classList.remove('on')); b.classList.add('on'); }
+function activerPremium(){ premium=true; majPremium(); toast('Essai de 7 jours activé (démonstration)'); retour(); }
+function basculerPremium(){ premium=!premium; majPremium(); toast(premium?'Mode abonné simulé':'Mode gratuit simulé'); }
+function majPremium(){
+  document.querySelectorAll('.pill.premium').forEach(p=>{ if(!p.dataset.o) p.dataset.o=p.textContent; p.textContent=premium?'Actif':p.dataset.o; });
+  $('bandeau-prem').style.display=premium?'none':'flex';
+  $('bt-prem').textContent=premium?'Simuler un utilisateur gratuit':'Simuler un abonné premium';
+}
+function basculerTheme(){
+  const r=document.documentElement, l=r.dataset.theme==='light';
+  r.dataset.theme=l?'dark':'light'; $('lib-theme').textContent=l?'Sombre':'Clair';
+}
+function telecharger(){
+  let v=0; const iv=setInterval(()=>{ v+=4;
+    $('p1').style.width=Math.min(v,100)+'%'; $('p2').style.width=Math.min(v*1.6,100)+'%'; $('p3').style.width=Math.min(v*2.5,100)+'%';
+    if(v>=100){ clearInterval(iv); $('bt-fin').style.opacity=1; }
+  },70);
+}
+function finOnb(){ $('tabbar').classList.remove('cache'); onglet('accueil'); }
+function relancer(){ $('tabbar').classList.add('cache'); pile=[]; montrer('e-onb1'); }
+document.querySelectorAll('.choix').forEach(g=>g.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  if(g.hasAttribute('data-multi')) b.classList.toggle('on');
+  else { g.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); }
+}));
+</script>
+</body>
+</html>

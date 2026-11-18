@@ -17,6 +17,7 @@ Commencer par `00_SYNTHESE_DECISION.md` (deux pages), puis `questions_ouvertes.m
 | `08_analyse_haven.md` | Analyse de l'application HAVEN à partir de captures d'écran |
 | `09_application_iphone.md` | Pivot vers l'application iPhone gratuite avec version complète : produit, technique, finances, piste des communes, revenu du fondateur |
 | `10_veille_officielle.md` | Sources officielles françaises, droit de réutilisation, place dans l'application, organisation de la veille |
+| `prototype/maquette_app/` | Maquette HTML cliquable de l'application (version 0.1) |
 | `modele_financier.xlsx` | Modèle version 2 (application iPhone), trois scénarios, formules et hypothèses modifiables |
 | `archives/` | Modèle version 1 (pack et téléphone) et son générateur |
 | `registre_hypotheses.md` | 47 hypothèses, méthode de validation, confiance, effet sur la décision |
