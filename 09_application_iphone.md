@@ -1,4 +1,4 @@
-# 09. MECUM, application iPhone gratuite avec version complète
+# 09. SIJAMAIS, application iPhone gratuite avec version complète
 
 Rédigé le 13 novembre 2026. Ce document remplace, pour le produit, la plateforme et les finances, les parties correspondantes de `03_produit_technique.md`, `05_finances.md` et `06_acquisition_marque.md`, qui restent valables pour le marché, le cadre légal, la charte éditoriale et la méthode de test. Chiffres issus de `modele_financier.xlsx` (version 2, 4 169 formules recalculées sans erreur). L'ancien modèle (pack et téléphone) est archivé dans `archives/`. Marqueurs : [FAIT], [EST], [HYP], [INT].
 
@@ -7,7 +7,7 @@ Rédigé le 13 novembre 2026. Ce document remplace, pour le produit, la platefor
 | Sujet | Décision |
 |---|---|
 | Produit | Une application locale, hors ligne, sur des téléphones ordinaires. Plus de téléphone durci ni de carte mémoire au lancement |
-| Nom de travail | MECUM |
+| Nom | SIJAMAIS, retenu le 18/11/2026 sous réserve (voir `JOURNAL.md`). MECUM, OKAOU, AUKAZOU et PARÉ examinés et écartés |
 | Modèle | Partie gratuite et version payante, sur le principe de HAVEN |
 | Plateforme | iPhone d'abord. Pas d'Android au lancement |
 | Identité visuelle | Ne pas ressembler à un produit "fait avec une IA". A travailler dans un second temps avec un graphiste |
@@ -32,7 +32,7 @@ Rédigé le 13 novembre 2026. Ce document remplace, pour le produit, la platefor
 Deux enseignements :
 
 - les prix de HAVEN ont monté. La fiche de l'App Store indiquait 24,99 USD et 34,99 USD lors de la recherche du 12 novembre ; l'application affiche 29,99 USD et 59,99 €. Le marché accepte ces niveaux ou HAVEN les teste ;
-- HAVEN fait de la peur son revenu récurrent : conflits, nucléaire, menaces. MECUM ne le fera pas. Cela nous prive d'un abonnement facile, et c'est assumé. Un abonnement MECUM ne pourra porter que sur un service réel et calme (mises à jour des cartes et du corpus, synchronisation familiale), à étudier en année 2.
+- HAVEN fait de la peur son revenu récurrent : conflits, nucléaire, menaces. SIJAMAIS ne le fera pas. Cela nous prive d'un abonnement facile, et c'est assumé. Un abonnement SIJAMAIS ne pourra porter que sur un service réel et calme (mises à jour des cartes et du corpus, synchronisation familiale), à étudier en année 2.
 
 Tu confirmes aussi que les guides de HAVEN n'ont ni source, ni auteur, ni date, et que le contenu est en anglais par défaut (traduction automatique en option). C'est notre différence principale : des fiches françaises, signées, datées, sourcées.
 
@@ -43,7 +43,7 @@ Ce que tu as le plus aimé, la prise en main en quelques questions puis le tél�
 | Sujet | Sur iPhone | Conséquence |
 |---|---|---|
 | Langage | Swift et SwiftUI, outils Apple | Développement sur Mac obligatoire. Question : as-tu un Mac ? |
-| Compte développeur | Programme développeur Apple, 99 € par an [A CONFIRMER] | Au nom de la société, pour afficher "MECUM" et non ton nom |
+| Compte développeur | Programme développeur Apple, 99 € par an [A CONFIRMER] | Au nom de la société, pour afficher "SIJAMAIS" et non ton nom |
 | Commission | 15 % avec le programme petites entreprises, 26 % sinon, nouvelles conditions européennes au 1er octobre 2026 [FAIT, Apple] | Inscription au programme dès la création du compte |
 | IA locale | Le cadre "Foundation Models" d'Apple donne accès gratuitement au modèle de langage intégré à l'iPhone, en français, hors ligne, sur iPhone 15 Pro et modèles suivants avec Apple Intelligence activé, depuis iOS 26 [FAIT, presse spécialisée, liste exacte des langues à vérifier] | Pas de modèle à embarquer ni à télécharger sur ces téléphones. Sur les autres, recherche seulement. C'est un avantage net sur HAVEN, dont le petit modèle fait planter l'application |
 | Cartes hors ligne | MapLibre (licence BSD) et fichiers de carte vectorielle Protomaps à partir d'OpenStreetMap (ODbL) [à confirmer] | Un département téléchargé à l'installation, la France entière dans la version complète |
@@ -56,7 +56,7 @@ Ce que tu as le plus aimé, la prise en main en quelques questions puis le tél�
 
 ### Prise en main en deux minutes
 
-1. "Pour quoi voulez-vous MECUM ?" : la maison, la randonnée, la mer, la route, la famille (plusieurs choix).
+1. "Pour quoi voulez-vous SIJAMAIS ?" : la maison, la randonnée, la mer, la route, la famille (plusieurs choix).
 2. "Où vivez-vous ?" : département, proposé à partir de la position si l'utilisateur l'autorise.
 3. "Combien êtes-vous au foyer ? Des enfants, des personnes âgées, des animaux ?"
 4. L'application télécharge la carte du département et prépare le kit de 72 heures adapté au foyer.
@@ -129,7 +129,7 @@ Avec les charges de l'année 2 du scénario central (2 350 € par mois, dont 1 
 Ton métier, c'est la vente aux grands comptes et aux collectivités. Le modèle grand public n'utilise pas ce talent. Une piste l'utilise :
 
 - 22 000 communes doivent tenir un plan communal de sauvegarde, et les communes exposées à un risque majeur doivent informer leurs habitants (document d'information communal sur les risques majeurs, mis à jour au moins tous les 5 ans) [FAIT, ministère de l'Ecologie et AMF] ;
-- proposer aux communes un module MECUM : les consignes et les lieux de leur plan (points de rassemblement, numéros, risques locaux), disponibles hors ligne dans l'application gratuite de leurs habitants. La commune paie une licence annuelle (600 à 1 200 € à tester) ;
+- proposer aux communes un module SIJAMAIS : les consignes et les lieux de leur plan (points de rassemblement, numéros, risques locaux), disponibles hors ligne dans l'application gratuite de leurs habitants. La commune paie une licence annuelle (600 à 1 200 € à tester) ;
 - c'est cohérent avec la règle "la sécurité est gratuite pour l'habitant", et c'est un revenu récurrent qui ne repose pas sur la peur.
 
 Concurrence : des applications communales d'information et d'alerte existent déjà (IntraMuros, Illiwap, Alerte Citoyens) [FAIT]. Elles diffusent des messages en ligne. Aucune ne semble proposer un contenu de préparation hors ligne, mais elles peuvent l'ajouter. Le modèle n'en tient compte que modestement (12 à 21 000 € par an en année 3 dans le central). Si dix rendez-vous en mairie montrent un intérêt réel, cette piste peut devenir le moteur du projet. Elle est testée dès le plan à 30 jours.
@@ -161,7 +161,7 @@ Les deux options sont exclusives [FAIT, France Travail].
 |---|---|---|
 | Ce que tu reçois | Environ 1 000 € par mois tant que tes droits durent et que tu ne te verses pas de salaire | 60 % de tes droits restants, en deux fois |
 | Pour qui | Un projet qui mettra du temps à rapporter | Un projet qui a besoin de trésorerie au démarrage |
-| Pour MECUM | Adapté : le scénario central ne te paie pas avant le mois 30 | Utile si tu l'apportes à la société, mais tu perds 40 % de tes droits et ton revenu mensuel |
+| Pour SIJAMAIS | Adapté : le scénario central ne te paie pas avant le mois 30 | Utile si tu l'apportes à la société, mais tu perds 40 % de tes droits et ton revenu mensuel |
 | Mon avis | **Recommandé** : il sécurise ta vie pendant le développement, et tes 10 000 € initiaux suffisent au test et à une bonne partie de la v1 | A choisir seulement si un besoin de trésorerie précis apparaît (stock B2B, recrutement) |
 
 Point de calendrier : le choix se fait au moment de la création de la société. Vois un conseiller France Travail et l'expert-comptable avant de créer la SASU (semaine 4 du plan). Attention aussi à l'aide aux créateurs (ACRE), qui conditionne l'ARCE : la demande se fait au moment de la création.
@@ -169,7 +169,7 @@ Point de calendrier : le choix se fait au moment de la création de la société
 ### Le Mac
 
 - Il est indispensable pour développer et publier sur iPhone. Le développeur que tu engageras aura le sien : le tien sert à compiler, tester, publier et suivre le projet.
-- Un MacBook Air récent avec 16 Go de mémoire suffit. Le MacBook Pro n'est pas nécessaire pour MECUM ; il ne se justifie que pour tes autres usages.
+- Un MacBook Air récent avec 16 Go de mémoire suffit. Le MacBook Pro n'est pas nécessaire pour SIJAMAIS ; il ne se justifie que pour tes autres usages.
 - Acheté avant la création de la société, il sera à ton nom. L'expert-comptable te dira s'il vaut mieux l'apporter à la société (apport en nature) ou attendre pour l'acheter au nom de la société, ce qui permettrait de récupérer la TVA (environ 400 à 500 € sur un MacBook Pro). Pose-lui la question avant le Black Friday si possible.
 - Le budget du projet prévoyait 800 € pour un Mac : cette ligne disparaît, le besoin de trésorerie du projet baisse d'autant.
 
@@ -179,7 +179,7 @@ Si c'est un iPad Pro de 2021 (puce M1), elle prend en charge Apple Intelligence 
 
 ### Temps partiel et autres projets
 
-C'est raisonnable, à une condition : MECUM vit de la régularité (contenus chaque semaine, mises à jour, réponses aux utilisateurs). Fixe dès maintenant un minimum de deux jours et demi par semaine pour MECUM, et inscris-le dans les critères d'arrêt : si ce rythme n'est pas tenu trois semaines de suite, on arrête ou on met en pause, sans culpabilité. Autre point : l'ARCE et l'ACRE sont liées à une création d'entreprise. Si tu as d'autres projets, réfléchis à les porter dans la même société (une SASU peut avoir plusieurs activités) pour ne pas gâcher ces aides sur le mauvais projet.
+C'est raisonnable, à une condition : SIJAMAIS vit de la régularité (contenus chaque semaine, mises à jour, réponses aux utilisateurs). Fixe dès maintenant un minimum de deux jours et demi par semaine pour SIJAMAIS, et inscris-le dans les critères d'arrêt : si ce rythme n'est pas tenu trois semaines de suite, on arrête ou on met en pause, sans culpabilité. Autre point : l'ARCE et l'ACRE sont liées à une création d'entreprise. Si tu as d'autres projets, réfléchis à les porter dans la même société (une SASU peut avoir plusieurs activités) pour ne pas gâcher ces aides sur le mauvais projet.
 
 ## 9. Recommandation mise à jour
 

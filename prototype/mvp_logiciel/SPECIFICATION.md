@@ -1,4 +1,4 @@
-# Spécification technique du MVP : application iPhone MECUM
+# Spécification technique du MVP : application iPhone SIJAMAIS
 
 Version 0.2 du 13 novembre 2026. Elle remplace la version 0.1 (application Android). Base des demandes de devis aux développeurs iOS. Raisonnement et chiffres dans `09_application_iphone.md`. La maquette du moteur de recherche (`recherche.py`, `tests_recherche.py`, `fiches/`) reste valable : sa logique se porte telle quelle sur iPhone.
 
@@ -30,7 +30,7 @@ Inspiré de ce que Benjamin a apprécié dans HAVEN : être opérationnel en deu
 
 | Etape | Question ou action | Effet |
 |---|---|---|
-| 1 | "Pour quoi voulez-vous MECUM ?" : maison, randonnée, mer, route, famille (plusieurs choix) | Choix des fiches mises en avant et de l'ordre de l'accueil |
+| 1 | "Pour quoi voulez-vous SIJAMAIS ?" : maison, randonnée, mer, route, famille (plusieurs choix) | Choix des fiches mises en avant et de l'ordre de l'accueil |
 | 2 | "Où vivez-vous ?" : département, proposé depuis la position si autorisée | Téléchargement de la carte du département et des risques locaux |
 | 3 | "Votre foyer ?" : nombre de personnes, enfants, personnes âgées, animaux | Kit de 72 heures et plan du foyer adaptés |
 | 4 | Téléchargement en arrière-plan avec barre de progression, l'application reste utilisable | Carte prête en quelques minutes en Wi-Fi |

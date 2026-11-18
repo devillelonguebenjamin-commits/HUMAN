@@ -1,4 +1,4 @@
-# Synthèse de décision : MECUM
+# Synthèse de décision : SIJAMAIS
 
 Version 2 du 13 novembre 2026, après tes décisions et l'analyse de HAVEN. Détail dans `09_application_iphone.md` (produit, plateforme, finances) et `08_analyse_haven.md`. Les documents 01 à 07 restent valables pour le marché, le légal, la charte et les risques. Montants hors taxe sauf mention contraire.
 
@@ -15,7 +15,7 @@ Version 2 du 13 novembre 2026, après tes décisions et l'analyse de HAVEN. Dét
 
 **Go pour 30 jours de test, 2 100 € engagés au plus, avec deux questions :**
 
-1. des Français sur iPhone préfèrent-ils MECUM à HAVEN au point d'envisager de payer la version complète ?
+1. des Français sur iPhone préfèrent-ils SIJAMAIS à HAVEN au point d'envisager de payer la version complète ?
 2. des communes paieraient-elles un module qui met leur plan de sauvegarde hors ligne dans la poche de leurs habitants ?
 
 **Ta situation personnelle est réglée sur le principe :** tes allocations chômage (environ 1 000 € par mois) puis un temps partiel couvrent la période où le projet ne peut pas te payer. Je recommande le maintien des allocations plutôt que l'ARCE, et je pense que ton estimation de 20 000 € d'ARCE est trop haute (plutôt 10 800 € au plus) : à vérifier auprès de France Travail.
@@ -41,9 +41,9 @@ Confiance : 25 à 35 % que l'application grand public franchisse les seuils. Inc
 
 | Risque | Parade | Signal d'alerte |
 |---|---|---|
-| HAVEN, déjà traduit en français, suffit aux utilisateurs | Contenu français vérifié, calme, plus simple | Moins de 8 entretiens sur 20 préfèrent MECUM |
+| HAVEN, déjà traduit en français, suffit aux utilisateurs | Contenu français vérifié, calme, plus simple | Moins de 8 entretiens sur 20 préfèrent SIJAMAIS |
 | Pas assez d'installations gratuites | Référencement App Store, contenus chaque semaine, presse régionale, créateurs | Coût par inscrit au-dessus de 6 €, moins de 3 % d'inscription |
-| Ton temps se disperse entre MECUM et tes autres projets | Deux jours et demi par semaine minimum pour MECUM, inscrits dans les critères d'arrêt | Rythme de publication non tenu trois semaines de suite |
+| Ton temps se disperse entre SIJAMAIS et tes autres projets | Deux jours et demi par semaine minimum pour SIJAMAIS, inscrits dans les critères d'arrêt | Rythme de publication non tenu trois semaines de suite |
 | L'assistant donne un conseil dangereux | Aucune génération sur la santé, citations obligatoires, relecture médicale | Moins de 27 bonnes réponses sur 30 au test |
 | Un produit qui "fait IA" et perd la confiance | Graphiste, photos réelles, aucune image générée | Remarques en entretien sur l'aspect |
 

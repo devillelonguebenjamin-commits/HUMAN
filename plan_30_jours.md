@@ -1,6 +1,6 @@
 # Plan des 30 premiers jours
 
-Version 2 du 13 novembre 2026 (application iPhone gratuite avec version complète). Objectif : savoir, pour 2 100 €, si des Français sur iPhone préfèrent MECUM à HAVEN au point d'envisager de payer la version complète, et si des communes paieraient un module de plan de sauvegarde. Aucune société, aucun développement, aucun encaissement pendant ces 30 jours.
+Version 2 du 13 novembre 2026 (application iPhone gratuite avec version complète). Objectif : savoir, pour 2 100 €, si des Français sur iPhone préfèrent SIJAMAIS à HAVEN au point d'envisager de payer la version complète, et si des communes paieraient un module de plan de sauvegarde. Aucune société, aucun développement, aucun encaissement pendant ces 30 jours.
 
 Calendrier indicatif : jour 1 le lundi 16 novembre 2026, jour 30 le mardi 15 décembre 2026.
 
@@ -33,7 +33,7 @@ L'iPhone de test se revend à environ 80 % de son prix en cas d'arrêt [EST]. Pe
 | Coût par inscrit (trafic payant) | Dépense divisée par inscrits venus des annonces | Plus de 6 € | 3 à 6 € | Moins de 3 € |
 | Acceptation du prix de la version complète | "Je l'achète" parmi les réponses, par niveau de prix | Moins de 15 % | 15 à 30 % | 30 % ou plus |
 | Part des inscrits sur Android | Case cochée | Information : plus de 40 % pose la question d'Android plus tôt | | |
-| Entretiens : préfèrent MECUM à HAVEN après les avoir vus tous deux | Démonstration côte à côte | Moins de 8 sur 20 | 8 à 11 | 12 ou plus |
+| Entretiens : préfèrent SIJAMAIS à HAVEN après les avoir vus tous deux | Démonstration côte à côte | Moins de 8 sur 20 | 8 à 11 | 12 ou plus |
 | Entretiens : paieraient 24,99 € la version complète | Réponse à prix annoncé | Moins de 5 sur 20 | 5 à 7 | 8 ou plus |
 | Communes : rendez-vous obtenus sur 30 contacts | Appels et courriels | Moins de 3 | 3 à 5 | 6 ou plus |
 | Communes : intérêt écrit pour un essai payant (600 à 1 200 € par an) | Courriel ou compte rendu validé | 0 | 1 | 2 ou plus |
@@ -53,7 +53,7 @@ Règles de lecture :
 
 | Jour | Actions | Livrable | Dépense |
 |---|---|---|---|
-| J1, lundi | Vérifier le nom MECUM sur la base de marques de l'INPI (gratuit, 20 minutes). Réserver le domaine. Ouvrir emailing et mesure d'audience. Demander à France Travail le relevé de tes droits restants. Vérifier le modèle de ta tablette | Domaine, comptes, relevé de droits | 150 € |
+| J1, lundi | Compléter la vérification du nom SIJAMAIS (recherche exacte déjà faite le 18/11/2026) : similitude (« SI JAMAIS », homophones), Union européenne, OMPI. Prendre rendez-vous avec le conseil en propriété industrielle. Réserver `sijamais.eu` (7,49 € hors taxe). Ouvrir emailing et mesure d'audience. Demander à France Travail le relevé de tes droits restants. Vérifier le modèle de ta tablette | Domaine, comptes, relevé de droits | 150 € |
 | J2, mardi | Acheter l'iPhone de test si besoin. Lister 30 communes de ton département soumises à un plan de sauvegarde (site de la préfecture) | iPhone, liste de communes | 550 € |
 | J3, mercredi | Adapter la page de `prototype/landing/` : nom, mentions légales, collecte. Tester sur iPhone. Publier | Page en ligne | 0 € |
 | J4, jeudi | Recruter 20 personnes sur iPhone : 12 familles, 8 pratiquants de plein air. Préparer le guide d'entretien | 20 rendez-vous entre J8 et J19 | 0 € |
@@ -92,7 +92,7 @@ Règles de lecture :
 | J24 | Demander deux devis de relecture des fiches et un devis de graphiste (identité visuelle) | Demandes envoyées | 0 € |
 | J25 | Si une commune est intéressée : lui proposer un essai à prix réduit sur 6 mois, par écrit | Proposition | 0 € |
 | J26 | Mettre à jour `modele_financier.xlsx` : coût par inscrit, prix accepté, part famille, intérêt des communes | Modèle actualisé | 0 € |
-| J27 | Fixer ton organisation : jours garantis à MECUM (deux et demi au minimum), place de tes autres projets | Décision écrite | 0 € |
+| J27 | Fixer ton organisation : jours garantis à SIJAMAIS (deux et demi au minimum), place de tes autres projets | Décision écrite | 0 € |
 | J28 | Note de décision d'une page | Note | 0 € |
 | J29 | Séance de décision : go grand public, pivot collectivités, ou no-go | Décision dans `JOURNAL.md` | 0 € |
 | J30 | En cas de go : société, marque, choix du développeur. En cas de no-go : écrire à la liste, revendre l'iPhone, archiver | Suite lancée ou projet clos | 0 à 2 100 € |
@@ -103,7 +103,7 @@ Règles de lecture :
 2. Avez-vous chez vous de quoi tenir trois jours ? Qu'avez-vous acheté, quand, pour combien ?
 3. Qu'y a-t-il sur votre iPhone qui fonctionne sans réseau ?
 4. Avez-vous déjà payé une application ? Laquelle, combien, pourquoi ?
-5. (Démonstration de MECUM "zéro", puis de HAVEN, deux minutes chacune, dans un ordre qui alterne d'un entretien à l'autre.) Laquelle garderiez-vous ? Pourquoi ?
+5. (Démonstration de SIJAMAIS "zéro", puis de HAVEN, deux minutes chacune, dans un ordre qui alterne d'un entretien à l'autre.) Laquelle garderiez-vous ? Pourquoi ?
 6. Feriez-vous confiance à une réponse donnée par une IA sans connexion ? Dans quels cas non ?
 7. Que pensez-vous des scénarios de guerre et de la veille des conflits proposés par HAVEN ?
 8. Qu'est-ce qui devrait être gratuit, selon vous ? Qu'est-ce qui mériterait de payer ?

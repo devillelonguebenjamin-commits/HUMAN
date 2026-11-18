@@ -10,13 +10,13 @@ Document de la phase 1 du projet HUMAN, rédigé le 12 novembre 2026. Les identi
 2. Le format qui vend sans faire peur est la démonstration mesurée : "voici ce que l'appareil fait, sans réseau, chronomètre en main". Pas de sirènes, pas de cartes de guerre.
 3. Ce choix n'est pas qu'éthique. Meta interdit les publicités qui exploitent une crise pour vendre [FAIT, S62] et Que Choisir surveille "le business de la peur" [S13]. Une marque anxiogène se ferme ses canaux.
 4. Trois actifs à construire dès le premier jour : une liste d'adresses électroniques, une chaîne YouTube de démonstrations, un réseau de cinq à dix créateurs rémunérés à la commission.
-5. Nom de travail proposé : MECUM (du latin "avec moi", comme dans vade-mecum). Domaines principaux disponibles au 12/11/2026. Recherche d'antériorité professionnelle indispensable avant tout dépôt.
+5. Nom retenu le 18/11/2026 : **SIJAMAIS** (« si jamais »), sous réserve de la recherche de similitude et de l'avis du conseil. MECUM, OKAOU, AUKAZOU et PARÉ ont été examinés et écartés (section 6 et `JOURNAL.md`).
 
 ## 2. Positionnement
 
 Formulation proposée :
 
-> Pour les familles et les pratiquants de plein air qui veulent être autonomes quelques jours sans dépendre du réseau, MECUM est une bibliothèque de savoirs utiles, vérifiés et en français, qui fonctionne sans connexion sur un téléphone. Contrairement aux applications à assembler soi-même et aux gadgets anxiogènes, elle est prête en cinq minutes, sourcée, et dit clairement ce qu'elle ne sait pas.
+> Pour les familles et les pratiquants de plein air qui veulent être autonomes quelques jours sans dépendre du réseau, SIJAMAIS est une bibliothèque de savoirs utiles, vérifiés et en français, qui fonctionne sans connexion sur un téléphone. Contrairement aux applications à assembler soi-même et aux gadgets anxiogènes, elle est prête en cinq minutes, sourcée, et dit clairement ce qu'elle ne sait pas.
 
 | Ce que nous vendons | Ce que nous ne vendons pas |
 |---|---|
@@ -77,6 +77,8 @@ Le tutoriel gratuit mérite une explication. Publier la méthode pour tout faire
 Cette charte s'applique aux créateurs partenaires. Un créateur qui vend par la peur est écarté, quel que soit son volume.
 
 ## 6. Noms de marque candidats
+
+> **Historique, mis à jour le 18/11/2026.** Cette section date du 12/11/2026. Depuis : MECUM abandonné (goût du fondateur), OKAOU et AUKAZOU écartés (deux marques OKAOU et deux marques OKAZOU en vigueur dans les logiciels, la formation et la sécurité), PARÉ mis de côté (recherche incomplète, domaines pris, bruit « pare-brise »). **Nom retenu : SIJAMAIS.** Le tableau ci-dessous n'est conservé que comme trace.
 
 Vérifications faites le 12/11/2026 : disponibilité des domaines par interrogation de registre [S73], antériorités par simple recherche sur moteur [S74]. Ce n'est pas une recherche d'antériorité. Elle reste à faire par un conseil en propriété industrielle ou sur les bases de l'INPI et de l'office européen, en classes 9 (logiciels, appareils) et 41 (éducation) au minimum. Un outil de recherche de marques payant est disponible dans mon environnement : je ne l'ai pas utilisé sans accord sur la dépense (question ouverte n° 7).
 

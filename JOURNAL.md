@@ -199,3 +199,19 @@ Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à
 **Domaines (OVHcloud, prix hors taxe).** sijamais.com déjà pris (transfert verrouillé). sijamais.fr déjà réservé (affiché "transférable"). Disponibles : .eu 7,49 € puis 8,59 €, .org 7,99 €, .cloud 1,99 € puis 19,29 €, .pro 2,99 € puis 26,29 €, .shop et .tech avec renouvellement élevé.
 
 **Lecture.** Meilleur résultat de marque que PARÉ à ce stade (aucune marque vivante, aucune société), mais l'INPI rappelle qu'il faut compléter par une recherche de similitude. Même problème de domaines .fr et .com que PARÉ. A faire : recherche "SI JAMAIS" en deux mots, variantes phonétiques, Union européenne et OMPI, ouverture de sijamais.fr et sijamais.com.
+
+## 2026-11-18 (fin) : nom retenu, SIJAMAIS
+
+**Décision de Benjamin : on part sur SIJAMAIS.**
+
+| Nom | Sort | Raison |
+|---|---|---|
+| MECUM | Abandonné | Goût du fondateur |
+| OKAOU | Écarté | Marques OKAOU n° 4881052 (logiciels, sécurité) et n° 4333844 (formation, logiciels, sécurité) en vigueur |
+| AUKAZOU | Écarté | Homophone d'OKAZOU : marques n° 5273379 (classes 9, 35, 42) et n° 4299916 (dont 41, 42, 45) en vigueur |
+| PARÉ | Mis de côté | Export de marques incomplet, domaines .fr et .com pris, bruit « pare-brise », évocation d'Ambroise Paré |
+| **SIJAMAIS** | **Retenu** | 0 société, 0 marque vivante (1 marque expirée d'un assureur, 2000). Domaines .fr et .com réservés, .eu disponible |
+
+**Réserves.** Recherche de similitude, Union européenne et OMPI, ouverture de sijamais.fr et sijamais.com, avis écrit du conseil. Le dossier est renommé (documents, page de test, prompt du deck, générateur du modèle). Les entrées antérieures du journal gardent l'ancien nom.
+
+**Règle maintenue.** Aucun engagement (graphiste, développeur, compte Apple, dépôt de marque) avant l'avis écrit du conseil. La page de test et ses annonces peuvent utiliser le nom : c'est peu coûteux et réversible.

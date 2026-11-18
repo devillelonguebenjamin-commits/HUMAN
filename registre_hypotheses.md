@@ -84,10 +84,12 @@ Onze hypothèses sont critiques. Neuf d'entre elles (H03, H04, H19, H21, H22, H2
 | H40 | 500 installations organiques le premier mois, puis 10 % de croissance mensuelle | Aucune donnée. Validation : taille de la liste d'attente, référencement | Faible | Critique |
 | H41 | Une installation payante coûte 2,50 € | Aucune donnée française. Validation : annonces de test | Faible | Important : au-dessus de 1,69 €, la publicité perd de l'argent |
 | H42 | Le prix de 24,99 € est accepté | Repère HAVEN 29,99 USD. Validation : test à 19,99 et 29,99 € | Faible | Important |
-| H43 | Des utilisateurs préfèrent MECUM à HAVEN | Validation : entretiens avec démonstration côte à côte | Faible | Critique |
+| H43 | Des utilisateurs préfèrent SIJAMAIS à HAVEN | Validation : entretiens avec démonstration côte à côte | Faible | Critique |
 | H44 | Le modèle local d'Apple répond correctement en français à partir de nos fiches | Validation : 30 questions sur l'iPhone de test | Moyenne | Secondaire : l'assistant est une option |
 | H45 | Une application v1 iOS coûte 6 000 à 8 000 € | Estimation. Validation : trois devis | Faible | Important |
 | H46 | Des communes paient 600 à 1 200 € par an pour un module de plan de sauvegarde hors ligne | Aucune donnée. Concurrents d'alerte existants. Validation : 30 contacts, rendez-vous | Faible | Potentiellement critique : peut devenir le moteur du projet |
 | H47 | Construire notre propre base encyclopédique évite la contrainte de licence GPL sur l'App Store | Raisonnement, à confirmer avec l'avocat | Moyenne | Secondaire |
 | H48 | L'ARCE atteint 20 000 € | Estimation du fondateur. 60 % du reliquat, deux versements [FAIT, France Travail]. Avec 1 000 € par mois et 18 mois maximum [A CONFIRMER], plafond vers 10 800 €. Validation : relevé de droits France Travail | Faible | Important si l'ARCE est choisie. Recommandation : maintien des allocations |
-| H49 | Benjamin consacre au moins deux jours et demi par semaine à MECUM en temps partiel | Engagement à prendre. Validation : rythme de publication | Moyenne | Critique : l'acquisition gratuite en dépend |
+| H49 | Benjamin consacre au moins deux jours et demi par semaine à SIJAMAIS en temps partiel | Engagement à prendre. Validation : rythme de publication | Moyenne | Critique : l'acquisition gratuite en dépend |
+| H50 | SIJAMAIS est disponible comme marque en classes 9, 41 et 42 | Recherche INPI exacte du 18/11/2026 : 0 société, 1 marque expirée (assureur, 2000). Reste : similitude, Union européenne, OMPI, avis du conseil | Moyenne | Critique : conditionne tout engagement sous ce nom |
+| H51 | Les domaines .fr et .com de SIJAMAIS, déjà réservés, ne gênent pas | Ouvrir les sites, adresse de repli en .eu | Moyenne | Secondaire |

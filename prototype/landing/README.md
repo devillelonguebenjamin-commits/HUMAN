@@ -1,6 +1,6 @@
 # Page d'atterrissage de test
 
-Version du 13/11/2026 : application iPhone gratuite avec version complète. C'est une page fonctionnelle de test, pas l'identité visuelle de MECUM : elle sera redessinée avec un graphiste avant le lancement.
+Version du 13/11/2026 : application iPhone gratuite avec version complète. C'est une page fonctionnelle de test, pas l'identité visuelle de SIJAMAIS : elle sera redessinée avec un graphiste avant le lancement.
 
 Page unique, sans dépendance externe, prête à publier sur n'importe quel hébergement de fichiers statiques. Elle sert à mesurer la demande avant tout investissement (voir `plan_30_jours.md`). Elle ne vend rien et le dit.
 
@@ -8,7 +8,7 @@ Page unique, sans dépendance externe, prête à publier sur n'importe quel héb
 
 | Etape | Où | Détail |
 |---|---|---|
-| 1. Nom de marque | Bloc `CONFIG` en bas de `index.html`, champ `marque` | Nom de travail actuel : MECUM |
+| 1. Nom de marque | Bloc `CONFIG` en bas de `index.html`, champ `marque` | Nom de travail actuel : SIJAMAIS |
 | 2. Collecte des inscriptions | Champ `adresseDeCollecte` | Adresse d'un service qui accepte un envoi JSON : outil d'emailing, service de formulaires, ou petite fonction maison. Tant que le champ est vide, la page est en mode démonstration et n'envoie rien |
 | 3. Mentions légales | Pied de page | Remplacer les quatre mentions entre crochets : éditeur, adresse, contact, hébergeur |
 | 4. Mesure d'audience | Balise `<head>` | Ajouter le script d'un outil sans traceur ni cookie. Aucun bandeau de consentement n'est alors nécessaire. Si tu ajoutes un pixel publicitaire, un bandeau de consentement devient obligatoire |

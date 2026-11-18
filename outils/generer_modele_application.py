@@ -50,7 +50,7 @@ wb = Workbook()
 lm = wb.active
 lm.title = "Lisez_moi"
 for i, (t, f) in enumerate([
-    ("Modèle financier MECUM, version 2 : application iPhone gratuite avec version complète", F_TITRE),
+    ("Modèle financier SIJAMAIS, version 2 : application iPhone gratuite avec version complète", F_TITRE),
     ("Généré le 13/11/2026 par outils/generer_modele_application.py. Montants en euros hors taxe sauf mention TTC.", F_NORMAL),
     ("", F_NORMAL),
     ("Comment utiliser ce classeur", F_GRAS),

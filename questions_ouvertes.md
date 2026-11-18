@@ -24,10 +24,19 @@ Mis à jour le 13 novembre 2026.
 | E | Connais-tu des élus ou des secrétaires de mairie dans ton département ? | Accélère le test de la piste des communes |
 | F | Quel est le montant exact de tes droits restants (France Travail) ? En attente au 13/11/2026, ne bloque pas le test | Ton estimation de 20 000 € d'ARCE me paraît trop haute : avec 1 000 € par mois et 18 mois maximum, l'ARCE plafonnerait vers 10 800 € |
 | G | Maintien des allocations ou ARCE ? | Exclusifs. Je recommande le maintien. Décision à prendre avec France Travail et l'expert-comptable avant la création |
-| H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour MECUM |
-| I | Combien de jours par semaine garantis-tu à MECUM une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
+| H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour SIJAMAIS |
+| I | Combien de jours par semaine garantis-tu à SIJAMAIS une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
 
-## Nom de marque : OKAOU (18 novembre 2026)
+## Nom de marque (18 novembre 2026) : résolu, SIJAMAIS retenu
+
+OKAOU, AUKAZOU et PARÉ écartés (voir `JOURNAL.md`). Les questions J, K et L ci-dessous sont caduques. Reste ouvert :
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| M | Quand vois-tu un conseil en propriété industrielle ? | Avis écrit sur la disponibilité en classes 9, 41 et 42 et sur l'ancienne marque expirée d'un assureur. Budget 400 à 900 € |
+| N | Prends-tu `sijamais.eu` (7,49 € hors taxe) ? | Seule adresse sobre disponible. `.fr` et `.com` sont réservés |
+
+Anciennes questions, caduques :
 
 | N° | Question | Pourquoi elle compte |
 |---|---|---|

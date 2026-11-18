@@ -1,4 +1,4 @@
-# Prompt Claude Design : pitch deck MECUM pour les mairies (version La Baule-Escoublac)
+# Prompt Claude Design : pitch deck SIJAMAIS pour les mairies (version La Baule-Escoublac)
 
 Rédigé le 14 novembre 2026. A coller tel quel dans Claude Design. Les éléments entre crochets sont à compléter ou à vérifier avant le rendez-vous.
 
@@ -8,7 +8,7 @@ Crée une présentation de 11 diapositives, en français, pour un rendez-vous de
 
 ## Le projet présenté
 
-MECUM est une application iPhone en préparation, créée par [Benjamin de Villelongue, entrepreneur de la presqu'île guérandaise, ancien commercial grands comptes dans l'énergie] (à confirmer). Elle donne aux habitants, sans réseau ni électricité, les consignes utiles en cas de crise : fiches réflexes en français relues par des professionnels du secours, cartes hors ligne, kit d'urgence de 72 heures selon le guide officiel "Tous responsables".
+SIJAMAIS est une application iPhone en préparation, créée par [Benjamin de Villelongue, entrepreneur de la presqu'île guérandaise, ancien commercial grands comptes dans l'énergie] (à confirmer). Elle donne aux habitants, sans réseau ni électricité, les consignes utiles en cas de crise : fiches réflexes en français relues par des professionnels du secours, cartes hors ligne, kit d'urgence de 72 heures selon le guide officiel "Tous responsables".
 
 Ce que je propose à la commune : un module qui met le contenu de son plan communal de sauvegarde et de son document d'information sur les risques (DICRIM) dans la poche de chaque habitant, consultable même pendant une coupure de réseau : risques locaux, points de rassemblement, lieux d'hébergement, consignes, numéros utiles. L'application reste gratuite pour les habitants. La commune paie une licence annuelle.
 
@@ -16,13 +16,13 @@ Important : l'application n'existe pas encore. Le but du rendez-vous n'est pas d
 
 ## Plan des diapositives
 
-1. Titre : "MECUM. Les consignes de sauvegarde de votre commune, dans la poche de chaque habitant, même sans réseau." Sous-titre : proposition de commune pilote, La Baule-Escoublac, [date].
+1. Titre : "SIJAMAIS. Les consignes de sauvegarde de votre commune, dans la poche de chaque habitant, même sans réseau." Sous-titre : proposition de commune pilote, La Baule-Escoublac, [date].
 2. Le contexte de La Baule : commune littorale exposée à la submersion marine (tempête Xynthia de 2010, plan de prévention des risques littoraux de la presqu'île), DICRIM mis à jour en août 2025, forte population estivale qui ne connaît pas les lieux [chiffres à vérifier et à compléter : population permanente, pic estival]. Ne rien inventer : laisser des emplacements visibles pour les chiffres que je fournirai.
 3. Le problème : le DICRIM est un document papier ou un PDF que peu d'habitants lisent et que personne n'a sur soi au moment où le réseau tombe. Les alertes (FR-Alert, applications communales) ont besoin du réseau. Les vacanciers ne connaissent ni les risques ni les points de rassemblement.
 4. La solution en une image : maquette d'écran d'iPhone en mode avion montrant "Risque de submersion : que faire ?", la fiche consigne de la commune, la carte avec le point de rassemblement le plus proche.
 5. Ce que voit l'habitant : quatre fonctions (Urgence, Consignes de ma commune, Préparer mon foyer, Carte hors ligne), prise en main en trois questions, aucune donnée collectée.
 6. Ce que gagne la commune : obligations d'information des habitants mieux remplies, un relais de son plan de sauvegarde qui fonctionne sans réseau, une information des estivants (codes à afficher dans les hôtels, campings, offices de tourisme), des contenus mis à jour par la commune elle-même.
-7. Ce que MECUM n'est pas : pas un système d'alerte (il complète FR-Alert et les sirènes), pas un outil de surveillance, pas de discours anxiogène, pas de publicité, pas de collecte de données.
+7. Ce que SIJAMAIS n'est pas : pas un système d'alerte (il complète FR-Alert et les sirènes), pas un outil de surveillance, pas de discours anxiogène, pas de publicité, pas de collecte de données.
 8. La confiance : fiches signées, datées, sourcées, relues par un formateur de secourisme et un médecin. Alignement sur le guide officiel "Tous responsables". Hébergement et contenus en France.
 9. La proposition pilote : 6 mois, [prix d'essai à fixer, par exemple 300 € ou gratuité contre retours et visibilité], intégration du DICRIM et des points du plan de sauvegarde, deux réunions de travail avec le service concerné, bilan chiffré à la fin (installations, consultations, retours des habitants).
 10. Le calendrier : décembre 2026 rencontre et cadrage, [mois] intégration des contenus de la commune, printemps 2027 sortie de l'application, été 2027 test en saison estivale avec les hébergeurs.
@@ -36,7 +36,7 @@ Important : l'application n'existe pas encore. Le but du rendez-vous n'est pas d
 - Typographie lisible, grande taille, beaucoup d'espace. Une idée par diapositive, peu de texte, chiffres en grand.
 - Pictogrammes au trait simple, homogènes. Emplacements prévus pour de vraies photos du littoral de La Baule que je fournirai (ne pas en générer).
 - Maquettes d'écran d'iPhone épurées, en mode avion visible, avec de vrais textes de consigne en français.
-- Ajoute en bas de chaque diapositive un pied de page discret : "MECUM, projet en préparation, document de travail".
+- Ajoute en bas de chaque diapositive un pied de page discret : "SIJAMAIS, projet en préparation, document de travail".
 
 ## Contraintes de contenu
 
