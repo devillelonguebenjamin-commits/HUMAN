@@ -105,6 +105,15 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
 .logo-row b{font-size:20px;letter-spacing:.3px}
 .logo-row b em{font-style:normal;color:var(--accent)}
 .fictif{font-size:11px;color:var(--alerte);border:1px dashed var(--alerte);border-radius:8px;padding:6px 9px;margin-bottom:10px}
+a{color:inherit;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ecran:target{display:block}
+.phone:has(.ecran:target) .ecran.actif:not(:target){display:none}
+.phone:not(:has(.ecran:target)) .tabbar,.phone:has(#e-onb1:target,#e-onb2:target,#e-onb3:target,#e-onb4:target) .tabbar{display:none}
+.tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--texte2);width:68px}
+.tabbar svg{width:25px;height:25px}
+.phone:has(#e-accueil:target) .tabbar a[data-t=accueil],.phone:has(#e-urgence:target) .tabbar a[data-t=urgence],.phone:has(#e-preparer:target) .tabbar a[data-t=preparer],.phone:has(#e-carte:target) .tabbar a[data-t=carte],.phone:has(#e-savoir:target) .tabbar a[data-t=savoir]{color:var(--accent)}
+.liste>a{display:block}
+.notes .ctrl a{border:1px solid var(--ligne);border-radius:10px;padding:8px 12px;color:var(--texte);background:var(--surface)}
 @media (max-width:860px){
   .notes{display:none}
   .scene{padding:0}
@@ -122,7 +131,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
     <div class="ctrl">
       <button onclick="basculerTheme()">Changer de thème (sombre ou clair)</button>
       <button onclick="basculerPremium()" id="bt-prem">Simuler un abonné premium</button>
-      <button onclick="relancer()">Revoir la prise en main</button>
+      <a href="#e-onb1">Revoir la prise en main</a>
     </div>
   </aside>
 
@@ -138,7 +147,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       </div>
       <div style="position:absolute;left:18px;right:18px;bottom:40px">
         <p class="mini" style="text-align:center;margin-bottom:14px">Trois questions, une minute. Aucun compte, aucune donnée envoyée.</p>
-        <button class="btn btn-p" onclick="va('e-onb2')">Commencer</button>
+        <a class="btn btn-p" href="#e-onb2">Commencer</a>
       </div>
     </section>
 
@@ -152,7 +161,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       <h3>Où habitez-vous ?</h3>
       <div class="liste"><div class="ligne"><span class="t">Loire-Atlantique (44)<div class="s">La Baule-Escoublac</div></span><span class="chev">›</span></div></div>
       <p class="mini">Sert à télécharger la carte et les risques de votre territoire. Reste sur votre téléphone.</p>
-      <div style="margin-top:24px"><button class="btn btn-p" onclick="va('e-onb3')">Continuer</button></div>
+      <div style="margin-top:24px"><a class="btn btn-p" href="#e-onb3">Continuer</a></div>
     </section>
 
     <section class="ecran" id="e-onb3">
@@ -172,16 +181,16 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
         <p class="mini" style="margin:6px 0 10px">Il fonctionne sur votre iPhone, sans internet. Disponible sur iPhone 15 Pro et modèles plus récents.</p>
         <div class="choix" style="margin:0"><button class="on">Oui</button><button>Plus tard</button></div>
       </div>
-      <div style="margin-top:18px"><button class="btn btn-p" onclick="va('e-onb4');telecharger()">Préparer mon téléphone</button></div>
+      <div style="margin-top:18px"><a class="btn btn-p" href="#e-onb4" onclick="telecharger()">Préparer mon téléphone</a></div>
     </section>
 
     <section class="ecran" id="e-onb4">
       <h2 style="margin-top:30px">Préparation en cours</h2>
       <p class="mini">Gardez l'application ouverte, en Wi-Fi si possible.</p>
-      <div class="carte progress"><b>Carte de la Loire-Atlantique</b><div class="jauge"><i id="p1" style="width:0"></i></div><span class="mini">180 Mo</span></div>
-      <div class="carte progress"><b>Fiches de sécurité et guides officiels</b><div class="jauge"><i id="p2" style="width:0"></i></div><span class="mini">24 Mo</span></div>
-      <div class="carte progress"><b>Risques de votre commune</b><div class="jauge"><i id="p3" style="width:0"></i></div><span class="mini">Source : Géorisques</span></div>
-      <div style="margin-top:22px"><button class="btn btn-p" id="bt-fin" style="opacity:.4" onclick="finOnb()">C'est prêt</button></div>
+      <div class="carte progress"><b>Carte de la Loire-Atlantique</b><div class="jauge"><i id="p1" style="width:100%"></i></div><span class="mini">180 Mo</span></div>
+      <div class="carte progress"><b>Fiches de sécurité et guides officiels</b><div class="jauge"><i id="p2" style="width:100%"></i></div><span class="mini">24 Mo</span></div>
+      <div class="carte progress"><b>Risques de votre commune</b><div class="jauge"><i id="p3" style="width:100%"></i></div><span class="mini">Source : Géorisques</span></div>
+      <div style="margin-top:22px"><a class="btn btn-p" id="bt-fin" href="#e-accueil">C'est prêt</a></div>
     </section>
 
     <!-- ================= ACCUEIL ================= -->
@@ -190,12 +199,12 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
         <svg width="30" height="30" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#1F3B2D"/><path d="M50 18c-14 0-24 10-24 24 0 15 24 40 24 40s24-25 24-40c0-14-10-24-24-24z" fill="#F3F4EF"/><path d="M50 30 L62 52 H38 Z" fill="#1F3B2D"/><path d="M50 40 L55 52 H45 Z" fill="#E0662A"/></svg>
         <b><em>SI</em>JAMAIS</b>
         <span style="flex:1"></span>
-        <button onclick="va('e-reglages')" aria-label="Réglages"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+        <a href="#e-reglages" aria-label="Réglages"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
       </div>
-      <button class="urgence-btn" onclick="onglet('urgence')">
+      <a class="urgence-btn" href="#e-urgence">
         <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
         <div><b>Urgence</b><span>Numéros, 6 réflexes, que faire maintenant</span></div>
-      </button>
+      </a>
 
       <div class="carte vigil" onclick="toast('Vigilance officielle : données Météo-France, conservées hors ligne depuis la dernière connexion.')">
         <span class="pastille"></span>
@@ -213,14 +222,14 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       <div class="liste">
         <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Stocker 6 litres d'eau de plus<div class="s">Kit 72 heures</div></span></button>
         <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Fixer un point de rendez-vous familial<div class="s">Plan du foyer</div></span></button>
-        <button class="ligne" onclick="va('e-exercice')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span class="t">Exercice : couper l'électricité<div class="s">5 minutes, guidé</div></span><span class="chev">›</span></button>
+        <a class="ligne" href="#e-exercice"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span class="t">Exercice : couper l'électricité<div class="s">5 minutes, guidé</div></span><span class="chev">›</span></a>
       </div>
 
       <h3>Accès rapides</h3>
       <div class="grille">
-        <button class="tuile" onclick="va('e-famille')"><b>Famille</b><span>Plan, rendez-vous, je suis en sécurité</span></button>
-        <button class="tuile" onclick="va('e-assistant')"><b>Assistant</b><span>Hors ligne, sur l'iPhone</span></button>
-        <button class="tuile" onclick="va('e-commune')"><b>Ma commune</b><span>La Baule-Escoublac</span></button>
+        <a class="tuile" href="#e-famille"><b>Famille</b><span>Plan, rendez-vous, je suis en sécurité</span></a>
+        <a class="tuile" href="#e-assistant"><b>Assistant</b><span>Hors ligne, sur l'iPhone</span></a>
+        <a class="tuile" href="#e-commune"><b>Ma commune</b><span>La Baule-Escoublac</span></a>
         <button class="tuile" onclick="toast('Lampe torche et signal lumineux SOS. Gratuit.')"><b>Lampe et SOS</b><span>Signal lumineux</span></button>
       </div>
 
@@ -229,9 +238,9 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
         <button class="pill bientot" onclick="toast('Mode économie : écran sombre, localisation coupée, synchronisation suspendue.')">Économiser</button>
       </div>
 
-      <button class="carte" style="width:100%;display:flex;align-items:center;gap:12px" onclick="va('e-premium')" id="bandeau-prem">
+      <a class="carte" style="width:100%;display:flex;align-items:center;gap:12px" href="#e-premium" id="bandeau-prem">
         <div style="flex:1"><b>Partir hors réseau ?</b><div class="mini">Cartes de France, randonnée, mer, voyage. Premium.</div></div><span class="chev">›</span>
-      </button>
+      </a>
     </section>
 
     <!-- ================= URGENCE ================= -->
@@ -245,34 +254,34 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       </div>
       <p class="mini" style="margin:-4px 0 12px">114 par SMS pour les personnes sourdes ou malentendantes.</p>
 
-      <button class="liste" style="width:100%" onclick="va('e-reflexes')"><div class="ligne"><span class="ico" style="background:var(--danger);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M5 11V7l7-4 7 4v4M6 11v9h12v-9"/></svg></span><span class="t"><b>La sirène retentit</b><div class="s">Les 6 réflexes officiels</div></span><span class="chev">›</span></div></button>
+      <a class="liste" style="width:100%" href="#e-reflexes"><div class="ligne"><span class="ico" style="background:var(--danger);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M5 11V7l7-4 7 4v4M6 11v9h12v-9"/></svg></span><span class="t"><b>La sirène retentit</b><div class="s">Les 6 réflexes officiels</div></span><span class="chev">›</span></div></a>
 
       <h3>Que se passe-t-il ?</h3>
       <div class="liste">
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Coupure d'électricité ou de réseau</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Inondation ou submersion marine</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Tempête</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Canicule ou grand froid</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Feu de forêt</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Séisme</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Accident industriel ou nucléaire</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Conflit ou attaque</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Épidémie</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-scenario')"><span class="t">Évacuation</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></button>
+        <a class="ligne" href="#e-scenario"><span class="t">Coupure d'électricité ou de réseau</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Inondation ou submersion marine</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Tempête</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Canicule ou grand froid</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Feu de forêt</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Séisme</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Accident industriel ou nucléaire</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Conflit ou attaque</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Épidémie</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Évacuation</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
       </div>
 
       <h3>Premiers secours</h3>
       <div class="liste">
-        <button class="ligne" onclick="va('e-fiche')"><span class="t">Arrêt cardiaque<div class="s">Alerter, masser, défibriller</div></span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-fiche')"><span class="t">Saignement abondant</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-fiche')"><span class="t">Personne inconsciente qui respire</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-fiche')"><span class="t">Brûlure</span><span class="chev">›</span></button>
+        <a class="ligne" href="#e-fiche"><span class="t">Arrêt cardiaque<div class="s">Alerter, masser, défibriller</div></span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-fiche"><span class="t">Saignement abondant</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-fiche"><span class="t">Personne inconsciente qui respire</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-fiche"><span class="t">Brûlure</span><span class="chev">›</span></a>
       </div>
       <p class="source">Fiches établies d'après les recommandations PSC1 et « gestes qui sauvent » du ministère de l'Intérieur, édition décembre 2023.</p>
     </section>
 
     <section class="ecran" id="e-reflexes">
-      <button class="retour" onclick="retour()">‹ Urgence</button>
+      <a class="retour" href="#e-urgence">‹ Urgence</a>
       <h2>La sirène retentit</h2>
       <div class="carte">
         <b>Reconnaître le signal</b>
@@ -292,7 +301,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
     </section>
 
     <section class="ecran" id="e-scenario">
-      <button class="retour" onclick="retour()">‹ Retour</button>
+      <a class="retour" href="#e-urgence">‹ Retour</a>
       <h2>Coupure d'électricité</h2>
       <span class="pill gratuit">Gratuit pour toujours</span>
       <h3>Maintenant</h3>
@@ -304,15 +313,15 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       </div>
       <h3>Si cela dure</h3>
       <div class="liste">
-        <button class="ligne" onclick="onglet('preparer')"><span class="t">Votre kit : 2,5 jours d'eau</span><span class="chev">›</span></button>
-        <button class="ligne" onclick="va('e-famille')"><span class="t">Prévenir la famille quand le réseau revient</span><span class="chev">›</span></button>
+        <a class="ligne" href="#e-preparer"><span class="t">Votre kit : 2,5 jours d'eau</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-famille"><span class="t">Prévenir la famille quand le réseau revient</span><span class="chev">›</span></a>
         <button class="ligne" onclick="toast('Personnes sous assistance respiratoire : contactez votre prestataire et signalez-vous en mairie.')"><span class="t">Personne dépendante d'un appareil médical</span><span class="chev">›</span></button>
       </div>
       <p class="source">D'après le guide « Tous responsables » (SGDSN, 20/11/2025). Relu le 18/11/2026. Texte de démonstration, à valider.</p>
     </section>
 
     <section class="ecran" id="e-fiche">
-      <button class="retour" onclick="retour()">‹ Urgence</button>
+      <a class="retour" href="#e-urgence">‹ Urgence</a>
       <h2>Arrêt cardiaque</h2>
       <div class="carte" style="border:1.5px solid var(--danger)"><b>La personne ne répond pas et ne respire pas</b></div>
       <div class="carte">
@@ -321,12 +330,12 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
         <div class="etape"><span class="num">3</span><div><b>Défibrillez</b><div class="mini">Faites chercher un défibrillateur, suivez ses instructions vocales.</div></div></div>
       </div>
       <button class="btn btn-s" onclick="toast('Métronome à 110 battements par minute (démonstration)')">Lancer le rythme de massage</button>
-      <button class="btn btn-s" style="margin-top:8px" onclick="onglet('carte')">Défibrillateur le plus proche</button>
+      <a class="btn btn-s" style="margin-top:8px" href="#e-carte">Défibrillateur le plus proche</a>
       <p class="source">Recommandations PSC1, ministère de l'Intérieur, édition décembre 2023. Fiche relue par : à désigner.</p>
     </section>
 
     <section class="ecran" id="e-exercice">
-      <button class="retour" onclick="retour()">‹ Accueil</button>
+      <a class="retour" href="#e-accueil">‹ Accueil</a>
       <h2>Exercice de la semaine</h2>
       <p class="mini">Savoir couper l'électricité, l'eau et le gaz de son logement.</p>
       <div class="liste" style="margin-top:14px">
@@ -376,10 +385,10 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
 
       <h3>Aller plus loin</h3>
       <div class="liste prem-zone">
-        <button class="ligne" onclick="premiumOu('Objectif 14 jours activé')"><span class="t">Objectif 14 jours</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Rappel de péremption créé')"><span class="t">Dates de péremption et rappels</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Appareil photo ouvert pour lire le code-barres')"><span class="t">Ajouter par code-barres</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Inventaire partagé avec le foyer')"><span class="t">Inventaire partagé et plusieurs logements</span><span class="pill premium">Premium</span></button>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Objectif 14 jours activé')"><span class="t">Objectif 14 jours</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Rappel de péremption créé')"><span class="t">Dates de péremption et rappels</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Appareil photo ouvert pour lire le code-barres')"><span class="t">Ajouter par code-barres</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Inventaire partagé avec le foyer')"><span class="t">Inventaire partagé et plusieurs logements</span><span class="pill premium">Premium</span></a>
       </div>
     </section>
 
@@ -414,10 +423,10 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       </div>
       <h3>Premium</h3>
       <div class="liste">
-        <button class="ligne" onclick="premiumOu('Téléchargement de la carte de France lancé')"><span class="t">France entière et autres pays</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Fond topographique activé')"><span class="t">Fond topographique pour la randonnée</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Itinéraire calculé hors ligne')"><span class="t">Itinéraires hors ligne</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Enregistrement de la trace démarré')"><span class="t">Enregistrer une trace</span><span class="pill premium">Premium</span></button>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Téléchargement de la carte de France lancé')"><span class="t">France entière et autres pays</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Fond topographique activé')"><span class="t">Fond topographique pour la randonnée</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Itinéraire calculé hors ligne')"><span class="t">Itinéraires hors ligne</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Enregistrement de la trace démarré')"><span class="t">Enregistrer une trace</span><span class="pill premium">Premium</span></a>
       </div>
     </section>
 
@@ -427,28 +436,28 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       <div class="carte" style="display:flex;gap:10px;align-items:center;color:var(--texte2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Rechercher, même hors réseau</div>
       <h3>Sources officielles</h3>
       <div class="liste">
-        <button class="ligne" onclick="va('e-guide')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/></svg></span><span class="t">Tous responsables : face aux risques, agissons<div class="s">SGDSN · 2025 · 27 pages</div></span><span class="pill gratuit">Gratuit</span></button>
-        <button class="ligne" onclick="va('e-fiche')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span><span class="t">Premiers secours (PSC1)<div class="s">Ministère de l'Intérieur · déc. 2023</div></span><span class="pill gratuit">Gratuit</span></button>
-        <button class="ligne" onclick="va('e-reflexes')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20z"/></svg></span><span class="t">Alerte et 6 réflexes<div class="s">Préfectures</div></span><span class="pill gratuit">Gratuit</span></button>
+        <a class="ligne" href="#e-guide"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/></svg></span><span class="t">Tous responsables : face aux risques, agissons<div class="s">SGDSN · 2025 · 27 pages</div></span><span class="pill gratuit">Gratuit</span></a>
+        <a class="ligne" href="#e-fiche"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span><span class="t">Premiers secours (PSC1)<div class="s">Ministère de l'Intérieur · déc. 2023</div></span><span class="pill gratuit">Gratuit</span></a>
+        <a class="ligne" href="#e-reflexes"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20z"/></svg></span><span class="t">Alerte et 6 réflexes<div class="s">Préfectures</div></span><span class="pill gratuit">Gratuit</span></a>
         <button class="ligne" onclick="toast('Conseils officiels du ministère de l\'Europe et des Affaires étrangères, gratuits même dans le mode voyage.')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span class="t">Conseils aux voyageurs<div class="s">Ministère des Affaires étrangères</div></span><span class="pill gratuit">Gratuit</span></button>
-        <button class="ligne" onclick="va('e-commune')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span><span class="t">Risques de ma commune (DICRIM)<div class="s">La Baule-Escoublac · fictif</div></span><span class="pill gratuit">Gratuit</span></button>
+        <a class="ligne" href="#e-commune"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span><span class="t">Risques de ma commune (DICRIM)<div class="s">La Baule-Escoublac · fictif</div></span><span class="pill gratuit">Gratuit</span></a>
       </div>
-      <p class="source">Chaque document indique sa source, sa date et sa dernière vérification. <button style="color:var(--accent);font-size:11.5px" onclick="va('e-journal')">Journal des mises à jour</button></p>
+      <p class="source">Chaque document indique sa source, sa date et sa dernière vérification. <a style="color:var(--accent);font-size:11.5px" href="#e-journal">Journal des mises à jour</a></p>
       <h3>Mes documents</h3>
       <div class="liste"><button class="ligne" onclick="toast('Import d\'un PDF depuis Fichiers. Gratuit.')"><span class="t">Importer un PDF</span><span class="pill gratuit">Gratuit</span></button></div>
       <h3>Bibliothèque premium</h3>
       <div class="liste">
-        <button class="ligne" onclick="premiumOu('Encyclopédie ouverte')"><span class="t">Encyclopédie en français<div class="s">Hors ligne, 12 Go</div></span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Guides randonnée et montagne ouverts')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Guides mer et voile ouverts')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Rayon enfants ouvert')"><span class="t">Rayon enfants</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Guides pratiques ouverts')"><span class="t">Faire soi-même</span><span class="pill premium">Premium</span></button>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Encyclopédie ouverte')"><span class="t">Encyclopédie en français<div class="s">Hors ligne, 12 Go</div></span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Guides randonnée et montagne ouverts')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Guides mer et voile ouverts')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Rayon enfants ouvert')"><span class="t">Rayon enfants</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Guides pratiques ouverts')"><span class="t">Faire soi-même</span><span class="pill premium">Premium</span></a>
       </div>
       <p class="mini">Les consignes de sécurité contenues dans ces guides restent consultables gratuitement.</p>
     </section>
 
     <section class="ecran" id="e-guide">
-      <button class="retour" onclick="retour()">‹ Savoir</button>
+      <a class="retour" href="#e-savoir">‹ Savoir</a>
       <h2>Tous responsables</h2>
       <p class="mini">Secrétariat général de la défense et de la sécurité nationale · publié le 20/11/2025 · Licence Ouverte</p>
       <div class="liste" style="margin-top:14px">
@@ -461,7 +470,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
     </section>
 
     <section class="ecran" id="e-journal">
-      <button class="retour" onclick="retour()">‹ Savoir</button>
+      <a class="retour" href="#e-savoir">‹ Savoir</a>
       <h2>Mises à jour</h2>
       <div class="liste">
         <div class="ligne"><span class="t">18/11/2026<div class="s">Vérification des 6 réflexes et du signal d'alerte. Aucun changement.</div></span></div>
@@ -473,7 +482,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
 
     <!-- ================= FAMILLE ================= -->
     <section class="ecran" id="e-famille">
-      <button class="retour" onclick="retour()">‹ Retour</button>
+      <a class="retour" href="#e-accueil">‹ Retour</a>
       <h2>Famille</h2>
       <button class="btn btn-p" onclick="toast('SMS « Je suis en sécurité » préparé. Il partira dès que le réseau reviendra.')">Je suis en sécurité</button>
       <p class="mini" style="margin:6px 0 4px">Le message part automatiquement au retour du réseau.</p>
@@ -492,16 +501,16 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       </div>
       <h3>Famille premium</h3>
       <div class="liste">
-        <button class="ligne" onclick="premiumOu('Premium partagé avec 2 personnes')"><span class="t">Partager le premium, jusqu'à 5 personnes</span><span class="pill premium">Famille</span></button>
-        <button class="ligne" onclick="premiumOu('Carte familiale affichée')"><span class="t">Carte familiale</span><span class="pill premium">Famille</span></button>
-        <button class="ligne" onclick="premiumOu('Messagerie familiale ouverte')"><span class="t">Messagerie familiale</span><span class="pill premium">Famille</span></button>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Premium partagé avec 2 personnes')"><span class="t">Partager le premium, jusqu'à 5 personnes</span><span class="pill premium">Famille</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Carte familiale affichée')"><span class="t">Carte familiale</span><span class="pill premium">Famille</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Messagerie familiale ouverte')"><span class="t">Messagerie familiale</span><span class="pill premium">Famille</span></a>
         <div class="ligne"><span class="t">Messages entre téléphones sans réseau<div class="s">Bluetooth, à l'étude</div></span><span class="pill bientot">Bientôt</span></div>
       </div>
     </section>
 
     <!-- ================= ASSISTANT ================= -->
     <section class="ecran" id="e-assistant">
-      <button class="retour" onclick="retour()">‹ Retour</button>
+      <a class="retour" href="#e-accueil">‹ Retour</a>
       <h2>Assistant</h2>
       <p class="mini" style="margin-bottom:12px">Fonctionne sur votre iPhone, sans internet. Il s'appuie sur les fiches relues et cite ses sources.</p>
       <div class="bulle moi">L'eau du robinet est coupée depuis hier, comment rendre l'eau d'un ruisseau buvable ?</div>
@@ -514,7 +523,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
 
     <!-- ================= MA COMMUNE ================= -->
     <section class="ecran" id="e-commune">
-      <button class="retour" onclick="retour()">‹ Retour</button>
+      <a class="retour" href="#e-accueil">‹ Retour</a>
       <h2>Ma commune</h2>
       <div class="fictif">Exemple fictif. La Baule-Escoublac n'a validé aucun contenu.</div>
       <div class="carte"><b>La Baule-Escoublac</b><div class="mini">Informations fournies par la commune · mises à jour par elle</div></div>
@@ -526,7 +535,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       </div>
       <h3>En cas d'alerte</h3>
       <div class="liste">
-        <button class="ligne" onclick="onglet('carte')"><span class="t">Points de rassemblement<div class="s">3 lieux sur la carte</div></span><span class="chev">›</span></button>
+        <a class="ligne" href="#e-carte"><span class="t">Points de rassemblement<div class="s">3 lieux sur la carte</div></span><span class="chev">›</span></a>
         <div class="ligne"><span class="t">Numéro de la mairie</span><span class="mini">exemple</span></div>
         <div class="ligne"><span class="t">Radio locale à écouter</span><span class="mini">exemple</span></div>
       </div>
@@ -535,7 +544,7 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
 
     <!-- ================= PREMIUM ================= -->
     <section class="ecran" id="e-premium">
-      <button class="retour" onclick="retour()">‹ Retour</button>
+      <a class="retour" href="#e-accueil">‹ Retour</a>
       <h2>Partez hors réseau</h2>
       <div class="regle">Tout ce qui protège est gratuit, pour toujours.</div>
       <p class="mini" style="margin-bottom:14px">Le premium sert vos loisirs : vacances à la campagne, randonnée, mer, voyage.</p>
@@ -548,21 +557,21 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
       </div>
       <button class="offre on" style="width:100%" onclick="choisir(this)"><div style="display:flex;justify-content:space-between"><b>Premium</b><span class="prix">29,99 € / an</span></div><div class="mini">ou 3,99 € par mois · 1 personne</div></button>
       <button class="offre" style="width:100%" onclick="choisir(this)"><div style="display:flex;justify-content:space-between"><b>Famille</b><span class="prix">44,99 € / an</span></div><div class="mini">ou 5,99 € par mois · jusqu'à 5 personnes</div></button>
-      <button class="btn btn-p" style="margin-top:6px" onclick="activerPremium()">Essayer 7 jours gratuitement</button>
+      <a class="btn btn-p" style="margin-top:6px" href="#e-accueil" onclick="activerPremium()">Essayer 7 jours gratuitement</a>
       <p class="mini" style="text-align:center;margin-top:8px">Sans engagement. Résiliable dans les réglages de l'iPhone. Prix à tester.</p>
     </section>
 
     <!-- ================= RÉGLAGES ================= -->
     <section class="ecran" id="e-reglages">
-      <button class="retour" onclick="retour()">‹ Accueil</button>
+      <a class="retour" href="#e-accueil">‹ Accueil</a>
       <h2>Réglages</h2>
       <h3>Mes modes</h3>
       <div class="liste">
         <div class="ligne"><span class="t">Maison et crises</span><span class="pill gratuit">Toujours actif</span></div>
-        <button class="ligne" onclick="premiumOu('Mode randonnée activé')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Mode mer activé')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Mode voyage activé')"><span class="t">Voyage à l'étranger</span><span class="pill premium">Premium</span></button>
-        <button class="ligne" onclick="premiumOu('Mode camping activé')"><span class="t">Camping et van</span><span class="pill premium">Premium</span></button>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode randonnée activé')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode mer activé')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode voyage activé')"><span class="t">Voyage à l'étranger</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode camping activé')"><span class="t">Camping et van</span><span class="pill premium">Premium</span></a>
         <div class="ligne"><span class="t">Coupure prolongée</span><span class="pill gratuit">Gratuit</span></div>
       </div>
       <h3>Affichage</h3>
@@ -586,33 +595,25 @@ h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;c
 
     <div class="toast" id="toast"></div>
 
-    <nav class="tabbar cache" id="tabbar">
-      <button data-t="accueil" onclick="onglet('accueil')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Accueil</button>
-      <button data-t="urgence" onclick="onglet('urgence')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>Urgence</button>
-      <button data-t="preparer" onclick="onglet('preparer')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16"/></svg>Préparer</button>
-      <button data-t="carte" onclick="onglet('carte')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Carte</button>
-      <button data-t="savoir" onclick="onglet('savoir')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></svg>Savoir</button>
+    <nav class="tabbar" id="tabbar">
+      <a data-t="accueil" href="#e-accueil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Accueil</a>
+      <a data-t="urgence" href="#e-urgence"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>Urgence</a>
+      <a data-t="preparer" href="#e-preparer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16"/></svg>Préparer</a>
+      <a data-t="carte" href="#e-carte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Carte</a>
+      <a data-t="savoir" href="#e-savoir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></svg>Savoir</a>
     </nav>
   </div>
 </div>
 
 <script>
-let pile=[], premium=false, timer;
+let premium=false, timer;
 const $=id=>document.getElementById(id);
-function montrer(id){
-  document.querySelectorAll('.ecran').forEach(e=>e.classList.remove('actif'));
-  $(id).classList.add('actif'); $(id).scrollTop=0;
-  const t=id.replace('e-','');
-  document.querySelectorAll('.tabbar button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
-}
-function va(id){ const cur=document.querySelector('.ecran.actif'); if(cur) pile.push(cur.id); montrer(id); }
-function retour(){ montrer(pile.pop()||'e-accueil'); }
-function onglet(t){ pile=[]; montrer('e-'+t); }
+window.addEventListener('hashchange',()=>{ const e=document.querySelector(location.hash||'#e-onb1'); if(e) e.scrollTop=0; window.scrollTo(0,0); });
 function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); clearTimeout(timer); timer=setTimeout(()=>t.classList.remove('on'),2600); }
 function cocher(l){ const c=l.querySelector('.check'); c.classList.toggle('ok'); c.textContent=c.classList.contains('ok')?'✓':''; }
-function premiumOu(msg){ premium?toast(msg):va('e-premium'); }
+function premiumOu(msg){ if(premium){ toast(msg); return false; } return true; }
 function choisir(b){ document.querySelectorAll('.offre').forEach(o=>o.classList.remove('on')); b.classList.add('on'); }
-function activerPremium(){ premium=true; majPremium(); toast('Essai de 7 jours activé (démonstration)'); retour(); }
+function activerPremium(){ premium=true; majPremium(); toast('Essai de 7 jours activé (démonstration)'); }
 function basculerPremium(){ premium=!premium; majPremium(); toast(premium?'Mode abonné simulé':'Mode gratuit simulé'); }
 function majPremium(){
   document.querySelectorAll('.pill.premium').forEach(p=>{ if(!p.dataset.o) p.dataset.o=p.textContent; p.textContent=premium?'Actif':p.dataset.o; });
@@ -624,13 +625,12 @@ function basculerTheme(){
   r.dataset.theme=l?'dark':'light'; $('lib-theme').textContent=l?'Sombre':'Clair';
 }
 function telecharger(){
+  ['p1','p2','p3'].forEach(i=>$(i).style.width='0');
   let v=0; const iv=setInterval(()=>{ v+=4;
     $('p1').style.width=Math.min(v,100)+'%'; $('p2').style.width=Math.min(v*1.6,100)+'%'; $('p3').style.width=Math.min(v*2.5,100)+'%';
-    if(v>=100){ clearInterval(iv); $('bt-fin').style.opacity=1; }
+    if(v>=100) clearInterval(iv);
   },70);
 }
-function finOnb(){ $('tabbar').classList.remove('cache'); onglet('accueil'); }
-function relancer(){ $('tabbar').classList.add('cache'); pile=[]; montrer('e-onb1'); }
 document.querySelectorAll('.choix').forEach(g=>g.addEventListener('click',e=>{
   const b=e.target.closest('button'); if(!b) return;
   if(g.hasAttribute('data-multi')) b.classList.toggle('on');

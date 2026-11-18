@@ -26,3 +26,7 @@ Le panneau de gauche (sur ordinateur) permet de changer de thème, de simuler un
 2. Le logo est redessiné en SVG d'après la proposition « Le repère » : à remplacer par le fichier du graphiste.
 3. L'identité visuelle reste provisoire : couleurs de la charte, police système de l'iPhone, aucun dégradé ni illustration générée.
 4. Aucun contenu de la commune de La Baule-Escoublac n'a été validé par elle.
+
+## Navigation
+
+Les écrans sont reliés par de simples liens internes (`#e-accueil`, `#e-urgence`...). La maquette reste navigable même si la visionneuse n'exécute pas JavaScript. Le script ne gère que les compléments : messages de démonstration, cases à cocher, thème, simulation d'abonné, barres de téléchargement.
