@@ -164,3 +164,14 @@ Benjamin souhaite garder OKAOU (jeu de mots sur "au cas où"). Il a exporté deu
 Les autres marques (produits chimiques, alimentaire, construction, boissons, anciennes marques expirées de La Redoute et de Gan) sont dans d'autres secteurs.
 
 **Conséquence.** OKAOU ne peut pas être utilisé publiquement pour l'application sans accord écrit, et il faudrait en principe deux accords. Toute variante qui se prononce "okaou" est exposée au même risque (similitude phonétique). Règle posée : aucun engagement (graphiste, développeur, compte Apple, publicité, deck) sous le nom OKAOU sans accord écrit. Le test de 30 jours et le deck pour les mairies restent sous MECUM. Date butoir : jour 22 du plan. Sans accord à cette date, plan B avec un nom qui change la sonorité.
+
+## 2026-11-18 (suite) : AUKAZOU et OKAZOU
+
+Recherche INPI "AUKAZOU" : 0 marque, 1 entreprise (non identifiée). Mais AUKAZOU se prononce comme OKAZOU, et la base contient deux marques en vigueur de même sonorité :
+
+| Marque | Titulaire | Date | Classes | Couverture |
+|---|---|---|---|---|
+| OKAZOU (n° 5273379, verbale) | Une personne physique (département 972) | 29/06/2026 | 9, 35, 42 | Logiciels enregistrés, développement de logiciels, SaaS, hébergement |
+| O'kazou (n° 4299916, semi-figurative, renouvelée) | Une personne physique (département 67) | 16/09/2016 | 19, 35, 36, 37, 41, 42, 45 | Dont éducation, formation, logiciels, SaaS, services de sécurité |
+
+**Conclusion : rouge aussi.** Le territoire sonore "o-ka-ou / o-ka-zou" est saturé : quatre marques en vigueur (OKAOU 2022, OKAOU C LA 2017, OKAZOU 2026, O'kazou 2016) dans les classes logiciel, formation ou sécurité. Le plan B doit abandonner cette sonorité et probablement l'expression "au cas où". Prochain contrôle : vérifier MECUM dans la base des marques (jamais fait) et préparer une liste de noms à sonorité différente.
