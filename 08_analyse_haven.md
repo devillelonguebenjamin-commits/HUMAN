@@ -1,12 +1,12 @@
-# 08. Analyse de HAVEN et conséquences pour MECUM
+# 08. Analyse de HAVEN et conséquences pour SIJAMAIS
 
 Rédigé le 12 novembre 2026 à partir de huit captures d'écran fournies par Benjamin (application HAVEN sur iPad, interface en français). Les captures ne sont pas versées au dépôt : elles montrent un prénom de ta famille et ta position précise. Je n'ai pas pu utiliser l'application moi-même : tout ce qui suit vient de ces écrans. Marqueurs : [FAIT] visible sur une capture, [EST] déduction, [HYP] hypothèse, [INT] intuition.
 
 ## 1. Ce que les captures changent dans le dossier
 
 1. **HAVEN a déjà une interface en français.** Les menus, l'accueil, la famille et les fournitures sont traduits [FAIT]. Le dossier de phase 1 affirmait qu'aucune offre équivalente n'existait en français et classait "un éditeur américain traduit son application" comme un risque à 24 mois. Ce risque est en partie réalisé. Je corrige : il n'existe pas d'offre au contenu français, mais il existe un concurrent à l'interface française.
-2. **HAVEN est bien plus large qu'une bibliothèque hors ligne.** C'est un tableau de bord complet de préparation : scénarios, bibliothèque, famille, inventaire, veille, cartes, assistant. Une personne seule ne peut pas égaler cette étendue. MECUM doit être plus étroit et meilleur sur ce qu'il fait.
-3. **Ma confiance dans le pivot baisse.** J'estimais à 35 à 45 % la chance de franchir les seuils du test. Avec un concurrent gratuit, traduit et bien fini, je la ramène à 25 à 35 % [INT]. Le test à 30 jours reste justifié, mais il doit montrer que des Français préfèrent MECUM à HAVEN, pas seulement qu'ils veulent ce type d'outil.
+2. **HAVEN est bien plus large qu'une bibliothèque hors ligne.** C'est un tableau de bord complet de préparation : scénarios, bibliothèque, famille, inventaire, veille, cartes, assistant. Une personne seule ne peut pas égaler cette étendue. SIJAMAIS doit être plus étroit et meilleur sur ce qu'il fait.
+3. **Ma confiance dans le pivot baisse.** J'estimais à 35 à 45 % la chance de franchir les seuils du test. Avec un concurrent gratuit, traduit et bien fini, je la ramène à 25 à 35 % [INT]. Le test à 30 jours reste justifié, mais il doit montrer que des Français préfèrent SIJAMAIS à HAVEN, pas seulement qu'ils veulent ce type d'outil.
 
 ## 2. Ce que fait HAVEN
 
@@ -28,13 +28,14 @@ Rédigé le 12 novembre 2026 à partir de huit captures d'écran fournies par Be
 |---|---|---|
 | Gratuit | 0 | Acquisition et habitude : premiers secours, cartes, bibliothèque, famille, inventaire, petit assistant |
 | Pro à vie | 29,99 USD [FAIT, capture de l'accueil] | Déblocage unique : 16 scénarios, identification de plantes, analyse par photo |
-| Watch | Abonnement, prix non visible | Revenu récurrent sur un service en ligne |
+| Pro Family | 59,99 € [FAIT, capture du 13/11/2026] | Pro pour un cercle familial |
+| Watch | 29,99 € par an ou 3,99 € par mois, essai de 7 jours, Pro inclus [FAIT, capture du 13/11/2026] | Revenu récurrent : veille des conflits, alertes, suivi de la posture nucléaire |
 
 Enseignement : la partie gratuite est très généreuse. Presque tout ce que le dossier de phase 1 prévoyait de vendre dans le "pack" (fiches, cartes, bibliothèque) est gratuit chez HAVEN. On ne peut donc plus faire payer le socle.
 
 ## 3. Ce qui est bien fait et à reprendre
 
-| Idée | Pourquoi elle fonctionne | Reprise dans MECUM |
+| Idée | Pourquoi elle fonctionne | Reprise dans SIJAMAIS |
 |---|---|---|
 | Socle gratuit réellement utile | Lève le frein "c'est gratuit ailleurs", crée l'habitude, remplace la publicité | Oui, c'est le coeur de l'acquisition |
 | Modes d'usage (voile, camping, chasse...) | Fait entrer par le loisir, pas par la peur. Personnalise sans questionnaire | Oui, avec des modes français : maison, randonnée, voile, route, famille |
@@ -44,20 +45,20 @@ Enseignement : la partie gratuite est très généreuse. Presque tout ce que le 
 | Import de ses propres documents | Coût nul, forte valeur perçue | Oui |
 | Avertissement honnête sur les limites du modèle | Rare et rassurant | Oui, mais mieux : ne pas proposer un modèle qui plante |
 
-## 4. Où HAVEN est faible, et où MECUM peut se distinguer
+## 4. Où HAVEN est faible, et où SIJAMAIS peut se distinguer
 
-| Faiblesse observée | Preuve | Réponse de MECUM |
+| Faiblesse observée | Preuve | Réponse de SIJAMAIS |
 |---|---|---|
 | Contenu en anglais sous une interface française | Titres des livres, suggestions de l'assistant, filtres de la carte, "Essentials", "To buy", "Inventory health" [FAIT] | Tout en français, rédigé et non traduit |
 | Contenu américain | Tornades, manuel de l'armée américaine, chasse nord-américaine [FAIT] | Risques, numéros, règles et saisons de France |
 | La peur est derrière le péage | Guerre mondiale, nucléaire, zone de combat verrouillés en Pro. Veille des zones de conflit en abonnement [FAIT] | L'inverse : tout ce qui touche à la sécurité est gratuit. On fait payer le confort et la profondeur. C'est ton positionnement d'origine, et c'est un vrai contraste |
 | Assistant fragile | Modèle de 450 millions de paramètres, risque de fermeture annoncé [FAIT]. Un modèle de cette taille invente souvent [EST] | Recherche dans des fiches validées d'abord. Assistant seulement sur les téléphones capables, avec citations |
-| Aucune source ni relecteur visible | Rien sur les écrans fournis [FAIT, à confirmer en ouvrant un guide] | Chaque fiche signée, datée, sourcée |
+| Aucune source ni relecteur | Confirmé par Benjamin le 13/11/2026 : ni source, ni auteur, ni date. Contenu en anglais par défaut, traduction en option [FAIT] | Chaque fiche signée, datée, sourcée |
 | Etendue qui disperse | Neuf entrées de menu, des libellés tronqués, un onglet actif erroné sur l'écran de l'assistant [FAIT] | Quatre entrées, lisibles en situation de stress |
 | Droits incertains sur certains livres | "Where There Is No Doctor" n'est libre qu'en usage non commercial [source S52 du dossier] | Corpus aux licences vérifiées |
 | Maillage Bluetooth limité aux téléphones HAVEN | Ecran "aucun téléphone HAVEN connecté" [FAIT] | Ne pas le copier : coûteux à développer et inutile sans masse d'utilisateurs |
 
-## 5. Proposition de périmètre pour MECUM
+## 5. Proposition de périmètre pour SIJAMAIS
 
 Principe : moins de fonctions que HAVEN, mais françaises, vérifiées et calmes.
 

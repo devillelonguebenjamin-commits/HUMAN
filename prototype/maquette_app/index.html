@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIJAMAIS maquette</title>
+<meta name="description" content="Maquette cliquable de l'application iPhone SIJAMAIS, version 0.1. Données fictives.">
+<style>
+:root{
+  --foret:#1F3B2D; --balise:#E0662A; --lichen:#F3F4EF; --nuit:#17241C;
+  --bg:#17241C; --surface:#1F3B2D; --surface2:#264636; --ligne:#335443;
+  --texte:#F3F4EF; --texte2:#B9C4BC; --accent:#E0662A; --accent-texte:#17241C;
+  --ok:#7FB08F; --alerte:#E9B949; --danger:#E0662A;
+  --page:#0f1813;
+}
+:root[data-theme="light"]{
+  --bg:#F3F4EF; --surface:#FFFFFF; --surface2:#E7EAE2; --ligne:#D5DBD2;
+  --texte:#17241C; --texte2:#4E5E54; --accent:#C9541C; --accent-texte:#FFFFFF;
+  --ok:#2F6B45; --alerte:#9A6A00; --danger:#C9541C;
+  --page:#dfe3da;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--page);color:var(--texte);font:15px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;text-align:left}
+.scene{min-height:100%;display:flex;gap:32px;align-items:center;justify-content:center;padding:24px 16px}
+.notes{max-width:300px;color:var(--texte2);font-size:13px}
+.notes h1{font-size:18px;color:var(--texte);margin-bottom:8px}
+.notes p{margin-bottom:10px}
+.notes .ctrl{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.notes .ctrl button{border:1px solid var(--ligne);border-radius:10px;padding:8px 12px;color:var(--texte);background:var(--surface)}
+.phone{width:390px;height:844px;border-radius:52px;background:var(--bg);position:relative;overflow:hidden;box-shadow:0 0 0 10px #0b110d,0 30px 80px rgba(0,0,0,.45);display:flex;flex-direction:column}
+.statusbar{height:50px;flex:none;display:flex;justify-content:space-between;align-items:flex-end;padding:0 30px 6px;font-weight:600;font-size:15px}
+.statusbar .reseau{font-size:12px;color:var(--alerte);font-weight:600}
+.ecran{flex:1;overflow-y:auto;display:none;padding:6px 18px 24px}
+.ecran.actif{display:block}
+.ecran::-webkit-scrollbar{display:none}
+.tabbar{flex:none;height:84px;display:flex;justify-content:space-around;padding-top:8px;border-top:1px solid var(--ligne);background:var(--bg)}
+.tabbar button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--texte2);width:68px}
+.tabbar button.on{color:var(--accent)}
+.tabbar svg{width:25px;height:25px}
+.tabbar.cache{display:none}
+h2{font-size:30px;font-weight:700;letter-spacing:-.4px;margin:6px 0 14px}
+h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--texte2);margin:20px 0 8px}
+.carte{background:var(--surface);border-radius:16px;padding:14px;margin-bottom:10px}
+.liste{background:var(--surface);border-radius:16px;overflow:hidden;margin-bottom:10px}
+.ligne{display:flex;align-items:center;gap:12px;padding:13px 14px;border-bottom:1px solid var(--ligne);width:100%}
+.ligne:last-child{border-bottom:0}
+.ligne .t{flex:1}
+.ligne .s{font-size:12.5px;color:var(--texte2)}
+.chev{color:var(--texte2)}
+.ico{width:34px;height:34px;border-radius:9px;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex:none}
+.ico svg{width:19px;height:19px}
+.pill{font-size:11px;font-weight:600;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.gratuit{background:rgba(127,176,143,.18);color:var(--ok)}
+.premium{background:rgba(224,102,42,.16);color:var(--accent)}
+.bientot{background:var(--surface2);color:var(--texte2)}
+.source{font-size:11.5px;color:var(--texte2);margin-top:8px}
+.btn{display:block;width:100%;text-align:center;border-radius:14px;padding:15px;font-weight:600;font-size:16px}
+.btn-p{background:var(--accent);color:var(--accent-texte)}
+.btn-s{background:var(--surface2)}
+.grille{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.tuile{background:var(--surface);border-radius:16px;padding:14px;min-height:92px;display:flex;flex-direction:column;justify-content:space-between}
+.tuile b{font-size:15px}
+.tuile span{font-size:12px;color:var(--texte2)}
+.urgence-btn{background:var(--danger);color:#fff;border-radius:18px;padding:16px;display:flex;align-items:center;gap:14px;width:100%;margin-bottom:12px}
+.urgence-btn b{font-size:18px;display:block}
+.urgence-btn span{font-size:13px;opacity:.9}
+.jauge{height:8px;background:var(--surface2);border-radius:8px;overflow:hidden;margin:8px 0 4px}
+.jauge i{display:block;height:100%;background:var(--accent);border-radius:8px}
+.check{width:24px;height:24px;border-radius:7px;border:2px solid var(--ligne);flex:none;display:flex;align-items:center;justify-content:center}
+.check.ok{background:var(--ok);border-color:var(--ok);color:var(--bg)}
+.verrou{opacity:.55}
+.retour{color:var(--accent);font-size:16px;padding:4px 0;display:inline-flex;align-items:center;gap:4px}
+.appels{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+.appels button{background:var(--surface);border-radius:14px;padding:12px 4px;text-align:center}
+.appels b{display:block;font-size:22px;color:var(--accent)}
+.appels span{font-size:10.5px;color:var(--texte2)}
+.etape{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--ligne)}
+.etape:last-child{border:0}
+.num{width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-texte);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;flex:none}
+.choix{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.choix button{border:1.5px solid var(--ligne);border-radius:22px;padding:9px 14px;background:var(--surface)}
+.choix button.on{border-color:var(--accent);color:var(--accent)}
+.progress{margin:10px 0}
+.bulle{max-width:85%;padding:10px 13px;border-radius:16px;margin-bottom:8px;font-size:14.5px}
+.bulle.moi{background:var(--accent);color:var(--accent-texte);margin-left:auto;border-bottom-right-radius:4px}
+.bulle.ia{background:var(--surface);border-bottom-left-radius:4px}
+.saisie{display:flex;gap:8px;margin-top:10px}
+.saisie div{flex:1;background:var(--surface);border-radius:22px;padding:11px 15px;color:var(--texte2)}
+.map{height:430px;border-radius:16px;overflow:hidden;position:relative;background:var(--surface)}
+.map svg{width:100%;height:100%}
+.calques{position:absolute;left:10px;right:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px}
+.calques span{background:var(--bg);border-radius:10px;padding:6px 9px;font-size:11.5px;border:1px solid var(--ligne)}
+.vigil{display:flex;align-items:center;gap:10px}
+.pastille{width:12px;height:12px;border-radius:50%;background:var(--alerte);flex:none}
+.regle{border:1.5px solid var(--ok);color:var(--ok);border-radius:14px;padding:12px;font-weight:600;text-align:center;margin-bottom:14px}
+.offre{border:1.5px solid var(--ligne);border-radius:16px;padding:14px;margin-bottom:10px}
+.offre.on{border-color:var(--accent)}
+.offre .prix{font-size:20px;font-weight:700}
+.mini{font-size:12.5px;color:var(--texte2)}
+.toast{position:absolute;left:18px;right:18px;bottom:96px;background:var(--texte);color:var(--bg);border-radius:14px;padding:12px 14px;font-size:14px;display:none;z-index:5}
+.toast.on{display:block}
+.logo-row{display:flex;align-items:center;gap:10px;margin:4px 0 10px}
+.logo-row b{font-size:20px;letter-spacing:.3px}
+.logo-row b em{font-style:normal;color:var(--accent)}
+.fictif{font-size:11px;color:var(--alerte);border:1px dashed var(--alerte);border-radius:8px;padding:6px 9px;margin-bottom:10px}
+a{color:inherit;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ecran:target{display:block}
+.phone:has(.ecran:target) .ecran.actif:not(:target){display:none}
+.phone:not(:has(.ecran:target)) .tabbar,.phone:has(#e-onb1:target,#e-onb2:target,#e-onb3:target,#e-onb4:target) .tabbar{display:none}
+.tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;color:var(--texte2);width:68px}
+.tabbar svg{width:25px;height:25px}
+.phone:has(#e-accueil:target) .tabbar a[data-t=accueil],.phone:has(#e-urgence:target) .tabbar a[data-t=urgence],.phone:has(#e-preparer:target) .tabbar a[data-t=preparer],.phone:has(#e-carte:target) .tabbar a[data-t=carte],.phone:has(#e-savoir:target) .tabbar a[data-t=savoir]{color:var(--accent)}
+.liste>a:not(.ligne){display:block}
+.notes .ctrl a{border:1px solid var(--ligne);border-radius:10px;padding:8px 12px;color:var(--texte);background:var(--surface)}
+.map{height:auto;background:var(--eau)}
+.mapscroll{overflow:auto;max-height:340px;-webkit-overflow-scrolling:touch}
+.mapscroll svg{display:block;width:100%;height:auto}
+.mapsvg{--eau:#2B5568;--terre:#264636;--limite:#4C7360;--route:#C9A15A;--ville:#F3F4EF;--halo:#1F3B2D;--eau-texte:#A9C7D6;--terre-texte:#B9C4BC}
+:root[data-theme="light"] .mapsvg{--eau:#BFD9E6;--terre:#E9EDE3;--limite:#B8C4B4;--ville:#17241C;--halo:#F3F4EF;--eau-texte:#3F6E86;--terre-texte:#5B6B60}
+.poi.off{display:none}
+.zoom{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:6px}
+.zoom button{width:32px;height:32px;border-radius:9px;background:var(--bg);border:1px solid var(--ligne);text-align:center;font-size:18px;line-height:1}
+.legende{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.legende button{display:flex;align-items:center;gap:6px;font-size:12px;border:1px solid var(--ligne);border-radius:20px;padding:5px 10px;background:var(--surface)}
+.legende button:not(.on){opacity:.45}
+.legende i{width:10px;height:10px;border-radius:50%;display:inline-block}
+@media (max-width:860px){
+  .notes{display:none}
+  .scene{padding:0}
+  .phone{width:100%;height:100vh;height:100dvh;border-radius:0;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="scene">
+  <aside class="notes">
+    <h1>SIJAMAIS, maquette 0.1</h1>
+    <p>Maquette cliquable, sans vraies données. Elle sert à valider l'organisation des écrans et la frontière entre gratuit et premium avant le développement.</p>
+    <p>Règle de l'application : tout ce qui protège est gratuit. Les contenus tirés des sources publiques restent gratuits dans tous les modes.</p>
+    <p>L'espace « Ma commune » montre La Baule-Escoublac comme exemple fictif : aucune donnée n'a été validée par la commune.</p>
+    <div class="ctrl">
+      <button onclick="basculerTheme()">Changer de thème (sombre ou clair)</button>
+      <button onclick="basculerPremium()" id="bt-prem">Simuler un abonné premium</button>
+      <a href="#e-onb1">Revoir la prise en main</a>
+    </div>
+  </aside>
+
+  <div class="phone" id="phone">
+    <div class="statusbar"><span>9:41</span><span class="reseau" id="reseau">Hors réseau</span></div>
+
+    <!-- ================= PRISE EN MAIN ================= -->
+    <section class="ecran actif" id="e-onb1">
+      <div style="text-align:center;margin-top:60px">
+        <svg width="96" height="96" viewBox="0 0 100 100" aria-label="Logo SIJAMAIS"><rect width="100" height="100" rx="24" fill="#1F3B2D"/><path d="M50 18c-14 0-24 10-24 24 0 15 24 40 24 40s24-25 24-40c0-14-10-24-24-24z" fill="#F3F4EF"/><path d="M50 30 L62 52 H38 Z" fill="#1F3B2D"/><path d="M50 40 L55 52 H45 Z" fill="#E0662A"/></svg>
+        <h2 style="font-size:34px;margin-top:18px"><span style="color:var(--accent)">SI</span>JAMAIS</h2>
+        <p style="color:var(--texte2);font-size:17px">Prêt, même hors réseau.</p>
+      </div>
+      <div style="position:absolute;left:18px;right:18px;bottom:40px">
+        <p class="mini" style="text-align:center;margin-bottom:14px">Trois questions, une minute. Aucun compte, aucune donnée envoyée.</p>
+        <a class="btn btn-p" href="#e-onb2">Commencer</a>
+      </div>
+    </section>
+
+    <section class="ecran" id="e-onb2">
+      <p class="mini" style="margin-top:10px">Question 1 sur 3</p>
+      <h2>Pour quoi voulez-vous être prêt ?</h2>
+      <p class="mini">Plusieurs choix possibles. Vous pourrez changer plus tard.</p>
+      <div class="choix" data-multi>
+        <button class="on">La maison et les crises</button><button>Randonnée et montagne</button><button>Mer et voile</button><button>Voyage à l'étranger</button><button>Camping et van</button><button>Coupure prolongée</button>
+      </div>
+      <h3>Où habitez-vous ?</h3>
+      <div class="liste"><div class="ligne"><span class="t">Loire-Atlantique (44)<div class="s">La Baule-Escoublac</div></span><span class="chev">›</span></div></div>
+      <p class="mini">Sert à télécharger la carte et les risques de votre territoire. Reste sur votre téléphone.</p>
+      <div style="margin-top:24px"><a class="btn btn-p" href="#e-onb3">Continuer</a></div>
+    </section>
+
+    <section class="ecran" id="e-onb3">
+      <p class="mini" style="margin-top:10px">Question 2 sur 3</p>
+      <h2>Votre foyer</h2>
+      <div class="liste">
+        <div class="ligne"><span class="t">Adultes</span><b>2</b></div>
+        <div class="ligne"><span class="t">Enfants</span><b>1</b></div>
+        <div class="ligne"><span class="t">Personnes âgées ou fragiles</span><b>0</b></div>
+        <div class="ligne"><span class="t">Animaux</span><b>1</b></div>
+      </div>
+      <p class="mini">Ajuste les quantités du kit de 72 heures recommandé par l'État.</p>
+      <p class="mini" style="margin-top:20px">Question 3 sur 3</p>
+      <h3 style="margin-top:6px">Assistant hors ligne</h3>
+      <div class="carte">
+        <b>Activer l'assistant</b>
+        <p class="mini" style="margin:6px 0 10px">Il fonctionne sur votre iPhone, sans internet. Disponible sur iPhone 15 Pro et modèles plus récents.</p>
+        <div class="choix" style="margin:0"><button class="on">Oui</button><button>Plus tard</button></div>
+      </div>
+      <div style="margin-top:18px"><a class="btn btn-p" href="#e-onb4" onclick="telecharger()">Préparer mon téléphone</a></div>
+    </section>
+
+    <section class="ecran" id="e-onb4">
+      <h2 style="margin-top:30px">Préparation en cours</h2>
+      <p class="mini">Gardez l'application ouverte, en Wi-Fi si possible.</p>
+      <div class="carte progress"><b>Carte de la Loire-Atlantique</b><div class="jauge"><i id="p1" style="width:100%"></i></div><span class="mini">180 Mo</span></div>
+      <div class="carte progress"><b>Fiches de sécurité et guides officiels</b><div class="jauge"><i id="p2" style="width:100%"></i></div><span class="mini">24 Mo</span></div>
+      <div class="carte progress"><b>Risques de votre commune</b><div class="jauge"><i id="p3" style="width:100%"></i></div><span class="mini">Source : Géorisques</span></div>
+      <div style="margin-top:22px"><a class="btn btn-p" id="bt-fin" href="#e-accueil">C'est prêt</a></div>
+    </section>
+
+    <!-- ================= ACCUEIL ================= -->
+    <section class="ecran" id="e-accueil">
+      <div class="logo-row">
+        <svg width="30" height="30" viewBox="0 0 100 100"><rect width="100" height="100" rx="24" fill="#1F3B2D"/><path d="M50 18c-14 0-24 10-24 24 0 15 24 40 24 40s24-25 24-40c0-14-10-24-24-24z" fill="#F3F4EF"/><path d="M50 30 L62 52 H38 Z" fill="#1F3B2D"/><path d="M50 40 L55 52 H45 Z" fill="#E0662A"/></svg>
+        <b><em>SI</em>JAMAIS</b>
+        <span style="flex:1"></span>
+        <a href="#e-reglages" aria-label="Réglages"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></a>
+      </div>
+      <a class="urgence-btn" href="#e-urgence">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>
+        <div><b>Urgence</b><span>Numéros, 6 réflexes, que faire maintenant</span></div>
+      </a>
+
+      <div class="carte vigil" onclick="toast('Vigilance officielle : données Météo-France, conservées hors ligne depuis la dernière connexion.')">
+        <span class="pastille"></span>
+        <div style="flex:1"><b>Vigilance jaune vent violent</b><div class="mini">Loire-Atlantique · mise à jour hier 18 h, hors ligne depuis</div></div>
+        <span class="pill gratuit">Officiel</span>
+      </div>
+
+      <div class="carte">
+        <div style="display:flex;justify-content:space-between;align-items:baseline"><b>Préparation du foyer</b><span style="font-size:22px;font-weight:700">46<span class="mini"> / 100</span></span></div>
+        <div class="jauge"><i style="width:46%"></i></div>
+        <div class="mini">Niveau Prévoyant · prochain niveau : Paré à 70</div>
+      </div>
+
+      <h3>Cette semaine</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Stocker 6 litres d'eau de plus<div class="s">Kit 72 heures</div></span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Fixer un point de rendez-vous familial<div class="s">Plan du foyer</div></span></button>
+        <a class="ligne" href="#e-exercice"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span><span class="t">Exercice : couper l'électricité<div class="s">5 minutes, guidé</div></span><span class="chev">›</span></a>
+      </div>
+
+      <h3>Accès rapides</h3>
+      <div class="grille">
+        <a class="tuile" href="#e-famille"><b>Famille</b><span>Plan, rendez-vous, je suis en sécurité</span></a>
+        <a class="tuile" href="#e-assistant"><b>Assistant</b><span>Hors ligne, sur l'iPhone</span></a>
+        <a class="tuile" href="#e-commune"><b>Ma commune</b><span>La Baule-Escoublac</span></a>
+        <button class="tuile" onclick="toast('Lampe torche et signal lumineux SOS. Gratuit.')"><b>Lampe et SOS</b><span>Signal lumineux</span></button>
+      </div>
+
+      <div class="carte" style="display:flex;align-items:center;gap:12px">
+        <div style="flex:1"><b>Batterie 64 %</b><div class="mini">Environ 9 h d'usage en mode économie</div></div>
+        <button class="pill bientot" onclick="toast('Mode économie : écran sombre, localisation coupée, synchronisation suspendue.')">Économiser</button>
+      </div>
+
+      <a class="carte" style="width:100%;display:flex;align-items:center;gap:12px" href="#e-premium" id="bandeau-prem">
+        <div style="flex:1"><b>Partir hors réseau ?</b><div class="mini">Cartes de France, randonnée, mer, voyage. Premium.</div></div><span class="chev">›</span>
+      </a>
+    </section>
+
+    <!-- ================= URGENCE ================= -->
+    <section class="ecran" id="e-urgence">
+      <h2>Urgence</h2>
+      <div class="appels">
+        <button onclick="toast('Appel du 112 (démonstration)')"><b>112</b><span>Urgences</span></button>
+        <button onclick="toast('Appel du 15 (démonstration)')"><b>15</b><span>Samu</span></button>
+        <button onclick="toast('Appel du 18 (démonstration)')"><b>18</b><span>Pompiers</span></button>
+        <button onclick="toast('Appel du 17 (démonstration)')"><b>17</b><span>Police</span></button>
+      </div>
+      <p class="mini" style="margin:-4px 0 12px">114 par SMS pour les personnes sourdes ou malentendantes.</p>
+
+      <a class="liste" style="width:100%" href="#e-reflexes"><div class="ligne"><span class="ico" style="background:var(--danger);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11h18M5 11V7l7-4 7 4v4M6 11v9h12v-9"/></svg></span><span class="t"><b>La sirène retentit</b><div class="s">Les 6 réflexes officiels</div></span><span class="chev">›</span></div></a>
+
+      <h3>Que se passe-t-il ?</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-scenario"><span class="t">Coupure d'électricité ou de réseau</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Inondation ou submersion marine</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Tempête</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Canicule ou grand froid</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Feu de forêt</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Séisme</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Accident industriel ou nucléaire</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Conflit ou attaque</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Épidémie</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-scenario"><span class="t">Évacuation</span><span class="pill gratuit">Gratuit</span><span class="chev">›</span></a>
+      </div>
+
+      <h3>Premiers secours</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-fiche"><span class="t">Arrêt cardiaque<div class="s">Alerter, masser, défibriller</div></span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-fiche"><span class="t">Saignement abondant</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-fiche"><span class="t">Personne inconsciente qui respire</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-fiche"><span class="t">Brûlure</span><span class="chev">›</span></a>
+      </div>
+      <p class="source">Fiches établies d'après les recommandations PSC1 et « gestes qui sauvent » du ministère de l'Intérieur, édition décembre 2023.</p>
+    </section>
+
+    <section class="ecran" id="e-reflexes">
+      <a class="retour" href="#e-urgence">‹ Urgence</a>
+      <h2>La sirène retentit</h2>
+      <div class="carte">
+        <b>Reconnaître le signal</b>
+        <p class="mini" style="margin-top:4px">Son montant et descendant, trois fois 1 minute 41 secondes, séparées de 5 secondes.</p>
+        <button class="btn btn-s" style="margin-top:10px" onclick="toast('Lecture du signal national d\'alerte (démonstration)')">Écouter le signal</button>
+      </div>
+      <h3>Les 6 réflexes</h3>
+      <div class="carte">
+        <div class="etape"><span class="num">1</span><div><b>Se mettre en sécurité</b><div class="mini">Rejoindre sans délai un bâtiment, sauf consigne d'évacuation.</div></div></div>
+        <div class="etape"><span class="num">2</span><div><b>S'informer</b><div class="mini">Radio, télévision, FR-Alert, comptes officiels de la préfecture.</div></div></div>
+        <div class="etape"><span class="num">3</span><div><b>Ne pas aller chercher ses enfants à l'école</b><div class="mini">L'école les met en sécurité.</div></div></div>
+        <div class="etape"><span class="num">4</span><div><b>Ne pas téléphoner sauf urgence</b><div class="mini">Laisser les lignes aux secours.</div></div></div>
+        <div class="etape"><span class="num">5</span><div><b>Ne pas aller sur les lieux</b><div class="mini">Vous vous exposeriez et gêneriez les secours.</div></div></div>
+        <div class="etape"><span class="num">6</span><div><b>Respecter les consignes des autorités</b><div class="mini">Évacuation, confinement, comprimés d'iode sur ordre du préfet.</div></div></div>
+      </div>
+      <p class="source">Source : préfectures, « 6 réflexes pour bien réagir ». Version vérifiée le 18/11/2026. Fin d'alerte : son continu de 30 secondes.</p>
+    </section>
+
+    <section class="ecran" id="e-scenario">
+      <a class="retour" href="#e-urgence">‹ Retour</a>
+      <h2>Coupure d'électricité</h2>
+      <span class="pill gratuit">Gratuit pour toujours</span>
+      <h3>Maintenant</h3>
+      <div class="carte">
+        <div class="etape"><span class="num">1</span><div><b>Vérifiez si la coupure est générale</b><div class="mini">Voisins, éclairage public. Si c'est chez vous seulement : tableau électrique.</div></div></div>
+        <div class="etape"><span class="num">2</span><div><b>Débranchez les appareils sensibles</b><div class="mini">Laissez une lampe allumée pour voir le retour du courant.</div></div></div>
+        <div class="etape"><span class="num">3</span><div><b>Gardez le froid</b><div class="mini">Ne pas ouvrir le congélateur : il tient environ 24 à 48 heures fermé.</div></div></div>
+        <div class="etape"><span class="num">4</span><div><b>Jamais de groupe électrogène ni de barbecue à l'intérieur</b><div class="mini">Risque d'intoxication au monoxyde de carbone.</div></div></div>
+      </div>
+      <h3>Si cela dure</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-preparer"><span class="t">Votre kit : 2,5 jours d'eau</span><span class="chev">›</span></a>
+        <a class="ligne" href="#e-famille"><span class="t">Prévenir la famille quand le réseau revient</span><span class="chev">›</span></a>
+        <button class="ligne" onclick="toast('Personnes sous assistance respiratoire : contactez votre prestataire et signalez-vous en mairie.')"><span class="t">Personne dépendante d'un appareil médical</span><span class="chev">›</span></button>
+      </div>
+      <p class="source">D'après le guide « Tous responsables » (SGDSN, 20/11/2025). Relu le 18/11/2026. Texte de démonstration, à valider.</p>
+    </section>
+
+    <section class="ecran" id="e-fiche">
+      <a class="retour" href="#e-urgence">‹ Urgence</a>
+      <h2>Arrêt cardiaque</h2>
+      <div class="carte" style="border:1.5px solid var(--danger)"><b>La personne ne répond pas et ne respire pas</b></div>
+      <div class="carte">
+        <div class="etape"><span class="num">1</span><div><b>Alertez</b><div class="mini">Appelez le 15 ou le 112, mettez le haut-parleur.</div></div></div>
+        <div class="etape"><span class="num">2</span><div><b>Massez</b><div class="mini">Au centre de la poitrine, bras tendus, 100 à 120 compressions par minute.</div></div></div>
+        <div class="etape"><span class="num">3</span><div><b>Défibrillez</b><div class="mini">Faites chercher un défibrillateur, suivez ses instructions vocales.</div></div></div>
+      </div>
+      <button class="btn btn-s" onclick="toast('Métronome à 110 battements par minute (démonstration)')">Lancer le rythme de massage</button>
+      <a class="btn btn-s" style="margin-top:8px" href="#e-carte">Défibrillateur le plus proche</a>
+      <p class="source">Recommandations PSC1, ministère de l'Intérieur, édition décembre 2023. Fiche relue par : à désigner.</p>
+    </section>
+
+    <section class="ecran" id="e-exercice">
+      <a class="retour" href="#e-accueil">‹ Accueil</a>
+      <h2>Exercice de la semaine</h2>
+      <p class="mini">Savoir couper l'électricité, l'eau et le gaz de son logement.</p>
+      <div class="liste" style="margin-top:14px">
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Trouver le tableau électrique</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Repérer le disjoncteur général</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Trouver le robinet d'arrivée d'eau</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Repérer la vanne de gaz</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Prendre une photo de chaque emplacement</span></button>
+      </div>
+      <p class="mini">Gratuit. +5 points de préparation.</p>
+    </section>
+
+    <!-- ================= PRÉPARER ================= -->
+    <section class="ecran" id="e-preparer">
+      <h2>Préparer</h2>
+      <div class="carte">
+        <b>Kit de 72 heures</b> <span class="pill gratuit">Recommandé par l'État</span>
+        <div class="jauge"><i style="width:58%"></i></div>
+        <div class="mini">Foyer de 3 personnes et 1 animal · 7 éléments sur 12</div>
+        <div class="grille" style="margin:12px 0 0">
+          <div class="tuile" style="background:var(--surface2);min-height:70px"><b>2,5 jours</b><span>d'eau (22 L sur 27 L)</span></div>
+          <div class="tuile" style="background:var(--surface2);min-height:70px"><b>3,5 jours</b><span>de nourriture</span></div>
+        </div>
+      </div>
+      <h3>Eau et nourriture</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Eau potable<div class="s">9 litres par personne pour 3 jours</div></span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Conserves et aliments sans cuisson</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Nourriture de l'animal</span></button>
+      </div>
+      <h3>Énergie et information</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Lampe torche et piles</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Radio à piles ou à manivelle</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Batterie externe chargée</span></button>
+      </div>
+      <h3>Santé et documents</h3>
+      <div class="liste">
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Trousse de premiers secours</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Médicaments et ordonnances</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Copies des papiers d'identité</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Argent liquide</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check ok">✓</span><span class="t">Double des clés</span></button>
+        <button class="ligne" onclick="cocher(this)"><span class="check"></span><span class="t">Vêtements chauds et couverture</span></button>
+      </div>
+      <p class="source">Liste du guide « Tous responsables » (SGDSN, 2025), adaptée à votre foyer.</p>
+
+      <h3>Aller plus loin</h3>
+      <div class="liste prem-zone">
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Objectif 14 jours activé')"><span class="t">Objectif 14 jours</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Rappel de péremption créé')"><span class="t">Dates de péremption et rappels</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Appareil photo ouvert pour lire le code-barres')"><span class="t">Ajouter par code-barres</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Inventaire partagé avec le foyer')"><span class="t">Inventaire partagé et plusieurs logements</span><span class="pill premium">Premium</span></a>
+      </div>
+    </section>
+
+    <!-- ================= CARTE ================= -->
+    <section class="ecran" id="e-carte">
+      <h2>Carte</h2>
+      <div class="map" id="map">
+        <div class="mapscroll" id="mapscroll"><svg class="mapsvg" viewBox="0 0 354 211" role="img" aria-label="Carte de la presqu'île guérandaise et de Saint-Nazaire"><rect width="354" height="211" fill="var(--eau)"/><path d="M-4.5,-5.0L-4.5,-6.6L358.5,-6.6L358.5,218.0L346.1,218.0L345.8,216.3L344.9,213.2L346.4,211.6L345.7,207.2L346.5,206.0L345.4,203.2L339.1,192.1L336.1,188.4L330.7,179.9L327.6,176.0L326.2,174.9L327.0,173.5L326.4,170.5L331.6,170.2L333.2,166.8L335.6,165.5L336.6,153.9L336.5,147.7L335.9,146.2L336.0,143.2L335.3,135.2L336.1,127.5L326.0,116.7L320.5,111.5L315.4,115.8L314.1,117.8L311.4,118.7L310.6,124.6L309.5,125.7L305.1,124.0L299.8,125.3L297.8,127.3L296.0,127.5L291.6,128.9L287.9,131.6L287.1,132.9L288.1,137.1L289.3,140.5L287.4,141.5L285.1,141.7L284.1,143.8L282.9,144.5L277.6,143.6L270.0,144.2L267.4,144.0L265.9,145.1L265.0,147.1L261.9,147.4L258.9,152.1L255.5,152.6L254.6,156.8L252.7,161.1L253.5,162.5L250.1,163.2L249.2,164.7L248.8,167.3L245.9,165.5L243.4,165.4L241.0,166.1L240.8,168.4L236.9,167.9L232.5,168.1L228.3,169.1L226.5,172.0L224.4,171.7L221.8,172.7L221.2,174.2L218.1,169.9L216.6,168.6L213.6,168.4L212.4,165.8L212.4,163.4L210.4,163.7L205.9,160.6L203.8,160.8L202.4,158.5L197.9,155.0L191.5,151.7L187.9,149.1L186.3,146.9L182.3,143.3L181.2,141.6L182.5,139.7L181.8,136.4L179.9,134.1L176.2,128.9L171.1,124.0L168.0,121.7L160.1,117.2L157.1,115.7L152.2,113.9L145.9,111.9L136.6,110.1L131.4,110.4L122.7,112.2L117.3,114.0L111.7,117.0L108.7,120.0L107.2,124.2L108.8,125.7L109.3,128.3L110.8,130.8L112.6,131.9L112.9,133.9L114.8,136.2L115.1,140.4L111.6,140.9L107.7,139.0L103.3,139.7L101.6,140.9L100.7,139.8L96.8,138.0L93.6,138.9L91.6,137.3L88.8,136.2L86.4,136.3L85.4,134.0L84.2,134.9L82.1,133.9L82.1,131.4L80.2,128.0L79.2,128.0L75.2,125.5L69.4,126.1L65.7,126.0L60.0,123.0L59.8,121.9L57.0,122.1L56.8,120.2L54.5,119.4L50.8,119.5L49.8,118.5L45.8,118.3L45.3,115.3L43.4,112.7L41.1,111.3L36.9,111.0L34.8,111.2L34.0,109.8L30.6,109.3L28.7,106.7L27.3,106.9L23.4,104.6L20.6,104.0L19.1,102.8L17.4,103.6L14.2,102.9L12.1,103.0L11.4,101.8L9.0,101.5L5.3,100.3L1.5,98.7L-1.2,98.2L-1.9,95.9L-1.7,93.4L0.0,88.6L4.9,86.4L8.1,87.0L9.3,85.2L13.8,85.2L15.9,83.8L19.1,83.6L22.1,84.0L23.1,85.1L28.0,88.0L30.3,84.8L30.6,83.7L27.3,81.1L30.6,77.7L33.4,73.1L35.9,67.8L36.4,63.7L37.7,47.9L36.0,39.1L34.3,31.2L32.8,27.2L27.4,20.8L25.9,20.2L23.9,16.7L21.8,10.8L21.4,8.2L15.8,2.5L13.9,2.1L13.1,0.2L10.7,-1.4L8.4,-1.5L4.1,-0.7L1.0,-2.0L0.6,-3.6L-2.2,-5.2L-4.5,-5.0Z" fill="var(--terre)" fill-rule="evenodd"/><path d="M346.4,211.4L345.7,207.2L346.5,206.0L345.4,203.2L339.1,192.1L336.1,188.4L330.7,179.9L327.6,176.0L326.2,174.9L327.0,173.5L326.4,170.5L331.6,170.2L333.2,166.8L335.6,165.5L336.6,153.9L336.5,147.7L335.9,146.2L336.0,143.2L335.3,135.2L336.1,127.5L326.0,116.7L338.1,112.5L354.0,105.1M323.0,77.1L335.4,63.5L331.4,63.6L330.7,59.6L329.3,55.4L328.3,54.4L325.8,55.1L326.3,51.6L323.1,50.8L321.6,46.2L318.0,45.2L315.7,44.1L308.0,38.8L304.1,35.3L303.8,30.2L309.0,33.4L315.7,38.6L319.4,39.1L326.0,39.2L326.0,40.4L329.4,41.6L331.3,37.9L337.1,38.1L341.4,34.9L342.1,33.6L344.5,32.0L346.8,32.4L348.2,28.4L351.5,30.0L351.9,25.4L351.1,24.4L352.0,21.9L354.0,19.8M354.0,18.6L354.0,18.0M354.0,15.3L354.0,15.1M354.0,105.1L338.1,112.5L333.6,101.4L331.8,95.7L330.5,93.7L329.1,90.1L325.7,87.8L326.2,84.7L324.4,80.1L325.4,77.5L323.0,77.1M168.0,121.7L169.1,120.4L173.0,122.5L188.8,128.0L193.6,127.2L195.7,124.5L197.9,125.0L200.5,122.5L200.9,120.4L202.8,119.3L205.3,119.2L206.5,117.7L206.7,114.6L207.9,111.3L210.0,108.8L214.7,110.9L215.9,110.9L218.3,113.3L223.3,114.2L223.8,110.8L226.0,111.0L228.6,110.2L230.3,114.1L229.6,118.3L228.2,120.0L229.5,121.2L227.7,123.6L228.7,126.7L226.4,130.0L225.8,133.4L229.5,133.7L229.8,136.1L231.0,137.8L230.5,139.6L227.9,139.2L223.2,139.9L222.5,142.0L221.8,146.9L222.3,150.7L222.1,153.1L221.1,154.1L220.2,157.3L222.2,159.9L220.6,161.0L221.4,165.1L219.6,165.6L217.4,167.1L216.6,168.6L213.6,168.4L212.4,165.8L212.4,163.4L210.4,163.7L205.9,160.6L203.8,160.8L202.4,158.5L197.9,155.0L191.5,151.7L187.9,149.1L186.3,146.9L182.3,143.3L181.2,141.6L182.5,139.7L181.8,136.4L176.2,128.9L171.1,124.0L168.0,121.7M258.0,59.3L264.8,59.1L268.0,60.8L267.8,62.3L269.7,63.4L271.4,66.2L274.9,68.9L275.4,70.6L275.0,73.0L276.0,74.2L278.4,74.4L277.9,77.1L279.9,83.6L282.4,84.3L284.6,86.2L284.1,87.7L287.6,89.8L290.5,93.0L293.0,92.9L293.5,98.4L297.5,100.2L299.9,101.8L310.2,92.3L311.8,89.4L323.0,77.1L325.4,77.5L324.4,80.1L326.2,84.7L325.7,87.8L329.1,90.1L330.5,93.7L331.8,95.7L333.6,101.4L338.1,112.5L326.0,116.7L320.5,111.5L315.4,115.8L314.1,117.8L311.4,118.7L310.6,124.6L309.5,125.7L305.1,124.0L299.8,125.3L297.8,127.3L296.0,127.5L291.6,128.9L287.9,131.6L287.1,132.9L288.1,137.1L289.3,140.5L287.4,141.5L285.1,141.7L284.1,143.8L282.9,144.5L277.6,143.6L270.0,144.2L267.4,144.0L265.9,145.1L265.0,147.1L261.9,147.4L258.9,152.1L255.5,152.6L254.6,156.8L252.7,161.1L253.5,162.5L250.1,163.2L249.2,164.7L248.8,167.3L245.9,165.5L243.4,165.4L241.0,166.1L240.8,168.4L236.9,167.9L232.5,168.1L228.3,169.1L226.5,172.0L224.4,171.7L221.8,172.7L221.2,174.2L218.1,169.9L216.6,168.6L217.4,167.1L219.6,165.6L221.4,165.1L220.6,161.0L222.2,159.9L220.2,157.3L221.1,154.1L222.1,153.1L222.3,150.7L221.8,146.9L222.5,142.0L223.2,139.9L227.9,139.2L230.5,139.6L231.0,137.8L229.8,136.1L229.5,133.7L225.8,133.4L226.4,130.0L228.7,126.7L227.7,123.6L229.5,121.2L228.2,120.0L229.6,118.3L230.3,114.1L228.6,110.2L226.0,111.0L223.8,110.8L223.3,114.2L218.3,113.3L215.9,110.9L214.7,110.9L210.0,108.8L214.4,104.8L216.1,99.1L219.6,90.9L220.2,84.7L222.3,82.7L222.3,81.5L223.7,82.4L226.2,79.1L225.7,77.8L228.5,76.0L230.3,74.1L234.6,73.0L237.0,69.1L237.8,66.3L239.0,66.3L241.9,64.6L246.7,64.0L248.2,65.3L248.3,67.0L252.7,67.1L257.3,64.6L258.0,59.3M114.7,106.7L118.0,105.9L121.1,106.1L123.5,104.6L123.1,103.0L125.5,102.6L127.7,98.9L128.7,99.2L132.3,97.2L138.7,96.8L137.3,94.3L137.7,88.3L140.0,84.0L143.8,80.9L144.3,79.4L147.7,75.6L147.3,74.0L148.6,70.1L151.5,70.1L153.5,67.4L154.8,63.4L156.7,64.5L160.7,66.0L164.1,66.5L167.0,68.2L170.3,71.3L175.8,72.9L182.9,77.6L183.7,76.6L187.6,74.7L189.8,75.8L190.4,77.4L192.8,78.4L196.6,78.3L198.3,79.3L200.7,78.2L202.5,79.3L204.1,81.6L208.4,85.0L216.5,82.6L217.7,79.1L219.4,79.3L220.5,81.0L222.3,81.5L222.3,82.7L220.2,84.7L219.6,90.9L216.1,99.1L214.4,104.8L210.0,108.8L207.9,111.3L206.7,114.6L206.5,117.7L205.3,119.2L202.8,119.3L200.9,120.4L200.5,122.5L197.9,125.0L195.7,124.5L193.6,127.2L188.8,128.0L173.0,122.5L169.1,120.4L168.0,121.7L160.1,117.2L152.2,113.9L145.9,111.9L136.6,110.1L131.4,110.4L122.7,112.2L117.3,114.0L111.7,117.0L108.7,120.0L105.6,116.2L105.2,114.1L107.0,109.4L108.5,108.4L114.7,106.7M160.7,66.0L164.1,60.7L164.8,54.9L166.6,52.0L167.3,49.9L168.6,48.5L168.5,46.1L172.2,45.9L174.8,44.0L181.8,40.2L184.4,35.8L187.1,29.4L195.2,23.6L205.9,14.8L206.1,17.4L204.9,18.7L202.6,22.5L205.2,24.4L204.8,26.5L209.8,33.7L207.9,38.6L209.5,40.2L212.8,41.8L216.4,41.6L219.8,39.9L221.4,38.0L221.5,34.9L223.4,33.7L222.5,32.5L220.7,32.2L221.5,28.9L224.4,29.4L225.0,25.4L228.1,23.3L228.9,21.1L232.2,22.3L232.0,24.7L231.0,28.6L232.3,29.5L231.6,33.4L233.3,35.2L232.3,36.8L235.5,39.3L235.2,40.4L240.5,41.1L241.6,40.0L244.1,39.6L252.0,47.6L251.8,51.0L255.8,51.6L254.9,53.5L258.0,59.3L257.3,64.6L252.7,67.1L248.3,67.0L248.2,65.3L246.7,64.0L241.9,64.6L239.0,66.3L237.8,66.3L237.0,69.1L234.6,73.0L230.3,74.1L228.5,76.0L225.7,77.8L226.2,79.1L223.7,82.4L222.3,81.5L220.5,81.0L219.4,79.3L217.7,79.1L216.5,82.6L208.4,85.0L204.1,81.6L202.5,79.3L200.7,78.2L198.3,79.3L196.6,78.3L192.8,78.4L190.4,77.4L189.8,75.8L187.6,74.7L183.7,76.6L182.9,77.6L175.8,72.9L170.3,71.3L167.0,68.2L164.1,66.5L160.7,66.0M258.0,59.3L254.9,53.5L255.8,51.6L251.8,51.0L252.0,47.6L244.1,39.6L241.6,40.0L240.5,41.1L235.2,40.4L235.5,39.3L232.3,36.8L233.3,35.2L231.6,33.4L232.3,29.5L231.0,28.6L232.0,24.7L232.2,22.3L228.9,21.1L228.1,23.3L225.0,25.4L224.4,29.4L221.5,28.9L220.7,32.2L222.5,32.5L223.4,33.7L221.5,34.9L221.4,38.0L219.8,39.9L216.4,41.6L212.8,41.8L209.5,40.2L207.9,38.6L209.8,33.7L204.8,26.5L205.2,24.4L202.6,22.5L204.9,18.7L206.1,17.4L205.8,14.5L207.3,11.3L208.0,5.7L206.6,3.8L204.4,4.0L205.5,0.4L205.2,0.0M338.5,0.0L339.4,1.2L338.2,2.9L334.2,2.5L322.4,3.4L321.5,3.9L321.4,6.2L318.7,4.9L310.0,5.6L308.5,8.8L307.7,8.6L305.7,15.2L304.3,18.3L301.5,21.4L301.1,24.0L302.3,24.7L301.3,28.6L303.8,30.2L304.1,35.3L308.0,38.8L307.7,41.0L302.7,45.1L307.3,49.4L308.5,50.2L309.2,52.5L311.4,55.1L310.7,55.7L308.2,53.1L306.2,54.9L301.0,54.9L296.4,57.3L294.1,57.5L293.2,55.3L291.7,54.0L293.1,50.1L290.7,45.2L282.7,50.9L284.1,53.3L286.0,55.1L274.4,64.5L274.0,65.4L274.9,68.9L271.4,66.2L269.7,63.4L267.8,62.3L268.0,60.8L264.8,59.1L258.0,59.3M205.2,0.0L205.5,0.4L204.4,4.0L206.6,3.8L208.0,5.7L207.3,11.3L205.8,14.5L205.7,6.9L205.3,5.8L199.1,5.4L198.7,7.5L196.1,6.7L191.7,10.2L191.1,12.4L188.8,14.7L186.2,13.4L184.0,14.2L182.1,13.3L181.7,9.9L178.0,9.1L176.7,11.1L175.6,10.6L174.9,8.3L172.2,8.4L171.1,7.5L167.5,8.5L161.4,9.2L159.7,10.6L157.8,9.8L154.6,10.4L153.2,13.8L152.7,17.0L150.9,21.5L149.1,23.1L147.5,20.6L145.0,18.8L143.0,18.2L138.7,21.8L137.0,19.4L131.2,20.0L133.2,16.5L134.1,11.7L135.7,9.7L136.2,6.8L138.4,5.0L139.5,0.6L141.4,1.4L140.5,5.2L143.4,6.0L145.2,4.4L147.4,6.1L150.3,4.5L153.6,1.0L153.8,0.0M303.8,30.2L301.3,28.6L302.3,24.7L301.1,24.0L301.5,21.4L304.3,18.3L305.7,15.2L307.7,8.6L308.5,8.8L310.0,5.6L318.7,4.9L321.4,6.2L321.5,3.9L322.4,3.4L334.2,2.5L338.2,2.9L339.4,1.2L338.5,0.0M354.0,15.1L354.0,15.3M354.0,18.0L354.0,18.6M354.0,19.8L352.0,21.9L351.1,24.4L351.9,25.4L351.5,30.0L348.2,28.4L346.8,32.4L344.5,32.0L342.1,33.6L341.4,34.9L337.1,38.1L331.3,37.9L329.4,41.6L326.0,40.4L326.0,39.2L319.4,39.1L315.7,38.6L309.0,33.4L303.8,30.2M274.9,68.9L274.0,65.4L274.4,64.5L286.0,55.1L284.1,53.3L282.7,50.9L290.7,45.2L293.1,50.1L291.7,54.0L293.2,55.3L294.1,57.5L296.4,57.3L301.0,54.9L306.2,54.9L308.2,53.1L310.7,55.7L311.4,55.1L309.2,52.5L308.5,50.2L307.3,49.4L302.7,45.1L307.7,41.0L308.0,38.8L315.7,44.1L318.0,45.2L321.6,46.2L323.1,50.8L326.3,51.6L325.8,55.1L328.3,54.4L329.3,55.4L330.7,59.6L331.4,63.6L335.4,63.5L311.8,89.4L310.2,92.3L299.9,101.8L297.5,100.2L293.5,98.4L293.0,92.9L290.5,93.0L287.6,89.8L284.1,87.7L284.6,86.2L282.4,84.3L279.9,83.6L277.9,77.1L278.4,74.4L276.0,74.2L275.0,73.0L275.4,70.6L274.9,68.9M36.9,111.0L37.9,108.6L37.2,107.1L37.9,102.4L38.9,99.7L36.5,98.2L35.1,95.3L32.6,93.9L30.7,92.0L29.9,89.8L28.0,88.0L30.3,84.8L52.5,84.2L59.9,85.1L63.8,86.9L63.6,88.2L65.6,89.4L65.8,91.8L68.1,92.9L69.2,95.1L70.9,94.1L74.3,94.3L75.3,95.9L78.1,96.7L80.5,95.9L83.1,97.3L84.9,100.1L87.8,102.3L90.6,103.6L91.8,107.0L97.6,109.2L97.6,111.9L95.0,114.0L93.6,114.0L91.7,117.4L91.3,119.8L92.8,120.2L85.4,134.0L84.2,134.9L82.1,133.9L82.1,131.4L80.2,128.0L79.2,128.0L75.2,125.5L69.4,126.1L65.7,126.0L60.0,123.0L59.8,121.9L57.0,122.1L56.8,120.2L54.5,119.4L50.8,119.5L49.8,118.5L45.8,118.3L45.3,115.3L43.4,112.7L41.1,111.3L36.9,111.0M36.9,111.0L34.8,111.2L34.0,109.8L30.6,109.3L28.7,106.7L27.3,106.9L23.4,104.6L20.6,104.0L19.1,102.8L17.4,103.6L14.2,102.9L12.1,103.0L11.4,101.8L9.0,101.5L1.5,98.7L0.0,98.4M0.0,88.7L4.9,86.4L8.1,87.0L9.3,85.2L13.8,85.2L15.9,83.8L19.1,83.6L22.1,84.0L23.1,85.1L28.0,88.0L29.9,89.8L30.7,92.0L32.6,93.9L35.1,95.3L36.5,98.2L38.9,99.7L37.9,102.4L37.2,107.1L37.9,108.6L36.9,111.0M153.8,0.0L153.6,1.0L150.3,4.5L147.4,6.1L145.2,4.4L143.4,6.0L140.5,5.2L141.4,1.4L139.5,0.6L138.4,5.0L136.2,6.8L135.7,9.7L134.1,11.7L133.2,16.5L131.2,20.0L137.0,19.4L138.7,21.8L143.0,18.2L145.0,18.8L147.5,20.6L149.1,23.1L150.9,21.5L152.7,17.0L153.2,13.8L154.6,10.4L157.8,9.8L159.7,10.6L161.4,9.2L167.5,8.5L171.1,7.5L172.2,8.4L174.9,8.3L175.6,10.6L176.7,11.1L178.0,9.1L181.7,9.9L182.1,13.3L184.0,14.2L186.2,13.4L188.8,14.7L191.1,12.4L191.7,10.2L196.1,6.7L198.7,7.5L199.1,5.4L205.3,5.8L205.7,6.9L205.9,14.8L195.2,23.6L187.1,29.4L184.4,35.8L181.8,40.2L174.8,44.0L172.2,45.9L168.5,46.1L168.6,48.5L167.3,49.9L166.6,52.0L164.8,54.9L164.1,60.7L160.7,66.0L156.7,64.5L154.8,63.4L153.5,67.4L151.5,70.1L148.6,70.1L147.3,74.0L147.7,75.6L144.3,79.4L143.8,80.9L140.0,84.0L137.7,88.3L137.3,94.3L138.7,96.8L132.3,97.2L128.7,99.2L127.7,98.9L125.5,102.6L123.1,103.0L123.5,104.6L121.1,106.1L118.0,105.9L114.7,106.7L114.8,104.2L113.2,101.5L111.4,101.2L111.1,103.1L105.9,102.3L102.4,103.6L102.8,105.6L100.6,108.1L97.6,109.2L91.8,107.0L90.6,103.6L87.8,102.3L84.9,100.1L83.1,97.3L80.5,95.9L78.1,96.7L75.3,95.9L74.3,94.3L70.9,94.1L69.2,95.1L68.1,92.9L65.8,91.8L65.6,89.4L63.6,88.2L63.8,86.9L59.9,85.1L52.5,84.2L30.3,84.8L31.4,78.5L33.3,75.0L38.9,68.7L44.5,68.4L45.6,67.3L46.5,64.2L45.4,60.6L48.1,57.8L50.0,57.6L52.1,56.3L53.2,54.3L52.1,51.6L52.9,47.7L55.5,43.8L57.2,40.7L58.1,36.9L62.1,33.7L66.0,29.6L67.8,25.2L71.8,21.3L72.7,18.5L74.1,16.8L75.8,13.4L77.2,11.9L77.4,9.3L78.6,3.5L81.3,0.0M101.8,0.0L102.1,3.4L102.0,4.7L106.4,5.6L108.9,7.3L111.1,10.4L115.6,10.4L117.9,5.6L118.9,1.5L118.6,0.0M15.8,2.5L13.9,2.1L12.8,0.0M47.2,0.0L46.7,0.7L42.4,1.3L42.2,0.0M27.3,0.0L27.1,0.5L23.4,1.6L21.1,0.4L19.1,1.6L15.8,2.5M114.7,106.7L108.5,108.4L107.0,109.4L105.2,114.1L105.6,116.2L108.7,120.0L107.2,124.2L108.8,125.7L109.3,128.3L110.8,130.8L112.6,131.9L112.9,133.9L114.8,136.2L115.1,140.4L111.6,140.9L107.7,139.0L103.3,139.7L101.6,140.9L100.7,139.8L96.8,138.0L93.6,138.9L91.6,137.3L88.8,136.2L86.4,136.3L85.4,134.0L92.8,120.2L91.3,119.8L91.7,117.4L93.6,114.0L95.0,114.0L97.6,111.9L97.6,109.2L100.6,108.1L102.8,105.6L102.4,103.6L105.9,102.3L111.1,103.1L111.4,101.2L113.2,101.5L114.8,104.2L114.7,106.7M118.6,0.0L118.9,1.5L117.9,5.6L115.6,10.4L111.1,10.4L108.9,7.3L106.4,5.6L102.0,4.7L102.1,3.4L101.8,0.0M81.3,0.0L78.6,3.5L77.4,9.3L77.2,11.9L75.8,13.4L74.1,16.8L72.7,18.5L71.8,21.3L67.8,25.2L66.0,29.6L62.1,33.7L58.1,36.9L57.2,40.7L55.5,43.8L52.9,47.7L52.1,51.6L53.2,54.3L52.1,56.3L50.0,57.6L48.1,57.8L45.4,60.6L46.5,64.2L45.6,67.3L44.5,68.4L38.9,68.7L33.3,75.0L31.4,78.5L30.6,83.7L27.3,81.1L30.6,77.7L33.4,73.1L35.9,67.8L37.7,47.9L34.3,31.2L32.8,27.2L27.4,20.8L25.9,20.2L23.9,16.7L21.8,10.8L21.4,8.2L15.8,2.5L19.1,1.6L21.1,0.4L23.4,1.6L27.1,0.5L27.3,0.0M42.2,0.0L42.4,1.3L46.7,0.7L47.2,0.0" fill="none" stroke="var(--limite)" stroke-width=".45" stroke-dasharray="1.5 1.2"/><path d="M319.0,101.1L337.0,138.7" stroke="var(--route)" stroke-width="1.6" stroke-linecap="round"/><g font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-style="italic" fill="var(--eau-texte)" font-size="7"><text x="150" y="189">Océan Atlantique</text><text x="274" y="171" text-anchor="middle">Estuaire de la Loire</text></g><g font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-style="italic" fill="var(--terre-texte)" font-size="6.5"><text x="255" y="20">Brière</text><text x="63" y="75" font-size="5.5">Marais salants</text></g><g class="poi dae" transform="translate(136.7,104.9)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(141.6,99.7)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(103.1,121.5)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(181.9,133.4)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(57.4,114.9)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(297.5,104.4)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(104.0,48.9)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(304.7,117.6)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi dae" transform="translate(121.0,108.3)"><title>Défibrillateur (position indicative)</title><circle r="3.6" fill="#2E8B57" stroke="#fff" stroke-width=".7"/><path d="M0,1.9C-2.6,0-2.4,-1.9-1.1,-1.9C-.4,-1.9,0,-1.3,0,-1.1C0,-1.3,.4,-1.9,1.1,-1.9C2.4,-1.9,2.6,0,0,1.9Z" fill="#fff"/></g><g class="poi pomp" transform="translate(150.6,95.8)"><title>Centre de secours de La Baule (position indicative)</title><circle r="4" fill="#C2410C" stroke="#fff" stroke-width=".7"/><path d="M0,2.4C-1.9,2.4-2.2,.6-1.4,-.5C-1.1,.3-.6,.4-.4,.2C-.8,-1-.2,-2.1.6,-2.6C.5,-1.6,1,-1.2,1.5,-.6C2.3,.5,1.7,2.4,0,2.4Z" fill="#fff"/></g><g class="poi pomp" transform="translate(190.0,128.2)"><title>Centre de secours de Pornichet (position indicative)</title><circle r="4" fill="#C2410C" stroke="#fff" stroke-width=".7"/><path d="M0,2.4C-1.9,2.4-2.2,.6-1.4,-.5C-1.1,.3-.6,.4-.4,.2C-.8,-1-.2,-2.1.6,-2.6C.5,-1.6,1,-1.2,1.5,-.6C2.3,.5,1.7,2.4,0,2.4Z" fill="#fff"/></g><g class="poi pomp" transform="translate(118.3,56.8)"><title>Centre de secours de Guérande (position indicative)</title><circle r="4" fill="#C2410C" stroke="#fff" stroke-width=".7"/><path d="M0,2.4C-1.9,2.4-2.2,.6-1.4,-.5C-1.1,.3-.6,.4-.4,.2C-.8,-1-.2,-2.1.6,-2.6C.5,-1.6,1,-1.2,1.5,-.6C2.3,.5,1.7,2.4,0,2.4Z" fill="#fff"/></g><g class="poi pomp" transform="translate(35.8,100.4)"><title>Centre de secours du Croisic (position indicative)</title><circle r="4" fill="#C2410C" stroke="#fff" stroke-width=".7"/><path d="M0,2.4C-1.9,2.4-2.2,.6-1.4,-.5C-1.1,.3-.6,.4-.4,.2C-.8,-1-.2,-2.1.6,-2.6C.5,-1.6,1,-1.2,1.5,-.6C2.3,.5,1.7,2.4,0,2.4Z" fill="#fff"/></g><g class="poi pomp" transform="translate(283.2,114.9)"><title>Centre de secours de Saint-Nazaire (position indicative)</title><circle r="4" fill="#C2410C" stroke="#fff" stroke-width=".7"/><path d="M0,2.4C-1.9,2.4-2.2,.6-1.4,-.5C-1.1,.3-.6,.4-.4,.2C-.8,-1-.2,-2.1.6,-2.6C.5,-1.6,1,-1.2,1.5,-.6C2.3,.5,1.7,2.4,0,2.4Z" fill="#fff"/></g><g class="poi pomp" transform="translate(345.0,149.3)"><title>Centre de secours de Saint-Brevin (position indicative)</title><circle r="4" fill="#C2410C" stroke="#fff" stroke-width=".7"/><path d="M0,2.4C-1.9,2.4-2.2,.6-1.4,-.5C-1.1,.3-.6,.4-.4,.2C-.8,-1-.2,-2.1.6,-2.6C.5,-1.6,1,-1.2,1.5,-.6C2.3,.5,1.7,2.4,0,2.4Z" fill="#fff"/></g><g class="poi hop" transform="translate(255.4,107.0)"><title>Centre hospitalier de Saint-Nazaire, Cité sanitaire (urgences)</title><rect x="-5" y="-5" width="10" height="10" rx="2.2" fill="#B91C1C" stroke="#fff" stroke-width=".8"/><path d="M-1,-3H1V-1H3V1H1V3H-1V1H-3V-1H-1Z" fill="#fff"/></g><g class="poi hop" transform="translate(108.9,50.9)"><title>Hôpital de Guérande (urgences)</title><rect x="-5" y="-5" width="10" height="10" rx="2.2" fill="#B91C1C" stroke="#fff" stroke-width=".8"/><path d="M-1,-3H1V-1H3V1H1V3H-1V1H-3V-1H-1Z" fill="#fff"/></g><g class="poi rass" transform="translate(130.8,98.4)"><title>Point de rassemblement (fictif)</title><circle r="4.4" fill="#E0662A" stroke="#fff" stroke-width=".7"/><path d="M0,-2.5L2.5,1.8H-2.5Z" fill="#17241C"/></g><g class="poi rass" transform="translate(158.6,101.7)"><title>Point de rassemblement (fictif)</title><circle r="4.4" fill="#E0662A" stroke="#fff" stroke-width=".7"/><path d="M0,-2.5L2.5,1.8H-2.5Z" fill="#17241C"/></g><g transform="translate(143.4,107.0)"><circle r="7" fill="#3B82F6" opacity=".22"/><circle r="3" fill="#3B82F6" stroke="#fff" stroke-width="1.1"/></g><g font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-size="6" fill="var(--terre-texte)"><path d="M10,201h87.5" stroke="var(--eau-texte)" stroke-width="1.2"/><text x="10" y="197" fill="var(--eau-texte)">5 km</text></g><g font-family="-apple-system,BlinkMacSystemFont,Arial,sans-serif" font-size="7" font-weight="600" fill="var(--ville)" stroke="var(--halo)" stroke-width="2" paint-order="stroke"><circle cx="29.6" cy="95.8" r="1.3" fill="var(--ville)"/><text x="29.6" y="89.8" text-anchor="middle">Le Croisic</text><circle cx="58.3" cy="115.6" r="1.3" fill="var(--ville)"/><text x="58.3" y="110.6" text-anchor="middle">Batz-sur-Mer</text><circle cx="101.3" cy="125.5" r="1.3" fill="var(--ville)"/><text x="101.3" y="134.5" text-anchor="middle">Le Pouliguen</text><circle cx="138.5" cy="103.7" r="1.3" fill="var(--ville)"/><text x="138.5" y="93.7" text-anchor="middle">La Baule-Escoublac</text><circle cx="183.7" cy="136.1" r="1.3" fill="var(--ville)"/><text x="183.7" y="145.1" text-anchor="middle">Pornichet</text><circle cx="104.0" cy="48.2" r="1.3" fill="var(--ville)"/><text x="104.0" y="40.2" text-anchor="middle">Guérande</text><circle cx="210.6" cy="66.1" r="1.3" fill="var(--ville)"/><text x="210.6" y="61.1" text-anchor="middle">Saint-André-des-Eaux</text><circle cx="297.1" cy="120.9" r="1.3" fill="var(--ville)"/><text x="297.1" y="126.9" text-anchor="middle">Saint-Nazaire</text><circle cx="339.7" cy="155.9" r="1.3" fill="var(--ville)"/><text x="334.7" y="157.9" text-anchor="end">Saint-Brevin</text><circle cx="34.1" cy="23.8" r="1.3" fill="var(--ville)"/><text x="39.1" y="25.8" text-anchor="start">La Turballe</text></g></svg></div>
+        <div class="zoom"><button onclick="zoomCarte(1)" aria-label="Zoomer">+</button><button onclick="zoomCarte(-1)" aria-label="Dézoomer">−</button></div>
+      </div>
+      <div class="legende">
+        <button class="on" data-c="hop" onclick="calque(this)"><i style="background:#B91C1C"></i>Hôpitaux</button>
+        <button class="on" data-c="pomp" onclick="calque(this)"><i style="background:#C2410C"></i>Pompiers</button>
+        <button class="on" data-c="dae" onclick="calque(this)"><i style="background:#2E8B57"></i>Défibrillateurs</button>
+        <button class="on" data-c="rass" onclick="calque(this)"><i style="background:#E0662A"></i>Rassemblement</button>
+      </div>
+      <div class="carte" style="margin-top:8px">
+        <b>Hôpital le plus proche</b>
+        <div class="mini">Centre hospitalier de Saint-Nazaire, Cité sanitaire · urgences 24 h sur 24 · environ 13 km</div>
+      </div>
+      <p class="mini" style="margin:8px 0">Presqu'île guérandaise et Saint-Nazaire · carte téléchargée, fonctionne sans réseau. Contours : IGN Admin Express (Licence Ouverte). Positions des lieux indicatives pour la maquette ; l'application utilisera OpenStreetMap, GéoDAE et les données de la commune.</p>
+      <h3>Gratuit</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Carte de votre département</span><span class="pill gratuit">Inclus</span></div>
+        <div class="ligne"><span class="t">Hôpitaux, pompiers, défibrillateurs, points d'eau</span><span class="pill gratuit">Inclus</span></div>
+        <div class="ligne"><span class="t">Points de rassemblement de la commune</span><span class="pill gratuit">Inclus</span></div>
+      </div>
+      <h3>Premium</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Téléchargement de la carte de France lancé')"><span class="t">France entière et autres pays</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Fond topographique activé')"><span class="t">Fond topographique pour la randonnée</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Itinéraire calculé hors ligne')"><span class="t">Itinéraires hors ligne</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Enregistrement de la trace démarré')"><span class="t">Enregistrer une trace</span><span class="pill premium">Premium</span></a>
+      </div>
+    </section>
+
+    <!-- ================= SAVOIR ================= -->
+    <section class="ecran" id="e-savoir">
+      <h2>Savoir</h2>
+      <div class="carte" style="display:flex;gap:10px;align-items:center;color:var(--texte2)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Rechercher, même hors réseau</div>
+      <h3>Sources officielles</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-guide"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4z"/></svg></span><span class="t">Tous responsables : face aux risques, agissons<div class="s">SGDSN · 2025 · 27 pages</div></span><span class="pill gratuit">Gratuit</span></a>
+        <a class="ligne" href="#e-fiche"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span><span class="t">Premiers secours (PSC1)<div class="s">Ministère de l'Intérieur · déc. 2023</div></span><span class="pill gratuit">Gratuit</span></a>
+        <a class="ligne" href="#e-reflexes"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20z"/></svg></span><span class="t">Alerte et 6 réflexes<div class="s">Préfectures</div></span><span class="pill gratuit">Gratuit</span></a>
+        <button class="ligne" onclick="toast('Conseils officiels du ministère de l\'Europe et des Affaires étrangères, gratuits même dans le mode voyage.')"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><span class="t">Conseils aux voyageurs<div class="s">Ministère des Affaires étrangères</div></span><span class="pill gratuit">Gratuit</span></button>
+        <a class="ligne" href="#e-commune"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></span><span class="t">Risques de ma commune (DICRIM)<div class="s">La Baule-Escoublac · fictif</div></span><span class="pill gratuit">Gratuit</span></a>
+      </div>
+      <p class="source">Chaque document indique sa source, sa date et sa dernière vérification. <a style="color:var(--accent);font-size:11.5px" href="#e-journal">Journal des mises à jour</a></p>
+      <h3>Mes documents</h3>
+      <div class="liste"><button class="ligne" onclick="toast('Import d\'un PDF depuis Fichiers. Gratuit.')"><span class="t">Importer un PDF</span><span class="pill gratuit">Gratuit</span></button></div>
+      <h3>Bibliothèque premium</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Encyclopédie ouverte')"><span class="t">Encyclopédie en français<div class="s">Hors ligne, 12 Go</div></span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Guides randonnée et montagne ouverts')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Guides mer et voile ouverts')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Rayon enfants ouvert')"><span class="t">Rayon enfants</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Guides pratiques ouverts')"><span class="t">Faire soi-même</span><span class="pill premium">Premium</span></a>
+      </div>
+      <p class="mini">Les consignes de sécurité contenues dans ces guides restent consultables gratuitement.</p>
+    </section>
+
+    <section class="ecran" id="e-guide">
+      <a class="retour" href="#e-savoir">‹ Savoir</a>
+      <h2>Tous responsables</h2>
+      <p class="mini">Secrétariat général de la défense et de la sécurité nationale · publié le 20/11/2025 · Licence Ouverte</p>
+      <div class="liste" style="margin-top:14px">
+        <div class="ligne"><span class="t">1. Connaître les risques</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">2. Se préparer : le kit de 72 heures</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">3. Réagir en cas d'alerte</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">4. S'engager et aider les autres</span><span class="chev">›</span></div>
+      </div>
+      <p class="source">Plan indicatif, à aligner sur le document officiel. SIJAMAIS n'est pas une publication officielle : nous citons la source et renvoyons vers le document d'origine.</p>
+    </section>
+
+    <section class="ecran" id="e-journal">
+      <a class="retour" href="#e-savoir">‹ Savoir</a>
+      <h2>Mises à jour</h2>
+      <div class="liste">
+        <div class="ligne"><span class="t">18/11/2026<div class="s">Vérification des 6 réflexes et du signal d'alerte. Aucun changement.</div></span></div>
+        <div class="ligne"><span class="t">18/11/2026<div class="s">Ajout du guide « Tous responsables » (SGDSN, 2025).</div></span></div>
+        <div class="ligne"><span class="t">18/11/2026<div class="s">Fiches de premiers secours alignées sur l'édition décembre 2023.</div></span></div>
+      </div>
+      <p class="mini">Exemple. Journal public de la veille des recommandations officielles.</p>
+    </section>
+
+    <!-- ================= FAMILLE ================= -->
+    <section class="ecran" id="e-famille">
+      <a class="retour" href="#e-accueil">‹ Retour</a>
+      <h2>Famille</h2>
+      <button class="btn btn-p" onclick="toast('SMS « Je suis en sécurité » préparé. Il partira dès que le réseau reviendra.')">Je suis en sécurité</button>
+      <p class="mini" style="margin:6px 0 4px">Le message part automatiquement au retour du réseau.</p>
+      <h3>Plan du foyer</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Point de rendez-vous 1<div class="s">Devant la maison</div></span><span class="pill gratuit">Gratuit</span></div>
+        <div class="ligne"><span class="t">Point de rendez-vous 2<div class="s">Place de la mairie</div></span><span class="pill gratuit">Gratuit</span></div>
+        <div class="ligne"><span class="t">Contact hors région<div class="s">Une personne à prévenir loin d'ici</div></span><span class="pill gratuit">Gratuit</span></div>
+        <div class="ligne"><span class="t">École de l'enfant<div class="s">Consignes : ne pas aller le chercher</div></span><span class="pill gratuit">Gratuit</span></div>
+      </div>
+      <h3>Membres</h3>
+      <div class="liste">
+        <div class="ligne"><span class="ico">A</span><span class="t">Adulte 1<div class="s">Vous</div></span></div>
+        <div class="ligne"><span class="ico">A</span><span class="t">Adulte 2</span></div>
+        <div class="ligne"><span class="ico">E</span><span class="t">Enfant</span></div>
+      </div>
+      <h3>Famille premium</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Premium partagé avec 2 personnes')"><span class="t">Partager le premium, jusqu'à 5 personnes</span><span class="pill premium">Famille</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Carte familiale affichée')"><span class="t">Carte familiale</span><span class="pill premium">Famille</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Messagerie familiale ouverte')"><span class="t">Messagerie familiale</span><span class="pill premium">Famille</span></a>
+        <div class="ligne"><span class="t">Messages entre téléphones sans réseau<div class="s">Bluetooth, à l'étude</div></span><span class="pill bientot">Bientôt</span></div>
+      </div>
+    </section>
+
+    <!-- ================= ASSISTANT ================= -->
+    <section class="ecran" id="e-assistant">
+      <a class="retour" href="#e-accueil">‹ Retour</a>
+      <h2>Assistant</h2>
+      <p class="mini" style="margin-bottom:12px">Fonctionne sur votre iPhone, sans internet. Il s'appuie sur les fiches relues et cite ses sources.</p>
+      <div class="bulle moi">L'eau du robinet est coupée depuis hier, comment rendre l'eau d'un ruisseau buvable ?</div>
+      <div class="bulle ia">Faites-la bouillir à gros bouillons pendant au moins une minute, puis laissez refroidir couvert. Si l'eau est trouble, filtrez-la d'abord à travers un linge propre.<br><br>Si la mairie diffuse une consigne sur l'eau, elle prime.<div class="source">Fiche « Eau potable » · relue le 18/11/2026</div></div>
+      <div class="bulle moi">J'ai mal à la poitrine depuis une heure</div>
+      <div class="bulle ia" style="border:1.5px solid var(--danger)">Appelez le 15 maintenant. Je ne peux pas évaluer une douleur à la poitrine.<button class="btn btn-p" style="margin-top:10px;padding:11px" onclick="toast('Appel du 15 (démonstration)')">Appeler le 15</button></div>
+      <div class="saisie"><div>Posez une question</div></div>
+      <p class="mini" style="margin-top:10px">Sécurité et premiers secours : gratuit. Questions de loisir (randonnée, voile, voyage) : premium.</p>
+    </section>
+
+    <!-- ================= MA COMMUNE ================= -->
+    <section class="ecran" id="e-commune">
+      <a class="retour" href="#e-accueil">‹ Retour</a>
+      <h2>Ma commune</h2>
+      <div class="fictif">Exemple fictif. La Baule-Escoublac n'a validé aucun contenu.</div>
+      <div class="carte"><b>La Baule-Escoublac</b><div class="mini">Informations fournies par la commune · mises à jour par elle</div></div>
+      <h3>Risques identifiés</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Submersion marine</span></div>
+        <div class="ligne"><span class="t">Tempête</span></div>
+        <div class="ligne"><span class="t">Feu de forêt</span></div>
+      </div>
+      <h3>En cas d'alerte</h3>
+      <div class="liste">
+        <a class="ligne" href="#e-carte"><span class="t">Points de rassemblement<div class="s">3 lieux sur la carte</div></span><span class="chev">›</span></a>
+        <div class="ligne"><span class="t">Numéro de la mairie</span><span class="mini">exemple</span></div>
+        <div class="ligne"><span class="t">Radio locale à écouter</span><span class="mini">exemple</span></div>
+      </div>
+      <p class="source">Source envisagée : DICRIM 2025 et plan communal de sauvegarde, transmis par la commune. Gratuit pour les habitants.</p>
+    </section>
+
+    <!-- ================= PREMIUM ================= -->
+    <section class="ecran" id="e-premium">
+      <a class="retour" href="#e-accueil">‹ Retour</a>
+      <h2>Partez hors réseau</h2>
+      <div class="regle">Tout ce qui protège est gratuit, pour toujours.</div>
+      <p class="mini" style="margin-bottom:14px">Le premium sert vos loisirs : vacances à la campagne, randonnée, mer, voyage.</p>
+      <div class="liste" style="margin-bottom:14px">
+        <div class="ligne"><span class="t">Cartes de France et d'autres pays, fond topographique</span></div>
+        <div class="ligne"><span class="t">Modes randonnée, mer, voyage, camping</span></div>
+        <div class="ligne"><span class="t">Encyclopédie et guides hors ligne</span></div>
+        <div class="ligne"><span class="t">Inventaire 14 jours et rappels</span></div>
+        <div class="ligne"><span class="t">Assistant pour vos activités</span></div>
+      </div>
+      <button class="offre on" style="width:100%" onclick="choisir(this)"><div style="display:flex;justify-content:space-between"><b>Premium</b><span class="prix">29,99 € / an</span></div><div class="mini">ou 3,99 € par mois · 1 personne</div></button>
+      <button class="offre" style="width:100%" onclick="choisir(this)"><div style="display:flex;justify-content:space-between"><b>Famille</b><span class="prix">44,99 € / an</span></div><div class="mini">ou 5,99 € par mois · jusqu'à 5 personnes</div></button>
+      <a class="btn btn-p" style="margin-top:6px" href="#e-accueil" onclick="activerPremium()">Essayer 7 jours gratuitement</a>
+      <p class="mini" style="text-align:center;margin-top:8px">Sans engagement. Résiliable dans les réglages de l'iPhone. Prix à tester.</p>
+    </section>
+
+    <!-- ================= RÉGLAGES ================= -->
+    <section class="ecran" id="e-reglages">
+      <a class="retour" href="#e-accueil">‹ Accueil</a>
+      <h2>Réglages</h2>
+      <h3>Mes modes</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Maison et crises</span><span class="pill gratuit">Toujours actif</span></div>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode randonnée activé')"><span class="t">Randonnée et montagne</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode mer activé')"><span class="t">Mer et voile</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode voyage activé')"><span class="t">Voyage à l'étranger</span><span class="pill premium">Premium</span></a>
+        <a class="ligne" href="#e-premium" onclick="return premiumOu('Mode camping activé')"><span class="t">Camping et van</span><span class="pill premium">Premium</span></a>
+        <div class="ligne"><span class="t">Coupure prolongée</span><span class="pill gratuit">Gratuit</span></div>
+      </div>
+      <h3>Affichage</h3>
+      <div class="liste">
+        <button class="ligne" onclick="basculerTheme()"><span class="t">Thème</span><span class="mini" id="lib-theme">Sombre</span></button>
+        <div class="ligne"><span class="t">Taille du texte</span><span class="mini">Réglage de l'iPhone</span></div>
+      </div>
+      <h3>Données et stockage</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Espace utilisé<div class="s">Carte 180 Mo · fiches 24 Mo · assistant intégré à l'iPhone</div></span></div>
+        <div class="ligne"><span class="t">Données personnelles<div class="s">Aucune donnée envoyée. Tout reste sur votre téléphone.</div></span></div>
+      </div>
+      <h3>Aide</h3>
+      <div class="liste">
+        <div class="ligne"><span class="t">Nous écrire</span><span class="mini">Courriel</span></div>
+        <div class="ligne"><span class="t">Sources et licences</span><span class="chev">›</span></div>
+        <div class="ligne"><span class="t">Proposer une fonctionnalité</span><span class="pill bientot">Bientôt</span></div>
+      </div>
+      <p class="mini" style="text-align:center;margin-top:10px">SIJAMAIS 0.1 · maquette</p>
+    </section>
+
+    <div class="toast" id="toast"></div>
+
+    <nav class="tabbar" id="tabbar">
+      <a data-t="accueil" href="#e-accueil"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Accueil</a>
+      <a data-t="urgence" href="#e-urgence"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>Urgence</a>
+      <a data-t="preparer" href="#e-preparer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="7" width="16" height="13" rx="2"/><path d="M9 7V4h6v3M4 12h16"/></svg>Préparer</a>
+      <a data-t="carte" href="#e-carte"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Carte</a>
+      <a data-t="savoir" href="#e-savoir"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/></svg>Savoir</a>
+    </nav>
+  </div>
+</div>
+
+<script>
+let premium=false, timer;
+const $=id=>document.getElementById(id);
+window.addEventListener('hashchange',()=>{ const e=document.querySelector(location.hash||'#e-onb1'); if(e) e.scrollTop=0; window.scrollTo(0,0); });
+function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('on'); clearTimeout(timer); timer=setTimeout(()=>t.classList.remove('on'),2600); }
+function cocher(l){ const c=l.querySelector('.check'); c.classList.toggle('ok'); c.textContent=c.classList.contains('ok')?'✓':''; }
+function premiumOu(msg){ if(premium){ toast(msg); return false; } return true; }
+function choisir(b){ document.querySelectorAll('.offre').forEach(o=>o.classList.remove('on')); b.classList.add('on'); }
+function activerPremium(){ premium=true; majPremium(); toast('Essai de 7 jours activé (démonstration)'); }
+function basculerPremium(){ premium=!premium; majPremium(); toast(premium?'Mode abonné simulé':'Mode gratuit simulé'); }
+function majPremium(){
+  document.querySelectorAll('.pill.premium').forEach(p=>{ if(!p.dataset.o) p.dataset.o=p.textContent; p.textContent=premium?'Actif':p.dataset.o; });
+  $('bandeau-prem').style.display=premium?'none':'flex';
+  $('bt-prem').textContent=premium?'Simuler un utilisateur gratuit':'Simuler un abonné premium';
+}
+function basculerTheme(){
+  const r=document.documentElement, l=r.dataset.theme==='light';
+  r.dataset.theme=l?'dark':'light'; $('lib-theme').textContent=l?'Sombre':'Clair';
+}
+function telecharger(){
+  ['p1','p2','p3'].forEach(i=>$(i).style.width='0');
+  let v=0; const iv=setInterval(()=>{ v+=4;
+    $('p1').style.width=Math.min(v,100)+'%'; $('p2').style.width=Math.min(v*1.6,100)+'%'; $('p3').style.width=Math.min(v*2.5,100)+'%';
+    if(v>=100) clearInterval(iv);
+  },70);
+}
+document.querySelectorAll('.choix').forEach(g=>g.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  if(g.hasAttribute('data-multi')) b.classList.toggle('on');
+  else { g.querySelectorAll('button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); }
+}));
+let zoomN=1;
+function zoomCarte(d){ zoomN=Math.min(3,Math.max(1,zoomN+d)); const sc=document.getElementById('mapscroll'); const svg=sc.querySelector('svg');
+  const cx=(sc.scrollLeft+sc.clientWidth/2)/svg.clientWidth, cy=(sc.scrollTop+sc.clientHeight/2)/svg.clientHeight;
+  svg.style.width=(zoomN*100)+'%'; requestAnimationFrame(()=>{ sc.scrollLeft=cx*svg.clientWidth-sc.clientWidth/2; sc.scrollTop=cy*svg.clientHeight-sc.clientHeight/2; }); }
+function calque(b){ b.classList.toggle('on'); document.querySelectorAll('.poi.'+b.dataset.c).forEach(p=>p.classList.toggle('off',!b.classList.contains('on'))); }
+</script>
+</body>
+</html>

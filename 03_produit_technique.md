@@ -1,5 +1,7 @@
 # 03. Faisabilité produit et technique
 
+> **Mise à jour du 13/11/2026.** Le produit a changé : application iPhone gratuite avec version complète. Pour le matériel, la plateforme et l'architecture, la référence est désormais `09_application_iphone.md`. Ce document reste valable pour l'analyse de l'IA locale, des contenus et de leurs licences.
+
 Document de la phase 1 du projet HUMAN, rédigé le 12 novembre 2026. Les identifiants S renvoient à `sources.md`, les identifiants H à `registre_hypotheses.md`. Marqueurs : [FAIT], [EST], [HYP], [INT]. La spécification détaillée du logiciel est dans `prototype/mvp_logiciel/SPECIFICATION.md`.
 
 ## 1. Conclusion
