@@ -34,4 +34,20 @@ Les écrans sont reliés par de simples liens internes (`#e-accueil`, `#e-urgenc
 ## Carte et PDF (18 novembre 2026)
 
 - La carte de l'onglet Carte montre la presqu'île guérandaise et Saint-Nazaire. Les contours des communes viennent de l'IGN (Admin Express 2018, Licence Ouverte), via le projet france-geojson. Les positions des hôpitaux, centres de secours, défibrillateurs et points de rassemblement sont **indicatives** et placées à la main : elles ne doivent pas servir en situation réelle.
-- `SIJAMAIS_maquette_0.1.pdf` : les 20 écrans, une couverture et la carte agrandie en annexe (22 pages A4). Les écrans longs sont présentés en deux colonnes.
+- `SIJAMAIS_maquette_0.2.pdf` : les 20 écrans, une couverture et la carte agrandie en annexe (22 pages A4). Les écrans longs sont présentés en deux colonnes.
+
+## Version 0.2 : signalétique de sécurité (18 novembre 2026)
+
+Direction A de `directions_visuelles.html`, validée par Benjamin. Tuiles de couleur unie et pictogrammes épais, dessinés à la main en SVG, sans image générée par IA :
+
+| Couleur | Sens | Exemples |
+|---|---|---|
+| Rouge, croix blanche | Secours | Bouton Urgence, premiers secours, trousse |
+| Jaune | Danger, alerte | Sirène, coupure, tempête, séisme, accident industriel |
+| Orange | Chaleur, feu | Feu de forêt, canicule |
+| Bleu | Eau, information | Inondation, eau potable, épidémie, assistant |
+| Vert | Sécurité, évacuation | Défibrillateur, évacuation, « Je suis en sécurité », rendez-vous |
+| Vert forêt | Préparation, commune | Kit de 72 heures, Ma commune |
+| Gris | Premium et loisirs | Randonnée, mer, voyage, camping (photos à venir) |
+
+Prochaine étape : remplacer les pictogrammes gris des loisirs par des photos libres de droits ou achetées, fournies par Benjamin.

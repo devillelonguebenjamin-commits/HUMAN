@@ -231,3 +231,9 @@ Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à
 **Travail fait.** `prototype/maquette_app/index.html` : maquette cliquable de 17 écrans, thèmes sombre et clair, simulation gratuit et premium, vérifiée dans un navigateur sans erreur.
 
 **Prochaine étape.** Mettre à jour le modèle financier pour l'abonnement, puis aligner les textes des fiches sur les sources officielles.
+
+## 2026-11-18 : maquette 0.2, signalétique de sécurité
+
+**Décision de Benjamin.** Direction visuelle A (signalétique de sécurité) pour la maquette. Photos libres de droits ou achetées à fournir plus tard par Benjamin pour les loisirs et le premium.
+
+**Travail fait.** Maquette HTML et PDF en version 0.2 : 30 pictogrammes dessinés à la main, code couleur des panneaux de sécurité (rouge secours, jaune danger, vert sécurité, bleu eau), scénarios de crise en tuiles. Le PDF 0.1 est retiré du dépôt (il reste dans l'historique).
