@@ -191,3 +191,11 @@ Recherche INPI "AUKAZOU" : 0 marque, 1 entreprise (non identifiée). Mais AUKAZO
 Capture du registraire (OVHcloud), recherche "paré" avec accent : **paré.fr indisponible, paré.com déjà enregistré (transfert verrouillé)**. Disponibles : .eu (7,49 € puis 8,59 €/an), .org (7,99 € puis 12,99 €), .shop (2,99 € puis 39,89 €), .tech (7,99 € puis 56,29 €), .group (5,99 € puis 25,49 €), .biz (1,49 € puis 20,39 €), .art. Prix hors taxe. Pièges de renouvellement sur .shop, .tech, .biz.
 
 Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à vérifier : pare.fr, pare.com, pare.eu, pare.app. Aucun achat tant que la recherche de marque filtrée n'est pas propre. Si un domaine est acheté, le doubler de sa version sans accent.
+
+## 2026-11-18 (fin) : SIJAMAIS, premières vérifications
+
+**Base INPI (recherche exacte, mise à jour du 13/11/2026).** SIJAMAIS : 0 entreprise, 0 brevet, 0 dessin, **1 marque, expirée** : n° 3009896, déposée le 25/02/2000 par une compagnie d'assurances, classes 36, 38 et 42. Aucune marque en vigueur.
+
+**Domaines (OVHcloud, prix hors taxe).** sijamais.com déjà pris (transfert verrouillé). sijamais.fr déjà réservé (affiché "transférable"). Disponibles : .eu 7,49 € puis 8,59 €, .org 7,99 €, .cloud 1,99 € puis 19,29 €, .pro 2,99 € puis 26,29 €, .shop et .tech avec renouvellement élevé.
+
+**Lecture.** Meilleur résultat de marque que PARÉ à ce stade (aucune marque vivante, aucune société), mais l'INPI rappelle qu'il faut compléter par une recherche de similitude. Même problème de domaines .fr et .com que PARÉ. A faire : recherche "SI JAMAIS" en deux mots, variantes phonétiques, Union européenne et OMPI, ouverture de sijamais.fr et sijamais.com.
