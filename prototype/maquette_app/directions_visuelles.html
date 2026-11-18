@@ -1,0 +1,174 @@
+<title>SIJAMAIS directions visuelles</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Planche de comparaison : trois directions, mêmes six contenus, une recommandation */
+:root{
+  --fond:#F3F4EF; --carte:#FFFFFF; --texte:#17241C; --texte2:#4E5E54; --ligne:#D5DBD2;
+  --foret:#1F3B2D; --balise:#C9541C;
+  --rouge:#C8102E; --vert:#00843D; --bleu:#005EB8; --jaune:#F6C700; --orange:#E0662A;
+  --photo1:#5E6F64; --photo2:#2F3E35;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --fond:#17241C; --carte:#1F3B2D; --texte:#F3F4EF; --texte2:#B9C4BC; --ligne:#335443; --balise:#E0662A; color-scheme:dark}}
+:root[data-theme="dark"]{--fond:#17241C; --carte:#1F3B2D; --texte:#F3F4EF; --texte2:#B9C4BC; --ligne:#335443; --balise:#E0662A; color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--fond);color:var(--texte);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+h1{font-size:28px;letter-spacing:-.4px;text-wrap:balance}
+h2{font-size:21px;letter-spacing:-.2px;text-wrap:balance}
+.lead{color:var(--texte2);max-width:68ch;margin-top:6px}
+.dir{display:flex;flex-direction:column;gap:14px}
+.dir-tete{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.lettre{font-weight:800;color:var(--balise);font-size:21px}
+.dir p{color:var(--texte2);max-width:72ch}
+.reco{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--balise);color:#fff}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.pour-contre{display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:14px}
+.pour-contre div{background:var(--carte);border-radius:12px;padding:12px 14px;min-width:0}
+.pour-contre b{display:block;margin-bottom:4px}
+@media (max-width:620px){.pour-contre{grid-template-columns:1fr}}
+
+/* A : signalétique */
+.sig{border-radius:16px;aspect-ratio:1/1.05;padding:14px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;max-width:100%}
+.sig svg{width:64px;height:64px}
+.sig b{font-size:16px;line-height:1.2}
+.sig span{font-size:12px;opacity:.9}
+.r{background:var(--rouge)} .v{background:var(--vert)} .b{background:var(--bleu)} .j{background:var(--jaune);color:#17241C} .o{background:var(--orange)} .f{background:var(--foret)}
+
+/* B : photo */
+.ph{border-radius:16px;overflow:hidden;background:var(--carte);display:flex;flex-direction:column;max-width:100%}
+.ph .img{aspect-ratio:4/3;position:relative;background:linear-gradient(160deg,var(--photo1),var(--photo2));display:flex;align-items:flex-end;padding:10px}
+.ph .img i{position:absolute;top:10px;left:10px;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;background:rgba(0,0,0,.45);color:#fff;padding:3px 7px;border-radius:6px}
+.ph .img em{font-style:normal;font-size:11.5px;color:#fff;background:rgba(0,0,0,.35);padding:6px 8px;border-radius:8px;line-height:1.35}
+.ph .txt{padding:10px 12px}
+.ph .txt b{font-size:15px;display:block}
+.ph .txt span{font-size:12px;color:var(--texte2)}
+.ph .bande{height:5px}
+
+/* C : schéma */
+.sc{background:var(--carte);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;max-width:100%}
+.sc svg{width:100%;height:auto;aspect-ratio:4/3;background:var(--fond);border-radius:10px}
+.sc b{font-size:15px}
+.sc span{font-size:12px;color:var(--texte2)}
+
+/* écran combiné */
+.combo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:start}
+@media (max-width:760px){.combo{grid-template-columns:1fr}}
+.tel{background:#17241C;color:#F3F4EF;border-radius:36px;padding:18px 14px;max-width:360px;width:100%;box-shadow:0 0 0 8px #0b110d;justify-self:center}
+.tel h3{font-size:24px;margin:4px 4px 12px}
+.tel .lab{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:#B9C4BC;margin:14px 4px 8px}
+.tel .rang{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tel .sig{aspect-ratio:auto;min-height:104px;border-radius:14px;padding:11px}
+.tel .sig svg{width:40px;height:40px}
+.tel .sig b{font-size:14px}
+.tel .ph{background:#1F3B2D}
+.tel .ph .txt span{color:#B9C4BC}
+ul.regles{display:flex;flex-direction:column;gap:8px;padding-left:18px;color:var(--texte2)}
+ul.regles b{color:var(--texte)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+.tab{overflow-x:auto}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--ligne);vertical-align:top}
+th{color:var(--texte2);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.5px}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>SIJAMAIS : trois directions visuelles</h1>
+  <p class="lead">Mêmes six contenus dessinés de trois façons. Les photos sont représentées par des emplacements décrits : je n'ai pas accès aux banques d'images depuis mon environnement, et je ne veux pas d'images générées par IA, que tu as justement trouvées trop visibles chez HAVEN.</p>
+</header>
+
+<!-- ============ A ============ -->
+<section class="dir">
+  <div class="dir-tete"><span class="lettre">A</span><h2>Signalétique de sécurité</h2><span class="reco">Recommandé pour Urgence</span></div>
+  <p>Les couleurs et les formes des panneaux de sécurité que tout le monde connaît : croix blanche sur rouge pour les secours, vert pour l'évacuation et le défibrillateur, jaune pour le danger, bleu pour la consigne. Aplats francs, pictogrammes épais, aucun dégradé. On reconnaît la tuile avant de lire le mot.</p>
+  <div class="grille">
+    <div class="sig r"><svg viewBox="0 0 64 64"><path d="M24 8h16v16h16v16H40v16H24V40H8V24h16z" fill="#fff"/></svg><div><b>Premiers secours</b><br><span>12 fiches</span></div></div>
+    <div class="sig b"><svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"><path d="M10 30 32 12l22 18"/><path d="M16 27v13h32V27"/><path d="M4 50c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4 5-4 10-4 5 4 10 4"/></svg><div><b>Inondation</b><br><span>Avant, pendant, après</span></div></div>
+    <div class="sig j"><svg viewBox="0 0 64 64"><path d="M32 6 60 56H4z" fill="none" stroke="#17241C" stroke-width="5" stroke-linejoin="round"/><path d="M35 20 24 38h9l-4 12 12-19h-9z" fill="#17241C"/></svg><div><b>Coupure d'électricité</b><br><span>Tenir 72 heures</span></div></div>
+    <div class="sig o"><svg viewBox="0 0 64 64" fill="#fff"><path d="M32 58c-11 0-18-7-18-16 0-8 5-12 8-18 1 5 4 8 7 8-2-8 2-17 9-22-1 8 3 12 7 17 4 5 5 9 5 15 0 9-7 16-18 16z"/></svg><div><b>Feu de forêt</b><br><span>Se protéger, évacuer</span></div></div>
+    <div class="sig v"><svg viewBox="0 0 64 64"><path d="M32 54C10 40 6 28 12 19c5-7 15-6 20 2 5-8 15-9 20-2 6 9 2 21-20 35z" fill="#fff"/><path d="M34 22 26 36h7l-3 11 9-15h-7z" fill="#00843D"/></svg><div><b>Défibrillateur</b><br><span>Le plus proche</span></div></div>
+    <div class="sig f"><svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"><rect x="10" y="20" width="44" height="34" rx="5"/><path d="M24 20v-8h16v8M10 33h44"/><path d="M29 38h6" stroke="#E0662A"/></svg><div><b>Kit 72 heures</b><br><span>7 sur 12</span></div></div>
+  </div>
+  <div class="pour-contre">
+    <div><b>Pour</b>Reconnaissance immédiate, même sous le stress, même pour un enfant ou une personne qui lit mal le français. Lisible en plein soleil. Très léger, donc parfait hors ligne. Codes que les mairies et les préfectures reconnaissent.</div>
+    <div><b>Contre</b>Peut faire « administratif » si on l'applique partout. À réserver à l'urgence et à la préparation, pas aux loisirs. Respecter l'esprit des panneaux sans copier une norme payante (je redessine chaque pictogramme).</div>
+  </div>
+</section>
+
+<!-- ============ B ============ -->
+<section class="dir">
+  <div class="dir-tete"><span class="lettre">B</span><h2>Photo documentaire</h2><span class="reco">Recommandé pour Savoir, loisirs et premium</span></div>
+  <p>De vraies photos, prises en France, en lumière naturelle, avec de vraies personnes : un geste, un lieu, un objet. Pas de mise en scène de catastrophe, pas d'image dramatique. Un bandeau de couleur reprend le code de la direction A pour garder le repère.</p>
+  <div class="grille">
+    <div class="ph"><div class="img"><i>Photo</i><em>Mains croisées au centre d'une poitrine, massage sur un mannequin de formation, gros plan</em></div><div class="bande r"></div><div class="txt"><b>Premiers secours</b><span>12 fiches</span></div></div>
+    <div class="ph"><div class="img"><i>Photo</i><em>Rue de quartier avec 20 cm d'eau, bottes, sacs de sable devant une porte</em></div><div class="bande b"></div><div class="txt"><b>Inondation</b><span>Avant, pendant, après</span></div></div>
+    <div class="ph"><div class="img"><i>Photo</i><em>Cuisine le soir, lampe frontale, radio à manivelle posée sur la table</em></div><div class="bande j"></div><div class="txt"><b>Coupure d'électricité</b><span>Tenir 72 heures</span></div></div>
+    <div class="ph"><div class="img"><i>Photo</i><em>Sentier côtier de la presqu'île, randonneur de dos, sac et carte papier</em></div><div class="bande f"></div><div class="txt"><b>Randonnée</b><span>Premium</span></div></div>
+    <div class="ph"><div class="img"><i>Photo</i><em>Voilier au mouillage, gilet de sauvetage sur le pont, matin calme</em></div><div class="bande f"></div><div class="txt"><b>Mer et voile</b><span>Premium</span></div></div>
+    <div class="ph"><div class="img"><i>Photo</i><em>Contenu d'un kit posé à plat sur un plan de travail : eau, conserves, piles, trousse</em></div><div class="bande f"></div><div class="txt"><b>Kit 72 heures</b><span>7 sur 12</span></div></div>
+  </div>
+  <div class="pour-contre">
+    <div><b>Pour</b>Chaleureux, humain, crédible : l'inverse du rendu « IA ». Donne envie d'ouvrir les guides de loisir, donc de payer. Des photos de la presqu'île parlent tout de suite à La Baule.</div>
+    <div><b>Contre</b>Coût et droits : il faut des photos achetées ou prises par toi, avec l'accord des personnes photographiées. Plus lourd à télécharger : à garder en petite taille.</div>
+  </div>
+</section>
+
+<!-- ============ C ============ -->
+<section class="dir">
+  <div class="dir-tete"><span class="lettre">C</span><h2>Schémas de gestes</h2><span class="reco">Recommandé dans les fiches</span></div>
+  <p>Des dessins au trait simples, à l'intérieur des fiches, comme dans les manuels de secourisme : une étape, un dessin. Ils expliquent mieux qu'une photo un geste précis (position des mains, mise sur le côté).</p>
+  <div class="grille">
+    <div class="sc"><svg viewBox="0 0 160 120" fill="none" stroke="var(--texte)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 92h120"/><ellipse cx="44" cy="84" rx="13" ry="9"/><path d="M57 86h60c6 0 9-3 9-7"/><path d="M84 40v26M74 66h20"/><path d="M84 40c-10-8-10-20 0-24 10 4 10 16 0 24" /><path d="M84 66 90 80" stroke="var(--balise)"/><path d="M78 30h12" /></svg><b>1. Masser</b><span>Bras tendus, au centre de la poitrine</span></div>
+    <div class="sc"><svg viewBox="0 0 160 120" fill="none" stroke="var(--texte)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M16 96h128"/><circle cx="40" cy="70" r="11"/><path d="M50 76c18 6 40 6 58 0 10-3 16 2 16 10"/><path d="M84 79c-4 8-2 14 6 17M110 72c8-10 18-10 22-2"/><path d="M118 40l12 12-12 12" stroke="var(--balise)"/></svg><b>2. Position latérale</b><span>Tourner sur le côté, tête basculée</span></div>
+    <div class="sc"><svg viewBox="0 0 160 120" fill="none" stroke="var(--texte)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="46" y="20" width="68" height="84" rx="8"/><path d="M80 44c-12-10-24 0-14 12l14 12 14-12c10-12-2-22-14-12z" stroke="var(--vert)"/><path d="M82 48l-6 10h6l-3 7" stroke="var(--vert)"/><path d="M60 90h40"/></svg><b>3. Défibrillateur</b><span>Ouvrir, suivre la voix</span></div>
+    <div class="sc"><svg viewBox="0 0 160 120" fill="none" stroke="var(--texte)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M40 98h80"/><path d="M52 98V58h56v40"/><path d="M46 60 80 32l34 28"/><path d="M70 98V76h20v22"/><path d="M22 48c6-6 12-6 18 0M120 48c6-6 12-6 18 0" stroke="var(--bleu)"/></svg><b>Se mettre à l'abri</b><span>Rejoindre un bâtiment en dur</span></div>
+  </div>
+  <div class="pour-contre">
+    <div><b>Pour</b>Le plus pédagogique pour un geste. Léger, net à toutes les tailles, cohérent avec les supports de formation que les secouristes connaissent.</div>
+    <div><b>Contre</b>Demande un vrai illustrateur pour la version finale : mes croquis donnent l'idée, pas la qualité. Budget à prévoir (voir plus bas).</div>
+  </div>
+</section>
+
+<!-- ============ Combinaison ============ -->
+<section class="dir">
+  <div class="dir-tete"><span class="lettre">→</span><h2>Ma proposition : combiner les trois, chacun à sa place</h2></div>
+  <div class="combo">
+    <div class="tel" aria-label="Exemple d'écran Savoir">
+      <h3>Savoir</h3>
+      <p class="lab">Urgence et préparation</p>
+      <div class="rang">
+        <div class="sig r"><svg viewBox="0 0 64 64"><path d="M24 8h16v16h16v16H40v16H24V40H8V24h16z" fill="#fff"/></svg><b>Premiers secours</b></div>
+        <div class="sig b"><svg viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="5" stroke-linejoin="round"><path d="M10 30 32 12l22 18"/><path d="M16 27v13h32V27"/><path d="M4 50c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4 5-4 10-4 5 4 10 4"/></svg><b>Inondation</b></div>
+        <div class="sig j"><svg viewBox="0 0 64 64"><path d="M32 6 60 56H4z" fill="none" stroke="#17241C" stroke-width="5" stroke-linejoin="round"/><path d="M35 20 24 38h9l-4 12 12-19h-9z" fill="#17241C"/></svg><b>Coupure</b></div>
+        <div class="sig o"><svg viewBox="0 0 64 64" fill="#fff"><path d="M32 58c-11 0-18-7-18-16 0-8 5-12 8-18 1 5 4 8 7 8-2-8 2-17 9-22-1 8 3 12 7 17 4 5 5 9 5 15 0 9-7 16-18 16z"/></svg><b>Feu de forêt</b></div>
+      </div>
+      <p class="lab">Hors réseau, pour le plaisir</p>
+      <div class="rang">
+        <div class="ph"><div class="img" style="aspect-ratio:1/1"><i>Photo</i></div><div class="txt"><b>Randonnée</b><span>Premium</span></div></div>
+        <div class="ph"><div class="img" style="aspect-ratio:1/1"><i>Photo</i></div><div class="txt"><b>Mer et voile</b><span>Premium</span></div></div>
+      </div>
+    </div>
+    <ul class="regles">
+      <li><b>Urgence et Préparer : direction A.</b> Tuiles de couleur à pictogramme. La croix blanche sur rouge pour les premiers secours, le cœur vert pour le défibrillateur, partout dans l'application et sur la carte.</li>
+      <li><b>Savoir, accueil des modes et premium : direction B.</b> Une vraie photo par guide de loisir et par mode (randonnée, mer, voyage, camping). C'est là que l'envie compte.</li>
+      <li><b>À l'intérieur des fiches : direction C.</b> Un schéma par étape pour les gestes de secours.</li>
+      <li><b>Règle :</b> aucune image générée par IA, aucune photo de catastrophe ou de blessé, chaque photo créditée.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Sourcing ============ -->
+<section class="dir">
+  <h2>D'où viendraient les photos et les dessins</h2>
+  <div class="tab"><table>
+    <tr><th>Source</th><th>Pour quoi</th><th>Coût indicatif</th><th>Point d'attention</th></tr>
+    <tr><td>Tes propres photos, sur la presqu'île</td><td>Randonnée, mer, côte, kit posé sur une table</td><td>0 €</td><td>Accord écrit des personnes reconnaissables</td></tr>
+    <tr><td>Banques gratuites (Unsplash, Pexels)</td><td>Paysages, voyage, objets</td><td>0 €</td><td>Licence à vérifier photo par photo, images souvent vues ailleurs</td></tr>
+    <tr><td>Banque payante (Adobe Stock, iStock)</td><td>Gestes, situations précises</td><td>3 à 15 € la photo, ou un abonnement mensuel [estimation à vérifier]</td><td>Licence commerciale incluse, à conserver</td></tr>
+    <tr><td>Partenaire de sécurité civile (Croix-Rouge, Protection civile, SDIS 44)</td><td>Photos de formation et de gestes</td><td>Gratuit en échange de la citation</td><td>Demande écrite. Renforce la crédibilité auprès des mairies</td></tr>
+    <tr><td>Illustrateur indépendant</td><td>Pictogrammes finaux et 30 à 40 schémas de gestes</td><td>1 500 à 4 000 € [estimation à vérifier par devis]</td><td>Cession de droits écrite, fichiers sources</td></tr>
+    <tr><td>Photothèques publiques (IGN, ministères)</td><td>Cartes, illustrations de documents officiels</td><td>0 €</td><td>Seulement si la licence le permet, sans logo de l'État</td></tr>
+  </table></div>
+</section>
+</div>
