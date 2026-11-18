@@ -185,3 +185,9 @@ Recherche INPI "AUKAZOU" : 0 marque, 1 entreprise (non identifiée). Mais AUKAZO
 **Réserves.** Recherche filtrée à refaire (classes de Nice, tranches de dates), contrôle de l'Union européenne et de l'OMPI, onglet Entreprises, domaines. Risques propres au nom : bruit de recherche (« pare » donne pare-brise et pare-feu), évocation d'Ambroise Paré (chirurgien, hôpitaux et cliniques), accent absent des noms de domaine.
 
 **Règle.** Dossier non renommé tant que la recherche filtrée n'est pas propre. Si elle l'est, renommage global en une opération. Aucun engagement (graphiste, développeur, compte Apple, publicité) avant l'avis écrit du conseil.
+
+## 2026-11-18 (fin) : domaines de PARÉ
+
+Capture du registraire (OVHcloud), recherche "paré" avec accent : **paré.fr indisponible, paré.com déjà enregistré (transfert verrouillé)**. Disponibles : .eu (7,49 € puis 8,59 €/an), .org (7,99 € puis 12,99 €), .shop (2,99 € puis 39,89 €), .tech (7,99 € puis 56,29 €), .group (5,99 € puis 25,49 €), .biz (1,49 € puis 20,39 €), .art. Prix hors taxe. Pièges de renouvellement sur .shop, .tech, .biz.
+
+Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à vérifier : pare.fr, pare.com, pare.eu, pare.app. Aucun achat tant que la recherche de marque filtrée n'est pas propre. Si un domaine est acheté, le doubler de sa version sans accent.
