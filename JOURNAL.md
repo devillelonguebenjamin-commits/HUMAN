@@ -215,3 +215,11 @@ Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à
 **Réserves.** Recherche de similitude, Union européenne et OMPI, ouverture de sijamais.fr et sijamais.com, avis écrit du conseil. Le dossier est renommé (documents, page de test, prompt du deck, générateur du modèle). Les entrées antérieures du journal gardent l'ancien nom.
 
 **Règle maintenue.** Aucun engagement (graphiste, développeur, compte Apple, dépôt de marque) avant l'avis écrit du conseil. La page de test et ses annonces peuvent utiliser le nom : c'est peu coûteux et réversible.
+
+## 2026-11-18 : stratégie auprès des collectivités et veille officielle
+
+**Orientation de Benjamin.** Proposer SIJAMAIS aux mairies, à la région et à l'État sans demander de financement, mais de la visibilité : relais et recommandation aux citoyens. L'application doit reprendre toutes les recommandations officielles en vigueur, à la manière dont HAVEN reprend les manuels de l'armée américaine.
+
+**Travail fait.** `10_veille_officielle.md` : 15 sources officielles civiles, 6 jeux de données publiques, règles de réutilisation (Licence Ouverte, droits des tiers, interdiction du logo de l'État), organisation de la veille.
+
+**Conclusions.** (1) Tout contenu issu d'une source publique reste gratuit, condition d'une recommandation par une collectivité. (2) Pas d'équivalent public français du manuel de survie de l'armée américaine : le TTA 150 est un manuel militaire de combat ; en France, la protection des civils relève de la sécurité civile et du SGDSN. (3) Aucune trace d'un envoi de kits ou du guide aux foyers par l'État : le guide a été diffusé en ligne. (4) Cible de visibilité : Journée nationale de la résilience du 13 octobre 2027.
