@@ -247,3 +247,7 @@ Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à
 **Points saillants.** (1) Un iPhone en arrière-plan relaie mal : le maillage entre téléphones fonctionne surtout application ouverte, le boîtier LoRa porte l'arrière-plan. (2) Multipeer et Wi-Fi Direct ne se parlent pas : Wi-Fi Aware (iOS 26 et Android) proposé à la place. (3) Meshtastic est sous GPL-3.0 : avis de l'avocat avant l'étape 3. (4) Charge totale estimée de 75 à 125 jours, hors du budget actuel de la v1. (5) Le réseau de relais LoRa peut devenir une offre payante pour les communes.
 
 **En attente.** Validation de Benjamin (décisions R1 à R7). Aucun code écrit.
+
+## 2026-11-23 : Mac reçu
+
+MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et la future activité d'automatisation IA de Benjamin. Le prérequis « Mac » des étapes 1 à 4 du module de communication est levé. Restent à décider : R1 à R7 (`11_module_communication_hors_reseau.md`).

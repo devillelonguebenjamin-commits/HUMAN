@@ -12,7 +12,7 @@ Mis à jour le 18 novembre 2026.
 | 4 | Nom de travail ? | MECUM |
 | Nouvelle | Plateforme ? | iPhone d'abord, pas d'Android au lancement |
 | Nouvelle | Identité visuelle ? | Ne pas faire "IA". A traiter dans un second temps |
-| A | Mac ? | Pas encore. Une tablette de 2021. Achat d'un MacBook Pro au Black Friday |
+| A | Mac ? | Reçu le 23/11/2026 : MacBook Air M5, 24 Go de mémoire (sert aussi à l'activité d'automatisation IA) |
 | B | Chômage ? | Environ 1 000 € par mois. Demande de révision et d'ARCE envisagée (estimation : 20 000 € en deux fois) |
 | C | Après le mois 4 ? | Temps partiel, avec d'autres projets de création |
 
