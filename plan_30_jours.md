@@ -9,6 +9,17 @@ Deux contraintes de calendrier :
 - fin novembre, les promotions de fin d'année font monter les coûts publicitaires. Un coût par inscrit mesuré à ce moment sera plutôt pessimiste ;
 - ta réserve couvre 3 à 4 mois. Le jour 30 doit aussi trancher la question de ton revenu à partir du mois 4 (voir `09_application_iphone.md`, section 8).
 
+## Recalage du 24 novembre 2026
+
+Le test n'a pas démarré au 16 novembre : la semaine a servi au nom, à la maquette, à la veille officielle et à l'installation du Mac. **Nouveau jour 1 : lundi 30 novembre 2026, jour 30 : mardi 29 décembre 2026.** Les fêtes de fin d'année réduiront les rendez-vous en mairie et renchériront la publicité : la vague 2 de publicité est décalée à début janvier si nécessaire.
+
+Changements par rapport à la version 2 :
+
+- la maquette cliquable (`prototype/maquette_app/`) remplace le « MVP zéro » pour les entretiens et les rendez-vous en mairie ;
+- le Mac est acheté ; l'iPhone de test reste à acheter ;
+- le module de communication hors réseau est reporté (décision du 24/11/2026) ;
+- d'ici au nouveau jour 1 : réserver `sijamais.eu`, prendre rendez-vous avec le conseil en propriété industrielle, envoyer la demande de rendez-vous à la mairie de La Baule-Escoublac.
+
 ## Budget
 
 | Poste | Montant | Engagé quand |

@@ -29,6 +29,8 @@ Mis à jour le 18 novembre 2026.
 
 ## Module de communication hors réseau (18 novembre 2026)
 
+**Décision du 24/11/2026 : module reporté.** Benjamin ne l'explore pas pour l'instant. Les questions R1 à R7 restent ouvertes pour plus tard.
+
 Détail et recommandations dans `11_module_communication_hors_reseau.md`, section 11.
 
 | N° | Question | Ma recommandation |

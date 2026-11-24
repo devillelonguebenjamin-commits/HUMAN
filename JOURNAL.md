@@ -251,3 +251,9 @@ Constat : le nom de domaine d'usage (sans accent, que le public tapera) reste à
 ## 2026-11-23 : Mac reçu
 
 MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et la future activité d'automatisation IA de Benjamin. Le prérequis « Mac » des étapes 1 à 4 du module de communication est levé. Restent à décider : R1 à R7 (`11_module_communication_hors_reseau.md`).
+
+## 2026-11-24 : module de communication reporté, recalage du plan de 30 jours
+
+**Décision de Benjamin.** Le module de communication hors réseau n'est pas exploré pour l'instant.
+
+**Constat.** Le test de 30 jours prévu à partir du 16/11 n'a pas démarré. Nouveau jour 1 fixé au lundi 30/11/2026 (`plan_30_jours.md`, section « Recalage »). La maquette remplace le « MVP zéro » pour les entretiens et les mairies.
