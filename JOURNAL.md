@@ -277,3 +277,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Travail fait.** `contenus/guides/guides_v1.1.json`, produit par `outils/construire_guides_v11.py` : toutes les corrections de la revue, 9 guides ajoutés (arrêt cardiaque, saignement, personne inconsciente, étouffement, brûlure, monoxyde de carbone, coupure d'électricité, canicule, grand froid), IFAK et trauma kit retirés, tussilage retiré, espace mairie reformulé avec le vocabulaire du plan communal de sauvegarde. Chaque guide porte désormais son niveau (25 consignes officielles, 19 conseils pratiques), sa date, son statut de relecture et ses points à vérifier. 20 sources décrites avec leur statut de réutilisation. Intégration dans la maquette par `outils/integrer_guides_maquette.py` (50 écrans, navigation sans JavaScript vérifiée).
 
 **Reste à faire.** Relecture des guides de premiers secours par un formateur agréé, vérification des points listés dans `a_verifier`, demandes d'autorisation aux auteurs privés (La Libellule, APARS56, Atelier ILYS, Résilience urbaine).
+
+## 2026-11-25 : guides cyberattaque
+
+**Demande de Benjamin.** « Et cyberattaque ? » Le sujet n'était traité qu'en quelques lignes (désinformation, communication de crise de la mairie).
+
+**Travail fait.** Deux guides ajoutés à la version 1.1 (46 guides) : « Cyberattaque et arnaques en ligne » pour les habitants (rançongiciel, compte piraté, message frauduleux, attaque d'ampleur nationale, prévention, 17Cyber, 33700, Pharos) et « Cyberattaque contre la commune » dans l'espace mairie (premières heures, CSIRT régional, notification à la CNIL sous 72 heures, communication pendant l'attaque d'après la checklist de l'ANSSI). Tuiles « Cyberattaque » et « Monoxyde de carbone » ajoutées à l'onglet Urgence.

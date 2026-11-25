@@ -35,6 +35,10 @@ SOURCES = {
     "S18": {"titre": "Procédure de désinfection de l'eau hors réseau", "editeur": "ARS Guadeloupe", "date": "2017", "url": "https://www.guadeloupe.ars.sante.fr/system/files/2017-09/proc%C3%A9dure%20d%C3%A9sinfection%20eau%20hors%20reseau.pdf", "type": "officiel", "reutilisation": "Information publique. Vérifier une recommandation nationale équivalente"},
     "S19": {"titre": "Distribution des comprimés d'iode autour des centrales nucléaires", "editeur": "Ordre national des pharmaciens, ASNR", "date": "2019 à 2025", "url": "https://www.ordre.pharmacien.fr/les-communications/focus-sur/les-actualites/campagne-de-distribution-de-comprimes-d-iode-stable-dans-les-officines-situees-dans-un-rayon-de-10-a-20-km-des-centrales-nucleaires-de-production-d", "type": "officiel", "reutilisation": "Information publique"},
     "S20": {"titre": "Canicule, grand froid, monoxyde de carbone : conseils de prévention", "editeur": "Santé publique France, ministère de la Santé", "date": None, "url": None, "type": "officiel", "reutilisation": "Information publique. Pages exactes à citer après vérification"},
+    "S21": {"titre": "Cybercriminalité : se protéger et réagir", "editeur": "Service d'information du Gouvernement (info.gouv.fr)", "date": "consultée le 2026-11-25", "url": "https://www.info.gouv.fr/risques/cybercriminalite", "type": "officiel", "reutilisation": "Information publique"},
+    "S22": {"titre": "Mémo rançongiciels et 17Cyber", "editeur": "Cybermalveillance.gouv.fr (GIP ACYMA), Police et Gendarmerie nationales", "date": "2024-12 et 2025-06", "url": "https://www.cybermalveillance.gouv.fr/medias/2025/06/210630_Memo_Rancongiciels_SCREEN.pdf", "type": "officiel", "reutilisation": "Information publique, citer la source"},
+    "S23": {"titre": "SMS, appels et courriels indésirables ou frauduleux", "editeur": "ARCEP", "date": "consultée le 2026-11-25", "url": "https://www.arcep.fr/demarches-et-services/utilisateurs/sms-appels-et-courriers-electroniques-indesirables-et-ou-frauduleux.html", "type": "officiel", "reutilisation": "Information publique"},
+    "S24": {"titre": "Règlement général sur la protection des données, article 33", "editeur": "Union européenne, CNIL", "date": "2016", "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article33", "type": "officiel", "reutilisation": "Texte officiel"},
 }
 OFFICIELLES = {k for k, v in SOURCES.items() if v["type"] == "officiel"}
 
@@ -210,6 +214,60 @@ remplacer_texte("pilotage", "Faut-il activer la cellule ?", "Faut-il activer le 
 # ---------- Nouveaux guides ----------
 PSC = ["S17"]
 nouveaux_guides = [
+    {"id": "cyberattaque", "cat": "urgence", "titre": "Cyberattaque et arnaques en ligne", "resume": "Rançon, compte piraté, faux message : que faire, et comment se protéger.", "duree": "4 min", "prioritaire": True, "sensible": False, "blocs": [
+        {"t": "text", "body": "Une cyberattaque peut vous viser directement (appareil bloqué contre une rançon, compte piraté, arnaque) ou toucher tout le pays : hôpitaux, paiements, téléphone, internet. Dans les deux cas, quelques réflexes limitent les dégâts."},
+        {"t": "steps", "titre": "Mon appareil est bloqué et on me demande une rançon", "items": [
+            "Débranchez-le tout de suite d'internet et du réseau : coupez le Wi-Fi, retirez le câble.",
+            "Ne l'éteignez pas : mettez-le en veille. Les enquêteurs et les techniciens en auront besoin.",
+            "Ne payez pas : le paiement ne garantit pas de retrouver vos fichiers.",
+            "Cherchez une solution gratuite de déchiffrement sur nomoreransom.org.",
+            "Faites-vous aider sur 17cyber.gouv.fr et portez plainte (commissariat, gendarmerie ou plainte en ligne)."]},
+        {"t": "steps", "titre": "Un de mes comptes est piraté", "items": [
+            "Changez le mot de passe depuis un autre appareil, sain, puis ceux des comptes qui utilisaient le même.",
+            "Activez la double authentification.",
+            "Prévenez vos contacts : le pirate peut leur écrire en votre nom.",
+            "Suivez la procédure de récupération du service concerné et faites-vous aider sur 17cyber.gouv.fr."]},
+        {"t": "steps", "titre": "J'ai reçu un message suspect ou j'ai été arnaqué", "items": [
+            "Ne cliquez pas, ne répondez pas, ne rappelez pas le numéro indiqué.",
+            "SMS frauduleux : transférez-le au 33700, sans commentaire.",
+            "Si vous avez donné vos coordonnées bancaires : appelez votre banque immédiatement pour faire opposition.",
+            "Portez plainte et signalez les contenus illicites sur internet-signalement.gouv.fr (Pharos)."]},
+        {"t": "list", "titre": "Si une cyberattaque touche tout le pays", "items": [
+            "Paiements, téléphone ou internet peuvent être coupés : votre kit de 72 heures et un peu d'argent liquide prennent tout leur sens.",
+            "Écoutez la radio et suivez seulement les canaux officiels.",
+            "Ne relayez pas les rumeurs : une cyberattaque s'accompagne souvent de fausses informations.",
+            "Sans internet, rendez-vous au commissariat, à la gendarmerie ou en mairie."]},
+        {"t": "check", "id": "cyber-protection", "titre": "Me protéger dès maintenant", "items": [
+            "Un mot de passe solide et différent pour chaque compte important (un gestionnaire de mots de passe aide)",
+            "La double authentification sur la messagerie, la banque et les réseaux sociaux",
+            "Les mises à jour du téléphone et de l'ordinateur faites sans attendre",
+            "Une sauvegarde régulière de mes fichiers sur un support débranché ensuite",
+            "Des applications téléchargées seulement depuis les boutiques officielles",
+            "De la méfiance envers tout message inattendu ou trop pressant"]},
+        {"t": "kv", "titre": "Où trouver de l'aide", "items": [
+            ["17cyber.gouv.fr", "Diagnostic et aide aux victimes, échange avec un policier ou un gendarme, 24 h sur 24, gratuit"],
+            ["33700", "Signaler un SMS ou un appel frauduleux"],
+            ["internet-signalement.gouv.fr", "Signaler un contenu illicite (Pharos)"],
+            ["cybermalveillance.gouv.fr", "Conseils et professionnels de confiance près de chez vous"]]}],
+     "sources": ["S2", "S21", "S22", "S23"]},
+    {"id": "cyberattaque-commune", "cat": "mairie", "titre": "Cyberattaque contre la commune", "resume": "Les premières heures, côté technique et côté communication.", "duree": "4 min", "prioritaire": False, "sensible": False, "blocs": [
+        {"t": "steps", "titre": "Les premières heures", "items": [
+            "Isolez du réseau les postes et serveurs touchés, sans les éteindre.",
+            "Activez la cellule de crise : maire, direction générale, informatique, communication.",
+            "Faites-vous aider : 17cyber.gouv.fr est ouvert aux collectivités, et le centre régional de réponse aux incidents (CSIRT) de votre région peut intervenir.",
+            "Si des données personnelles sont touchées, notifiez la CNIL dans les 72 heures.",
+            "Portez plainte, et ne payez pas de rançon.",
+            "Passez en mode dégradé : papier, téléphones de secours, procédures prévues à l'avance."]},
+        {"t": "list", "titre": "Communiquer pendant l'attaque", "items": [
+            "Organisez l'équipe de communication de crise et répartissez les rôles.",
+            "Établissez les faits avant de parler, puis choisissez une posture : communication proactive ou réactive.",
+            "Ne communiquez que des informations vérifiées et ne promettez pas de date de retour à la normale.",
+            "Informez d'abord les agents, puis les habitants et les usagers.",
+            "Ton pédagogique et rassurant, sans termes techniques ni anxiogènes.",
+            "Utilisez des canaux de secours si la messagerie ou le site sont touchés, et rappelez aux agents la conduite à tenir face aux médias et sur les réseaux sociaux.",
+            "Gelez les publications programmées et centralisez les demandes de la presse."]},
+        {"t": "tip", "body": "Préparez-vous avant : un exercice de crise cyber, une boîte à outils de communication prête et des sauvegardes testées font la différence. Voir « Communiquer en crise » et « Exercices et retour d'expérience »."}],
+     "sources": ["S14", "S22", "S24"]},
     {"id": "arret-cardiaque", "cat": "urgence", "titre": "Arrêt cardiaque", "resume": "La personne ne répond pas et ne respire pas.", "duree": "1 min", "prioritaire": True, "sensible": True, "blocs": [
         {"t": "alert", "body": "Appelez le 15 ou le 112, mettez le haut-parleur et suivez les instructions."},
         {"t": "steps", "titre": "Alerter, masser, défibriller", "items": [
@@ -269,11 +327,13 @@ nouveaux_guides = [
      "sources": ["S2", "S20"]},
 ]
 a_verifier["arret-cardiaque"] = a_verifier["saignement"] = a_verifier["inconscient-respire"] = a_verifier["etouffement"] = a_verifier["brulure"] = ["Texte à relire par un formateur agréé aux premiers secours, mot pour mot contre les recommandations PSC1 de décembre 2023"]
+a_verifier["cyberattaque-commune"] = ["Coordonnées du CSIRT régional (Pays de la Loire pour La Baule) à ajouter"]
 a_verifier["monoxyde"] = a_verifier["canicule"] = a_verifier["grand-froid"] = ["Pages de Santé publique France à citer précisément"]
 
 ordre = [x["id"] for x in d["guides"]]
 pos = ordre.index("trousses")
-ordre = ordre[:pos] + ["arret-cardiaque", "saignement", "inconscient-respire", "etouffement", "brulure", "monoxyde", "coupure-electricite", "canicule", "grand-froid"] + ordre[pos:]
+ordre = ordre[:pos] + ["arret-cardiaque", "saignement", "inconscient-respire", "etouffement", "brulure", "monoxyde", "coupure-electricite", "canicule", "grand-froid", "cyberattaque"] + ordre[pos:]
+ordre.insert(ordre.index("com-crise") + 1, "cyberattaque-commune")
 for x in nouveaux_guides:
     g[x["id"]] = x
 

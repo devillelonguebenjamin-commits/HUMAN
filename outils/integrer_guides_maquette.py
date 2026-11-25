@@ -106,7 +106,8 @@ ICONE_GUIDE = {"alerte": ("sirene", "c-j"), "reflexes": ("sirene", "c-j"), "abri
                "monoxyde": ("coupure", "c-j"), "coupure-electricite": ("eclair", "c-j"), "canicule": ("thermo", "c-o"), "grand-froid": ("thermo", "c-b"),
                "kit72h": ("kit", "c-f"), "pfms": ("famille", "c-v"), "plan-evacuation": ("sortie", "c-v"), "communication": ("bulle", "c-b"),
                "desinformation": ("bulle", "c-b"), "engagement": ("famille", "c-v"), "incendie-domicile": ("flamme", "c-o"), "eau": ("goutte", "c-b"),
-               "feu": ("flamme", "c-o"), "orientation": ("carte", "c-g"), "documents": ("doc", "c-g"), "assurance": ("doc", "c-b"), "retour": ("abri", "c-b")}
+               "feu": ("flamme", "c-o"), "orientation": ("carte", "c-g"), "documents": ("doc", "c-g"), "assurance": ("doc", "c-b"), "retour": ("abri", "c-b"),
+               "cyberattaque": ("cadenas", "c-b"), "cyberattaque-commune": ("cadenas", "c-f")}
 PILL = {"officiel": '<span class="pill gratuit">Officiel</span>', "pratique": '<span class="pill bientot">Pratique</span>'}
 par_cat = {c: [x for x in d["guides"] if x["cat"] == c] for c in CATS}
 
@@ -191,6 +192,14 @@ s = s.replace('<a class="sg c-v" href="#e-scenario">', '<a class="sg c-v" href="
 s = s.replace('<a class="bandeau c-j" href="#e-reflexes">', '<a class="bandeau c-j" href="#e-g-reflexes">')
 s = s.replace("<span>Les 6 réflexes officiels</span>", "<span>Les 7 réflexes du guide officiel</span>")
 s = s.replace('<a class="sg c-j" href="#e-reflexes"><svg aria-hidden="true"><use href="#p-sirene"/></svg><div><b>Alerte et 6 réflexes</b>', '<a class="sg c-j" href="#e-g-reflexes"><svg aria-hidden="true"><use href="#p-sirene"/></svg><div><b>Alerte et 7 réflexes</b>')
+
+# Deux tuiles de plus dans « Que se passe-t-il ? » : cyberattaque et monoxyde de carbone.
+TUILE_EVAC = '<a class="sg c-v" href="#e-g-abri-evacuation"><svg aria-hidden="true"><use href="#p-sortie"/></svg><div><b>Évacuation</b><span>partir vite et bien</span></div></a>'
+NOUVELLES = ('<a class="sg c-b" href="#e-g-cyberattaque"><svg aria-hidden="true"><use href="#p-cadenas"/></svg><div><b>Cyberattaque</b><span>rançon, piratage, arnaque</span></div></a>'
+             '<a class="sg c-j" href="#e-g-monoxyde"><svg aria-hidden="true"><use href="#p-coupure"/></svg><div><b>Monoxyde de carbone</b><span>gaz invisible, mortel</span></div></a>')
+s = s.replace(NOUVELLES, "")
+assert TUILE_EVAC in s
+s = s.replace(TUILE_EVAC, TUILE_EVAC + NOUVELLES, 1)
 
 MAQUETTE.write_text(s, encoding="utf-8")
 print(f"{len(ecrans)} écrans de guides intégrés dans {MAQUETTE.relative_to(RACINE)}")

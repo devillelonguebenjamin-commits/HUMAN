@@ -54,7 +54,7 @@ Prochaine étape : remplacer les pictogrammes gris des loisirs par des photos li
 
 ## Guides de survie (25 novembre 2026)
 
-Les 44 guides de `contenus/guides/guides_v1.1.json` sont intégrés : entrée « Guides de survie » dans l'onglet Savoir, un écran par catégorie, un écran par guide (badge « Consigne officielle » ou « Conseil pratique », sources, mention « à vérifier »). L'onglet Urgence renvoie vers les guides de premiers secours, des risques et des réflexes.
+Les 46 guides de `contenus/guides/guides_v1.1.json` sont intégrés : entrée « Guides de survie » dans l'onglet Savoir, un écran par catégorie, un écran par guide (badge « Consigne officielle » ou « Conseil pratique », sources, mention « à vérifier »). L'onglet Urgence renvoie vers les guides de premiers secours, des risques et des réflexes.
 
 Pour mettre à jour la maquette après une modification des guides :
 
