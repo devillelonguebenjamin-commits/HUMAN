@@ -263,3 +263,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Décisions de Benjamin.** Pas d'avis écrit d'un conseil en propriété industrielle. Dépôt de la marque par lui-même à l'INPI avant le 30/11/2026. Réservation de `sijamais.eu` sur OVH.
 
 **Recherche TMview (captures de Benjamin).** « SIJAMAIS » : une seule marque, expirée (Assurances générales de France, déposée en 2000, classes 36, 38, 42). « SI JAMAIS », filtré sur les classes 9, 41 et 42 : 47 résultats, dont une marque enregistrée au Canada (classes 35, 36, 41, association de courtiers d'assurance), sans effet en France. Les 2 résultats de l'office européen (EUIPO) restent à examiner : une marque de l'Union s'applique en France.
+
+## 2026-11-25 : guides de survie, version 1.0
+
+**Apport de Benjamin.** 35 guides en 5 catégories (Urgence, Se préparer, Survie et autonomie, Après la crise, Espace mairie), au format JSON avec une page de visualisation, fondés sur 14 sources : guide SGDSN 2025, PIMS, PFMS 2010, DRSD, ANSSI, affiche du kit 72 h, checklists et manuels privés.
+
+**Revue** (`contenus/guides/REVUE_v1.0.md`). Partie Urgence fidèle au guide officiel, plan familial très réussi. À corriger avant diffusion : délai de déclaration en catastrophe naturelle (30 jours depuis 2023, et non 10), iode en pharmacie réservé aux zones proches des centrales, détecteur de fumée loin de la cuisine, tussilage toxique à retirer, passage du soleil au sud vers 13 h ou 14 h et non à midi, radios « ici » et non France Bleu, stocks incohérents, IFAK et trauma kit hors charte. Sources privées à réécrire ou à faire autoriser. Gestes de premiers secours absents. Le guide officiel recommande « s'échapper, se cacher, alerter, résister » face à une attaque : la proposition 14 de la maquette est corrigée en conséquence.
