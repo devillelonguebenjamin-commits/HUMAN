@@ -1,5 +1,7 @@
 # Revue des guides SIJAMAIS, version 1.0
 
+> Corrections appliquées le 25/11/2026 dans `guides_v1.1.json`, par le script `outils/construire_guides_v11.py`. Les points marqués [A VERIFIER] restent listés dans le champ `a_verifier` de chaque guide.
+
 Revue du 25 novembre 2026 de `guides_v1.0.json` (35 guides, 5 catégories, 14 sources), fourni par Benjamin. Marqueurs : [FAIT] vérifié ce jour, [A VERIFIER] à confirmer sur la source officielle, [AVIS] jugement de l'auteur de la revue.
 
 ## 1. Verdict

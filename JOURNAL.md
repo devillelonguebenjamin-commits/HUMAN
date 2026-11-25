@@ -269,3 +269,11 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Apport de Benjamin.** 35 guides en 5 catégories (Urgence, Se préparer, Survie et autonomie, Après la crise, Espace mairie), au format JSON avec une page de visualisation, fondés sur 14 sources : guide SGDSN 2025, PIMS, PFMS 2010, DRSD, ANSSI, affiche du kit 72 h, checklists et manuels privés.
 
 **Revue** (`contenus/guides/REVUE_v1.0.md`). Partie Urgence fidèle au guide officiel, plan familial très réussi. À corriger avant diffusion : délai de déclaration en catastrophe naturelle (30 jours depuis 2023, et non 10), iode en pharmacie réservé aux zones proches des centrales, détecteur de fumée loin de la cuisine, tussilage toxique à retirer, passage du soleil au sud vers 13 h ou 14 h et non à midi, radios « ici » et non France Bleu, stocks incohérents, IFAK et trauma kit hors charte. Sources privées à réécrire ou à faire autoriser. Gestes de premiers secours absents. Le guide officiel recommande « s'échapper, se cacher, alerter, résister » face à une attaque : la proposition 14 de la maquette est corrigée en conséquence.
+
+## 2026-11-25 : guides version 1.1 intégrés à la maquette
+
+**Validation de Benjamin** (« ok ») de la revue des guides 1.0.
+
+**Travail fait.** `contenus/guides/guides_v1.1.json`, produit par `outils/construire_guides_v11.py` : toutes les corrections de la revue, 9 guides ajoutés (arrêt cardiaque, saignement, personne inconsciente, étouffement, brûlure, monoxyde de carbone, coupure d'électricité, canicule, grand froid), IFAK et trauma kit retirés, tussilage retiré, espace mairie reformulé avec le vocabulaire du plan communal de sauvegarde. Chaque guide porte désormais son niveau (25 consignes officielles, 19 conseils pratiques), sa date, son statut de relecture et ses points à vérifier. 20 sources décrites avec leur statut de réutilisation. Intégration dans la maquette par `outils/integrer_guides_maquette.py` (50 écrans, navigation sans JavaScript vérifiée).
+
+**Reste à faire.** Relecture des guides de premiers secours par un formateur agréé, vérification des points listés dans `a_verifier`, demandes d'autorisation aux auteurs privés (La Libellule, APARS56, Atelier ILYS, Résilience urbaine).

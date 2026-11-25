@@ -51,3 +51,14 @@ Direction A de `directions_visuelles.html`, validée par Benjamin. Tuiles de cou
 | Gris | Premium et loisirs | Randonnée, mer, voyage, camping (photos à venir) |
 
 Prochaine étape : remplacer les pictogrammes gris des loisirs par des photos libres de droits ou achetées, fournies par Benjamin.
+
+## Guides de survie (25 novembre 2026)
+
+Les 44 guides de `contenus/guides/guides_v1.1.json` sont intégrés : entrée « Guides de survie » dans l'onglet Savoir, un écran par catégorie, un écran par guide (badge « Consigne officielle » ou « Conseil pratique », sources, mention « à vérifier »). L'onglet Urgence renvoie vers les guides de premiers secours, des risques et des réflexes.
+
+Pour mettre à jour la maquette après une modification des guides :
+
+```
+python3 outils/construire_guides_v11.py
+python3 outils/integrer_guides_maquette.py
+```
