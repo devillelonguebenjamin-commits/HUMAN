@@ -57,7 +57,7 @@ OKAOU, AUKAZOU et PARÉ écartés (voir `JOURNAL.md`). Les questions J, K et L c
 
 | N° | Question | Pourquoi elle compte |
 |---|---|---|
-| M | Quand vois-tu un conseil en propriété industrielle ? | Avis écrit sur la disponibilité en classes 9, 41 et 42 et sur l'ancienne marque expirée d'un assureur. Budget 400 à 900 € |
+| M | Conseil en propriété industrielle ? | **Décision du 24/11/2026 : pas d'avis écrit.** Benjamin dépose lui-même la marque à l'INPI avant le 30/11/2026 (classes 9, 41, 42, environ 270 €). Recherche TMview du 25/11 : « SIJAMAIS » seule marque trouvée, expirée (AGF, 2000, classes 36, 38, 42) ; « SI JAMAIS » enregistrée au Canada (classes 35, 36, 41, courtiers d'assurance), sans effet en France. Restent à lire : les 2 résultats de l'office européen (EUIPO) et ceux de l'INPI |
 | N | Prends-tu `sijamais.eu` (7,49 € hors taxe) ? | Seule adresse sobre disponible. `.fr` et `.com` sont réservés |
 
 Anciennes questions, caduques :

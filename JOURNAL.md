@@ -257,3 +257,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Décision de Benjamin.** Le module de communication hors réseau n'est pas exploré pour l'instant.
 
 **Constat.** Le test de 30 jours prévu à partir du 16/11 n'a pas démarré. Nouveau jour 1 fixé au lundi 30/11/2026 (`plan_30_jours.md`, section « Recalage »). La maquette remplace le « MVP zéro » pour les entretiens et les mairies.
+
+## 2026-11-25 : marque SIJAMAIS, recherche TMview et décision de dépôt
+
+**Décisions de Benjamin.** Pas d'avis écrit d'un conseil en propriété industrielle. Dépôt de la marque par lui-même à l'INPI avant le 30/11/2026. Réservation de `sijamais.eu` sur OVH.
+
+**Recherche TMview (captures de Benjamin).** « SIJAMAIS » : une seule marque, expirée (Assurances générales de France, déposée en 2000, classes 36, 38, 42). « SI JAMAIS », filtré sur les classes 9, 41 et 42 : 47 résultats, dont une marque enregistrée au Canada (classes 35, 36, 41, association de courtiers d'assurance), sans effet en France. Les 2 résultats de l'office européen (EUIPO) restent à examiner : une marque de l'Union s'applique en France.
