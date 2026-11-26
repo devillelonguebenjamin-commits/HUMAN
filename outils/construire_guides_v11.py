@@ -38,6 +38,7 @@ SOURCES = {
     "S21": {"titre": "Cybercriminalité : se protéger et réagir", "editeur": "Service d'information du Gouvernement (info.gouv.fr)", "date": "consultée le 2026-11-25", "url": "https://www.info.gouv.fr/risques/cybercriminalite", "type": "officiel", "reutilisation": "Information publique"},
     "S22": {"titre": "Mémo rançongiciels et 17Cyber", "editeur": "Cybermalveillance.gouv.fr (GIP ACYMA), Police et Gendarmerie nationales", "date": "2024-12 et 2025-06", "url": "https://www.cybermalveillance.gouv.fr/medias/2025/06/210630_Memo_Rancongiciels_SCREEN.pdf", "type": "officiel", "reutilisation": "Information publique, citer la source"},
     "S23": {"titre": "SMS, appels et courriels indésirables ou frauduleux", "editeur": "ARCEP", "date": "consultée le 2026-11-25", "url": "https://www.arcep.fr/demarches-et-services/utilisateurs/sms-appels-et-courriers-electroniques-indesirables-et-ou-frauduleux.html", "type": "officiel", "reutilisation": "Information publique"},
+    "S25": {"titre": "SAUV Life et Staying Alive, applications de citoyens sauveteurs", "editeur": "SAMU partenaires ; CHU d'Amiens (dossier de presse SAUV Life, 2021)", "date": "2021", "url": "https://www.chu-amiens.fr/wp-content/uploads/2021/10/sauv-life-dossier-presse-22-10-2021.pdf", "type": "officiel", "reutilisation": "Information publique, citer la source"},
     "S24": {"titre": "Règlement général sur la protection des données, article 33", "editeur": "Union européenne, CNIL", "date": "2016", "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article33", "type": "officiel", "reutilisation": "Texte officiel"},
 }
 OFFICIELLES = {k for k, v in SOURCES.items() if v["type"] == "officiel"}
@@ -184,6 +185,12 @@ for b in a["blocs"]:
             "Les délais de versement de l'indemnité sont fixés par le code des assurances : consultez service-public.fr."]
 a["sources"] = ["S15", "S4"]
 
+for b in g["engagement"]["blocs"]:
+    if b.get("titre") == "S'engager":
+        b["items"].insert(0, "Citoyen sauveteur : installez SAUV Life ou Staying Alive pour être alerté d'un arrêt cardiaque près de chez vous.")
+        b["items"].insert(1, "Profil d'aidant : indiquez dans SIJAMAIS ce que vous savez faire et ce que vous pouvez prêter, puis partagez-le avec vos proches, vos voisins ou votre mairie.")
+g["engagement"]["sources"] = ["S2", "S3", "S4", "S25"]
+
 m = g["moral"]
 m["blocs"][0]["items"].append("Idées noires ou détresse : le 3114, numéro national de prévention du suicide, répond 24 h sur 24, gratuitement.")
 m["sources"] = ["S13", "S11", "S12"]
@@ -274,8 +281,9 @@ nouveaux_guides = [
             "Alertez : 15 ou 112 (114 par SMS). Faites chercher un défibrillateur.",
             "Massez : à genoux, mains l'une sur l'autre au centre de la poitrine, bras tendus. Appuyez fort et vite, 100 à 120 fois par minute, sans vous arrêter.",
             "Défibrillez : allumez l'appareil dès qu'il arrive et suivez ses instructions vocales. Continuez le massage pendant qu'on l'installe."]},
-        {"t": "tip", "body": "Vous ne pouvez pas aggraver la situation : sans massage, la personne meurt. Une formation de 2 heures aux gestes qui sauvent vous donne l'assurance nécessaire."}],
-     "sources": PSC},
+        {"t": "tip", "body": "Vous ne pouvez pas aggraver la situation : sans massage, la personne meurt. Une formation de 2 heures aux gestes qui sauvent vous donne l'assurance nécessaire."},
+        {"t": "tip", "titre": "Devenez citoyen sauveteur", "body": "Avec les applications gratuites SAUV Life et Staying Alive, le SAMU ou les pompiers peuvent vous alerter si un arrêt cardiaque survient près de vous, et vous indiquer le défibrillateur le plus proche."}],
+     "sources": PSC + ["S25"]},
     {"id": "saignement", "cat": "urgence", "titre": "Saignement abondant", "resume": "Arrêter l'hémorragie en attendant les secours.", "duree": "1 min", "prioritaire": True, "sensible": True, "blocs": [
         {"t": "steps", "titre": "Les gestes", "items": [
             "Appuyez fort et sans relâcher sur la plaie, avec la main protégée (gant, sac plastique) ou un tissu propre.",

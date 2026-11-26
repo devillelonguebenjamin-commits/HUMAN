@@ -2,7 +2,7 @@
 
 Rédigé le 26 novembre 2026. À copier dans Claude Design, avec trois pièces jointes :
 
-1. `contenus/guides/guides_v1.1.json` (le contenu des 46 guides) ;
+1. `contenus/guides/SIJAMAIS_guides_v1.1.docx` : le fichier Word des 46 guides, où les emplacements des 24 schémas sont repérés par des encadrés orange « Schéma prévu n° X ». (Le même contenu existe en JSON : `contenus/guides/guides_v1.1.json`.) ;
 2. une capture de la maquette 0.2 : un écran de guide, par exemple « Arrêt cardiaque », et l'onglet Urgence ;
 3. le logo SIJAMAIS (proposition « Le repère »).
 
@@ -10,7 +10,7 @@ Ce qui suit la ligne est le prompt.
 
 ---
 
-Tu es directeur artistique et illustrateur pédagogique. Tu travailles pour SIJAMAIS, une application iPhone française, gratuite pour tout ce qui touche à la sécurité, qui fonctionne sans réseau et qui sera recommandée par des mairies à leurs habitants. Les guides joints (fichier JSON) expliquent quoi faire en cas d'alerte, de catastrophe, de coupure de courant, d'accident ou de cyberattaque, et comment se préparer.
+Tu es directeur artistique et illustrateur pédagogique. Tu travailles pour SIJAMAIS, une application iPhone française, gratuite pour tout ce qui touche à la sécurité, qui fonctionne sans réseau et qui sera recommandée par des mairies à leurs habitants. Les guides joints (fichier Word) expliquent quoi faire en cas d'alerte, de catastrophe, de coupure de courant, d'accident ou de cyberattaque, et comment se préparer.
 
 ## Ce que je veux
 

@@ -181,6 +181,14 @@
     "type": "officiel",
     "reutilisation": "Information publique"
    },
+   "S25": {
+    "titre": "SAUV Life et Staying Alive, applications de citoyens sauveteurs",
+    "editeur": "SAMU partenaires ; CHU d'Amiens (dossier de presse SAUV Life, 2021)",
+    "date": "2021",
+    "url": "https://www.chu-amiens.fr/wp-content/uploads/2021/10/sauv-life-dossier-presse-22-10-2021.pdf",
+    "type": "officiel",
+    "reutilisation": "Information publique, citer la source"
+   },
    "S24": {
     "titre": "Règlement général sur la protection des données, article 33",
     "editeur": "Union européenne, CNIL",
@@ -685,10 +693,16 @@
     {
      "t": "tip",
      "body": "Vous ne pouvez pas aggraver la situation : sans massage, la personne meurt. Une formation de 2 heures aux gestes qui sauvent vous donne l'assurance nécessaire."
+    },
+    {
+     "t": "tip",
+     "titre": "Devenez citoyen sauveteur",
+     "body": "Avec les applications gratuites SAUV Life et Staying Alive, le SAMU ou les pompiers peuvent vous alerter si un arrêt cardiaque survient près de vous, et vous indiquer le défibrillateur le plus proche."
     }
    ],
    "sources": [
-    "S17"
+    "S17",
+    "S25"
    ],
    "niveau": "officiel",
    "version": "1.1",
@@ -2112,6 +2126,8 @@
      "t": "list",
      "titre": "S'engager",
      "items": [
+      "Citoyen sauveteur : installez SAUV Life ou Staying Alive pour être alerté d'un arrêt cardiaque près de chez vous.",
+      "Profil d'aidant : indiquez dans SIJAMAIS ce que vous savez faire et ce que vous pouvez prêter, puis partagez-le avec vos proches, vos voisins ou votre mairie.",
       "Réserve communale de sécurité civile : renseignez-vous en mairie.",
       "Sapeur-pompier volontaire : contactez le SDIS de votre département.",
       "Bénévolat : jeveuxaider.gouv.fr.",
@@ -2124,7 +2140,8 @@
    "sources": [
     "S2",
     "S3",
-    "S4"
+    "S4",
+    "S25"
    ],
    "niveau": "officiel",
    "sensible": false,

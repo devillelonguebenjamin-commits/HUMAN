@@ -301,3 +301,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Décisions de Benjamin.** Variante A (assistant au centre de la barre d'onglets) retenue ; les variantes B et C sont retirées de la maquette. Nouvelle idée : permettre aux habitants volontaires de déclarer leurs compétences et moyens (santé, secourisme, hébergement, matériel, réparation) et de les afficher sur la carte. Demande d'étude RGPD.
 
 **Travail fait.** `13_reseau_entraide.md`. Conclusion : bonne idée, conforme à l'esprit du guide officiel, mais une carte publique gérée par SIJAMAIS contredirait la promesse « aucune donnée », exposerait les aidants (cambriolage, harcèlement, usurpation) et imposerait une analyse d'impact (localisation à grande échelle). Proposition en deux temps : profil d'aidant local partagé par QR code en v1 ; réseau d'entraide géré par la mairie (responsable du traitement, réserve communale) dans l'offre aux communes, avec trois niveaux de visibilité. SAUV Life et Staying Alive à recommander pour les secouristes.
+
+## 2026-11-26 : réseau d'entraide validé, fichier Word des guides
+
+**Décisions de Benjamin.** Recommandations E1 à E5 du réseau d'entraide validées. Besoin d'un fichier Word des guides à joindre au prompt Claude Design.
+
+**Travail fait.** `contenus/guides/SIJAMAIS_guides_v1.1.docx` (43 pages, produit par `outils/guides_en_word.js`) : couverture, mode d'emploi, sommaire, les 46 guides avec identifiant, niveau, bandeaux d'urgence, emplacements des 24 schémas, sources et points à vérifier. Guides : SAUV Life et Staying Alive ajoutés (arrêt cardiaque, entraide), profil d'aidant mentionné. Maquette : écran « Mon profil d'aidant » (catalogue à cocher, contact facultatif sans adresse, partage par QR code, trois niveaux de visibilité du futur réseau communal, majeurs seulement), accessible depuis Famille ; couche « Aidants » sur la carte et liste d'exemples fictifs de la commune.

@@ -29,6 +29,8 @@ Mis à jour le 18 novembre 2026.
 
 ## Réseau d'entraide (26 novembre 2026)
 
+**Décision du 26/11/2026 : recommandations E1 à E5 validées par Benjamin.**
+
 Détail dans `13_reseau_entraide.md`, section 7.
 
 | N° | Question | Ma recommandation |

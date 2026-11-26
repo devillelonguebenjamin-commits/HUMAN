@@ -92,7 +92,7 @@ Rédigé le 26 novembre 2026, à la demande de Benjamin. Idée : permettre aux h
 
 À exclure : armes, chasse et défense (charte), et tout ce qui décrit une maladie ou un traitement.
 
-## 7. Décisions à prendre
+## 7. Décisions (validées le 26/11/2026)
 
 | N° | Question | Recommandation |
 |---|---|---|
