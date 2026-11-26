@@ -315,3 +315,11 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Vérification.** Aucun script, lien externe ni dégradé dans les SVG. Contenu conforme aux guides (électrodes du défibrillateur, position latérale de sécurité, méthode de la montre adaptée à l'heure française). Le kit de 72 heures est une composition originale, sans reprise de l'illustration protégée de l'affiche officielle. Défaut mineur : dans « Étouffement », le chiffre 2 touche le titre.
 
 **Travail fait.** Schémas rangés dans `contenus/guides/schemas/`, ajoutés aux guides comme blocs « schéma » (`guides_v1.1.json`), affichés dans la maquette sur fond clair dans les deux thèmes, et intégrés au fichier Word (53 pages). Idée reprise des maquettes de Claude Design : le bandeau « Urgence vitale » porte deux boutons, 15 et 112. Leur barre d'onglets n'est pas reprise : la variante A reste la référence.
+
+## 2026-11-26 : début du code de l'application
+
+**Demande de Benjamin.** « Commençons le coding de l'app. »
+
+**Environnement.** Création d'un environnement cloud personnel « HUMAN » autorisant download.swift.org, validée par Benjamin : compilateur Swift 6.1.2 installé dans le conteneur. La compilation de XcodeGen dans le conteneur a été refusée par le système de sécurité : le projet Xcode sera produit sur le Mac de Benjamin (Homebrew puis `xcodegen generate`).
+
+**Travail fait.** `app/` : cœur `SijamaisKit` en Swift pur (lecture des 46 guides et de leurs 14 types de blocs, moteur de recherche identique à la maquette, règles de l'assistant, score de préparation, foyer, listes) avec 20 tests, tous réussis sous Linux ; application SwiftUI (prise en main, accueil, urgence avec appel direct, assistant au centre de la barre d'onglets avec passerelle vers le modèle d'Apple d'iOS 26, guides avec schémas vectoriels, préparer, réglages, lampe torche, carte en attente) ; catalogue d'images (24 schémas, icône) produit par `outils/preparer_ressources_app.py`. Le code SwiftUI n'a pas pu être compilé sans Xcode : à compiler sur le Mac, erreurs éventuelles à renvoyer.

@@ -1,0 +1,3492 @@
+{
+ "meta": {
+  "app": "SIJAMAIS",
+  "titre": "Guides SIJAMAIS",
+  "version": "1.1",
+  "date": "2026-11-25",
+  "langue": "fr",
+  "avertissement": "Version de travail, non relue par des professionnels : ne pas diffuser en l'état. En situation réelle, les consignes des autorités (préfecture, mairie, secours) priment toujours.",
+  "niveaux": {
+   "officiel": "Consigne officielle : reprise de documents publics de l'État, citée et datée",
+   "pratique": "Conseil pratique : rédigé par SIJAMAIS à partir de sources diverses, à relire"
+  },
+  "regle_gratuite": "Tous ces guides sont gratuits.",
+  "historique": "1.0 du 2026-11-25 fournie par Benjamin ; 1.1 corrige selon contenus/guides/REVUE_v1.0.md",
+  "sources": {
+   "S1": {
+    "titre": "Affiche « Votre kit d'urgence 72 h »",
+    "editeur": "Pouvoirs publics, illustration Antoine Dagan (CitizenPress)",
+    "date": "2022",
+    "url": null,
+    "type": "officiel",
+    "reutilisation": "Texte réutilisable en citant la source. Illustration protégée : ne jamais la reproduire"
+   },
+   "S2": {
+    "titre": "Tous responsables. Face aux risques, agissons : bien préparés, bien protégés, tous engagés",
+    "editeur": "SGDSN (Premier ministre)",
+    "date": "2025-11-20",
+    "url": "https://www.info.gouv.fr/risques/se-preparer-a-une-situation-durgence",
+    "type": "officiel",
+    "reutilisation": "Information publique, réutilisable en citant la source et la date (art. L321-1 du CRPA)"
+   },
+   "S3": {
+    "titre": "Plan individuel de mise en sûreté (PIMS)",
+    "editeur": "DGSCGC, ministère de l'Intérieur",
+    "date": null,
+    "url": null,
+    "type": "officiel",
+    "reutilisation": "Information publique, citer la source. Date et adresse à compléter"
+   },
+   "S4": {
+    "titre": "ORSEC, plan familial de mise en sûreté (PFMS)",
+    "editeur": "Ministère de l'Intérieur et IRMa",
+    "date": "2010",
+    "url": null,
+    "type": "officiel",
+    "reutilisation": "Information publique. Document de 2010 : chaque consigne est à vérifier sur une source récente"
+   },
+   "S5": {
+    "titre": "Checklist EDC (EveryDay Carry)",
+    "editeur": "Auteur privé",
+    "date": "2024",
+    "url": null,
+    "type": "prive",
+    "reutilisation": "Création protégée : contenu réécrit, ne pas reproduire la mise en forme"
+   },
+   "S7": {
+    "titre": "Checklist plan d'évacuation",
+    "editeur": "Auteur privé",
+    "date": null,
+    "url": null,
+    "type": "prive",
+    "reutilisation": "Création protégée : contenu réécrit"
+   },
+   "S9": {
+    "titre": "Techniques de survie",
+    "editeur": "La Libellule (Genève)",
+    "date": null,
+    "url": null,
+    "type": "prive",
+    "reutilisation": "Création protégée : contenu réécrit. Autorisation ou partenariat à demander"
+   },
+   "S10": {
+    "titre": "Les 10 techniques de survie à maîtriser",
+    "editeur": "APARS56",
+    "date": null,
+    "url": null,
+    "type": "prive",
+    "reutilisation": "Création protégée : contenu réécrit. Autorisation ou partenariat à demander"
+   },
+   "S11": {
+    "titre": "Petit manuel de préparation aux situations d'urgence, v4",
+    "editeur": "Atelier ILYS",
+    "date": null,
+    "url": null,
+    "type": "prive",
+    "reutilisation": "Licence à vérifier (peut-être Creative Commons). Contenu réécrit en attendant"
+   },
+   "S12": {
+    "titre": "Phase 8 : guide de préparation à la survie urbaine",
+    "editeur": "Résilience urbaine",
+    "date": null,
+    "url": null,
+    "type": "prive",
+    "reutilisation": "Création protégée : contenu réécrit. Autorisation ou partenariat à demander"
+   },
+   "S13": {
+    "titre": "Guide de survie face à la crise",
+    "editeur": "Ministère des Armées, DRSD",
+    "date": null,
+    "url": null,
+    "type": "officiel",
+    "reutilisation": "Information publique, citer la source. Écrit pour les entreprises : adapté au vocabulaire communal"
+   },
+   "S14": {
+    "titre": "Anticiper et gérer sa communication de crise cyber, checklist",
+    "editeur": "ANSSI",
+    "date": "2026-05",
+    "url": null,
+    "type": "officiel",
+    "reutilisation": "Information publique, citer la source. Licence exacte à vérifier"
+   },
+   "S15": {
+    "titre": "Catastrophe naturelle ou technologique : indemnisation par l'assurance",
+    "editeur": "Service-public.gouv.fr (DILA)",
+    "date": "consultée le 2026-11-25",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3078",
+    "type": "officiel",
+    "reutilisation": "Information publique"
+   },
+   "S16": {
+    "titre": "Détecteur de fumée : sécurité incendie dans le logement",
+    "editeur": "Service-public.gouv.fr (DILA)",
+    "date": "consultée le 2026-11-25",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F19950",
+    "type": "officiel",
+    "reutilisation": "Information publique"
+   },
+   "S17": {
+    "titre": "Recommandations PSC1 et « gestes qui sauvent »",
+    "editeur": "Ministère de l'Intérieur, sécurité civile",
+    "date": "2023-12",
+    "url": "https://www.interieur.gouv.fr/Le-ministere/Securite-civile/Documentation-technique/Secourisme-et-associations/Les-recommandations-et-les-referentiels",
+    "type": "officiel",
+    "reutilisation": "Information publique, citer la source. Fiches à relire par un formateur agréé"
+   },
+   "S18": {
+    "titre": "Procédure de désinfection de l'eau hors réseau",
+    "editeur": "ARS Guadeloupe",
+    "date": "2017",
+    "url": "https://www.guadeloupe.ars.sante.fr/system/files/2017-09/proc%C3%A9dure%20d%C3%A9sinfection%20eau%20hors%20reseau.pdf",
+    "type": "officiel",
+    "reutilisation": "Information publique. Vérifier une recommandation nationale équivalente"
+   },
+   "S19": {
+    "titre": "Distribution des comprimés d'iode autour des centrales nucléaires",
+    "editeur": "Ordre national des pharmaciens, ASNR",
+    "date": "2019 à 2025",
+    "url": "https://www.ordre.pharmacien.fr/les-communications/focus-sur/les-actualites/campagne-de-distribution-de-comprimes-d-iode-stable-dans-les-officines-situees-dans-un-rayon-de-10-a-20-km-des-centrales-nucleaires-de-production-d",
+    "type": "officiel",
+    "reutilisation": "Information publique"
+   },
+   "S20": {
+    "titre": "Canicule, grand froid, monoxyde de carbone : conseils de prévention",
+    "editeur": "Santé publique France, ministère de la Santé",
+    "date": null,
+    "url": null,
+    "type": "officiel",
+    "reutilisation": "Information publique. Pages exactes à citer après vérification"
+   },
+   "S21": {
+    "titre": "Cybercriminalité : se protéger et réagir",
+    "editeur": "Service d'information du Gouvernement (info.gouv.fr)",
+    "date": "consultée le 2026-11-25",
+    "url": "https://www.info.gouv.fr/risques/cybercriminalite",
+    "type": "officiel",
+    "reutilisation": "Information publique"
+   },
+   "S22": {
+    "titre": "Mémo rançongiciels et 17Cyber",
+    "editeur": "Cybermalveillance.gouv.fr (GIP ACYMA), Police et Gendarmerie nationales",
+    "date": "2024-12 et 2025-06",
+    "url": "https://www.cybermalveillance.gouv.fr/medias/2025/06/210630_Memo_Rancongiciels_SCREEN.pdf",
+    "type": "officiel",
+    "reutilisation": "Information publique, citer la source"
+   },
+   "S23": {
+    "titre": "SMS, appels et courriels indésirables ou frauduleux",
+    "editeur": "ARCEP",
+    "date": "consultée le 2026-11-25",
+    "url": "https://www.arcep.fr/demarches-et-services/utilisateurs/sms-appels-et-courriers-electroniques-indesirables-et-ou-frauduleux.html",
+    "type": "officiel",
+    "reutilisation": "Information publique"
+   },
+   "S25": {
+    "titre": "SAUV Life et Staying Alive, applications de citoyens sauveteurs",
+    "editeur": "SAMU partenaires ; CHU d'Amiens (dossier de presse SAUV Life, 2021)",
+    "date": "2021",
+    "url": "https://www.chu-amiens.fr/wp-content/uploads/2021/10/sauv-life-dossier-presse-22-10-2021.pdf",
+    "type": "officiel",
+    "reutilisation": "Information publique, citer la source"
+   },
+   "S24": {
+    "titre": "Règlement général sur la protection des données, article 33",
+    "editeur": "Union européenne, CNIL",
+    "date": "2016",
+    "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article33",
+    "type": "officiel",
+    "reutilisation": "Texte officiel"
+   }
+  }
+ },
+ "categories": [
+  {
+   "id": "urgence",
+   "titre": "Urgence",
+   "desc": "Les bons réflexes, tout de suite",
+   "icone": "alerte"
+  },
+  {
+   "id": "preparer",
+   "titre": "Se préparer",
+   "desc": "Kit, plan familial, stocks",
+   "icone": "sac"
+  },
+  {
+   "id": "survie",
+   "titre": "Survie et autonomie",
+   "desc": "Eau, feu, abri, orientation",
+   "icone": "tente"
+  },
+  {
+   "id": "apres",
+   "titre": "Après la crise",
+   "desc": "Retour au logement, assurance",
+   "icone": "maison"
+  },
+  {
+   "id": "mairie",
+   "titre": "Espace mairie",
+   "desc": "Cellule et communication de crise",
+   "icone": "mairie"
+  }
+ ],
+ "guides": [
+  {
+   "id": "numeros",
+   "cat": "urgence",
+   "titre": "Numéros d'urgence",
+   "resume": "Qui appeler, et quand.",
+   "duree": "1 min",
+   "prioritaire": true,
+   "blocs": [
+    {
+     "t": "numbers",
+     "items": [
+      {
+       "n": "112",
+       "label": "Urgence européenne",
+       "desc": "Regroupe SAMU, pompiers et police. Gratuit partout dans l'Union européenne."
+      },
+      {
+       "n": "15",
+       "label": "SAMU",
+       "desc": "Urgences médicales."
+      },
+      {
+       "n": "18",
+       "label": "Pompiers",
+       "desc": "Situations de péril ou d'accident."
+      },
+      {
+       "n": "17",
+       "label": "Police secours",
+       "desc": "Signaler une infraction."
+      },
+      {
+       "n": "114",
+       "label": "Urgence par SMS",
+       "desc": "Pour les personnes sourdes et malentendantes, ou pour alerter en restant silencieux. Accessible par SMS, internet et application."
+      },
+      {
+       "n": "196",
+       "label": "Urgence en mer",
+       "desc": "Secours en mer."
+      }
+     ]
+    },
+    {
+     "t": "kv",
+     "titre": "Autres numéros utiles",
+     "items": [
+      [
+       "0 800 50 73 05",
+       "Numéro vert pour apprendre à reconnaître le signal national d'alerte"
+      ],
+      [
+       "0 800 005 696",
+       "Numéro vert gratuit et anonyme pour signaler une radicalisation"
+      ],
+      [
+       "17cyber.gouv.fr",
+       "Aide aux victimes de cybermalveillance"
+      ]
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "En cas d'alerte, ne téléphonez qu'en cas d'urgence vitale : les lignes doivent rester libres pour les secours. Privilégiez les SMS pour joindre vos proches."
+    }
+   ],
+   "sources": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Numéro vert 0 800 50 73 05 du signal national d'alerte : à confirmer avant publication"
+   ]
+  },
+  {
+   "id": "alerte",
+   "cat": "urgence",
+   "titre": "Reconnaître une alerte",
+   "resume": "Sirènes, FR-Alert, radio : savoir ce qu'on entend.",
+   "duree": "3 min",
+   "prioritaire": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-alerte-1.svg",
+     "titre": "Les signaux d'alerte",
+     "alt": "L'alerte : trois sons modulés de 1 minute 41 secondes séparés de 5 secondes ; la fin d'alerte : un son continu de 30 secondes ; la corne de brume des barrages : 2 secondes de son et 3 de pause pendant 2 minutes.",
+     "relecture_secours": false
+    },
+    {
+     "t": "text",
+     "titre": "La sirène d'alerte",
+     "body": "Plus de 5 000 sirènes couvrent la France. En cas d'alerte, elles émettent 3 séquences de 1 minute 41 secondes, séparées par un silence de 5 secondes. La fin de l'alerte est annoncée par un signal continu de 30 secondes."
+    },
+    {
+     "t": "tip",
+     "body": "Les sirènes sont testées le 1er mercredi de chaque mois (une seule séquence de 1 min 41 s). Profitez-en pour vérifier que vous l'entendez depuis chez vous."
+    },
+    {
+     "t": "steps",
+     "titre": "Quand la sirène retentit",
+     "items": [
+      "Je me mets à l'abri dans un bâtiment.",
+      "J'écoute la radio (ici, ex-France Bleu ; France Info ; France Inter).",
+      "Je ne quitte l'abri que sur consigne des autorités."
+     ]
+    },
+    {
+     "t": "text",
+     "titre": "La sirène de barrage",
+     "body": "En aval des grands barrages, une sirène de type « corne de brume » signale un risque de rupture imminent. Le cycle dure 2 minutes : 2 secondes de son, 3 secondes de pause. Elle est testée les premiers mercredis de mars, juin, septembre et décembre à 12 h 15."
+    },
+    {
+     "t": "alert",
+     "body": "Sirène de barrage : j'évacue immédiatement et je gagne les points hauts."
+    },
+    {
+     "t": "list",
+     "titre": "Les autres moyens d'alerte",
+     "items": [
+      "FR-Alert : une notification avec signal sonore arrive automatiquement sur votre téléphone si vous êtes dans la zone en danger. Aucune inscription ni téléchargement n'est nécessaire.",
+      "Automates d'appel : message vocal ou SMS envoyé par la commune ou un industriel. Pensez à donner votre numéro à la mairie.",
+      "Ensembles mobiles d'alerte : haut-parleurs sur les véhicules de la commune, des pompiers ou des forces de l'ordre.",
+      "Radios conventionnées : Radio France (ici, ex-France Bleu ; France Info ; France Inter) interrompt ses programmes pour diffuser les consignes.",
+      "Moyens locaux prévus par le Plan communal de sauvegarde : cloches, porte-à-porte. Renseignez-vous en mairie."
+     ]
+    },
+    {
+     "t": "form",
+     "id": "frequences",
+     "titre": "Mes fréquences radio",
+     "fields": [
+      "ici, ex-France Bleu (FM)",
+      "France Info (FM)",
+      "France Inter (FM)",
+      "Autre station locale (FM)"
+     ]
+    }
+   ],
+   "sources": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Calendrier des essais de la sirène « corne de brume » (source de 2010) : à confirmer auprès de la préfecture"
+   ]
+  },
+  {
+   "id": "reflexes",
+   "cat": "urgence",
+   "titre": "Les réflexes en cas d'alerte",
+   "resume": "Les consignes valables pour tous les risques.",
+   "duree": "2 min",
+   "prioritaire": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-reflexes-1.svg",
+     "titre": "Les 7 réflexes en cas d'alerte",
+     "alt": "Sept pictogrammes : rejoindre un bâtiment, rester loin des fenêtres, n'allumer aucune flamme, rester à l'abri, ne pas téléphoner, écouter la radio et laisser les enfants à l'école.",
+     "relecture_secours": false
+    },
+    {
+     "t": "steps",
+     "titre": "Les 7 réflexes",
+     "items": [
+      "Rejoignez un bâtiment et ne restez pas dans un véhicule.",
+      "Restez à l'écart des fenêtres et ne les ouvrez pas.",
+      "N'allumez aucune flamme.",
+      "Ne sortez pas et ne quittez pas votre abri sans consigne des autorités.",
+      "Évitez de téléphoner pour laisser les réseaux aux secours.",
+      "Tenez-vous informé et suivez les consignes diffusées sur les canaux officiels (radio, télévision).",
+      "N'allez pas chercher vos enfants à l'école : les équipes pédagogiques s'en occupent, l'établissement a un plan de mise en sûreté."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Selon la situation, pensez aussi à",
+     "items": [
+      "Couper le gaz et l'électricité pour éviter explosion ou court-circuit. En cas d'inondation ou de séisme, coupez aussi l'eau.",
+      "Ne pas prendre l'ascenseur : une coupure de courant peut vous bloquer.",
+      "Ne quitter votre domicile que sur ordre des autorités."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "N'écoutez que les annonces officielles et ne relayez pas de rumeurs. Voir le guide « Résister à la désinformation »."
+    }
+   ],
+   "sources": [
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "abri-evacuation",
+   "cat": "urgence",
+   "titre": "Se mettre à l'abri ou évacuer",
+   "resume": "Choisir la bonne pièce, ou le bon itinéraire.",
+   "duree": "3 min",
+   "prioritaire": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-abri-evacuation-1.svg",
+     "titre": "Pièce de mise à l'abri",
+     "alt": "Plan d'une pièce de mise à l'abri, avec le kit et la radio : porte et fenêtre fermées, aération bouchée et bas de porte calfeutré face à l'air pollué extérieur.",
+     "relecture_secours": false
+    },
+    {
+     "t": "text",
+     "titre": "Mise à l'abri chez soi",
+     "body": "Respectez les consignes générales, prenez votre kit d'urgence et rejoignez le lieu de mise à l'abri que vous avez choisi à l'avance."
+    },
+    {
+     "t": "list",
+     "titre": "Quelle pièce choisir ?",
+     "items": [
+      "Air pollué (accident industriel, nucléaire, camion-citerne) : une pièce avec le moins d'ouvertures possible, si possible à l'opposé du danger et proche des sanitaires. Avant d'y entrer, fermez portes et fenêtres et bouchez aérations et ventilations avec du ruban adhésif ou du tissu.",
+      "Inondation : un espace refuge en hauteur (étage, mezzanine) ou chez un voisin, accessible de l'intérieur et de l'extérieur pour les secours.",
+      "Si vous êtes loin de chez vous : entrez dans le bâtiment le plus proche et suivez les consignes."
+     ]
+    },
+    {
+     "t": "text",
+     "titre": "Évacuation",
+     "body": "Le but est de s'éloigner de la source du danger, jamais de le braver. Exemple : ne traversez pas un cours d'eau en crue si un point haut existe dans votre logement."
+    },
+    {
+     "t": "list",
+     "titre": "Où aller ?",
+     "items": [
+      "Séisme : éloignez-vous des bâtiments, des lignes électriques et des arbres.",
+      "Inondation, mouvement de terrain, rupture de barrage : le lieu peut être éloigné (gymnase, point haut de la commune). La mairie définit ces lieux à l'avance.",
+      "Testez à l'avance les itinéraires vers chaque point de rassemblement."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Animaux : ils ne sont pas toujours acceptés dans les lieux d'accueil. Si vous partez sans eux, mettez-les à l'abri en hauteur. Si vous les emmenez, prenez leur carnet de santé à jour."
+    },
+    {
+     "t": "form",
+     "id": "lieux-abri",
+     "titre": "Mes lieux (à remplir)",
+     "fields": [
+      "Pièce de mise à l'abri chez moi",
+      "Lieu d'évacuation fixé par la commune",
+      "Itinéraire à emprunter",
+      "Itinéraire à éviter"
+     ]
+    }
+   ],
+   "sources": [
+    "S2",
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "risques",
+   "cat": "urgence",
+   "titre": "Que faire selon le risque",
+   "resume": "Inondation, séisme, feu de forêt, accident industriel...",
+   "duree": "5 min",
+   "prioritaire": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-risques-1.svg",
+     "titre": "Inondation : ni voiture ni sous-sol",
+     "alt": "Une voiture est emportée par le courant d'une eau peu profonde, et un escalier qui descend vers un sous-sol inondé est barré : ne prenez pas votre voiture et ne descendez pas au sous-sol.",
+     "relecture_secours": false
+    },
+    {
+     "t": "schema",
+     "fichier": "schema-risques-2.svg",
+     "titre": "Séisme : se protéger",
+     "alt": "Pendant un séisme, une personne s'accroupit sous une table solide près d'un mur porteur en protégeant sa tête, loin de la fenêtre.",
+     "relecture_secours": false
+    },
+    {
+     "t": "risk",
+     "titre": "Inondation",
+     "items": [
+      "Ne prenez pas votre voiture : quelques centimètres d'eau suffisent à l'emporter.",
+      "Ne descendez pas dans les sous-sols ni les parkings souterrains.",
+      "Éloignez-vous des cours d'eau, des berges, des ponts et des fonds de vallée.",
+      "Réfugiez-vous le plus haut possible.",
+      "Coupez eau, gaz et électricité si vous pouvez le faire sans danger.",
+      "Reportez vos déplacements. N'évacuez que sur ordre des autorités.",
+      "Suivez Vigicrues et Météo-France."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Feu de forêt",
+     "items": [
+      "Quittez le massif immédiatement ou abritez-vous dans un bâtiment en dur : vous y êtes plus en sécurité.",
+      "Bouchez aérations et bas de portes contre les fumées et les flammèches.",
+      "Couvrez-vous le nez et la bouche avec un linge humide.",
+      "En voiture surprise par le front de flammes : arrêtez-vous dans une zone dégagée et restez dans le véhicule.",
+      "N'évacuez que sur ordre des autorités."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Séisme",
+     "items": [
+      "Pendant : abritez-vous près d'un mur porteur ou sous un meuble solide, loin des fenêtres.",
+      "Au rez-de-chaussée ou près d'une sortie : éloignez-vous du bâtiment et des lignes électriques.",
+      "En voiture : ne sortez pas, arrêtez-vous loin des bâtiments.",
+      "Après : sortez des bâtiments endommagés par les escaliers, éloignez-vous de ce qui peut s'effondrer.",
+      "Éloignez-vous des côtes : un séisme peut provoquer un tsunami."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Tempête, orage, cyclone",
+     "items": [
+      "Abritez-vous dans un bâtiment en dur.",
+      "Ne restez pas sous un arbre isolé.",
+      "Fermez portes, fenêtres et volets, éloignez-vous des baies vitrées.",
+      "Cyclone : ne sortez pas pendant le passage de l'œil."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Mouvement de terrain, avalanche",
+     "items": [
+      "Évitez le secteur.",
+      "Éloignez-vous des fortes pentes et des fonds de vallée."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Rupture de barrage",
+     "items": [
+      "Évitez le périmètre et éloignez-vous des fonds de vallée.",
+      "Au signal « corne de brume » : évacuez et gagnez les points hauts."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Tsunami",
+     "items": [
+      "Dès l'alerte, rejoignez un point haut ou éloignez-vous des côtes.",
+      "Ne prenez pas votre voiture. Coupez les réseaux si possible.",
+      "Ne quittez pas le site refuge sans autorisation."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Éruption volcanique (outre-mer)",
+     "items": [
+      "Confinez-vous dans un bâtiment clos, fermez et consolidez portes, fenêtres et volets.",
+      "Respirez à travers un masque ou un linge humide si l'air est chargé de gaz ou de cendres.",
+      "Préparez-vous à évacuer sur ordre des autorités."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Accident industriel",
+     "items": [
+      "Abritez-vous dans le bâtiment clos le plus proche. Si vous êtes en voiture, rejoignez un bâtiment.",
+      "Fermez portes et fenêtres, calfeutrez les ouvertures et coupez la ventilation.",
+      "Éloignez-vous des fenêtres.",
+      "Gêne respiratoire : respirez à travers un linge humide.",
+      "Ne fumez pas, évitez toute flamme ou étincelle."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Accident nucléaire",
+     "items": [
+      "Si vous habitez à moins de 20 km d'une centrale nucléaire, retirez vos comprimés d'iode en pharmacie (renseignez-vous en mairie).",
+      "Mettez-vous à l'abri dans un bâtiment, fermez et calfeutrez, coupez la ventilation.",
+      "Ne touchez pas aux objets restés dehors (véhicules par exemple).",
+      "Ne prenez l'iode que sur instruction du préfet."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Transport de matières dangereuses",
+     "items": [
+      "Évitez le périmètre.",
+      "Sinon, abritez-vous dans un bâtiment clos tout proche, fermez tout et arrêtez la ventilation."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Épidémie (grippe, COVID-19)",
+     "items": [
+      "Lavez-vous les mains plusieurs fois par jour (savon ou gel hydroalcoolique).",
+      "Mouchoirs à usage unique, couvrez-vous le nez et la bouche quand vous éternuez.",
+      "Aérez régulièrement et portez un masque.",
+      "Grippe aviaire : lavez-vous les mains après tout contact avec des animaux."
+     ]
+    },
+    {
+     "t": "risk",
+     "titre": "Attaque terroriste",
+     "items": [
+      "1. S'échapper, et aider les autres à s'échapper.",
+      "2. Se cacher : s'enfermer, se barricader, mettre les téléphones en silencieux.",
+      "3. Alerter les secours (17 ou 112, 114 par SMS).",
+      "4. En dernier recours et à plusieurs : résister ou faire diversion en se protégeant (sac, vêtement enroulé autour de l'avant-bras)."
+     ]
+    }
+   ],
+   "sources": [
+    "S2",
+    "S3",
+    "S19"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "arret-cardiaque",
+   "cat": "urgence",
+   "titre": "Arrêt cardiaque",
+   "resume": "La personne ne répond pas et ne respire pas.",
+   "duree": "1 min",
+   "prioritaire": true,
+   "sensible": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-arret-cardiaque-1.svg",
+     "titre": "Massage cardiaque",
+     "alt": "Le sauveteur à genoux, bras tendus, appuie avec les mains l'une sur l'autre au centre de la poitrine de la victime allongée, 100 à 120 fois par minute.",
+     "relecture_secours": true
+    },
+    {
+     "t": "schema",
+     "fichier": "schema-arret-cardiaque-2.svg",
+     "titre": "Électrodes du défibrillateur",
+     "alt": "Une électrode se colle sous la clavicule droite de la victime, l'autre sur le côté gauche sous l'aisselle ; le défibrillateur se reconnaît à son cœur blanc et à son éclair sur fond vert.",
+     "relecture_secours": true
+    },
+    {
+     "t": "alert",
+     "body": "Appelez le 15 ou le 112, mettez le haut-parleur et suivez les instructions."
+    },
+    {
+     "t": "steps",
+     "titre": "Alerter, masser, défibriller",
+     "items": [
+      "Alertez : 15 ou 112 (114 par SMS). Faites chercher un défibrillateur.",
+      "Massez : à genoux, mains l'une sur l'autre au centre de la poitrine, bras tendus. Appuyez fort et vite, 100 à 120 fois par minute, sans vous arrêter.",
+      "Défibrillez : allumez l'appareil dès qu'il arrive et suivez ses instructions vocales. Continuez le massage pendant qu'on l'installe."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Vous ne pouvez pas aggraver la situation : sans massage, la personne meurt. Une formation de 2 heures aux gestes qui sauvent vous donne l'assurance nécessaire."
+    },
+    {
+     "t": "tip",
+     "titre": "Devenez citoyen sauveteur",
+     "body": "Avec les applications gratuites SAUV Life et Staying Alive, le SAMU ou les pompiers peuvent vous alerter si un arrêt cardiaque survient près de vous, et vous indiquer le défibrillateur le plus proche."
+    }
+   ],
+   "sources": [
+    "S17",
+    "S25"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Texte à relire par un formateur agréé aux premiers secours, mot pour mot contre les recommandations PSC1 de décembre 2023"
+   ]
+  },
+  {
+   "id": "saignement",
+   "cat": "urgence",
+   "titre": "Saignement abondant",
+   "resume": "Arrêter l'hémorragie en attendant les secours.",
+   "duree": "1 min",
+   "prioritaire": true,
+   "sensible": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-saignement-1.svg",
+     "titre": "Comprimer la plaie",
+     "alt": "La victime est allongée ; le sauveteur appuie fort et sans relâcher sur la plaie avec une main protégée par un gant ou un sac plastique.",
+     "relecture_secours": true
+    },
+    {
+     "t": "steps",
+     "titre": "Les gestes",
+     "items": [
+      "Appuyez fort et sans relâcher sur la plaie, avec la main protégée (gant, sac plastique) ou un tissu propre.",
+      "Allongez la victime.",
+      "Faites alerter, ou alertez vous-même : 15 ou 112.",
+      "Si vous ne pouvez pas comprimer ou si la compression ne suffit pas sur un bras ou une jambe, et seulement si vous êtes formé : posez un garrot au-dessus de la plaie et notez l'heure."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Ne retirez jamais un objet planté dans une plaie."
+    }
+   ],
+   "sources": [
+    "S17"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Texte à relire par un formateur agréé aux premiers secours, mot pour mot contre les recommandations PSC1 de décembre 2023"
+   ]
+  },
+  {
+   "id": "inconscient-respire",
+   "cat": "urgence",
+   "titre": "Personne inconsciente qui respire",
+   "resume": "La mettre sur le côté pour protéger sa respiration.",
+   "duree": "1 min",
+   "prioritaire": true,
+   "sensible": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-inconscient-respire-1.svg",
+     "titre": "Position latérale de sécurité",
+     "alt": "Trois étapes : la personne allongée respire, on la tourne sur le côté, puis elle reste sur le côté, tête basculée en arrière et bouche vers le sol.",
+     "relecture_secours": true
+    },
+    {
+     "t": "steps",
+     "titre": "Les gestes",
+     "items": [
+      "Vérifiez qu'elle ne répond pas mais qu'elle respire (le ventre et la poitrine se soulèvent).",
+      "Tournez-la sur le côté, tête basculée en arrière, bouche vers le sol : position latérale de sécurité.",
+      "Alertez : 15 ou 112.",
+      "Couvrez-la et surveillez sa respiration jusqu'à l'arrivée des secours. Si elle ne respire plus : massage cardiaque."
+     ]
+    }
+   ],
+   "sources": [
+    "S17"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Texte à relire par un formateur agréé aux premiers secours, mot pour mot contre les recommandations PSC1 de décembre 2023"
+   ]
+  },
+  {
+   "id": "etouffement",
+   "cat": "urgence",
+   "titre": "Étouffement",
+   "resume": "La personne ne peut plus parler, tousser ni respirer.",
+   "duree": "1 min",
+   "prioritaire": true,
+   "sensible": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-etouffement-1.svg",
+     "titre": "Claques dans le dos et compressions",
+     "alt": "Vignette 1 : la personne penchée en avant reçoit jusqu'à 5 claques entre les omoplates ; vignette 2 : le sauveteur, derrière elle, tire son poing placé au creux de l'estomac vers lui et vers le haut, jusqu'à 5 fois.",
+     "relecture_secours": true
+    },
+    {
+     "t": "steps",
+     "titre": "Chez l'adulte et l'enfant",
+     "items": [
+      "Penchez la personne en avant et donnez jusqu'à 5 claques vigoureuses entre les omoplates, avec le plat de la main.",
+      "Si cela ne suffit pas : placez-vous derrière elle, un poing au creux de l'estomac, et tirez fort vers vous et vers le haut, jusqu'à 5 fois.",
+      "Alternez les deux jusqu'à ce que l'objet sorte. Si elle perd connaissance : alertez et commencez le massage cardiaque."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Si la personne tousse et respire encore, ne faites rien d'autre que l'encourager à tousser."
+    },
+    {
+     "t": "tip",
+     "body": "Nourrisson : les gestes sont différents. Apprenez-les lors d'une formation."
+    }
+   ],
+   "sources": [
+    "S17"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Texte à relire par un formateur agréé aux premiers secours, mot pour mot contre les recommandations PSC1 de décembre 2023"
+   ]
+  },
+  {
+   "id": "brulure",
+   "cat": "urgence",
+   "titre": "Brûlure",
+   "resume": "Refroidir tout de suite, longtemps.",
+   "duree": "1 min",
+   "prioritaire": false,
+   "sensible": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-brulure-1.svg",
+     "titre": "Refroidir la brûlure",
+     "alt": "La zone brûlée est placée sous un filet d'eau tempérée du robinet, pendant au moins 20 minutes.",
+     "relecture_secours": true
+    },
+    {
+     "t": "steps",
+     "titre": "Les gestes",
+     "items": [
+      "Refroidissez immédiatement sous l'eau tempérée, pendant au moins 20 minutes.",
+      "Retirez les vêtements, sauf s'ils collent à la peau, ainsi que bagues et montre.",
+      "Alertez le 15 si la brûlure est plus grande que la moitié de la paume de la victime, si elle touche le visage, les mains ou les parties génitales, si la peau est blanche ou noire, ou s'il s'agit d'un enfant."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Pas de glace, pas de beurre, pas de dentifrice. Ne percez pas les cloques."
+    }
+   ],
+   "sources": [
+    "S17"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Texte à relire par un formateur agréé aux premiers secours, mot pour mot contre les recommandations PSC1 de décembre 2023"
+   ]
+  },
+  {
+   "id": "monoxyde",
+   "cat": "urgence",
+   "titre": "Monoxyde de carbone",
+   "resume": "Un gaz invisible et sans odeur, premier danger des coupures de courant.",
+   "duree": "1 min",
+   "prioritaire": true,
+   "sensible": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-monoxyde-1.svg",
+     "titre": "Monoxyde de carbone",
+     "alt": "Groupe électrogène, barbecue et chauffage d'appoint à combustion sont interdits à l'intérieur ; en cas de doute, ouvrez portes et fenêtres pour aérer.",
+     "relecture_secours": false
+    },
+    {
+     "t": "list",
+     "titre": "Les signes",
+     "items": [
+      "Maux de tête, nausées, vertiges, fatigue, chez plusieurs personnes du même logement.",
+      "Les symptômes diminuent quand on sort."
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Que faire",
+     "items": [
+      "Aérez immédiatement : ouvrez portes et fenêtres.",
+      "Arrêtez les appareils à combustion.",
+      "Sortez du logement.",
+      "Appelez le 15, le 18 ou le 112."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Jamais de groupe électrogène, de barbecue ou de chauffage d'appoint à combustion dans un local fermé, même garage ou cave."
+    }
+   ],
+   "sources": [
+    "S20",
+    "S2"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Pages de Santé publique France à citer précisément"
+   ]
+  },
+  {
+   "id": "coupure-electricite",
+   "cat": "urgence",
+   "titre": "Coupure d'électricité prolongée",
+   "resume": "Tenir plusieurs jours sans courant.",
+   "duree": "3 min",
+   "prioritaire": true,
+   "sensible": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-coupure-electricite-1.svg",
+     "titre": "Coupure d'électricité",
+     "alt": "Gardez le réfrigérateur et le congélateur fermés, et laissez une lampe allumée pour voir le retour du courant.",
+     "relecture_secours": false
+    },
+    {
+     "t": "steps",
+     "titre": "Tout de suite",
+     "items": [
+      "Vérifiez si la coupure est générale (voisins, éclairage public).",
+      "Débranchez les appareils sensibles et laissez une lampe allumée pour voir le retour du courant.",
+      "Gardez le réfrigérateur et le congélateur fermés.",
+      "Écoutez la radio à piles pour suivre les consignes."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Si cela dure",
+     "items": [
+      "Utilisez votre kit de 72 heures.",
+      "Personne dépendante d'un appareil médical électrique : contactez son prestataire et signalez-vous en mairie.",
+      "Économisez la batterie du téléphone : mode économie d'énergie, SMS plutôt qu'appels."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Jamais de groupe électrogène ni de barbecue à l'intérieur : risque mortel de monoxyde de carbone."
+    }
+   ],
+   "sources": [
+    "S2",
+    "S20"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "canicule",
+   "cat": "urgence",
+   "titre": "Canicule",
+   "resume": "Se protéger de la chaleur et veiller sur les plus fragiles.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "sensible": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-canicule-1.svg",
+     "titre": "Canicule : volets et aération",
+     "alt": "Le jour, volets et fenêtres restent fermés contre la chaleur ; la nuit, on ouvre les fenêtres pour aérer.",
+     "relecture_secours": false
+    },
+    {
+     "t": "list",
+     "titre": "Les bons gestes",
+     "items": [
+      "Buvez régulièrement de l'eau, sans attendre d'avoir soif.",
+      "Mouillez-vous le corps et ventilez-vous.",
+      "Fermez volets et fenêtres le jour, aérez la nuit.",
+      "Évitez l'alcool et les efforts aux heures chaudes.",
+      "Passez quelques heures dans un lieu frais (bibliothèque, commerce climatisé).",
+      "Prenez des nouvelles de vos proches âgés ou isolés."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Les mairies tiennent un registre des personnes âgées, handicapées ou isolées, contactées en cas de canicule. Inscrivez-vous ou inscrivez un proche."
+    },
+    {
+     "t": "alert",
+     "body": "Malaise, confusion, forte fièvre : appelez le 15."
+    }
+   ],
+   "sources": [
+    "S20"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Pages de Santé publique France à citer précisément"
+   ]
+  },
+  {
+   "id": "grand-froid",
+   "cat": "urgence",
+   "titre": "Grand froid",
+   "resume": "Se protéger et se chauffer sans danger.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "sensible": false,
+   "blocs": [
+    {
+     "t": "list",
+     "titre": "Les bons gestes",
+     "items": [
+      "Couvrez-vous en plusieurs couches, la tête et les mains en priorité.",
+      "Chauffez sans surchauffer, et ne bouchez jamais les aérations.",
+      "Limitez les sorties des personnes fragiles.",
+      "Prenez des nouvelles des personnes isolées."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Personne sans abri en danger : appelez le 115."
+    }
+   ],
+   "sources": [
+    "S20"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Pages de Santé publique France à citer précisément"
+   ]
+  },
+  {
+   "id": "cyberattaque",
+   "cat": "urgence",
+   "titre": "Cyberattaque et arnaques en ligne",
+   "resume": "Rançon, compte piraté, faux message : que faire, et comment se protéger.",
+   "duree": "4 min",
+   "prioritaire": true,
+   "sensible": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-cyberattaque-1.svg",
+     "titre": "Appareil bloqué par une rançon",
+     "alt": "Un ordinateur affiche une demande de rançon : coupez le Wi-Fi, débranchez le câble, ne l'éteignez pas et ne payez pas.",
+     "relecture_secours": false
+    },
+    {
+     "t": "text",
+     "body": "Une cyberattaque peut vous viser directement (appareil bloqué contre une rançon, compte piraté, arnaque) ou toucher tout le pays : hôpitaux, paiements, téléphone, internet. Dans les deux cas, quelques réflexes limitent les dégâts."
+    },
+    {
+     "t": "steps",
+     "titre": "Mon appareil est bloqué et on me demande une rançon",
+     "items": [
+      "Débranchez-le tout de suite d'internet et du réseau : coupez le Wi-Fi, retirez le câble.",
+      "Ne l'éteignez pas : mettez-le en veille. Les enquêteurs et les techniciens en auront besoin.",
+      "Ne payez pas : le paiement ne garantit pas de retrouver vos fichiers.",
+      "Cherchez une solution gratuite de déchiffrement sur nomoreransom.org.",
+      "Faites-vous aider sur 17cyber.gouv.fr et portez plainte (commissariat, gendarmerie ou plainte en ligne)."
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Un de mes comptes est piraté",
+     "items": [
+      "Changez le mot de passe depuis un autre appareil, sain, puis ceux des comptes qui utilisaient le même.",
+      "Activez la double authentification.",
+      "Prévenez vos contacts : le pirate peut leur écrire en votre nom.",
+      "Suivez la procédure de récupération du service concerné et faites-vous aider sur 17cyber.gouv.fr."
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "J'ai reçu un message suspect ou j'ai été arnaqué",
+     "items": [
+      "Ne cliquez pas, ne répondez pas, ne rappelez pas le numéro indiqué.",
+      "SMS frauduleux : transférez-le au 33700, sans commentaire.",
+      "Si vous avez donné vos coordonnées bancaires : appelez votre banque immédiatement pour faire opposition.",
+      "Portez plainte et signalez les contenus illicites sur internet-signalement.gouv.fr (Pharos)."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Si une cyberattaque touche tout le pays",
+     "items": [
+      "Paiements, téléphone ou internet peuvent être coupés : votre kit de 72 heures et un peu d'argent liquide prennent tout leur sens.",
+      "Écoutez la radio et suivez seulement les canaux officiels.",
+      "Ne relayez pas les rumeurs : une cyberattaque s'accompagne souvent de fausses informations.",
+      "Sans internet, rendez-vous au commissariat, à la gendarmerie ou en mairie."
+     ]
+    },
+    {
+     "t": "check",
+     "id": "cyber-protection",
+     "titre": "Me protéger dès maintenant",
+     "items": [
+      "Un mot de passe solide et différent pour chaque compte important (un gestionnaire de mots de passe aide)",
+      "La double authentification sur la messagerie, la banque et les réseaux sociaux",
+      "Les mises à jour du téléphone et de l'ordinateur faites sans attendre",
+      "Une sauvegarde régulière de mes fichiers sur un support débranché ensuite",
+      "Des applications téléchargées seulement depuis les boutiques officielles",
+      "De la méfiance envers tout message inattendu ou trop pressant"
+     ]
+    },
+    {
+     "t": "kv",
+     "titre": "Où trouver de l'aide",
+     "items": [
+      [
+       "17cyber.gouv.fr",
+       "Diagnostic et aide aux victimes, échange avec un policier ou un gendarme, 24 h sur 24, gratuit"
+      ],
+      [
+       "33700",
+       "Signaler un SMS ou un appel frauduleux"
+      ],
+      [
+       "internet-signalement.gouv.fr",
+       "Signaler un contenu illicite (Pharos)"
+      ],
+      [
+       "cybermalveillance.gouv.fr",
+       "Conseils et professionnels de confiance près de chez vous"
+      ]
+     ]
+    }
+   ],
+   "sources": [
+    "S2",
+    "S21",
+    "S22",
+    "S23"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "trousses",
+   "cat": "urgence",
+   "titre": "Trousse de premiers secours",
+   "resume": "Le contenu d'une trousse familiale.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "alert",
+     "body": "Une trousse ne remplace pas les gestes. Le garrot, par exemple, ne s'utilise qu'après une formation aux gestes qui sauvent : voir « Entraide et engagement »."
+    },
+    {
+     "t": "check",
+     "id": "trousse-famille",
+     "titre": "Trousse familiale",
+     "items": [
+      "Pansements et sparadrap",
+      "Compresses",
+      "Désinfectant ou alcool",
+      "Gel hydroalcoolique",
+      "Masques",
+      "Paracétamol",
+      "Antidiarrhéique",
+      "Pince à épiler et tire-tique",
+      "Thermomètre",
+      "Vos médicaments personnels"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Demandez conseil à votre pharmacien pour adapter la trousse à votre foyer (bébé, allergies, traitements), et vérifiez les dates de péremption deux fois par an."
+    }
+   ],
+   "sources": [
+    "S2",
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": true,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "kit72h",
+   "cat": "preparer",
+   "titre": "Le kit d'urgence 72 h",
+   "resume": "De quoi tenir 3 jours chez soi ou en cas de départ.",
+   "duree": "5 min",
+   "prioritaire": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-kit72h-1.svg",
+     "titre": "Le kit d'urgence 72 h",
+     "alt": "Les objets du kit posés à plat : radio, lampe, piles, bougies, chargeur, eau, conserves, ouvre-boîte, couteau, trousse de secours, médicaments, lunettes, vêtements chauds, couverture de survie, papiers, clés, argent liquide et jeux.",
+     "relecture_secours": false
+    },
+    {
+     "t": "schema",
+     "fichier": "schema-kit72h-2.svg",
+     "titre": "Six litres d'eau par personne",
+     "alt": "Quatre personnes, chacune avec six bouteilles d'un litre : il faut 6 litres d'eau par personne, soit 24 litres pour un foyer de quatre.",
+     "relecture_secours": false
+    },
+    {
+     "t": "text",
+     "body": "Lors d'une catastrophe, les 72 premières heures sont souvent les plus difficiles : coupures d'électricité, de gaz et d'eau, routes impraticables. Les secours priorisent les cas graves. Un kit préparé à l'avance vous rend autonome et leur permet de se concentrer sur ceux qui en ont le plus besoin."
+    },
+    {
+     "t": "list",
+     "titre": "Les 3 principes clés",
+     "items": [
+      "Boire et manger",
+      "Avoir chaud",
+      "Se soigner"
+     ]
+    },
+    {
+     "t": "calc",
+     "titre": "Mon stock d'eau",
+     "body": "6 litres par personne, en bouteilles.",
+     "parPersonne": 6,
+     "unite": "litres"
+    },
+    {
+     "t": "check",
+     "id": "kit-base",
+     "titre": "Matériel de base",
+     "items": [
+      "Radio à piles et piles de rechange",
+      "Lampe de poche et piles de rechange",
+      "Bougies, briquet ou allumettes",
+      "Chargeur de téléphone et batterie externe",
+      "Couteau multifonction",
+      "Ouvre-boîte",
+      "Réchaud",
+      "Savon"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "kit-eau",
+     "titre": "Eau et nourriture",
+     "items": [
+      "Eau potable : 6 L par personne",
+      "Conserves ne nécessitant pas de cuisson",
+      "Petits pots ou lait infantile 1er âge liquide prêt à l'emploi",
+      "Café, thé",
+      "Nourriture pour animaux",
+      "Pastilles de décontamination de l'eau (dernier recours)"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "kit-chaud",
+     "titre": "Rester au chaud",
+     "items": [
+      "Vêtements chauds",
+      "Couverture de survie"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "kit-sante",
+     "titre": "Santé",
+     "items": [
+      "Médicaments du quotidien et de secours",
+      "Lunettes de vue (paire de secours)",
+      "Trousse de premiers secours (alcool, gel, masques, pansements, compresses)"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "kit-docs",
+     "titre": "Documents et clés",
+     "items": [
+      "Photocopies des papiers d'identité et ordonnances dans une pochette étanche",
+      "Double des clés de la maison et de la voiture",
+      "Argent liquide (les distributeurs peuvent être en panne)"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "kit-temps",
+     "titre": "Passer le temps",
+     "items": [
+      "Livres",
+      "Jeux"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Rangez le kit dans un endroit facile d'accès et dites à vos proches où il se trouve. Vérifiez-le deux fois par an (péremption des médicaments et denrées, piles) et réapprovisionnez-le après chaque utilisation."
+    },
+    {
+     "t": "form",
+     "id": "kit-lieu",
+     "titre": "Mon kit",
+     "fields": [
+      "Où est rangé mon kit ?",
+      "Date de constitution",
+      "Prochaine vérification"
+     ]
+    }
+   ],
+   "sources": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "pfms",
+   "cat": "preparer",
+   "titre": "Mon plan familial de mise en sûreté",
+   "resume": "Préparer sa famille en un seul endroit.",
+   "duree": "15 min",
+   "prioritaire": true,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-pfms-1.svg",
+     "titre": "Couper les réseaux",
+     "alt": "Trois gestes : basculer le disjoncteur général sur O, tourner le robinet d'arrivée d'eau, et fermer la vanne de gaz d'un quart de tour.",
+     "relecture_secours": false
+    },
+    {
+     "t": "text",
+     "body": "Le plan familial de mise en sûreté (PFMS) se prépare en famille. Il rassemble les risques qui vous concernent, les moyens d'alerte, les consignes, vos lieux de mise à l'abri et vos contacts. Remplissez-le ici : il reste stocké sur votre téléphone, disponible sans réseau."
+    },
+    {
+     "t": "steps",
+     "titre": "1. Je m'informe sur mes risques",
+     "items": [
+      "Sur georisques.gouv.fr.",
+      "En mairie : le DICRIM (Document d'information communal sur les risques majeurs).",
+      "En préfecture : le DDRM (Dossier départemental des risques majeurs).",
+      "Lors d'un achat ou d'une location, l'« état des risques » est obligatoirement remis.",
+      "Partout en France, chacun est exposé au minimum aux tempêtes et aux accidents de transport de matières dangereuses."
+     ]
+    },
+    {
+     "t": "form",
+     "id": "pfms-risques",
+     "titre": "Mes risques et le comportement adapté",
+     "fields": [
+      "Commune",
+      "Risque 1 et comportement",
+      "Risque 2 et comportement",
+      "Risque 3 et comportement",
+      "Risque 4 et comportement"
+     ]
+    },
+    {
+     "t": "text",
+     "titre": "2. Je sais couper les réseaux",
+     "body": "Localisez les arrivées de gaz, d'électricité et d'eau, et expliquez à vos proches comment les couper (photos, schéma, bouton à actionner). Exemple : « Le tableau électrique est à l'entrée, basculer l'interrupteur rouge en bas à gauche. »"
+    },
+    {
+     "t": "form",
+     "id": "pfms-reseaux",
+     "titre": "Couper les réseaux chez moi",
+     "fields": [
+      "Électricité : où et comment",
+      "Gaz : où et comment",
+      "Eau : où et comment"
+     ]
+    },
+    {
+     "t": "form",
+     "id": "pfms-lieux",
+     "titre": "3. Mes lieux",
+     "fields": [
+      "Lieu de mise à l'abri dans le logement",
+      "Actions avant de le rejoindre",
+      "Lieu d'évacuation et de regroupement",
+      "Itinéraire à emprunter"
+     ]
+    },
+    {
+     "t": "form",
+     "id": "pfms-contacts",
+     "titre": "4. Mes contacts",
+     "fields": [
+      "Mairie",
+      "Préfecture",
+      "Relais de quartier",
+      "Urgence électricité",
+      "Urgence gaz",
+      "Service des eaux",
+      "Assurance (nom, téléphone, n° de contrat)",
+      "Médecin de famille",
+      "École(s) des enfants",
+      "Hôpital",
+      "Point familial de contact (proche vivant ailleurs, à joindre si nous sommes séparés)"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Point familial de contact : choisissez un ami ou un proche habitant une autre localité. Si la famille est séparée, chacun l'appelle pour donner de ses nouvelles."
+    },
+    {
+     "t": "text",
+     "titre": "5. Ma carte d'urgence",
+     "body": "Recopiez l'essentiel sur une carte pour chaque membre de la famille, à garder dans le portefeuille ou le cartable des enfants. Le PFMS est aussi utile face à une canicule ou une épidémie."
+    }
+   ],
+   "sources": [
+    "S3",
+    "S4",
+    "S2"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "plan-evacuation",
+   "cat": "preparer",
+   "titre": "Préparer son plan d'évacuation",
+   "resume": "7 étapes pour partir vite et bien.",
+   "duree": "10 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "check",
+     "id": "evac-1",
+     "titre": "1. Documentation",
+     "items": [
+      "Consulter le DICRIM et Géorisques",
+      "Imprimer une carte de ma zone"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "evac-2",
+     "titre": "2. Analyse familiale",
+     "items": [
+      "Lister les membres du foyer et leurs besoins médicaux (et animaux, voisins)",
+      "Noter le planning type de chacun"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "evac-3",
+     "titre": "3. Points de rassemblement et itinéraires",
+     "items": [
+      "Point 1 : près du domicile",
+      "Point 2 : dans le quartier",
+      "Point 3 : hors de la ville",
+      "Cartographier routes, stations-service, points d'eau et urgences"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "evac-4",
+     "titre": "4. Moyens d'évacuation",
+     "items": [
+      "Voiture : réservoir toujours au moins à moitié plein",
+      "À pied : chaussures de marche à côté du sac d'évacuation",
+      "Vélo : prévoir chambres à air, kit crevaison, pompe et outils"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "evac-5",
+     "titre": "5. Communication",
+     "items": [
+      "Liste des contacts d'urgence imprimée",
+      "Protocole convenu (SMS d'abord, puis téléphone)",
+      "Moyen alternatif : radio à piles, sifflets, talkies-walkies"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "evac-6",
+     "titre": "6. Kit d'urgence",
+     "items": [
+      "Sac prêt et accessible pour chaque personne"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "evac-7",
+     "titre": "7. Responsabilités",
+     "items": [
+      "Rôle de chacun avec sa check-list",
+      "Enfants formés aux bases",
+      "Procédure de coupure des réseaux connue de tous"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Partez avant les embouteillages de panique et connaissez plusieurs itinéraires de délestage."
+    }
+   ],
+   "sources": [
+    "S7",
+    "S11"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "sac-evacuation",
+   "cat": "preparer",
+   "titre": "Le sac d'évacuation",
+   "resume": "Un sac par personne, prêt à partir.",
+   "duree": "5 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "Une crise peut vous surprendre au travail, sur la route ou en courses. Prévoyez un sac par personne, à la maison et, si possible, dans la voiture. Un sac de 30 à 40 litres suffit : il doit rester assez léger pour marcher longtemps."
+    },
+    {
+     "t": "check",
+     "id": "sac-admin",
+     "titre": "Administratif",
+     "items": [
+      "Copies des documents importants (papier et clé USB)",
+      "Argent liquide en petites coupures",
+      "Doubles des clés (domicile, véhicule, point de chute)",
+      "Bloc-notes et stylo",
+      "Liste des numéros importants",
+      "Une photo récente de chaque proche (utile si vous êtes séparés)"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "sac-sante",
+     "titre": "Santé et hygiène",
+     "items": [
+      "Lunettes de rechange",
+      "Médicaments courants et traitement personnel (plusieurs boîtes)",
+      "Trousse de secours compacte",
+      "Couverture de survie",
+      "Gel hydroalcoolique",
+      "Papier toilette et essuie-tout",
+      "Sacs poubelles",
+      "Brosse à dents et dentifrice",
+      "Protections périodiques, produits pour bébé si besoin"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "sac-vetements",
+     "titre": "Vêtements",
+     "items": [
+      "Un change complet adapté à la saison",
+      "Poncho de pluie",
+      "Gants",
+      "Bonnet ou casquette",
+      "Tour de cou",
+      "Chaussures solides posées à côté du sac"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "sac-eau",
+     "titre": "Eau",
+     "items": [
+      "Gourde filtrante remplie",
+      "Gourde souple 2 L",
+      "Poche à eau 5 à 10 L (vide)"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "sac-feu",
+     "titre": "Éclairage et feu",
+     "items": [
+      "2 briquets",
+      "Allumettes étanches",
+      "Lampe frontale",
+      "Bâtons lumineux"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "sac-energie",
+     "titre": "Énergie et communication",
+     "items": [
+      "Batterie externe haute capacité",
+      "Panneau solaire portable",
+      "Radio solaire ou à dynamo",
+      "Talkies-walkies"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "sac-outils",
+     "titre": "Outils",
+     "items": [
+      "Couteau suisse ou multi-outil",
+      "Paracorde",
+      "Ruban adhésif renforcé",
+      "Sifflet"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "sac-nourriture",
+     "titre": "Nourriture",
+     "items": [
+      "3 rations ne nécessitant pas de cuisson",
+      "Barres énergétiques",
+      "Couverts"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Rangez le sac loin d'un radiateur ou d'un tableau électrique, mettez ce qui craint l'eau dans des sacs étanches et adaptez les vêtements à chaque saison. Si un traitement doit rester au frais (insuline), placez un repère sur le sac pour ne pas l'oublier."
+    }
+   ],
+   "sources": [
+    "S12",
+    "S11",
+    "S10"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "edc",
+   "cat": "preparer",
+   "titre": "Ce que j'ai toujours sur moi",
+   "resume": "L'« EDC » : le minimum du quotidien.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "check",
+     "id": "edc-1",
+     "titre": "Administratif et technologie",
+     "items": [
+      "Papiers d'identité et permis",
+      "Carte bancaire et un peu d'argent liquide",
+      "Smartphone",
+      "Batterie externe et câble"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "edc-2",
+     "titre": "Outils",
+     "items": [
+      "Petit outil multifonction (la loi encadre le port d'un couteau)",
+      "Lampe de poche",
+      "Briquet",
+      "Sifflet",
+      "Carnet et stylo"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "edc-3",
+     "titre": "Santé",
+     "items": [
+      "Médicaments personnels",
+      "Antidouleur",
+      "Mouchoirs et petit sac poubelle",
+      "Gourde ou bouteille d'eau"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Un outil n'est utile que s'il est disponible. Si vous l'oubliez sans cesse à la maison, il est trop encombrant : choisissez plus léger. Préférez des couleurs vives, faciles à retrouver dans l'herbe."
+    }
+   ],
+   "sources": [
+    "S5",
+    "S11"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Formulation sur le port d'un outil à lame : à valider par l'avocat"
+   ]
+  },
+  {
+   "id": "documents",
+   "cat": "preparer",
+   "titre": "Documents et argent de secours",
+   "resume": "Sauvegarder l'essentiel avant qu'il ne soit trop tard.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "check",
+     "id": "docs",
+     "titre": "À numériser et photocopier pour chaque membre du foyer",
+     "items": [
+      "Carte d'identité et passeport",
+      "Carte vitale",
+      "Permis de conduire et carte grise",
+      "Livret de famille",
+      "Carnets de santé (y compris des animaux) et ordonnances",
+      "RIB et références bancaires",
+      "Contrats d'assurance (habitation, auto, responsabilité civile)",
+      "Actes de propriété",
+      "Photos de l'intérieur et de l'extérieur du logement et des biens de valeur"
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Comment les conserver",
+     "items": [
+      "Photocopies dans une pochette étanche, dans le sac d'évacuation.",
+      "Copies numériques sur au moins 2 clés USB rangées dans des lieux différents.",
+      "Photos des biens de valeur confiées à des proches qui ne sont pas exposés aux mêmes risques : elles prouveront l'existence de vos biens auprès de l'assureur."
+     ]
+    },
+    {
+     "t": "text",
+     "titre": "Argent liquide",
+     "body": "Les cartes bancaires et les distributeurs peuvent ne plus fonctionner. Gardez de l'argent liquide en petites coupures dans votre kit et votre sac. Certaines sources recommandent de quoi tenir au moins 2 semaines sans carte."
+    }
+   ],
+   "sources": [
+    "S4",
+    "S12",
+    "S2"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "stocks",
+   "cat": "preparer",
+   "titre": "Stocks à la maison",
+   "resume": "Eau, nourriture, hygiène : tenir au-delà de 72 heures.",
+   "duree": "6 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "Sans électricité, l'eau peut ne plus monter dans les étages, et il n'y a plus ni réfrigérateur, ni cuisson électrique, ni chauffage électrique. Le kit de 72 heures recommandé par l'État est la base. Ceux qui le souhaitent peuvent viser ensuite deux semaines d'autonomie, sans achat massif."
+    },
+    {
+     "t": "steps",
+     "titre": "Constituer son stock sans se ruiner",
+     "items": [
+      "Achetez un peu plus à chaque course (conserves, soupes, pâtes, farine, eau) et mettez ce surplus de côté.",
+      "Choisissez des aliments que vous aimez : le moral compte.",
+      "Préférez les conserves de 400 g aux grands formats (une boîte ouverte se consomme vite).",
+      "Faites tourner : consommez les produits les plus anciens et remplacez-les au fur et à mesure.",
+      "Riz, pâtes, légumes secs, sel et sucre bien stockés se conservent très longtemps."
+     ]
+    },
+    {
+     "t": "calc",
+     "titre": "Mon stock d'eau pour deux semaines",
+     "body": "Au moins 2 litres par personne et par jour pour boire, soit 28 litres par personne. Prévoyez davantage pour la cuisine et l'hygiène.",
+     "parPersonne": 28,
+     "unite": "litres"
+    },
+    {
+     "t": "text",
+     "titre": "Stocker l'eau",
+     "body": "Le plus simple est l'eau en bouteilles du commerce, rangée à l'abri de la lumière et de la chaleur, et renouvelée avant sa date limite. Un filtre permet de boire une eau d'origine douteuse."
+    },
+    {
+     "t": "check",
+     "id": "stock-hygiene",
+     "titre": "Hygiène et assainissement",
+     "items": [
+      "Sacs poubelles en grande quantité",
+      "Papier toilette",
+      "Toilettes d'appoint",
+      "Protections périodiques",
+      "Savon en pain et gel hydroalcoolique",
+      "Javel",
+      "Gants nitrile",
+      "Masques FFP2",
+      "Vinaigre blanc et bicarbonate de soude",
+      "Bâches transparentes et ruban adhésif",
+      "Trousse de secours grand format"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "stock-energie",
+     "titre": "Cuisiner, s'éclairer, se chauffer sans réseau",
+     "items": [
+      "Réchaud de camping et cartouches de gaz compatibles",
+      "Bougies longue durée",
+      "Lampes torches et lanternes",
+      "Couverture de laine ou sac de couchage par personne",
+      "Batterie externe et panneau solaire",
+      "Piles rechargeables et chargeur",
+      "Radio à manivelle ou solaire"
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Réchaud, bougies, poêle à pétrole : aérez toujours la pièce. Un appareil à flamme en espace clos est dangereux."
+    }
+   ],
+   "sources": [
+    "S12",
+    "S11",
+    "S2"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "incendie-domicile",
+   "cat": "preparer",
+   "titre": "Protéger son logement du feu",
+   "resume": "Détecteurs, extincteurs, couverture anti-feu.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-incendie-domicile-1.svg",
+     "titre": "Où placer le détecteur de fumée",
+     "alt": "Plan d'un logement : le détecteur de fumée se place dans le couloir qui dessert les chambres, jamais dans la cuisine ni dans la salle de bain.",
+     "relecture_secours": false
+    },
+    {
+     "t": "check",
+     "id": "feu-maison",
+     "titre": "Équipement",
+     "items": [
+      "Un détecteur de fumée, obligatoire dans chaque logement, dans le couloir qui dessert les chambres",
+      "Un détecteur par étage (conseillé)",
+      "Jamais dans la cuisine ni la salle de bain (fausses alertes)",
+      "Tester le détecteur chaque mois",
+      "Extincteur et couverture anti-feu près de la cuisine"
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Si le feu prend chez moi",
+     "items": [
+      "Je sors avec tout le monde et je ferme la porte de la pièce en feu.",
+      "J'appelle le 18 ou le 112 une fois dehors.",
+      "Je ne prends jamais l'ascenseur.",
+      "Si la fumée envahit l'escalier : je reste chez moi, je ferme la porte, je la mouille et je calfeutre le bas, puis je me signale à la fenêtre."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Rangez vos objets de valeur et vos documents dans une boîte facile à emporter."
+    }
+   ],
+   "sources": [
+    "S16",
+    "S2"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Conduite à tenir en cas d'incendie : à confirmer sur une source des sapeurs-pompiers"
+   ]
+  },
+  {
+   "id": "vehicule",
+   "cat": "preparer",
+   "titre": "Mon véhicule, prêt à partir",
+   "resume": "Entretien et équipement du coffre.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "check",
+     "id": "auto-semaine",
+     "titre": "Chaque mois et avant un long trajet",
+     "items": [
+      "Niveaux : huile, refroidissement, freins, lave-glace",
+      "Réservoir jamais sous la moitié",
+      "Pneus et roue de secours (état et pression)",
+      "Essuie-glaces",
+      "Feux et clignotants",
+      "Vitres et rétroviseurs propres"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "auto-coffre",
+     "titre": "Dans le coffre",
+     "items": [
+      "Outils de base, cric et démonte-pneu",
+      "Extincteur",
+      "Marteau brise-vitre avec coupe-ceinture",
+      "Huile, liquide de frein et de refroidissement",
+      "Bombe anti-crevaison",
+      "Lampe torche puissante",
+      "Gilets et triangle de signalisation",
+      "Fusibles et ampoules de rechange"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Garez-vous dans le sens du départ et gardez la clé de voiture sur un trousseau séparé : sous le stress, chaque seconde compte."
+    }
+   ],
+   "sources": [
+    "S11",
+    "S7"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "communication",
+   "cat": "preparer",
+   "titre": "Communiquer sans réseau",
+   "resume": "Garder le lien quand téléphone et internet tombent.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "Les réseaux téléphoniques et internet peuvent ne plus fonctionner. Convenez à l'avance d'un protocole avec vos proches."
+    },
+    {
+     "t": "steps",
+     "titre": "Le protocole familial",
+     "items": [
+      "Identifiez les proches qui auront besoin d'aide et qui ira les voir.",
+      "Privilégiez les SMS, qui saturent moins les réseaux que les appels.",
+      "Désignez un point familial de contact vivant ailleurs.",
+      "Fixez un lieu de rendez-vous si personne n'est joignable.",
+      "Imprimez la liste des contacts : un téléphone peut tomber en panne."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Les moyens de secours",
+     "items": [
+      "Radio à piles, solaire ou à manivelle pour suivre les consignes.",
+      "Talkies-walkies à piles pour le foyer ou le groupe (portée de quelques kilomètres).",
+      "Sifflet pour attirer l'attention.",
+      "Couverture de survie accrochée en hauteur, qui reflète le soleil.",
+      "Marques laissées sur votre trajet si vous vous éloignez, après avoir prévenu quelqu'un."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Si vous n'avez plus accès à internet, rendez-vous au commissariat, à la gendarmerie ou à la mairie."
+    }
+   ],
+   "sources": [
+    "S2",
+    "S4",
+    "S7",
+    "S10",
+    "S12"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "desinformation",
+   "cat": "preparer",
+   "titre": "Résister à la désinformation",
+   "resume": "4 questions avant de partager une information.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "En temps de crise, des acteurs hostiles peuvent diffuser de fausses informations pour aggraver le désordre. À l'heure de l'intelligence artificielle, de fausses vidéos peuvent aussi circuler."
+    },
+    {
+     "t": "steps",
+     "titre": "Avant de croire ou de partager",
+     "items": [
+      "Qui a envoyé cette information ?",
+      "La source est-elle officielle ?",
+      "Est-elle publiée par un grand média national ?",
+      "Quel est le but de cette information ?"
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Hygiène numérique",
+     "items": [
+      "Mots de passe solides et mises à jour régulières.",
+      "Un antivirus, et de la méfiance envers les messages inattendus.",
+      "Vérifiez l'auteur et la date avant de rediffuser.",
+      "Signalez les contenus illicites sur internet-signalement.gouv.fr (Pharos).",
+      "Victime de cybermalveillance : 17cyber.gouv.fr et cybermalveillance.gouv.fr."
+     ]
+    }
+   ],
+   "sources": [
+    "S2"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "engagement",
+   "cat": "preparer",
+   "titre": "Entraide et engagement",
+   "resume": "Se former, aider ses voisins, rejoindre une réserve.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "titre": "Se former aux gestes qui sauvent",
+     "body": "Les secours peuvent être débordés. Une formation aux premiers secours (massage cardiaque, défibrillateur, garrot tourniquet) vous permet de sauver des vies. Contactez votre commune ou une association agréée : Croix-Rouge, Protection civile, SNSM."
+    },
+    {
+     "t": "list",
+     "titre": "Construire une entraide",
+     "items": [
+      "Votre premier cercle (famille, voisins, collègues) est la base de la solidarité.",
+      "Repérez les personnes isolées de votre immeuble ou de votre quartier.",
+      "Partagez ce guide avec vos proches."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "S'engager",
+     "items": [
+      "Citoyen sauveteur : installez SAUV Life ou Staying Alive pour être alerté d'un arrêt cardiaque près de chez vous.",
+      "Profil d'aidant : indiquez dans SIJAMAIS ce que vous savez faire et ce que vous pouvez prêter, puis partagez-le avec vos proches, vos voisins ou votre mairie.",
+      "Réserve communale de sécurité civile : renseignez-vous en mairie.",
+      "Sapeur-pompier volontaire : contactez le SDIS de votre département.",
+      "Bénévolat : jeveuxaider.gouv.fr.",
+      "Garde nationale et réserves des armées : reservistes.defense.gouv.fr.",
+      "Réserve sanitaire pour les professionnels de santé : reservesanitaire.fr.",
+      "Journée nationale de la résilience, chaque 13 octobre."
+     ]
+    }
+   ],
+   "sources": [
+    "S2",
+    "S3",
+    "S4",
+    "S25"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "priorites",
+   "cat": "survie",
+   "titre": "Les priorités de survie",
+   "resume": "Garder son calme et la règle des 3.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "kv",
+     "titre": "La règle des 3",
+     "items": [
+      [
+       "3 minutes",
+       "sans respirer"
+      ],
+      [
+       "3 heures",
+       "sans abri par grand froid ou forte chaleur"
+      ],
+      [
+       "3 jours",
+       "sans boire"
+      ],
+      [
+       "3 semaines",
+       "sans manger"
+      ]
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Face à une situation d'urgence",
+     "items": [
+      "Restez calme : votre cas n'est pas forcément désespéré. Respiration, humour ou pensées positives aident.",
+      "Analysez : matériel disponible, état physique et moral de chacun.",
+      "Fixez vos priorités : abri, eau, feu, puis nourriture.",
+      "Passez à l'action."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "La faim, le froid, la chaleur, la douleur, la déshydratation, la fatigue et la peur réduisent fortement la capacité à réfléchir et à décider."
+    },
+    {
+     "t": "list",
+     "titre": "Les vrais dangers",
+     "items": [
+      "L'erreur humaine : 2 secondes d'inattention suffisent pour chuter ou se tromper de chemin.",
+      "L'hypothermie, possible même par temps doux quand on est mouillé et exposé au vent.",
+      "Les accidents imprévisibles : chute de pierres, foudre, arbre.",
+      "Le coup de chaleur, surtout s'il est combiné à la déshydratation.",
+      "La déshydratation.",
+      "La faim, qui affaiblit.",
+      "La solitude."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Avant une sortie : consultez la météo, emportez une carte, prévenez quelqu'un de votre trajet et de sa durée, prévoyez eau, nourriture et une petite trousse de survie."
+    }
+   ],
+   "sources": [
+    "S9",
+    "S10",
+    "S11"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "eau",
+   "cat": "survie",
+   "titre": "Trouver et purifier l'eau",
+   "resume": "On ne tient que quelques jours sans boire.",
+   "duree": "4 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-eau-1.svg",
+     "titre": "Rendre l'eau buvable",
+     "alt": "Trois étapes : filtrer l'eau à travers du tissu, du sable et du charbon, la faire bouillir quelques minutes, puis la désinfecter et attendre 30 minutes avant de boire.",
+     "relecture_secours": false
+    },
+    {
+     "t": "list",
+     "titre": "Où trouver de l'eau",
+     "items": [
+      "Rivières et points d'eau douce, au fond des vallées.",
+      "En creusant le lit d'une rivière asséchée.",
+      "Eau de pluie.",
+      "Rosée du matin.",
+      "Sac plastique fermé autour d'une branche feuillue (condensation).",
+      "Trou creusé dans le sol et recouvert d'une bâche ou d'un poncho."
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "La méthode en 3 étapes",
+     "items": [
+      "Filtrer : un filtre fin retient les particules et une partie des micro-organismes. Filtre de fortune : tissu, sable ou terre, charbon de bois, bien tassés.",
+      "Faire bouillir quelques minutes, puis laisser refroidir.",
+      "Finir par une paille filtrante, une pastille de purification ou quelques gouttes de javel."
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Désinfecter à l'eau de Javel (méthode de l'ARS)",
+     "items": [
+      "Préparez une solution : 250 ml d'eau de Javel à 2,6 % dans 1 litre d'eau. Elle se garde 24 heures.",
+      "Ajoutez 6 gouttes de cette solution par litre d'eau à traiter.",
+      "Attendez 30 minutes avant de boire.",
+      "Avec des pastilles de purification, suivez leur notice."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Nettoyez et renouvelez souvent l'eau des gourdes : une mauvaise odeur signale un développement bactérien."
+    }
+   ],
+   "sources": [
+    "S18",
+    "S9",
+    "S10",
+    "S12"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Dosage de la javel : chercher une recommandation nationale (Santé publique France, ministère de la Santé)"
+   ]
+  },
+  {
+   "id": "feu",
+   "cat": "survie",
+   "titre": "Faire du feu",
+   "resume": "Se réchauffer, cuire, purifier l'eau, se signaler.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-feu-1.svg",
+     "titre": "Le triangle du feu",
+     "alt": "Un feu a besoin de combustible, d'oxygène et de chaleur ; on le monte en petit tipi de bois entouré de pierres.",
+     "relecture_secours": false
+    },
+    {
+     "t": "text",
+     "body": "Un feu a besoin de 3 éléments : du combustible, de l'oxygène et de la chaleur au départ."
+    },
+    {
+     "t": "steps",
+     "titre": "Monter son feu",
+     "items": [
+      "Choisissez un endroit dégagé, loin des arbres et buissons.",
+      "Retirez herbes et feuilles mortes autour, entourez le foyer de pierres.",
+      "Démarrez avec un allume-feu : écorce de bouleau, herbe sèche, lichen, ou vaseline, gel hydroalcoolique.",
+      "Ajoutez des brindilles grosses comme un doigt, puis du bois de plus en plus gros.",
+      "Laissez de l'espace entre les branches pour que l'air circule.",
+      "Faites sécher le gros bois autour du foyer."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Sans briquet ni allumettes",
+     "items": [
+      "Friction : deux morceaux de bois frottés, par exemple avec un archet.",
+      "Percussion : silex contre acier, étincelles sur de l'amadou.",
+      "Loupe ou miroir concentrant le soleil sur une matière inflammable."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Seulement en situation de survie réelle. En France, allumer un feu dans ou près d'une forêt est en général interdit, et toujours dangereux en période sèche. Préférez un petit feu, surveillé en permanence, et éteignez-le complètement."
+    }
+   ],
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Règles du code forestier sur l'emploi du feu : à citer précisément"
+   ]
+  },
+  {
+   "id": "abri",
+   "cat": "survie",
+   "titre": "Construire un abri",
+   "resume": "La première priorité : se protéger du froid et de la pluie.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-abri-1.svg",
+     "titre": "Abri de fortune avec une bâche",
+     "alt": "Une bâche tendue en toit sur une corde entre deux arbres protège de la pluie ; le sol est isolé par une couche de feuilles et de branches.",
+     "relecture_secours": false
+    },
+    {
+     "t": "text",
+     "body": "L'hypothermie et le manque de sommeil sont les plus grands dangers en nature. Profitez d'abord d'un abri existant (grotte, cabane)."
+    },
+    {
+     "t": "steps",
+     "titre": "Bien choisir l'emplacement",
+     "items": [
+      "Évitez les creux, où le froid s'accumule, et les lieux exposés au vent.",
+      "Ombre ou soleil selon vos besoins.",
+      "Proche des ressources : eau, bois.",
+      "Visible depuis un hélicoptère si vous attendez des secours.",
+      "Installez-vous bien avant la nuit."
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Construire",
+     "items": [
+      "Isolez le sol : feuilles mortes, mousse, herbes sèches, branches de sapin.",
+      "Le toit doit être imperméable.",
+      "Faites l'abri le plus petit possible et bien isolé pour garder la chaleur."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Bâche, poncho, couverture de survie, grand sac poubelle, couteau et ficelle suffisent à faire un abri de fortune. Un poncho sert à la fois de vêtement de pluie, de bâche et d'abri."
+    }
+   ],
+   "sources": [
+    "S9",
+    "S10",
+    "S11"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "orientation",
+   "cat": "survie",
+   "titre": "S'orienter et se retrouver",
+   "resume": "Trouver le nord sans GPS.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-orientation-1.svg",
+     "titre": "Trouver le sud avec une montre",
+     "alt": "En France, pointez l'aiguille des heures vers le soleil : le sud est à mi-chemin entre cette aiguille et le chiffre 1 en hiver, ou le chiffre 2 en été.",
+     "relecture_secours": false
+    },
+    {
+     "t": "steps",
+     "titre": "Si vous êtes perdu",
+     "items": [
+      "Gardez votre calme, ne foncez pas tête baissée.",
+      "Revenez sur vos pas.",
+      "Repérez-vous sur la carte grâce aux points remarquables.",
+      "Restez sur les sentiers, pas sur les passages d'animaux."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Trouver le nord",
+     "items": [
+      "Le soleil se lève à l'est et se couche à l'ouest. En France, il passe plein sud vers 13 h en hiver et vers 14 h en été (heure légale).",
+      "Avec une montre à aiguilles : pointez l'aiguille des heures vers le soleil. Le sud est à mi-chemin entre cette aiguille et le chiffre 1 (en hiver) ou 2 (en été).",
+      "La nuit, l'étoile Polaire indique le nord.",
+      "La mousse sur les arbres n'est pas un indicateur fiable."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Boussole et carte papier de votre région restent les outils les plus sûrs. Le téléphone et le GPS aident, mais la batterie et le réseau peuvent lâcher."
+    }
+   ],
+   "sources": [
+    "S9",
+    "S10",
+    "S11"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "signaux",
+   "cat": "survie",
+   "titre": "Se signaler aux secours",
+   "resume": "Feu, sifflet, lumière, signaux au sol.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-signaux-1.svg",
+     "titre": "Se signaler aux secours",
+     "alt": "Trois feux disposés en triangle d'environ 30 mètres de côté, et une personne les deux bras levés en Y, qui signifie besoin d'aide.",
+     "relecture_secours": false
+    },
+    {
+     "t": "list",
+     "titre": "Les signaux de détresse",
+     "items": [
+      "3 feux en triangle d'environ 30 m de côté. Le jour, ajoutez des végétaux frais pour faire de la fumée. La nuit, privilégiez les flammes.",
+      "Sifflet : le signal SOS en morse est 3 courts, 3 longs, 3 courts.",
+      "Lumière : lampe la nuit, miroir ou surface réfléchissante le jour.",
+      "Les deux bras levés signifient « besoin d'aide ».",
+      "Signaux tracés au sol avec des branches dans une zone dégagée.",
+      "Signal de détresse en montagne : 6 signaux par minute (sifflet, lampe, gestes), une minute de pause, puis recommencer. La réponse des secours est de 3 signaux par minute."
+     ]
+    },
+    {
+     "t": "check",
+     "id": "signal-kit",
+     "titre": "Pour me signaler",
+     "items": [
+      "Sifflet",
+      "Lampe clignotante",
+      "Tissu ou panneau « SOS » de couleur vive",
+      "Gilets fluorescents",
+      "Couverture de survie"
+     ]
+    }
+   ],
+   "sources": [
+    "S9",
+    "S4",
+    "S10"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "cueillette",
+   "cat": "survie",
+   "titre": "Cueillette de plantes sauvages",
+   "resume": "3 plantes communes et les règles de sécurité.",
+   "duree": "4 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "alert",
+     "body": "Ne consommez que ce que vous avez identifié avec certitude : la flore compte des espèces mortelles. En cas de doute, demandez à un spécialiste. Mieux vaut connaître parfaitement une quinzaine de plantes que d'en confondre cent."
+    },
+    {
+     "t": "list",
+     "titre": "Les règles",
+     "items": [
+      "Évitez les zones polluées (bords de route, passages d'animaux).",
+      "Ne prenez que le nécessaire, uniquement des plantes abondantes et non protégées.",
+      "Cuisez ou lavez très bien les plantes contre les parasites.",
+      "Commencez par de petites quantités.",
+      "Transportez-les dans du tissu ou du papier plutôt que du plastique."
+     ]
+    },
+    {
+     "t": "plant",
+     "titre": "Plantain",
+     "items": [
+      [
+       "Où",
+       "Prairies, champs"
+      ],
+      [
+       "Quand",
+       "Toute l'année"
+      ],
+      [
+       "Manger",
+       "Feuilles en salade ou en légume, jeunes fleurs au goût de champignon"
+      ]
+     ]
+    },
+    {
+     "t": "plant",
+     "titre": "Ortie",
+     "items": [
+      [
+       "Où",
+       "Sols riches"
+      ],
+      [
+       "Quand",
+       "Mars à novembre"
+      ],
+      [
+       "Manger",
+       "Feuilles et graines cuites, jeunes feuilles hachées en salade"
+      ],
+      [
+       "Autre",
+       "Ses fibres donnent une ficelle résistante"
+      ]
+     ]
+    },
+    {
+     "t": "plant",
+     "titre": "Massette",
+     "items": [
+      [
+       "Où",
+       "Étangs, marais"
+      ],
+      [
+       "Quand",
+       "Pousses de mars à juin, fleurs femelles en juin et juillet, rhizome de novembre à mars"
+      ],
+      [
+       "Manger",
+       "Rhizome riche en amidon, jeunes pousses crues, pollen riche en protéines, jeunes fleurs femelles comme un épi de maïs"
+      ],
+      [
+       "Attention",
+       "Jeune, elle peut être confondue avec l'iris jaune, toxique. Ne la cueillez qu'en fleur ou en épi, quand elle est reconnaissable avec certitude."
+      ]
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "La cueillette de champignons n'est pas couverte par les documents sources : ce module reste à créer avec un référent mycologue ou un pharmacien."
+    }
+   ],
+   "sources": [
+    "S9",
+    "S10"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Identification et confusions possibles : à faire relire par un pharmacien ou un botaniste"
+   ]
+  },
+  {
+   "id": "nourriture",
+   "cat": "survie",
+   "titre": "Se nourrir sur la durée",
+   "resume": "Pêche, conservation, potager.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "En Europe, le risque de mourir de faim en nature est presque inexistant : on tient plusieurs semaines sans manger, mais le manque affaiblit. La cueillette devrait constituer la base."
+    },
+    {
+     "t": "list",
+     "titre": "Protéines",
+     "items": [
+      "Les petits invertébrés (sauterelles, grillons, escargots) sont une source de protéines, toujours bien cuits.",
+      "La pêche demande un permis, ou une autorisation pour la nasse et le filet.",
+      "La chasse et le piégeage sont strictement encadrés par la loi et la plupart des animaux sont protégés.",
+      "Cuisez toujours viande et poisson : ils transmettent des maladies."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Conserver",
+     "items": [
+      "Riz, haricots secs et blé se gardent des années.",
+      "Mise sous vide, sachets absorbeurs d'oxygène et déshumidificateurs.",
+      "Pot en terre « zeer » pour garder au frais sans électricité, séchage de la viande."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Produire",
+     "items": [
+      "Le potager coûte moins d'énergie que la recherche de nourriture.",
+      "Gardez quelques sachets de graines dans votre sac, en évitant les variétés hybrides F1 qui ne se ressèment pas.",
+      "Les graines et engrais se conservent longtemps."
+     ]
+    }
+   ],
+   "sources": [
+    "S9",
+    "S10",
+    "S11"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "hygiene",
+   "cat": "survie",
+   "titre": "Hygiène sans eau courante",
+   "resume": "Rester en bonne santé quand les toilettes ne marchent plus.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "Une mauvaise hygiène favorise les bactéries, et la moindre coupure peut s'infecter. Ne la négligez pas, même en économisant l'eau."
+    },
+    {
+     "t": "list",
+     "titre": "Les bons gestes",
+     "items": [
+      "Lavez-vous régulièrement, au gant de toilette pour économiser l'eau. Le savon de Marseille sert aussi de lessive.",
+      "Gel hydroalcoolique pour les mains.",
+      "En ville sans toilettes : faites vos besoins dans des sacs plastiques que vous jetterez ensuite.",
+      "En nature : loin du campement et jamais près d'une source d'eau.",
+      "Gants pour toute manipulation de déchets.",
+      "Désinfectez à la javel toilettes et poignées.",
+      "Changez de vêtements régulièrement et réparez les accrocs au fur et à mesure."
+     ]
+    }
+   ],
+   "sources": [
+    "S10",
+    "S11",
+    "S12"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "trousse-survie",
+   "cat": "survie",
+   "titre": "Trousse de survie nature",
+   "resume": "Le petit kit à emporter même en balade.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "check",
+     "id": "survie-trousse",
+     "titre": "Contenu",
+     "items": [
+      "Briquet ou allumettes",
+      "Couteau",
+      "Ficelle ou paracorde",
+      "Couverture de survie",
+      "Bougie",
+      "Système de filtration ou de désinfection de l'eau",
+      "Sifflet",
+      "Boussole",
+      "Petite trousse de pharmacie",
+      "Mouchoirs",
+      "Sacs plastiques",
+      "Fil de pêche et hameçons",
+      "Scie-fil",
+      "Fil et aiguilles"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "survie-vetements",
+     "titre": "Toujours dans le sac",
+     "items": [
+      "Vêtements chauds et imperméables",
+      "Poncho",
+      "Eau",
+      "Nourriture",
+      "Carte de la zone"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Le matériel ne remplace pas la technique. Entraînez-vous : savoir faire un nœud ou un feu s'apprend avant l'urgence."
+    }
+   ],
+   "sources": [
+    "S9",
+    "S11"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "retour",
+   "cat": "apres",
+   "titre": "Rentrer chez soi",
+   "resume": "Quand et comment réintégrer son logement.",
+   "duree": "3 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "steps",
+     "titre": "Les étapes",
+     "items": [
+      "Ne rentrez qu'avec l'accord des autorités.",
+      "Odeur de gaz : éloignez-vous et appelez les secours ou l'urgence gaz.",
+      "Si vous étiez hébergé ailleurs qu'en centre d'accueil, prévenez la mairie de votre retour.",
+      "Logement très endommagé : déclarez le sinistre à votre assureur et attendez l'expert avant de nettoyer."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "En attendant l'expert (si le logement est sûr)",
+     "items": [
+      "Aérez, remettez le chauffage en route si l'installation est sèche.",
+      "Prenez des photos intérieur et extérieur, marquez les hauteurs d'eau.",
+      "Listez meubles et appareils endommagés, sans rien jeter.",
+      "Vérifiez l'état des aliments, surtout les surgelés.",
+      "Signalez vos besoins à la mairie."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Après le passage de l'expert",
+     "items": [
+      "Nettoyez avec des gants, désinfectez à l'eau de Javel.",
+      "Chauffez pour sécher après une inondation.",
+      "Ne touchez jamais aux animaux morts ni aux produits chimiques abandonnés : prévenez la mairie."
+     ]
+    }
+   ],
+   "sources": [
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "assurance",
+   "cat": "apres",
+   "titre": "Assurance et catastrophe naturelle",
+   "resume": "Les délais à ne pas manquer.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "Vous n'êtes indemnisé au titre des catastrophes naturelles que si la commune est reconnue en état de catastrophe naturelle par un arrêté interministériel."
+    },
+    {
+     "t": "steps",
+     "titre": "La démarche",
+     "items": [
+      "Dès le sinistre, signalez-vous à la mairie, qui demande la reconnaissance de l'état de catastrophe naturelle à la préfecture.",
+      "Prévenez votre assureur sans attendre et dressez la liste des dégâts, photos à l'appui.",
+      "Après la publication de l'arrêté au Journal officiel, vous avez 30 jours pour déclarer vos dommages (règle en vigueur depuis le 1er janvier 2023).",
+      "Les délais de versement de l'indemnité sont fixés par le code des assurances : consultez service-public.fr."
+     ]
+    },
+    {
+     "t": "text",
+     "titre": "Le soutien de la commune",
+     "body": "Si la commune a un Plan communal de sauvegarde, elle peut ouvrir un point d'accueil, aider à refaire les papiers, orienter vers les assureurs et, si besoin, fournir hébergement, eau et nourriture."
+    },
+    {
+     "t": "form",
+     "id": "assureur",
+     "titre": "Mon assureur",
+     "fields": [
+      "Nom de l'assurance",
+      "Téléphone",
+      "Numéro de contrat"
+     ]
+    }
+   ],
+   "sources": [
+    "S15",
+    "S4"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "moral",
+   "cat": "apres",
+   "titre": "Prendre soin du moral",
+   "resume": "Après le choc, parler et se faire accompagner.",
+   "duree": "2 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "list",
+     "items": [
+      "Le stress d'une crise laisse des traces, même chez ceux qui semblent bien l'avoir vécue.",
+      "Mettre des mots sur ce qui a été vécu évite le repli sur soi.",
+      "Un suivi psychologique peut être proposé : n'hésitez pas à l'accepter.",
+      "Repas chauds, jeux, lecture et contacts réguliers soutiennent le moral pendant l'attente.",
+      "Pour les enfants : une peluche et des jeux calmes.",
+      "Idées noires ou détresse : le 3114, numéro national de prévention du suicide, répond 24 h sur 24, gratuitement."
+     ]
+    }
+   ],
+   "sources": [
+    "S13",
+    "S11",
+    "S12"
+   ],
+   "niveau": "pratique",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "cellule-crise",
+   "cat": "mairie",
+   "titre": "Activer le poste de commandement communal",
+   "resume": "Le plan communal de sauvegarde en action : organisation, rôles, méthode.",
+   "duree": "6 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "body": "Le plan communal de sauvegarde (PCS) organise la réponse de la commune. Le maire est directeur des opérations de secours sur sa commune ; les sapeurs-pompiers commandent les opérations de secours sur le terrain. Le poste de commandement communal (PCC) coordonne l'alerte, l'information, l'accueil et le soutien de la population."
+    },
+    {
+     "t": "kv",
+     "titre": "Les 4 piliers de la préparation",
+     "items": [
+      [
+       "Organisation",
+       "Une gouvernance, une organisation agile"
+      ],
+      [
+       "Processus",
+       "Préparation, alerte, mobilisation, pilotage, sortie, RETEX"
+      ],
+      [
+       "Méthode",
+       "Simple, connue et appropriée par tous"
+      ],
+      [
+       "Outils",
+       "Éprouvés, y compris en mode dégradé"
+      ]
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "La méthode en 4 étapes",
+     "items": [
+      "Établir les faits : qui, quoi, quand, où, comment, effets, mesures prises, premiers impacts, personnes présentes.",
+      "Analyser les impacts immédiats et futurs : personnes, activités, image, responsabilité, environnement, finances.",
+      "Lister les parties prenantes : impliquées, impactées, à informer.",
+      "Bâtir le plan d'actions : chaque action a un responsable, une échéance, une priorité et un suivi."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Les rôles au poste de commandement communal",
+     "items": [
+      "Le maire : décide, fixe les priorités, valide les messages à la population.",
+      "Le responsable des actions communales : anime la méthode, suit le plan d'actions et les délais.",
+      "Secrétariat et main courante : trace chaque information et chaque décision (elle peut servir de pièce juridique).",
+      "Communication : messages à la population, aux médias, veille des réseaux sociaux.",
+      "Terrain et liaison : agents et élus sur place, réserve communale de sécurité civile.",
+      "Accueil et hébergement : centres d'accueil, ravitaillement, personnes vulnérables.",
+      "Logistique : matériel, véhicules, moyens de communication de secours.",
+      "Anticipation : imagine les évolutions possibles de la situation."
+     ]
+    },
+    {
+     "t": "check",
+     "id": "crise-outils",
+     "titre": "Outils à préparer",
+     "items": [
+      "Manuel de crise et fiches réflexes",
+      "Annuaire de crise avec suppléants",
+      "Main courante",
+      "Tableau de situation",
+      "Chronogramme",
+      "Salle de crise équipée",
+      "Salle de repli sur un autre site",
+      "Moyens de communication alternatifs",
+      "Mallette d'astreinte"
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Une équipe formée avec du papier, des stylos et un téléphone fera toujours mieux qu'une équipe non formée équipée d'un logiciel sophistiqué."
+    }
+   ],
+   "sources": [
+    "S13",
+    "S3"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Rôles et obligations du PCS (loi du 25 novembre 2021 dite Matras) : à vérifier sur Légifrance et le guide PCS de la DGSCGC"
+   ]
+  },
+  {
+   "id": "pilotage",
+   "cat": "mairie",
+   "titre": "Piloter la crise",
+   "resume": "Alerte, briefing, points de situation.",
+   "duree": "5 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "text",
+     "titre": "Faut-il activer le poste de commandement ?",
+     "body": "Posez 3 questions. L'organisation habituelle gère-t-elle tous les impacts ? Toutes les parties prenantes ? Les services sont-ils coordonnés ? Un seul « non » justifie la mobilisation. En cas de doute, mobilisez : c'est le principe de réponse prudente."
+    },
+    {
+     "t": "steps",
+     "titre": "Le briefing initial",
+     "items": [
+      "Tour de table, rappel des rôles et des règles (validation, confidentialité, discipline).",
+      "Vérification des outils.",
+      "Constat de la situation et recueil des faits au tableau.",
+      "Impacts immédiats et cartographie des parties prenantes.",
+      "Évolutions possibles et périmètre d'action de la cellule.",
+      "Ressources mobilisables et objectifs de sortie de crise.",
+      "Premier plan d'actions validé par le directeur.",
+      "Messages prioritaires et heure du prochain point."
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Le point de situation (10 minutes maximum)",
+     "items": [
+      "Évolution des faits, des impacts, des parties prenantes.",
+      "Statut de chaque action : non engagée, en cours, terminée, bloquée.",
+      "Nouvelles orientations du directeur.",
+      "Heure du prochain point."
+     ]
+    },
+    {
+     "t": "alert",
+     "body": "Le point de situation n'est pas un débat : c'est une mise à jour courte, à heure fixe."
+    },
+    {
+     "t": "list",
+     "titre": "Pièges humains à connaître",
+     "items": [
+      "Biais d'optimisme : se croire moins exposé que les autres.",
+      "Biais de confirmation : retenir ce qui confirme son hypothèse.",
+      "Biais de narration : reconstruire une histoire trop logique.",
+      "Pilotage à l'oral, sans trace écrite.",
+      "Stress excessif, fatigue : prévoir les relèves."
+     ]
+    }
+   ],
+   "sources": [
+    "S13"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "com-crise",
+   "cat": "mairie",
+   "titre": "Communiquer en crise",
+   "resume": "Informer la population, juste et vite.",
+   "duree": "5 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "kv",
+     "titre": "La trame d'un message",
+     "items": [
+      [
+       "Faits",
+       "Ce qui s'est passé, vérifié"
+      ],
+      [
+       "Actes",
+       "Les mesures prises"
+      ],
+      [
+       "Empathie",
+       "La compassion envers les personnes touchées"
+      ],
+      [
+       "Engagement",
+       "Ce que vous allez faire"
+      ],
+      [
+       "Transparence",
+       "Ce que vous savez et ne savez pas"
+      ]
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Les bons principes",
+     "items": [
+      "Communiquez vite, uniquement des informations vérifiées.",
+      "Ne vous engagez pas sur une date précise de retour à la normale.",
+      "Informez régulièrement et occupez l'espace avant les rumeurs.",
+      "Ton pédagogique et rassurant, sans termes anxiogènes, adapté au public.",
+      "Informez d'abord vos agents, puis la population.",
+      "Prévoyez des canaux alternatifs si les canaux habituels sont coupés.",
+      "Gelez les publications programmées sur les réseaux sociaux.",
+      "Centralisez les demandes de la presse."
+     ]
+    },
+    {
+     "t": "dodont",
+     "titre": "Les pièges",
+     "dont": [
+      "Le silence : il nourrit la rumeur.",
+      "Le déni ou les déclarations faussement rassurantes.",
+      "Le manque d'empathie ou d'humilité.",
+      "Accuser autrui.",
+      "Le mensonge : perte de confiance et sanctions."
+     ]
+    },
+    {
+     "t": "check",
+     "id": "cyber-avant",
+     "titre": "Crise cyber : avant",
+     "items": [
+      "Faire se rencontrer équipes communication et informatique",
+      "Préparer des scénarios (rançongiciel, saturation, défiguration du site)",
+      "Constituer une boîte à outils de communication de crise",
+      "Participer à un exercice de crise cyber",
+      "Entraîner les porte-parole face aux médias"
+     ]
+    },
+    {
+     "t": "check",
+     "id": "cyber-apres",
+     "titre": "Crise cyber : après",
+     "items": [
+      "Remercier les équipes",
+      "Faire un retour d'expérience sur la communication",
+      "Partager un témoignage public",
+      "Sensibiliser les agents aux bonnes pratiques"
+     ]
+    }
+   ],
+   "sources": [
+    "S13",
+    "S14"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  },
+  {
+   "id": "cyberattaque-commune",
+   "cat": "mairie",
+   "titre": "Cyberattaque contre la commune",
+   "resume": "Les premières heures, côté technique et côté communication.",
+   "duree": "4 min",
+   "prioritaire": false,
+   "sensible": false,
+   "blocs": [
+    {
+     "t": "steps",
+     "titre": "Les premières heures",
+     "items": [
+      "Isolez du réseau les postes et serveurs touchés, sans les éteindre.",
+      "Activez la cellule de crise : maire, direction générale, informatique, communication.",
+      "Faites-vous aider : 17cyber.gouv.fr est ouvert aux collectivités, et le centre régional de réponse aux incidents (CSIRT) de votre région peut intervenir.",
+      "Si des données personnelles sont touchées, notifiez la CNIL dans les 72 heures.",
+      "Portez plainte, et ne payez pas de rançon.",
+      "Passez en mode dégradé : papier, téléphones de secours, procédures prévues à l'avance."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Communiquer pendant l'attaque",
+     "items": [
+      "Organisez l'équipe de communication de crise et répartissez les rôles.",
+      "Établissez les faits avant de parler, puis choisissez une posture : communication proactive ou réactive.",
+      "Ne communiquez que des informations vérifiées et ne promettez pas de date de retour à la normale.",
+      "Informez d'abord les agents, puis les habitants et les usagers.",
+      "Ton pédagogique et rassurant, sans termes techniques ni anxiogènes.",
+      "Utilisez des canaux de secours si la messagerie ou le site sont touchés, et rappelez aux agents la conduite à tenir face aux médias et sur les réseaux sociaux.",
+      "Gelez les publications programmées et centralisez les demandes de la presse."
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Préparez-vous avant : un exercice de crise cyber, une boîte à outils de communication prête et des sauvegardes testées font la différence. Voir « Communiquer en crise » et « Exercices et retour d'expérience »."
+    }
+   ],
+   "sources": [
+    "S14",
+    "S22",
+    "S24"
+   ],
+   "niveau": "officiel",
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": [
+    "Coordonnées du CSIRT régional (Pays de la Loire pour La Baule) à ajouter"
+   ]
+  },
+  {
+   "id": "exercice-retex",
+   "cat": "mairie",
+   "titre": "Exercices et retour d'expérience",
+   "resume": "S'entraîner, puis apprendre de chaque crise.",
+   "duree": "4 min",
+   "prioritaire": false,
+   "blocs": [
+    {
+     "t": "kv",
+     "titre": "4 types d'exercices",
+     "items": [
+      [
+       "Partiel",
+       "Tester une procédure, en peu de temps"
+      ],
+      [
+       "Sur table",
+       "Tester sans moyens terrain les scénarios difficiles à simuler (nucléaire, NRBC)"
+      ],
+      [
+       "Général",
+       "Tester l'ensemble du dispositif, avec plusieurs acteurs"
+      ],
+      [
+       "Terrain",
+       "Conditions réelles, mobilisation des astreintes"
+      ]
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Préparer un exercice",
+     "items": [
+      "Partir d'un état des lieux.",
+      "Fixer objectifs et publics visés.",
+      "Écrire un scénario et une chronologie crédibles : chaque incident simulé sert un objectif.",
+      "Préférer un format pédagogique à un format trop stressant.",
+      "Débriefer à chaud, puis rédiger un rapport selon les 4 piliers."
+     ]
+    },
+    {
+     "t": "kv",
+     "titre": "Le retour d'expérience (RETEX)",
+     "items": [
+      [
+       "À chaud",
+       "Juste après la crise, avec la cellule : tour de table, à l'oral"
+      ],
+      [
+       "À froid",
+       "Une fois la crise résolue, avec tous les acteurs : questionnaire anonyme, entretiens, écrit"
+      ]
+     ]
+    },
+    {
+     "t": "tip",
+     "body": "Un bon RETEX met en avant les faiblesses : techniques, organisationnelles et humaines. Il met à jour le plan de crise sans figer la réponse, car la prochaine crise sera différente."
+    }
+   ],
+   "sources": [
+    "S13"
+   ],
+   "niveau": "officiel",
+   "sensible": false,
+   "version": "1.1",
+   "maj": "2026-11-25",
+   "relecture": {
+    "statut": "non relu",
+    "nom": null,
+    "qualite": null,
+    "date": null
+   },
+   "a_verifier": []
+  }
+ ]
+}

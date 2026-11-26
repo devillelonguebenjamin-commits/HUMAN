@@ -1,3 +1,10 @@
 __pycache__/
 *.pyc
 outils/releves_prix.csv
+
+# Application iPhone
+app/*.xcodeproj
+app/**/xcuserdata/
+app/SijamaisKit/.build/
+app/SijamaisKit/.swiftpm/
+.DS_Store
