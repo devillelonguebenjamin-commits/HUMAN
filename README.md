@@ -20,6 +20,7 @@ Commencer par `00_SYNTHESE_DECISION.md` (deux pages), puis `questions_ouvertes.m
 | `11_module_communication_hors_reseau.md` | Analyse et plan du module de messagerie hors réseau (Bluetooth, Wi-Fi Aware, Meshtastic), à valider |
 | `12_assistant_ia_local.md` | Assistant IA local : modèle d'Apple, trois niveaux, règle « rien qui ne soit pas dans un guide », tests à mener |
 | `13_reseau_entraide.md` | Réseau d'entraide (compétences et moyens des habitants) : analyse RGPD, risques, dispositif en deux temps |
+| `14_cartes_hors_ligne.md` | Cartes hors ligne : pourquoi pas encore, sources prêtes à l'emploi (Protomaps, IGN, Géo'DAE), plan de travail |
 | `app/` | **Code de l'application iPhone** (SwiftUI) et de son cœur `SijamaisKit` testé ; mode d'emploi dans `app/README.md` |
 | `contenus/guides/` | Guides de l'application : version 1.0 fournie par Benjamin, revue, version 1.1 (JSON et fichier Word `SIJAMAIS_guides_v1.1.docx` pour Claude Design) |
 | `prompts/claude_design_schemas_guides.md` | Prompt Claude Design : 24 schémas pédagogiques et mise en page des guides, règles pour les photos |
