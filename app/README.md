@@ -21,10 +21,10 @@ Première version du code de l'application, commencée le 26 novembre 2026. Swif
 | Urgence | Appel direct du 112, 15, 18, 17 et 114 par SMS ; 7 réflexes ; 12 scénarios ; premiers secours |
 | Assistant (au centre) | Questions fréquentes, recherche dans les guides, reformulation par le modèle d'Apple quand il est disponible, bandeau 15 et 112 pour la santé, sans jamais de reformulation |
 | Savoir | Les 46 guides par catégorie, avec schémas, listes à cocher et formulaires enregistrés sur le téléphone |
-| Carte | Écran d'attente : la carte hors ligne (MapLibre) est la prochaine étape |
+| Carte | Carte hors ligne MapLibre (fond OpenStreetMap par Protomaps) : hôpitaux, pompiers, pharmacies, police, mairies, position GPS. Le fichier de carte s'extrait sur le Mac (voir plus bas) |
 | Réglages | Foyer, commune, données personnelles, à propos |
 
-Pas encore fait : carte hors ligne, profil d'aidant et QR code, espace commune, abonnement, contenus de loisir, notifications.
+Pas encore fait : défibrillateurs et téléchargement des cartes de toute la France, profil d'aidant et QR code, espace commune, abonnement, contenus de loisir, notifications.
 
 ## Ouvrir le projet sur ton Mac (première fois)
 
@@ -53,6 +53,19 @@ Dans le Terminal :
 2. Appuyer sur le bouton Lecture (ou Cmd + R).
 3. Pour l'installer sur ton iPhone : brancher l'iPhone, le choisir en haut, puis dans « Signing & Capabilities » choisir ton équipe (ton identifiant Apple, « Personal Team »). Avec un identifiant gratuit, l'application expire au bout de 7 jours.
 4. Le simulateur n'a pas le modèle d'Apple : l'assistant y affiche les passages des guides. Pour tester la reformulation, il faut un iPhone compatible (15 Pro ou plus récent) avec Apple Intelligence activée, en français.
+
+## Ajouter la carte de la Loire-Atlantique (prototype)
+
+Le fichier de carte est trop lourd pour le dépôt : on le fabrique sur le Mac.
+
+```
+brew install pmtiles
+cd ~/Documents/GitHub/HUMAN
+bash outils/extraire_carte.sh
+cd app && xcodegen generate
+```
+
+Le fichier `loire-atlantique.pmtiles` est rangé dans `app/Sijamais/Resources/Cartes/` et ignoré par Git.
 
 ## Lancer les tests
 

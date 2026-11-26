@@ -8,3 +8,6 @@ app/**/xcuserdata/
 app/SijamaisKit/.build/
 app/SijamaisKit/.swiftpm/
 .DS_Store
+
+# Fichiers de carte (trop lourds pour le dépôt)
+*.pmtiles

@@ -329,3 +329,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Résultat.** Homebrew et XcodeGen installés par Benjamin, projet généré, **application compilée et lancée du premier coup** sur le simulateur iPhone 18 Pro. Prise en main, accueil, assistant au centre et guides fonctionnent.
 
 **Corrections après ses essais.** (1) Sécurité : « Je n'arrive plus à respirer » affichait les gestes à faire sur une autre personne (arrêt cardiaque). Désormais, quand la personne parle d'elle-même d'une urgence de santé, l'assistant répond d'abord « Appelez le 15 ou le 112 maintenant, 114 par SMS si vous ne pouvez pas parler ». (2) « Le rythme du massage cardiaque » ne trouvait pas l'étape « 100 à 120 par minute » : synonymes ajoutés. (3) « J'ai peur » ne trouvait rien : renvoi au guide « Prendre soin du moral » (avec le 3114). (4) Titre « Urgence vitale » tronqué dans le bandeau rouge. 22 tests, tous réussis.
+
+## 2026-11-26 : carte hors ligne, étape A
+
+**Décision de Benjamin.** Lancement de l'étape A du plan des cartes (`14_cartes_hors_ligne.md`).
+
+**Travail fait.** MapLibre 7.1.0 ajouté au projet ; onglet Carte branché sur un fichier PMTiles local (fond Protomaps tiré d'OpenStreetMap), avec un style SIJAMAIS (relief des routes, eau, végétation, bâtiments, noms des communes et des rues) et les services utiles en couleur (hôpitaux, pompiers, pharmacies, police, mairies), position GPS, légende et mention obligatoire d'OpenStreetMap. Polices Noto Sans (licence OFL) embarquées pour les noms. Script `outils/extraire_carte.sh` pour extraire la Loire-Atlantique sur le Mac : le site de Protomaps n'est pas accessible depuis l'environnement de Claude. Défibrillateurs (Géo'DAE) reportés à l'étape B, data.gouv.fr étant lui aussi inaccessible d'ici.

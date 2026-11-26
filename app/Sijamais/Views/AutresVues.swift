@@ -36,22 +36,59 @@ struct PreparerView: View {
     }
 }
 
-/// Carte hors ligne : prochaine étape du développement (MapLibre et fichiers PMTiles).
+/// Onglet Carte : la carte hors ligne si un fichier de carte est présent, sinon un écran d'explication.
 struct CarteView: View {
+    @State private var style: URL? = CarteHorsLigne.styleLocal()
+
     var body: some View {
-        List {
-            Section {
-                Label("Carte hors ligne en cours de développement", systemImage: "map")
-                    .font(.headline)
-                Text("La carte de votre département se téléchargera à l'installation et fonctionnera sans réseau : hôpitaux, pompiers, défibrillateurs, points de rassemblement de la commune.")
-                    .font(.footnote).foregroundStyle(.secondary)
-            }
-            Section("En attendant") {
-                Text("Les défibrillateurs proches : application Staying Alive.")
-                Text("Les risques de votre commune : georisques.gouv.fr, quand le réseau est disponible.")
+        Group {
+            if let style {
+                ZStack(alignment: .bottom) {
+                    CarteMapLibre(styleURL: style).ignoresSafeArea(edges: .top)
+                    Legende()
+                }
+            } else {
+                List {
+                    Section {
+                        Label("Aucune carte téléchargée", systemImage: "map")
+                            .font(.headline)
+                        Text("La carte de votre département se téléchargera une fois, puis fonctionnera sans réseau : hôpitaux, pompiers, pharmacies, défibrillateurs, points de rassemblement de la commune.")
+                            .font(.footnote).foregroundStyle(.secondary)
+                    }
+                    Section("En attendant") {
+                        Text("Les défibrillateurs proches : application Staying Alive.")
+                        Text("Les risques de votre commune : georisques.gouv.fr, quand le réseau est disponible.")
+                    }
+                }
             }
         }
         .navigationTitle("Carte")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+private struct Legende: View {
+    private let elements: [(String, Color)] = [
+        ("Hôpital", Charte.secours), ("Pompiers", Color(hex: 0xC2410C)), ("Pharmacie", Charte.securite),
+        ("Police", Charte.eau), ("Mairie", Charte.foret),
+    ]
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            FlowLayout(spacing: 10) {
+                ForEach(elements, id: \.0) { nom, couleur in
+                    HStack(spacing: 4) {
+                        Circle().fill(couleur).frame(width: 10, height: 10)
+                        Text(nom).font(.caption2)
+                    }
+                }
+            }
+            Text("Hors ligne · © les contributeurs d'OpenStreetMap. En urgence vitale, appelez le 15 ou le 112.")
+                .font(.caption2).foregroundStyle(.secondary)
+        }
+        .padding(10)
+        .background(RoundedRectangle(cornerRadius: 14).fill(.regularMaterial))
+        .padding(10)
     }
 }
 
