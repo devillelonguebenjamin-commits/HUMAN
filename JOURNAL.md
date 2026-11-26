@@ -307,3 +307,11 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Décisions de Benjamin.** Recommandations E1 à E5 du réseau d'entraide validées. Besoin d'un fichier Word des guides à joindre au prompt Claude Design.
 
 **Travail fait.** `contenus/guides/SIJAMAIS_guides_v1.1.docx` (43 pages, produit par `outils/guides_en_word.js`) : couverture, mode d'emploi, sommaire, les 46 guides avec identifiant, niveau, bandeaux d'urgence, emplacements des 24 schémas, sources et points à vérifier. Guides : SAUV Life et Staying Alive ajoutés (arrêt cardiaque, entraide), profil d'aidant mentionné. Maquette : écran « Mon profil d'aidant » (catalogue à cocher, contact facultatif sans adresse, partage par QR code, trois niveaux de visibilité du futur réseau communal, majeurs seulement), accessible depuis Famille ; couche « Aidants » sur la carte et liste d'exemples fictifs de la commune.
+
+## 2026-11-26 : schémas des guides intégrés
+
+**Apport de Benjamin.** Les 24 schémas réalisés avec Claude Design (SVG), leurs textes alternatifs et un PDF de maquettes d'écran.
+
+**Vérification.** Aucun script, lien externe ni dégradé dans les SVG. Contenu conforme aux guides (électrodes du défibrillateur, position latérale de sécurité, méthode de la montre adaptée à l'heure française). Le kit de 72 heures est une composition originale, sans reprise de l'illustration protégée de l'affiche officielle. Défaut mineur : dans « Étouffement », le chiffre 2 touche le titre.
+
+**Travail fait.** Schémas rangés dans `contenus/guides/schemas/`, ajoutés aux guides comme blocs « schéma » (`guides_v1.1.json`), affichés dans la maquette sur fond clair dans les deux thèmes, et intégrés au fichier Word (53 pages). Idée reprise des maquettes de Claude Design : le bandeau « Urgence vitale » porte deux boutons, 15 et 112. Leur barre d'onglets n'est pas reprise : la variante A reste la référence.

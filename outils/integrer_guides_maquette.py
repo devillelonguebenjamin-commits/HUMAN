@@ -7,6 +7,7 @@ Le script est rejouable : il remplace ce qu'il a généré la fois précédente.
 
 Usage : python3 outils/integrer_guides_maquette.py
 """
+import base64
 import html
 import json
 import re
@@ -77,6 +78,11 @@ def bloc(gid, b, n):
                 f'<label class="g-label" for="c-{gid}-{n}">Personnes dans le foyer</label>'
                 f'<input class="g-input" id="c-{gid}-{n}" type="number" min="1" value="3" data-par="{b["parPersonne"]}" data-unite="{e(b["unite"])}" oninput="calcGuide(this)">'
                 f'<p class="g-res" id="r-c-{gid}-{n}">{3 * b["parPersonne"]} {e(b["unite"])} à stocker</p></div>')
+    if t == "schema":
+        svg = (RACINE / "contenus" / "guides" / "schemas" / b["fichier"]).read_bytes()
+        src = "data:image/svg+xml;base64," + base64.b64encode(svg).decode()
+        return (f'<figure class="g-fig"><img src="{src}" alt="{e(b["alt"])}" loading="lazy">'
+                f'<figcaption>{e(b["titre"])}</figcaption></figure>')
     raise ValueError(f"bloc inconnu : {t}")
 
 
@@ -86,7 +92,8 @@ def ecran_guide(x):
     tete = f'<div class="g-tete">{badge(x)}<span class="mini">{e(x["duree"])} de lecture</span></div>'
     urgence = ""
     if x.get("sensible"):
-        urgence = '<div class="bandeau c-r">' + ic("croix") + '<div><b>Urgence vitale</b><span>Appelez le 15 ou le 112, 114 par SMS</span></div></div>'
+        urgence = ('<div class="bandeau c-r g-urg">' + ic("croix") + '<div style="flex:1"><b>Urgence vitale</b><span>114 par SMS</span></div>'
+                   '<button class="g-appel" onclick="toast(\'Appel du 15 (démonstration)\')">15</button><button class="g-appel" onclick="toast(\'Appel du 112 (démonstration)\')">112</button></div>')
     corps = "".join(bloc(gid, b, n) for n, b in enumerate(x["blocs"]))
     srcs = "".join(f'<li>{e(SOURCES[s]["titre"])}, {e(SOURCES[s]["editeur"])}{", " + e(SOURCES[s]["date"]) if SOURCES[s]["date"] else ""}</li>' for s in x["sources"])
     verif = ""
@@ -145,6 +152,11 @@ css = """/* GUIDES:CSS:DEBUT */
 .g-src{font-size:12px;color:var(--texte2);margin-bottom:6px}
 .g-alert{border:1.5px solid #C8102E;border-radius:14px;padding:12px;font-weight:600;font-size:14.5px;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
 .g-tip{border-left:4px solid #00843D}
+.g-fig{background:#FFFFFF;border-radius:16px;padding:8px;margin:0 0 12px}
+.g-fig img{display:block;width:100%;height:auto}
+.g-fig figcaption{font-size:12px;color:#4E5E54;text-align:center;padding:4px 0 2px}
+.g-urg{align-items:center}
+.g-appel{background:#fff;color:#C8102E;font-weight:800;font-size:18px;border-radius:12px;padding:8px 12px;min-width:56px;text-align:center}
 .g-num{font-size:22px;font-weight:800;color:#C8102E;min-width:64px}
 :root:not([data-theme="light"]) .g-num{color:#FF5A6E}
 .g-label{display:block;font-size:12.5px;color:var(--texte2);margin:8px 0 4px}

@@ -345,6 +345,21 @@ ordre.insert(ordre.index("com-crise") + 1, "cyberattaque-commune")
 for x in nouveaux_guides:
     g[x["id"]] = x
 
+# ---------- Schémas produits avec Claude Design (contenus/guides/schemas/) ----------
+import csv
+with open(RACINE / "contenus" / "guides" / "schemas" / "textes-alternatifs.csv", encoding="utf-8") as fcsv:
+    lignes = list(csv.DictReader(fcsv, delimiter=";"))
+schemas_par_guide = {}
+for l in lignes:
+    n = int(l["N°"])
+    schemas_par_guide.setdefault(l["Guide"], []).append({"t": "schema", "fichier": l["Fichier"], "titre": l["Titre"], "alt": l["Texte alternatif"], "relecture_secours": n <= 6})
+for gid, sch in schemas_par_guide.items():
+    assert gid in g, gid
+    assert (RACINE / "contenus" / "guides" / "schemas" / sch[0]["fichier"]).exists()
+    g[gid]["blocs"] = [b for b in g[gid]["blocs"] if b.get("t") != "schema"]
+    g[gid]["blocs"] = sch + g[gid]["blocs"]
+
+
 SENSIBLES = {"trousses"}
 guides = []
 for gid in ordre:

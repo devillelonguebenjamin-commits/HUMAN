@@ -326,6 +326,13 @@
    "prioritaire": true,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-alerte-1.svg",
+     "titre": "Les signaux d'alerte",
+     "alt": "L'alerte : trois sons modulés de 1 minute 41 secondes séparés de 5 secondes ; la fin d'alerte : un son continu de 30 secondes ; la corne de brume des barrages : 2 secondes de son et 3 de pause pendant 2 minutes.",
+     "relecture_secours": false
+    },
+    {
      "t": "text",
      "titre": "La sirène d'alerte",
      "body": "Plus de 5 000 sirènes couvrent la France. En cas d'alerte, elles émettent 3 séquences de 1 minute 41 secondes, séparées par un silence de 5 secondes. La fin de l'alerte est annoncée par un signal continu de 30 secondes."
@@ -403,6 +410,13 @@
    "prioritaire": true,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-reflexes-1.svg",
+     "titre": "Les 7 réflexes en cas d'alerte",
+     "alt": "Sept pictogrammes : rejoindre un bâtiment, rester loin des fenêtres, n'allumer aucune flamme, rester à l'abri, ne pas téléphoner, écouter la radio et laisser les enfants à l'école.",
+     "relecture_secours": false
+    },
+    {
      "t": "steps",
      "titre": "Les 7 réflexes",
      "items": [
@@ -454,6 +468,13 @@
    "duree": "3 min",
    "prioritaire": true,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-abri-evacuation-1.svg",
+     "titre": "Pièce de mise à l'abri",
+     "alt": "Plan d'une pièce de mise à l'abri, avec le kit et la radio : porte et fenêtre fermées, aération bouchée et bas de porte calfeutré face à l'air pollué extérieur.",
+     "relecture_secours": false
+    },
     {
      "t": "text",
      "titre": "Mise à l'abri chez soi",
@@ -522,6 +543,20 @@
    "duree": "5 min",
    "prioritaire": true,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-risques-1.svg",
+     "titre": "Inondation : ni voiture ni sous-sol",
+     "alt": "Une voiture est emportée par le courant d'une eau peu profonde, et un escalier qui descend vers un sous-sol inondé est barré : ne prenez pas votre voiture et ne descendez pas au sous-sol.",
+     "relecture_secours": false
+    },
+    {
+     "t": "schema",
+     "fichier": "schema-risques-2.svg",
+     "titre": "Séisme : se protéger",
+     "alt": "Pendant un séisme, une personne s'accroupit sous une table solide près d'un mur porteur en protégeant sa tête, loin de la fenêtre.",
+     "relecture_secours": false
+    },
     {
      "t": "risk",
      "titre": "Inondation",
@@ -678,6 +713,20 @@
    "sensible": true,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-arret-cardiaque-1.svg",
+     "titre": "Massage cardiaque",
+     "alt": "Le sauveteur à genoux, bras tendus, appuie avec les mains l'une sur l'autre au centre de la poitrine de la victime allongée, 100 à 120 fois par minute.",
+     "relecture_secours": true
+    },
+    {
+     "t": "schema",
+     "fichier": "schema-arret-cardiaque-2.svg",
+     "titre": "Électrodes du défibrillateur",
+     "alt": "Une électrode se colle sous la clavicule droite de la victime, l'autre sur le côté gauche sous l'aisselle ; le défibrillateur se reconnaît à son cœur blanc et à son éclair sur fond vert.",
+     "relecture_secours": true
+    },
+    {
      "t": "alert",
      "body": "Appelez le 15 ou le 112, mettez le haut-parleur et suivez les instructions."
     },
@@ -727,6 +776,13 @@
    "sensible": true,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-saignement-1.svg",
+     "titre": "Comprimer la plaie",
+     "alt": "La victime est allongée ; le sauveteur appuie fort et sans relâcher sur la plaie avec une main protégée par un gant ou un sac plastique.",
+     "relecture_secours": true
+    },
+    {
      "t": "steps",
      "titre": "Les gestes",
      "items": [
@@ -767,6 +823,13 @@
    "sensible": true,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-inconscient-respire-1.svg",
+     "titre": "Position latérale de sécurité",
+     "alt": "Trois étapes : la personne allongée respire, on la tourne sur le côté, puis elle reste sur le côté, tête basculée en arrière et bouche vers le sol.",
+     "relecture_secours": true
+    },
+    {
      "t": "steps",
      "titre": "Les gestes",
      "items": [
@@ -802,6 +865,13 @@
    "prioritaire": true,
    "sensible": true,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-etouffement-1.svg",
+     "titre": "Claques dans le dos et compressions",
+     "alt": "Vignette 1 : la personne penchée en avant reçoit jusqu'à 5 claques entre les omoplates ; vignette 2 : le sauveteur, derrière elle, tire son poing placé au creux de l'estomac vers lui et vers le haut, jusqu'à 5 fois.",
+     "relecture_secours": true
+    },
     {
      "t": "steps",
      "titre": "Chez l'adulte et l'enfant",
@@ -846,6 +916,13 @@
    "sensible": true,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-brulure-1.svg",
+     "titre": "Refroidir la brûlure",
+     "alt": "La zone brûlée est placée sous un filet d'eau tempérée du robinet, pendant au moins 20 minutes.",
+     "relecture_secours": true
+    },
+    {
      "t": "steps",
      "titre": "Les gestes",
      "items": [
@@ -884,6 +961,13 @@
    "prioritaire": true,
    "sensible": true,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-monoxyde-1.svg",
+     "titre": "Monoxyde de carbone",
+     "alt": "Groupe électrogène, barbecue et chauffage d'appoint à combustion sont interdits à l'intérieur ; en cas de doute, ouvrez portes et fenêtres pour aérer.",
+     "relecture_secours": false
+    },
     {
      "t": "list",
      "titre": "Les signes",
@@ -934,6 +1018,13 @@
    "sensible": false,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-coupure-electricite-1.svg",
+     "titre": "Coupure d'électricité",
+     "alt": "Gardez le réfrigérateur et le congélateur fermés, et laissez une lampe allumée pour voir le retour du courant.",
+     "relecture_secours": false
+    },
+    {
      "t": "steps",
      "titre": "Tout de suite",
      "items": [
@@ -981,6 +1072,13 @@
    "prioritaire": false,
    "sensible": false,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-canicule-1.svg",
+     "titre": "Canicule : volets et aération",
+     "alt": "Le jour, volets et fenêtres restent fermés contre la chaleur ; la nuit, on ouvre les fenêtres pour aérer.",
+     "relecture_secours": false
+    },
     {
      "t": "list",
      "titre": "Les bons gestes",
@@ -1067,6 +1165,13 @@
    "prioritaire": true,
    "sensible": false,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-cyberattaque-1.svg",
+     "titre": "Appareil bloqué par une rançon",
+     "alt": "Un ordinateur affiche une demande de rançon : coupez le Wi-Fi, débranchez le câble, ne l'éteignez pas et ne payez pas.",
+     "relecture_secours": false
+    },
     {
      "t": "text",
      "body": "Une cyberattaque peut vous viser directement (appareil bloqué contre une rançon, compte piraté, arnaque) ou toucher tout le pays : hôpitaux, paiements, téléphone, internet. Dans les deux cas, quelques réflexes limitent les dégâts."
@@ -1224,6 +1329,20 @@
    "prioritaire": true,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-kit72h-1.svg",
+     "titre": "Le kit d'urgence 72 h",
+     "alt": "Les objets du kit posés à plat : radio, lampe, piles, bougies, chargeur, eau, conserves, ouvre-boîte, couteau, trousse de secours, médicaments, lunettes, vêtements chauds, couverture de survie, papiers, clés, argent liquide et jeux.",
+     "relecture_secours": false
+    },
+    {
+     "t": "schema",
+     "fichier": "schema-kit72h-2.svg",
+     "titre": "Six litres d'eau par personne",
+     "alt": "Quatre personnes, chacune avec six bouteilles d'un litre : il faut 6 litres d'eau par personne, soit 24 litres pour un foyer de quatre.",
+     "relecture_secours": false
+    },
+    {
      "t": "text",
      "body": "Lors d'une catastrophe, les 72 premières heures sont souvent les plus difficiles : coupures d'électricité, de gaz et d'eau, routes impraticables. Les secours priorisent les cas graves. Un kit préparé à l'avance vous rend autonome et leur permet de se concentrer sur ceux qui en ont le plus besoin."
     },
@@ -1350,6 +1469,13 @@
    "duree": "15 min",
    "prioritaire": true,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-pfms-1.svg",
+     "titre": "Couper les réseaux",
+     "alt": "Trois gestes : basculer le disjoncteur général sur O, tourner le robinet d'arrivée d'eau, et fermer la vanne de gaz d'un quart de tour.",
+     "relecture_secours": false
+    },
     {
      "t": "text",
      "body": "Le plan familial de mise en sûreté (PFMS) se prépare en famille. Il rassemble les risques qui vous concernent, les moyens d'alerte, les consignes, vos lieux de mise à l'abri et vos contacts. Remplissez-le ici : il reste stocké sur votre téléphone, disponible sans réseau."
@@ -1892,6 +2018,13 @@
    "prioritaire": false,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-incendie-domicile-1.svg",
+     "titre": "Où placer le détecteur de fumée",
+     "alt": "Plan d'un logement : le détecteur de fumée se place dans le couloir qui dessert les chambres, jamais dans la cuisine ni dans la salle de bain.",
+     "relecture_secours": false
+    },
+    {
      "t": "check",
      "id": "feu-maison",
      "titre": "Équipement",
@@ -2243,6 +2376,13 @@
    "prioritaire": false,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-eau-1.svg",
+     "titre": "Rendre l'eau buvable",
+     "alt": "Trois étapes : filtrer l'eau à travers du tissu, du sable et du charbon, la faire bouillir quelques minutes, puis la désinfecter et attendre 30 minutes avant de boire.",
+     "relecture_secours": false
+    },
+    {
      "t": "list",
      "titre": "Où trouver de l'eau",
      "items": [
@@ -2307,6 +2447,13 @@
    "prioritaire": false,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-feu-1.svg",
+     "titre": "Le triangle du feu",
+     "alt": "Un feu a besoin de combustible, d'oxygène et de chaleur ; on le monte en petit tipi de bois entouré de pierres.",
+     "relecture_secours": false
+    },
+    {
      "t": "text",
      "body": "Un feu a besoin de 3 éléments : du combustible, de l'oxygène et de la chaleur au départ."
     },
@@ -2363,6 +2510,13 @@
    "prioritaire": false,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-abri-1.svg",
+     "titre": "Abri de fortune avec une bâche",
+     "alt": "Une bâche tendue en toit sur une corde entre deux arbres protège de la pluie ; le sol est isolé par une couche de feuilles et de branches.",
+     "relecture_secours": false
+    },
+    {
      "t": "text",
      "body": "L'hypothermie et le manque de sommeil sont les plus grands dangers en nature. Profitez d'abord d'un abri existant (grotte, cabane)."
     },
@@ -2417,6 +2571,13 @@
    "prioritaire": false,
    "blocs": [
     {
+     "t": "schema",
+     "fichier": "schema-orientation-1.svg",
+     "titre": "Trouver le sud avec une montre",
+     "alt": "En France, pointez l'aiguille des heures vers le soleil : le sud est à mi-chemin entre cette aiguille et le chiffre 1 en hiver, ou le chiffre 2 en été.",
+     "relecture_secours": false
+    },
+    {
      "t": "steps",
      "titre": "Si vous êtes perdu",
      "items": [
@@ -2466,6 +2627,13 @@
    "duree": "2 min",
    "prioritaire": false,
    "blocs": [
+    {
+     "t": "schema",
+     "fichier": "schema-signaux-1.svg",
+     "titre": "Se signaler aux secours",
+     "alt": "Trois feux disposés en triangle d'environ 30 mètres de côté, et une personne les deux bras levés en Y, qui signifie besoin d'aide.",
+     "relecture_secours": false
+    },
     {
      "t": "list",
      "titre": "Les signaux de détresse",

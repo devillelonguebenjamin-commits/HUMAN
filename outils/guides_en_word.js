@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, Table, TableRow, TableCell,
-  WidthType, ShadingType, BorderStyle, AlignmentType, LevelFormat, PageBreak,
+  WidthType, ShadingType, BorderStyle, AlignmentType, LevelFormat, PageBreak, ImageRun,
   Footer, PageNumber,
 } = require("docx");
 
@@ -87,7 +87,7 @@ const espace = () => new Paragraph({ spacing: { after: 80 }, children: [] });
 
 function bloc(b) {
   const out = [];
-  if (b.titre && !["risk", "plant"].includes(b.t)) out.push(sousTitre(b.titre));
+  if (b.titre && !["risk", "plant", "schema"].includes(b.t)) out.push(sousTitre(b.titre));
   switch (b.t) {
     case "text": out.push(p(b.body)); break;
     case "alert": out.push(encadre("Attention :", b.body, ROUGE, "FBE9EB"), espace()); break;
@@ -102,6 +102,12 @@ function bloc(b) {
     case "dodont": (b.dont || []).forEach((t) => out.push(puce("À éviter : " + t))); break;
     case "form": out.push(p("Formulaire à remplir dans l'application :", { run: { italics: true, color: GRIS } })); b.fields.forEach((f) => out.push(p(f + " : ______________________", { para: { indent: { left: 270 }, spacing: { after: 60 } } }))); break;
     case "calc": out.push(p(b.body), p(`Calcul dans l'application : ${b.parPersonne} ${b.unite} × nombre de personnes du foyer.`, { run: { italics: true, color: GRIS } })); break;
+    case "schema": {
+      const png = fs.readFileSync(path.join(RACINE, "contenus/guides/schemas/png", b.fichier.replace(".svg", ".png")));
+      out.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 120, after: 40 }, keepNext: true, children: [new ImageRun({ type: "png", data: png, transformation: { width: 480, height: 360 }, altText: { title: b.titre, description: b.alt, name: b.fichier } })] }));
+      out.push(p(`${b.titre}${b.relecture_secours ? " · à relire par un formateur agréé" : ""}`, { run: { size: 18, color: GRIS, italics: true }, para: { alignment: AlignmentType.CENTER, spacing: { after: 160 } } }));
+      break;
+    }
     default: throw new Error("bloc inconnu " + b.t);
   }
   return out;
@@ -113,12 +119,12 @@ enfants.push(
   new Paragraph({ spacing: { before: 2400, after: 200 }, children: [new TextRun({ text: "SI", font: POLICE, size: 72, bold: true, color: "E0662A" }), new TextRun({ text: "JAMAIS", font: POLICE, size: 72, bold: true, color: VERT })] }),
   p("Prêt, même hors réseau.", { run: { size: 28, color: GRIS } }),
   new Paragraph({ spacing: { before: 600, after: 120 }, children: [new TextRun({ text: `Les ${d.guides.length} guides de l'application`, font: POLICE, size: 40, bold: true })] }),
-  p(`Version ${d.meta.version} du ${d.meta.date}. Document de travail, à transmettre à Claude Design avec le prompt « claude_design_schemas_guides.md ».`),
+  p(`Version ${d.meta.version} du ${d.meta.date}. Document de travail, avec les schémas réalisés par Claude Design.`),
   encadre("Ne pas diffuser :", d.meta.avertissement, ROUGE, "FBE9EB"),
   espace(),
   sousTitre("Comment lire ce document"),
   puce("Chaque guide porte son identifiant (par exemple « arret-cardiaque ») : c'est le nom à utiliser pour les fichiers de schémas, « schema-arret-cardiaque-1.svg »."),
-  puce("Les encadrés orange « Schéma prévu » indiquent où placer chacun des 24 schémas demandés dans le prompt, avec leur numéro."),
+  puce("Les 24 schémas réalisés avec Claude Design sont intégrés en tête des guides concernés. Ceux des gestes de secours portent la mention « à relire par un formateur agréé »."),
   puce("« Consigne officielle » : texte repris de documents de l'État. « Conseil pratique » : texte rédigé par SIJAMAIS à partir de sources diverses."),
   puce("Les encadrés « À vérifier » listent ce qui doit être confirmé avant diffusion. Les guides de premiers secours seront relus par un formateur agréé."),
   puce("Tous ces guides sont gratuits dans l'application."),
@@ -145,7 +151,8 @@ for (const c of d.categories) {
     ]));
     enfants.push(p(g.resume, { run: { italics: true } }));
     if (g.sensible) enfants.push(encadre("Urgence vitale :", "appelez le 15 ou le 112 (114 par SMS). Ce bandeau s'affiche en tête du guide.", ROUGE, "FBE9EB"), espace());
-    for (const [n, desc] of SCHEMAS[g.id] || []) enfants.push(encadre(`Schéma prévu n° ${n} :`, `${desc}. Fichier : schema-${g.id}-${(SCHEMAS[g.id].findIndex((x) => x[0] === n)) + 1}.svg`, ORANGE, "FBEFE7"), espace());
+    const dejaLa = new Set(g.blocs.filter((b) => b.t === "schema").map((b) => b.fichier));
+    for (const [n, desc] of (SCHEMAS[g.id] || []).filter((x, i) => !dejaLa.has(`schema-${g.id}-${i + 1}.svg`))) enfants.push(encadre(`Schéma prévu n° ${n} :`, `${desc}. Fichier : schema-${g.id}-${(SCHEMAS[g.id].findIndex((x) => x[0] === n)) + 1}.svg`, ORANGE, "FBEFE7"), espace());
     for (const b of g.blocs) enfants.push(...bloc(b));
     enfants.push(sousTitre("Sources"));
     for (const s of g.sources) enfants.push(puce(`${S[s].titre}, ${S[s].editeur}${S[s].date ? ", " + S[s].date : ""}`));
