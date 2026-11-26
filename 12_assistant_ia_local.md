@@ -56,7 +56,7 @@ Ces tests exigent un iPhone 15 Pro ou plus récent (achat prévu, 550 € d'occa
 
 L'écran Assistant de la maquette est désormais interactif : il cherche dans les 46 guides et affiche les passages retrouvés, le guide cité et le bandeau d'urgence pour les questions de santé. **C'est une simulation du niveau 1** : dans l'application, sur un iPhone compatible, le modèle d'Apple reformulera ces passages (niveau 2). Le panneau de gauche permet de simuler un iPhone non compatible.
 
-## 7. Décisions à prendre
+## 7. Décisions (validées le 26/11/2026)
 
 | N° | Question | Recommandation |
 |---|---|---|
@@ -64,6 +64,20 @@ L'écran Assistant de la maquette est désormais interactif : il cherche dans le
 | IA2 | Règle « rien qui ne soit pas dans un guide » ? | Oui, non négociable pour être recommandé par une mairie |
 | IA3 | Modèle d'Apple dans le nuage pour le premium, quand il y a du réseau ? | Non en v1. À rediscuter |
 | IA4 | Acheter l'iPhone de test pour mesurer avant de développer ? | Oui, avant le devis du développeur |
+
+## 8. Place de l'assistant dans l'application
+
+Benjamin veut un onglet dédié et un assistant mis en valeur. Trois variantes dans la maquette (choix dans le panneau de gauche ou dans Réglages) :
+
+| Variante | Barre d'onglets | Pour | Contre |
+|---|---|---|---|
+| **A, recommandée** | Accueil, Urgence, **Assistant au centre** (bouton rond orange surélevé), Carte, Savoir | Très visible, accessible au pouce, l'assistant devient la signature de l'application | Préparer quitte la barre : accessible depuis l'accueil (tuile et score de préparation) |
+| B | Accueil, Urgence, Assistant, Carte, Savoir, en onglets identiques | Sobre et conforme aux usages de l'iPhone | Moins de mise en valeur |
+| C | Les 5 onglets d'origine, plus une barre « Posez une question » au-dessus des onglets sur chaque écran | L'assistant est présent partout | Prend de la place, recouvre le bas des écrans |
+
+Dans les trois variantes : un champ « Posez une question à l'assistant » sur l'accueil, juste sous le bouton Urgence, et un écran Assistant refait (questions fréquentes classées par couleur, explication du fonctionnement, dictée de l'iPhone).
+
+Une barre à six onglets est écartée : sur iPhone, au-delà de cinq onglets, le système regroupe les derniers dans « Plus » [MEMOIRE].
 
 ## Sources
 

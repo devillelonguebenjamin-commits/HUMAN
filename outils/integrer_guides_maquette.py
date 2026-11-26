@@ -229,20 +229,37 @@ for x in d["guides"]:
     index.append({"id": x["id"], "titre": x["titre"], "resume": x["resume"], "niveau": x["niveau"], "sensible": bool(x.get("sensible")), "etapes": etapes, "m": morceaux})
 index_json = json.dumps(index, ensure_ascii=False).replace("</", "<\\/")
 
-suggestions = ["Mon voisin ne respire plus", "Plus de courant depuis hier", "Que mettre dans le kit ?", "La sirène sonne, que faire ?", "Mon ordinateur demande une rançon", "Comment rendre l'eau potable ?"]
-puces = "".join(f'<button class="puce" onclick="demander(this.textContent)">{e(q)}</button>' for q in suggestions)
+GROUPES = [
+    ("Urgence", "c-r", ["Mon voisin ne respire plus", "Il s'étouffe avec un bonbon", "La sirène sonne, que faire ?"]),
+    ("Coupures et crises", "c-j", ["Plus de courant depuis hier", "Mon ordinateur demande une rançon", "Il fait 40 degrés chez moi"]),
+    ("Se préparer", "c-f", ["Que mettre dans le kit ?", "Comment couper le gaz ?", "Combien d'eau stocker ?"]),
+    ("Dehors, sans réseau", "c-g", ["Comment rendre l'eau potable ?", "Trouver le nord sans boussole"]),
+    ("Après la crise", "c-b", ["Délai pour déclarer à l'assurance"]),
+]
+groupes = "".join(
+    f'<div class="ia-groupe"><span class="ia-lab {c}">{e(t)}</span><div class="puces">'
+    + "".join(f'<button class="puce" onclick="demander(this.textContent)">{e(q)}</button>' for q in qs)
+    + "</div></div>" for t, c, qs in GROUPES)
+BUL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h16v11H10l-5 4v-4H4z"/><circle cx="9" cy="10.5" r=".9" fill="currentColor"/><circle cx="12" cy="10.5" r=".9" fill="currentColor"/><circle cx="15" cy="10.5" r=".9" fill="currentColor"/></svg>'
+MICRO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>'
 assistant = f"""<section class="ecran" id="e-assistant">
-      <a class="retour" href="#e-accueil">‹ Accueil</a>
-      <h2>Assistant</h2>
-      <div class="ia-etat" id="ia-etat"><span class="ia-point"></span><span id="ia-etat-txt">Modèle d'Apple, sur cet iPhone · hors ligne</span></div>
-      <p class="mini" style="margin:8px 0 12px">Je réponds uniquement à partir des {len(d["guides"])} guides de l'application, et je cite toujours ma source. Rien ne quitte votre téléphone.</p>
-      <div id="ia-fil"><div class="bulle ia">Posez votre question avec vos mots. Pour une urgence vitale, appelez d'abord le 15 ou le 112.</div></div>
-      <div class="puces">{puces}</div>
-      <form class="saisie" onsubmit="event.preventDefault();demander(document.getElementById('ia-q').value)">
-        <input id="ia-q" class="g-input" type="text" placeholder="Posez une question" autocomplete="off" aria-label="Votre question">
-        <button class="btn btn-p" style="width:auto;padding:10px 16px" type="submit">Envoyer</button>
+      <div class="ia-tete"><span class="ia-logo">{BUL}</span><div><h2 style="margin:0">Assistant</h2><div class="ia-etat" id="ia-etat"><span class="ia-point"></span><span id="ia-etat-txt">Modèle d'Apple, sur cet iPhone · hors ligne</span></div></div></div>
+      <div id="ia-fil"><div class="bulle ia">Bonjour. Posez votre question avec vos mots : je cherche dans les {len(d["guides"])} guides de l'application et je cite toujours ma source. Pour une urgence vitale, appelez d'abord le 15 ou le 112.</div></div>
+      <form class="saisie ia-saisie" onsubmit="event.preventDefault();demander(document.getElementById('ia-q').value)">
+        <input id="ia-q" class="g-input" type="text" placeholder="Que voulez-vous savoir ?" autocomplete="off" aria-label="Votre question">
+        <button type="button" class="ia-micro" aria-label="Dicter" onclick="toast('Dictée de l\\'iPhone : fonctionne sans réseau sur les modèles récents.')">{MICRO}</button>
+        <button class="btn btn-p ia-envoi" type="submit">Envoyer</button>
       </form>
-      <p class="mini" style="margin-top:10px">Maquette : la recherche dans les guides est réelle. Dans l'application, sur un iPhone compatible, le modèle d'Apple reformulera ces passages en quelques phrases. Questions de santé : jamais de reformulation, seulement le guide relu.</p>
+      <h3>Questions fréquentes</h3>
+      {groupes}
+      <h3>Comment je fonctionne</h3>
+      <div class="liste">
+        <div class="ligne"><span class="pico c-f"><svg aria-hidden="true"><use href="#p-livre"/></svg></span><span class="t">Je cherche dans les guides<div class="s">Uniquement dans les {len(d["guides"])} guides relus de l'application</div></span></div>
+        <div class="ligne"><span class="pico c-b"><svg aria-hidden="true"><use href="#p-bulle"/></svg></span><span class="t">Je reformule sur votre iPhone<div class="s">Avec le modèle d'Apple, sans internet. Sur les iPhone plus anciens : les passages du guide</div></span></div>
+        <div class="ligne"><span class="pico c-g"><svg aria-hidden="true"><use href="#p-cadenas"/></svg></span><span class="t">Rien ne quitte votre téléphone<div class="s">Aucune question n'est envoyée ni conservée ailleurs</div></span></div>
+        <div class="ligne"><span class="pico c-r"><svg aria-hidden="true"><use href="#p-croix"/></svg></span><span class="t">Santé : jamais d'improvisation<div class="s">Je vous renvoie au 15 ou au 112 et j'affiche les gestes du guide, mot pour mot</div></span></div>
+      </div>
+      <p class="mini" style="margin-top:10px">Maquette : la recherche dans les guides est réelle ; la reformulation par le modèle d'Apple sera ajoutée dans l'application.</p>
       <script type="application/json" id="guides-index">{index_json}</script>
     </section>"""
 s = re.sub(r'<section class="ecran" id="e-assistant">.*?</section>', lambda m: assistant, s, count=1, flags=re.S)
@@ -256,6 +273,17 @@ css_ia = """/* IA:CSS:DEBUT */
 .bulle .ia-src{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px;font-size:12px}
 .bulle .ia-src a{color:var(--accent);font-weight:600}
 .bulle ul,.bulle ol{padding-left:18px;margin-top:6px;display:flex;flex-direction:column;gap:4px}
+.ia-tete{display:flex;gap:12px;align-items:center;margin:8px 0 14px}
+.ia-logo{width:52px;height:52px;border-radius:16px;background:var(--accent);color:var(--accent-texte);display:flex;align-items:center;justify-content:center;flex:none}
+.ia-logo svg{width:30px;height:30px}
+.ia-tete .ia-etat{margin-top:4px}
+.ia-saisie{align-items:center;background:var(--surface);border:1.5px solid var(--accent);border-radius:18px;padding:6px;margin:10px 0 6px}
+.ia-saisie .g-input{border:0;background:transparent}
+.ia-micro{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--texte2);flex:none}
+.ia-micro svg{width:22px;height:22px}
+.ia-envoi{width:auto!important;padding:10px 14px!important;border-radius:14px!important}
+.ia-groupe{margin-bottom:8px}
+.ia-lab{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;margin-bottom:2px}
 .bulle .ia-urg{background:#C8102E;color:#fff;border-radius:10px;padding:8px 10px;font-weight:700;margin-bottom:8px}
 /* IA:CSS:FIN */
 """
@@ -265,7 +293,7 @@ s = s.replace("@media (max-width:860px){", css_ia + "@media (max-width:860px){",
 js_ia = r"""/* IA:JS:DEBUT */
 let iaCompatible=true, iaIndex=null;
 const IA_VIDES=new Set('a au aux avec ce ces cet cette comment dans de des du elle en est et il ils j je l la le les leur lui ma mais me mes moi mon ne nos notre nous on ou par pas pour qu que quel quelle quels quelles qui quoi sa se ses si son sur ta te tes toi ton tu un une vos votre vous y d c s n m t faire fait faut dois doit peut peux suis sont etre avoir ai a ont quand plus tout tous toute depuis hier aujourd hui chez quoi faire'.split(' '));
-const IA_SYN={courant:['electricite','coupure'],lumiere:['electricite','coupure'],panne:['coupure','electricite'],respire:['respirer','arret','cardiaque','massage'],respirer:['arret','cardiaque'],saigne:['saignement','plaie'],sang:['saignement'],evanoui:['inconsciente'],repond:['inconsciente'],sirene:['alerte','signal','sirene'],sonne:['sirene','alerte'],rancon:['rancon','bloque'],ordinateur:['appareil','rancon'],pirate:['piratage','compte'],arnaque:['arnaques','suspect'],potable:['purifier','eau','bouillir'],boire:['eau'],kit:['kit','urgence'],sac:['kit','sac'],chaud:['canicule','chaleur'],chaleur:['canicule'],degres:['canicule','chaleur'],froid:['grand','froid'],nord:['orientation','nord'],perdu:['orientation'],inondation:['inondation'],monte:['inondation','crue','hauteur'],crue:['inondation'],deborde:['inondation','crue'],eau:['eau'],feu:['feu'],brule:['brulure'],etouffe:['etouffement'],avale:['etouffement'],assurance:['assurance','catastrophe'],iode:['iode','nucleaire'],seisme:['seisme'],tempete:['tempete']};
+const IA_SYN={courant:['electricite','coupure'],lumiere:['electricite','coupure'],panne:['coupure','electricite'],respire:['respirer','arret','cardiaque','massage'],respirer:['arret','cardiaque'],saigne:['saignement','plaie'],sang:['saignement'],evanoui:['inconsciente'],repond:['inconsciente'],sirene:['alerte','signal','sirene'],sonne:['sirene','alerte'],rancon:['rancon','bloque'],ordinateur:['appareil','rancon'],pirate:['piratage','compte'],arnaque:['arnaques','suspect'],potable:['purifier','eau','bouillir'],boire:['eau'],kit:['kit','urgence'],sac:['kit','sac'],chaud:['canicule','chaleur'],chaleur:['canicule'],degres:['canicule','chaleur'],froid:['grand','froid'],nord:['orientation','nord'],perdu:['orientation'],inondation:['inondation'],monte:['inondation','crue','hauteur'],gaz:['reseaux','arrivees','couper'],couper:['reseaux','arrivees'],crue:['inondation'],deborde:['inondation','crue'],eau:['eau'],feu:['feu'],brule:['brulure'],etouffe:['etouffement'],avale:['etouffement'],assurance:['assurance','catastrophe'],iode:['iode','nucleaire'],seisme:['seisme'],tempete:['tempete']};
 const IA_SENS=['respire','respirer','saigne','saignement','sang','inconscient','inconsciente','evanoui','evanouie','brule','brulure','etouffe','etouffement','malaise','douleur','poitrine','fracture','avale','poison','convulse','convulsion'];
 function iaNorm(t){return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ');}
 function iaMots(t){return iaNorm(t).split(/\s+/).filter(w=>w.length>1&&!IA_VIDES.has(w));}

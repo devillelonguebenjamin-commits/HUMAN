@@ -29,6 +29,8 @@ Mis à jour le 18 novembre 2026.
 
 ## Assistant IA local (26 novembre 2026)
 
+**Décision du 26/11/2026 : recommandations IA1 à IA4 validées par Benjamin** (« on va faire comme ça »).
+
 Détail dans `12_assistant_ia_local.md`, section 7.
 
 | N° | Question | Ma recommandation |

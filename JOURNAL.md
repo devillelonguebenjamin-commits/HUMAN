@@ -289,3 +289,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Demandes de Benjamin.** (1) Cadrer l'IA locale et l'ajouter à la maquette. (2) Améliorer les guides avec Claude Design : schémas et images libres de droits.
 
 **Travail fait.** `12_assistant_ia_local.md` : modèle d'Apple sur l'appareil (4 096 jetons, génération guidée, garde-fous pouvant refuser), trois niveaux (recherche sur tous les iPhones, reformulation sur les iPhones compatibles, aucune génération pour la santé), règle « rien qui ne soit pas dans un guide », tests avant développement. Nouveauté d'iOS 27 notée : modèle dans le nuage gratuit pour les petits développeurs, écarté en v1 car il exige du réseau. Assistant de la maquette rendu interactif : recherche réelle dans les 46 guides, bandeau d'urgence et étapes exactes pour la santé, simulation d'un iPhone non compatible ; 15 questions de test sur 15 correctes. `prompts/claude_design_schemas_guides.md` : 24 schémas prioritaires, style signalétique, SVG, aucune image IA, règles et registre des crédits photo (`contenus/images/CREDITS.csv`).
+
+## 2026-11-26 : IA locale validée, onglet Assistant
+
+**Décisions de Benjamin.** IA locale par le modèle d'Apple : recommandations IA1 à IA4 validées. Demande d'un onglet dédié à l'assistant et de plusieurs propositions dans la maquette.
+
+**Travail fait.** Trois variantes de navigation dans la maquette (A : assistant au centre de la barre, bouton rond surélevé, recommandée ; B : onglet classique ; C : barre de question sur chaque écran), sélectionnables dans le panneau de gauche ou dans Réglages. Champ « Posez une question » sur l'accueil. Écran Assistant refait : en-tête, saisie avec dictée, questions fréquentes classées par couleur, explication du fonctionnement. Préparer reste accessible depuis l'accueil dans les variantes A et B.
