@@ -295,3 +295,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Décisions de Benjamin.** IA locale par le modèle d'Apple : recommandations IA1 à IA4 validées. Demande d'un onglet dédié à l'assistant et de plusieurs propositions dans la maquette.
 
 **Travail fait.** Trois variantes de navigation dans la maquette (A : assistant au centre de la barre, bouton rond surélevé, recommandée ; B : onglet classique ; C : barre de question sur chaque écran), sélectionnables dans le panneau de gauche ou dans Réglages. Champ « Posez une question » sur l'accueil. Écran Assistant refait : en-tête, saisie avec dictée, questions fréquentes classées par couleur, explication du fonctionnement. Préparer reste accessible depuis l'accueil dans les variantes A et B.
+
+## 2026-11-26 : variante A retenue, étude du réseau d'entraide
+
+**Décisions de Benjamin.** Variante A (assistant au centre de la barre d'onglets) retenue ; les variantes B et C sont retirées de la maquette. Nouvelle idée : permettre aux habitants volontaires de déclarer leurs compétences et moyens (santé, secourisme, hébergement, matériel, réparation) et de les afficher sur la carte. Demande d'étude RGPD.
+
+**Travail fait.** `13_reseau_entraide.md`. Conclusion : bonne idée, conforme à l'esprit du guide officiel, mais une carte publique gérée par SIJAMAIS contredirait la promesse « aucune donnée », exposerait les aidants (cambriolage, harcèlement, usurpation) et imposerait une analyse d'impact (localisation à grande échelle). Proposition en deux temps : profil d'aidant local partagé par QR code en v1 ; réseau d'entraide géré par la mairie (responsable du traitement, réserve communale) dans l'offre aux communes, avec trois niveaux de visibilité. SAUV Life et Staying Alive à recommander pour les secouristes.

@@ -19,6 +19,7 @@ Commencer par `00_SYNTHESE_DECISION.md` (deux pages), puis `questions_ouvertes.m
 | `10_veille_officielle.md` | Sources officielles françaises, droit de réutilisation, place dans l'application, organisation de la veille |
 | `11_module_communication_hors_reseau.md` | Analyse et plan du module de messagerie hors réseau (Bluetooth, Wi-Fi Aware, Meshtastic), à valider |
 | `12_assistant_ia_local.md` | Assistant IA local : modèle d'Apple, trois niveaux, règle « rien qui ne soit pas dans un guide », tests à mener |
+| `13_reseau_entraide.md` | Réseau d'entraide (compétences et moyens des habitants) : analyse RGPD, risques, dispositif en deux temps |
 | `contenus/guides/` | Guides de l'application : version 1.0 fournie par Benjamin (JSON et page HTML) et sa revue |
 | `prompts/claude_design_schemas_guides.md` | Prompt Claude Design : 24 schémas pédagogiques et mise en page des guides, règles pour les photos |
 | `prototype/maquette_app/` | Maquette HTML cliquable de l'application (version 0.1) |

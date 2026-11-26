@@ -67,7 +67,7 @@ L'écran Assistant de la maquette est désormais interactif : il cherche dans le
 
 ## 8. Place de l'assistant dans l'application
 
-Benjamin veut un onglet dédié et un assistant mis en valeur. Trois variantes dans la maquette (choix dans le panneau de gauche ou dans Réglages) :
+**Décision du 26/11/2026 : variante A retenue** (« ça change tout »). Les variantes B et C ont été retirées de la maquette. Pour mémoire :
 
 | Variante | Barre d'onglets | Pour | Contre |
 |---|---|---|---|

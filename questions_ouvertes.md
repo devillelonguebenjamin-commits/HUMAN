@@ -27,6 +27,18 @@ Mis à jour le 18 novembre 2026.
 | H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour SIJAMAIS |
 | I | Combien de jours par semaine garantis-tu à SIJAMAIS une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
 
+## Réseau d'entraide (26 novembre 2026)
+
+Détail dans `13_reseau_entraide.md`, section 7.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| E1 | Profil d'aidant local, partagé par QR code, dès la v1 ? | Oui |
+| E2 | Réseau d'entraide communal, la mairie étant responsable du fichier ? | Oui, piste pour La Baule |
+| E3 | Renoncer à une carte publique nationale des aidants ? | Oui |
+| E4 | Recommander SAUV Life et Staying Alive ? | Oui |
+| E5 | Validation par l'avocat puis par le délégué à la protection des données de la commune pilote ? | Oui |
+
 ## Assistant IA local (26 novembre 2026)
 
 **Décision du 26/11/2026 : recommandations IA1 à IA4 validées par Benjamin** (« on va faire comme ça »).
