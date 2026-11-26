@@ -3,6 +3,8 @@ import Foundation
 /// Réponse affichée par l'assistant.
 public struct ReponseAssistant: Sendable, Equatable {
     public enum Mode: Sendable, Equatable {
+        /// La personne décrit sa propre urgence de santé : appeler les secours, tout de suite.
+        case urgencePersonnelle
         /// Étapes exactes d'un guide de santé, sans reformulation (niveau 3).
         case urgenceSante
         /// Texte rédigé par le modèle d'Apple à partir des passages (niveau 2).
@@ -59,6 +61,8 @@ public struct Assistant: Sendable {
 
     public static let longueurMaxReformulation = 900
 
+    public static let messageUrgencePersonnelle = "Appelez le 15 ou le 112 maintenant. Si vous ne pouvez pas parler, envoyez un SMS au 114. Restez en ligne et suivez les consignes des secours."
+
     private let moteur: MoteurRecherche
     private let reformulateur: Reformulateur?
 
@@ -84,6 +88,9 @@ public struct Assistant: Sendable {
 
     public func repondre(_ question: String) async -> ReponseAssistant {
         let r = moteur.chercher(question)
+        if r.sensible && MoteurRecherche.parleDeSoi(question) {
+            return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: r.guide?.id, guideTitre: r.guide?.titre, urgenceVitale: true)
+        }
         guard let g = r.guide else {
             return ReponseAssistant(mode: .aucunGuide, texte: nil, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: r.sensible)
         }

@@ -142,6 +142,8 @@ private struct ReponseVue: View {
             switch reponse.mode {
             case .aucunGuide:
                 Text("Je n'ai pas trouvé de guide sur ce sujet. Je ne réponds qu'à partir des guides de l'application : essayez avec d'autres mots, ou ouvrez l'onglet Savoir.")
+            case .urgencePersonnelle:
+                Text(reponse.texte ?? "").font(.headline)
             case .urgenceSante:
                 Text("Étapes du guide relu, sans reformulation :").font(.subheadline.bold())
                 ForEach(Array(reponse.lignes.enumerated()), id: \.offset) { i, l in Text("\(i + 1). \(l)") }

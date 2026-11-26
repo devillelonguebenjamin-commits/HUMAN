@@ -89,6 +89,8 @@ public struct MoteurRecherche: Sendable {
         "inondation": ["inondation"], "monte": ["inondation", "crue", "hauteur"], "crue": ["inondation"], "deborde": ["inondation", "crue"],
         "gaz": ["reseaux", "arrivees", "couper"], "couper": ["reseaux", "arrivees"],
         "eau": ["eau"], "feu": ["feu"], "brule": ["brulure"], "etouffe": ["etouffement"], "avale": ["etouffement"],
+        "massage": ["massez", "masser", "compressions"], "rythme": ["minute", "fois"],
+        "peur": ["moral", "stress"], "angoisse": ["moral", "stress"], "panique": ["moral", "stress"], "stresse": ["moral", "stress"], "triste": ["moral"],
         "assurance": ["assurance", "catastrophe"], "iode": ["iode", "nucleaire"], "seisme": ["seisme"], "tempete": ["tempete"],
     ]
 
@@ -108,6 +110,12 @@ public struct MoteurRecherche: Sendable {
         var r = String(mot.dropLast())
         if let d = r.last, "esx".contains(d) { r.removeLast() }
         return r
+    }
+
+    /// Vrai si la personne parle d'elle-même (« je n'arrive plus à respirer », « j'ai mal à la poitrine »).
+    public static func parleDeSoi(_ question: String) -> Bool {
+        let tous = Normalisation.normaliser(question).split(separator: " ").map(String.init)
+        return tous.contains { ["je", "j", "moi", "me", "m"].contains($0) }
     }
 
     public static func estSensible(_ question: String) -> Bool {

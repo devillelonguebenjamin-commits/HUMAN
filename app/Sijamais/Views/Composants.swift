@@ -44,10 +44,11 @@ struct BandeauUrgenceVitale: View {
         HStack(spacing: 10) {
             Image(systemName: "cross.case.fill").font(.title2)
             VStack(alignment: .leading, spacing: 2) {
-                Text("Urgence vitale").font(.headline)
+                Text("Urgence vitale").font(.headline).lineLimit(2).minimumScaleFactor(0.8)
                 Text("114 par SMS").font(.caption)
             }
-            Spacer()
+            .layoutPriority(1)
+            Spacer(minLength: 4)
             BoutonAppel(numero: "15")
             BoutonAppel(numero: "112")
         }
@@ -65,7 +66,7 @@ struct BoutonAppel: View {
             Link(destination: url) {
                 Text(numero).font(.title3.weight(.heavy))
                     .foregroundStyle(Charte.secours)
-                    .frame(minWidth: 52).padding(.vertical, 8)
+                    .frame(minWidth: 48).padding(.vertical, 8)
                     .background(RoundedRectangle(cornerRadius: 12).fill(.white))
             }
             .accessibilityLabel("Appeler le \(numero)")

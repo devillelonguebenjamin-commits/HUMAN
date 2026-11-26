@@ -68,7 +68,15 @@ final class RechercheTests: XCTestCase {
         ("quel champignon puis-je manger", "cueillette", false),
         ("Combien d'eau stocker ?", "stocks", false),
         ("Délai pour déclarer à l'assurance", "assurance", false),
+        ("Donne moi le rythme à avoir pour le massage cardiaque", "arret-cardiaque", false),
+        ("J'ai peur", "moral", false),
+        ("je panique", "moral", false),
     ]
+
+    func testLeRythmeDuMassageEstTrouve() {
+        let r = moteur.chercher("Donne moi le rythme à avoir pour le massage cardiaque")
+        XCTAssertTrue(r.passages.contains { $0.contains("100 à 120") }, r.passages.joined(separator: " | "))
+    }
 
     func testLesQuestionsCourantesTrouventLeBonGuide() {
         var echecs: [String] = []
@@ -122,6 +130,17 @@ final class AssistantTests: XCTestCase {
         XCTAssertEqual(r.mode, .urgenceSante)
         XCTAssertTrue(r.urgenceVitale)
         XCTAssertNil(r.texte)
+    }
+
+    func testUrgencePersonnelleAppelerTousDeSuite() async {
+        let a = Assistant(moteur: moteur, reformulateur: ModeleFactice())
+        for q in ["Je n'arrive plus à respirer", "j'ai mal à la poitrine", "je saigne beaucoup"] {
+            let r = await a.repondre(q)
+            XCTAssertEqual(r.mode, .urgencePersonnelle, q)
+            XCTAssertTrue(r.urgenceVitale, q)
+        }
+        let autre = await a.repondre("Mon voisin ne respire plus")
+        XCTAssertEqual(autre.mode, .urgenceSante)
     }
 
     func testReformulationAccepteeQuandElleCiteLeBonGuide() async {
