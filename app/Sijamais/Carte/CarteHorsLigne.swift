@@ -22,6 +22,19 @@ enum CarteHorsLigne {
         return nil
     }
 
+    /// Points de secours (hôpitaux, pompiers, pharmacies, défibrillateurs...) produits par outils/extraire_points.py.
+    /// Sans ce fichier, la carte s'affiche quand même, avec une couche de points vide.
+    static var fichierPoints: URL {
+        if let d = dossier,
+           let f = (try? FileManager.default.contentsOfDirectory(at: d, includingPropertiesForKeys: nil))?
+            .first(where: { $0.pathExtension == "geojson" }) {
+            return f
+        }
+        let vide = FileManager.default.temporaryDirectory.appendingPathComponent("points-vides.geojson")
+        try? #"{"type":"FeatureCollection","features":[]}"#.write(to: vide, atomically: true, encoding: .utf8)
+        return vide
+    }
+
     /// Écrit le style de la carte avec les chemins de ce téléphone, et renvoie son adresse.
     static func styleLocal() -> URL? {
         guard let dossier, let carte = fichierCarte,
@@ -30,6 +43,7 @@ enum CarteHorsLigne {
         let glyphes = dossier.appendingPathComponent("fonts").absoluteString.replacingOccurrences(of: "%20", with: " ")
         let style = modele
             .replacingOccurrences(of: "__PMTILES__", with: carte.absoluteString)
+            .replacingOccurrences(of: "__POINTS__", with: fichierPoints.absoluteString)
             .replacingOccurrences(of: "__GLYPHES__", with: glyphes.hasSuffix("/") ? String(glyphes.dropLast()) : glyphes)
         let sortie = FileManager.default.temporaryDirectory.appendingPathComponent("style-sijamais.json")
         do {
@@ -45,7 +59,7 @@ enum CarteHorsLigne {
 struct CarteMapLibre: UIViewRepresentable {
     let styleURL: URL
     var centre = CLLocationCoordinate2D(latitude: 47.2866, longitude: -2.3920) // La Baule-Escoublac
-    var zoom: Double = 11
+    var zoom: Double = 12
 
     func makeUIView(context: Context) -> MLNMapView {
         let carte = MLNMapView(frame: .zero, styleURL: styleURL)

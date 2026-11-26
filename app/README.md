@@ -62,10 +62,11 @@ Le fichier de carte est trop lourd pour le dépôt : on le fabrique sur le Mac.
 brew install pmtiles
 cd ~/Documents/GitHub/HUMAN
 bash outils/extraire_carte.sh
+python3 outils/extraire_points.py
 cd app && xcodegen generate
 ```
 
-Le fichier `loire-atlantique.pmtiles` est rangé dans `app/Sijamais/Resources/Cartes/` et ignoré par Git.
+`extraire_carte.sh` produit le fond de carte (`loire-atlantique.pmtiles`) ; `extraire_points.py` produit les points de secours (`points-loire-atlantique.geojson` : hôpitaux, pompiers, pharmacies, police, mairies depuis OpenStreetMap, défibrillateurs depuis Géo'DAE). Les deux fichiers sont rangés dans `app/Sijamais/Resources/Cartes/` et ignorés par Git.
 
 ## Lancer les tests
 

@@ -335,3 +335,11 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Décision de Benjamin.** Lancement de l'étape A du plan des cartes (`14_cartes_hors_ligne.md`).
 
 **Travail fait.** MapLibre 7.1.0 ajouté au projet ; onglet Carte branché sur un fichier PMTiles local (fond Protomaps tiré d'OpenStreetMap), avec un style SIJAMAIS (relief des routes, eau, végétation, bâtiments, noms des communes et des rues) et les services utiles en couleur (hôpitaux, pompiers, pharmacies, police, mairies), position GPS, légende et mention obligatoire d'OpenStreetMap. Polices Noto Sans (licence OFL) embarquées pour les noms. Script `outils/extraire_carte.sh` pour extraire la Loire-Atlantique sur le Mac : le site de Protomaps n'est pas accessible depuis l'environnement de Claude. Défibrillateurs (Géo'DAE) reportés à l'étape B, data.gouv.fr étant lui aussi inaccessible d'ici.
+
+## 2026-11-26 : retours d'essai sur la carte et l'assistant
+
+**Retours de Benjamin.** (1) La carte s'affiche mais sans aucun point, et paraît brute. (2) L'assistant est trop dépendant des mots-clés et certaines réponses sont « hors sol ». Demande d'un prompt circulaire pour faire progresser l'assistant par cycles.
+
+**Diagnostic carte.** Les points de la carte Protomaps n'existent qu'à partir du zoom 12 (hôpitaux) ou 15 à 16 (pharmacies, pompiers), alors que la carte s'ouvrait au zoom 11. Correction : couche de points de secours propre à SIJAMAIS, produite par `outils/extraire_points.py` (OpenStreetMap et Géo'DAE, à lancer sur le Mac), visible dès le zoom 9 pour les hôpitaux et les pompiers, avec lettres (H, 18, 17, +, DAE, M) et noms ; style du fond retravaillé (bordures de routes, habitat, plages, zones de santé, quartiers) ; ouverture au zoom 12. L'installation du générateur de style officiel de Protomaps (paquet npm) a été refusée par le système de sécurité : non contourné.
+
+**Assistant.** `prompts/claude_amelioration_assistant.md` : boucle en cinq temps entre un Claude évaluateur et Claude Code, 12 thèmes, 40 questions par cycle, format JSON des cas de test, synonymes, intentions, règles, contenus et sources. `contenus/assistant/etat_assistant.md` : fiche d'état à joindre à chaque cycle.

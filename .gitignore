@@ -11,3 +11,4 @@ app/SijamaisKit/.swiftpm/
 
 # Fichiers de carte (trop lourds pour le dépôt)
 *.pmtiles
+*.geojson

@@ -69,8 +69,8 @@ struct CarteView: View {
 
 private struct Legende: View {
     private let elements: [(String, Color)] = [
-        ("Hôpital", Charte.secours), ("Pompiers", Color(hex: 0xC2410C)), ("Pharmacie", Charte.securite),
-        ("Police", Charte.eau), ("Mairie", Charte.foret),
+        ("Hôpital", Charte.secours), ("Pompiers", Color(hex: 0xC2410C)), ("Défibrillateur", Color(hex: 0x00A651)),
+        ("Pharmacie", Charte.securite), ("Police", Charte.eau), ("Mairie", Charte.foret),
     ]
 
     var body: some View {
@@ -83,7 +83,7 @@ private struct Legende: View {
                     }
                 }
             }
-            Text("Hors ligne · © les contributeurs d'OpenStreetMap. En urgence vitale, appelez le 15 ou le 112.")
+            Text("Hors ligne · © les contributeurs d'OpenStreetMap, Géo'DAE. Positions à vérifier sur place. En urgence vitale, appelez le 15 ou le 112.")
                 .font(.caption2).foregroundStyle(.secondary)
         }
         .padding(10)
