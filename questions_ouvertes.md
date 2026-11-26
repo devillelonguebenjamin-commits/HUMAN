@@ -27,6 +27,17 @@ Mis à jour le 18 novembre 2026.
 | H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour SIJAMAIS |
 | I | Combien de jours par semaine garantis-tu à SIJAMAIS une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
 
+## Assistant IA local (26 novembre 2026)
+
+Détail dans `12_assistant_ia_local.md`, section 7.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| IA1 | Modèle d'Apple seul en v1, sans modèle embarqué ? | Oui |
+| IA2 | Règle « l'assistant ne dit rien qui ne soit pas dans un guide » ? | Oui |
+| IA3 | Modèle d'Apple dans le nuage pour le premium, quand il y a du réseau ? | Non en v1 |
+| IA4 | Acheter l'iPhone de test (15 Pro ou plus récent) avant le devis du développeur ? | Oui |
+
 ## Module de communication hors réseau (18 novembre 2026)
 
 **Décision du 24/11/2026 : module reporté.** Benjamin ne l'explore pas pour l'instant. Les questions R1 à R7 restent ouvertes pour plus tard.

@@ -163,7 +163,8 @@ s = re.sub(r"/\* GUIDES:CSS:DEBUT \*/.*?/\* GUIDES:CSS:FIN \*/\n", "", s, flags=
 s = re.sub(r"/\* GUIDES:JS:DEBUT \*/.*?/\* GUIDES:JS:FIN \*/\n", "", s, flags=re.S)
 s = s.replace('<div class="toast" id="toast"></div>', bloc_html + '<div class="toast" id="toast"></div>', 1)
 s = s.replace("@media (max-width:860px){", css + "@media (max-width:860px){", 1)
-s = s.replace("</script>", js + "</script>", 1)
+i_fin = s.rindex("</script>")
+s = s[:i_fin] + js + s[i_fin:]
 
 # Entrée « Guides » dans l'écran Savoir, juste avant les sources officielles.
 entree = '<a class="bandeau c-f" href="#e-guides" id="lien-guides">' + ic("livre") + '<div><b>Guides de survie</b><span>' + str(len(d["guides"])) + ' guides gratuits, consultables sans réseau</span></div></a>\n      '
@@ -200,6 +201,122 @@ NOUVELLES = ('<a class="sg c-b" href="#e-g-cyberattaque"><svg aria-hidden="true"
 s = s.replace(NOUVELLES, "")
 assert TUILE_EVAC in s
 s = s.replace(TUILE_EVAC, TUILE_EVAC + NOUVELLES, 1)
+
+# ---------- Assistant : simulation du niveau 1 (recherche dans les guides) ----------
+def textes(b):
+    out = []
+    for k in ("body",):
+        if b.get(k):
+            out.append(b[k])
+    for it in b.get("items", []):
+        if isinstance(it, str):
+            out.append(it)
+        elif isinstance(it, list):
+            out.append(" : ".join(it))
+        elif isinstance(it, dict):
+            out.append(f'{it.get("n", "")} {it.get("label", "")} : {it.get("desc", "")}')
+    for it in b.get("dont", []):
+        out.append(it)
+    return out
+
+index = []
+for x in d["guides"]:
+    morceaux = []
+    for b in x["blocs"]:
+        for t in textes(b):
+            morceaux.append({"bloc": b.get("titre", ""), "t": t})
+    etapes = next((b["items"] for b in x["blocs"] if b.get("t") == "steps"), [])
+    index.append({"id": x["id"], "titre": x["titre"], "resume": x["resume"], "niveau": x["niveau"], "sensible": bool(x.get("sensible")), "etapes": etapes, "m": morceaux})
+index_json = json.dumps(index, ensure_ascii=False).replace("</", "<\\/")
+
+suggestions = ["Mon voisin ne respire plus", "Plus de courant depuis hier", "Que mettre dans le kit ?", "La sirène sonne, que faire ?", "Mon ordinateur demande une rançon", "Comment rendre l'eau potable ?"]
+puces = "".join(f'<button class="puce" onclick="demander(this.textContent)">{e(q)}</button>' for q in suggestions)
+assistant = f"""<section class="ecran" id="e-assistant">
+      <a class="retour" href="#e-accueil">‹ Accueil</a>
+      <h2>Assistant</h2>
+      <div class="ia-etat" id="ia-etat"><span class="ia-point"></span><span id="ia-etat-txt">Modèle d'Apple, sur cet iPhone · hors ligne</span></div>
+      <p class="mini" style="margin:8px 0 12px">Je réponds uniquement à partir des {len(d["guides"])} guides de l'application, et je cite toujours ma source. Rien ne quitte votre téléphone.</p>
+      <div id="ia-fil"><div class="bulle ia">Posez votre question avec vos mots. Pour une urgence vitale, appelez d'abord le 15 ou le 112.</div></div>
+      <div class="puces">{puces}</div>
+      <form class="saisie" onsubmit="event.preventDefault();demander(document.getElementById('ia-q').value)">
+        <input id="ia-q" class="g-input" type="text" placeholder="Posez une question" autocomplete="off" aria-label="Votre question">
+        <button class="btn btn-p" style="width:auto;padding:10px 16px" type="submit">Envoyer</button>
+      </form>
+      <p class="mini" style="margin-top:10px">Maquette : la recherche dans les guides est réelle. Dans l'application, sur un iPhone compatible, le modèle d'Apple reformulera ces passages en quelques phrases. Questions de santé : jamais de reformulation, seulement le guide relu.</p>
+      <script type="application/json" id="guides-index">{index_json}</script>
+    </section>"""
+s = re.sub(r'<section class="ecran" id="e-assistant">.*?</section>', lambda m: assistant, s, count=1, flags=re.S)
+
+css_ia = """/* IA:CSS:DEBUT */
+.ia-etat{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;padding:6px 10px;border-radius:20px;background:var(--surface)}
+.ia-point{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.ia-etat.off .ia-point{background:var(--alerte)}
+.puces{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.puce{font-size:12.5px;border:1px solid var(--ligne);border-radius:16px;padding:6px 10px;background:var(--surface)}
+.bulle .ia-src{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:8px;font-size:12px}
+.bulle .ia-src a{color:var(--accent);font-weight:600}
+.bulle ul,.bulle ol{padding-left:18px;margin-top:6px;display:flex;flex-direction:column;gap:4px}
+.bulle .ia-urg{background:#C8102E;color:#fff;border-radius:10px;padding:8px 10px;font-weight:700;margin-bottom:8px}
+/* IA:CSS:FIN */
+"""
+s = re.sub(r"/\* IA:CSS:DEBUT \*/.*?/\* IA:CSS:FIN \*/\n", "", s, flags=re.S)
+s = s.replace("@media (max-width:860px){", css_ia + "@media (max-width:860px){", 1)
+
+js_ia = r"""/* IA:JS:DEBUT */
+let iaCompatible=true, iaIndex=null;
+const IA_VIDES=new Set('a au aux avec ce ces cet cette comment dans de des du elle en est et il ils j je l la le les leur lui ma mais me mes moi mon ne nos notre nous on ou par pas pour qu que quel quelle quels quelles qui quoi sa se ses si son sur ta te tes toi ton tu un une vos votre vous y d c s n m t faire fait faut dois doit peut peux suis sont etre avoir ai a ont quand plus tout tous toute depuis hier aujourd hui chez quoi faire'.split(' '));
+const IA_SYN={courant:['electricite','coupure'],lumiere:['electricite','coupure'],panne:['coupure','electricite'],respire:['respirer','arret','cardiaque','massage'],respirer:['arret','cardiaque'],saigne:['saignement','plaie'],sang:['saignement'],evanoui:['inconsciente'],repond:['inconsciente'],sirene:['alerte','signal','sirene'],sonne:['sirene','alerte'],rancon:['rancon','bloque'],ordinateur:['appareil','rancon'],pirate:['piratage','compte'],arnaque:['arnaques','suspect'],potable:['purifier','eau','bouillir'],boire:['eau'],kit:['kit','urgence'],sac:['kit','sac'],chaud:['canicule','chaleur'],chaleur:['canicule'],degres:['canicule','chaleur'],froid:['grand','froid'],nord:['orientation','nord'],perdu:['orientation'],inondation:['inondation'],monte:['inondation','crue','hauteur'],crue:['inondation'],deborde:['inondation','crue'],eau:['eau'],feu:['feu'],brule:['brulure'],etouffe:['etouffement'],avale:['etouffement'],assurance:['assurance','catastrophe'],iode:['iode','nucleaire'],seisme:['seisme'],tempete:['tempete']};
+const IA_SENS=['respire','respirer','saigne','saignement','sang','inconscient','inconsciente','evanoui','evanouie','brule','brulure','etouffe','etouffement','malaise','douleur','poitrine','fracture','avale','poison','convulse','convulsion'];
+function iaNorm(t){return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ');}
+function iaMots(t){return iaNorm(t).split(/\s+/).filter(w=>w.length>1&&!IA_VIDES.has(w));}
+function iaRacine(w){return w.length>5?w.slice(0,w.length-1).replace(/(e|s|x)$/,''):w;}
+function iaChercher(q){
+  if(!iaIndex) iaIndex=JSON.parse(document.getElementById('guides-index').textContent).map(g=>({...g,_t:iaNorm(g.titre+' '+g.resume),_m:g.m.map(m=>({...m,_n:iaNorm(m.bloc+' '+m.t)}))}));
+  let mots=iaMots(q); const ext=[...mots]; mots.forEach(w=>(IA_SYN[w]||[]).forEach(x=>ext.push(x)));
+  const racines=[...new Set(ext.map(iaRacine))];
+  let meilleur=null;
+  for(const g of iaIndex){
+    const sc=g._m.map((m,i)=>({m:g.m[i],s:racines.reduce((a,r)=>a+(m._n.includes(r)?1:0),0)})).sort((a,b)=>b.s-a.s);
+    const titre=racines.reduce((a,r)=>a+(g._t.includes(r)?2:0),0);
+    const total=titre+sc.slice(0,3).reduce((a,x)=>a+x.s,0);
+    if(!meilleur||total>meilleur.total) meilleur={g,total,top:sc.filter(x=>x.s>0).slice(0,3).map(x=>x.m).sort((a,b)=>g.m.indexOf(a)-g.m.indexOf(b))};
+  }
+  const sensible=mots.some(w=>IA_SENS.some(s=>w.startsWith(s)));
+  return {meilleur:(meilleur&&meilleur.total>=3)?meilleur:null,sensible};
+}
+function iaEsc(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+function demander(q){
+  q=(q||'').trim(); if(!q) return;
+  const fil=document.getElementById('ia-fil'); const champ=document.getElementById('ia-q'); champ.value='';
+  fil.insertAdjacentHTML('beforeend','<div class="bulle moi">'+iaEsc(q)+'</div>');
+  const r=iaChercher(q); let h='';
+  if(r.sensible) h+='<div class="ia-urg">Urgence vitale : appelez le 15 ou le 112 (114 par SMS)</div>';
+  if(!r.meilleur){ h+="Je n'ai pas trouvé de guide sur ce sujet. Je ne réponds qu'à partir des guides de l'application. Essayez avec d'autres mots, ou ouvrez la liste des guides."+'<div class="ia-src"><a href="#e-guides">Voir les guides</a></div>'; }
+  else{
+    const g=r.meilleur.g;
+    const mode=r.sensible?"Étapes du guide relu, sans reformulation :":(iaCompatible?"D'après le guide, voici l'essentiel (dans l'application, le modèle d'Apple rédigera cette réponse) :":"Passages du guide trouvés pour vous :");
+    const lignes=(r.sensible&&g.etapes.length)?g.etapes:r.meilleur.top.map(m=>m.t);
+    h+=iaEsc(mode)+(r.sensible&&g.etapes.length?'<ol>':'<ul>')+lignes.map(t=>'<li>'+iaEsc(t)+'</li>').join('')+(r.sensible&&g.etapes.length?'</ol>':'</ul>');
+    h+='<div class="ia-src"><span class="pill '+(g.niveau==='officiel'?'gratuit">Consigne officielle':'bientot">Conseil pratique')+'</span><a href="#e-g-'+g.id+'">Ouvrir le guide « '+iaEsc(g.titre)+' »</a></div>';
+  }
+  fil.insertAdjacentHTML('beforeend','<div class="bulle ia">'+h+'</div>');
+  fil.lastElementChild.scrollIntoView({block:'nearest'});
+}
+function basculerIA(){
+  iaCompatible=!iaCompatible;
+  const e=document.getElementById('ia-etat'); e.classList.toggle('off',!iaCompatible);
+  document.getElementById('ia-etat-txt').textContent=iaCompatible?"Modèle d'Apple, sur cet iPhone · hors ligne":"iPhone non compatible · recherche dans les guides, sans IA";
+  const b=document.getElementById('bt-ia'); if(b) b.textContent=iaCompatible?'Simuler un iPhone non compatible avec l\'IA':'Simuler un iPhone compatible avec l\'IA';
+  toast(iaCompatible?'iPhone compatible simulé':'iPhone non compatible simulé');
+}
+/* IA:JS:FIN */
+"""
+s = re.sub(r"/\* IA:JS:DEBUT \*/.*?/\* IA:JS:FIN \*/\n", "", s, flags=re.S)
+i_fin = s.rindex("</script>")
+s = s[:i_fin] + js_ia + s[i_fin:]
+BT = """<button onclick="basculerIA()" id="bt-ia">Simuler un iPhone non compatible avec l'IA</button>"""
+if 'id="bt-ia"' not in s:
+    s = s.replace('<button onclick="basculerPremium()" id="bt-prem">', BT + '\n      <button onclick="basculerPremium()" id="bt-prem">', 1)
 
 MAQUETTE.write_text(s, encoding="utf-8")
 print(f"{len(ecrans)} écrans de guides intégrés dans {MAQUETTE.relative_to(RACINE)}")

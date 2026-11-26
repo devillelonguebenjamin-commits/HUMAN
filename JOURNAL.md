@@ -283,3 +283,9 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Demande de Benjamin.** « Et cyberattaque ? » Le sujet n'était traité qu'en quelques lignes (désinformation, communication de crise de la mairie).
 
 **Travail fait.** Deux guides ajoutés à la version 1.1 (46 guides) : « Cyberattaque et arnaques en ligne » pour les habitants (rançongiciel, compte piraté, message frauduleux, attaque d'ampleur nationale, prévention, 17Cyber, 33700, Pharos) et « Cyberattaque contre la commune » dans l'espace mairie (premières heures, CSIRT régional, notification à la CNIL sous 72 heures, communication pendant l'attaque d'après la checklist de l'ANSSI). Tuiles « Cyberattaque » et « Monoxyde de carbone » ajoutées à l'onglet Urgence.
+
+## 2026-11-26 : assistant IA local et schémas des guides
+
+**Demandes de Benjamin.** (1) Cadrer l'IA locale et l'ajouter à la maquette. (2) Améliorer les guides avec Claude Design : schémas et images libres de droits.
+
+**Travail fait.** `12_assistant_ia_local.md` : modèle d'Apple sur l'appareil (4 096 jetons, génération guidée, garde-fous pouvant refuser), trois niveaux (recherche sur tous les iPhones, reformulation sur les iPhones compatibles, aucune génération pour la santé), règle « rien qui ne soit pas dans un guide », tests avant développement. Nouveauté d'iOS 27 notée : modèle dans le nuage gratuit pour les petits développeurs, écarté en v1 car il exige du réseau. Assistant de la maquette rendu interactif : recherche réelle dans les 46 guides, bandeau d'urgence et étapes exactes pour la santé, simulation d'un iPhone non compatible ; 15 questions de test sur 15 correctes. `prompts/claude_design_schemas_guides.md` : 24 schémas prioritaires, style signalétique, SVG, aucune image IA, règles et registre des crédits photo (`contenus/images/CREDITS.csv`).
