@@ -86,10 +86,19 @@ def geodae() -> list[dict]:
     brut = json.loads(lire(ressources[0]["url"], delai=300))
     lignes = brut if isinstance(brut, list) else brut.get("features") or brut.get("data") or []
     points = []
+    ignores = 0
     for l in lignes:
         if "geometry" in l and l.get("geometry"):
-            lon, lat = l["geometry"]["coordinates"][:2]
-            props = l.get("properties", {})
+            # Point simple [lon, lat] ou multipoint [[lon, lat], ...] : on descend jusqu'à la première paire.
+            c = l["geometry"].get("coordinates")
+            while isinstance(c, list) and c and isinstance(c[0], list):
+                c = c[0]
+            try:
+                lon, lat = float(c[0]), float(c[1])
+            except (TypeError, ValueError, IndexError):
+                ignores += 1
+                continue
+            props = l.get("properties", {}) or {}
         else:
             props = l
             cle_lat = next((k for k in l if "lat" in k.lower()), None)
@@ -104,6 +113,8 @@ def geodae() -> list[dict]:
             continue
         nom = next((str(v) for k, v in props.items() if "nom" in k.lower() and v), "Défibrillateur")
         points.append(point(lon, lat, {"type": "dae", "nom": nom, "source": "Géo'DAE"}))
+    if ignores:
+        print(f"  {ignores} fiches Géo'DAE sans coordonnées lisibles, ignorées.")
     return points
 
 
