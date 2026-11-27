@@ -16,7 +16,7 @@ let package = Package(
         .testTarget(
             name: "SijamaisCoreTests",
             dependencies: ["SijamaisCore"],
-            resources: [.copy("Fixtures/guides.json")]
+            resources: [.copy("Fixtures/guides.json"), .copy("Fixtures/cas_cycle1.json")]
         ),
     ]
 )

@@ -270,6 +270,11 @@
       },
       {
        "n": "196",
+       "label": "Secours en mer",
+       "desc": "Personne tombée à l'eau, bateau en difficulté, depuis la mer ou le littoral. Le 112 fonctionne aussi."
+      },
+      {
+       "n": "196",
        "label": "Urgence en mer",
        "desc": "Secours en mer."
       }
@@ -314,7 +319,8 @@
     "date": null
    },
    "a_verifier": [
-    "Numéro vert 0 800 50 73 05 du signal national d'alerte : à confirmer avant publication"
+    "Numéro vert 0 800 50 73 05 du signal national d'alerte : à confirmer avant publication",
+    "196 (secours en mer, CROSS) : ajouté le 27/11/2026 après le cycle 1 de l'assistant, à confirmer sur service-public.gouv.fr avant publication"
    ]
   },
   {

@@ -11,8 +11,10 @@ public struct ReponseAssistant: Sendable, Equatable {
         case reformulee
         /// Passages du guide affichés tels quels (niveau 1).
         case passages
-        /// Aucun guide pertinent.
+        /// Aucun guide pertinent, ou hors périmètre : `texte` donne alors l'orientation (15, pharmacien, mairie...).
         case aucunGuide
+        /// Demande ambiguë : `texte` est la question posée en retour, `options` les boutons de réponse.
+        case clarification
     }
 
     public let mode: Mode
@@ -21,14 +23,25 @@ public struct ReponseAssistant: Sendable, Equatable {
     public let guideId: String?
     public let guideTitre: String?
     public let urgenceVitale: Bool
+    /// Boutons de réponse rapide (mode clarification).
+    public let options: [OptionClarification]
+    /// Question écrite en anglais : l'écran ajoute « Emergency: call 112 ».
+    public let enAnglais: Bool
 
-    public init(mode: Mode, texte: String?, lignes: [String], guideId: String?, guideTitre: String?, urgenceVitale: Bool) {
+    public init(mode: Mode, texte: String?, lignes: [String], guideId: String?, guideTitre: String?, urgenceVitale: Bool,
+                options: [OptionClarification] = [], enAnglais: Bool = false) {
         self.mode = mode
         self.texte = texte
         self.lignes = lignes
         self.guideId = guideId
         self.guideTitre = guideTitre
         self.urgenceVitale = urgenceVitale
+        self.options = options
+        self.enAnglais = enAnglais
+    }
+
+    func enAnglais(_ oui: Bool) -> ReponseAssistant {
+        ReponseAssistant(mode: mode, texte: texte, lignes: lignes, guideId: guideId, guideTitre: guideTitre, urgenceVitale: urgenceVitale, options: options, enAnglais: oui)
     }
 }
 
@@ -87,6 +100,32 @@ public struct Assistant: Sendable {
     }
 
     public func repondre(_ question: String) async -> ReponseAssistant {
+        let anglais = Triage.semblerAnglais(question)
+        return await repondreSansLangue(question).enAnglais(anglais)
+    }
+
+    private func repondreSansLangue(_ question: String) async -> ReponseAssistant {
+        let guides = moteur.guidesParId
+        switch Triage.decider(question, guides: guides) {
+        case let .horsPerimetre(message, vital):
+            return ReponseAssistant(mode: .aucunGuide, texte: message, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: vital)
+        case let .clarification(q, options):
+            return ReponseAssistant(mode: .clarification, texte: q, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: true, options: options)
+        case .urgencePersonnelle:
+            return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: true)
+        case let .sante(id, lignes):
+            return ReponseAssistant(mode: .urgenceSante, texte: nil, lignes: lignes, guideId: id, guideTitre: guides[id]?.titre, urgenceVitale: true)
+        case let .guide(id):
+            let r = moteur.chercher(question, dans: id)
+            guard let g = r.guide ?? guides[id] else { return await rechercher(question) }
+            let passages = r.passages.isEmpty ? Array(Triage.listes(id, guides).prefix(3)) : r.passages
+            return await informer(question: question, guide: g, passages: passages)
+        case let .recherche(texte):
+            return await rechercher(texte)
+        }
+    }
+
+    private func rechercher(_ question: String) async -> ReponseAssistant {
         let r = moteur.chercher(question)
         if r.sensible && MoteurRecherche.parleDeSoi(question) {
             return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: r.guide?.id, guideTitre: r.guide?.titre, urgenceVitale: true)
@@ -97,12 +136,17 @@ public struct Assistant: Sendable {
         if r.sensible {
             return ReponseAssistant(mode: .urgenceSante, texte: nil, lignes: r.lignesAAfficher, guideId: g.id, guideTitre: g.titre, urgenceVitale: true)
         }
-        let passages = ReponseAssistant(mode: .passages, texte: nil, lignes: r.passages, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
+        return await informer(question: question, guide: g, passages: r.passages)
+    }
+
+    /// Question d'information : passages du guide, reformulés par le modèle d'Apple quand c'est permis.
+    private func informer(question: String, guide g: Guide, passages lignes: [String]) async -> ReponseAssistant {
+        let passages = ReponseAssistant(mode: .passages, texte: nil, lignes: lignes, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
         guard let modele = reformulateur, modele.estDisponible, !g.sensible else { return passages }
         do {
-            let ref = try await modele.reformuler(question: question, passages: r.passages, guideId: g.id)
+            let ref = try await modele.reformuler(question: question, passages: lignes, guideId: g.id)
             guard Self.reformulationAcceptable(ref, guideId: g.id) else { return passages }
-            return ReponseAssistant(mode: .reformulee, texte: ref.texte, lignes: r.passages, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
+            return ReponseAssistant(mode: .reformulee, texte: ref.texte, lignes: lignes, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
         } catch {
             // Refus des garde-fous, erreur, modèle indisponible : on montre le guide, sans rien inventer.
             return passages

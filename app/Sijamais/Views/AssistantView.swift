@@ -139,9 +139,26 @@ private struct ReponseVue: View {
     var body: some View {
         Bulle(estQuestion: false) {
             if reponse.urgenceVitale { BandeauUrgenceVitale() }
+            if reponse.enAnglais {
+                Label("Emergency: call 112 (free, works everywhere in Europe).", systemImage: "phone.fill")
+                    .font(.subheadline.bold()).foregroundStyle(Charte.secours)
+            }
             switch reponse.mode {
             case .aucunGuide:
-                Text("Je n'ai pas trouvé de guide sur ce sujet. Je ne réponds qu'à partir des guides de l'application : essayez avec d'autres mots, ou ouvrez l'onglet Savoir.")
+                Text(reponse.texte ?? "Je n'ai pas trouvé de guide sur ce sujet. Je ne réponds qu'à partir des guides de l'application : essayez avec d'autres mots, ou ouvrez l'onglet Savoir.")
+            case .clarification:
+                Text(reponse.texte ?? "").font(.headline)
+                VStack(alignment: .leading, spacing: 8) {
+                    ForEach(reponse.options, id: \.self) { o in
+                        Button { modele.choisir(o) } label: {
+                            Text(o.libelle).font(.subheadline.bold()).frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 14).padding(.vertical, 10)
+                                .background(RoundedRectangle(cornerRadius: 12).fill(Charte.balise.opacity(0.12)))
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityHint("Envoie cette réponse à l'assistant")
+                    }
+                }
             case .urgencePersonnelle:
                 Text(reponse.texte ?? "").font(.headline)
             case .urgenceSante:

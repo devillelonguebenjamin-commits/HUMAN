@@ -59,9 +59,12 @@ public struct MoteurRecherche: Sendable {
 
     private let entrees: [Entree]
     public let seuil: Int
+    /// Les guides par identifiant, pour le triage.
+    public let guidesParId: [String: Guide]
 
     public init(bibliotheque: GuideLibrary, seuil: Int = 3) {
         self.seuil = seuil
+        guidesParId = Dictionary(bibliotheque.guides.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
         entrees = bibliotheque.guides.map { g in
             var m: [Morceau] = []
             for b in g.blocs {
@@ -92,6 +95,25 @@ public struct MoteurRecherche: Sendable {
         "massage": ["massez", "masser", "compressions"], "rythme": ["minute", "fois"],
         "peur": ["moral", "stress"], "angoisse": ["moral", "stress"], "panique": ["moral", "stress"], "stresse": ["moral", "stress"], "triste": ["moral"],
         "assurance": ["assurance", "catastrophe"], "iode": ["iode", "nucleaire"], "seisme": ["seisme"], "tempete": ["tempete"],
+        // Cycle 1 (27/11/2026) : mots courants et anglais.
+        "sourd": ["114", "sms"], "sourde": ["114", "sms"], "malentendant": ["114", "sms"], "samu": ["15", "samu"], "pompiers": ["18", "pompiers"],
+        "pharmacie": ["trousse", "familiale"], "trousse": ["trousse", "familiale"], "apprendre": ["former", "formation", "gestes"],
+        "formation": ["former", "formation"], "applis": ["applications", "sauv"], "appli": ["applications", "sauv"],
+        "sdf": ["abri", "115"], "abri": ["abri", "115"], "cauchemar": ["moral", "stress"], "cauchemars": ["moral", "stress"],
+        "dae": ["defibrillateur"], "reanimation": ["massage", "cardiaque"], "pls": ["laterale", "securite"],
+        "tourniquet": ["garrot"], "heimlich": ["etouffement", "poing"], "cloque": ["brulure"], "ebouillante": ["brulure"],
+        "burn": ["brulure"], "burned": ["brulure"], "bleeding": ["saignement"], "choking": ["etouffement"], "breathe": ["respirer"],
+        "breathing": ["respirer"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
+    ]
+
+    /// Expressions de plusieurs mots (cycle 1) : cherchées dans la question préparée, elles ajoutent des mots du guide.
+    static let expressions: [(String, [String])] = [
+        ("repond plus", ["inconsciente"]), ("coeur arrete", ["arret", "cardiaque"]), ("crise cardiaque", ["arret", "cardiaque"]),
+        ("pisse le sang", ["saignement"]), ("coupure profonde", ["saignement", "plaie"]), ("objet plante", ["saignement", "retirez"]),
+        ("tombe dans les pommes", ["inconsciente"]), ("avale de travers", ["etouffement", "tousser"]), ("fausse route", ["etouffement"]),
+        ("intoxication gaz", ["monoxyde"]), ("poele a petrole", ["monoxyde"]), ("peux pas parler", ["114", "sms"]), ("peut pas parler", ["114", "sms"]),
+        ("secours en mer", ["196"]), ("samu social", ["115", "abri"]), ("sans abri", ["abri", "115"]), ("idees noires", ["3114", "moral"]),
+        ("premiers secours", ["former", "formation", "gestes"]), ("pas bien", ["moral"]),
     ]
 
     static let termesSensibles: [String] = [
@@ -101,7 +123,7 @@ public struct MoteurRecherche: Sendable {
     ]
 
     static func mots(_ texte: String) -> [String] {
-        Normalisation.normaliser(texte).split(separator: " ").map(String.init).filter { $0.count > 1 && !motsVides.contains($0) }
+        Triage.preparer(texte).split(separator: " ").map(String.init).filter { $0.count > 1 && !motsVides.contains($0) }
     }
 
     /// Racine grossière : retire la dernière lettre des mots longs, puis un e, s ou x final.
@@ -122,16 +144,18 @@ public struct MoteurRecherche: Sendable {
         mots(question).contains { m in termesSensibles.contains { m.hasPrefix($0) } }
     }
 
-    public func chercher(_ question: String) -> ResultatRecherche {
+    public func chercher(_ question: String, dans guideId: String? = nil) -> ResultatRecherche {
         let ms = Self.mots(question)
         var etendus = ms
         for m in ms { etendus += Self.synonymes[m] ?? [] }
+        let prepare = Triage.preparer(question)
+        for (e, ajouts) in Self.expressions where prepare.contains(" " + e + " ") { etendus += ajouts }
         var vus = Set<String>()
         let racines = etendus.map(Self.racine).filter { vus.insert($0).inserted }
         let sensible = ms.contains { m in Self.termesSensibles.contains { m.hasPrefix($0) } }
 
         var meilleur: (entree: Entree, total: Int, passages: [String])?
-        for e in entrees {
+        for e in entrees where guideId == nil || e.guide.id == guideId {
             let scores = e.morceaux.enumerated().map { (i, m) in
                 (i, m, racines.reduce(0) { $0 + (m.normalise.contains($1) ? 1 : 0) })
             }
@@ -143,7 +167,7 @@ public struct MoteurRecherche: Sendable {
                 meilleur = (e, total, retenus)
             }
         }
-        guard let m = meilleur, m.total >= seuil else {
+        guard let m = meilleur, m.total >= (guideId == nil ? seuil : 0) else {
             return ResultatRecherche(guide: nil, passages: [], score: meilleur?.total ?? 0, sensible: sensible)
         }
         return ResultatRecherche(guide: m.entree.guide, passages: m.passages, score: m.total, sensible: sensible)

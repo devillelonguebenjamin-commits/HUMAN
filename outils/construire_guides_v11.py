@@ -67,7 +67,10 @@ def remplacer_texte(gid, ancien, nouveau):
 remplacer_texte("alerte", "France Bleu, France Info, France Inter", "ici, ex-France Bleu ; France Info ; France Inter")
 remplacer_texte("alerte", "\"France Bleu (FM)\"", "\"ici, ex-France Bleu (FM)\"")
 a_verifier["alerte"] = ["Calendrier des essais de la sirène « corne de brume » (source de 2010) : à confirmer auprès de la préfecture"]
-a_verifier["numeros"] = ["Numéro vert 0 800 50 73 05 du signal national d'alerte : à confirmer avant publication"]
+a_verifier["numeros"] = ["Numéro vert 0 800 50 73 05 du signal national d'alerte : à confirmer avant publication", "196 (secours en mer, CROSS) : ajouté le 27/11/2026 après le cycle 1 de l'assistant, à confirmer sur service-public.gouv.fr avant publication"]
+_nums = bloc("numeros", lambda b: b.get("t") == "numbers")["items"]
+_i = next(i for i, x in enumerate(_nums) if x["n"] == "114")
+_nums.insert(_i + 1, {"n": "196", "label": "Secours en mer", "desc": "Personne tombée à l'eau, bateau en difficulté, depuis la mer ou le littoral. Le 112 fonctionne aussi."})
 
 remplacer_texte("risques", "Anticipez : retirez vos comprimés d'iode (gratuits) en pharmacie.",
                 "Si vous habitez à moins de 20 km d'une centrale nucléaire, retirez vos comprimés d'iode en pharmacie (renseignez-vous en mairie).")

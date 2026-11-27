@@ -80,10 +80,15 @@ final class AppModel {
 
     // MARK: Assistant
 
-    func demander(_ question: String) {
+    /// Réponse à un bouton de clarification : on affiche le libellé, on envoie la phrase prévue.
+    func choisir(_ option: OptionClarification) {
+        demander(option.question, affichage: option.libelle)
+    }
+
+    func demander(_ question: String, affichage: String? = nil) {
         let q = question.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !q.isEmpty else { return }
-        let echange = Echange(question: q)
+        let echange = Echange(question: affichage ?? q)
         echanges.append(echange)
         let assistant = self.assistant
         Task {
