@@ -27,6 +27,8 @@ extension Triage {
     public static let messageRH = "Je n'ai pas de guide sur la gestion du personnel : voyez votre service des ressources humaines ou le centre de gestion."
     public static let messageDemarches = "Je n'ai pas de guide sur ce sujet : renseignez-vous auprès du commissariat, de la gendarmerie ou sur service-public.gouv.fr."
     public static let messageHarcelement = "Je n'ai pas de guide sur le harcèlement. Signalez les contenus sur internet-signalement.gouv.fr (Pharos) et faites-vous aider sur 17cyber.gouv.fr. En cas de danger, appelez le 17 ou le 112."
+    public static let messageBlessure = "Je n'ai pas de guide sur les fractures ni les entorses. Appelez le 15 (ou le 112) pour être conseillé. Si la plaie saigne abondamment : appuyez fort et sans relâcher dessus, et appelez immédiatement."
+    public static let messagePlaiePerforante = "Je n'ai pas de guide sur ce type de blessure : demandez conseil à un pharmacien ou à un médecin. Ne retirez jamais un objet planté dans une plaie ; si elle saigne abondamment, appelez le 15 ou le 112."
     public static let messageSport = "Je n'ai pas de guide sur le sport ou les loisirs."
 
     static let detressePsy = ["idees noires", "idee noire", "envie d en finir", "en finir", "suicide", "suicider", "me tuer", "se tuer", "veux mourir",
@@ -105,6 +107,15 @@ extension Triage {
         }
 
         if x.a("harcel", "cyberharcel") { return .horsPerimetre(message: messageHarcelement, urgenceVitale: false) }
+
+        // Blessures sans guide (retour d'essai de Benjamin, 27/11/2026) : fractures, entorses, objet qui a percé la peau.
+        let membre = x.a("jambe", "bras", "poignet", "cheville", "cote", "doigt", "pied", "main", "genou", "epaule", "hanche", "os ", "nez", "clavicule", "dos", "orteil")
+        if (x.a("casse", "cassee", "fracture", "brise") && membre) || x.a("entorse", "foulure", "luxation", "luxe", "tordu la cheville", "tordu le") {
+            if !x.a(saignementFort) { return .horsPerimetre(message: messageBlessure, urgenceVitale: false) }
+        }
+        if x.a("clou", "epine", "echarde", "eclat de verre", "morceau de verre", "hamecon") && !x.a(saignementFort) && !x.a("plante dans", "plante au") {
+            return .horsPerimetre(message: messagePlaiePerforante, urgenceVitale: false)
+        }
 
         // 3. Espace mairie : les guides de la commune, sans les risques du grand public, sauf urgence vitale.
         if espaceMairie && !vital(x) {

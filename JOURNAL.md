@@ -408,3 +408,19 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - Mode d'emploi et points à vérifier dans `contenus/equipement/README.md`. 44 tests réussis.
 
 **Choix de placement.** Pas de sixième onglet (5 au plus sur iPhone, barre déjà pleine) : écran à un geste depuis l'accueil et les guides. À revoir si Benjamin préfère échanger avec un onglet existant.
+
+## 2026-11-27 : retours d'essai de Benjamin sur l'assistant (5 captures)
+
+**Constat.** Les trois premières captures venaient d'une version antérieure (Javel encore présente) : « comment faire du feu », la baignoire et « je viens de poignarder quelqu'un » étaient déjà corrigés dans la version actuelle. Restaient cinq problèmes réels.
+
+**Corrections.**
+1. « J'ai marché sur un clou » renvoyait au guide Assurance : « marche » était trouvé à l'intérieur de « démarche ». Le moteur ne reconnaît plus un mot qu'au début d'un mot du guide.
+2. Fractures et entorses (« je me suis cassé la jambe ») : message d'orientation (15 ou 112, et la consigne de compression si ça saigne abondamment).
+3. Objet qui perce la peau (clou, épine, verre) : pharmacien ou médecin, « Ne retirez jamais un objet planté ».
+4. « Je saigne de la tête » : les boutons disent « ça saigne beaucoup » au lieu de « il saigne ».
+5. Le modèle d'Apple commentait les passages (« Le premier guide « stocks »... ») au lieu de répondre :
+   - sa consigne lui interdit de parler des passages et des guides ;
+   - une réponse qui dit « ne mentionnent pas » ou « aucune information » devient « pas de guide » ;
+   - une réponse qui commente les passages est refusée, et le guide s'affiche tel quel.
+
+« J'ai faim » renvoie désormais au guide Stocks. 7 questions de Benjamin ajoutées aux tests ; 45 tests réussis.

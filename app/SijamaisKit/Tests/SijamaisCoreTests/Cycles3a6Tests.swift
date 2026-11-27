@@ -28,6 +28,14 @@ final class Cycles3a6Tests: XCTestCase {
         ("je me suis perdu en vtt dans les bois", .passages, "orientation"),
         ("comment rendre leau de la mare potable", .passages, "eau"),
         ("notre site internet de mairie est pirate que dire aux habitants", .passages, "cyberattaque-commune"),
+        // Essais de Benjamin sur l'application, 27/11/2026.
+        ("J 'ai marché sur un clou", .aucunGuide, nil),
+        ("Je viens de me casser le poignet", .aucunGuide, nil),
+        ("Je me suis cassé la jambe", .aucunGuide, nil),
+        ("Je viens de poignarder quelqu'un avec un couteau, quoi faire ?", .urgenceSante, "saignement"),
+        ("Comment faire du feu", .clarification, nil),
+        ("comment bloquer l'eau qui coule de la baignoire", .aucunGuide, nil),
+        ("Je saigne de la tête", .clarification, nil),
     ]
 
     func testLesQuestionsNouvelles() async {

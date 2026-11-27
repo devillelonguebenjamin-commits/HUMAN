@@ -281,7 +281,7 @@ public enum Triage {
             }
             if x.a(saignement) {
                 return .clarification(question: "Le saignement est-il abondant ?", options: [
-                    OptionClarification(libelle: "Oui, il saigne beaucoup", question: "il saigne beaucoup"),
+                    OptionClarification(libelle: "Oui, ça saigne beaucoup", question: "ca saigne beaucoup"),
                     OptionClarification(libelle: "Non, c'est une petite plaie", question: "petite plaie qui saigne peu"),
                 ])
             }

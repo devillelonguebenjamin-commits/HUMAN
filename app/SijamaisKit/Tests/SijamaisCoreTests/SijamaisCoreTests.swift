@@ -178,6 +178,19 @@ final class AssistantTests: XCTestCase {
         XCTAssertTrue(s.contains("1. un") && s.contains("2. deux") && s.contains("kit72h"))
     }
 
+    /// Essai de Benjamin du 27/11/2026 : le modèle commentait les passages (« Le guide stocks ne contient aucune information... »).
+    func testCommentaireSurLesPassagesRefuse() async {
+        let meta = ModeleFactice(reponse: ReformulationModele(texte: "Les passages fournis ne mentionnent pas comment bloquer l'eau. Le premier guide, stocks, parle de conservation.", guidesCites: ["kit72h"]))
+        let r = await Assistant(moteur: moteur, reformulateur: meta).repondre("Que mettre dans le kit ?")
+        XCTAssertEqual(r.mode, .aucunGuide)
+        let meta2 = ModeleFactice(reponse: ReformulationModele(texte: "Selon le guide, prévoyez de l'eau. Les passages indiquent une radio.", guidesCites: ["kit72h"]))
+        let r2 = await Assistant(moteur: moteur, reformulateur: meta2).repondre("Que mettre dans le kit ?")
+        XCTAssertEqual(r2.mode, .passages)
+        let bon = ModeleFactice(reponse: ReformulationModele(texte: "Prévoyez 6 litres d'eau par personne, une radio à piles et une lampe.", guidesCites: ["kit72h"]))
+        let r3 = await Assistant(moteur: moteur, reformulateur: bon).repondre("Que mettre dans le kit ?")
+        XCTAssertEqual(r3.mode, .reformulee)
+    }
+
     func testReformulationTropLongueRefusee() {
         let long = ReformulationModele(texte: String(repeating: "a", count: 2000), guidesCites: ["kit72h"])
         XCTAssertFalse(Assistant.reformulationAcceptable(long, guideId: "kit72h"))

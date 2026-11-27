@@ -69,8 +69,24 @@ public struct Assistant: Sendable {
     public static let consignes = """
     Tu es l'assistant de l'application SIJAMAIS. Tu réponds en français, en cinq phrases au plus, \
     uniquement à partir des passages fournis. Si les passages ne répondent pas à la question, dis-le. \
-    Tu cites l'identifiant de chaque guide utilisé. Tu ne donnes aucun conseil médical au-delà des passages.
+    Tu cites l'identifiant de chaque guide utilisé. Tu ne donnes aucun conseil médical au-delà des passages. \
+    Réponds directement à la personne, au vouvoiement : ne parle jamais des passages, des guides ni de leurs noms. \
+    Si les passages ne répondent pas à la question, écris seulement : SANS_REPONSE
     """
+
+    /// Réponses où le modèle dit que les passages ne répondent pas (essai de Benjamin du 27/11/2026) : on affiche « pas de guide ».
+    static let tournuresSansReponse = ["sans reponse", "ne mentionnent pas", "ne mentionne pas", "ne contient aucune", "ne contiennent aucune", "aucune information",
+                                       "ne repondent pas", "n est decrite", "n est decrit", "pas d information"]
+    /// Réponses qui commentent les passages au lieu de répondre : refusées, on montre le guide.
+    static let tournuresMeta = ["passages fournis", "les passages", "le passage", "premier guide", "deuxieme guide", "selon le guide", "le guide stocks"]
+
+    static func contient(_ texte: String, _ liste: [String]) -> Bool {
+        let t = " " + Normalisation.normaliser(texte).split(separator: " ").joined(separator: " ") + " "
+        return liste.contains { t.contains(" " + $0) }
+    }
+
+    /// Vrai si le modèle dit, d'une façon ou d'une autre, que les passages ne répondent pas.
+    public static func estSansReponse(_ texte: String) -> Bool { contient(texte, tournuresSansReponse) }
 
     public static let longueurMaxReformulation = 900
 
@@ -100,7 +116,7 @@ public struct Assistant: Sendable {
         let texte = r.texte.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !texte.isEmpty, texte.count <= longueurMaxReformulation else { return false }
         guard !r.guidesCites.isEmpty, r.guidesCites.allSatisfy({ $0 == guideId }) else { return false }
-        return true
+        return !contient(texte, tournuresMeta)
     }
 
     /// `espaceMairie` : interrupteur des réglages (élus et agents) ; les 5 guides de la commune entrent dans la recherche.
@@ -161,6 +177,10 @@ public struct Assistant: Sendable {
         guard let modele = reformulateur, modele.estDisponible, !g.sensible, !Self.sansReformulation.contains(g.id) else { return passages }
         do {
             let ref = try await modele.reformuler(question: question, passages: lignes, guideId: g.id)
+            if Self.estSansReponse(ref.texte) {
+                // Le modèle juge que le guide ne répond pas : on le dit, au lieu d'afficher un commentaire sur les passages.
+                return ReponseAssistant(mode: .aucunGuide, texte: nil, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: false)
+            }
             guard Self.reformulationAcceptable(ref, guideId: g.id) else { return passages }
             return ReponseAssistant(mode: .reformulee, texte: ref.texte, lignes: lignes, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
         } catch {

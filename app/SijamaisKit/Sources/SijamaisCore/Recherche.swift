@@ -83,10 +83,10 @@ public struct MoteurRecherche: Sendable {
                 default: entier = false
                 }
                 for t in textes {
-                    m.append(Morceau(texte: t, normalise: Normalisation.normaliser(b.titreBloc + " " + t), bloc: ib, entier: entier, titreBloc: b.titreBloc, alerte: alerte))
+                    m.append(Morceau(texte: t, normalise: " " + Normalisation.normaliser(b.titreBloc + " " + t), bloc: ib, entier: entier, titreBloc: b.titreBloc, alerte: alerte))
                 }
             }
-            return Entree(guide: g, titreNormalise: Normalisation.normaliser(g.titre + " " + g.resume), morceaux: m)
+            return Entree(guide: g, titreNormalise: " " + Normalisation.normaliser(g.titre + " " + g.resume), morceaux: m)
         }
     }
 
@@ -117,7 +117,7 @@ public struct MoteurRecherche: Sendable {
         "dae": ["defibrillateur"], "reanimation": ["massage", "cardiaque"], "pls": ["laterale", "securite"],
         "tourniquet": ["garrot"], "heimlich": ["etouffement", "poing"], "cloque": ["brulure"], "ebouillante": ["brulure"],
         "burn": ["brulure"], "burned": ["brulure"], "bleeding": ["saignement"], "choking": ["etouffement"], "breathe": ["respirer"],
-        "breathing": ["respirer"], "buvable": ["potable", "purifier", "filtrer", "bouillir"], "radicalise": ["radicalisation"], "radicalisation": ["radicalisation"], "chats": ["animaux"], "chiens": ["animaux"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
+        "breathing": ["respirer"], "buvable": ["potable", "purifier", "filtrer", "bouillir"], "aider": ["jeveuxaider", "benevolat"], "faim": ["nourriture", "manger", "stock"], "radicalise": ["radicalisation"], "radicalisation": ["radicalisation"], "chats": ["animaux"], "chiens": ["animaux"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
     ]
 
     /// Expressions de plusieurs mots (cycle 1) : cherchées dans la question préparée, elles ajoutent des mots du guide.
@@ -217,10 +217,10 @@ public struct MoteurRecherche: Sendable {
         for e in entrees where guideId == nil || e.guide.id == guideId {
             if guideId == nil && !(tous && !espaceMairie) && Self.guidesMairie.contains(e.guide.id) != espaceMairie { continue }
             let scores = e.morceaux.enumerated().map { (i, m) in
-                (i, m, racines.reduce(0) { $0 + (m.normalise.contains($1) ? 1 : 0) })
+                (i, m, racines.reduce(0) { $0 + (m.normalise.contains(" " + $1) ? 1 : 0) }) // au début d'un mot : « marche » ne trouve pas « démarche »
             }
             let tries = scores.sorted { $0.2 != $1.2 ? $0.2 > $1.2 : $0.0 < $1.0 } // à égalité, l'ordre du guide est gardé
-            let titre = racines.reduce(0) { $0 + (e.titreNormalise.contains($1) ? 2 : 0) }
+            let titre = racines.reduce(0) { $0 + (e.titreNormalise.contains(" " + $1) ? 2 : 0) }
             let total = titre + tries.prefix(3).reduce(0) { $0 + $1.2 }
             if meilleur == nil || total > meilleur!.total {
                 let choisis = Array(tries.filter { $0.2 > 0 }.prefix(guideId == nil ? Self.nombrePassages : 8))
