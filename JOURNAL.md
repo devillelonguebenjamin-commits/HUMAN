@@ -424,3 +424,23 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
    - une réponse qui commente les passages est refusée, et le guide s'affiche tel quel.
 
 « J'ai faim » renvoie désormais au guide Stocks. 7 questions de Benjamin ajoutées aux tests ; 45 tests réussis.
+
+## 2026-11-27 : ressources premium (randonnée, mer, voyage) et Espace enfants
+
+**Demande de Benjamin.** Chercher les ressources des modes premium randonnée, navigation et voyage international, et étudier un Espace enfants pour les parents.
+
+**Travail fait.** `15_premium_rando_mer_voyage_kids.md` : sources officielles et droits de réutilisation par mode, outils premium proposés, Espace enfants (contenu par âge, règles Apple et CNIL, gratuit ou payant), ordre proposé et démarches. Questions PK1 à PK5 ajoutées.
+
+**Points saillants.** SCAN 25 exclu de la Licence Ouverte ; marées du Shom sous licence payante ; conseils aux voyageurs sans jeu de données ouvert ; tracés GR revendiqués par la FFRandonnée ; bulletin avalanche et Plan IGN réutilisables ; Division 240 modifiée le 21 mai 2026. Espace enfants : hors catégorie « Enfants » de l'App Store, sans lien Amazon ni assistant libre, aucune donnée envoyée.
+
+**Décision de Benjamin.** « Oui je suis ok » : ordre enfants, randonnée, voyage, mer ; écran d'aide enfant gratuit, parcours et jeux dans la version famille ; profil enfant dans l'application ; demandes aux organismes. Brouillons des courriers à l'IGN, au Shom et au ministère des Affaires étrangères dans `courriers/`, à relire et signer par Benjamin. Rien n'a été envoyé.
+
+## 2026-11-27 : Espace enfants, contenu et maquette
+
+**Travail fait.**
+- Contenu : `contenus/enfants/parcours_v0.1.json` (script `outils/construire_enfants.py`), 13 modules et 24 mises en situation, deux tranches (6-10 ans avec un parent, 10-14 ans seul). Vocabulaire de l'école (« Apprendre à porter secours », « Gestes qui sauvent », PPMS), consignes reprises des guides 1.2. Mode d'emploi et points à relire dans `contenus/enfants/README.md`.
+- Maquette : 21 écrans (script `outils/integrer_enfants_maquette.py`), entrée depuis Famille. Vérifiée dans un navigateur : aucun lien mort, aucune erreur, aucun lien externe dans l'espace enfants, verrou famille vers « Demande à tes parents ».
+
+**Choix faits.** Gratuits : « J'ai besoin d'aide », la carte « Montrer à un adulte », « Appeler les secours » (6-10), « Alerter les secours » et « Besoin d'en parler » (10-14), parce qu'ils protègent. Barre d'onglets masquée dans l'espace enfants : sans cela, l'enfant pouvait rejoindre l'assistant sans contrôle parental. Pas de contenu « attentat-intrusion ».
+
+**Remarqué en passant.** Le guide « Numéros d'urgence » (guides 1.2) contient deux fois le 196 (« Secours en mer » et « Urgence en mer »).
