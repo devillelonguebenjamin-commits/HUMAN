@@ -48,7 +48,7 @@ struct AccueilView: View {
                     NavigationLink { PreparerView() } label: {
                         Tuile(titre: "Préparer", sousTitre: "Mon kit de 72 heures", symbole: "bag.fill", signal: .preparation)
                     }
-                    NavigationLink { if let g = modele.guide("pfms") { GuideView(guide: g) } } label: {
+                    NavigationLink { FamilleView() } label: {
                         Tuile(titre: "Famille", sousTitre: "Plan familial de mise en sûreté", symbole: "person.2.fill", signal: .securite)
                     }
                     NavigationLink { EquiperView() } label: {

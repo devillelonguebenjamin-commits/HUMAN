@@ -28,6 +28,8 @@ final class AppModel {
     let catalogue: Catalogue?
     /// Parcours guidé de l'assistant (parcours.json).
     let parcours: Parcours?
+    /// Parcours pas à pas du plan familial (écran Famille).
+    let planFamilial: PlanFamilial?
 
     var onglet: Onglet = .accueil
     var echanges: [Echange] = []
@@ -61,6 +63,7 @@ final class AppModel {
         moteur = MoteurRecherche(bibliotheque: b)
         catalogue = Catalogue.integre
         parcours = Parcours.integre
+        planFamilial = PlanFamilial.integre
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)

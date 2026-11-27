@@ -462,3 +462,13 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - La touche Entrée envoie la question.
 - Si le parcours manque malgré tout, l'assistant le dit au lieu de ne rien faire.
 - 48 tests réussis.
+
+## 2026-11-27 : parcours pas à pas du plan familial
+
+**Demande de Benjamin.** Le parcours guidé de l'assistant est validé (« génial, c'est parfait ») ; même système pour la partie Famille.
+
+**Travail fait.**
+- La tuile « Famille » ouvre un écran avec trois éléments : l'avancement du plan, l'assistant « Construire mon plan pas à pas », et une carte d'urgence à partager.
+- L'assistant compte 12 étapes, avec des choix rapides et un champ libre. Les réponses remplissent les champs du guide « Mon plan familial ». Les risques cochés emportent leur consigne mot pour mot.
+- Fichiers : `contenus/famille/`, `outils/construire_famille.py`, `SijamaisCore/PlanFamilial.swift`, `Views/FamilleView.swift`.
+- 51 tests réussis.
