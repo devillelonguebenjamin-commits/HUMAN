@@ -38,6 +38,11 @@ public struct Catalogue: Decodable, Sendable {
         self = try JSONDecoder().decode(Catalogue.self, from: Data(contentsOf: url))
     }
 
+    /// La liste d'équipement embarquée dans SijamaisCore.
+    public static var integre: Catalogue? {
+        Bundle.module.url(forResource: "catalogue", withExtension: "json").flatMap { try? Catalogue(url: $0) }
+    }
+
     /// Vrai dès qu'un identifiant Amazon Partenaires est renseigné.
     public var liensActifs: Bool { !partenaireAmazon.tag.trimmingCharacters(in: .whitespaces).isEmpty }
 

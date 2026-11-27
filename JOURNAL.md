@@ -450,3 +450,15 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 **Choix faits.** Gratuits : « J'ai besoin d'aide », la carte « Montrer à un adulte », « Appeler les secours » (6-10), « Alerter les secours » et « Besoin d'en parler » (10-14), parce qu'ils protègent. Barre d'onglets masquée dans l'espace enfants : sans cela, l'enfant pouvait rejoindre l'assistant sans contrôle parental. Pas de contenu « attentat-intrusion ».
 
 **Remarqué en passant.** Le guide « Numéros d'urgence » (guides 1.2) contient deux fois le 196 (« Secours en mer » et « Urgence en mer »).
+
+## 2026-11-27 : parcours guidé sans effet (vidéo de Benjamin)
+
+**Constat.** Sur la vidéo, le bouton « Être guidé pas à pas » ne fait rien, et les questions tapées ne s'affichent pas.
+
+**Cause probable.** Le fichier du parcours (`parcours.json`) n'était pas dans l'application compilée : XcodeGen n'ajoute un nouveau fichier de ressources qu'après `xcodegen generate`. Sans lui, le bouton n'avait aucun effet et rien ne le signalait. Pour la saisie : le champ fait plusieurs lignes, et la touche Entrée y ajoutait un retour à la ligne au lieu d'envoyer.
+
+**Corrections.**
+- Le parcours et la liste d'équipement sont embarqués dans SijamaisCore, et donc inclus à chaque compilation.
+- La touche Entrée envoie la question.
+- Si le parcours manque malgré tout, l'assistant le dit au lieu de ne rien faire.
+- 48 tests réussis.

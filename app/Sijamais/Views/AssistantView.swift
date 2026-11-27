@@ -79,6 +79,13 @@ struct AssistantView: View {
                 .focused($saisieActive)
                 .submitLabel(.send)
                 .onSubmit(envoyer)
+                // Champ sur plusieurs lignes : la touche Entrée ajoute un retour à la ligne au lieu d'envoyer.
+                .onChange(of: question) { _, nouveau in
+                    if nouveau.contains("\n") {
+                        question = nouveau.replacingOccurrences(of: "\n", with: " ")
+                        envoyer()
+                    }
+                }
             Button(action: envoyer) {
                 Image(systemName: "arrow.up.circle.fill").font(.system(size: 32))
             }

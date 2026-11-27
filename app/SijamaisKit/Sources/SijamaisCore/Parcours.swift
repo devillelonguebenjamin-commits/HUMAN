@@ -35,6 +35,11 @@ public struct Parcours: Decodable, Sendable {
         self = try JSONDecoder().decode(Parcours.self, from: Data(contentsOf: url))
     }
 
+    /// Le parcours embarqué dans SijamaisCore.
+    public static var integre: Parcours? {
+        Bundle.module.url(forResource: "parcours", withExtension: "json").flatMap { try? Parcours(url: $0) }
+    }
+
     public func noeud(_ id: String) -> Noeud? { noeuds.first { $0.id == id } }
     public var depart: Noeud? { noeud(racine) }
 }

@@ -12,7 +12,11 @@ let package = Package(
         .library(name: "SijamaisCore", targets: ["SijamaisCore"]),
     ],
     targets: [
-        .target(name: "SijamaisCore"),
+        .target(
+            name: "SijamaisCore",
+            // Parcours guidé et liste d'équipement : toujours dans l'application, sans relancer XcodeGen.
+            resources: [.copy("Ressources/parcours.json"), .copy("Ressources/catalogue.json")]
+        ),
         .testTarget(
             name: "SijamaisCoreTests",
             dependencies: ["SijamaisCore"],

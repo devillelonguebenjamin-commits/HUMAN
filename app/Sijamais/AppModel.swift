@@ -59,8 +59,8 @@ final class AppModel {
         }
         bibliotheque = b
         moteur = MoteurRecherche(bibliotheque: b)
-        catalogue = Bundle.main.url(forResource: "catalogue", withExtension: "json").flatMap { try? Catalogue(url: $0) }
-        parcours = Bundle.main.url(forResource: "parcours", withExtension: "json").flatMap { try? Parcours(url: $0) }
+        catalogue = Catalogue.integre
+        parcours = Parcours.integre
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)
@@ -94,7 +94,12 @@ final class AppModel {
 
     /// Démarre le parcours guidé : une question à choix, sans avoir à trouver ses mots.
     func ouvrirParcours() {
-        guard let depart = parcours?.depart else { return }
+        guard let depart = parcours?.depart else {
+            // Jamais de bouton sans effet : on dit ce qui manque.
+            let r = ReponseAssistant(mode: .aucunGuide, texte: "Le parcours guidé est introuvable dans cette version de l'application. Posez votre question ci-dessous, ou ouvrez l'onglet Savoir.", lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: false)
+            echanges.append(Echange(question: "Être guidé pas à pas", reponse: r))
+            return
+        }
         echanges.append(Echange(question: "Être guidé pas à pas", reponse: nil, noeud: depart))
     }
 

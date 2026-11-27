@@ -15,8 +15,12 @@ ASSETS = RES / "Assets.xcassets"
 RES.mkdir(parents=True, exist_ok=True)
 shutil.copy(RACINE / "contenus" / "guides" / "guides_v1.2.json", RES / "guides.json")
 shutil.copy(RACINE / "contenus" / "guides" / "guides_v1.2.json", RACINE / "app" / "SijamaisKit" / "Tests" / "SijamaisCoreTests" / "Fixtures" / "guides.json")
-shutil.copy(RACINE / "contenus" / "equipement" / "catalogue_v1.json", RES / "catalogue.json")
-shutil.copy(RACINE / "contenus" / "assistant" / "parcours_v1.json", RES / "parcours.json")
+# Parcours guidé et liste d'équipement : embarqués dans le cœur (SijamaisCore), inclus à chaque compilation
+# sans avoir à relancer XcodeGen (vidéo de Benjamin du 27/11/2026 : bouton sans effet faute de fichier).
+CORE = RACINE / "app" / "SijamaisKit" / "Sources" / "SijamaisCore" / "Ressources"
+CORE.mkdir(parents=True, exist_ok=True)
+shutil.copy(RACINE / "contenus" / "assistant" / "parcours_v1.json", CORE / "parcours.json")
+shutil.copy(RACINE / "contenus" / "equipement" / "catalogue_v1.json", CORE / "catalogue.json")
 shutil.copy(RACINE / "contenus" / "assistant" / "parcours_v1.json", RACINE / "app" / "SijamaisKit" / "Tests" / "SijamaisCoreTests" / "Fixtures" / "parcours.json")
 shutil.copy(RACINE / "contenus" / "equipement" / "catalogue_v1.json", RACINE / "app" / "SijamaisKit" / "Tests" / "SijamaisCoreTests" / "Fixtures" / "catalogue.json")
 

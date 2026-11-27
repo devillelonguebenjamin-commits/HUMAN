@@ -45,3 +45,11 @@ final class ParcoursTests: XCTestCase {
         XCTAssertTrue(echecs.isEmpty, "\n" + echecs.joined(separator: "\n"))
     }
 }
+
+final class RessourcesIntegreesTests: XCTestCase {
+    /// Le parcours et la liste d'équipement sont dans SijamaisCore : jamais absents de l'application.
+    func testLesRessourcesSontEmbarquees() {
+        XCTAssertNotNil(Parcours.integre?.depart)
+        XCTAssertEqual(Catalogue.integre?.sections.isEmpty, false)
+    }
+}
