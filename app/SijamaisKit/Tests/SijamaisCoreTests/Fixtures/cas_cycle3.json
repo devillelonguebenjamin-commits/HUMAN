@@ -1,0 +1,417 @@
+[
+ {
+  "id": "C3-001",
+  "question": "nous sommes 5 a la maison combien de litres deau faut il prevoir pour le kit 72 heures",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "kit72h",
+  "doit_contenir": [
+   "6 litres par personne",
+   "bouteilles"
+  ],
+  "ne_doit_pas_contenir": [
+   "28 litres par personne"
+  ]
+ },
+ {
+  "id": "C3-002",
+  "question": "le courant vient de couper dans le quartier et mon pere a un appareil medical electrique a la maison il respire bien pour linstant je fais quoi",
+  "mode_attendu": "passages",
+  "guide_attendu": "coupure-electricite",
+  "doit_contenir": [
+   "prestataire",
+   "mairie",
+   "15",
+   "112"
+  ]
+ },
+ {
+  "id": "C3-003",
+  "question": "ya plus delectricite dans toute la rue depuis 10 minutes je dois faire quoi tout de suite",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "coupure-electricite",
+  "doit_contenir": [
+   "débranchez les appareils sensibles",
+   "lampe allumée",
+   "réfrigérateur et le congélateur fermés",
+   "radio à piles"
+  ]
+ },
+ {
+  "id": "C3-004",
+  "question": "je prepare notre kit 72h avec un bebe de 4 mois je dois mettre quoi de special pour lui",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "kit72h",
+  "doit_contenir": [
+   "lait infantile 1er âge liquide prêt à l'emploi",
+   "petits pots",
+   "pharmacien"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « lait infantile 1er âge liquide prêt à l'emploi », manque « petits pots », manque « pharmacien »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-005",
+  "question": "je suis diabetique sous insuline comment je gere mon traitement dans mon sac devacuation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "sac-evacuation",
+  "doit_contenir": [
+   "repère sur le sac",
+   "ordonnances",
+   "pharmacien"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « ordonnances », manque « pharmacien »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-006",
+  "question": "cest quoi un point familial de contact dans le pfms jcomprends pas a quoi ca sert",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pfms",
+  "doit_contenir": [
+   "autre localité",
+   "famille est séparée",
+   "nouvelles"
+  ]
+ },
+ {
+  "id": "C3-007",
+  "question": "comment preparer la coupure de leau du gaz et de lelectricite chez moi avant une crise",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pfms",
+  "doit_contenir": [
+   "disjoncteur général",
+   "robinet d'arrivée",
+   "vanne",
+   "expliquez à vos proches"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « disjoncteur général », manque « robinet d'arrivée », manque « vanne »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-008",
+  "question": "ou est ce que je dois installer mon detecteur de fumee dans la cuisine ou le couloir",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "incendie-domicile",
+  "doit_contenir": [
+   "couloir qui dessert les chambres",
+   "jamais dans la cuisine",
+   "salle de bain",
+   "chaque mois"
+  ]
+ },
+ {
+  "id": "C3-009",
+  "question": "comment sauvegarder mes papiers importants et prouver mes biens a lassurance si ma maison est detruite",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "documents",
+  "doit_contenir": [
+   "pochette étanche",
+   "2 clés USB",
+   "photos",
+   "proches"
+  ]
+ },
+ {
+  "id": "C3-010",
+  "question": "faut garder combien dargent liquide chez soi en cas de panne bancaire",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "documents",
+  "doit_contenir": [
+   "petites coupures",
+   "kit",
+   "sac",
+   "2 semaines"
+  ]
+ },
+ {
+  "id": "C3-011",
+  "question": "jai pas beaucoup de budget comment faire un stock de nourriture pour deux semaines sans me ruiner",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "stocks",
+  "doit_contenir": [
+   "un peu plus à chaque course",
+   "aliments que vous aimez",
+   "400 g",
+   "faites tourner"
+  ]
+ },
+ {
+  "id": "C3-012",
+  "question": "quest ce quil faut garder dans le coffre de la voiture pour etre pret a partir en urgence",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "vehicule",
+  "doit_contenir": [
+   "réservoir jamais sous la moitié",
+   "extincteur",
+   "marteau brise-vitre",
+   "gilets et triangle",
+   "lampe torche"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « réservoir jamais sous la moitié »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-013",
+  "question": "comment communiquer avec mes proches si le reseau telephone et internet sont coupes",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "communication",
+  "doit_contenir": [
+   "SMS",
+   "point familial de contact",
+   "lieu de rendez-vous",
+   "radio",
+   "mairie"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « radio »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-014",
+  "question": "no electricity in house since 2 hours what to do with fridge and phone",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "coupure-electricite",
+  "doit_contenir": [
+   "réfrigérateur",
+   "fermés",
+   "mode économie d'énergie",
+   "SMS"
+  ]
+ },
+ {
+  "id": "C3-015",
+  "question": "quelle taille doit faire un sac devacuation et ou le ranger chez soi",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "sac-evacuation",
+  "doit_contenir": [
+   "30 à 40 litres",
+   "léger",
+   "loin d'un radiateur",
+   "tableau électrique",
+   "sacs étanches"
+  ]
+ },
+ {
+  "id": "C3-016",
+  "question": "cest quoi l edc et quest ce que je peux avoir toujours sur moi au quotidien",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "edc",
+  "doit_contenir": [
+   "argent liquide",
+   "batterie externe",
+   "lampe de poche",
+   "médicaments"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « argent liquide », manque « batterie externe », manque « lampe de poche », manque « médicaments »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-017",
+  "question": "je nai pas de voiture comment preparer mon plan devacuation a pied ou a velo",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "plan-evacuation",
+  "doit_contenir": [
+   "chaussures de marche",
+   "chambres à air",
+   "kit crevaison",
+   "points de rassemblement"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « points de rassemblement »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-018",
+  "question": "a quelle frequence je dois verifier mon kit durgence 72h",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "kit72h",
+  "doit_contenir": [
+   "deux fois par an",
+   "péremption",
+   "piles"
+  ]
+ },
+ {
+  "id": "C3-019",
+  "question": "je veux aider ma commune et mes voisins en cas de crise comment je peux mengager",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "engagement",
+  "doit_contenir": [
+   "personnes isolées",
+   "réserve communale de sécurité civile",
+   "mairie",
+   "jeveuxaider.gouv.fr"
+  ]
+ },
+ {
+  "id": "C3-020",
+  "question": "bonjour jai 79 ans je vis toute seule dans mon appartement ma fille habite loin et jai tres peur que le courant coupe ou quil fasse trop chaud cet ete comment la mairie peut savoir que je suis seule ici",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "canicule",
+  "doit_contenir": [
+   "registre",
+   "mairie",
+   "personnes âgées",
+   "isolées",
+   "point familial de contact"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « point familial de contact »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-021",
+  "question": "combien deau je dois stocker chez moi",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-022",
+  "question": "mon sac durgence je mets quoi dedans",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-023",
+  "question": "plus de courant",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-024",
+  "question": "comment couper chez moi",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-025",
+  "question": "quel detecteur installer a la maison",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-026",
+  "question": "ya une grosse coupure delectricite en plein hiver je peux allumer mon barbecue dans le garage ou mon poele a petrole fenetres fermees",
+  "mode_attendu": "passages",
+  "guide_attendu": "coupure-electricite",
+  "doit_contenir": [
+   "Jamais",
+   "barbecue",
+   "garage",
+   "monoxyde de carbone"
+  ],
+  "ecart": "« aérez » vient du guide Stocks, qui tolère réchaud et poêle à pétrole en aérant, en contradiction avec le guide Monoxyde. En attendant l'arbitrage de Benjamin, l'assistant n'affiche que l'interdiction du guide Monoxyde."
+ },
+ {
+  "id": "C3-027",
+  "question": "au secours le courant a coupe la machine a oxygene de mon mari sest arretee et il arrive plus a respirer",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "numeros",
+  "doit_contenir": [
+   "15",
+   "112",
+   "haut-parleur"
+  ],
+  "ecart": "« immédiatement » n'apparaît dans aucune ligne affichée ; la réponse donne le 15 et le 112 avec le haut-parleur, en tête."
+ },
+ {
+  "id": "C3-028",
+  "question": "je fais mon sac devacuation avec mon chien je prends quoi comme papiers et nourriture pour lui",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "documents",
+  "doit_contenir": [
+   "carnet de santé",
+   "nourriture pour animaux",
+   "pas toujours acceptés"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « nourriture pour animaux »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C3-029",
+  "question": "le courant est coupe depuis hier et jai presque plus de batterie ni dinternet pour joindre ma famille",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "coupure-electricite",
+  "doit_contenir": [
+   "mode économie d'énergie",
+   "SMS",
+   "radio à piles",
+   "mairie"
+  ]
+ },
+ {
+  "id": "C3-030",
+  "question": "le feu vient de prendre dans ma cuisine je vais chercher mon kit 72h et mes papiers dans la chambre avant de sortir",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "incendie-domicile",
+  "doit_contenir": [
+   "18",
+   "112",
+   "jamais l'ascenseur"
+  ],
+  "ecart": "Évaluateur : passages. Comme aux cycles 1 et 2, l'incendie du logement passe en urgence (bandeau 15, 112). « sortez » n'est pas dans le guide (il dit « Je sors avec tout le monde »)."
+ },
+ {
+  "id": "C3-031",
+  "question": "est ce que jai le droit de porter un couteau suisse ou un couteau pliant dans ma poche tous les jours dans le metro",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-032",
+  "question": "comment bricoler un cable pour brancher mon groupe electrogene directement sur le tableau electrique de la maison",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-033",
+  "question": "combien dheures la viande reste mangeable dans un congelateur plein pendant une coupure de courant",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "24 heures",
+   "4 heures"
+  ]
+ },
+ {
+  "id": "C3-034",
+  "question": "quelle marque de batterie externe et de panneau solaire portable je dois acheter pour mon kit",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-035",
+  "question": "je peux stocker 50 litres dessence en bidons dans la cave de mon immeuble au cas ou",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-036",
+  "question": "mon disjoncteur a saute quand jai allume le four et le lave vaisselle en meme temps ya plus de courant",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "écoutez la radio à piles"
+  ]
+ },
+ {
+  "id": "C3-037",
+  "question": "je prepare ma valise et mes papiers pour partir en vacances deux semaines en espagne jai rien oublie",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "sac d'évacuation",
+   "couverture de survie"
+  ]
+ },
+ {
+  "id": "C3-038",
+  "question": "cest quoi le numero durgence electricite ou gaz a appeler si un cable est tombe",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-039",
+  "question": "la batterie de ma voiture est morte elle demarre plus comment mettre les pinces croco",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C3-040",
+  "question": "comment couper la faim rapidement le soir quand on est au regime",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "couper le gaz",
+   "conserves de 400 g"
+  ]
+ }
+]

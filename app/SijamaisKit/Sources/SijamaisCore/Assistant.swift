@@ -74,6 +74,10 @@ public struct Assistant: Sendable {
 
     public static let longueurMaxReformulation = 900
 
+    /// Guides jamais reformulés, en plus des guides de santé (cycles 2 à 6) : dosages, gestes irréversibles,
+    /// décisions de la commune. Une nuance mal rendue peut tuer ou détruire des preuves.
+    public static let sansReformulation: Set<String> = ["risques", "eau", "cueillette", "retour", "cyberattaque", "cyberattaque-commune", "assurance", "monoxyde"]
+
     public static let messageUrgencePersonnelle = "Appelez le 15 ou le 112 maintenant. Si vous ne pouvez pas parler, envoyez un SMS au 114. Restez en ligne et suivez les consignes des secours."
 
     private let moteur: MoteurRecherche
@@ -112,9 +116,12 @@ public struct Assistant: Sendable {
         case let .clarification(q, options):
             return ReponseAssistant(mode: .clarification, texte: q, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: true, options: options)
         case .urgencePersonnelle:
-            return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: true)
+            return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: "numeros", guideTitre: guides["numeros"]?.titre, urgenceVitale: true)
         case let .sante(id, lignes):
             return ReponseAssistant(mode: .urgenceSante, texte: nil, lignes: lignes, guideId: id, guideTitre: guides[id]?.titre, urgenceVitale: true)
+        case let .detressePsy(soi, lignes):
+            return ReponseAssistant(mode: soi ? .urgencePersonnelle : .urgenceSante, texte: soi ? Triage.messageDetressePsy : Triage.messageDetressePsyProche,
+                                    lignes: lignes, guideId: "moral", guideTitre: guides["moral"]?.titre, urgenceVitale: true)
         case let .consigne(id, lignes, vital):
             // Risque majeur : passages exacts, jamais reformulés (une nuance mal rendue peut tuer).
             return ReponseAssistant(mode: .passages, texte: nil, lignes: lignes, guideId: id, guideTitre: guides[id]?.titre, urgenceVitale: vital)
@@ -150,7 +157,7 @@ public struct Assistant: Sendable {
             lignes.append(l3114)
         }
         let passages = ReponseAssistant(mode: .passages, texte: nil, lignes: lignes, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
-        guard let modele = reformulateur, modele.estDisponible, !g.sensible else { return passages }
+        guard let modele = reformulateur, modele.estDisponible, !g.sensible, !Self.sansReformulation.contains(g.id) else { return passages }
         do {
             let ref = try await modele.reformuler(question: question, passages: lignes, guideId: g.id)
             guard Self.reformulationAcceptable(ref, guideId: g.id) else { return passages }

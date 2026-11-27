@@ -1,8 +1,8 @@
 # État de l'assistant SIJAMAIS
 
-Fiche à joindre à chaque cycle d'amélioration (`prompts/claude_amelioration_assistant.md`). Mise à jour par Claude Code après chaque intégration. **Cycles 1 et 2 intégrés le 27/11/2026. Cycle en cours : 3 (coupure d'électricité, d'eau, de réseau).**
+Fiche à joindre à chaque cycle d'amélioration (`prompts/claude_amelioration_assistant.md`). Mise à jour par Claude Code après chaque intégration. **Cycles 1 à 6 intégrés le 27/11/2026. Prochaine étape : arbitrages de Benjamin (`arbitrages_cycles_1_a_6.md`), puis cycle 7 transversal.**
 
-## Ce que l'assistant sait faire (version 0.3 du 27/11/2026)
+## Ce que l'assistant sait faire (version 0.4 du 27/11/2026)
 
 L'assistant répond en deux étages, sur l'iPhone, sans réseau.
 
@@ -39,6 +39,21 @@ Placée juste après les mots trompeurs, avant tout le reste. Le guide « Que fa
 10. **Sirène habituelle** : mise à l'abri, radio, et dans la même bulle la consigne de la corne de brume ; en voiture, « ne restez pas dans un véhicule » en tête.
 11. **Clarification** : « Je dois évacuer ou rester ? » (Inondation, Nuage toxique, Feu de forêt, Corne de brume ; rappel : sans consigne, on reste à l'abri), « Il y a un feu dehors » (forêt, en voiture, bâtiment), « alerte » seul (sirène, FR-Alert, corne de brume).
 
+### Règles des cycles 3 à 6 (nouvelles), placées juste après les mots trompeurs
+
+1. **Détresse suicidaire**, avant tout : « idées noires », « envie d'en finir », « je veux plus vivre », « marre de la vie »... Pour soi : « Appelez maintenant le 3114 », 15 ou 112, 114 ; pour un proche : « Ne laissez pas la personne seule » ; bouton « Appeler le 3114 » ; jamais reformulé.
+2. **Hors périmètre** : droit (port d'un couteau, diffamation, attaquer son assureur), marques et achats, branchement d'un groupe électrogène, durée de conservation des aliments, stockage de carburant, vacances, numéros gaz et électricité (absents des guides), disjoncteur, batterie de voiture, régime, piégeage, boire son urine, feu de camp de loisir, abri de jardin, vengeance contre un arnaqueur, ménage, main courante au commissariat, drone, sport, piqûre d'ortie, harcèlement, **identification de plantes ou de champignons** (sauf les 3 plantes du guide) ; côté mairie : loi Matras, arrêtés, numéro du CSIRT, ressources humaines.
+3. **Espace mairie** : les 5 guides de la commune sont **exclus de la recherche des particuliers** et activés par des mots d'élu ou d'agent (maire, PCC, nos agents, notre mairie, cellule de crise...). Une urgence vitale passe toujours devant.
+4. **Clarification des demandes courtes** (8 mots au plus) : eau (72 h ou 2 semaines), sac (kit, évacuation, EDC), « plus de courant », couper, détecteur, abri, feu, eau pas potable, perdu, signaler, piraté, arnaque, assurance, rentrer chez moi, pas le moral, cyberattaque, communiquer, exercice, cellule de crise, mairie.
+5. **Aiguillages** : appareil médical électrique pendant une coupure (prestataire et mairie en tête ; en détresse, 15 ou 112) ; ingestion (baies, produits, pile) : 15 ou 112 avec les boutons d'appel ; moral d'un proche, insomnie après la crise ; cyber des particuliers (faux site, rançon, compte piraté, mail de la banque, virus) ; assurance et hébergement ; retour au logement (odeur de gaz, ne rien jeter avant l'expert, animaux morts, chauffage) ; coupure d'électricité (monoxyde, batterie) ; préparation (détecteur, argent liquide, papiers, sac, kit, voiture, plan d'évacuation à pied, registre canicule, communication sans réseau, engagement, couper les réseaux) ; survie (perdu en forêt, signaux, 3 feux en période sèche, randonnée, règle des 3, bloqué dans la neige, eau de pluie, hypothermie).
+
+### Composition des réponses (cycles 3 à 6)
+
+- Jusqu'à 5 passages (8 quand le triage a déjà choisi le guide), 14 lignes au plus.
+- **Une procédure ou une liste courte ne se montre jamais à moitié**, et garde son titre.
+- **Les mises en garde du guide s'affichent toujours.**
+- Les blocs les plus pertinents passent en premier.
+
 ### Étage 2 : la recherche par mots (version 0.1, enrichie)
 
 - Mots et **expressions** synonymes (« pisse le sang », « avalé de travers », « tombé dans les pommes », « samu social », « idées noires »...), mots anglais (burn, bleeding, choking, breathe, unconscious, fire, flood).
@@ -55,6 +70,11 @@ Placée juste après les mots trompeurs, avant tout le reste. Le guide « Que fa
 | 40 cas du cycle 2 (`cycle2/cas_de_test.json`, écarts avec l'évaluateur expliqués dans le fichier) | 40 / 40 |
 | 17 questions nouvelles du thème 2 (dans `Cycle2Tests.swift`) | 17 / 17 après correction |
 | Consignes de risque majeur : jamais reformulées, toutes mot pour mot dans un guide | oui |
+| Cycle 3, préparation et coupures (`cycle3/`) | 31 / 40, 9 échecs connus |
+| Cycle 4, survie (`cycle4/`) | 29 / 40, 11 échecs connus |
+| Cycle 5, après la crise, cyber, désinformation (`cycle5/`) | 36 / 40, 4 échecs connus |
+| Cycle 6, Espace mairie (`cycle6/`) | 32 / 40, 8 échecs connus |
+| 13 questions nouvelles des thèmes 3 à 6 (dans `Cycles3a6Tests.swift`) | 13 / 13 après correction |
 | 20 questions de la version 0.1 | 20 / 20 |
 | Boutons de clarification : chacun mène à une réponse définitive | oui |
 | Lignes de santé affichées : toutes présentes mot pour mot dans un guide | oui |
@@ -66,10 +86,13 @@ Cycle 2 : 37 / 40 au premier passage. Questions nouvelles du thème avant correc
 
 ## Faiblesses connues
 
+- **32 échecs connus sur les cycles 3 à 6**, chacun décrit dans le fichier des cas (champ `echec_connu`). Presque tous sont des réponses incomplètes : la réponse idéale de l'évaluateur assemble plusieurs guides (« ordonnances » dans Documents, « pharmacien » dans Trousse, pour une question sur le sac d'évacuation). La recherche par mots ne sait pas faire cet assemblage ; c'est le principal argument pour la recherche par le sens.
+- Mesure honnête avant correction : **14 cas sur 160** réussis au premier passage (thèmes jamais travaillés), puis 9 sur 16 questions nouvelles, dont une erreur grave (« je veux plus vivre » ne déclenchait rien).
+
 - **Règles écrites à la main** : fragiles face à une formulation inattendue. Il faut des questions nouvelles à chaque cycle, de préférence écrites par d'autres personnes que l'évaluateur.
 - **Guides manquants** : AVC, convulsions, étouffement et arrêt cardiaque du nourrisson, intoxication, réaction allergique grave, noyade, malaise cardiaque conscient. L'assistant renvoie au 15 sans gestes.
 - **Pas de mémoire de la conversation** : une précision donnée après coup (« il respire encore ») n'est pas reliée à la question précédente, sauf par les boutons.
-- **Fuite de gaz** : « N'allumez aucune flamme » et « Couper le gaz » (guide Réflexes). Aucun guide ne dit encore « sortez et appelez l'urgence gaz » : passage à ajouter, avec sa source, au cycle 3.
+- **Fuite de gaz** : « N'allumez aucune flamme » et « Couper le gaz » (guide Réflexes). Le guide « Rentrer chez soi » dit aussi « Odeur de gaz : éloignez-vous et appelez les secours ou l'urgence gaz » : ligne affichée.
 - **Contenus proposés au cycle 2, non intégrés faute de source vérifiée** : orage en voiture et foudre (Météo-France, [A VERIFIER]) ; conseil « rumeur » dans le guide Alerte (redit déjà le guide Réflexes).
 - **Question en anglais hors santé** (« how do I know if there is an alert ») : mal orientée ; peu de mots anglais reconnus hors urgences.
 - **196** : ajouté au guide des numéros, à vérifier sur service-public.gouv.fr (inaccessible depuis l'environnement de Claude).

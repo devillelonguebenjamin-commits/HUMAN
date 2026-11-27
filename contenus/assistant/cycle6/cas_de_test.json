@@ -1,0 +1,449 @@
+[
+ {
+  "id": "C6-001",
+  "question": "bonjour je suis maire on a un debut dinondation sur deux quartiers comment savoir si je dois activer le poste de commandement communal maintenant",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pilotage",
+  "doit_contenir": [
+   "3 questions",
+   "organisation habituelle",
+   "principe de réponse prudente"
+  ]
+ },
+ {
+  "id": "C6-002",
+  "question": "adjoint dastreinte sur place qui commande entre le maire et les pompiers svp",
+  "mode_attendu": "passages",
+  "guide_attendu": "cellule-crise",
+  "doit_contenir": [
+   "directeur des opérations de secours",
+   "sapeurs-pompiers commandent les opérations de secours sur le terrain",
+   "poste de commandement communal"
+  ]
+ },
+ {
+  "id": "C6-003",
+  "question": "je suis secretaire de mairie on vient douvrir la cellule de crise pourquoi faut il absolument tenir une main courante par ecrit",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "doit_contenir": [
+   "chaque information",
+   "chaque décision",
+   "pièce juridique",
+   "trace écrite"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « trace écrite »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-004",
+  "question": "en tant que dgs comment mener le briefing initial quand la cellule de crise se reunit",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pilotage",
+  "doit_contenir": [
+   "tour de table",
+   "rôles",
+   "faits au tableau",
+   "parties prenantes",
+   "plan d'actions",
+   "heure du prochain point"
+  ]
+ },
+ {
+  "id": "C6-005",
+  "question": "nos points de situation au pcc durent 1h et ca part en debat a chaque fois c combien de tps normalment et on dit quoi dedans",
+  "mode_attendu": "passages",
+  "guide_attendu": "pilotage",
+  "doit_contenir": [
+   "10 minutes maximum",
+   "n'est pas un débat",
+   "heure fixe",
+   "statut de chaque action",
+   "heure du prochain point"
+  ]
+ },
+ {
+  "id": "C6-006",
+  "question": "je suis chargee de communication en mairie quelle trame suivre pour rediger le premier message aux habitants pendant la crise",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "doit_contenir": [
+   "Faits",
+   "Actes",
+   "Empathie",
+   "Engagement",
+   "Transparence",
+   "vérifié"
+  ],
+  "ne_doit_pas_contenir": [
+   "accuser autrui"
+  ]
+ },
+ {
+  "id": "C6-007",
+  "question": "un journaliste local mappelle en direct et me demande exactement quand leau et lelectricite reviendront je lui donne une date pour rassurer",
+  "mode_attendu": "passages",
+  "guide_attendu": "com-crise",
+  "doit_contenir": [
+   "date précise de retour à la normale",
+   "informations vérifiées",
+   "centralisez les demandes de la presse"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « informations vérifiées »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-008",
+  "question": "en debut de crise communale qui devons nous informer en premier et que faire de nos posts facebook programmes a lavance",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "doit_contenir": [
+   "d'abord vos agents",
+   "puis la population",
+   "gelez les publications programmées"
+  ]
+ },
+ {
+  "id": "C6-009",
+  "question": "allo je suis responsable informatique de la mairie tous nos serveurs sont cryptes avec une demande de rancon est ce que je coupe tout electriquement et on paie pour debloquer letat civil",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque-commune",
+  "doit_contenir": [
+   "Isolez du réseau",
+   "sans les éteindre",
+   "ne payez pas",
+   "17cyber.gouv.fr",
+   "CSIRT",
+   "mode dégradé"
+  ]
+ },
+ {
+  "id": "C6-010",
+  "question": "suite a la cyberattaque de notre mairie des fichiers avec les noms et adresses des habitants ont ete touches quel est le delai pour prevenir la cnil",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque-commune",
+  "doit_contenir": [
+   "CNIL",
+   "72 heures",
+   "17cyber.gouv.fr",
+   "plainte"
+  ],
+  "ne_doit_pas_contenir": [
+   "30 jours"
+  ]
+ },
+ {
+  "id": "C6-011",
+  "question": "bonjour je viens detre elue maire dune petite commune rurale on a pas du tout le budget pour acheter un gros logiciel de gestion de crise est ce quon peut quand meme organiser un poste de commandement communal fiable et quels outils de base il faut preparer",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "doit_contenir": [
+   "papier",
+   "stylos",
+   "téléphone",
+   "annuaire de crise",
+   "main courante",
+   "salle de repli"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « papier », manque « stylos », manque « téléphone », manque « annuaire de crise », manque « salle de repli »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-012",
+  "question": "quels sont les differents roles a repartir dans le poste de commandement communal",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "doit_contenir": [
+   "maire",
+   "responsable des actions communales",
+   "main courante",
+   "communication",
+   "terrain et liaison",
+   "accueil et hébergement",
+   "logistique",
+   "anticipation"
+  ]
+ },
+ {
+  "id": "C6-013",
+  "question": "cest quoi la methode en 4 etapes a suivre en cellule de crise communale",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "doit_contenir": [
+   "Établir les faits",
+   "Analyser les impacts",
+   "parties prenantes",
+   "plan d'actions",
+   "responsable",
+   "échéance"
+  ]
+ },
+ {
+  "id": "C6-014",
+  "question": "on veut entrainer notre cellule de crise a un accident nucleaire sans mobiliser de moyens sur le terrain quel type dexercice choisir",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "exercice-retex",
+  "doit_contenir": [
+   "Sur table",
+   "sans moyens terrain",
+   "nucléaire",
+   "NRBC"
+  ]
+ },
+ {
+  "id": "C6-015",
+  "question": "la crise est finie quelle est la difference entre un retex a chaud et un retex a froid",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "exercice-retex",
+  "doit_contenir": [
+   "À chaud",
+   "à l'oral",
+   "À froid",
+   "tous les acteurs",
+   "écrit",
+   "faiblesses"
+  ]
+ },
+ {
+  "id": "C6-016",
+  "question": "comment preparer la communication de la mairie avant une eventuelle cyberattaque",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "doit_contenir": [
+   "communication et informatique",
+   "scénarios",
+   "boîte à outils",
+   "exercice",
+   "porte-parole"
+  ]
+ },
+ {
+  "id": "C6-017",
+  "question": "ca fait 24 heures quon pilote la crise en mairie on commence a etre epuises quels pieges humains faut il surveiller",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pilotage",
+  "doit_contenir": [
+   "relèves",
+   "fatigue",
+   "biais d'optimisme",
+   "biais de confirmation",
+   "trace écrite"
+  ]
+ },
+ {
+  "id": "C6-018",
+  "question": "comment preparer un bon exercice de gestion de crise pour les agents de la commune",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "exercice-retex",
+  "doit_contenir": [
+   "état des lieux",
+   "objectifs",
+   "scénario",
+   "pédagogique",
+   "4 piliers"
+  ]
+ },
+ {
+  "id": "C6-019",
+  "question": "hello i work as intern in french town hall what mistakes to avoid in crisis communication",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "doit_contenir": [
+   "silence",
+   "rumeur",
+   "déni",
+   "empathie",
+   "accuser autrui",
+   "mensonge"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « silence », manque « rumeur », manque « déni », manque « accuser autrui », manque « mensonge »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-020",
+  "question": "notre mairie sort dune cyberattaque quest ce quil faut faire cote communication maintenant que cest termine",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "doit_contenir": [
+   "remercier les équipes",
+   "retour d'expérience",
+   "témoignage public",
+   "sensibiliser les agents"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « remercier les équipes », manque « témoignage public », manque « sensibiliser les agents »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-021",
+  "question": "cyberattaque",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-022",
+  "question": "communiquer",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-023",
+  "question": "organiser un exercice",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-024",
+  "question": "activer la cellule",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-025",
+  "question": "mairie",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-026",
+  "question": "notre mairie subit une cyberattaque la messagerie et le site internet sont coupes comment informer les agents et les habitants",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque-commune",
+  "doit_contenir": [
+   "d'abord les agents",
+   "canaux de secours",
+   "gelez les publications programmées",
+   "centralisez les demandes de la presse"
+  ]
+ },
+ {
+  "id": "C6-027",
+  "question": "une grosse inondation touche la commune nous venons dactiver le pcc quels sont les roles de la mairie pour accueillir les sinistres et lancer la reconnaissance catastrophe naturelle",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "doit_contenir": [
+   "accueil et hébergement",
+   "personnes vulnérables",
+   "point d'accueil",
+   "préfecture",
+   "catastrophe naturelle"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « point d'accueil », manque « préfecture », manque « catastrophe naturelle »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-028",
+  "question": "des fausses rumeurs sur facebook accusent la mairie de cacher des infos pendant la tempete on garde le silence en attendant ou on repond comment",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "doit_contenir": [
+   "occupez l'espace",
+   "transparence"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « transparence »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-029",
+  "question": "urgence en pleine reunion de cellule de crise a la mairie un adjoint vient de seffondrer il ne repond plus et ne respire plus",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "arret-cardiaque",
+  "doit_contenir": [
+   "15",
+   "112",
+   "défibrillateur",
+   "centre de la poitrine",
+   "100 à 120"
+  ]
+ },
+ {
+  "id": "C6-030",
+  "question": "dans notre pcs ou intervient la reserve communale de securite civile et quels moyens locaux d'alerte la commune peut elle activer",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "doit_contenir": [
+   "Terrain et liaison",
+   "automates d'appel",
+   "haut-parleurs",
+   "cloches",
+   "porte-à-porte"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « automates d'appel », manque « haut-parleurs », manque « cloches », manque « porte-à-porte »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C6-031",
+  "question": "ma commune fait 1200 habitants est ce que la loi matras nous oblige legalement a avoir un pcs et quest ce que le maire risque au penal sil nen a pas",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-032",
+  "question": "peux tu me rediger un arrete municipal de requisition dun gymnase prive avec les bons articles du code general des collectivites territoriales",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-033",
+  "question": "quel est le numero de telephone direct du csirt regional des pays de la loire pour notre mairie",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-034",
+  "question": "quel logiciel payant dautomate dappel et de main courante numerique est le meilleur a acheter pour notre mairie",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-035",
+  "question": "comment calculer les indemnites dastreinte et les heures supplementaires des agents municipaux mobilises au pcc ce week end",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C6-036",
+  "question": "je veux deposer une main courante au commissariat contre mon voisin qui fait trop de bruit la nuit",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "poste de commandement communal"
+  ]
+ },
+ {
+  "id": "C6-037",
+  "question": "comment piloter mon drone de loisir au dessus de la plage sans avoir damende",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "briefing initial",
+   "point de situation",
+   "poste de commandement"
+  ]
+ },
+ {
+  "id": "C6-038",
+  "question": "quels exercices de sport faire a la maison quand on doit rester confine plusieurs jours",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "NRBC"
+  ]
+ },
+ {
+  "id": "C6-039",
+  "question": "je suis un particulier mon ordinateur personnel est bloque par une rancon je dois declarer a la cnil dans les 72 heures",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "Débranchez",
+   "veille",
+   "Ne payez pas",
+   "17cyber.gouv.fr",
+   "nomoreransom.org",
+   "plainte"
+  ]
+ },
+ {
+  "id": "C6-040",
+  "question": "comment enlever le gel sur mon pare brise le matin sans abimer la vitre",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "gelez les publications programmées",
+   "115",
+   "gel hydroalcoolique"
+  ]
+ }
+]

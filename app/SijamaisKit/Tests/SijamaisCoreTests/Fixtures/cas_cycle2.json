@@ -250,9 +250,10 @@
   "guide_attendu": "reflexes",
   "doit_contenir": [
    "aucune flamme",
-   "Couper le gaz"
+   "Couper le gaz",
+   "éloignez-vous"
   ],
-  "ecart": "Le passage « Odeur de gaz : éloignez-vous et appelez les secours » cité par l'évaluateur n'existe dans aucun guide : non repris."
+  "ecart": "Correction du 27/11/2026 : le passage « Odeur de gaz : éloignez-vous et appelez les secours ou l'urgence gaz » existe bien (guide « Rentrer chez soi ») ; Claude Code l'avait d'abord cru absent. Il est désormais affiché."
  },
  {
   "id": "C2-027",

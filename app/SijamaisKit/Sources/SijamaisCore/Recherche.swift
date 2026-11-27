@@ -50,6 +50,11 @@ public struct MoteurRecherche: Sendable {
     private struct Morceau: Sendable {
         let texte: String
         let normalise: String
+        /// Numéro du bloc dans le guide, et vrai si le bloc se montre en entier (étapes, ou liste courte).
+        let bloc: Int
+        let entier: Bool
+        let titreBloc: String
+        let alerte: Bool
     }
     private struct Entree: Sendable {
         let guide: Guide
@@ -67,9 +72,18 @@ public struct MoteurRecherche: Sendable {
         guidesParId = Dictionary(bibliotheque.guides.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
         entrees = bibliotheque.guides.map { g in
             var m: [Morceau] = []
-            for b in g.blocs {
-                for t in b.textesRecherche {
-                    m.append(Morceau(texte: t, normalise: Normalisation.normaliser(b.titreBloc + " " + t)))
+            for (ib, b) in g.blocs.enumerated() {
+                let textes = b.textesRecherche
+                var entier = false
+                var alerte = false
+                switch b {
+                case .steps, .plant: entier = true
+                case .list, .risk, .keyValue: entier = textes.count <= 6
+                case .alert: alerte = true
+                default: entier = false
+                }
+                for t in textes {
+                    m.append(Morceau(texte: t, normalise: Normalisation.normaliser(b.titreBloc + " " + t), bloc: ib, entier: entier, titreBloc: b.titreBloc, alerte: alerte))
                 }
             }
             return Entree(guide: g, titreNormalise: Normalisation.normaliser(g.titre + " " + g.resume), morceaux: m)
@@ -103,7 +117,7 @@ public struct MoteurRecherche: Sendable {
         "dae": ["defibrillateur"], "reanimation": ["massage", "cardiaque"], "pls": ["laterale", "securite"],
         "tourniquet": ["garrot"], "heimlich": ["etouffement", "poing"], "cloque": ["brulure"], "ebouillante": ["brulure"],
         "burn": ["brulure"], "burned": ["brulure"], "bleeding": ["saignement"], "choking": ["etouffement"], "breathe": ["respirer"],
-        "breathing": ["respirer"], "radicalise": ["radicalisation"], "radicalisation": ["radicalisation"], "chats": ["animaux"], "chiens": ["animaux"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
+        "breathing": ["respirer"], "buvable": ["potable", "purifier", "filtrer", "bouillir"], "radicalise": ["radicalisation"], "radicalisation": ["radicalisation"], "chats": ["animaux"], "chiens": ["animaux"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
     ]
 
     /// Expressions de plusieurs mots (cycle 1) : cherchées dans la question préparée, elles ajoutent des mots du guide.
@@ -147,7 +161,48 @@ public struct MoteurRecherche: Sendable {
         mots(question).contains { m in termesSensibles.contains { m.hasPrefix($0) } }
     }
 
-    public func chercher(_ question: String, dans guideId: String? = nil) -> ResultatRecherche {
+    /// Les 5 guides de l'Espace mairie : exclus de la recherche des particuliers (cycle 6).
+    public static let guidesMairie: Set<String> = ["cellule-crise", "pilotage", "com-crise", "cyberattaque-commune", "exercice-retex"]
+
+    /// Nombre de passages affichés (cycle 3 : 3 passages ne suffisaient pas pour les guides de préparation).
+    public static let nombrePassages = 5
+    /// Plafond de lignes affichées après ajout des procédures entières.
+    public static let maxLignes = 14
+
+    /// Compose les lignes affichées (cycles 3 à 6) :
+    /// une procédure ou une liste courte ne se montre jamais à moitié, et garde son titre ;
+    /// les mises en garde du guide s'affichent toujours ; les blocs les plus pertinents passent en premier.
+    private static func composer(_ morceaux: [Morceau], choisis: [(Int, Int)]) -> [String] {
+        guard !choisis.isEmpty else { return [] }
+        var scoreBloc: [Int: Int] = [:]
+        var seuls: [Int: Set<Int>] = [:]
+        var entiers = Set<Int>()
+        for (i, sc) in choisis {
+            let m = morceaux[i]
+            scoreBloc[m.bloc] = max(scoreBloc[m.bloc] ?? 0, sc)
+            if m.entier { entiers.insert(m.bloc) } else { seuls[m.bloc, default: []].insert(i) }
+        }
+        func lignes(_ b: Int) -> [String] {
+            let ms = morceaux.enumerated().filter { $0.element.bloc == b }
+            if entiers.contains(b) || morceaux[ms[0].offset].alerte {
+                let titre = ms[0].element.titreBloc
+                return (titre.isEmpty || morceaux[ms[0].offset].alerte ? [] : [titre]) + ms.map(\.element.texte)
+            }
+            return ms.filter { seuls[b]?.contains($0.offset) == true }.map(\.element.texte)
+        }
+        let alertes = Set(morceaux.filter(\.alerte).map(\.bloc))
+        var budget = maxLignes - alertes.reduce(0) { $0 + lignes($1).count }
+        var garder = alertes
+        for b in scoreBloc.keys.sorted(by: { scoreBloc[$0]! != scoreBloc[$1]! ? scoreBloc[$0]! > scoreBloc[$1]! : $0 < $1 }) where !garder.contains(b) {
+            let n = lignes(b).count
+            if n <= budget || garder.count == alertes.count { garder.insert(b); budget -= n }
+        }
+        return garder.sorted().flatMap(lignes)
+    }
+
+    /// `mairie` : nil = détection automatique ; true = seulement l'Espace mairie ; false = seulement les guides des particuliers.
+    public func chercher(_ question: String, dans guideId: String? = nil, mairie: Bool? = nil) -> ResultatRecherche {
+        let espaceMairie = mairie ?? Triage.estMairie(question)
         let ms = Self.mots(question)
         var etendus = ms
         for m in ms { etendus += Self.synonymes[m] ?? [] }
@@ -159,6 +214,7 @@ public struct MoteurRecherche: Sendable {
 
         var meilleur: (entree: Entree, total: Int, passages: [String])?
         for e in entrees where guideId == nil || e.guide.id == guideId {
+            if guideId == nil && Self.guidesMairie.contains(e.guide.id) != espaceMairie { continue }
             let scores = e.morceaux.enumerated().map { (i, m) in
                 (i, m, racines.reduce(0) { $0 + (m.normalise.contains($1) ? 1 : 0) })
             }
@@ -166,8 +222,8 @@ public struct MoteurRecherche: Sendable {
             let titre = racines.reduce(0) { $0 + (e.titreNormalise.contains($1) ? 2 : 0) }
             let total = titre + tries.prefix(3).reduce(0) { $0 + $1.2 }
             if meilleur == nil || total > meilleur!.total {
-                let retenus = tries.filter { $0.2 > 0 }.prefix(3).sorted { $0.0 < $1.0 }.map { $0.1.texte }
-                meilleur = (e, total, retenus)
+                let choisis = Array(tries.filter { $0.2 > 0 }.prefix(guideId == nil ? Self.nombrePassages : 8))
+                meilleur = (e, total, Self.composer(e.morceaux, choisis: choisis.map { ($0.0, $0.2) }))
             }
         }
         guard let m = meilleur, m.total >= (guideId == nil ? seuil : 0) else {

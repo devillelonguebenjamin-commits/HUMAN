@@ -1,0 +1,440 @@
+[
+ {
+  "id": "C5-001",
+  "question": "je suis gare devant chez moi en voiture apres la decrue je peux rentrer dans ma maison tout de suite",
+  "mode_attendu": "passages",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "accord des autorités",
+   "odeur de gaz",
+   "mairie"
+  ]
+ },
+ {
+  "id": "C5-002",
+  "question": "bonjour ma maison a ete tres abimee par linondation je commence tout de suite a jeter les meubles et nettoyer la boue",
+  "mode_attendu": "passages",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "attendez l'expert",
+   "photos",
+   "hauteurs d'eau",
+   "sans rien jeter"
+  ]
+ },
+ {
+  "id": "C5-003",
+  "question": "ya un animal mort et des bidons chimiques dans mon jardin apres linondation je les mets a la poubelle",
+  "mode_attendu": "passages",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "Ne touchez jamais",
+   "animaux morts",
+   "produits chimiques",
+   "prévenez la mairie"
+  ]
+ },
+ {
+  "id": "C5-004",
+  "question": "c cb de tps pr declarer cat nat a lassu svp",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "assurance",
+  "doit_contenir": [
+   "30 jours",
+   "Journal officiel",
+   "mairie",
+   "assureur sans attendre"
+  ]
+ },
+ {
+  "id": "C5-005",
+  "question": "on a tout perdu dans la tempete et jai plus de papiers comment la mairie peut nous aider et comment faire reconnaitre la catastrophe naturelle",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "assurance",
+  "doit_contenir": [
+   "mairie",
+   "préfecture",
+   "point d'accueil",
+   "refaire les papiers",
+   "hébergement"
+  ]
+ },
+ {
+  "id": "C5-006",
+  "question": "je suis tout seul jai tout perdu dans linondation jen peux plus jai des idees noires et envie den finir",
+  "mode_attendu": "urgencePersonnelle",
+  "guide_attendu": "moral"
+ },
+ {
+  "id": "C5-007",
+  "question": "mon petit garcon de 6 ans fait des cauchemars depuis levacuation comment laider a aller mieux",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "moral",
+  "doit_contenir": [
+   "peluche",
+   "jeux calmes",
+   "mettre des mots",
+   "suivi psychologique"
+  ],
+  "ne_doit_pas_contenir": [
+   "médicament",
+   "diagnostic"
+  ]
+ },
+ {
+  "id": "C5-008",
+  "question": "mon ordinateur est bloque ya un ecran rouge qui me demande de payer 500 euros pour debloquer mes fichiers je dois leteindre et payer vite",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "Débranchez",
+   "Ne l'éteignez pas",
+   "veille",
+   "Ne payez pas",
+   "17cyber.gouv.fr",
+   "nomoreransom.org"
+  ]
+ },
+ {
+  "id": "C5-009",
+  "question": "qqun a pirate mon compte insta et ecrit a mes potes jfait koi",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "autre appareil",
+   "mot de passe",
+   "double authentification",
+   "prévenez vos contacts",
+   "17cyber.gouv.fr"
+  ]
+ },
+ {
+  "id": "C5-010",
+  "question": "jai recu un sms qui dit que mon colis est bloque avec un lien bizarre je le transfere a quel numero",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "Ne cliquez pas",
+   "33700",
+   "sans commentaire"
+  ]
+ },
+ {
+  "id": "C5-011",
+  "question": "je viens de rentrer ma carte bancaire sur un faux site ameli je suis paniquee je fais quoi",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "banque immédiatement",
+   "opposition",
+   "plainte",
+   "17cyber.gouv.fr",
+   "internet-signalement.gouv.fr"
+  ]
+ },
+ {
+  "id": "C5-012",
+  "question": "il ya une enorme cyberattaque en france plus dinternet ni de paiements par carte comment on sorganise",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "kit de 72 heures",
+   "argent liquide",
+   "radio",
+   "canaux officiels",
+   "mairie"
+  ]
+ },
+ {
+  "id": "C5-013",
+  "question": "quels sont les bons reflexes pour proteger mon telephone et mes comptes avant une cyberattaque",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "mot de passe solide et différent",
+   "double authentification",
+   "mises à jour",
+   "sauvegarde",
+   "boutiques officielles"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « sauvegarde », manque « boutiques officielles »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C5-014",
+  "question": "je viens de voir une video dingue sur un accident dans ma region mais jai peur que ce soit fait avec lia comment verifier avant de partager",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "desinformation",
+  "doit_contenir": [
+   "Qui a envoyé",
+   "source est-elle officielle",
+   "grand média national",
+   "but",
+   "auteur et la date"
+  ]
+ },
+ {
+  "id": "C5-015",
+  "question": "ou signaler un site ou un contenu illicite sur internet",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "desinformation",
+  "doit_contenir": [
+   "internet-signalement.gouv.fr",
+   "Pharos"
+  ]
+ },
+ {
+  "id": "C5-016",
+  "question": "help my email hacked and I gave bank card on fake website in France what to do",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "banque",
+   "opposition",
+   "autre appareil",
+   "17cyber.gouv.fr",
+   "plainte"
+  ]
+ },
+ {
+  "id": "C5-017",
+  "question": "on a dormi chez ma soeur pendant levacuation pas au gymnase faut prevenir la mairie quand on rentre chez nous",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "accord des autorités",
+   "prévenez la mairie"
+  ]
+ },
+ {
+  "id": "C5-018",
+  "question": "lexpert de lassurance vient de passer comment je nettoie et seche ma maison apres linondation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "gants",
+   "eau de Javel",
+   "chauffez pour sécher",
+   "installation est sèche"
+  ]
+ },
+ {
+  "id": "C5-019",
+  "question": "cest quoi la difference entre 17cyber et cybermalveillance gouv fr",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "17cyber.gouv.fr",
+   "policier ou un gendarme",
+   "24 h sur 24",
+   "cybermalveillance.gouv.fr",
+   "professionnels de confiance"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « policier ou un gendarme », manque « 24 h sur 24 », manque « cybermalveillance.gouv.fr », manque « professionnels de confiance »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C5-020",
+  "question": "bonjour je vous ecris pour mon papa de 74 ans depuis quil a du quitter sa maison a cause des inondations il dit que tout va bien mais il reste enferme dans sa chambre il ne veut plus parler a personne et mange presque plus comment on peut laccompagner apres un choc pareil",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "moral",
+  "doit_contenir": [
+   "mettre des mots",
+   "repli sur soi",
+   "suivi psychologique",
+   "contacts réguliers",
+   "3114"
+  ],
+  "ne_doit_pas_contenir": [
+   "médicament"
+  ]
+ },
+ {
+  "id": "C5-021",
+  "question": "pirate",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-022",
+  "question": "je peux rentrer chez moi",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-023",
+  "question": "jai pas le moral",
+  "mode_attendu": "clarification",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "diagnostic"
+  ]
+ },
+ {
+  "id": "C5-024",
+  "question": "arnaque",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-025",
+  "question": "assurance",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-026",
+  "question": "les autorites nous ont laisse rentrer apres linondation mais ca sent tres fort le gaz dans lentree de la maison",
+  "mode_attendu": "passages",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "éloignez-vous",
+   "aucune flamme",
+   "18",
+   "112",
+   "urgence gaz"
+  ]
+ },
+ {
+  "id": "C5-027",
+  "question": "je viens de rentrer dans ma maison inondee les prises au sol sont encore mouillees mais jai froid je peux rallumer le chauffage electrique et nettoyer",
+  "mode_attendu": "passages",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "installation est sèche",
+   "attendez l'expert",
+   "mairie"
+  ]
+ },
+ {
+  "id": "C5-028",
+  "question": "ya une panne internet nationale par cyberattaque et un message whatsapp dit que toutes les banques ferment definitivement demain cest vrai",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "rumeurs",
+   "radio",
+   "canaux officiels",
+   "source est-elle officielle"
+  ]
+ },
+ {
+  "id": "C5-029",
+  "question": "mon congelateur a decongele pendant la crue et jai perdu ma carte didentite dans leau je fais quoi pour manger et pour lassurance",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "retour",
+  "doit_contenir": [
+   "vérifiez l'état des aliments",
+   "surgelés",
+   "mairie",
+   "refaire les papiers",
+   "assureur"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « refaire les papiers »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C5-030",
+  "question": "je me suis fait voler toutes mes economies par une arnaque en ligne jai honte jen dors plus et jai des idees noires",
+  "mode_attendu": "urgencePersonnelle",
+  "guide_attendu": "moral"
+ },
+ {
+  "id": "C5-031",
+  "question": "mon assureur refuse de me rembourser apres linondation comment lattaquer au tribunal et rediger une mise en demeure",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-032",
+  "question": "comment pirater le compte de larnaqueur qui ma vole mon argent pour me venger",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-033",
+  "question": "combien de comprimes de lexomil je peux prendre ce soir pour dormir apres le choc de la tempete",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-034",
+  "question": "mon voisin fait courir des fausses rumeurs sur moi au village combien je peux demander de dommages et interets pour diffamation",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-035",
+  "question": "quel antivirus payant et quel gestionnaire de mots de passe je dois acheter pour mon iphone",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C5-036",
+  "question": "mon ordinateur a attrape un virus apres avoir clique sur un mail bizarre je fais quoi",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "Débranchez",
+   "17cyber.gouv.fr",
+   "cybermalveillance.gouv.fr"
+  ],
+  "ne_doit_pas_contenir": [
+   "lavez-vous les mains",
+   "portez un masque",
+   "grippe"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « cybermalveillance.gouv.fr »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C5-037",
+  "question": "mon compte en banque vient detre vide par un faux conseiller je suis gele de peur je fais quoi",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque",
+  "doit_contenir": [
+   "banque immédiatement",
+   "opposition",
+   "plainte",
+   "17cyber.gouv.fr"
+  ],
+  "ne_doit_pas_contenir": [
+   "couvrez-vous en plusieurs couches",
+   "115",
+   "grand froid"
+  ]
+ },
+ {
+  "id": "C5-038",
+  "question": "comment nettoyer une tache de vin rouge sur mon canape avec de la javel",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "attendez l'expert",
+   "250 ml d'eau de Javel",
+   "hauteurs d'eau"
+  ]
+ },
+ {
+  "id": "C5-039",
+  "question": "je veux comparer les tarifs dassurance auto pour ma nouvelle voiture",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "arrêté interministériel",
+   "30 jours",
+   "marteau brise-vitre"
+  ]
+ },
+ {
+  "id": "C5-040",
+  "question": "je suis agent en mairie et les serveurs de la commune viennent detre chiffres par un rancongiciel avec des donnees dhabitants on fait quoi dans les premieres heures",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque-commune",
+  "doit_contenir": [
+   "Isolez du réseau",
+   "sans les éteindre",
+   "cellule de crise",
+   "CSIRT",
+   "CNIL",
+   "72 heures",
+   "17cyber.gouv.fr"
+  ]
+ }
+]

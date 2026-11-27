@@ -6,7 +6,7 @@ Première version du code de l'application, commencée le 26 novembre 2026. Swif
 
 | Dossier | Contenu | Où il se teste |
 |---|---|---|
-| `SijamaisKit/` | Le cœur, en Swift pur : lecture des 46 guides, recherche hors ligne, règles et triage de l'assistant, score de préparation | Sur Mac et sur Linux : `swift test` (33 tests, dont les 40 cas des cycles 1 et 2) |
+| `SijamaisKit/` | Le cœur, en Swift pur : lecture des 46 guides, recherche hors ligne, règles et triage de l'assistant, score de préparation | Sur Mac et sur Linux : `swift test` (38 tests, dont les 240 cas des cycles 1 à 6) |
 | `Sijamais/` | L'application : écrans SwiftUI, enregistrement sur le téléphone, lampe, passerelle vers le modèle d'Apple | Sur Mac, avec Xcode |
 | `Sijamais/Resources/` | `guides.json` et le catalogue d'images (24 schémas, icône, couleur d'accent). **Ne pas modifier à la main** : produit par `python3 outils/preparer_ressources_app.py` | |
 | `project.yml` | Description du projet Xcode, lue par XcodeGen | |

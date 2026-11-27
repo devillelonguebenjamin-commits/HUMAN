@@ -30,7 +30,7 @@ extension Triage {
         if x.a("pirater", "hacker", "scanner", "intercepter") && x.a("radio", "pompiers", "police", "gendarmerie", "frequence") {
             return .horsPerimetre(message: messagePiratage, urgenceVitale: false)
         }
-        if x.a("lave linge", "machine a laver", "lave vaisselle", "tuyau", "chauffe eau", "ballon d eau", "degat des eaux", "baignoire", "toilettes", "wc ", "fuite d eau") {
+        if x.a("lave linge", "machine a laver", "lave vaisselle", "tuyau", "chauffe eau", "ballon d eau", "degat des eaux", "baignoire", "fuite d eau") || (x.a("toilettes", "wc ") && x.a("deborde", "fuite", "inonde")) {
             return .horsPerimetre(message: messageDegatDesEaux, urgenceVitale: false)
         }
         // Métaphores : « tempête de critiques », « sous le feu des critiques ».
@@ -94,7 +94,7 @@ extension Triage {
 
         // Odeur de gaz, avant tout autre risque.
         if x.a("odeur de gaz", "sent le gaz", "ca sent le gaz", "fuite de gaz", "sens le gaz", "smell gas") {
-            let l = lignes("reflexes", contenant: "N'allumez aucune flamme", g) + lignes("reflexes", contenant: "Couper le gaz", g)
+            let l = lignes("reflexes", contenant: "N'allumez aucune flamme", g) + lignes("retour", contenant: "Odeur de gaz", g) + lignes("reflexes", contenant: "Couper le gaz", g)
             return .consigne(guideId: "reflexes", lignes: l, urgenceVitale: false)
         }
         // Flamme pendant une mise à l'abri, sans symptôme (avec symptômes : guide Monoxyde, plus loin).

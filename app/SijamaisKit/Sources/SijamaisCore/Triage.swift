@@ -28,6 +28,8 @@ public enum Triage {
         case sante(guideId: String, lignes: [String])
         /// Consigne de risque majeur (cycle 2) : passages exacts des guides, jamais reformulés.
         case consigne(guideId: String, lignes: [String], urgenceVitale: Bool)
+        /// Détresse suicidaire (cycle 5) : 3114, 15, 112, 114, jamais reformulé.
+        case detressePsy(pourSoi: Bool, lignes: [String])
         /// Question d'information : recherche limitée à ce guide.
         case guide(id: String)
         /// Rien de particulier : recherche par mots habituelle, sur le texte éventuellement corrigé.
@@ -101,7 +103,7 @@ public enum Triage {
 
     static let informatif = ["appli", "application", "apprendre", "formation", "former", "ou trouver", "cours ", "stage",
                              "trousse", "acheter", "liste ", "preparer"]
-    static let apresCoup = ["cauchemar", "apres avoir", "depuis que", "j y repense", "souvenir", "dormir", "traumatis"]
+    static let apresCoup = ["cauchemar", "apres avoir sauve", "apres avoir vu", "apres avoir vecu", "apres avoir assiste", "depuis que", "j y repense", "souvenir", "dormir", "traumatis"]
 
     static let arret = ["respire plus", "respire pas", "ne respire", "respire plu ", "bouge plus", "arret cardiaque", "arret du coeur", "coeur arrete",
                         "coeur s est arrete", "crise cardiaque", "attaque cardiaque", "heart attack", "reanimation", "reanimer", "massage cardiaque", "masser", "compressions thoraciques", "defibrillateur", "dae ",
@@ -137,14 +139,14 @@ public enum Triage {
             x = Texte(t: x.t.split(separator: " ").filter { !$0.contains("etouff") }.map(String.init).joined(separator: " ").padded)
         }
 
-        // 1 bis. Alertes et risques majeurs (cycle 2), avant le hors périmètre (« fusillade » n'est pas une question d'arme).
-        if let d = risquesMajeurs(x, guides: guides) { return d }
+        // 1 bis. Règles des cycles 3 à 6 (détresse suicidaire, hors périmètre, Espace mairie, thèmes).
+        if let d = themes(x, guides: guides) { return d }
 
         // 2. Hors périmètre.
         if x.a("chien", "chat ", "chats ", "chiot", "chaton", "cheval", "animal", "animaux", "vache", "lapin") && x.a("mord", "vipere", "serpent", "piqu", "bless", "empoison", "malade", "mange") {
             return .horsPerimetre(message: messageVeterinaire, urgenceVitale: false)
         }
-        if x.a("bombe lacrymo", "lacrymo", "arme ", "armes", "pistolet", "fusil", "couteau pour", "legitime defense", "me defendre", "se defendre", "taser") {
+        if x.a("bombe lacrymo", "lacrymo", "arme ", "armes", "pistolet", "fusil ", "fusils", "couteau pour", "legitime defense", "me defendre", "se defendre", "taser") {
             return .horsPerimetre(message: messageArmes, urgenceVitale: false)
         }
         if x.a("faire un feu", "faire du feu", "bruler des", "bruler les", "bruler mes") && x.a("jardin", "branche", "feuille", "dechet", "herbe", "terrain") {
@@ -181,11 +183,15 @@ public enum Triage {
         }
         // Ingestion d'un produit ou d'un objet dangereux : pas de guide, 15 tout de suite.
         if x.a("avale", "bu ", "bu de", "mange", "ingere", "swallow", "drank") && x.a(produitsDangereux) {
-            return .horsPerimetre(message: messageSansGuideVital, urgenceVitale: true)
+            // Cycle 4 : 15 ou 112 en haut-parleur, avec les boutons d'appel (plus de simple message).
+            return .sante(guideId: "numeros", lignes: alertes("arret-cardiaque", guides) + numeros(["15", "112"], guides))
         }
         if x.a("empoisonn", "poison", "intoxication alimentaire", "intoxique", "overdose", "surdose", "drogue") && !x.a("monoxyde", "gaz", "chauffage", "groupe electrogene", "poele", "barbecue") {
             return .horsPerimetre(message: messageSansGuideVital, urgenceVitale: true)
         }
+
+        // 3 bis. Alertes et risques majeurs (cycle 2).
+        if let d = risquesMajeurs(x, guides: guides) { return d }
 
         // 4. Après coup ou simple information : pas de triage vital.
         if x.a(apresCoup) { return .guide(id: "moral") }
@@ -255,7 +261,7 @@ public enum Triage {
             if x.a(arret) {
                 return .sante(guideId: "arret-cardiaque", lignes: etapes("arret-cardiaque", guides) + alertes("arret-cardiaque", guides))
             }
-            if x.a(inconscience) && x.a("respire", "breathing") {
+            if x.a(inconscience) && x.a("respire", "breathing", "ventre qui bouge", "ventre bouge", "poitrine se souleve", "poitrine qui se souleve") {
                 return .sante(guideId: "inconscient-respire", lignes: etapes("inconscient-respire", guides))
             }
             if x.a(etouffement) {
@@ -279,7 +285,7 @@ public enum Triage {
                     OptionClarification(libelle: "Non, c'est une petite plaie", question: "petite plaie qui saigne peu"),
                 ])
             }
-            if x.a("tombe", "tombee", "par terre", "au sol", "chute", "s est effondre", "effondree") {
+            if x.a("tombe ", "tombee", "tombes", "par terre", "au sol", "chute", "s est effondre", "effondree") {
                 return clarificationConscience
             }
             if x.a("malaise", "pas bien", "se sent mal", "sent pas bien", "mal partout") {
@@ -340,4 +346,18 @@ public enum Triage {
 
 extension String {
     var padded: String { " " + self + " " }
+}
+
+extension Triage {
+    /// Marqueurs d'une question posée par un élu ou un agent (Espace mairie, cycle 6).
+    static let marqueursMairie = ["maire ", "maires ", "adjoint", "elu ", "elue ", "elus ", "dgs ", "agent en mairie", "agents de la commune", "agents municipaux",
+                                  "secretaire de mairie", "en mairie", "notre mairie", "la mairie on", "de la mairie quelle", "notre commune", "nos agents", "nos habitants",
+                                  "les habitants", "aux habitants", "des habitants", "pcc ", "pcs ", "poste de commandement", "cellule de crise", "collectivite",
+                                  "serveurs de la commune", "serveurs de la mairie", "communal", "communale", "town hall", "point de situation", "points de situation",
+                                  "main courante par ecrit", "briefing", "retex", "journaliste", "communication de la mairie", "accusent la mairie", "la mairie de cacher", "intern in french town", "chargee de communication", "charge de communication", "responsable informatique de la mairie"]
+
+    public static func estMairie(_ question: String) -> Bool {
+        let x = Texte(t: preparer(question))
+        return x.a(marqueursMairie) && !x.a("je suis un particulier", "particulier")
+    }
 }

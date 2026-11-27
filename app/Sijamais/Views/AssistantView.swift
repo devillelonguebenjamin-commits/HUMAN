@@ -161,6 +161,7 @@ private struct ReponseVue: View {
                 }
             case .urgencePersonnelle:
                 Text(reponse.texte ?? "").font(.headline)
+                ForEach(reponse.lignes, id: \.self) { Text("• \($0)") }
             case .urgenceSante:
                 Text("Étapes du guide relu, sans reformulation :").font(.subheadline.bold())
                 ForEach(Array(reponse.lignes.enumerated()), id: \.offset) { i, l in Text("\(i + 1). \(l)") }
@@ -170,7 +171,15 @@ private struct ReponseVue: View {
                 Text("Extrait du guide, mot pour mot :").font(.subheadline.bold())
                 ForEach(reponse.lignes, id: \.self) { Text("• \($0)") }
             }
-            if let id = reponse.guideId, let g = modele.guide(id) {
+            if reponse.guideId == "moral" && reponse.urgenceVitale, let tel = URL(string: "tel:3114") {
+                Link(destination: tel) {
+                    Label("Appeler le 3114 (gratuit, 24 h sur 24)", systemImage: "phone.fill")
+                        .font(.subheadline.bold()).foregroundStyle(.white)
+                        .padding(.horizontal, 14).padding(.vertical, 10)
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Charte.secours))
+                }
+            }
+                        if let id = reponse.guideId, let g = modele.guide(id) {
                 NavigationLink { GuideView(guide: g) } label: {
                     HStack(spacing: 6) {
                         BadgeNiveau(niveau: g.niveau)
