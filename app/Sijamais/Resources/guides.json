@@ -2,8 +2,8 @@
  "meta": {
   "app": "SIJAMAIS",
   "titre": "Guides SIJAMAIS",
-  "version": "1.1",
-  "date": "2026-11-25",
+  "version": "1.2",
+  "date": "2026-11-27",
   "langue": "fr",
   "avertissement": "Version de travail, non relue par des professionnels : ne pas diffuser en l'état. En situation réelle, les consignes des autorités (préfecture, mairie, secours) priment toujours.",
   "niveaux": {
@@ -11,7 +11,7 @@
    "pratique": "Conseil pratique : rédigé par SIJAMAIS à partir de sources diverses, à relire"
   },
   "regle_gratuite": "Tous ces guides sont gratuits.",
-  "historique": "1.0 du 2026-11-25 fournie par Benjamin ; 1.1 corrige selon contenus/guides/REVUE_v1.0.md",
+  "historique": "1.0 du 2026-11-25 fournie par Benjamin ; 1.1 corrige selon contenus/guides/REVUE_v1.0.md ; 1.2 du 2026-11-27 applique les arbitrages de contenus/assistant/arbitrages_cycles_1_a_6.md",
   "sources": {
    "S1": {
     "titre": "Affiche « Votre kit d'urgence 72 h »",
@@ -112,7 +112,7 @@
    "S15": {
     "titre": "Catastrophe naturelle ou technologique : indemnisation par l'assurance",
     "editeur": "Service-public.gouv.fr (DILA)",
-    "date": "consultée le 2026-11-25",
+    "date": "vérifiée le 2026-04-10, consultée le 2026-11-27",
     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F3078",
     "type": "officiel",
     "reutilisation": "Information publique"
@@ -196,6 +196,14 @@
     "url": "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4#Article33",
     "type": "officiel",
     "reutilisation": "Texte officiel"
+   },
+   "S26": {
+    "titre": "Quels sont les numéros en cas d'urgence (Samu, pompiers...) et les numéros d'écoute ?",
+    "editeur": "Service-public.gouv.fr (DILA, Premier ministre)",
+    "date": "vérifiée le 2026-08-25, consultée le 2026-11-27",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33954",
+    "type": "officiel",
+    "reutilisation": "Information publique"
    }
   }
  },
@@ -271,12 +279,12 @@
       {
        "n": "196",
        "label": "Secours en mer",
-       "desc": "Personne tombée à l'eau, bateau en difficulté, depuis la mer ou le littoral. Le 112 fonctionne aussi."
+       "desc": "Depuis le littoral : appelez le 196 ou le 112. En mer, privilégiez le canal 16 de la radio VHF."
       },
       {
        "n": "196",
        "label": "Urgence en mer",
-       "desc": "Secours en mer."
+       "desc": "Depuis le littoral : appelez le 196 ou le 112. En mer, privilégiez le canal 16 de la radio VHF."
       }
      ]
     },
@@ -285,8 +293,8 @@
      "titre": "Autres numéros utiles",
      "items": [
       [
-       "0 800 50 73 05",
-       "Numéro vert pour apprendre à reconnaître le signal national d'alerte"
+       "0 800 112 112",
+       "Numéro par lequel les services d'urgence vous rappellent : décrochez en confiance, l'appel est gratuit"
       ],
       [
        "0 800 005 696",
@@ -306,22 +314,20 @@
    "sources": [
     "S2",
     "S3",
-    "S4"
+    "S4",
+    "S26"
    ],
    "niveau": "officiel",
    "sensible": false,
-   "version": "1.1",
-   "maj": "2026-11-25",
+   "version": "1.2",
+   "maj": "2026-11-27",
    "relecture": {
     "statut": "non relu",
     "nom": null,
     "qualite": null,
     "date": null
    },
-   "a_verifier": [
-    "Numéro vert 0 800 50 73 05 du signal national d'alerte : à confirmer avant publication",
-    "196 (secours en mer, CROSS) : ajouté le 27/11/2026 après le cycle 1 de l'assistant, à confirmer sur service-public.gouv.fr avant publication"
-   ]
+   "a_verifier": []
   },
   {
    "id": "alerte",
@@ -1984,7 +1990,7 @@
      "id": "stock-energie",
      "titre": "Cuisiner, s'éclairer, se chauffer sans réseau",
      "items": [
-      "Réchaud de camping et cartouches de gaz compatibles",
+      "Réchaud de camping et cartouches de gaz compatibles (à utiliser dehors uniquement)",
       "Bougies longue durée",
       "Lampes torches et lanternes",
       "Couverture de laine ou sac de couchage par personne",
@@ -1995,18 +2001,19 @@
     },
     {
      "t": "alert",
-     "body": "Réchaud, bougies, poêle à pétrole : aérez toujours la pièce. Un appareil à flamme en espace clos est dangereux."
+     "body": "Jamais de réchaud, de barbecue, de groupe électrogène, de poêle à pétrole ni de chauffage d'appoint à combustion dans un local fermé, même garage ou cave : risque mortel de monoxyde de carbone."
     }
    ],
    "sources": [
     "S12",
     "S11",
-    "S2"
+    "S2",
+    "S20"
    ],
    "niveau": "pratique",
    "sensible": false,
-   "version": "1.1",
-   "maj": "2026-11-25",
+   "version": "1.2",
+   "maj": "2026-11-27",
    "relecture": {
     "statut": "non relu",
     "nom": null,
@@ -2385,7 +2392,7 @@
      "t": "schema",
      "fichier": "schema-eau-1.svg",
      "titre": "Rendre l'eau buvable",
-     "alt": "Trois étapes : filtrer l'eau à travers du tissu, du sable et du charbon, la faire bouillir quelques minutes, puis la désinfecter et attendre 30 minutes avant de boire.",
+     "alt": "Trois étapes : filtrer l'eau à travers du tissu, du sable et du charbon, la faire bouillir quelques minutes, puis la désinfecter avec une pastille de purification, en attendant le temps indiqué sur sa notice.",
      "relecture_secours": false
     },
     {
@@ -2406,18 +2413,12 @@
      "items": [
       "Filtrer : un filtre fin retient les particules et une partie des micro-organismes. Filtre de fortune : tissu, sable ou terre, charbon de bois, bien tassés.",
       "Faire bouillir quelques minutes, puis laisser refroidir.",
-      "Finir par une paille filtrante, une pastille de purification ou quelques gouttes de javel."
+      "Finir par une paille filtrante ou une pastille de purification, en suivant sa notice."
      ]
     },
     {
-     "t": "steps",
-     "titre": "Désinfecter à l'eau de Javel (méthode de l'ARS)",
-     "items": [
-      "Préparez une solution : 250 ml d'eau de Javel à 2,6 % dans 1 litre d'eau. Elle se garde 24 heures.",
-      "Ajoutez 6 gouttes de cette solution par litre d'eau à traiter.",
-      "Attendez 30 minutes avant de boire.",
-      "Avec des pastilles de purification, suivez leur notice."
-     ]
+     "t": "alert",
+     "body": "La désinfection à l'eau de Javel n'est pas reprise ici : les concentrations varient d'un produit à l'autre et une erreur de dosage est dangereuse. Préférez l'ébullition et les pastilles de purification."
     },
     {
      "t": "tip",
@@ -2425,24 +2426,21 @@
     }
    ],
    "sources": [
-    "S18",
     "S9",
     "S10",
     "S12"
    ],
    "niveau": "pratique",
    "sensible": false,
-   "version": "1.1",
-   "maj": "2026-11-25",
+   "version": "1.2",
+   "maj": "2026-11-27",
    "relecture": {
     "statut": "non relu",
     "nom": null,
     "qualite": null,
     "date": null
    },
-   "a_verifier": [
-    "Dosage de la javel : chercher une recommandation nationale (Santé publique France, ministère de la Santé)"
-   ]
+   "a_verifier": []
   },
   {
    "id": "feu",
@@ -2685,8 +2683,8 @@
   {
    "id": "cueillette",
    "cat": "survie",
-   "titre": "Cueillette de plantes sauvages",
-   "resume": "3 plantes communes et les règles de sécurité.",
+   "titre": "Cueillette : prudence",
+   "resume": "Pourquoi ne pas compter sur les plantes sauvages.",
    "duree": "4 min",
    "prioritaire": false,
    "blocs": [
@@ -2695,81 +2693,16 @@
      "body": "Ne consommez que ce que vous avez identifié avec certitude : la flore compte des espèces mortelles. En cas de doute, demandez à un spécialiste. Mieux vaut connaître parfaitement une quinzaine de plantes que d'en confondre cent."
     },
     {
-     "t": "list",
-     "titre": "Les règles",
-     "items": [
-      "Évitez les zones polluées (bords de route, passages d'animaux).",
-      "Ne prenez que le nécessaire, uniquement des plantes abondantes et non protégées.",
-      "Cuisez ou lavez très bien les plantes contre les parasites.",
-      "Commencez par de petites quantités.",
-      "Transportez-les dans du tissu ou du papier plutôt que du plastique."
-     ]
+     "t": "text",
+     "body": "En situation de crise, ne comptez pas sur la cueillette pour vous nourrir : la flore compte des espèces mortelles et les confusions sont fréquentes, même pour des plantes courantes. Appuyez-vous sur vos réserves (voir « Stocks à la maison » et « Se nourrir sur la durée »)."
     },
     {
-     "t": "plant",
-     "titre": "Plantain",
-     "items": [
-      [
-       "Où",
-       "Prairies, champs"
-      ],
-      [
-       "Quand",
-       "Toute l'année"
-      ],
-      [
-       "Manger",
-       "Feuilles en salade ou en légume, jeunes fleurs au goût de champignon"
-      ]
-     ]
-    },
-    {
-     "t": "plant",
-     "titre": "Ortie",
-     "items": [
-      [
-       "Où",
-       "Sols riches"
-      ],
-      [
-       "Quand",
-       "Mars à novembre"
-      ],
-      [
-       "Manger",
-       "Feuilles et graines cuites, jeunes feuilles hachées en salade"
-      ],
-      [
-       "Autre",
-       "Ses fibres donnent une ficelle résistante"
-      ]
-     ]
-    },
-    {
-     "t": "plant",
-     "titre": "Massette",
-     "items": [
-      [
-       "Où",
-       "Étangs, marais"
-      ],
-      [
-       "Quand",
-       "Pousses de mars à juin, fleurs femelles en juin et juillet, rhizome de novembre à mars"
-      ],
-      [
-       "Manger",
-       "Rhizome riche en amidon, jeunes pousses crues, pollen riche en protéines, jeunes fleurs femelles comme un épi de maïs"
-      ],
-      [
-       "Attention",
-       "Jeune, elle peut être confondue avec l'iris jaune, toxique. Ne la cueillez qu'en fleur ou en épi, quand elle est reconnaissable avec certitude."
-      ]
-     ]
+     "t": "alert",
+     "body": "Si quelqu'un a mangé une plante, des baies ou un champignon inconnus et se sent mal : appelez le 15 ou le 112."
     },
     {
      "t": "tip",
-     "body": "La cueillette de champignons n'est pas couverte par les documents sources : ce module reste à créer avec un référent mycologue ou un pharmacien."
+     "body": "SIJAMAIS ne donne aucune fiche d'identification de plantes ou de champignons : seul un spécialiste ou un pharmacien peut confirmer une espèce."
     }
    ],
    "sources": [
@@ -2778,17 +2711,15 @@
    ],
    "niveau": "pratique",
    "sensible": false,
-   "version": "1.1",
-   "maj": "2026-11-25",
+   "version": "1.2",
+   "maj": "2026-11-27",
    "relecture": {
     "statut": "non relu",
     "nom": null,
     "qualite": null,
     "date": null
    },
-   "a_verifier": [
-    "Identification et confusions possibles : à faire relire par un pharmacien ou un botaniste"
-   ]
+   "a_verifier": []
   },
   {
    "id": "nourriture",
@@ -3025,8 +2956,16 @@
      "items": [
       "Dès le sinistre, signalez-vous à la mairie, qui demande la reconnaissance de l'état de catastrophe naturelle à la préfecture.",
       "Prévenez votre assureur sans attendre et dressez la liste des dégâts, photos à l'appui.",
-      "Après la publication de l'arrêté au Journal officiel, vous avez 30 jours pour déclarer vos dommages (règle en vigueur depuis le 1er janvier 2023).",
-      "Les délais de versement de l'indemnité sont fixés par le code des assurances : consultez service-public.fr."
+      "Après la publication de l'arrêté au Journal officiel, vous avez 30 jours au plus tard pour déclarer vos dommages.",
+      "L'assureur doit verser une provision dans les 2 mois suivant la remise de l'état estimatif des dommages ou la publication de l'arrêté, puis l'indemnisation complète dans un délai de 3 mois. Votre contrat peut prévoir mieux."
+     ]
+    },
+    {
+     "t": "list",
+     "titre": "Bon à savoir",
+     "items": [
+      "Une franchise légale s'applique : 380 € pour une habitation, 1 520 € si le dommage vient d'un mouvement de terrain lié à la sécheresse.",
+      "Les frais d'hébergement temporaire peuvent être pris en charge si votre résidence principale devient inhabitable."
      ]
     },
     {
@@ -3051,8 +2990,8 @@
    ],
    "niveau": "officiel",
    "sensible": false,
-   "version": "1.1",
-   "maj": "2026-11-25",
+   "version": "1.2",
+   "maj": "2026-11-27",
    "relecture": {
     "statut": "non relu",
     "nom": null,

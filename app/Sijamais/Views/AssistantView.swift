@@ -183,11 +183,21 @@ private struct ReponseVue: View {
                 NavigationLink { GuideView(guide: g) } label: {
                     HStack(spacing: 6) {
                         BadgeNiveau(niveau: g.niveau)
-                        Text("Ouvrir « \(g.titre) »").font(.footnote.bold()).foregroundStyle(Charte.balise)
+                        Text(Self.libelleOutil(g)).font(.footnote.bold()).foregroundStyle(Charte.balise)
                     }
                 }
             }
         }
+    }
+}
+
+extension ReponseVue {
+    /// Lien vers l'outil du guide quand il en a un (calculateur, formulaire, liste à cocher), sinon vers le guide.
+    static func libelleOutil(_ g: Guide) -> String {
+        for b in g.blocs { if case let .calc(titre, _, _, _) = b { return "Calculer : \(titre ?? g.titre)" } }
+        for b in g.blocs { if case .form = b { return "Remplir dans « \(g.titre) »" } }
+        for b in g.blocs { if case .check = b { return "Cocher ma liste dans « \(g.titre) »" } }
+        return "Ouvrir « \(g.titre) »"
     }
 }
 

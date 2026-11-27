@@ -32,6 +32,8 @@ final class AppModel {
     var foyer: Foyer { didSet { enregistrer(foyer, cle: Cle.foyer) } }
     var listes: EtatListes { didSet { enregistrer(listes, cle: Cle.listes) } }
     var formulaires: [String: String] { didSet { stockage.set(formulaires, forKey: Cle.formulaires) } }
+    /// Espace mairie (élus et agents) : ajoute les 5 guides de la commune aux réponses de l'assistant.
+    var espaceMairie: Bool { didSet { stockage.set(espaceMairie, forKey: Cle.espaceMairie) } }
 
     private let stockage = UserDefaults.standard
     private enum Cle {
@@ -41,6 +43,7 @@ final class AppModel {
         static let foyer = "foyer"
         static let listes = "listes"
         static let formulaires = "formulaires"
+        static let espaceMairie = "espaceMairie"
     }
 
     init() {
@@ -61,6 +64,7 @@ final class AppModel {
         foyer = Self.lire(Foyer.self, cle: Cle.foyer) ?? Foyer()
         listes = Self.lire(EtatListes.self, cle: Cle.listes) ?? EtatListes()
         formulaires = (s.dictionary(forKey: Cle.formulaires) as? [String: String]) ?? [:]
+        espaceMairie = s.bool(forKey: Cle.espaceMairie)
     }
 
     // MARK: Guides et préparation
@@ -91,8 +95,9 @@ final class AppModel {
         let echange = Echange(question: affichage ?? q)
         echanges.append(echange)
         let assistant = self.assistant
+        let mairie = espaceMairie
         Task {
-            let r = await assistant.repondre(q)
+            let r = await assistant.repondre(q, espaceMairie: mairie)
             if let i = echanges.firstIndex(where: { $0.id == echange.id }) { echanges[i].reponse = r }
         }
     }

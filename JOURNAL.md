@@ -373,3 +373,25 @@ MacBook Air M5 avec 24 Go de mémoire, choisi pour servir à la fois SIJAMAIS et
 **Avocat du diable.** Sur 16 questions nouvelles, 9 bonnes avant correction, dont une erreur grave : « je veux plus vivre » ne déclenchait aucune alerte. Liste élargie, resserrée contre les fausses alertes (« pendre le linge »), et testée. Les échecs connus montrent la limite de la recherche par mots : une bonne réponse assemble souvent plusieurs guides.
 
 **En attente de Benjamin.** Arbitrages listés dans `contenus/assistant/arbitrages_cycles_1_a_6.md`.
+
+## 2026-11-27 : arbitrages validés, guides 1.2
+
+**Décision de Benjamin.** « OK sur tout » sur les 13 arbitrages de `contenus/assistant/arbitrages_cycles_1_a_6.md`.
+
+**Travail fait.** Guides 1.2 (`outils/construire_guides_v12.py`) :
+- Stocks aligné sur l'interdiction du guide Monoxyde.
+- Cueillette transformé en guide de prudence ; les fiches de plantes sont mises de côté.
+- Eau : méthode à l'eau de Javel retirée, schéma corrigé.
+- Numéros : numéro vert du signal d'alerte retiré, 196 confirmé, 0 800 112 112 ajouté.
+- Assurance actualisé : délais de versement, franchise, hébergement.
+
+Application, fichier Word (`SIJAMAIS_guides_v1.2.docx`) et maquette régénérés.
+
+Autres travaux :
+- Brouillons AVC, étouffement du nourrisson et hypothermie, hors application, à relire par un formateur PSC1.
+- Interrupteur « Espace mairie » dans les réglages.
+- Liens directs vers les outils des guides sous les réponses.
+
+Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'accord de Benjamin dans l'invite d'autorisation. **39 tests réussis.**
+
+**Non fait.** Numéros GRDF et Enedis : pages officielles illisibles automatiquement (accès refusé ou numéro chargé par script), donc non ajoutés. Garantie tempête : pas de page officielle trouvée. Guide Retour : pas de source plus récente que 2010 trouvée.

@@ -42,6 +42,15 @@ final class Cycles3a6Tests: XCTestCase {
         XCTAssertTrue(echecs.isEmpty, "\n" + echecs.joined(separator: "\n"))
     }
 
+    /// Interrupteur « Espace mairie » : les guides de la commune n'entrent dans la recherche que s'il est activé
+    /// (ou si la question vient d'un élu ou d'un agent).
+    func testInterrupteurEspaceMairie() {
+        let m = MoteurRecherche(bibliotheque: GuidesTests.bibliotheque)
+        let q = "trame faits actes empathie engagement transparence"
+        XCTAssertFalse(MoteurRecherche.guidesMairie.contains(m.chercher(q).guide?.id ?? ""))
+        XCTAssertEqual(m.chercher(q, tous: true).guide?.id, "com-crise")
+    }
+
     func testCycle3() async { await verifier(3) }
     func testCycle4() async { await verifier(4) }
     func testCycle5() async { await verifier(5) }

@@ -95,8 +95,12 @@ extension Triage {
         if manger && x.a("champignon", "mushroom") && !x.a("enfant a mange", "fils a mange", "fille a mange", "a mange des", "vomi") {
             return .horsPerimetre(message: messageIdentification, urgenceVitale: false)
         }
+        // Guides 1.2 : plus aucune fiche de plante ; toute demande « je peux manger cette plante » est refusée.
+        if manger && x.a("plantain", "ortie", "massette", "pousse", "pissenlit", "ail des ours", "baies", "champignon") && !x.a("a mange", "ont mange", "vomi") {
+            return .horsPerimetre(message: messageIdentification, urgenceVitale: false)
+        }
         if manger && x.a("feuilles", "baies", "fleur", "racine", "plante", "herbe") && x.a("sent", "couleur", "vertes", "rouges", "jaune", "blanche", "trouve", "cueilli", "inconnue")
-            && !x.a("plantain", "ortie", "massette") && !x.a("a mange", "ont mange", "vomi") {
+            && !x.a("a mange", "ont mange", "vomi") {
             return .horsPerimetre(message: messageIdentification, urgenceVitale: false)
         }
 
@@ -198,6 +202,8 @@ extension Triage {
         if x.a("perdu", "perdus", "lost") && x.a("foret", "bois", "montagne", "sentier", "rando", "chemin", "nature", "nuit") && !x.a("demarches", "papiers") {
             return .guide(id: x.a("signal", "helicoptere", "bras") ? "signaux" : "orientation")
         }
+        if x.a("cueillir", "cueillette", "plantes sauvages") { return .guide(id: "cueillette") }
+        if x.a("javel") && x.a("eau a boire", "potable", "desinfecter l eau", "boire", "dosage") { return .guide(id: "eau") }
         if x.a("perdu dans mes demarches", "perdu avec les papiers", "perdu dans les papiers") { return .guide(id: "assurance") }
         if x.a("feux en triangle", "3 feux", "trois feux") && x.a("aout", "sec", "seche", "foret", "ete ", "juillet") {
             return .consigne(guideId: "signaux", lignes: alertes("feu", g) + lignes("signaux", contenant: "", g).filter { !$0.contains("feux en triangle") }, urgenceVitale: false)

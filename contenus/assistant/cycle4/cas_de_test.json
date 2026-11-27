@@ -54,12 +54,10 @@
   "mode_attendu": "passages",
   "guide_attendu": "eau",
   "doit_contenir": [
-   "250 ml",
-   "2,6 %",
-   "1 litre",
-   "6 gouttes",
-   "30 minutes"
-  ]
+   "n'est pas reprise",
+   "pastilles de purification"
+  ],
+  "ecart": "Arbitrage de Benjamin du 27/11/2026 (guides 1.2) : la méthode à l'eau de Javel est retirée du guide Eau ; l'assistant explique pourquoi et renvoie à l'ébullition et aux pastilles."
  },
  {
   "id": "C4-006",
@@ -198,23 +196,16 @@
   "mode_attendu": "reformulee",
   "guide_attendu": "cueillette",
   "doit_contenir": [
-   "identifié avec certitude",
-   "zones polluées",
-   "cuisez ou lavez",
-   "petites quantités"
-  ]
+   "identifié avec certitude"
+  ],
+  "ecart": "Arbitrage de Benjamin du 27/11/2026 (guides 1.2) : le guide Cueillette devient un guide de prudence ; les règles de cueillette sont retirées."
  },
  {
   "id": "C4-017",
   "question": "je peux manger des jeunes pousses de massette au bord dun etang",
-  "mode_attendu": "passages",
-  "guide_attendu": "cueillette",
-  "doit_contenir": [
-   "iris jaune",
-   "toxique",
-   "en fleur ou en épi",
-   "certitude"
-  ]
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ecart": "Arbitrage de Benjamin du 27/11/2026 (guides 1.2) : les fiches plantain, ortie et massette sont retirées ; toute demande « je peux manger cette plante » reçoit le refus d'identification."
  },
  {
   "id": "C4-018",

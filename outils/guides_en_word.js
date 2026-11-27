@@ -1,4 +1,4 @@
-// Produit contenus/guides/SIJAMAIS_guides_v1.1.docx à partir de guides_v1.1.json,
+// Produit contenus/guides/SIJAMAIS_guides_v1.2.docx à partir de guides_v1.2.json,
 // pour le transmettre à Claude Design avec prompts/claude_design_schemas_guides.md.
 // Usage : node outils/guides_en_word.js
 const fs = require("fs");
@@ -10,8 +10,8 @@ const {
 } = require("docx");
 
 const RACINE = path.resolve(__dirname, "..");
-const d = JSON.parse(fs.readFileSync(path.join(RACINE, "contenus/guides/guides_v1.1.json"), "utf8"));
-const SORTIE = path.join(RACINE, "contenus/guides/SIJAMAIS_guides_v1.1.docx");
+const d = JSON.parse(fs.readFileSync(path.join(RACINE, "contenus/guides/guides_v1.2.json"), "utf8"));
+const SORTIE = path.join(RACINE, "contenus/guides/SIJAMAIS_guides_v1.2.docx");
 const S = d.meta.sources;
 
 // Schémas demandés dans le prompt Claude Design, par guide.
@@ -162,7 +162,7 @@ for (const c of d.categories) {
 }
 
 const doc = new Document({
-  creator: "SIJAMAIS", title: "Guides SIJAMAIS v1.1", description: "Les guides de l'application SIJAMAIS",
+  creator: "SIJAMAIS", title: "Guides SIJAMAIS v1.2", description: "Les guides de l'application SIJAMAIS",
   styles: {
     default: { document: { run: { font: POLICE, size: 22 } } },
     paragraphStyles: [
@@ -174,7 +174,7 @@ const doc = new Document({
   numbering: { config },
   sections: [{
     properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1134, bottom: 1134, left: 1134, right: 1134 } } },
-    footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "SIJAMAIS · guides v1.1 · document de travail, ne pas diffuser · page ", font: POLICE, size: 16, color: GRIS }), new TextRun({ children: [PageNumber.CURRENT], font: POLICE, size: 16, color: GRIS })] })] }) },
+    footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "SIJAMAIS · guides v1.2 · document de travail, ne pas diffuser · page ", font: POLICE, size: 16, color: GRIS }), new TextRun({ children: [PageNumber.CURRENT], font: POLICE, size: 16, color: GRIS })] })] }) },
     children: enfants,
   }],
 });

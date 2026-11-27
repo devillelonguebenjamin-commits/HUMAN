@@ -1,6 +1,6 @@
 # Arbitrages après les cycles 1 à 6 de l'assistant
 
-Rédigé le 27/11/2026 par Claude Code, à partir du point final du Claude évaluateur (fin du cycle 6). Pour chaque question : la recommandation de l'évaluateur, ma position, et ce qui est déjà fait. **Benjamin tranche** ; je n'ai modifié aucun contenu de guide sans son accord.
+Rédigé le 27/11/2026 par Claude Code, à partir du point final du Claude évaluateur (fin du cycle 6). **Validé par Benjamin le 27/11/2026 : « OK sur tout ».** La section « Mise en œuvre » en fin de document dit ce qui a été fait.
 
 ## Bloc 1 : contenus des guides (version 1.2)
 
@@ -30,6 +30,19 @@ Rédigé le 27/11/2026 par Claude Code, à partir du point final du Claude éval
 | 12 | Cloisonner les 5 guides de l'Espace mairie | Interrupteur « Mode mairie » | Les deux : guides mairie **exclus par défaut** de la recherche des particuliers, activés par des mots d'élu ou d'agent (maire, PCC, nos agents...) ; un interrupteur dans les réglages viendra avec l'espace commune | Détection automatique **faite** ; interrupteur à faire |
 | 13 | Numéros Enedis et GRDF, fiches locales (CSIRT, préfecture, salle de crise) | Les ajouter | D'accord, **après vérification des numéros** sur les sites officiels ; les fiches locales vont avec l'espace commune | À faire |
 
-## Ce que je te demande
+## Mise en œuvre (27/11/2026)
 
-Réponds par « OK sur tout », ou donne seulement les numéros où tu changes d'avis. Avec ton accord, je modifie les guides (2, 3, 4, 6) dans une version 1.2, puis on choisit entre un cycle 7 transversal et la recherche par le sens.
+| N° | Fait |
+|---|---|
+| 1 | Brouillons AVC, étouffement du nourrisson, hypothermie dans `contenus/guides/brouillons/secours_a_relire.json`, **hors application** ; convulsions : aucune proposition, à rédiger avec le formateur |
+| 2 | Guide Stocks 1.2 : « Jamais de réchaud, de barbecue, de groupe électrogène, de poêle à pétrole ni de chauffage d'appoint à combustion dans un local fermé » ; réchaud « à utiliser dehors uniquement » |
+| 3 | Guide « Cueillette : prudence » ; fiches plantain, ortie, massette mises de côté dans `contenus/guides/retires_v1.2.json` ; l'assistant refuse toute identification |
+| 4 | Guide Eau sans eau de Javel (mise en garde expliquant pourquoi) ; schéma de l'eau corrigé (« pastille, selon notice » au lieu de « attendre 30 min ») |
+| 5 | Guide Assurance actualisé sur service-public.gouv.fr (page vérifiée le 10/04/2026) : délais de versement (provision sous 2 mois, indemnisation sous 3 mois), franchise de 380 €, hébergement temporaire. Garantie tempête : pas de page officielle trouvée, non ajoutée. Guide Retour : pas de source récente trouvée, inchangé |
+| 6 | Numéro vert 0 800 50 73 05 retiré (introuvable sur les pages officielles). **196 confirmé** (service-public.gouv.fr, page vérifiée le 25/08/2026) ; **0 800 112 112** ajouté (numéro de rappel des secours, même page) |
+| 7 à 10 | Déjà faits avant l'arbitrage |
+| 11 | Le lien sous chaque réponse mène à l'outil du guide : « Calculer : ... », « Remplir dans ... », « Cocher ma liste dans ... » |
+| 12 | Interrupteur « Espace mairie » dans les réglages, en plus de la détection automatique |
+| 13 | Numéros GRDF et Enedis **non vérifiés** (GRDF refuse l'accès automatique, le numéro d'Enedis est chargé par script) : non ajoutés, à vérifier à la main. Fiches locales : avec l'espace commune |
+
+L'environnement cloud « HUMAN » autorise désormais grdf.fr, enedis.fr, service-public.gouv.fr, gouvernement.fr, info.gouv.fr, interieur.gouv.fr et mer.gouv.fr (validé dans l'invite d'autorisation).

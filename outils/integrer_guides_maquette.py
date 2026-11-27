@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Intègre contenus/guides/guides_v1.1.json dans la maquette prototype/maquette_app/index.html.
+"""Intègre contenus/guides/guides_v1.2.json dans la maquette prototype/maquette_app/index.html.
 
 Génère un écran « Guides », un écran par catégorie et un écran par guide, en HTML
 statique : la navigation fonctionne sans JavaScript, par liens internes.
@@ -14,7 +14,7 @@ import re
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
-GUIDES = RACINE / "contenus" / "guides" / "guides_v1.1.json"
+GUIDES = RACINE / "contenus" / "guides" / "guides_v1.2.json"
 MAQUETTE = RACINE / "prototype" / "maquette_app" / "index.html"
 
 d = json.loads(GUIDES.read_text(encoding="utf-8"))

@@ -1,0 +1,93 @@
+{
+ "date": "2026-11-27",
+ "raison": "Arbitrages du 27/11/2026 : contenus mis de côté en attendant une validation (botaniste ou pharmacien, source nationale).",
+ "blocs": {
+  "cueillette": [
+   {
+    "t": "list",
+    "titre": "Les règles",
+    "items": [
+     "Évitez les zones polluées (bords de route, passages d'animaux).",
+     "Ne prenez que le nécessaire, uniquement des plantes abondantes et non protégées.",
+     "Cuisez ou lavez très bien les plantes contre les parasites.",
+     "Commencez par de petites quantités.",
+     "Transportez-les dans du tissu ou du papier plutôt que du plastique."
+    ]
+   },
+   {
+    "t": "plant",
+    "titre": "Plantain",
+    "items": [
+     [
+      "Où",
+      "Prairies, champs"
+     ],
+     [
+      "Quand",
+      "Toute l'année"
+     ],
+     [
+      "Manger",
+      "Feuilles en salade ou en légume, jeunes fleurs au goût de champignon"
+     ]
+    ]
+   },
+   {
+    "t": "plant",
+    "titre": "Ortie",
+    "items": [
+     [
+      "Où",
+      "Sols riches"
+     ],
+     [
+      "Quand",
+      "Mars à novembre"
+     ],
+     [
+      "Manger",
+      "Feuilles et graines cuites, jeunes feuilles hachées en salade"
+     ],
+     [
+      "Autre",
+      "Ses fibres donnent une ficelle résistante"
+     ]
+    ]
+   },
+   {
+    "t": "plant",
+    "titre": "Massette",
+    "items": [
+     [
+      "Où",
+      "Étangs, marais"
+     ],
+     [
+      "Quand",
+      "Pousses de mars à juin, fleurs femelles en juin et juillet, rhizome de novembre à mars"
+     ],
+     [
+      "Manger",
+      "Rhizome riche en amidon, jeunes pousses crues, pollen riche en protéines, jeunes fleurs femelles comme un épi de maïs"
+     ],
+     [
+      "Attention",
+      "Jeune, elle peut être confondue avec l'iris jaune, toxique. Ne la cueillez qu'en fleur ou en épi, quand elle est reconnaissable avec certitude."
+     ]
+    ]
+   }
+  ],
+  "eau": [
+   {
+    "t": "steps",
+    "titre": "Désinfecter à l'eau de Javel (méthode de l'ARS)",
+    "items": [
+     "Préparez une solution : 250 ml d'eau de Javel à 2,6 % dans 1 litre d'eau. Elle se garde 24 heures.",
+     "Ajoutez 6 gouttes de cette solution par litre d'eau à traiter.",
+     "Attendez 30 minutes avant de boire.",
+     "Avec des pastilles de purification, suivez leur notice."
+    ]
+   }
+  ]
+ }
+}

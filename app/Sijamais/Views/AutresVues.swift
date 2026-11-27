@@ -112,6 +112,13 @@ struct ReglagesView: View {
                 Text("Aucune donnée n'est envoyée. Vos réponses, vos listes et vos formulaires restent sur ce téléphone.")
                     .font(.footnote)
             }
+            Section {
+                Toggle("Espace mairie", isOn: $modele.espaceMairie)
+            } header: {
+                Text("Élus et agents")
+            } footer: {
+                Text("Ajoute aux réponses de l'assistant les 5 guides de la commune : poste de commandement, pilotage, communication de crise, cyberattaque de la commune, exercices. Les questions posées en tant qu'élu ou agent (« notre mairie », « le PCC »...) les trouvent même sans cet interrupteur.")
+            }
             Section("Assistant") {
                 Text(modele.modeleAppleDisponible ? "Modèle d'Apple disponible sur cet iPhone." : "Modèle d'Apple indisponible : l'assistant affiche les passages des guides.")
                     .font(.footnote)

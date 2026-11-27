@@ -103,12 +103,13 @@ public struct Assistant: Sendable {
         return true
     }
 
-    public func repondre(_ question: String) async -> ReponseAssistant {
+    /// `espaceMairie` : interrupteur des réglages (élus et agents) ; les 5 guides de la commune entrent dans la recherche.
+    public func repondre(_ question: String, espaceMairie: Bool = false) async -> ReponseAssistant {
         let anglais = Triage.semblerAnglais(question)
-        return await repondreSansLangue(question).enAnglais(anglais)
+        return await repondreSansLangue(question, tous: espaceMairie).enAnglais(anglais)
     }
 
-    private func repondreSansLangue(_ question: String) async -> ReponseAssistant {
+    private func repondreSansLangue(_ question: String, tous: Bool) async -> ReponseAssistant {
         let guides = moteur.guidesParId
         switch Triage.decider(question, guides: guides) {
         case let .horsPerimetre(message, vital):
@@ -128,15 +129,15 @@ public struct Assistant: Sendable {
         case let .guide(id):
             let r = moteur.chercher(question, dans: id)
             guard let g = r.guide ?? guides[id] else { return await rechercher(question) }
-            let passages = r.passages.isEmpty ? Array(Triage.listes(id, guides).prefix(3)) : r.passages
+            let passages = r.passages.isEmpty ? Array(g.blocs.flatMap(\.textesRecherche).prefix(MoteurRecherche.maxLignes)) : r.passages
             return await informer(question: question, guide: g, passages: passages)
         case let .recherche(texte):
-            return await rechercher(texte)
+            return await rechercher(texte, tous: tous)
         }
     }
 
-    private func rechercher(_ question: String) async -> ReponseAssistant {
-        let r = moteur.chercher(question)
+    private func rechercher(_ question: String, tous: Bool = false) async -> ReponseAssistant {
+        let r = moteur.chercher(question, tous: tous)
         if r.sensible && MoteurRecherche.parleDeSoi(question) {
             return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: r.guide?.id, guideTitre: r.guide?.titre, urgenceVitale: true)
         }

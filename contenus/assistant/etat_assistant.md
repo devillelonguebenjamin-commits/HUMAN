@@ -1,6 +1,6 @@
 # État de l'assistant SIJAMAIS
 
-Fiche à joindre à chaque cycle d'amélioration (`prompts/claude_amelioration_assistant.md`). Mise à jour par Claude Code après chaque intégration. **Cycles 1 à 6 intégrés le 27/11/2026. Prochaine étape : arbitrages de Benjamin (`arbitrages_cycles_1_a_6.md`), puis cycle 7 transversal.**
+Fiche à joindre à chaque cycle d'amélioration (`prompts/claude_amelioration_assistant.md`). Mise à jour par Claude Code après chaque intégration. **Cycles 1 à 6 intégrés le 27/11/2026. Arbitrages validés et appliqués (guides 1.2). Prochaine étape : cycle 7 transversal ou recherche par le sens.**
 
 ## Ce que l'assistant sait faire (version 0.4 du 27/11/2026)
 
@@ -84,6 +84,10 @@ Placée juste après les mots trompeurs, avant tout le reste. Le guide « Que fa
 
 Cycle 2 : 37 / 40 au premier passage. Questions nouvelles du thème avant correction : 13 / 20. Erreurs trouvées puis corrigées : « il pleut, ma rue est une piscine » (déclenchait la règle de noyade), « SMS de la préfecture : se confiner » (guide Cyberattaque), « les pompiers disent au haut-parleur de rester chez soi » (kit 72 h), « fin d'alerte » (guide de pilotage communal), « alerte enlèvement » (guide Alerte).
 
+## Guides 1.2 (27/11/2026)
+
+Eau sans eau de Javel ; Cueillette devenu guide de prudence (aucune identification) ; Stocks aligné sur Monoxyde ; numéros : 196 confirmé, 0 800 112 112 ajouté, numéro vert du signal d'alerte retiré ; Assurance actualisé (délais, franchise, hébergement). Interrupteur « Espace mairie » dans les réglages. Quand le triage choisit un guide sans trouver de passage, l'assistant affiche le début du guide (mises en garde comprises) au lieu d'une réponse vide.
+
 ## Faiblesses connues
 
 - **32 échecs connus sur les cycles 3 à 6**, chacun décrit dans le fichier des cas (champ `echec_connu`). Presque tous sont des réponses incomplètes : la réponse idéale de l'évaluateur assemble plusieurs guides (« ordonnances » dans Documents, « pharmacien » dans Trousse, pour une question sur le sac d'évacuation). La recherche par mots ne sait pas faire cet assemblage ; c'est le principal argument pour la recherche par le sens.
@@ -95,7 +99,6 @@ Cycle 2 : 37 / 40 au premier passage. Questions nouvelles du thème avant correc
 - **Fuite de gaz** : « N'allumez aucune flamme » et « Couper le gaz » (guide Réflexes). Le guide « Rentrer chez soi » dit aussi « Odeur de gaz : éloignez-vous et appelez les secours ou l'urgence gaz » : ligne affichée.
 - **Contenus proposés au cycle 2, non intégrés faute de source vérifiée** : orage en voiture et foudre (Météo-France, [A VERIFIER]) ; conseil « rumeur » dans le guide Alerte (redit déjà le guide Réflexes).
 - **Question en anglais hors santé** (« how do I know if there is an alert ») : mal orientée ; peu de mots anglais reconnus hors urgences.
-- **196** : ajouté au guide des numéros, à vérifier sur service-public.gouv.fr (inaccessible depuis l'environnement de Claude).
 
 ## Prochaines étapes techniques (Claude Code)
 

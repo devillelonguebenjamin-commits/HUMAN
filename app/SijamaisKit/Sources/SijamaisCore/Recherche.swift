@@ -201,7 +201,8 @@ public struct MoteurRecherche: Sendable {
     }
 
     /// `mairie` : nil = détection automatique ; true = seulement l'Espace mairie ; false = seulement les guides des particuliers.
-    public func chercher(_ question: String, dans guideId: String? = nil, mairie: Bool? = nil) -> ResultatRecherche {
+    /// `tous` : interrupteur « Espace mairie » des réglages ; les guides de la commune s'ajoutent à ceux des particuliers.
+    public func chercher(_ question: String, dans guideId: String? = nil, mairie: Bool? = nil, tous: Bool = false) -> ResultatRecherche {
         let espaceMairie = mairie ?? Triage.estMairie(question)
         let ms = Self.mots(question)
         var etendus = ms
@@ -214,7 +215,7 @@ public struct MoteurRecherche: Sendable {
 
         var meilleur: (entree: Entree, total: Int, passages: [String])?
         for e in entrees where guideId == nil || e.guide.id == guideId {
-            if guideId == nil && Self.guidesMairie.contains(e.guide.id) != espaceMairie { continue }
+            if guideId == nil && !(tous && !espaceMairie) && Self.guidesMairie.contains(e.guide.id) != espaceMairie { continue }
             let scores = e.morceaux.enumerated().map { (i, m) in
                 (i, m, racines.reduce(0) { $0 + (m.normalise.contains($1) ? 1 : 0) })
             }
