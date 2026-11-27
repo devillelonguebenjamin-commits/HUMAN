@@ -22,6 +22,8 @@ CORE.mkdir(parents=True, exist_ok=True)
 shutil.copy(RACINE / "contenus" / "assistant" / "parcours_v1.json", CORE / "parcours.json")
 shutil.copy(RACINE / "contenus" / "equipement" / "catalogue_v1.json", CORE / "catalogue.json")
 shutil.copy(RACINE / "contenus" / "enfants" / "parcours_v0.1.json", CORE / "enfants.json")
+shutil.copy(RACINE / "contenus" / "legal" / "conditions_utilisation.md", CORE / "conditions_utilisation.md")
+shutil.copy(RACINE / "contenus" / "legal" / "politique_confidentialite.md", CORE / "politique_confidentialite.md")
 shutil.copy(RACINE / "contenus" / "assistant" / "parcours_v1.json", RACINE / "app" / "SijamaisKit" / "Tests" / "SijamaisCoreTests" / "Fixtures" / "parcours.json")
 shutil.copy(RACINE / "contenus" / "equipement" / "catalogue_v1.json", RACINE / "app" / "SijamaisKit" / "Tests" / "SijamaisCoreTests" / "Fixtures" / "catalogue.json")
 

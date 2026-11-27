@@ -526,3 +526,15 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - L'univers Randonnée passe à « Disponible » dans l'écran Premium. 62 tests réussis.
 
 **À venir.** Bulletin avalanche de Météo-France, carte de France entière hors ligne (palier E des cartes), contenus officiels du ministère des Sports à intégrer aux guides.
+
+## 2026-11-27 : conditions d'utilisation et politique de confidentialité (premiers jets)
+
+**Décision de Benjamin.** « enchaîne » : rédiger les deux textes qui bloquent la mise en vente.
+
+**Travail fait.**
+- `contenus/legal/conditions_utilisation.md`, rédigé à partir de ce que fait réellement l'application : nature informative (« ne remplace ni les secours ni un professionnel de santé »), gratuit et premium, abonnement (prix, renouvellement, résiliation 24 heures avant, remboursement par Apple), liens affiliés, Espace enfants, responsabilité sans exclusion des droits du consommateur, médiateur.
+- `contenus/legal/politique_confidentialite.md`, sur le même principe : aucun compte, aucun serveur, aucun traceur ; inventaire de ce qui reste sur l'iPhone ; position, notifications, partages, achats par Apple, liens Amazon, enfants, droits et CNIL.
+- Les deux textes sont embarqués dans l'application : Réglages, puis Informations légales, et en bas de l'écran Premium.
+- 65 tests réussis.
+
+**À compléter par Benjamin.** Identité de l'éditeur, adresse de contact, médiateur de la consommation ; relecture par un juriste ; adresse internet publique de la politique, demandée par la fiche App Store.

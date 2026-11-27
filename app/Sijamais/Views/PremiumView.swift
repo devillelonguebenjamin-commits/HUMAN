@@ -62,6 +62,8 @@ struct PremiumView: View {
 
             Section {
                 Button("Restaurer mes achats") { Task { await ab.restaurer() } }.disabled(ab.enCours)
+                NavigationLink("Conditions d'utilisation") { LegalView(nom: .conditions) }
+                NavigationLink("Politique de confidentialité") { LegalView(nom: .confidentialite) }
                 if ab.actif { Button("Gérer mon abonnement") { gerer = true } }
                 if let m = ab.message, !ab.produits.isEmpty || ab.actif { Text(m).font(.footnote).foregroundStyle(.secondary) }
             }

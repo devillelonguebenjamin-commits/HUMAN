@@ -128,6 +128,10 @@ struct ReglagesView: View {
                     Label(modele.abonnement.actif ? "Premium : abonnement actif" : "Découvrir Premium", systemImage: "star.fill")
                 }
             }
+            Section("Informations légales") {
+                NavigationLink("Conditions d'utilisation") { LegalView(nom: .conditions) }
+                NavigationLink("Politique de confidentialité") { LegalView(nom: .confidentialite) }
+            }
             Section("À propos") {
                 Text("Guides version \(modele.bibliotheque.fichier.meta.version) du \(modele.bibliotheque.fichier.meta.date)")
                 Text(modele.bibliotheque.fichier.meta.avertissement).font(.footnote).foregroundStyle(.secondary)
