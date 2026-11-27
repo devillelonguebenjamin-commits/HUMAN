@@ -18,6 +18,15 @@ struct GuideView: View {
                 ForEach(Array(guide.blocs.enumerated()), id: \.offset) { _, bloc in
                     BlocView(bloc: bloc, guideId: guide.id)
                 }
+                if modele.catalogue?.sections.contains(where: { $0.id == guide.id }) == true {
+                    NavigationLink { EquiperView(section: guide.id) } label: {
+                        Label("Où trouver ces articles", systemImage: "cart.fill")
+                            .font(.subheadline.bold())
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(12)
+                            .background(RoundedRectangle(cornerRadius: 12).stroke(Charte.balise, lineWidth: 1.5))
+                    }
+                }
                 Sources(guide: guide)
             }
             .padding(16)

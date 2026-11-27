@@ -22,6 +22,8 @@ final class AppModel {
     let moteur: MoteurRecherche
     private let assistant: Assistant
     let modeleAppleDisponible: Bool
+    /// Liste d'équipement de l'écran « S'équiper » (catalogue.json).
+    let catalogue: Catalogue?
 
     var onglet: Onglet = .accueil
     var echanges: [Echange] = []
@@ -53,6 +55,7 @@ final class AppModel {
         }
         bibliotheque = b
         moteur = MoteurRecherche(bibliotheque: b)
+        catalogue = Bundle.main.url(forResource: "catalogue", withExtension: "json").flatMap { try? Catalogue(url: $0) }
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)

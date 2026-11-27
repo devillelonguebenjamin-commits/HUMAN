@@ -6,7 +6,7 @@ Première version du code de l'application, commencée le 26 novembre 2026. Swif
 
 | Dossier | Contenu | Où il se teste |
 |---|---|---|
-| `SijamaisKit/` | Le cœur, en Swift pur : lecture des 46 guides (version 1.2), recherche hors ligne, règles et triage de l'assistant, score de préparation | Sur Mac et sur Linux : `swift test` (39 tests, dont les 240 cas des cycles 1 à 6) |
+| `SijamaisKit/` | Le cœur, en Swift pur : lecture des 46 guides (version 1.2), recherche hors ligne, règles et triage de l'assistant, score de préparation | Sur Mac et sur Linux : `swift test` (44 tests, dont les 240 cas des cycles 1 à 6) |
 | `Sijamais/` | L'application : écrans SwiftUI, enregistrement sur le téléphone, lampe, passerelle vers le modèle d'Apple | Sur Mac, avec Xcode |
 | `Sijamais/Resources/` | `guides.json` et le catalogue d'images (24 schémas, icône, couleur d'accent). **Ne pas modifier à la main** : produit par `python3 outils/preparer_ressources_app.py` | |
 | `project.yml` | Description du projet Xcode, lue par XcodeGen | |
@@ -22,7 +22,8 @@ Première version du code de l'application, commencée le 26 novembre 2026. Swif
 | Assistant (au centre) | Questions fréquentes, recherche dans les guides, reformulation par le modèle d'Apple quand il est disponible, bandeau 15 et 112 pour la santé, sans jamais de reformulation |
 | Savoir | Les 46 guides par catégorie, avec schémas, listes à cocher et formulaires enregistrés sur le téléphone |
 | Carte | Carte hors ligne MapLibre (fond OpenStreetMap par Protomaps) : hôpitaux, pompiers, pharmacies, police, mairies, position GPS. Le fichier de carte s'extrait sur le Mac (voir plus bas) |
-| Réglages | Foyer, commune, données personnelles, à propos |
+| S'équiper | Où trouver chaque article des listes (pharmacie, quincaillerie...), case « déjà prêt », lien affilié Amazon une fois l'identifiant renseigné (voir `contenus/equipement/README.md`) |
+| Réglages | Foyer, commune, Espace mairie, données personnelles, à propos |
 
 Pas encore fait : défibrillateurs et téléchargement des cartes de toute la France, profil d'aidant et QR code, espace commune, abonnement, contenus de loisir, notifications.
 

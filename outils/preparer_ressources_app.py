@@ -15,6 +15,8 @@ ASSETS = RES / "Assets.xcassets"
 RES.mkdir(parents=True, exist_ok=True)
 shutil.copy(RACINE / "contenus" / "guides" / "guides_v1.2.json", RES / "guides.json")
 shutil.copy(RACINE / "contenus" / "guides" / "guides_v1.2.json", RACINE / "app" / "SijamaisKit" / "Tests" / "SijamaisCoreTests" / "Fixtures" / "guides.json")
+shutil.copy(RACINE / "contenus" / "equipement" / "catalogue_v1.json", RES / "catalogue.json")
+shutil.copy(RACINE / "contenus" / "equipement" / "catalogue_v1.json", RACINE / "app" / "SijamaisKit" / "Tests" / "SijamaisCoreTests" / "Fixtures" / "catalogue.json")
 
 INFO = {"author": "xcode", "version": 1}
 

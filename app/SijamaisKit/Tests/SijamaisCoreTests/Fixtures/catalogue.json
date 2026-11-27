@@ -1,0 +1,540 @@
+{
+ "version": "1",
+ "date": "2026-11-27",
+ "introduction": "Tout ce qui figure ici vient des listes des guides. Chaque article se trouve dans des commerces ordinaires : commencez par ceux de votre commune. Si vous n'en avez pas près de chez vous, un lien vers Amazon est proposé.",
+ "partenaireAmazon": {
+  "tag": "",
+  "domaine": "www.amazon.fr",
+  "mention": "En tant que Partenaire Amazon, SIJAMAIS réalise un bénéfice sur les achats remplissant les conditions requises. Cela ne change pas le prix pour vous."
+ },
+ "sections": [
+  {
+   "id": "kit72h",
+   "titre": "Kit d'urgence 72 heures",
+   "intro": "La base recommandée par l'État, pour tenir 3 jours chez soi.",
+   "articles": [
+    {
+     "id": "kit-base-0",
+     "guide": "kit72h",
+     "liste": "kit-base",
+     "index": 0,
+     "nom": "Radio à piles et piles de rechange",
+     "ouTrouver": [
+      "magasin d'électronique",
+      "supermarché",
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "radio à piles",
+     "conseil": null
+    },
+    {
+     "id": "kit-base-1",
+     "guide": "kit72h",
+     "liste": "kit-base",
+     "index": 1,
+     "nom": "Lampe de poche et piles de rechange",
+     "ouTrouver": [
+      "quincaillerie ou magasin de bricolage",
+      "supermarché"
+     ],
+     "rechercheAmazon": "lampe de poche",
+     "conseil": null
+    },
+    {
+     "id": "kit-base-2",
+     "guide": "kit72h",
+     "liste": "kit-base",
+     "index": 2,
+     "nom": "Bougies, briquet ou allumettes",
+     "ouTrouver": [
+      "supermarché",
+      "bureau de tabac ou maison de la presse"
+     ],
+     "rechercheAmazon": "allumettes étanches",
+     "conseil": null
+    },
+    {
+     "id": "kit-base-3",
+     "guide": "kit72h",
+     "liste": "kit-base",
+     "index": 3,
+     "nom": "Chargeur de téléphone et batterie externe",
+     "ouTrouver": [
+      "magasin d'électronique",
+      "supermarché"
+     ],
+     "rechercheAmazon": "batterie externe",
+     "conseil": null
+    },
+    {
+     "id": "kit-base-4",
+     "guide": "kit72h",
+     "liste": "kit-base",
+     "index": 4,
+     "nom": "Couteau multifonction",
+     "ouTrouver": [
+      "quincaillerie ou magasin de bricolage",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "couteau multifonction",
+     "conseil": "La loi encadre le port d'un couteau."
+    },
+    {
+     "id": "kit-base-5",
+     "guide": "kit72h",
+     "liste": "kit-base",
+     "index": 5,
+     "nom": "Ouvre-boîte",
+     "ouTrouver": [
+      "supermarché",
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "ouvre-boîte manuel",
+     "conseil": null
+    },
+    {
+     "id": "kit-base-6",
+     "guide": "kit72h",
+     "liste": "kit-base",
+     "index": 6,
+     "nom": "Réchaud",
+     "ouTrouver": [
+      "magasin de sport ou de camping",
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "réchaud de camping",
+     "conseil": "À utiliser dehors uniquement : risque mortel de monoxyde de carbone dans un local fermé."
+    },
+    {
+     "id": "kit-eau-0",
+     "guide": "kit72h",
+     "liste": "kit-eau",
+     "index": 0,
+     "nom": "Eau potable : 6 L par personne",
+     "ouTrouver": [
+      "supermarché"
+     ],
+     "rechercheAmazon": null,
+     "conseil": null
+    },
+    {
+     "id": "kit-eau-1",
+     "guide": "kit72h",
+     "liste": "kit-eau",
+     "index": 1,
+     "nom": "Conserves ne nécessitant pas de cuisson",
+     "ouTrouver": [
+      "supermarché"
+     ],
+     "rechercheAmazon": null,
+     "conseil": null
+    },
+    {
+     "id": "kit-eau-2",
+     "guide": "kit72h",
+     "liste": "kit-eau",
+     "index": 2,
+     "nom": "Petits pots ou lait infantile 1er âge liquide prêt à l'emploi",
+     "ouTrouver": [
+      "pharmacie",
+      "supermarché"
+     ],
+     "rechercheAmazon": null,
+     "conseil": null
+    },
+    {
+     "id": "kit-eau-4",
+     "guide": "kit72h",
+     "liste": "kit-eau",
+     "index": 4,
+     "nom": "Nourriture pour animaux",
+     "ouTrouver": [
+      "animalerie",
+      "supermarché"
+     ],
+     "rechercheAmazon": null,
+     "conseil": null
+    },
+    {
+     "id": "kit-eau-5",
+     "guide": "kit72h",
+     "liste": "kit-eau",
+     "index": 5,
+     "nom": "Pastilles de décontamination de l'eau (dernier recours)",
+     "ouTrouver": [
+      "pharmacie",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "pastilles purification eau",
+     "conseil": "Suivez la notice."
+    },
+    {
+     "id": "kit-chaud-1",
+     "guide": "kit72h",
+     "liste": "kit-chaud",
+     "index": 1,
+     "nom": "Couverture de survie",
+     "ouTrouver": [
+      "pharmacie",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "couverture de survie",
+     "conseil": null
+    },
+    {
+     "id": "kit-sante-0",
+     "guide": "kit72h",
+     "liste": "kit-sante",
+     "index": 0,
+     "nom": "Médicaments du quotidien et de secours",
+     "ouTrouver": [
+      "pharmacie"
+     ],
+     "rechercheAmazon": null,
+     "conseil": "Demandez conseil à votre pharmacien."
+    },
+    {
+     "id": "kit-sante-2",
+     "guide": "kit72h",
+     "liste": "kit-sante",
+     "index": 2,
+     "nom": "Trousse de premiers secours (alcool, gel, masques, pansements, compresses)",
+     "ouTrouver": [
+      "pharmacie"
+     ],
+     "rechercheAmazon": "trousse de premiers secours",
+     "conseil": "Demandez conseil à votre pharmacien pour l'adapter à votre foyer."
+    },
+    {
+     "id": "kit-docs-0",
+     "guide": "kit72h",
+     "liste": "kit-docs",
+     "index": 0,
+     "nom": "Photocopies des papiers d'identité et ordonnances dans une pochette étanche",
+     "ouTrouver": [
+      "supermarché (rayon bureau)",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "pochette étanche documents",
+     "conseil": null
+    }
+   ]
+  },
+  {
+   "id": "sac-evacuation",
+   "titre": "Sac d'évacuation",
+   "intro": "Ce qui s'ajoute pour partir vite et marcher longtemps.",
+   "articles": [
+    {
+     "id": "sac-eau-0",
+     "guide": "sac-evacuation",
+     "liste": "sac-eau",
+     "index": 0,
+     "nom": "Gourde filtrante remplie",
+     "ouTrouver": [
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "gourde filtrante",
+     "conseil": null
+    },
+    {
+     "id": "sac-eau-1",
+     "guide": "sac-evacuation",
+     "liste": "sac-eau",
+     "index": 1,
+     "nom": "Gourde souple 2 L",
+     "ouTrouver": [
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "gourde souple 2 litres",
+     "conseil": null
+    },
+    {
+     "id": "sac-feu-2",
+     "guide": "sac-evacuation",
+     "liste": "sac-feu",
+     "index": 2,
+     "nom": "Lampe frontale",
+     "ouTrouver": [
+      "magasin de sport ou de camping",
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "lampe frontale",
+     "conseil": null
+    },
+    {
+     "id": "sac-feu-1",
+     "guide": "sac-evacuation",
+     "liste": "sac-feu",
+     "index": 1,
+     "nom": "Allumettes étanches",
+     "ouTrouver": [
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "allumettes étanches",
+     "conseil": null
+    },
+    {
+     "id": "sac-energie-2",
+     "guide": "sac-evacuation",
+     "liste": "sac-energie",
+     "index": 2,
+     "nom": "Radio solaire ou à dynamo",
+     "ouTrouver": [
+      "magasin d'électronique",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "radio dynamo solaire",
+     "conseil": null
+    },
+    {
+     "id": "sac-energie-1",
+     "guide": "sac-evacuation",
+     "liste": "sac-energie",
+     "index": 1,
+     "nom": "Panneau solaire portable",
+     "ouTrouver": [
+      "magasin d'électronique",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "panneau solaire portable",
+     "conseil": null
+    },
+    {
+     "id": "sac-energie-3",
+     "guide": "sac-evacuation",
+     "liste": "sac-energie",
+     "index": 3,
+     "nom": "Talkies-walkies",
+     "ouTrouver": [
+      "magasin d'électronique",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "talkie walkie",
+     "conseil": null
+    },
+    {
+     "id": "sac-outils-1",
+     "guide": "sac-evacuation",
+     "liste": "sac-outils",
+     "index": 1,
+     "nom": "Paracorde",
+     "ouTrouver": [
+      "magasin de sport ou de camping",
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "paracorde",
+     "conseil": null
+    },
+    {
+     "id": "sac-outils-2",
+     "guide": "sac-evacuation",
+     "liste": "sac-outils",
+     "index": 2,
+     "nom": "Ruban adhésif renforcé",
+     "ouTrouver": [
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "ruban adhésif renforcé",
+     "conseil": null
+    },
+    {
+     "id": "sac-outils-3",
+     "guide": "sac-evacuation",
+     "liste": "sac-outils",
+     "index": 3,
+     "nom": "Sifflet",
+     "ouTrouver": [
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "sifflet de survie",
+     "conseil": null
+    },
+    {
+     "id": "sac-vetements-1",
+     "guide": "sac-evacuation",
+     "liste": "sac-vetements",
+     "index": 1,
+     "nom": "Poncho de pluie",
+     "ouTrouver": [
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "poncho de pluie",
+     "conseil": null
+    }
+   ]
+  },
+  {
+   "id": "trousses",
+   "titre": "Trousse de premiers secours",
+   "intro": "À adapter à votre foyer avec votre pharmacien.",
+   "articles": [
+    {
+     "id": "trousse-famille-0",
+     "guide": "trousses",
+     "liste": "trousse-famille",
+     "index": 0,
+     "nom": "Pansements et sparadrap",
+     "ouTrouver": [
+      "pharmacie",
+      "supermarché"
+     ],
+     "rechercheAmazon": null,
+     "conseil": null
+    },
+    {
+     "id": "trousse-famille-7",
+     "guide": "trousses",
+     "liste": "trousse-famille",
+     "index": 7,
+     "nom": "Pince à épiler et tire-tique",
+     "ouTrouver": [
+      "pharmacie"
+     ],
+     "rechercheAmazon": "tire-tique",
+     "conseil": null
+    },
+    {
+     "id": "trousse-famille-8",
+     "guide": "trousses",
+     "liste": "trousse-famille",
+     "index": 8,
+     "nom": "Thermomètre",
+     "ouTrouver": [
+      "pharmacie"
+     ],
+     "rechercheAmazon": null,
+     "conseil": null
+    }
+   ]
+  },
+  {
+   "id": "stocks",
+   "titre": "Stocks à la maison",
+   "intro": "Pour aller au-delà de 3 jours.",
+   "articles": [
+    {
+     "id": "stock-energie-2",
+     "guide": "stocks",
+     "liste": "stock-energie",
+     "index": 2,
+     "nom": "Lampes torches et lanternes",
+     "ouTrouver": [
+      "quincaillerie ou magasin de bricolage",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "lanterne LED",
+     "conseil": null
+    },
+    {
+     "id": "stock-energie-5",
+     "guide": "stocks",
+     "liste": "stock-energie",
+     "index": 5,
+     "nom": "Piles rechargeables et chargeur",
+     "ouTrouver": [
+      "magasin d'électronique",
+      "supermarché"
+     ],
+     "rechercheAmazon": "piles rechargeables chargeur",
+     "conseil": null
+    },
+    {
+     "id": "stock-energie-6",
+     "guide": "stocks",
+     "liste": "stock-energie",
+     "index": 6,
+     "nom": "Radio à manivelle ou solaire",
+     "ouTrouver": [
+      "magasin d'électronique",
+      "magasin de sport ou de camping"
+     ],
+     "rechercheAmazon": "radio à manivelle",
+     "conseil": null
+    },
+    {
+     "id": "stock-hygiene-6",
+     "guide": "stocks",
+     "liste": "stock-hygiene",
+     "index": 6,
+     "nom": "Gants nitrile",
+     "ouTrouver": [
+      "pharmacie",
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "gants nitrile",
+     "conseil": null
+    },
+    {
+     "id": "stock-hygiene-7",
+     "guide": "stocks",
+     "liste": "stock-hygiene",
+     "index": 7,
+     "nom": "Masques FFP2",
+     "ouTrouver": [
+      "pharmacie"
+     ],
+     "rechercheAmazon": null,
+     "conseil": null
+    },
+    {
+     "id": "stock-hygiene-9",
+     "guide": "stocks",
+     "liste": "stock-hygiene",
+     "index": 9,
+     "nom": "Bâches transparentes et ruban adhésif",
+     "ouTrouver": [
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "bâche transparente",
+     "conseil": null
+    }
+   ]
+  },
+  {
+   "id": "vehicule",
+   "titre": "Véhicule",
+   "intro": "Dans le coffre.",
+   "articles": [
+    {
+     "id": "auto-coffre-2",
+     "guide": "vehicule",
+     "liste": "auto-coffre",
+     "index": 2,
+     "nom": "Marteau brise-vitre avec coupe-ceinture",
+     "ouTrouver": [
+      "centre auto"
+     ],
+     "rechercheAmazon": "marteau brise-vitre coupe-ceinture",
+     "conseil": null
+    },
+    {
+     "id": "auto-coffre-6",
+     "guide": "vehicule",
+     "liste": "auto-coffre",
+     "index": 6,
+     "nom": "Gilets et triangle de signalisation",
+     "ouTrouver": [
+      "centre auto",
+      "supermarché"
+     ],
+     "rechercheAmazon": "gilet triangle signalisation",
+     "conseil": null
+    },
+    {
+     "id": "auto-coffre-1",
+     "guide": "vehicule",
+     "liste": "auto-coffre",
+     "index": 1,
+     "nom": "Extincteur",
+     "ouTrouver": [
+      "centre auto",
+      "quincaillerie ou magasin de bricolage"
+     ],
+     "rechercheAmazon": "extincteur voiture",
+     "conseil": null
+    }
+   ]
+  }
+ ]
+}

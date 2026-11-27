@@ -49,6 +49,9 @@ struct AccueilView: View {
                     NavigationLink { if let g = modele.guide("pfms") { GuideView(guide: g) } } label: {
                         Tuile(titre: "Famille", sousTitre: "Plan familial de mise en sûreté", symbole: "person.2.fill", signal: .securite)
                     }
+                    NavigationLink { EquiperView() } label: {
+                        Tuile(titre: "S'équiper", sousTitre: "Où trouver le matériel", symbole: "cart.fill", signal: .preparation)
+                    }
                     NavigationLink { CommuneView() } label: {
                         Tuile(titre: "Ma commune", sousTitre: modele.commune.isEmpty ? "À renseigner" : modele.commune, symbole: "building.columns.fill", signal: .preparation)
                     }

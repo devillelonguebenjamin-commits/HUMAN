@@ -395,3 +395,16 @@ Autres travaux :
 Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'accord de Benjamin dans l'invite d'autorisation. **39 tests réussis.**
 
 **Non fait.** Numéros GRDF et Enedis : pages officielles illisibles automatiquement (accès refusé ou numéro chargé par script), donc non ajoutés. Garantie tempête : pas de page officielle trouvée. Guide Retour : pas de source plus récente que 2010 trouvée.
+
+## 2026-11-27 : écran « S'équiper » et liens affiliés
+
+**Décision de Benjamin.** Mélanger conseil neutre et liens affiliés Amazon, pour une deuxième source de revenus. Argument retenu : certaines communes n'ont pas les commerces nécessaires pour le kit 72 h. Mes réserves (image auprès des mairies, revenus modestes) ont été données ; la décision est prise.
+
+**Travail fait.**
+- Catalogue de 39 articles tirés mot pour mot des listes des guides (`contenus/equipement/catalogue_v1.json`, script `outils/construire_catalogue.py`). Chaque article indique les commerces où le trouver ; 31 peuvent porter un lien Amazon vers une recherche, sans marque.
+- Pas de lien pour les médicaments, le lait infantile, l'eau, la nourriture, les pansements, le thermomètre et les masques.
+- Écran « S'équiper » : tuile à l'accueil et lien en bas des guides concernés. Une case par article coche aussi la liste du guide ; filtre « seulement ce qui me manque ».
+- Jamais de lien dans l'urgence ni dans l'assistant. Aucun lien tant que l'identifiant Amazon Partenaires n'est pas renseigné.
+- Mode d'emploi et points à vérifier dans `contenus/equipement/README.md`. 44 tests réussis.
+
+**Choix de placement.** Pas de sixième onglet (5 au plus sur iPhone, barre déjà pleine) : écran à un geste depuis l'accueil et les guides. À revoir si Benjamin préfère échanger avec un onglet existant.
