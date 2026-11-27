@@ -4,6 +4,7 @@ import SijamaisCore
 struct AccueilView: View {
     @Environment(AppModel.self) private var modele
     @State private var lampe = Lampe()
+    @State private var enfantsOuvert = false
 
     var body: some View {
         ScrollView {
@@ -54,6 +55,9 @@ struct AccueilView: View {
                     NavigationLink { EquiperView() } label: {
                         Tuile(titre: "S'équiper", sousTitre: "Où trouver le matériel", symbole: "cart.fill", signal: .preparation)
                     }
+                    Button { enfantsOuvert = true } label: {
+                        Tuile(titre: "Espace enfants", sousTitre: "Apprendre à alerter, en jouant", symbole: "figure.2.and.child.holdinghands", signal: .eau)
+                    }
                     NavigationLink { CommuneView() } label: {
                         Tuile(titre: "Ma commune", sousTitre: modele.commune.isEmpty ? "À renseigner" : modele.commune, symbole: "building.columns.fill", signal: .preparation)
                     }
@@ -65,6 +69,9 @@ struct AccueilView: View {
                 .buttonStyle(.plain)
             }
             .padding(16)
+        }
+        .fullScreenCover(isPresented: $enfantsOuvert) {
+            EspaceEnfantsView(fermer: { enfantsOuvert = false }).environment(modele)
         }
         // Le titre reste « SIJAMAIS » pour le bouton retour des écrans suivants ; l'en-tête le remplace à l'écran.
         .navigationTitle("SIJAMAIS")

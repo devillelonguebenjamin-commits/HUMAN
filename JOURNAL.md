@@ -472,3 +472,23 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - L'assistant compte 12 étapes, avec des choix rapides et un champ libre. Les réponses remplissent les champs du guide « Mon plan familial ». Les risques cochés emportent leur consigne mot pour mot.
 - Fichiers : `contenus/famille/`, `outils/construire_famille.py`, `SijamaisCore/PlanFamilial.swift`, `Views/FamilleView.swift`.
 - 51 tests réussis.
+
+## 2026-11-27 : Espace enfants dans l'application
+
+**Décision de Benjamin.** « go » pour intégrer l'Espace enfants, priorité 1 du plan premium (`15_premium_rando_mer_voyage_kids.md`).
+
+**Travail fait.**
+- Contenu `contenus/enfants/parcours_v0.1.json` embarqué dans SijamaisCore : 13 modules, 24 mises en situation.
+- Tuile « Espace enfants » à l'accueil. L'espace s'ouvre en plein écran : ni barre d'onglets, ni assistant, ni lien vers l'extérieur, ni achat.
+- Pour sortir, un contrôle parental : une multiplication, comme Apple le recommande.
+- Deux tranches d'âge : 6 à 10 ans et 10 à 14 ans.
+- Chaque module se déroule en trois temps :
+  - la leçon, phrase par phrase ;
+  - le quiz, où une mauvaise réponse est expliquée sans gronder, avec « Réessayer » ;
+  - un badge étoile à la fin.
+- Écran « J'ai besoin d'aide », gratuit : appeler un parent, appeler le 112, montrer sa carte.
+- Carte « Montrer à un adulte » : remplie par un parent après le contrôle parental, gardée chiffrée dans le trousseau de l'iPhone, jamais copiée vers un autre appareil.
+- Les modules payants portent la mention « Version famille », mais restent ouverts tant que l'abonnement n'est pas codé.
+- Tests : chaque quiz a une seule bonne réponse expliquée ; aucune adresse internet, sauf le tchat du 119 en texte simple ; modules gratuits conformes à l'offre. 56 tests réussis.
+
+**Avant diffusion.** Relectures prévues dans `contenus/enfants/README.md` : formateur PSC1, enseignant du primaire, gendarme ou policier.

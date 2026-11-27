@@ -30,6 +30,16 @@ final class AppModel {
     let parcours: Parcours?
     /// Parcours pas à pas du plan familial (écran Famille).
     let planFamilial: PlanFamilial?
+    /// Espace enfants (contenu embarqué dans SijamaisCore).
+    let enfants: EspaceEnfants?
+    /// Modules de l'Espace enfants terminés (badges).
+    var modulesTermines: Set<String> { didSet { stockage.set(Array(modulesTermines), forKey: Cle.modulesTermines) } }
+    /// Carte « Montrer à un adulte » : prénom, téléphones, allergies. Gardée chiffrée dans le trousseau.
+    var carteEnfant: [String] {
+        didSet {
+            if let d = try? JSONEncoder().encode(carteEnfant), let t = String(data: d, encoding: .utf8) { Coffre.ecrire("carteEnfant", t) }
+        }
+    }
 
     var onglet: Onglet = .accueil
     var echanges: [Echange] = []
@@ -52,6 +62,7 @@ final class AppModel {
         static let listes = "listes"
         static let formulaires = "formulaires"
         static let espaceMairie = "espaceMairie"
+        static let modulesTermines = "modulesTermines"
     }
 
     init() {
@@ -64,6 +75,7 @@ final class AppModel {
         catalogue = Catalogue.integre
         parcours = Parcours.integre
         planFamilial = PlanFamilial.integre
+        enfants = EspaceEnfants.integre
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)
@@ -76,6 +88,8 @@ final class AppModel {
         listes = Self.lire(EtatListes.self, cle: Cle.listes) ?? EtatListes()
         formulaires = (s.dictionary(forKey: Cle.formulaires) as? [String: String]) ?? [:]
         espaceMairie = s.bool(forKey: Cle.espaceMairie)
+        modulesTermines = Set(s.stringArray(forKey: Cle.modulesTermines) ?? [])
+        carteEnfant = Coffre.lire("carteEnfant").flatMap { try? JSONDecoder().decode([String].self, from: Data($0.utf8)) } ?? []
     }
 
     // MARK: Guides et préparation
