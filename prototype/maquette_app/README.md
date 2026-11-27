@@ -62,3 +62,15 @@ Pour mettre à jour la maquette après une modification des guides :
 python3 outils/construire_guides_v11.py
 python3 outils/integrer_guides_maquette.py
 ```
+
+## Espace enfants (27 novembre 2026)
+
+Entrée depuis Famille (« Espace enfants », ou la ligne « Enfant » des membres). 21 écrans générés depuis `contenus/enfants/parcours_v0.1.json` :
+
+- présentation pour le parent, avec deux profils fictifs (Léa, 8 ans ; Tom, 12 ans) ;
+- accueil de l'enfant, « J'ai besoin d'aide » (gratuit) et carte « Montrer à un adulte » ;
+- parcours 6-10 ans et 10-14 ans, un écran par module avec des mises en situation interactives ;
+- module de la version famille sans abonnement : écran « Demande à tes parents », jamais d'écran d'achat ;
+- sortie par contrôle parental (toucher « quarante-sept »). La barre d'onglets et l'assistant flottant sont masqués dans tout l'espace enfants.
+
+Pour régénérer : `python3 outils/construire_enfants.py` puis `python3 outils/integrer_enfants_maquette.py`.

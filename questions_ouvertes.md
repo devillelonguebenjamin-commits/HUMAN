@@ -141,3 +141,17 @@ Les questions 1 à 4 ci-dessous sont tranchées. Les suivantes restent ouvertes.
 | Prix et pages des concurrents américains | Sites de Survival Node, Prepper Disk, HAVEN (non lisibles depuis mon environnement, informations obtenues par moteur de recherche) |
 | Réception FM des téléphones candidats | Fiche technique du fabricant, puis essai |
 | Situation actuelle de Crosscall | Registre du commerce, presse économique |
+
+## Premium et Espace enfants (27 novembre 2026)
+
+Détail dans `15_premium_rando_mer_voyage_kids.md`.
+
+**Décision du 27/11/2026 : Benjamin accepte les cinq recommandations.** Courriers PK5 rédigés dans `courriers/`, non envoyés.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| PK1 | « Navigation » = plaisance en mer (et pas orientation à pied) ? | Oui, l'orientation est rangée dans le mode randonnée |
+| PK2 | Ordre des modes : enfants, randonnée, voyage, mer ? | Oui |
+| PK3 | Espace enfants : écran d'aide gratuit, parcours et jeux dans la version famille ? | Oui |
+| PK4 | Profil enfant dans l'application plutôt que catégorie « Enfants » de l'App Store ou application séparée ? | Profil dans l'application ; application séparée à étudier plus tard |
+| PK5 | Lancer les demandes à l'IGN (SCAN 25), au Shom (marées), au ministère des Affaires étrangères (conseils aux voyageurs) ? | Oui, avant d'écrire le code de ces modes |
