@@ -8,6 +8,8 @@ struct AccueilView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 14) {
+                EnTeteSijamais()
+                    .padding(.bottom, 4)
                 Button { modele.onglet = .urgence } label: {
                     HStack(spacing: 14) {
                         Image(systemName: "cross.fill").font(.title2.bold())
@@ -64,8 +66,11 @@ struct AccueilView: View {
             }
             .padding(16)
         }
+        // Le titre reste « SIJAMAIS » pour le bouton retour des écrans suivants ; l'en-tête le remplace à l'écran.
         .navigationTitle("SIJAMAIS")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .principal) { Color.clear.frame(width: 1, height: 1) }
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink { ReglagesView() } label: { Image(systemName: "gearshape") }
                     .accessibilityLabel("Réglages")

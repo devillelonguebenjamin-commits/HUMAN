@@ -16,6 +16,29 @@ enum Charte {
     static let preparation = Color(hex: 0x2E5A43)
     static let neutre = Color(hex: 0x4A5A51)
     static let encre = Color(hex: 0x17241C)
+
+    /// Vert forêt en mode clair, lichen en mode sombre : pour le nom SIJAMAIS.
+    static let marque = Color(UIColor { $0.userInterfaceStyle == .dark ? UIColor(red: 0xF3 / 255, green: 0xF4 / 255, blue: 0xEF / 255, alpha: 1)
+                                                                     : UIColor(red: 0x1F / 255, green: 0x3B / 255, blue: 0x2D / 255, alpha: 1) })
+}
+
+/// Logo et nom, avec le code couleur de la maquette : « SI » en orange balise, « JAMAIS » en vert forêt.
+struct EnTeteSijamais: View {
+    var body: some View {
+        HStack(spacing: 12) {
+            Image("Logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 56, height: 56)
+                .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .accessibilityHidden(true)
+            (Text("SI").foregroundStyle(Charte.balise) + Text("JAMAIS").foregroundStyle(Charte.marque))
+                .font(.system(size: 40, weight: .heavy, design: .rounded))
+                .accessibilityLabel("SIJAMAIS")
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(.isHeader)
+    }
 }
 
 /// Une couleur de tuile et la couleur du texte qui va dessus.

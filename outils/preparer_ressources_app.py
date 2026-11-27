@@ -37,6 +37,12 @@ source_icone = RACINE / "app" / "design" / "icone-1024.png"
 if source_icone.exists():
     shutil.copy(source_icone, icone / "icone-1024.png")
 
+# Logo (le même dessin que l'icône), en vectoriel, pour l'en-tête de l'accueil.
+logo = ASSETS / "Logo.imageset"
+ecrire(logo, {"images": [{"filename": "logo.svg", "idiom": "universal"}], "info": INFO,
+              "properties": {"preserves-vector-representation": True, "template-rendering-intent": "original"}})
+shutil.copy(RACINE / "app" / "design" / "icone.svg", logo / "logo.svg")
+
 # Schémas : un jeu d'images par SVG, en conservant le vectoriel (net à toutes les tailles).
 dossier_schemas = ASSETS / "Schemas"
 ecrire(dossier_schemas, {"info": INFO, "properties": {"provides-namespace": False}})

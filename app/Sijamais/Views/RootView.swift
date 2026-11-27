@@ -75,7 +75,7 @@ struct BarreOnglets: View {
                     .offset(y: -14)
                     .padding(.bottom, -14)
                 Text("Assistant").font(.caption2.weight(.semibold))
-                    .foregroundStyle(modele.onglet == .assistant ? Charte.balise : Color.primary)
+                    .foregroundStyle(modele.onglet == .assistant ? Charte.balise : Color.secondary)
             }
             .frame(maxWidth: .infinity)
         }
