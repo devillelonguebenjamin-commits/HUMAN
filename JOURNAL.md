@@ -538,3 +538,25 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - 65 tests réussis.
 
 **À compléter par Benjamin.** Identité de l'éditeur, adresse de contact, médiateur de la consommation ; relecture par un juriste ; adresse internet publique de la politique, demandée par la fiche App Store.
+
+## 2026-11-27 : premium, champ des possibles et pont GPX
+
+**Demande de Benjamin.** Que le premium vaille vraiment son prix : beaucoup de contenu, des ponts avec d'autres applications, explorer le champ des possibles.
+
+**Étude** (`16_premium_champ_des_possibles.md`), vérifiée ce jour :
+- Komoot : API réservée aux partenaires sous contrat.
+- Strava : API restreinte depuis novembre 2024.
+- Visorando : pas d'API, export GPX seulement.
+- Garmin : API d'envoi de parcours, gratuite pour les développeurs professionnels approuvés.
+- Le pont universel est donc le **fichier GPX**.
+- Données ouvertes retenues : Refuges.info (CC BY-SA), Geotrek des parcs (souvent Licence Ouverte), bulletin avalanche de Météo-France (clé à créer), Hub'Eau.
+- Catalogue premium par univers ; ordre de construction proposé.
+
+**Construit.**
+- Pont GPX dans SijamaisCore (`TraceGPX.swift`) : lecture des fichiers Komoot, Visorando, Strava et Garmin ; distance, dénivelés (bruit du GPS filtré), altitudes, profil, temps de marche estimé (DIN 33466, avec et sans pauses), export GPX.
+- Écran « Mes traces » (premium), avec deux actions par trace :
+  - « Utiliser pour ma fiche de sortie » remplit l'itinéraire et l'heure de retour ;
+  - « Envoyer vers une montre ou une autre application » partage le fichier.
+- 70 tests réussis.
+
+**Prochaines étapes.** Trace sur la carte hors ligne ; compte à rebours sur l'écran verrouillé ; refuges et points d'eau hors ligne ; bulletin avalanche (compte à créer sur le portail des API de Météo-France).

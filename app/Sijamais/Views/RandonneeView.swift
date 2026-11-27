@@ -21,6 +21,7 @@ struct RandonneeView: View {
                 BandeauRetour()
                 if modele.abonnement.actif {
                     NavigationLink { FicheSortieView() } label: { Label("Ma fiche de sortie", systemImage: "map") }
+                    NavigationLink { TracesView() } label: { Label("Mes traces GPX (Komoot, Visorando, Garmin...)", systemImage: "point.topleft.down.to.point.bottomright.curvepath") }
                 } else {
                     NavigationLink { PremiumView() } label: {
                         Label("Ma fiche de sortie et le compte à rebours du retour", systemImage: "lock.fill")
