@@ -201,9 +201,11 @@ extension Triage {
             let l = lignes("documents", contenant: "animaux", g) + lignesPartout("nourriture pour animaux", g) + lignes("abri-evacuation", contenant: "pas toujours acceptés", g)
             return .consigne(guideId: "documents", lignes: l, urgenceVitale: false)
         }
-        if x.a("sac d evacuation", "sac de fuite", "sac d urgence") && x.a("taille", "litres", "ranger", "insuline", "traitement", "diabet") { return .guide(id: "sac-evacuation") }
+        if x.a("sac d evacuation", "sac de fuite") && x.a("taille", "litres", "ranger", "insuline", "traitement", "diabet", "mettre", "contenu", "quoi", "liste", "preparer") { return .guide(id: "sac-evacuation") }
+        if x.a("sac d urgence") && x.a("taille", "litres", "ranger", "insuline", "traitement", "diabet") { return .guide(id: "sac-evacuation") }
         if x.a("kit") && x.a("72", "urgence") && x.a("bebe", "nourrisson", "frequence", "verifier", "litres", "combien", "eau") { return .guide(id: "kit72h") }
         if x.a("plan d evacuation", "evacuer a pied", "a velo") { return .guide(id: "plan-evacuation") }
+        if x.a("grand froid", "vague de froid", "froid extreme", "grands froids") && !x.a("grelotte", "hypotherm") { return .guide(id: "grand-froid") }
         if x.a("coffre", "voiture", "vehicule") && x.a("garder", "pret a partir", "preparer", "mettre dans") && !x.a("pas de voiture", "sans voiture") { return .guide(id: "vehicule") }
         if x.a("communiquer", "joindre", "contacter") && x.a("reseau", "internet", "telephone") && x.a("coupe", "sans", "plus de") { return .guide(id: "communication") }
         if x.a("m engager", "aider ma commune", "benevole", "reserve communale", "aider mes voisins") { return .guide(id: "engagement") }
@@ -266,7 +268,7 @@ extension Triage {
         if x.a("eau") && x.a("stocker", "combien", "prevoir") && !x.a("72", "semaine", "jours") {
             return c("Pour combien de temps ?", [("Kit d'urgence 72 heures", "combien d eau pour le kit 72 heures"), ("Stock de 2 semaines à la maison", "stock d eau pour deux semaines a la maison")])
         }
-        if x.a("sac") && x.a("mets quoi", "mettre", "dedans", "contenu", "quoi") {
+        if x.a("sac") && x.a("mets quoi", "mettre", "dedans", "contenu", "quoi") && !x.a("evacuation", "72", "kit") {
             return c("De quel sac parlez-vous ?", [("Kit d'urgence 72 h, à la maison", "que mettre dans le kit d urgence 72 heures"), ("Sac d'évacuation, à emporter", "que mettre dans le sac d evacuation"), ("Ce que j'ai toujours sur moi", "edc ce que j ai toujours sur moi")])
         }
         if x.nombreDeMots <= 3 && x.a("plus de courant", "plus d electricite", "panne de courant", "coupure de courant") {

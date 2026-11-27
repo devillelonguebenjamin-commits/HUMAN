@@ -84,6 +84,10 @@ Placée juste après les mots trompeurs, avant tout le reste. Le guide « Que fa
 
 Cycle 2 : 37 / 40 au premier passage. Questions nouvelles du thème avant correction : 13 / 20. Erreurs trouvées puis corrigées : « il pleut, ma rue est une piscine » (déclenchait la règle de noyade), « SMS de la préfecture : se confiner » (guide Cyberattaque), « les pompiers disent au haut-parleur de rester chez soi » (kit 72 h), « fin d'alerte » (guide de pilotage communal), « alerte enlèvement » (guide Alerte).
 
+## Parcours guidé (27/11/2026)
+
+Demande de Benjamin après des essais en famille : la plupart des questions libres tombaient à côté. L'onglet Assistant s'ouvre désormais sur « Être guidé pas à pas » : 8 grandes situations (danger maintenant, alerte en cours, événement, se préparer, après une crise, cyber, nature, Espace mairie), puis 1 ou 2 questions à choix, soit 14 questions et 67 fins de parcours (`contenus/assistant/parcours_v1.json`, script `outils/construire_parcours.py`). Chaque fin envoie au moteur une phrase sans ambiguïté ; un test vérifie que les 67 aboutissent au bon guide et au bon mode. La saisie libre reste disponible, avec un bouton pour revenir au parcours.
+
 ## Guides 1.2 (27/11/2026)
 
 Eau sans eau de Javel ; Cueillette devenu guide de prudence (aucune identification) ; Stocks aligné sur Monoxyde ; numéros : 196 confirmé, 0 800 112 112 ajouté, numéro vert du signal d'alerte retiré ; Assurance actualisé (délais, franchise, hébergement). Interrupteur « Espace mairie » dans les réglages. Quand le triage choisit un guide sans trouver de passage, l'assistant affiche le début du guide (mises en garde comprises) au lieu d'une réponse vide.

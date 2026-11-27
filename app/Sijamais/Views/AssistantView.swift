@@ -23,9 +23,12 @@ struct AssistantView: View {
                         Bulle(estQuestion: false) {
                             Text("Posez votre question avec vos mots : je cherche dans les \(modele.bibliotheque.guides.count) guides de l'application et je cite toujours ma source. Pour une urgence vitale, appelez d'abord le 15 ou le 112.")
                         }
+                        if modele.echanges.isEmpty { carteParcours }
                         ForEach(modele.echanges) { e in
                             Bulle(estQuestion: true) { Text(e.question) }
-                            if let r = e.reponse {
+                            if let n = e.noeud {
+                                EtapeParcours(noeud: n)
+                            } else if let r = e.reponse {
                                 ReponseVue(reponse: r)
                             } else {
                                 ProgressView().padding(.leading, 12)
@@ -46,8 +49,31 @@ struct AssistantView: View {
         .navigationTitle("Assistant")
     }
 
+    /// Entrée principale : le parcours guidé, avant la saisie libre.
+    private var carteParcours: some View {
+        Button { modele.ouvrirParcours() } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "list.bullet.rectangle.fill").font(.title2)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Être guidé pas à pas").font(.headline)
+                    Text("Quelques choix simples mènent à la bonne consigne").font(.footnote)
+                }
+                Spacer()
+                Image(systemName: "chevron.right")
+            }
+            .foregroundStyle(.white)
+            .padding(16)
+            .background(RoundedRectangle(cornerRadius: 18).fill(Charte.balise))
+        }
+        .buttonStyle(.plain)
+    }
+
     private var saisie: some View {
         HStack(spacing: 8) {
+            Button { modele.ouvrirParcours() } label: {
+                Image(systemName: "list.bullet.rectangle").font(.system(size: 24))
+            }
+            .accessibilityLabel("Être guidé pas à pas")
             TextField("Que voulez-vous savoir ?", text: $question, axis: .vertical)
                 .lineLimit(1...4)
                 .focused($saisieActive)
@@ -128,6 +154,34 @@ private struct Bulle<Contenu: View>: View {
                 .foregroundStyle(estQuestion ? Color.white : Color.primary)
                 .background(RoundedRectangle(cornerRadius: 16).fill(estQuestion ? Charte.balise : Color(.secondarySystemBackground)))
             if !estQuestion { Spacer(minLength: 40) }
+        }
+    }
+}
+
+/// Une étape du parcours guidé : la question et un bouton par choix.
+private struct EtapeParcours: View {
+    @Environment(AppModel.self) private var modele
+    let noeud: Parcours.Noeud
+
+    var body: some View {
+        Bulle(estQuestion: false) {
+            Text(noeud.question).font(.headline)
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(noeud.options) { o in
+                    Button { modele.suivre(o) } label: {
+                        HStack(spacing: 10) {
+                            if let s = o.symbole { Image(systemName: s).frame(width: 22) }
+                            Text(o.libelle).multilineTextAlignment(.leading)
+                            Spacer(minLength: 0)
+                            if o.suivant != nil { Image(systemName: "chevron.right").font(.caption) }
+                        }
+                        .font(.subheadline.bold())
+                        .padding(.horizontal, 14).padding(.vertical, 11)
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Charte.balise.opacity(0.12)))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
         }
     }
 }

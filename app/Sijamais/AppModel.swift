@@ -12,6 +12,8 @@ struct Echange: Identifiable {
     let id = UUID()
     let question: String
     var reponse: ReponseAssistant?
+    /// Étape du parcours guidé (question à choix), à la place d'une réponse.
+    var noeud: Parcours.Noeud? = nil
 }
 
 /// État de l'application. Tout est enregistré sur le téléphone, rien n'est envoyé.
@@ -24,6 +26,8 @@ final class AppModel {
     let modeleAppleDisponible: Bool
     /// Liste d'équipement de l'écran « S'équiper » (catalogue.json).
     let catalogue: Catalogue?
+    /// Parcours guidé de l'assistant (parcours.json).
+    let parcours: Parcours?
 
     var onglet: Onglet = .accueil
     var echanges: [Echange] = []
@@ -56,6 +60,7 @@ final class AppModel {
         bibliotheque = b
         moteur = MoteurRecherche(bibliotheque: b)
         catalogue = Bundle.main.url(forResource: "catalogue", withExtension: "json").flatMap { try? Catalogue(url: $0) }
+        parcours = Bundle.main.url(forResource: "parcours", withExtension: "json").flatMap { try? Parcours(url: $0) }
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)
@@ -86,6 +91,21 @@ final class AppModel {
     func definirChamp(_ cle: String, _ valeur: String) { formulaires[cle] = valeur }
 
     // MARK: Assistant
+
+    /// Démarre le parcours guidé : une question à choix, sans avoir à trouver ses mots.
+    func ouvrirParcours() {
+        guard let depart = parcours?.depart else { return }
+        echanges.append(Echange(question: "Être guidé pas à pas", reponse: nil, noeud: depart))
+    }
+
+    /// Un choix du parcours : question suivante, ou réponse de l'assistant en fin de parcours.
+    func suivre(_ option: Parcours.Option) {
+        if let s = option.suivant, let n = parcours?.noeud(s) {
+            echanges.append(Echange(question: option.libelle, reponse: nil, noeud: n))
+        } else if let q = option.question {
+            demander(q, affichage: option.libelle)
+        }
+    }
 
     /// Réponse à un bouton de clarification : on affiche le libellé, on envoie la phrase prévue.
     func choisir(_ option: OptionClarification) {

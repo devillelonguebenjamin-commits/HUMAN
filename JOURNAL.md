@@ -424,3 +424,9 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
    - une réponse qui commente les passages est refusée, et le guide s'affiche tel quel.
 
 « J'ai faim » renvoie désormais au guide Stocks. 7 questions de Benjamin ajoutées aux tests ; 45 tests réussis.
+
+## 2026-11-27 : parcours guidé dans l'assistant
+
+**Constat de Benjamin.** Essais en famille et avec des amis : la plupart des réponses tombent à côté, parce que l'assistant dépend des mots-clés. Demande : guider la personne par des questions à choix.
+
+**Travail fait.** Arbre de décision (`contenus/assistant/parcours_v1.json`, construit par `outils/construire_parcours.py`) : 8 situations de départ, 14 questions, 67 fins de parcours. Chaque fin passe par le moteur de l'assistant déjà testé ; un test vérifie que les 67 mènent au guide et au mode attendus (65 sur 67 au premier essai ; deux trous du moteur corrigés : « grand froid » et « sac d'évacuation »). L'onglet Assistant s'ouvre sur « Être guidé pas à pas » ; un bouton près de la saisie relance le parcours. 47 tests réussis.
