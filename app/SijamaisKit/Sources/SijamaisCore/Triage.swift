@@ -26,6 +26,8 @@ public enum Triage {
         case urgencePersonnelle
         /// Gestes exacts d'un guide de santé : les lignes sont prises mot pour mot dans les guides.
         case sante(guideId: String, lignes: [String])
+        /// Consigne de risque majeur (cycle 2) : passages exacts des guides, jamais reformulés.
+        case consigne(guideId: String, lignes: [String], urgenceVitale: Bool)
         /// Question d'information : recherche limitée à ce guide.
         case guide(id: String)
         /// Rien de particulier : recherche par mots habituelle, sur le texte éventuellement corrigé.
@@ -57,16 +59,32 @@ public enum Triage {
         "dun": "d un", "dune": "d une", "darret": "d arret", "dappoint": "d appoint", "delectricite": "d electricite",
         "depilepsie": "d epilepsie", "destomac": "d estomac", "leau": "l eau", "lair": "l air",
         "magresse": "m agresse", "metouffe": "m etouffe", "mevanouir": "m evanouir", "taide": "t aide",
-        "svp": "", "stp": "", "jappelle": "j appelle", "jessaie": "j essaie",
+        "svp": "", "stp": "", "jappelle": "j appelle", "jessaie": "j essaie", "sarreter": "s arreter", "sarrete": "s arrete",
     ]
+
+    /// Noms courants commençant par une voyelle : « lecole » devient « l ecole », « diode » « d iode » (cycle 2).
+    static let nomsAVoyelle: Set<String> = Set("""
+    ecole ascenseur alerte alarme inondation escalier usine etage eau air hopital enfant enfants incendie iode orage ouragan eruption explosion \
+    electricite appoint arret estomac epilepsie evacuation abri arbre autoroute immeuble interieur exterieur oeil urgence urgences ambulance \
+    accident eglise habite habitation entree endroit appartement aide eclair oxygene essence emeute attentat otage ecran
+    """.split(whereSeparator: { $0 == " " || $0 == "\n" || $0 == "\\" }).map(String.init))
+
+    static func developper(_ mot: String) -> String {
+        if let c = contractions[mot] { return c }
+        if mot.count > 3, let p = mot.first, "ldjsmnt".contains(p), nomsAVoyelle.contains(String(mot.dropFirst())) {
+            return "\(p) \(mot.dropFirst())"
+        }
+        if mot.hasPrefix("qu"), mot.count > 4, nomsAVoyelle.contains(String(mot.dropFirst(2))) { return "qu \(mot.dropFirst(2))" }
+        return mot
+    }
 
     /// Texte normalisé, contractions développées, entouré d'espaces pour chercher des mots entiers.
     public static func preparer(_ question: String) -> String {
-        let mots = Normalisation.normaliser(question).split(separator: " ").map { contractions[String($0)] ?? String($0) }
+        let mots = Normalisation.normaliser(question).split(separator: " ").map { developper(String($0)) }
         return " " + mots.filter { !$0.isEmpty }.joined(separator: " ") + " "
     }
 
-    private struct Texte {
+    struct Texte {
         let t: String
         /// Vrai si l'un des motifs apparaît ; un motif commence toujours au début d'un mot.
         func a(_ motifs: String...) -> Bool { motifs.contains { t.contains(" " + $0) } }
@@ -86,7 +104,7 @@ public enum Triage {
     static let apresCoup = ["cauchemar", "apres avoir", "depuis que", "j y repense", "souvenir", "dormir", "traumatis"]
 
     static let arret = ["respire plus", "respire pas", "ne respire", "respire plu ", "bouge plus", "arret cardiaque", "arret du coeur", "coeur arrete",
-                        "coeur s est arrete", "crise cardiaque", "reanimation", "reanimer", "massage cardiaque", "masser", "compressions thoraciques", "defibrillateur", "dae ",
+                        "coeur s est arrete", "crise cardiaque", "attaque cardiaque", "heart attack", "reanimation", "reanimer", "massage cardiaque", "masser", "compressions thoraciques", "defibrillateur", "dae ",
                         "not breathing", "no pulse", "cardiac arrest", "tout mou", "toute molle"]
     static let inconscience = ["repond pas", "repond plus", "repond rien", "inconscient", "evanoui", "tombe dans les pommes", "tombee dans les pommes",
                                "perdu connaissance", "sans connaissance", "reveille pas", "reveille plus", "ouvre pas les yeux", "unconscious", "fainted"]
@@ -118,6 +136,9 @@ public enum Triage {
         if x.a("etouff") && x.a("chaud", "chaleur", "degres", "canicule", "lourd ") {
             x = Texte(t: x.t.split(separator: " ").filter { !$0.contains("etouff") }.map(String.init).joined(separator: " ").padded)
         }
+
+        // 1 bis. Alertes et risques majeurs (cycle 2), avant le hors périmètre (« fusillade » n'est pas une question d'arme).
+        if let d = risquesMajeurs(x, guides: guides) { return d }
 
         // 2. Hors périmètre.
         if x.a("chien", "chat ", "chats ", "chiot", "chaton", "cheval", "animal", "animaux", "vache", "lapin") && x.a("mord", "vipere", "serpent", "piqu", "bless", "empoison", "malade", "mange") {
@@ -192,7 +213,7 @@ public enum Triage {
 
         if !estInformatif {
             // 6. Cas particuliers.
-            if x.a("noy", "piscine", "drown") {
+            if x.a("noy", "drown") || (x.a("piscine") && x.a("tombe", "au fond", "sous l eau", "inconscient", "respire", "bouge plus", "repond")) {
                 if x.a(arret) || x.a(inconscience) {
                     return .sante(guideId: "arret-cardiaque", lignes: etapes("arret-cardiaque", guides) + alertes("arret-cardiaque", guides))
                 }
@@ -219,6 +240,7 @@ public enum Triage {
             // 7. Priorité entre urgences : danger du lieu, hémorragie, arrêt, inconscience, étouffement, brûlure.
             if x.a("le feu", "au feu", "incendie", "fumee", "flammes", "fire ") && !x.a("jardin", "foret", "barbecue", "feu de camp", "allumer un feu", "faire un feu") {
                 var l = etapes("incendie-domicile", guides)
+                if x.a("escalier", "couloir", "palier", "cage d") { l = enTete(l, "escalier") }
                 if x.a(brulure) { l += Array(etapes("brulure", guides).prefix(1)) + alertes("brulure", guides) }
                 return .sante(guideId: "incendie-domicile", lignes: l)
             }
@@ -316,6 +338,6 @@ public enum Triage {
     }
 }
 
-private extension String {
+extension String {
     var padded: String { " " + self + " " }
 }

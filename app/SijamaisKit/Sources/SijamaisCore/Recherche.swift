@@ -103,7 +103,7 @@ public struct MoteurRecherche: Sendable {
         "dae": ["defibrillateur"], "reanimation": ["massage", "cardiaque"], "pls": ["laterale", "securite"],
         "tourniquet": ["garrot"], "heimlich": ["etouffement", "poing"], "cloque": ["brulure"], "ebouillante": ["brulure"],
         "burn": ["brulure"], "burned": ["brulure"], "bleeding": ["saignement"], "choking": ["etouffement"], "breathe": ["respirer"],
-        "breathing": ["respirer"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
+        "breathing": ["respirer"], "radicalise": ["radicalisation"], "radicalisation": ["radicalisation"], "chats": ["animaux"], "chiens": ["animaux"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
     ]
 
     /// Expressions de plusieurs mots (cycle 1) : cherchées dans la question préparée, elles ajoutent des mots du guide.
@@ -114,6 +114,9 @@ public struct MoteurRecherche: Sendable {
         ("intoxication gaz", ["monoxyde"]), ("poele a petrole", ["monoxyde"]), ("peux pas parler", ["114", "sms"]), ("peut pas parler", ["114", "sms"]),
         ("secours en mer", ["196"]), ("samu social", ["115", "abri"]), ("sans abri", ["abri", "115"]), ("idees noires", ["3114", "moral"]),
         ("premiers secours", ["former", "formation", "gestes"]), ("pas bien", ["moral"]),
+        // Cycle 2 (27/11/2026).
+        ("risques majeurs", ["georisques", "dicrim", "ddrm"]), ("ma commune", ["dicrim", "georisques"]), ("fr alert", ["fr", "alert"]),
+        ("corne de brume", ["barrage"]), ("tremblement de terre", ["seisme"]), ("nuage toxique", ["pollue", "calfeutrez"]),
     ]
 
     static let termesSensibles: [String] = [

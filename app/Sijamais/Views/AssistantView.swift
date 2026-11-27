@@ -167,7 +167,7 @@ private struct ReponseVue: View {
             case .reformulee:
                 Text(reponse.texte ?? "")
             case .passages:
-                Text("Passages du guide :").font(.subheadline.bold())
+                Text("Extrait du guide, mot pour mot :").font(.subheadline.bold())
                 ForEach(reponse.lignes, id: \.self) { Text("• \($0)") }
             }
             if let id = reponse.guideId, let g = modele.guide(id) {

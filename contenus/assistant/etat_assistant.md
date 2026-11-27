@@ -1,8 +1,8 @@
 # État de l'assistant SIJAMAIS
 
-Fiche à joindre à chaque cycle d'amélioration (`prompts/claude_amelioration_assistant.md`). Mise à jour par Claude Code après chaque intégration. **Cycle 1 intégré le 27/11/2026. Cycle en cours : 2 (alerte, sirène, mise à l'abri, évacuation).**
+Fiche à joindre à chaque cycle d'amélioration (`prompts/claude_amelioration_assistant.md`). Mise à jour par Claude Code après chaque intégration. **Cycles 1 et 2 intégrés le 27/11/2026. Cycle en cours : 3 (coupure d'électricité, d'eau, de réseau).**
 
-## Ce que l'assistant sait faire (version 0.2 du 27/11/2026)
+## Ce que l'assistant sait faire (version 0.3 du 27/11/2026)
 
 L'assistant répond en deux étages, sur l'iPhone, sans réseau.
 
@@ -23,6 +23,22 @@ Avant toute recherche, la question est préparée (minuscules, sans accents, con
    - « il saigne » sans précision : « Il saigne beaucoup » (gestes) ou « Petite plaie » (pharmacien).
 9. **Petits maux** (fièvre, saignement de nez, mal au ventre...) : pas de guide, pharmacien ou médecin, 15 en cas de signe grave.
 
+### Étape « alertes et risques majeurs » (nouvelle, cycle 2)
+
+Placée juste après les mots trompeurs, avant tout le reste. Le guide « Que faire selon le risque » regroupe 13 risques : l'assistant repère le risque et n'affiche **que sa section**, mot pour mot, **sans reformulation** (mode « consigne », comme la santé). Le guide reste un seul guide à l'écran.
+
+1. **Hors périmètre du thème** : fabriquer un filtre ou un masque (renvoi à la consigne « bâtiment clos, linge humide »), conseil juridique (service-public.gouv.fr, guide Assurance), météo (Météo-France, l'application est hors ligne), écouter ou pirater les radios des secours, dégât des eaux domestique (lave-linge, tuyau), alerte enlèvement.
+2. **Métaphores** : « tempête de critiques », « sous le feu des critiques » vont au guide Moral. Toute réponse du guide Moral affiche la ligne du **3114**.
+3. **Rumeur** (TikTok, WhatsApp, « il paraît », vidéo) sur un barrage, une évacuation, une sirène : « N'écoutez que les annonces officielles », les 4 questions avant de partager, et la description de la vraie sirène de barrage.
+4. **Barrage** : corne de brume, rupture : « j'évacue immédiatement et je gagne les points hauts » (bandeau urgence vitale). Barrage sans signal : description de la corne de brume et consignes.
+5. **Information** : essais de sirène, fin d'alerte, radios, FR-Alert (« aucune inscription »), risques de ma commune (Géorisques, DICRIM, DDRM).
+6. **Consigne de rester à l'abri reçue** (haut-parleur, SMS de la préfecture, confinement) : les 7 réflexes.
+7. **Enfants à l'école** : « N'allez pas chercher vos enfants » en premier.
+8. **Odeur de gaz**, même avec un autre risque : « N'allumez aucune flamme », « Couper le gaz » en premier. **Flamme pendant une mise à l'abri** (réchaud, bougie, groupe électrogène sans symptôme) : « aucune flamme » et l'alerte monoxyde ; avec symptômes : guide Monoxyde.
+9. **Risques**, chacun avec la ligne la plus utile en tête : séisme (« Après » si le bâtiment est fissuré, « côtes » près de la mer, ascenseur), tsunami, nucléaire (« Ne prenez l'iode que sur instruction du préfet » en premier, sauf question « où retirer l'iode »), accident industriel et matières dangereuses (« Fermez portes et fenêtres » en tête si la personne veut ouvrir ; bandeau urgence si elle respire mal), attentat (« S'échapper, se cacher, alerter » ; jamais pour « attaque cardiaque »), animaux et évacuation, inondation (y compris « il pleut, ma rue est une piscine »), feu de forêt (« En voiture : restez dans le véhicule » en tête), tempête et cyclone (« Ne restez pas sous un arbre isolé », « œil du cyclone »), volcan, mouvement de terrain.
+10. **Sirène habituelle** : mise à l'abri, radio, et dans la même bulle la consigne de la corne de brume ; en voiture, « ne restez pas dans un véhicule » en tête.
+11. **Clarification** : « Je dois évacuer ou rester ? » (Inondation, Nuage toxique, Feu de forêt, Corne de brume ; rappel : sans consigne, on reste à l'abri), « Il y a un feu dehors » (forêt, en voiture, bâtiment), « alerte » seul (sirène, FR-Alert, corne de brume).
+
 ### Étage 2 : la recherche par mots (version 0.1, enrichie)
 
 - Mots et **expressions** synonymes (« pisse le sang », « avalé de travers », « tombé dans les pommes », « samu social », « idées noires »...), mots anglais (burn, bleeding, choking, breathe, unconscious, fire, flood).
@@ -36,6 +52,9 @@ Avant toute recherche, la question est préparée (minuscules, sans accents, con
 |---|---|
 | 40 cas du cycle 1 (`cycle1/cas_de_test.json`) | 40 / 40 |
 | 31 questions nouvelles, jamais vues par l'évaluateur (dans `Cycle1Tests.swift`) | 31 / 31 après correction |
+| 40 cas du cycle 2 (`cycle2/cas_de_test.json`, écarts avec l'évaluateur expliqués dans le fichier) | 40 / 40 |
+| 17 questions nouvelles du thème 2 (dans `Cycle2Tests.swift`) | 17 / 17 après correction |
+| Consignes de risque majeur : jamais reformulées, toutes mot pour mot dans un guide | oui |
 | 20 questions de la version 0.1 | 20 / 20 |
 | Boutons de clarification : chacun mène à une réponse définitive | oui |
 | Lignes de santé affichées : toutes présentes mot pour mot dans un guide | oui |
@@ -43,12 +62,16 @@ Avant toute recherche, la question est préparée (minuscules, sans accents, con
 
 **Mesure honnête de la généralisation.** Avant correction, sur des questions jamais vues : 10 / 16, puis 11 / 16, puis 9 / 15. Erreurs graves trouvées puis corrigées : « mon fils a avalé une pile » (renvoyait au guide Grand froid), « un enfant s'est noyé dans la piscine » (Étouffement), « il a pris un coup de couteau » (Risques), « crise d'asthme » (Communication de crise), « elle s'étouffe, elle peut plus parler » (consigne de toux). Conclusion : le triage par règles corrige vite les familles de cas connues, mais chaque nouvelle formulation peut tomber dans un trou.
 
+Cycle 2 : 37 / 40 au premier passage. Questions nouvelles du thème avant correction : 13 / 20. Erreurs trouvées puis corrigées : « il pleut, ma rue est une piscine » (déclenchait la règle de noyade), « SMS de la préfecture : se confiner » (guide Cyberattaque), « les pompiers disent au haut-parleur de rester chez soi » (kit 72 h), « fin d'alerte » (guide de pilotage communal), « alerte enlèvement » (guide Alerte).
+
 ## Faiblesses connues
 
 - **Règles écrites à la main** : fragiles face à une formulation inattendue. Il faut des questions nouvelles à chaque cycle, de préférence écrites par d'autres personnes que l'évaluateur.
 - **Guides manquants** : AVC, convulsions, étouffement et arrêt cardiaque du nourrisson, intoxication, réaction allergique grave, noyade, malaise cardiaque conscient. L'assistant renvoie au 15 sans gestes.
 - **Pas de mémoire de la conversation** : une précision donnée après coup (« il respire encore ») n'est pas reliée à la question précédente, sauf par les boutons.
-- **Fuite de gaz** : renvoie au guide Monoxyde de carbone, à revoir au cycle 3 (réseaux).
+- **Fuite de gaz** : « N'allumez aucune flamme » et « Couper le gaz » (guide Réflexes). Aucun guide ne dit encore « sortez et appelez l'urgence gaz » : passage à ajouter, avec sa source, au cycle 3.
+- **Contenus proposés au cycle 2, non intégrés faute de source vérifiée** : orage en voiture et foudre (Météo-France, [A VERIFIER]) ; conseil « rumeur » dans le guide Alerte (redit déjà le guide Réflexes).
+- **Question en anglais hors santé** (« how do I know if there is an alert ») : mal orientée ; peu de mots anglais reconnus hors urgences.
 - **196** : ajouté au guide des numéros, à vérifier sur service-public.gouv.fr (inaccessible depuis l'environnement de Claude).
 
 ## Prochaines étapes techniques (Claude Code)
@@ -57,6 +80,6 @@ Avant toute recherche, la question est préparée (minuscules, sans accents, con
 2. Mémoire courte : relier une précision à la question précédente.
 3. Intégrer les guides AVC et nourrisson après relecture par un formateur PSC1.
 
-## Questions qu'un cycle 2 doit pousser
+## Questions qu'un cycle 3 doit pousser
 
-Sirène, FR-Alert, mise à l'abri, évacuation, confinement, avec des formulations d'enfants, de personnes âgées, de touristes, des questions mêlant deux sujets (« la sirène sonne et mon fils est dehors »), et des mots trompeurs (« alerte » d'une application bancaire, « évacuer » une baignoire).
+Coupure d'électricité, d'eau, de réseau téléphonique et internet, fuite de gaz, avec des personnes sous appareil médical électrique, des congélateurs, des ascenseurs bloqués, des formulations d'enfants et de personnes âgées, et des mots trompeurs (« coupure » au doigt, « réseau » social, « courant » d'air ou de rivière).

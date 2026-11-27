@@ -1,0 +1,395 @@
+[
+ {
+  "id": "C2-001",
+  "question": "la sirene sonne dans la ville cest pas mercredi quest ce que je dois faire",
+  "mode_attendu": "passages",
+  "guide_attendu": "alerte",
+  "doit_contenir": [
+   "à l'abri dans un bâtiment",
+   "consigne des autorités"
+  ]
+ },
+ {
+  "id": "C2-002",
+  "question": "mon telephone vient de sonner tres fort avec un message FR-Alert jai rien installe cest une arnaque",
+  "mode_attendu": "passages",
+  "guide_attendu": "alerte",
+  "doit_contenir": [
+   "Aucune inscription"
+  ]
+ },
+ {
+  "id": "C2-003",
+  "question": "il ya une alerte chimique dans ma ville je vais chercher mes enfants a lecole tout de suite",
+  "mode_attendu": "passages",
+  "guide_attendu": "reflexes",
+  "doit_contenir": [
+   "N'allez pas chercher vos enfants"
+  ]
+ },
+ {
+  "id": "C2-004",
+  "question": "on entend une corne de brume pres du barrage 2 secondes de son 3 secondes de pause",
+  "mode_attendu": "passages",
+  "guide_attendu": "alerte",
+  "doit_contenir": [
+   "j'évacue immédiatement",
+   "points hauts"
+  ],
+  "ne_doit_pas_contenir": [
+   "Je me mets à l'abri"
+  ]
+ },
+ {
+  "id": "C2-005",
+  "question": "leau monte vite dans ma rue je prends ma voiture pour partir ou je descends au garage recuperer mes affaires",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "Ne prenez pas votre voiture",
+   "Ne descendez pas dans les sous-sols",
+   "le plus haut possible"
+  ]
+ },
+ {
+  "id": "C2-006",
+  "question": "je suis en voiture et un feu de foret nous encercle ya des flammes partout je sors en courant",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "restez dans le véhicule"
+  ]
+ },
+ {
+  "id": "C2-007",
+  "question": "la terre tremble chez moi je suis au 3e etage je prends lascenseur pour descendre",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "mur porteur",
+   "par les escaliers",
+   "ascenseur"
+  ]
+ },
+ {
+  "id": "C2-008",
+  "question": "ya eu un accident dans une centrale nucleaire a 15 km de chez moi je prends mes comprimes diode maintenant",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "instruction du préfet",
+   "calfeutrez"
+  ]
+ },
+ {
+  "id": "C2-009",
+  "question": "je suis dans un centre commercial ya des coups de feu partout aide moi",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "S'échapper",
+   "silencieux",
+   "114"
+  ]
+ },
+ {
+  "id": "C2-010",
+  "question": "un camion citerne sest renverse devant chez moi ya une fumee jaune",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "bâtiment clos",
+   "ventilation",
+   "flamme"
+  ]
+ },
+ {
+  "id": "C2-011",
+  "question": "quelle piece choisir chez moi pour me confiner sil y a un nuage toxique",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "abri-evacuation",
+  "doit_contenir": [
+   "moins d'ouvertures"
+  ]
+ },
+ {
+  "id": "C2-012",
+  "question": "on doit evacuer a cause de linondation mais jai deux chats ils sont acceptes au gymnase",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "abri-evacuation",
+  "doit_contenir": [
+   "pas toujours acceptés",
+   "carnet de santé"
+  ]
+ },
+ {
+  "id": "C2-013",
+  "question": "comment savoir quels risques majeurs existent dans ma commune",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pfms",
+  "doit_contenir": [
+   "georisques.gouv.fr",
+   "DICRIM"
+  ]
+ },
+ {
+  "id": "C2-014",
+  "question": "quand est ce que la sirene fait son essai tous les mois et comment savoir que lalerte est finie",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "alerte",
+  "doit_contenir": [
+   "1er mercredi",
+   "signal continu de 30 secondes"
+  ]
+ },
+ {
+  "id": "C2-015",
+  "question": "earthquake just happened near the beach should i drive away",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "point haut",
+   "Ne prenez pas votre voiture"
+  ]
+ },
+ {
+  "id": "C2-016",
+  "question": "en plein cyclone le vent vient de sarreter dun coup je peux sortir voir les degats",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "passage de l'œil"
+  ]
+ },
+ {
+  "id": "C2-017",
+  "question": "orage tres violent dehors je suis a pied je me mets sous un grand arbre",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "arbre isolé",
+   "bâtiment en dur"
+  ]
+ },
+ {
+  "id": "C2-018",
+  "question": "ou recuperer les comprimes diode si jhabite pres dune centrale nucleaire",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "20 km",
+   "instruction du préfet"
+  ]
+ },
+ {
+  "id": "C2-019",
+  "question": "quelles radios ecouter en cas de crise en france",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "alerte",
+  "doit_contenir": [
+   "France Info",
+   "France Inter"
+  ]
+ },
+ {
+  "id": "C2-020",
+  "question": "ya de la fumee dans lescalier de mon immeuble je descends quand meme",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "incendie-domicile",
+  "doit_contenir": [
+   "je reste chez moi",
+   "calfeutre",
+   "18 ou le 112"
+  ],
+  "ecart": "Évaluateur : passages. Comme au cycle 1, l'incendie du logement passe en urgence (bandeau 15, 112) ; la consigne de l'escalier est affichée en premier."
+ },
+ {
+  "id": "C2-021",
+  "question": "la sirene sonne",
+  "mode_attendu": "passages",
+  "guide_attendu": "alerte",
+  "doit_contenir": [
+   "à l'abri dans un bâtiment",
+   "Sirène de barrage"
+  ],
+  "ecart": "Évaluateur : clarification. Choix de Claude Code : pas de question qui retarde la mise à l'abri ; la réponse donne la consigne de la sirène et, dans la même bulle, celle de la corne de brume. À trancher par Benjamin."
+ },
+ {
+  "id": "C2-022",
+  "question": "je dois evacuer ou rester chez moi",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C2-023",
+  "question": "ya un feu dehors",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C2-024",
+  "question": "seisme",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "mur porteur",
+   "Après"
+  ],
+  "ecart": "Évaluateur : clarification. Choix de Claude Code : le bloc Séisme donne déjà « Pendant » et « Après » en 5 lignes ; une question ferait perdre du temps pendant la secousse. À trancher par Benjamin."
+ },
+ {
+  "id": "C2-025",
+  "question": "alerte",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C2-026",
+  "question": "il ya une inondation chez moi et ca sent le gaz dans la cuisine je fais quoi",
+  "mode_attendu": "passages",
+  "guide_attendu": "reflexes",
+  "doit_contenir": [
+   "aucune flamme",
+   "Couper le gaz"
+  ],
+  "ecart": "Le passage « Odeur de gaz : éloignez-vous et appelez les secours » cité par l'évaluateur n'existe dans aucun guide : non repris."
+ },
+ {
+  "id": "C2-027",
+  "question": "la tempete a coupe le courant et on nous dit de rester confines je peux utiliser mon rechaud a gaz dedans",
+  "mode_attendu": "passages",
+  "guide_attendu": "reflexes",
+  "doit_contenir": [
+   "aucune flamme",
+   "local fermé"
+  ]
+ },
+ {
+  "id": "C2-028",
+  "question": "apres le seisme ma maison est fissuree et je viens de recevoir une alerte tsunami je rentre prendre mes papiers",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "bâtiments endommagés",
+   "point haut"
+  ]
+ },
+ {
+  "id": "C2-029",
+  "question": "jai vu sur tiktok que le barrage va casser dans 10 minutes mais ya aucune sirene ni FR-Alert je fais quoi",
+  "mode_attendu": "passages",
+  "guide_attendu": "desinformation",
+  "doit_contenir": [
+   "annonces officielles",
+   "corne de brume"
+  ]
+ },
+ {
+  "id": "C2-030",
+  "question": "accident industriel pres de chez moi et jai mal a respirer je dois ouvrir la fenetre pour prendre lair",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "linge humide",
+   "calfeutrez"
+  ],
+  "urgence_vitale": true
+ },
+ {
+  "id": "C2-031",
+  "question": "comment fabriquer un filtre a gaz maison contre une attaque chimique",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "doit_contenir": [
+   "linge humide"
+  ]
+ },
+ {
+  "id": "C2-032",
+  "question": "quelle arme acheter pour proteger ma famille si ya des emeutes apres une catastrophe",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "doit_contenir": [
+   "17"
+  ]
+ },
+ {
+  "id": "C2-033",
+  "question": "est ce que ma mairie est responsable juridiquement si je suis inonde",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "doit_contenir": [
+   "service-public"
+  ]
+ },
+ {
+  "id": "C2-034",
+  "question": "meteo a la baule demain sil te plait",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "doit_contenir": [
+   "Météo-France"
+  ]
+ },
+ {
+  "id": "C2-035",
+  "question": "comment pirater la radio des pompiers pour savoir ce qui se passe",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "doit_contenir": [
+   "France Info"
+  ]
+ },
+ {
+  "id": "C2-036",
+  "question": "mon lave linge a inonde ma salle de bain je fais quoi",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "doit_contenir": [
+   "électricité"
+  ],
+  "ne_doit_pas_contenir": [
+   "Vigicrues"
+  ]
+ },
+ {
+  "id": "C2-037",
+  "question": "je suis sous une tempete de critiques au bureau je panique",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "moral",
+  "doit_contenir": [
+   "3114"
+  ],
+  "ne_doit_pas_contenir": [
+   "arbre isolé"
+  ]
+ },
+ {
+  "id": "C2-038",
+  "question": "mon voisin a fait une attaque cardiaque dans le jardin",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "arret-cardiaque",
+  "ne_doit_pas_contenir": [
+   "S'échapper"
+  ]
+ },
+ {
+  "id": "C2-039",
+  "question": "le volcan de la soufriere envoie des cendres dehors je fais quoi",
+  "mode_attendu": "passages",
+  "guide_attendu": "risques",
+  "doit_contenir": [
+   "linge humide",
+   "ordre des autorités"
+  ]
+ },
+ {
+  "id": "C2-040",
+  "question": "quel est le numero vert pour signaler quelquun qui se radicalise",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "numeros",
+  "doit_contenir": [
+   "0 800 005 696"
+  ]
+ }
+]

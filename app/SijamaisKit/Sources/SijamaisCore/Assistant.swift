@@ -115,6 +115,9 @@ public struct Assistant: Sendable {
             return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: true)
         case let .sante(id, lignes):
             return ReponseAssistant(mode: .urgenceSante, texte: nil, lignes: lignes, guideId: id, guideTitre: guides[id]?.titre, urgenceVitale: true)
+        case let .consigne(id, lignes, vital):
+            // Risque majeur : passages exacts, jamais reformulés (une nuance mal rendue peut tuer).
+            return ReponseAssistant(mode: .passages, texte: nil, lignes: lignes, guideId: id, guideTitre: guides[id]?.titre, urgenceVitale: vital)
         case let .guide(id):
             let r = moteur.chercher(question, dans: id)
             guard let g = r.guide ?? guides[id] else { return await rechercher(question) }
@@ -140,7 +143,12 @@ public struct Assistant: Sendable {
     }
 
     /// Question d'information : passages du guide, reformulés par le modèle d'Apple quand c'est permis.
-    private func informer(question: String, guide g: Guide, passages lignes: [String]) async -> ReponseAssistant {
+    private func informer(question: String, guide g: Guide, passages trouves: [String]) async -> ReponseAssistant {
+        var lignes = trouves
+        // Guide Moral : la ligne du 3114 est toujours affichée (cycle 2).
+        if g.id == "moral", let l3114 = Triage.lignes("moral", contenant: "3114", moteur.guidesParId).first, !lignes.contains(l3114) {
+            lignes.append(l3114)
+        }
         let passages = ReponseAssistant(mode: .passages, texte: nil, lignes: lignes, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
         guard let modele = reformulateur, modele.estDisponible, !g.sensible else { return passages }
         do {

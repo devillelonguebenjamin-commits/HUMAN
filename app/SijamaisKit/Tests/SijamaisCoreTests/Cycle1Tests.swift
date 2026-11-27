@@ -33,13 +33,15 @@ final class Cycle1Tests: XCTestCase {
         }
     }
 
-    func testLes40Cas() async {
-        XCTAssertEqual(Self.cas.count, 40)
+    /// Rejoue un fichier de cas (cycle 1, 2...) et renvoie les échecs.
+    static func rejouer(_ fichier: String, avec assistant: Assistant) async -> (total: Int, echecs: [String]) {
+        let url = Bundle.module.url(forResource: fichier, withExtension: "json")!
+        let cas = try! JSONDecoder().decode([Cas].self, from: Data(contentsOf: url))
         var echecs: [String] = []
-        for c in Self.cas {
+        for c in cas {
             let r = await assistant.repondre(c.question)
             var pb: [String] = []
-            let mode = Self.nom(r.mode)
+            let mode = nom(r.mode)
             // Une reformulation et des passages bruts sont deux affichages du même résultat (selon l'iPhone).
             let modeOK = mode == c.mode_attendu || (Set([mode, c.mode_attendu]) == ["reformulee", "passages"])
             if !modeOK { pb.append("mode \(mode) au lieu de \(c.mode_attendu)") }
@@ -51,7 +53,13 @@ final class Cycle1Tests: XCTestCase {
             if r.mode == .clarification && r.options.count < 2 { pb.append("moins de 2 boutons") }
             if !pb.isEmpty { echecs.append("\(c.id) « \(c.question) » : " + pb.joined(separator: ", ")) }
         }
-        print("Cycle 1 : \(Self.cas.count - echecs.count)/\(Self.cas.count) cas réussis")
+        return (cas.count, echecs)
+    }
+
+    func testLes40Cas() async {
+        let (total, echecs) = await Self.rejouer("cas_cycle1", avec: assistant)
+        XCTAssertEqual(total, 40)
+        print("Cycle 1 : \(total - echecs.count)/\(total) cas réussis")
         XCTAssertTrue(echecs.isEmpty, "\n" + echecs.joined(separator: "\n"))
     }
 
