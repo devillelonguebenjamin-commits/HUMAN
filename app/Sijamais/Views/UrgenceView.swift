@@ -61,6 +61,20 @@ struct UrgenceView: View {
                     }
                 }
 
+                NavigationLink { AlerteMontagneView() } label: {
+                    HStack(spacing: 12) {
+                        Image(systemName: "mountain.2.fill").font(.title2)
+                        VStack(alignment: .leading) {
+                            Text("En montagne ou en randonnée").font(.headline)
+                            Text("Ma position GPS et le message à lire au 112").font(.footnote)
+                        }
+                        Spacer()
+                    }
+                    .foregroundStyle(.white)
+                    .padding(14)
+                    .background(RoundedRectangle(cornerRadius: 16).fill(Charte.preparation))
+                }
+
                 Text("Que se passe-t-il ?").font(.footnote.weight(.semibold)).foregroundStyle(.secondary).textCase(.uppercase)
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
                     ForEach(scenarios, id: \.0) { titre, sous, symbole, signal, guideId in

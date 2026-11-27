@@ -41,8 +41,8 @@ public enum OffrePremium {
     public static let univers: [Univers] = [
         Univers(id: "enfants", titre: "Espace enfants", resume: "Apprendre à alerter et à se protéger, en jouant", symbole: "figure.2.and.child.holdinghands", disponible: true,
                 apports: ["11 modules de jeu en plus des modules gratuits", "Deux tranches d'âge : 6 à 10 ans et 10 à 14 ans", "Badges et suivi par le parent"]),
-        Univers(id: "randonnee", titre: "Randonnée et montagne", resume: "Partir préparé, être retrouvé", symbole: "mountain.2.fill", disponible: false,
-                apports: ["Fiche de sortie envoyée à un proche", "Compte à rebours du retour", "Bulletin avalanche et vigilance du massif", "Carte de France entière hors ligne"]),
+        Univers(id: "randonnee", titre: "Randonnée et montagne", resume: "Partir préparé, être retrouvé", symbole: "mountain.2.fill", disponible: true,
+                apports: ["Fiche de sortie envoyée à un proche", "Compte à rebours du retour, avec rappel si vous tardez", "Bientôt : bulletin avalanche du massif, carte de France entière hors ligne"]),
         Univers(id: "voyage", titre: "Voyage à l'étranger", resume: "Se faire comprendre et retrouver l'ambassade", symbole: "airplane", disponible: false,
                 apports: ["Phrases d'urgence à montrer, dans la langue du pays", "Dossier de voyage hors ligne, protégé par Face ID", "Ambassades et hôpitaux sur la carte"]),
         Univers(id: "mer", titre: "Navigation en mer", resume: "Le bon matériel et le bon message", symbole: "sailboat.fill", disponible: false,
@@ -56,6 +56,7 @@ public enum OffrePremium {
         "La carte hors ligne et les points de secours",
         "Le plan familial et la carte d'urgence",
         "« J'ai besoin d'aide » et les modules qui protègent, dans l'Espace enfants",
+        "« Alerter les secours en montagne » : position GPS et message prêt à lire",
     ]
 
     /// Un module de l'Espace enfants est ouvert s'il est gratuit, ou si le foyer est abonné.

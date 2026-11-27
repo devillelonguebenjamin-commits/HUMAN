@@ -34,6 +34,8 @@ final class AppModel {
     let enfants: EspaceEnfants?
     /// Abonnement premium (StoreKit 2).
     let abonnement: Abonnement
+    /// Fiche de sortie du mode Randonnée (sur ce téléphone seulement).
+    var ficheSortie: FicheSortie { didSet { enregistrer(ficheSortie, cle: Cle.ficheSortie) } }
     /// Modules de l'Espace enfants terminés (badges).
     var modulesTermines: Set<String> { didSet { stockage.set(Array(modulesTermines), forKey: Cle.modulesTermines) } }
     /// Carte « Montrer à un adulte » : prénom, téléphones, allergies. Gardée chiffrée dans le trousseau.
@@ -65,6 +67,7 @@ final class AppModel {
         static let formulaires = "formulaires"
         static let espaceMairie = "espaceMairie"
         static let modulesTermines = "modulesTermines"
+        static let ficheSortie = "ficheSortie"
     }
 
     init() {
@@ -92,6 +95,7 @@ final class AppModel {
         formulaires = (s.dictionary(forKey: Cle.formulaires) as? [String: String]) ?? [:]
         espaceMairie = s.bool(forKey: Cle.espaceMairie)
         modulesTermines = Set(s.stringArray(forKey: Cle.modulesTermines) ?? [])
+        ficheSortie = Self.lire(FicheSortie.self, cle: Cle.ficheSortie) ?? FicheSortie()
         carteEnfant = Coffre.lire("carteEnfant").flatMap { try? JSONDecoder().decode([String].self, from: Data($0.utf8)) } ?? []
     }
 

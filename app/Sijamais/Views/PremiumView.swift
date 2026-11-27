@@ -25,19 +25,11 @@ struct PremiumView: View {
 
             Section("Les univers premium") {
                 ForEach(OffrePremium.univers) { u in
-                    VStack(alignment: .leading, spacing: 6) {
-                        HStack {
-                            Label(u.titre, systemImage: u.symbole).font(.headline)
-                            Spacer()
-                            Text(u.disponible ? "Disponible" : "Bientôt")
-                                .font(.caption.bold())
-                                .padding(.horizontal, 8).padding(.vertical, 3)
-                                .background(Capsule().fill(u.disponible ? Charte.securite.opacity(0.2) : Color.secondary.opacity(0.15)))
-                        }
-                        Text(u.resume).font(.subheadline).foregroundStyle(.secondary)
-                        ForEach(u.apports, id: \.self) { Text("• \($0)").font(.footnote) }
+                    if u.id == "randonnee" {
+                        NavigationLink { RandonneeView() } label: { CarteUnivers(univers: u) }
+                    } else {
+                        CarteUnivers(univers: u)
                     }
-                    .padding(.vertical, 4)
                 }
             }
 
@@ -76,5 +68,26 @@ struct PremiumView: View {
         }
         .navigationTitle("Premium")
         .manageSubscriptionsSheet(isPresented: $gerer)
+    }
+}
+
+/// Un univers premium : titre, état, ce qu'il apporte.
+private struct CarteUnivers: View {
+    let univers: OffrePremium.Univers
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            HStack {
+                Label(univers.titre, systemImage: univers.symbole).font(.headline)
+                Spacer()
+                Text(univers.disponible ? "Disponible" : "Bientôt")
+                    .font(.caption.bold())
+                    .padding(.horizontal, 8).padding(.vertical, 3)
+                    .background(Capsule().fill(univers.disponible ? Charte.securite.opacity(0.2) : Color.secondary.opacity(0.15)))
+            }
+            Text(univers.resume).font(.subheadline).foregroundStyle(.secondary)
+            ForEach(univers.apports, id: \.self) { Text("• \($0)").font(.footnote) }
+        }
+        .padding(.vertical, 4)
     }
 }

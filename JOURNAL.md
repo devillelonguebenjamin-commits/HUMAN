@@ -506,3 +506,23 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - Démarches de mise en vente dans `contenus/premium/README.md`. 59 tests réussis.
 
 **À faire par Benjamin avant la vente.** Compte Apple Developer et contrat des applications payantes ; création des 4 abonnements avec les mêmes identifiants ; conditions d'utilisation et politique de confidentialité.
+
+## 2026-11-27 : mode Randonnée et montagne (première version)
+
+**Décision de Benjamin.** « ok » pour le mode Randonnée, priorité 2 du plan premium.
+
+**Travail fait.**
+- **« Alerter les secours en montagne », gratuit**, aussi accessible depuis l'écran Urgence :
+  - position GPS en degrés décimaux et en degrés, minutes, secondes, avec l'altitude et la précision ;
+  - message à lire au 112 dans l'ordre demandé par les secours (qui, où, combien, quoi, météo) ;
+  - gros bouton 112 et conseils (112 même téléphone verrouillé, rester sur place, économiser la batterie). Sources : PGHM des Hautes-Alpes, FFME.
+- **Fiche de sortie, premium** :
+  - itinéraire, départ, retour, participants, véhicule, proche à prévenir ;
+  - message prêt à envoyer par SMS ou à partager ;
+  - « Je pars » programme deux rappels locaux, à l'heure de retour puis une heure après ;
+  - un bandeau rouge propose d'appeler le proche ou le 112 si l'heure est dépassée ;
+  - aucune alerte n'est jamais envoyée automatiquement.
+- **Guides utiles en accès libre** : orientation, signaux, priorités, trousse de survie, eau, abri.
+- L'univers Randonnée passe à « Disponible » dans l'écran Premium. 62 tests réussis.
+
+**À venir.** Bulletin avalanche de Météo-France, carte de France entière hors ligne (palier E des cartes), contenus officiels du ministère des Sports à intégrer aux guides.
