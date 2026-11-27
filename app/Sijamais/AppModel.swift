@@ -34,6 +34,8 @@ final class AppModel {
     let enfants: EspaceEnfants?
     /// Abonnement premium (StoreKit 2).
     let abonnement: Abonnement
+    /// Cartes hors ligne de toute la France (téléchargement par département).
+    let cartes: GestionCartes
     /// Fiche de sortie du mode Randonnée (sur ce téléphone seulement).
     var ficheSortie: FicheSortie { didSet { enregistrer(ficheSortie, cle: Cle.ficheSortie) } }
     /// Trace GPX affichée sur la carte (premium), le temps de la session.
@@ -84,6 +86,7 @@ final class AppModel {
         planFamilial = PlanFamilial.integre
         enfants = EspaceEnfants.integre
         abonnement = Abonnement()
+        cartes = GestionCartes()
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)

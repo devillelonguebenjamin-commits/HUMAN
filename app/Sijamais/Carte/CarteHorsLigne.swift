@@ -9,18 +9,17 @@ enum CarteHorsLigne {
     /// Dossier des ressources de la carte dans l'application (polices, style, fichiers de carte).
     static var dossier: URL? { Bundle.main.url(forResource: "Cartes", withExtension: nil) }
 
-    /// Premier fichier .pmtiles trouvé : dans les documents de l'application (téléchargé), sinon dans l'application.
-    static var fichierCarte: URL? {
-        let fm = FileManager.default
-        var dossiers: [URL] = []
-        if let docs = fm.urls(for: .documentDirectory, in: .userDomainMask).first { dossiers.append(docs.appendingPathComponent("Cartes")) }
-        if let d = dossier { dossiers.append(d) }
-        for d in dossiers {
-            if let f = (try? fm.contentsOfDirectory(at: d, includingPropertiesForKeys: nil))?.first(where: { $0.pathExtension == "pmtiles" }) {
-                return f
-            }
+    /// Vue d'ensemble de la France embarquée (zoom 0 à 8), produite par outils/construire_cartes_france.sh.
+    static var vueEnsemble: URL? { dossier.map { $0.appendingPathComponent("france-vue-ensemble.pmtiles") }.flatMap { FileManager.default.fileExists(atPath: $0.path) ? $0 : nil } }
+
+    /// Fichiers départementaux : téléchargés (Documents/Cartes/<code>.pmtiles), plus l'ancien fichier embarqué de la Loire-Atlantique.
+    static func departements(telecharges: [String]) -> [(code: String, fichier: URL)] {
+        var l = telecharges.map { (code: $0, fichier: GestionCartes.fichier($0)) }
+        if !telecharges.contains("44"), let d = dossier {
+            let ancien = d.appendingPathComponent("loire-atlantique.pmtiles")
+            if FileManager.default.fileExists(atPath: ancien.path) { l.append((code: "44", fichier: ancien)) }
         }
-        return nil
+        return l
     }
 
     /// Points de secours (hôpitaux, pompiers, pharmacies, défibrillateurs...) produits par outils/extraire_points.py.
@@ -36,19 +35,18 @@ enum CarteHorsLigne {
         return vide
     }
 
-    /// Écrit le style de la carte avec les chemins de ce téléphone, et renvoie son adresse.
-    static func styleLocal() -> URL? {
-        guard let dossier, let carte = fichierCarte,
-              let modele = try? String(contentsOf: dossier.appendingPathComponent("style-modele.json"), encoding: .utf8)
-        else { return nil }
-        let glyphes = dossier.appendingPathComponent("fonts").absoluteString.replacingOccurrences(of: "%20", with: " ")
-        let style = modele
-            .replacingOccurrences(of: "__PMTILES__", with: carte.absoluteString)
-            .replacingOccurrences(of: "__POINTS__", with: fichierPoints.absoluteString)
-            .replacingOccurrences(of: "__GLYPHES__", with: glyphes.hasSuffix("/") ? String(glyphes.dropLast()) : glyphes)
-        let sortie = FileManager.default.temporaryDirectory.appendingPathComponent("style-sijamais.json")
+    /// Compose le style avec la vue d'ensemble et les départements présents, et renvoie son adresse (nil s'il n'y a aucune carte).
+    static func styleLocal(telecharges: [String] = []) -> URL? {
+        let deps = departements(telecharges: telecharges)
+        guard let dossier, vueEnsemble != nil || !deps.isEmpty,
+              let modele = try? Data(contentsOf: dossier.appendingPathComponent("style-modele.json")) else { return nil }
+        var glyphes = dossier.appendingPathComponent("fonts").absoluteString.replacingOccurrences(of: "%20", with: " ")
+        if glyphes.hasSuffix("/") { glyphes.removeLast() }
+        guard let style = try? StyleCarte.composer(modele: modele, vueEnsemble: vueEnsemble, departements: deps, points: fichierPoints, glyphes: glyphes) else { return nil }
+        // Un nom de fichier nouveau à chaque composition : la carte sait qu'elle doit recharger son style.
+        let sortie = FileManager.default.temporaryDirectory.appendingPathComponent("style-sijamais-\(UUID().uuidString).json")
         do {
-            try style.write(to: sortie, atomically: true, encoding: .utf8)
+            try style.write(to: sortie)
             return sortie
         } catch {
             return nil
@@ -79,6 +77,10 @@ struct CarteMapLibre: UIViewRepresentable {
     }
 
     func updateUIView(_ carte: MLNMapView, context: Context) {
+        if carte.styleURL != styleURL {
+            context.coordinator.styleRecharge()
+            carte.styleURL = styleURL
+        }
         context.coordinator.appliquer(trace, sur: carte)
     }
 
@@ -91,6 +93,9 @@ struct CarteMapLibre: UIViewRepresentable {
             styleCharge = true
             dessiner(mapView)
         }
+
+        /// Le style change (département ajouté ou retiré) : la trace sera redessinée au chargement.
+        func styleRecharge() { styleCharge = false }
 
         func appliquer(_ nouvelle: TraceGPX?, sur carte: MLNMapView) {
             guard nouvelle != trace else { return }

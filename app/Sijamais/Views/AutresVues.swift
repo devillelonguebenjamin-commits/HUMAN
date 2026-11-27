@@ -1,3 +1,4 @@
+import CoreLocation
 import SwiftUI
 import SijamaisCore
 
@@ -39,13 +40,21 @@ struct PreparerView: View {
 /// Onglet Carte : la carte hors ligne si un fichier de carte est présent, sinon un écran d'explication.
 struct CarteView: View {
     @Environment(AppModel.self) private var modele
-    @State private var style: URL? = CarteHorsLigne.styleLocal()
+    @State private var style: URL? = nil
+
+    /// Centre de départ : le département principal, sinon La Baule-Escoublac.
+    private var centreInitial: (CLLocationCoordinate2D, Double) {
+        if let code = modele.cartes.principal, let d = modele.cartes.france?.departement(code) {
+            return (CLLocationCoordinate2D(latitude: d.centre.latitude, longitude: d.centre.longitude), 9)
+        }
+        return (CLLocationCoordinate2D(latitude: 47.2866, longitude: -2.3920), 12)
+    }
 
     var body: some View {
         Group {
             if let style {
                 ZStack(alignment: .bottom) {
-                    CarteMapLibre(styleURL: style, trace: modele.traceSurCarte).ignoresSafeArea(edges: .top)
+                    CarteMapLibre(styleURL: style, trace: modele.traceSurCarte, centre: centreInitial.0, zoom: centreInitial.1).ignoresSafeArea(edges: .top)
                     VStack(spacing: 0) {
                         if let t = modele.traceSurCarte {
                             HStack {
@@ -63,6 +72,9 @@ struct CarteView: View {
             } else {
                 List {
                     Section {
+                        NavigationLink { CartesFranceView() } label: { Label("Télécharger la carte de mon département", systemImage: "arrow.down.circle.fill") }
+                    }
+                    Section {
                         Label("Aucune carte téléchargée", systemImage: "map")
                             .font(.headline)
                         Text("La carte de votre département se téléchargera une fois, puis fonctionnera sans réseau : hôpitaux, pompiers, pharmacies, défibrillateurs, points de rassemblement de la commune.")
@@ -77,6 +89,13 @@ struct CarteView: View {
         }
         .navigationTitle("Carte")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink { CartesFranceView() } label: { Label("Cartes de France", systemImage: "square.and.arrow.down.on.square") }
+            }
+        }
+        .onAppear { style = CarteHorsLigne.styleLocal(telecharges: modele.cartes.telecharges) }
+        .onChange(of: modele.cartes.version) { _, _ in style = CarteHorsLigne.styleLocal(telecharges: modele.cartes.telecharges) }
     }
 }
 

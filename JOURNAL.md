@@ -572,3 +572,25 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - 71 tests réussis.
 
 **À vérifier sur le Mac.** Choisir l'équipe de signature aussi pour la cible « SijamaisWidgets » (Signing & Capabilities) ; le compte à rebours s'essaie sur le simulateur ou l'iPhone.
+
+## 2026-11-27 : cartes hors ligne de toute la France
+
+**Décision de Benjamin.** « carte de la France entière ».
+
+**Vérifié.**
+- La planète Protomaps fait environ 120 Go au zoom 15, et chaque niveau de zoom double à peu près la taille. La France est estimée à quelques gigaoctets, à mesurer.
+- Protomaps déconseille de pointer une application vers ses fichiers quotidiens.
+- Cloudflare R2 offre 10 Go gratuits par mois, et la bande passante sortante est gratuite.
+
+**Construit.**
+- `contenus/cartes/departements.json` : 101 départements (outre-mer compris) avec région, cadre et contours simplifiés, tirés d'Admin Express de l'IGN.
+- `outils/construire_cartes_france.sh` (sur le Mac) : produit la vue d'ensemble de la France (zoom 0 à 8, embarquée), les 101 fichiers départementaux (zoom 15) et leur catalogue (taille, empreinte SHA-256). L'option `--mesurer` donne les tailles sans rien télécharger.
+- Cœur : le département d'une position (point dans le contour), la règle d'accès (un département gratuit, tous avec l'abonnement), et l'assemblage du style MapLibre (vue d'ensemble dessous, départements dessus, points de secours au-dessus, noms de lieux sans doublon).
+- Application, écran « Cartes de France » :
+  - départements rangés par région, avec une recherche ;
+  - téléchargement avec progression et vérification de l'empreinte ; suppression ; place utilisée ;
+  - fichiers exclus de la sauvegarde iCloud.
+- La carte se recompose quand un département est ajouté ou retiré, et s'ouvre sur « Mon département ».
+- 75 tests réussis.
+
+**À faire par Benjamin.** Lancer le script sur le Mac ; créer le stockage R2 et y déposer les fichiers ; me donner l'adresse publique.
