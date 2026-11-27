@@ -47,8 +47,8 @@ Règle inchangée : **tout ce qui protège reste gratuit** (alerter, consignes o
 | **Pont GPX** : ouvrir une trace (Komoot, Visorando, Strava, Garmin, montre), distance, dénivelé, altitudes, profil, temps de marche estimé, renvoi vers une autre application | Le service le plus utile à chaque sortie | Aucune | **Construit le 27/11/2026** |
 | Attacher la trace à la fiche de sortie (itinéraire et heure de retour calculés) | Le proche sait exactement où chercher | Aucune | **Construit** |
 | Mes traces enregistrées, sur le téléphone | Bibliothèque personnelle | Aucune | **Construit** |
-| Trace affichée sur la carte hors ligne | Voir où l'on est par rapport à la trace | Carte (palier E) | Prochaine étape |
-| Compte à rebours sur l'écran verrouillé (Live Activity) | Rappel visible sans ouvrir l'application | Extension de widget | Prochaine étape |
+| Trace affichée sur la carte hors ligne | Voir où l'on est par rapport à la trace | Fond de carte de la région concernée (palier E pour toute la France) | **Construit le 27/11/2026** |
+| Compte à rebours sur l'écran verrouillé (Live Activity) | Rappel visible sans ouvrir l'application | Extension de widget | **Construit le 27/11/2026** |
 | Refuges et points d'eau du massif hors ligne | Savoir où dormir et boire | Refuges.info (CC BY-SA, crédit et partage à l'identique) | À faire |
 | Bulletin avalanche du massif hors ligne | L'information du jour, l'hiver | Clé Météo-France | À faire (compte portail à créer) |
 | Itinéraires des parcs nationaux | Randonnées officielles et réglementation | Geotrek, licence par parc | À faire |

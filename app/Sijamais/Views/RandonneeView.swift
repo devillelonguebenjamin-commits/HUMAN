@@ -1,3 +1,4 @@
+import ActivityKit
 import CoreLocation
 import SwiftUI
 import UserNotifications
@@ -219,6 +220,7 @@ struct FicheSortieView: View {
     private func partir() {
         modele.ficheSortie.enCours = true
         let fiche = modele.ficheSortie
+        demarrerCompteARebours(fiche)
         Task {
             let centre = UNUserNotificationCenter.current()
             guard (try? await centre.requestAuthorization(options: [.alert, .sound])) == true else { return }
@@ -240,5 +242,17 @@ struct FicheSortieView: View {
     private func terminer() {
         modele.ficheSortie.enCours = false
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["retour-1", "retour-2"])
+        Task {
+            for activite in Activity<RetourAttributes>.activities { await activite.end(nil, dismissalPolicy: .immediate) }
+        }
+    }
+
+    /// Compte à rebours sur l'écran verrouillé et dans la Dynamic Island (si l'utilisateur l'autorise).
+    private func demarrerCompteARebours(_ fiche: FicheSortie) {
+        guard ActivityAuthorizationInfo().areActivitiesEnabled else { return }
+        for activite in Activity<RetourAttributes>.activities { Task { await activite.end(nil, dismissalPolicy: .immediate) } }
+        let ligne = fiche.itineraire.split(separator: "\n").first.map(String.init) ?? ""
+        let contenu = ActivityContent(state: RetourAttributes.ContentState(retour: fiche.retour, proche: fiche.procheNom), staleDate: fiche.retour)
+        _ = try? Activity.request(attributes: RetourAttributes(itineraire: ligne.isEmpty ? "Sortie en cours" : ligne), content: contenu)
     }
 }

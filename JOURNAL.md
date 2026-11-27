@@ -560,3 +560,15 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - 70 tests réussis.
 
 **Prochaines étapes.** Trace sur la carte hors ligne ; compte à rebours sur l'écran verrouillé ; refuges et points d'eau hors ligne ; bulletin avalanche (compte à créer sur le portail des API de Météo-France).
+
+## 2026-11-27 : trace sur la carte et compte à rebours sur l'écran verrouillé
+
+**Décision de Benjamin.** « oui » pour les deux étapes suivantes du premium Randonnée.
+
+**Travail fait.**
+- **Trace sur la carte.** Depuis le détail d'une trace, « Voir sur la carte hors ligne » ouvre l'onglet Carte : la trace s'affiche en ligne orange, la carte se cadre dessus, et un bandeau donne son nom avec un bouton « Retirer ». Le fond de carte ne couvre encore que la Loire-Atlantique : une trace ailleurs s'affiche sur un fond vide tant que le palier E (France entière) n'est pas fait.
+- **Compte à rebours.** « Je pars » lance une activité en direct (Live Activity) : sur l'écran verrouillé et dans la Dynamic Island, l'heure de retour et un décompte dessiné par le système. Passé l'heure, l'activité passe en rouge : « Heure de retour dépassée : rentré ? Sinon, 112 ». « Je suis bien rentré » l'arrête.
+- Nouvelle extension de widgets (`app/SijamaisWidgets`), avec un code partagé (`app/Partage`).
+- 71 tests réussis.
+
+**À vérifier sur le Mac.** Choisir l'équipe de signature aussi pour la cible « SijamaisWidgets » (Signing & Capabilities) ; le compte à rebours s'essaie sur le simulateur ou l'iPhone.

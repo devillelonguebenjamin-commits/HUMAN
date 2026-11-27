@@ -36,6 +36,8 @@ final class AppModel {
     let abonnement: Abonnement
     /// Fiche de sortie du mode Randonnée (sur ce téléphone seulement).
     var ficheSortie: FicheSortie { didSet { enregistrer(ficheSortie, cle: Cle.ficheSortie) } }
+    /// Trace GPX affichée sur la carte (premium), le temps de la session.
+    var traceSurCarte: TraceGPX?
     /// Modules de l'Espace enfants terminés (badges).
     var modulesTermines: Set<String> { didSet { stockage.set(Array(modulesTermines), forKey: Cle.modulesTermines) } }
     /// Carte « Montrer à un adulte » : prénom, téléphones, allergies. Gardée chiffrée dans le trousseau.

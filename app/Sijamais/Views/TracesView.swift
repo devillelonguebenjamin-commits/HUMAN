@@ -132,6 +132,10 @@ struct TraceDetailView: View {
                     NavigationLink { FicheSortieView() } label: { Label("Itinéraire et heure de retour remplis : ouvrir la fiche", systemImage: "checkmark.circle.fill") }
                         .foregroundStyle(Charte.securite)
                 }
+                Button {
+                    modele.traceSurCarte = trace
+                    modele.onglet = .carte
+                } label: { Label("Voir sur la carte hors ligne", systemImage: "map.fill") }
                 ShareLink(item: url) { Label("Envoyer vers une montre ou une autre application", systemImage: "square.and.arrow.up") }
             } footer: {
                 Text("SIJAMAIS n'est pas un GPS de randonnée : suivez le balisage et la carte. La trace sert à préparer la sortie et à prévenir un proche.")

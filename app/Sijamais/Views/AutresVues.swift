@@ -38,14 +38,27 @@ struct PreparerView: View {
 
 /// Onglet Carte : la carte hors ligne si un fichier de carte est présent, sinon un écran d'explication.
 struct CarteView: View {
+    @Environment(AppModel.self) private var modele
     @State private var style: URL? = CarteHorsLigne.styleLocal()
 
     var body: some View {
         Group {
             if let style {
                 ZStack(alignment: .bottom) {
-                    CarteMapLibre(styleURL: style).ignoresSafeArea(edges: .top)
-                    Legende()
+                    CarteMapLibre(styleURL: style, trace: modele.traceSurCarte).ignoresSafeArea(edges: .top)
+                    VStack(spacing: 0) {
+                        if let t = modele.traceSurCarte {
+                            HStack {
+                                Label(t.nom, systemImage: "point.topleft.down.to.point.bottomright.curvepath").font(.footnote.bold()).lineLimit(1)
+                                Spacer()
+                                Button("Retirer") { modele.traceSurCarte = nil }.font(.footnote)
+                            }
+                            .padding(10)
+                            .background(RoundedRectangle(cornerRadius: 12).fill(.regularMaterial))
+                            .padding(.horizontal, 10)
+                        }
+                        Legende()
+                    }
                 }
             } else {
                 List {

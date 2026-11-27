@@ -31,6 +31,11 @@ final class TraceGPXTests: XCTestCase {
         XCTAssertTrue(t.resume.contains("2,2 km") && t.resume.contains("+300 m") && t.resume.contains("1 h 41"), t.resume)
     }
 
+    func testBornes() throws {
+        let b = try TraceGPX.lire(Data(exemple.utf8)).bornes
+        XCTAssertEqual(b.sud, 45.0); XCTAssertEqual(b.nord, 45.02); XCTAssertEqual(b.ouest, 6.0); XCTAssertEqual(b.est, 6.0)
+    }
+
     func testLeBruitDuGPSEstIgnore() {
         let pts = [1000.0, 1001, 999, 1002, 1000, 1010].map { TraceGPX.Point(latitude: 45, longitude: 6, altitude: $0) }
         XCTAssertEqual(TraceGPX(nom: "t", points: pts).denivele.positif, 10, accuracy: 0.01)

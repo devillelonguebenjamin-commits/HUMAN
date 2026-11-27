@@ -61,6 +61,12 @@ public struct TraceGPX: Sendable, Equatable, Codable {
         return (plus, moins)
     }
 
+    /// Bornes de la trace (sud-ouest, nord-est), pour cadrer la carte.
+    public var bornes: (sud: Double, ouest: Double, nord: Double, est: Double) {
+        (points.map(\.latitude).min() ?? 0, points.map(\.longitude).min() ?? 0,
+         points.map(\.latitude).max() ?? 0, points.map(\.longitude).max() ?? 0)
+    }
+
     public var altitudeMin: Double? { points.compactMap(\.altitude).min() }
     public var altitudeMax: Double? { points.compactMap(\.altitude).max() }
 
