@@ -32,6 +32,8 @@ final class AppModel {
     let planFamilial: PlanFamilial?
     /// Espace enfants (contenu embarqué dans SijamaisCore).
     let enfants: EspaceEnfants?
+    /// Abonnement premium (StoreKit 2).
+    let abonnement: Abonnement
     /// Modules de l'Espace enfants terminés (badges).
     var modulesTermines: Set<String> { didSet { stockage.set(Array(modulesTermines), forKey: Cle.modulesTermines) } }
     /// Carte « Montrer à un adulte » : prénom, téléphones, allergies. Gardée chiffrée dans le trousseau.
@@ -76,6 +78,7 @@ final class AppModel {
         parcours = Parcours.integre
         planFamilial = PlanFamilial.integre
         enfants = EspaceEnfants.integre
+        abonnement = Abonnement()
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)

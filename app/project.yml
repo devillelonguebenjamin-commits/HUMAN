@@ -26,6 +26,7 @@ targets:
       - path: Sijamais
         excludes:
           - "Resources/Cartes/**"
+          - "Premium.storekit"
       # Dossier copié tel quel dans l'application (polices, style et fichier de carte .pmtiles).
       - path: Sijamais/Resources/Cartes
         type: folder
@@ -58,6 +59,8 @@ schemes:
         Sijamais: all
     run:
       config: Debug
+      # Achats simulés dans Xcode (simulateur ou iPhone branché), sans compte Apple Developer.
+      storeKitConfiguration: Sijamais/Premium.storekit
     test:
       config: Debug
       targets:

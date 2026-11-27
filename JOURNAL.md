@@ -492,3 +492,17 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - Tests : chaque quiz a une seule bonne réponse expliquée ; aucune adresse internet, sauf le tchat du 119 en texte simple ; modules gratuits conformes à l'offre. 56 tests réussis.
 
 **Avant diffusion.** Relectures prévues dans `contenus/enfants/README.md` : formateur PSC1, enseignant du primaire, gendarme ou policier.
+
+## 2026-11-27 : écran Premium et abonnement (StoreKit 2)
+
+**Décision de Benjamin.** « ok » pour l'étape 1 : écran Premium et abonnement en mode test.
+
+**Travail fait.**
+- Offres et règles dans SijamaisCore : 4 abonnements aux prix décidés ; 4 univers (Enfants disponible ; Randonnée, Voyage, Mer annoncés « bientôt ») ; liste de ce qui reste gratuit.
+- Moteur d'abonnement StoreKit 2 : achat, achat en attente, restauration, Partage familial, remboursements.
+- Écran Premium, accessible par une tuile à l'accueil et par les réglages.
+- Verrouillage des 10 modules « version famille » de l'Espace enfants, sans aucun achat possible côté enfant.
+- Fichier de test StoreKit branché au schéma Xcode, pour essayer sans compte Apple Developer.
+- Démarches de mise en vente dans `contenus/premium/README.md`. 59 tests réussis.
+
+**À faire par Benjamin avant la vente.** Compte Apple Developer et contrat des applications payantes ; création des 4 abonnements avec les mêmes identifiants ; conditions d'utilisation et politique de confidentialité.

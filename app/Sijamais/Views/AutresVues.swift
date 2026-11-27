@@ -123,6 +123,11 @@ struct ReglagesView: View {
                 Text(modele.modeleAppleDisponible ? "Modèle d'Apple disponible sur cet iPhone." : "Modèle d'Apple indisponible : l'assistant affiche les passages des guides.")
                     .font(.footnote)
             }
+            Section("Abonnement") {
+                NavigationLink { PremiumView() } label: {
+                    Label(modele.abonnement.actif ? "Premium : abonnement actif" : "Découvrir Premium", systemImage: "star.fill")
+                }
+            }
             Section("À propos") {
                 Text("Guides version \(modele.bibliotheque.fichier.meta.version) du \(modele.bibliotheque.fichier.meta.date)")
                 Text(modele.bibliotheque.fichier.meta.avertissement).font(.footnote).foregroundStyle(.secondary)

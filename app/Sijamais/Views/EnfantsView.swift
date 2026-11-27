@@ -71,8 +71,14 @@ struct EspaceEnfantsView: View {
                                 Text(t.sousTitre).font(.subheadline).foregroundStyle(.secondary)
                                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
                                     ForEach(t.modules) { m in
-                                        NavigationLink { ModuleEnfantView(module: m) } label: { TuileModule(module: m, fait: modele.modulesTermines.contains(m.id)) }
-                                            .buttonStyle(.plain)
+                                        // Pas d'achat dans l'Espace enfants : un module fermé renvoie vers un parent.
+                                        if OffrePremium.moduleOuvert(m, abonne: modele.abonnement.actif) {
+                                            NavigationLink { ModuleEnfantView(module: m) } label: { TuileModule(module: m, fait: modele.modulesTermines.contains(m.id), ferme: false) }
+                                                .buttonStyle(.plain)
+                                        } else {
+                                            NavigationLink { ModuleFermeView(module: m) } label: { TuileModule(module: m, fait: false, ferme: true) }
+                                                .buttonStyle(.plain)
+                                        }
                                     }
                                 }
                             }
@@ -102,6 +108,7 @@ struct EspaceEnfantsView: View {
 private struct TuileModule: View {
     let module: EspaceEnfants.Module
     let fait: Bool
+    var ferme = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -109,17 +116,36 @@ private struct TuileModule: View {
                 Image(systemName: PaletteEnfants.symbole(module.picto)).font(.title)
                 Spacer()
                 if fait { Image(systemName: "star.circle.fill").font(.title2) }
+                if ferme { Image(systemName: "lock.fill").font(.title3) }
             }
             Spacer(minLength: 0)
             Text(module.titre).font(.headline).multilineTextAlignment(.leading)
-            if !module.gratuit { Text("Version famille").font(.caption2.bold()).opacity(0.85) }
+            if ferme { Text("Version famille").font(.caption2.bold()).opacity(0.85) }
         }
         .foregroundStyle(PaletteEnfants.texte(module.couleur))
         .padding(14)
         .frame(maxWidth: .infinity, minHeight: 130, alignment: .leading)
         .background(RoundedRectangle(cornerRadius: 18).fill(PaletteEnfants.couleur(module.couleur)))
+        .opacity(ferme ? 0.6 : 1)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(module.titre + (fait ? ", terminé" : ""))
+    }
+}
+
+/// Module de la version famille, quand le foyer n'est pas abonné : aucun achat ici, l'enfant demande à un parent.
+struct ModuleFermeView: View {
+    let module: EspaceEnfants.Module
+
+    var body: some View {
+        VStack(spacing: 16) {
+            Image(systemName: "lock.fill").font(.system(size: 50)).foregroundStyle(PaletteEnfants.couleur(module.couleur))
+            Text(module.titre).font(.title2.bold())
+            Text("Ce module fait partie de la version famille. Demande à un parent : il peut l'ouvrir depuis l'écran Premium de SIJAMAIS.")
+                .multilineTextAlignment(.center)
+        }
+        .padding(24)
+        .navigationTitle(module.titre)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
