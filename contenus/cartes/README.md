@@ -19,13 +19,18 @@ bash outils/construire_cartes_france.sh --mesurer   # d'abord : tailles estimée
 bash outils/construire_cartes_france.sh             # puis : vue d'ensemble + 101 départements + catalogue
 ```
 
-Taille attendue : quelques gigaoctets au total. La planète entière fait environ 120 Go au zoom 15, et chaque niveau de zoom double à peu près la taille ([Protomaps](https://docs.protomaps.com/basemaps/downloads)). À mesurer avec `--mesurer`.
+**Tailles mesurées le 27/11/2026** (carte Protomaps du jour, zoom 15) :
+- vue d'ensemble de la France : 28 Mo ;
+- 101 départements : 11,1 Go au total ;
+- médiane : 101 Mo par département ; le plus gros est le Nord (428 Mo), les plus petits Mayotte (9,6 Mo) et la Martinique (14 Mo) ; la Loire-Atlantique fait 169 Mo.
+
+Une première estimation (2 à 4 Go) était fausse d'un facteur trois : la France est très détaillée dans OpenStreetMap. Pour diviser les tailles par deux environ, il suffirait de s'arrêter au zoom 14 (chaque niveau double à peu près la taille), au prix de détails en moins (bâtiments, petits chemins) aux plus forts zooms.
 
 ## Héberger (à faire par Benjamin)
 
 Protomaps déconseille de pointer une application vers ses fichiers quotidiens : il faut les copier sur son propre stockage ([Protomaps](https://docs.protomaps.com/basemaps/downloads)).
 
-Proposition : **Cloudflare R2**. L'offre gratuite donne 10 Go de stockage par mois, et la bande passante sortante est gratuite quel que soit le volume ([Cloudflare](https://developers.cloudflare.com/r2/pricing/index.md)). La France entière devrait y tenir.
+Proposition : **Cloudflare R2**. L'offre gratuite donne 10 Go de stockage par mois, et la bande passante sortante est gratuite quel que soit le volume ; au-delà, le stockage coûte 0,015 $ par Go et par mois ([Cloudflare](https://developers.cloudflare.com/r2/pricing/index.md)). Avec 11,1 Go, le dépassement est d'environ 1 Go, soit quelques centimes par mois ; pendant le changement de mois (deux versions en ligne, environ 22 Go), moins de 0,20 $ par mois.
 
 1. Créer un compte Cloudflare, puis un « bucket » R2 nommé par exemple `sijamais-cartes`, avec un accès public par un sous-domaine (par exemple `cartes.<ton-domaine>`).
 2. Déposer le contenu du dossier `cartes_france/` dans un dossier daté, par exemple `2026-12/`. Le dépôt peut se faire avec l'interface web ou avec l'outil `rclone`.

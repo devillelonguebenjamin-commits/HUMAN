@@ -594,3 +594,17 @@ Environnement cloud : sites officiels ajoutés au réseau autorisé, avec l'acco
 - 75 tests réussis.
 
 **À faire par Benjamin.** Lancer le script sur le Mac ; créer le stockage R2 et y déposer les fichiers ; me donner l'adresse publique.
+
+## 2026-11-27 : cartes de France, tailles mesurées
+
+**Mesure de Benjamin** (`--mesurer`, carte Protomaps du 27/11/2026, zoom 15) :
+- vue d'ensemble : 28 Mo ;
+- 101 départements : 11,1 Go au total ;
+- médiane : 101 Mo par département ; maximum : Nord, 428 Mo ; minimum : Mayotte, 9,6 Mo.
+
+Mon estimation précédente (2 à 4 Go) était fausse d'un facteur trois.
+
+**Conséquences.**
+- Hébergement Cloudflare R2 : environ 1 Go au-delà de l'offre gratuite, soit quelques centimes par mois.
+- Côté utilisateur : environ 100 Mo par département, à télécharger en Wi-Fi.
+- Option possible : s'arrêter au zoom 14 diviserait les tailles par deux environ. Recommandation : garder le zoom 15, utile en randonnée.
