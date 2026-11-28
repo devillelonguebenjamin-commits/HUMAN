@@ -79,7 +79,7 @@ public struct CartesFrance: Decodable, Sendable {
     }
 }
 
-/// Catalogue publié avec les fichiers (cartes_france/catalogue.json) : taille et empreinte de chaque département.
+/// Catalogue publié avec les fichiers (cartes_france/catalogue.json) : taille et empreinte de chaque fichier.
 public struct CatalogueCartes: Decodable, Sendable {
     public struct Fichier: Decodable, Sendable {
         public let fichier: String
@@ -87,14 +87,43 @@ public struct CatalogueCartes: Decodable, Sendable {
         public let sha256: String
     }
 
+    /// Points d'un département : secours (gratuit) et refuges (mode Randonnée).
+    public struct Points: Decodable, Sendable {
+        public let secours: Fichier?
+        public let refuges: Fichier?
+    }
+
     public let version: String
     public let fichiers: [String: Fichier]
+    public let points: [String: Points]?
+}
+
+/// Fusion des fichiers de points de plusieurs départements en un seul GeoJSON, sans doublon
+/// (même type au même endroit, à environ un mètre près : un point en bordure apparaît dans deux départements).
+public enum PointsCarte {
+    public static func fusionner(_ fichiers: [Data]) -> Data {
+        var vus = Set<String>()
+        var tous: [Any] = []
+        for d in fichiers {
+            guard let objet = try? JSONSerialization.jsonObject(with: d) as? [String: Any],
+                  let features = objet["features"] as? [[String: Any]] else { continue }
+            for f in features {
+                let c = ((f["geometry"] as? [String: Any])?["coordinates"] as? [Double]) ?? []
+                let type = ((f["properties"] as? [String: Any])?["type"] as? String) ?? ""
+                guard c.count >= 2 else { continue }
+                let cle = String(format: "%@|%.5f|%.5f", type, c[0], c[1])
+                if vus.insert(cle).inserted { tous.append(f) }
+            }
+        }
+        let collection: [String: Any] = ["type": "FeatureCollection", "features": tous]
+        return (try? JSONSerialization.data(withJSONObject: collection)) ?? Data(#"{"type":"FeatureCollection","features":[]}"#.utf8)
+    }
 }
 
 /// Compose le style MapLibre : vue d'ensemble en dessous, départements téléchargés par-dessus, points de secours au-dessus.
 /// Les noms de lieux ne se dédoublent pas : ceux de la vue d'ensemble s'arrêtent au zoom 9, ceux des départements commencent au zoom 9.
 public enum StyleCarte {
-    public static func composer(modele: Data, vueEnsemble: URL?, departements: [(code: String, fichier: URL)], points: URL, glyphes: String) throws -> Data {
+    public static func composer(modele: Data, vueEnsemble: URL?, departements: [(code: String, fichier: URL)], points: URL, refuges: URL? = nil, glyphes: String) throws -> Data {
         guard var style = try JSONSerialization.jsonObject(with: modele) as? [String: Any],
               let couches = style["layers"] as? [[String: Any]],
               var sources = style["sources"] as? [String: Any],
@@ -105,6 +134,17 @@ public enum StyleCarte {
             secours["data"] = points.absoluteString
             sources["secours"] = secours
         }
+        // Refuges et points d'eau (mode Randonnée) : la couche n'existe que si un fichier est fourni.
+        var sansRefuges = false
+        if var r = sources["refuges"] as? [String: Any] {
+            if let refuges {
+                r["data"] = refuges.absoluteString
+                sources["refuges"] = r
+            } else {
+                sources.removeValue(forKey: "refuges")
+                sansRefuges = true
+            }
+        }
         func source(_ fichier: URL) -> [String: Any] {
             var s = fond
             s["url"] = "pmtiles://" + fichier.absoluteString
@@ -112,7 +152,7 @@ public enum StyleCarte {
         }
 
         let duFond = couches.filter { ($0["source"] as? String) == "fond" }
-        let autres = couches.filter { ($0["source"] as? String) != "fond" }
+        let autres = couches.filter { ($0["source"] as? String) != "fond" && !(sansRefuges && ($0["source"] as? String) == "refuges") }
         let arriere = autres.filter { ($0["type"] as? String) == "background" }
         let dessus = autres.filter { ($0["type"] as? String) != "background" }
 

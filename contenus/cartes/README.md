@@ -26,6 +26,25 @@ bash outils/construire_cartes_france.sh             # puis : vue d'ensemble + 10
 
 Une première estimation (2 à 4 Go) était fausse d'un facteur trois : la France est très détaillée dans OpenStreetMap. Pour diviser les tailles par deux environ, il suffirait de s'arrêter au zoom 14 (chaque niveau double à peu près la taille), au prix de détails en moins (bâtiments, petits chemins) aux plus forts zooms.
 
+## Points de secours et refuges (sur le Mac, après les cartes)
+
+```
+python3 outils/construire_points_france.py             # les 101 départements, environ 3 heures
+python3 outils/construire_points_france.py 74 73 05    # seulement quelques départements
+rclone copy cartes_france r2:sijamais-cartes/2026-11 --progress
+```
+
+Le script écrit, pour chaque département, à côté de sa carte :
+- `<code>-secours.geojson` : hôpitaux, pompiers, pharmacies, police, mairies (OpenStreetMap, ODbL) et défibrillateurs (Géo'DAE, sinon OpenStreetMap). **Gratuit** ;
+- `<code>-refuges.geojson` : refuges gardés, cabanes, gîtes d'étape, abris, points d'eau (Refuges.info, CC BY-SA 2.0). **Affichés seulement avec l'abonnement**, crédit visible ;
+- et la rubrique `points` du `catalogue.json` (taille et empreinte de chaque fichier).
+
+Il faut le lancer **après** `construire_cartes_france.sh`, qui réécrit le catalogue. L'application télécharge ces fichiers avec la carte du département, vérifie leur empreinte, et fusionne les points sans doublon.
+
+Essai du 27/11/2026 sur la Haute-Savoie (74) : 429 points Refuges.info (250 points d'eau, 85 cabanes, 58 gîtes, 35 refuges, 1 abri).
+
+**Refuges.info** : l'API est un « service web personnel et non commercial » ([documentation](https://www.refuges.info/api/doc/)). L'application ne l'interroge jamais ; le script fait une requête par département et par mois, avec une pause. **Ne pas publier les fichiers `-refuges` avant la réponse de l'équipe** (courrier `courriers/04_refuges_info.md`) ; en attendant, lancer le script avec `--sans-refuges`.
+
 ## Héberger (à faire par Benjamin)
 
 Protomaps déconseille de pointer une application vers ses fichiers quotidiens : il faut les copier sur son propre stockage ([Protomaps](https://docs.protomaps.com/basemaps/downloads)).

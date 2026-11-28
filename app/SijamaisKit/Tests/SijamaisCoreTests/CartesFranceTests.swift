@@ -30,6 +30,24 @@ final class CartesFranceTests: XCTestCase {
         XCTAssertTrue(cartes.adresseBase.hasPrefix("https://") && cartes.adresseBase.hasSuffix("/"))
     }
 
+    func testCoucheDesRefuges() throws {
+        let modele = try Data(contentsOf: Bundle.module.url(forResource: "style-modele", withExtension: "json")!)
+        let d = try StyleCarte.composer(modele: modele, vueEnsemble: nil, departements: [("74", URL(fileURLWithPath: "/c/74.pmtiles"))],
+                                        points: URL(fileURLWithPath: "/c/p.geojson"), refuges: URL(fileURLWithPath: "/c/r.geojson"), glyphes: "f")
+        let s = try XCTUnwrap(try JSONSerialization.jsonObject(with: d) as? [String: Any])
+        XCTAssertEqual(((s["sources"] as? [String: Any])?["refuges"] as? [String: Any])?["data"] as? String, "file:///c/r.geojson")
+        let ids = (s["layers"] as? [[String: Any]] ?? []).compactMap { $0["id"] as? String }
+        XCTAssertTrue(ids.contains("refuges-points") && ids.contains("refuges-noms"))
+        XCTAssertLessThan(ids.firstIndex(of: "refuges-noms")!, ids.firstIndex(of: "secours-halo")!, "les secours restent au-dessus des refuges")
+    }
+
+    func testFusionSansDoublon() throws {
+        let a = Data(#"{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-2.4,47.3]},"properties":{"type":"hopital"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-2.5,47.3]},"properties":{"type":"dae"}}]}"#.utf8)
+        let b = Data(#"{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[-2.4,47.3]},"properties":{"type":"hopital"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-2.4,47.3]},"properties":{"type":"pharmacie"}}]}"#.utf8)
+        let f = try XCTUnwrap(try JSONSerialization.jsonObject(with: PointsCarte.fusionner([a, b, Data("pas du json".utf8)])) as? [String: Any])
+        XCTAssertEqual((f["features"] as? [Any])?.count, 3)
+    }
+
     func testCompositionDuStyle() throws {
         let modele = try Data(contentsOf: Bundle.module.url(forResource: "style-modele", withExtension: "json")!)
         let d = try StyleCarte.composer(modele: modele, vueEnsemble: URL(fileURLWithPath: "/c/france.pmtiles"),
@@ -43,7 +61,8 @@ final class CartesFranceTests: XCTestCase {
         let ids = couches.compactMap { $0["id"] as? String }
         XCTAssertEqual(ids.first, "ocean")
         XCTAssertEqual(ids.last, "secours-noms", "les points de secours restent au-dessus")
-        XCTAssertEqual(ids.count, 1 + 24 * 3 + 4)
+        XCTAssertEqual(ids.count, 1 + 24 * 3 + 4, "sans fichier de refuges, pas de couche de refuges")
+        XCTAssertNil(sources["refuges"])
         let vueNoms = try XCTUnwrap(couches.first { $0["id"] as? String == "vue-noms-communes" })
         XCTAssertEqual(vueNoms["maxzoom"] as? Int, 9)
         let depNoms = try XCTUnwrap(couches.first { $0["id"] as? String == "44-noms-communes" })

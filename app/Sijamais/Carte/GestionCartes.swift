@@ -36,6 +36,9 @@ final class GestionCartes: NSObject, URLSessionDownloadDelegate {
 
     nonisolated static func fichier(_ code: String) -> URL { dossier.appendingPathComponent("\(code).pmtiles") }
 
+    /// Points d'un département, téléchargés avec sa carte : "secours" (gratuit) ou "refuges" (mode Randonnée).
+    nonisolated static func fichierPoints(_ code: String, _ genre: String) -> URL { dossier.appendingPathComponent("\(code)-\(genre).geojson") }
+
     override init() {
         france = CartesFrance.integre
         principal = UserDefaults.standard.string(forKey: "departementPrincipal")
@@ -91,6 +94,7 @@ final class GestionCartes: NSObject, URLSessionDownloadDelegate {
 
     func supprimer(_ code: String) {
         try? FileManager.default.removeItem(at: Self.fichier(code))
+        for g in ["secours", "refuges"] { try? FileManager.default.removeItem(at: Self.fichierPoints(code, g)) }
         etats[code] = .absent
         version += 1
     }
@@ -148,8 +152,27 @@ final class GestionCartes: NSObject, URLSessionDownloadDelegate {
             etats[code] = .erreur("Place insuffisante sur le téléphone.")
             return
         }
+        await telechargerPoints(code)
         actualiser()
         version += 1
+    }
+
+    /// Fichiers de points du département (quelques centaines de kilo-octets), vérifiés comme la carte.
+    /// Un échec n'empêche pas la carte : les points seront repris au prochain téléchargement.
+    private func telechargerPoints(_ code: String) async {
+        guard let base = france?.adresseBase, let points = catalogue?.points?[code] else { return }
+        for (genre, f) in [("secours", points.secours), ("refuges", points.refuges)] {
+            guard let f, let u = URL(string: (base.hasSuffix("/") ? base : base + "/") + f.fichier),
+                  let (donnees, reponse) = try? await URLSession.shared.data(from: u),
+                  (reponse as? HTTPURLResponse)?.statusCode == 200,
+                  SHA256.hash(data: donnees).map({ String(format: "%02x", $0) }).joined() == f.sha256 else { continue }
+            let cible = Self.fichierPoints(code, genre)
+            try? donnees.write(to: cible, options: .atomic)
+            var valeurs = URLResourceValues()
+            valeurs.isExcludedFromBackup = true
+            var c = cible
+            try? c.setResourceValues(valeurs)
+        }
     }
 
     nonisolated static func empreinte(_ url: URL) -> String {

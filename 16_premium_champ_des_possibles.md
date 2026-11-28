@@ -49,7 +49,7 @@ Règle inchangée : **tout ce qui protège reste gratuit** (alerter, consignes o
 | Mes traces enregistrées, sur le téléphone | Bibliothèque personnelle | Aucune | **Construit** |
 | Trace affichée sur la carte hors ligne | Voir où l'on est par rapport à la trace | Fond de carte de la région concernée (palier E pour toute la France) | **Construit le 27/11/2026** |
 | Compte à rebours sur l'écran verrouillé (Live Activity) | Rappel visible sans ouvrir l'application | Extension de widget | **Construit le 27/11/2026** |
-| Refuges et points d'eau du massif hors ligne | Savoir où dormir et boire | Refuges.info (CC BY-SA, crédit et partage à l'identique) | À faire |
+| Refuges et points d'eau du massif hors ligne | Savoir où dormir et boire | Refuges.info (CC BY-SA, crédit et partage à l'identique) | **Construit le 28/11/2026**, publication suspendue à l'accord de l'équipe de Refuges.info (courrier 04) |
 | Bulletin avalanche du massif hors ligne | L'information du jour, l'hiver | Clé Météo-France | À faire (compte portail à créer) |
 | Itinéraires des parcs nationaux | Randonnées officielles et réglementation | Geotrek, licence par parc | À faire |
 | Envoi du parcours vers une montre Garmin | Pont direct | Accord Garmin | Après la création de l'entreprise |
@@ -81,7 +81,7 @@ Phrases d'urgence à montrer, dans 10 langues, relues par des traducteurs ; doss
 
 1. **Pont GPX** et trace attachée à la fiche de sortie. Fait le 27/11/2026.
 2. Trace sur la carte hors ligne, et compte à rebours sur l'écran verrouillé.
-3. Refuges et points d'eau hors ligne (Refuges.info), avec crédit visible.
+3. Refuges et points d'eau hors ligne (Refuges.info), avec crédit visible. Construit le 28/11/2026, en attente de l'accord de Refuges.info.
 4. Bulletin avalanche (après création du compte sur le portail de Météo-France).
 5. Rappels de péremption des stocks, et plusieurs profils d'enfants.
 6. Voyage, puis Mer.

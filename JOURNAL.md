@@ -608,3 +608,19 @@ Mon estimation précédente (2 à 4 Go) était fausse d'un facteur trois.
 - Hébergement Cloudflare R2 : environ 1 Go au-delà de l'offre gratuite, soit quelques centimes par mois.
 - Côté utilisateur : environ 100 Mo par département, à télécharger en Wi-Fi.
 - Option possible : s'arrêter au zoom 14 diviserait les tailles par deux environ. Recommandation : garder le zoom 15, utile en randonnée.
+
+## 2026-11-28 : points de secours de toute la France, refuges et points d'eau
+
+Pendant le dépôt des cartes sur R2 (environ 5 heures chez Benjamin).
+
+**Construit.**
+- `outils/construire_points_france.py` (sur le Mac, après les cartes) : pour chaque département, un fichier de points de secours (OpenStreetMap, Géo'DAE) et un fichier de refuges, cabanes, gîtes, abris et points d'eau (Refuges.info), filtrés par le contour du département, avec taille et empreinte dans le catalogue. Une requête à la fois, avec pause et reprises.
+- Cœur : catalogue étendu (`points`), fusion des fichiers sans doublon (un point en bordure apparaît dans deux départements), couche « refuges » du style, absente sans fichier. 77 tests réussis.
+- Application : les points se téléchargent avec la carte du département (empreinte vérifiée) et se suppriment avec elle ; les points de secours de tous les départements présents s'affichent, gratuitement ; les refuges seulement avec l'abonnement, avec légende et crédit « Refuges.info (CC BY-SA) ».
+- `courriers/04_refuges_info.md` : demande d'accord à l'équipe bénévole.
+
+**Vérifié.** API de Refuges.info ouverte, sans clé, contenus sous CC BY-SA 2.0, mais présentée comme un « service web personnel et non commercial » ([documentation](https://www.refuges.info/api/doc/)). Essai sur la Haute-Savoie : 429 points.
+
+**Avocat du diable.** Mettre des données de bénévoles dans une offre payante sans leur accord serait légal sous CC BY-SA, mais contraire à l'esprit affiché de leur API, et un mauvais signal pour une application qui veut la confiance des mairies. Décision proposée : **pas de publication des fichiers de refuges avant leur réponse** ; s'ils refusent l'usage payant, montrer les refuges gratuitement à tous.
+
+**À faire par Benjamin.** Après le dépôt des cartes : `python3 outils/construire_points_france.py --sans-refuges`, puis `rclone copy` à nouveau ; envoyer le courrier 04.

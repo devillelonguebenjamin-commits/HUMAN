@@ -66,7 +66,7 @@ struct CarteView: View {
                             .background(RoundedRectangle(cornerRadius: 12).fill(.regularMaterial))
                             .padding(.horizontal, 10)
                         }
-                        Legende()
+                        Legende(refuges: modele.abonnement.actif && CarteHorsLigne.aDesRefuges(telecharges: modele.cartes.telecharges))
                     }
                 }
             } else {
@@ -94,12 +94,22 @@ struct CarteView: View {
                 NavigationLink { CartesFranceView() } label: { Label("Cartes de France", systemImage: "square.and.arrow.down.on.square") }
             }
         }
-        .onAppear { style = CarteHorsLigne.styleLocal(telecharges: modele.cartes.telecharges) }
-        .onChange(of: modele.cartes.version) { _, _ in style = CarteHorsLigne.styleLocal(telecharges: modele.cartes.telecharges) }
+        .onAppear { recomposer() }
+        .onChange(of: modele.cartes.version) { _, _ in recomposer() }
+        .onChange(of: modele.abonnement.actif) { _, _ in recomposer() }
+    }
+
+    private func recomposer() {
+        style = CarteHorsLigne.styleLocal(telecharges: modele.cartes.telecharges, refuges: modele.abonnement.actif)
     }
 }
 
 private struct Legende: View {
+    var refuges = false
+    private let elementsRefuges: [(String, Color)] = [
+        ("Refuge gardé", Color(hex: 0x9A3412)), ("Cabane", Color(hex: 0x78350F)), ("Gîte d'étape", Color(hex: 0x00843D)),
+        ("Abri", Color(hex: 0x4A5A51)), ("Point d'eau", Color(hex: 0x005EB8)),
+    ]
     private let elements: [(String, Color)] = [
         ("Hôpital", Charte.secours), ("Pompiers", Color(hex: 0xC2410C)), ("Défibrillateur", Color(hex: 0x00A651)),
         ("Pharmacie", Charte.securite), ("Police", Charte.eau), ("Mairie", Charte.foret),
@@ -108,14 +118,14 @@ private struct Legende: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
             FlowLayout(spacing: 10) {
-                ForEach(elements, id: \.0) { nom, couleur in
+                ForEach(elements + (refuges ? elementsRefuges : []), id: \.0) { nom, couleur in
                     HStack(spacing: 4) {
                         Circle().fill(couleur).frame(width: 10, height: 10)
                         Text(nom).font(.caption2)
                     }
                 }
             }
-            Text("Hors ligne · © les contributeurs d'OpenStreetMap, Géo'DAE. Positions à vérifier sur place. En urgence vitale, appelez le 15 ou le 112.")
+            Text("Hors ligne · © les contributeurs d'OpenStreetMap, Géo'DAE\(refuges ? ", Refuges.info (CC BY-SA). État des refuges et de l'eau à vérifier avant de partir" : ""). Positions à vérifier sur place. En urgence vitale, appelez le 15 ou le 112.")
                 .font(.caption2).foregroundStyle(.secondary)
         }
         .padding(10)

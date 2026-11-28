@@ -22,27 +22,48 @@ enum CarteHorsLigne {
         return l
     }
 
-    /// Points de secours (hôpitaux, pompiers, pharmacies, défibrillateurs...) produits par outils/extraire_points.py.
-    /// Sans ce fichier, la carte s'affiche quand même, avec une couche de points vide.
-    static var fichierPoints: URL {
-        if let d = dossier,
-           let f = (try? FileManager.default.contentsOfDirectory(at: d, includingPropertiesForKeys: nil))?
-            .first(where: { $0.pathExtension == "geojson" }) {
-            return f
+    /// Points de secours (hôpitaux, pompiers, pharmacies, défibrillateurs...) : le fichier embarqué
+    /// (outils/extraire_points.py) et ceux téléchargés avec chaque département, fusionnés sans doublon.
+    /// Sans aucun fichier, la carte s'affiche quand même, avec une couche de points vide.
+    static func fichierPoints(telecharges: [String]) -> URL {
+        var sources: [Data] = []
+        if let d = dossier, let f = (try? FileManager.default.contentsOfDirectory(at: d, includingPropertiesForKeys: nil))?
+            .first(where: { $0.pathExtension == "geojson" }), let donnees = try? Data(contentsOf: f) {
+            sources.append(donnees)
         }
-        let vide = FileManager.default.temporaryDirectory.appendingPathComponent("points-vides.geojson")
-        try? #"{"type":"FeatureCollection","features":[]}"#.write(to: vide, atomically: true, encoding: .utf8)
-        return vide
+        sources += telecharges.compactMap { try? Data(contentsOf: GestionCartes.fichierPoints($0, "secours")) }
+        return ecrire(PointsCarte.fusionner(sources), nom: "points")
+    }
+
+    /// Refuges, cabanes, gîtes, abris et points d'eau (Refuges.info, CC BY-SA) des départements présents ; nil s'il n'y en a pas.
+    static func fichierRefuges(telecharges: [String]) -> URL? {
+        let sources = telecharges.compactMap { try? Data(contentsOf: GestionCartes.fichierPoints($0, "refuges")) }
+        return sources.isEmpty ? nil : ecrire(PointsCarte.fusionner(sources), nom: "refuges")
+    }
+
+    private static func ecrire(_ donnees: Data, nom: String) -> URL {
+        let f = FileManager.default.temporaryDirectory.appendingPathComponent("\(nom)-\(UUID().uuidString).geojson")
+        try? donnees.write(to: f)
+        return f
+    }
+
+    /// Y a-t-il des refuges dans les départements présents ? (pour la légende)
+    static func aDesRefuges(telecharges: [String]) -> Bool {
+        telecharges.contains { FileManager.default.fileExists(atPath: GestionCartes.fichierPoints($0, "refuges").path) }
     }
 
     /// Compose le style avec la vue d'ensemble et les départements présents, et renvoie son adresse (nil s'il n'y a aucune carte).
-    static func styleLocal(telecharges: [String] = []) -> URL? {
+    /// Les refuges et points d'eau ne s'affichent qu'avec l'abonnement (mode Randonnée).
+    static func styleLocal(telecharges: [String] = [], refuges: Bool = false) -> URL? {
         let deps = departements(telecharges: telecharges)
         guard let dossier, vueEnsemble != nil || !deps.isEmpty,
               let modele = try? Data(contentsOf: dossier.appendingPathComponent("style-modele.json")) else { return nil }
         var glyphes = dossier.appendingPathComponent("fonts").absoluteString.replacingOccurrences(of: "%20", with: " ")
         if glyphes.hasSuffix("/") { glyphes.removeLast() }
-        guard let style = try? StyleCarte.composer(modele: modele, vueEnsemble: vueEnsemble, departements: deps, points: fichierPoints, glyphes: glyphes) else { return nil }
+        guard let style = try? StyleCarte.composer(modele: modele, vueEnsemble: vueEnsemble, departements: deps,
+                                                   points: fichierPoints(telecharges: telecharges),
+                                                   refuges: refuges ? fichierRefuges(telecharges: telecharges) : nil,
+                                                   glyphes: glyphes) else { return nil }
         // Un nom de fichier nouveau à chaque composition : la carte sait qu'elle doit recharger son style.
         let sortie = FileManager.default.temporaryDirectory.appendingPathComponent("style-sijamais-\(UUID().uuidString).json")
         do {
