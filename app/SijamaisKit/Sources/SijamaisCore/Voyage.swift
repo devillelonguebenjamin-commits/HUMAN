@@ -59,10 +59,26 @@ public struct Voyage: Decodable, Sendable {
     public let pays: [Pays]
     public let depart: [Depart]
 
-    public static let integre: Voyage? = {
-        guard let u = Bundle.module.url(forResource: "voyage", withExtension: "json"), let d = try? Data(contentsOf: u) else { return nil }
-        return try? JSONDecoder().decode(Voyage.self, from: d)
-    }()
+    public static let integre: Voyage? = try? charger().get()
+
+    /// Explication lisible si le contenu ne se charge pas (affichée à l'écran, pour le diagnostic).
+    public static var erreurChargement: String? {
+        if case let .failure(e) = charger() { return e.message }
+        return nil
+    }
+
+    public struct ErreurChargement: Error { public let message: String }
+
+    static func charger() -> Result<Voyage, ErreurChargement> {
+        guard let u = Bundle.module.url(forResource: "voyage", withExtension: "json") else {
+            return .failure(.init(message: "Fichier voyage.json absent de l'application. Dans Xcode : Product, Clean Build Folder, puis relancer."))
+        }
+        do {
+            return .success(try JSONDecoder().decode(Voyage.self, from: Data(contentsOf: u)))
+        } catch {
+            return .failure(.init(message: "voyage.json illisible : \(error)"))
+        }
+    }
 
     public static let zones = ["Union européenne", "Europe", "Afrique", "Amériques", "Asie", "Océanie"]
 

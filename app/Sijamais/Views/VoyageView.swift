@@ -53,7 +53,12 @@ struct VoyageView: View {
             }
             .navigationTitle("Voyage")
         } else {
-            Text("Contenu du mode Voyage indisponible.").navigationTitle("Voyage")
+            VStack(spacing: 12) {
+                Text("Contenu du mode Voyage indisponible.").font(.headline)
+                Text(Voyage.erreurChargement ?? "").font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
+            }
+            .padding()
+            .navigationTitle("Voyage")
         }
     }
 }
