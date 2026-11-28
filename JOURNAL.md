@@ -624,3 +624,27 @@ Pendant le dépôt des cartes sur R2 (environ 5 heures chez Benjamin).
 **Avocat du diable.** Mettre des données de bénévoles dans une offre payante sans leur accord serait légal sous CC BY-SA, mais contraire à l'esprit affiché de leur API, et un mauvais signal pour une application qui veut la confiance des mairies. Décision proposée : **pas de publication des fichiers de refuges avant leur réponse** ; s'ils refusent l'usage payant, montrer les refuges gratuitement à tous.
 
 **À faire par Benjamin.** Après le dépôt des cartes : `python3 outils/construire_points_france.py --sans-refuges`, puis `rclone copy` à nouveau ; envoyer le courrier 04.
+
+## 2026-11-28 : bulletin avalanche
+
+**Vérifié ce jour.**
+- Descriptif technique du BRA (Météo-France, version du 26/10/2023, [PDF](https://donneespubliques.meteofrance.fr/client/document/descriptif_bulletinrisqueavalanche_formatxml_20231026_309.pdf)) : 36 bulletins (Alpes, Corse, Pyrénées et Andorre), diffusés tous les jours de début novembre à fin mai, vers 16 h, valables en général jusqu'au lendemain 18 h. Il décrit la structure du XML et donne la liste des massifs.
+- API : le chemin `https://public-api.meteofrance.fr/public/DPBRA/v1` existe. Sans clé, le serveur répond 401 et demande un en-tête `apikey`, alors qu'un chemin inventé renvoie 404. Le nom exact de la ressource par massif est [A VERIFIER] avec la clé : le script `outils/tester_bulletin_avalanche.py` le dira.
+- Gratuité de la clé, limite de requêtes et licence : [A VERIFIER] sur le portail.
+
+**Décision proposée (avocat du diable).** Le bulletin avalanche **protège** : le mettre derrière l'abonnement contredirait la règle « tout ce qui protège reste gratuit ». En plus, il est gratuit sur meteofrance.com. Donc :
+- **lecture gratuite** ;
+- **premium** : le risque du massif ajouté au message de la fiche de sortie.
+
+**Construit.**
+- Cœur : lecture du XML (risque par tranche d'altitude, pentes dangereuses, résumé, stabilité, qualité de la neige, enneigement, neige fraîche, aperçu météo, tendance du surlendemain). Le bulletin est déclaré périmé après son heure de validité. Les 36 massifs sont reliés à leurs départements. 82 tests réussis.
+- `serveur/bulletins-avalanche` : un Cloudflare Worker qui, trois fois par jour et de novembre à mai, récupère les 36 bulletins avec la clé gardée en secret, puis les dépose dans R2 (`bulletins/`). Un bulletin raté ne remplace jamais le précédent. **La clé n'est jamais dans l'application.**
+- Application, écran « Avalanches » (mode Randonnée, gratuit) :
+  - massifs suivis, massifs proposés d'après le département principal ou la trace, recherche ;
+  - pastille aux couleurs de l'échelle européenne, rose des pentes ;
+  - bandeau rouge si le bulletin est périmé ;
+  - « Source : Météo-France » ;
+  - lecture sans réseau du dernier bulletin téléchargé.
+- Fiche de sortie : choix du massif ; le risque du jour s'ajoute au message envoyé au proche.
+
+**À faire par Benjamin.** Créer le compte et la clé sur le portail des API de Météo-France ; tester la clé avec le script ; installer le Worker (`serveur/bulletins-avalanche/README.md`) ; lancer `xcodegen` (nouveaux fichiers) puis compiler.

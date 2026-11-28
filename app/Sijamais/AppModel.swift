@@ -36,6 +36,8 @@ final class AppModel {
     let abonnement: Abonnement
     /// Cartes hors ligne de toute la France (téléchargement par département).
     let cartes: GestionCartes
+    /// Bulletins avalanche de Météo-France, gardés pour le hors ligne.
+    let avalanche: BulletinsAvalanche
     /// Fiche de sortie du mode Randonnée (sur ce téléphone seulement).
     var ficheSortie: FicheSortie { didSet { enregistrer(ficheSortie, cle: Cle.ficheSortie) } }
     /// Trace GPX affichée sur la carte (premium), le temps de la session.
@@ -87,6 +89,7 @@ final class AppModel {
         enfants = EspaceEnfants.integre
         abonnement = Abonnement()
         cartes = GestionCartes()
+        avalanche = BulletinsAvalanche(adresseCartes: CartesFrance.integre?.adresseBase)
         let reformulateur = ModeleApple.creer()
         modeleAppleDisponible = reformulateur?.estDisponible ?? false
         assistant = Assistant(moteur: moteur, reformulateur: reformulateur)

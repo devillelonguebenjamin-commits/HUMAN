@@ -103,7 +103,8 @@ public struct FicheSortie: Codable, Sendable, Equatable {
     }
 
     /// Le message à envoyer au proche avant de partir.
-    public func message(fuseau: TimeZone = .current) -> String {
+    /// `avalanche` : la ligne du bulletin du massif (premium), ajoutée avant la consigne d'alerte.
+    public func message(fuseau: TimeZone = .current, avalanche: String? = nil) -> String {
         let f = DateFormatter()
         f.locale = Locale(identifier: "fr_FR")
         f.timeZone = fuseau
@@ -112,6 +113,7 @@ public struct FicheSortie: Codable, Sendable, Equatable {
                  "Départ : \(f.string(from: depart)).", "Retour prévu : \(f.string(from: retour))."]
         l.append(participants <= 1 ? "Je pars seul(e)." : "Nous sommes \(participants).")
         if !vehicule.isEmpty { l.append("Véhicule garé : \(vehicule).") }
+        if let avalanche, !avalanche.isEmpty { l.append(avalanche) }
         l.append("Si tu n'as pas de nouvelles de moi une heure après l'heure de retour, appelle le 112 et donne-leur ce message.")
         return l.joined(separator: "\n")
     }

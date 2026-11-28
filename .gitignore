@@ -13,3 +13,4 @@ app/SijamaisKit/.swiftpm/
 *.pmtiles
 *.geojson
 cartes_france/
+essais/

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml-stylesheet type="text/xsl" href="../web/bra.xslt"?>
+<!-- Exemple du descriptif technique de Météo-France (version du 26/10/2023), recopié pour les tests. -->
+<BULLETINS_NEIGE_AVALANCHE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" TYPEBULLETIN="BRA" ID="8" MASSIF="Belledonne" DATEBULLETIN="2023-10-26T10:00:00" DATEECHEANCE="2023-10-27T18:00:00" DATEVALIDITE="2023-10-27T18:00:00" DATEDIFFUSION="2023-10-26T09:24:35" AMENDEMENT="false">
+ <DateValidite>2023-10-27T18:00:00</DateValidite>
+ <CARTOUCHERISQUE>
+  <RISQUE RISQUE1="2" EVOLURISQUE1="" LOC1="&lt;2100" ALTITUDE="2100" RISQUE2="3" EVOLURISQUE2="2" LOC2="&gt;2100" RISQUEMAXI="3" COMMENTAIRE="Au-dessus de 2100m risque marqué évoluant en risque limité, plus bas risque limité." RISQUEMAXIJ2="2" DATE_RISQUE_J2="2023-10-28T00:00:00"/>
+  <PENTE NE="true" E="false" SE="false" S="true" SW="false" W="false" NW="true" N="false" COMMENTAIRE="Test affichage"/>
+  <ACCIDENTEL>et synthèse des risques de déclenchement skieur</ACCIDENTEL>
+  <NATUREL>TEST Diffusion bulletin- texte de synthèse des risques de départs spontanés</NATUREL>
+  <RESUME>Départs spontanés : TEST Diffusion bulletin- texte de synthèse des risques de départs spontanés
+Déclenchements skieurs : et synthèse des risques de déclenchement skieur</RESUME>
+  <RisqueJ2>risque limité</RisqueJ2>
+  <CommentaireRisqueJ2>Test diffusion et affichage Appli
+Tendance des risques à J+2, facteur principal de l'évolution</CommentaireRisqueJ2>
+  <AVIS/>
+  <VIGILANCE/>
+  <ImageRisque>montagne_risques_8.png</ImageRisque>
+  <ImagePente>rose_pentes_8.png</ImagePente>
+ </CARTOUCHERISQUE>
+ <STABILITE>
+  <SitAvalTyp SAT1="1" SAT2=""/>
+  <TEXTE>Bloc de texte stabilité - Titre de la situation nivologique
+
+DEPARTS SPONTANES : Bloc de texte paragraphe 1
+
+DECLENCHEMENTS PROVOQUES : Bloc de texte paragraphe 2</TEXTE>
+ </STABILITE>
+ <QUALITE>
+  <TEXTE>Bloc de texte qualité de la neige. Limite d'enneigement skiable, qualification de l'enneigement, état de la neige de surface.</TEXTE>
+ </QUALITE>
+ <ENNEIGEMENT DATE="2023-10-26T00:00:00" LimiteSud="1800" LimiteNord="1600">
+  <NIVEAU ALTI="1500" N="0" S="0"/>
+  <NIVEAU ALTI="2000" N="20" S="10"/>
+  <NIVEAU ALTI="2500" N="40" S="15"/>
+  <ImageEnneigement>montagne_enneigement_8.png</ImageEnneigement>
+ </ENNEIGEMENT>
+ <NEIGEFRAICHE ALTITUDESS="1800">
+  <NEIGE24H DATE="2023-10-22T00:00:00" SS24Min="0" SS24Max="5"/>
+  <NEIGE24H DATE="2023-10-23T00:00:00" SS24Min="0" SS24Max="0"/>
+  <NEIGE24H DATE="2023-10-24T00:00:00" SS24Min="20" SS24Max="30"/>
+  <NEIGE24H DATE="2023-10-25T00:00:00" SS24Min="0" SS24Max="5"/>
+  <NEIGE24H DATE="2023-10-26T00:00:00" SS24Min="0" SS24Max="0"/>
+  <NEIGE24H DATE="2023-10-27T00:00:00" SS24Min="5" SS24Max="10"/>
+  <ImageNeigeFraiche>graphe_neige_fraiche_8.png</ImageNeigeFraiche>
+ </NEIGEFRAICHE>
+ <METEO ALTITUDEVENT1="2000" ALTITUDEVENT2="3000">
+  <COMMENTAIRE>Précision sur les conditions météo en complément du tableau, peut s'afficher sur 2 lignes.</COMMENTAIRE>
+  <ECHEANCE DATE="2023-10-27T06:00:00" FF1="5" DD1="SO" FF2="20" DD2="S" ISO0="2700" PLUIENEIGE="2400" TEMPSSENSIBLE="71" MERNUAGES="-1"/>
+  <ECHEANCE DATE="2023-10-27T12:00:00" FF1="15" DD1="SO" FF2="30" DD2="SO" ISO0="3000" PLUIENEIGE="2600" TEMPSSENSIBLE="3" MERNUAGES="-1"/>
+  <ECHEANCE DATE="2023-10-27T18:00:00" FF1="5" DD1="Vrb" FF2="20" DD2="SO" ISO0="2800" PLUIENEIGE="2400" TEMPSSENSIBLE="51" MERNUAGES="-1"/>
+  <ECHEANCE DATE="2023-10-28T00:00:00" FF1="0" DD1="Vrb" FF2="10" DD2="O" ISO0="1900" PLUIENEIGE="-1" TEMPSSENSIBLE="61" MERNUAGES="-1"/>
+  <ImageMeteo>apercu_meteo_8.png</ImageMeteo>
+ </METEO>
+ <BSH>
+  <METEO>
+   <ECHEANCE DATE="2023-10-20T06:00:00" FF1="35" DD1="SE" FF2="30" DD2="SE" ISO0="3600" PLUIENEIGE="3300" TEMPSSENSIBLE="71"/>
+  </METEO>
+  <ENNEIGEMENTS>
+   <ENNEIGEMENT DATE="2023-10-20T00:00:00" LimiteSud="1800" LimiteNord="1600">
+    <NIVEAU ALTI="1500" N="0" S="0"/>
+   </ENNEIGEMENT>
+  </ENNEIGEMENTS>
+  <NEIGEFRAICHE ALTITUDESS="1800">
+   <NEIGE24H DATE="2023-10-20T00:00:00" SS24Min="10" SS24Max="20"/>
+  </NEIGEFRAICHE>
+  <RISQUES>
+   <RISQUE DATE="2023-10-20T00:00:00" RISQUEMAXI="1"/>
+  </RISQUES>
+ </BSH>
+ <TexteMeta>
+  <Partenaires>Rédigé par Météo-France avec la contribution des observateurs du réseau nivo-météorologique.</Partenaires>
+ </TexteMeta>
+</BULLETINS_NEIGE_AVALANCHE>

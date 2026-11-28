@@ -19,6 +19,14 @@ struct RandonneeView: View {
             }
 
             Section {
+                NavigationLink { AvalancheView() } label: {
+                    Label("Bulletin avalanche du jour", systemImage: "snowflake")
+                }
+            } footer: {
+                Text("Gratuit : le bulletin de Météo-France pour 36 massifs, de novembre à mai, lisible sans réseau une fois téléchargé.")
+            }
+
+            Section {
                 BandeauRetour()
                 if modele.abonnement.actif {
                     NavigationLink { FicheSortieView() } label: { Label("Ma fiche de sortie", systemImage: "map") }
@@ -186,12 +194,29 @@ struct FicheSortieView: View {
                 Stepper("Participants : \(modele.ficheSortie.participants)", value: $modele.ficheSortie.participants, in: 1...30)
                 TextField("Véhicule garé (lieu, plaque)", text: $modele.ficheSortie.vehicule)
             }
+            Section {
+                Picker("Massif", selection: Binding(get: { modele.avalanche.massifSortie }, set: { modele.avalanche.massifSortie = $0 })) {
+                    Text("Aucun (sortie sans neige)").tag(Int?.none)
+                    ForEach(BulletinAvalanche.massifs) { m in Text(m.nom).tag(Int?.some(m.id)) }
+                }
+                if let id = modele.avalanche.massifSortie {
+                    if let ligne = modele.avalanche.ligneSortie {
+                        Text(ligne).font(.footnote)
+                    } else {
+                        Button("Télécharger le bulletin du jour") { Task { await modele.avalanche.telecharger(id) } }
+                    }
+                }
+            } header: {
+                Text("Neige et avalanches")
+            } footer: {
+                Text("Le risque du jour s'ajoute au message envoyé à votre proche.")
+            }
             Section("Le proche à prévenir") {
                 TextField("Nom", text: $modele.ficheSortie.procheNom)
                 TextField("Téléphone", text: $modele.ficheSortie.procheTelephone).keyboardType(.phonePad)
             }
             Section {
-                let message = modele.ficheSortie.message()
+                let message = modele.ficheSortie.message(avalanche: modele.avalanche.ligneSortie)
                 if !modele.ficheSortie.telephoneNumerique.isEmpty,
                    let corps = message.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
                    let u = URL(string: "sms:\(modele.ficheSortie.telephoneNumerique)&body=\(corps)") {
@@ -201,7 +226,7 @@ struct FicheSortieView: View {
             } header: {
                 Text("Prévenir avant de partir")
             } footer: {
-                Text(modele.ficheSortie.message()).font(.caption)
+                Text(modele.ficheSortie.message(avalanche: modele.avalanche.ligneSortie)).font(.caption)
             }
             Section {
                 BandeauRetour()
