@@ -15,7 +15,7 @@ let package = Package(
         .target(
             name: "SijamaisCore",
             // Parcours guidé et liste d'équipement : toujours dans l'application, sans relancer XcodeGen.
-            resources: [.copy("Ressources/parcours.json"), .copy("Ressources/catalogue.json"), .copy("Ressources/plan_familial.json"), .copy("Ressources/enfants.json"), .copy("Ressources/conditions_utilisation.md"), .copy("Ressources/politique_confidentialite.md"), .copy("Ressources/departements.json")]
+            resources: [.copy("Ressources/parcours.json"), .copy("Ressources/catalogue.json"), .copy("Ressources/plan_familial.json"), .copy("Ressources/enfants.json"), .copy("Ressources/conditions_utilisation.md"), .copy("Ressources/politique_confidentialite.md"), .copy("Ressources/departements.json"), .copy("Ressources/voyage.json")]
         ),
         .testTarget(
             name: "SijamaisCoreTests",

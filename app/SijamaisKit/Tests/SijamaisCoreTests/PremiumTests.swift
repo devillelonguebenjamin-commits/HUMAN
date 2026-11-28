@@ -26,6 +26,6 @@ final class PremiumTests: XCTestCase {
     /// Les univers annoncés : l'Espace enfants est disponible, les autres annoncés « bientôt ».
     func testLesUnivers() {
         XCTAssertEqual(OffrePremium.univers.map(\.id), ["enfants", "randonnee", "voyage", "mer"])
-        XCTAssertEqual(OffrePremium.univers.filter(\.disponible).map(\.id), ["enfants", "randonnee"])
+        XCTAssertEqual(OffrePremium.univers.filter(\.disponible).map(\.id), ["enfants", "randonnee", "voyage"])
     }
 }

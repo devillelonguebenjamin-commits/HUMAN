@@ -58,6 +58,9 @@ struct AccueilView: View {
                     Button { enfantsOuvert = true } label: {
                         Tuile(titre: "Espace enfants", sousTitre: "Apprendre à alerter, en jouant", symbole: "figure.2.and.child.holdinghands", signal: .eau)
                     }
+                    NavigationLink { VoyageView() } label: {
+                        Tuile(titre: "Voyage", sousTitre: "Urgences à l'étranger", symbole: "airplane", signal: .eau)
+                    }
                     NavigationLink { PremiumView() } label: {
                         Tuile(titre: "Premium", sousTitre: modele.abonnement.actif ? "Abonnement actif" : "Enfants, randonnée, voyage, mer", symbole: "star.fill", signal: .feu)
                     }

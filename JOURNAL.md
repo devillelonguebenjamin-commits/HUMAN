@@ -648,3 +648,26 @@ Pendant le dépôt des cartes sur R2 (environ 5 heures chez Benjamin).
 - Fiche de sortie : choix du massif ; le risque du jour s'ajoute au message envoyé au proche.
 
 **À faire par Benjamin.** Créer le compte et la clé sur le portail des API de Météo-France ; tester la clé avec le script ; installer le Worker (`serveur/bulletins-avalanche/README.md`) ; lancer `xcodegen` (nouveaux fichiers) puis compiler.
+
+## 2026-11-28 : mode Voyage
+
+**Retour de Benjamin.** Les cartes se téléchargent dans l'application, avec les points de secours : « c'est parfait ». Il a vérifié sur R2 : 101 départements, 11,1 Go, empreintes conformes. La clé Météo-France est en attente : le portail refuse la connexion après la création du compte, un problème connu. L'ancien accès libre aux bulletins ne publie plus rien depuis le 3 novembre 2026.
+
+**Construit.**
+- Contenu (`outils/construire_voyage.py`, `contenus/voyage/`) :
+  - numéros d'urgence de 66 pays ;
+  - 20 phrases en 10 langues (anglais, espagnol, italien, allemand, portugais, néerlandais, grec, croate, turc, arabe) ;
+  - liste de départ en 12 points.
+- Écran Voyage, avec une tuile sur l'accueil et un lien dans Premium :
+  - pays de destination, numéros avec bouton d'appel, « À confirmer » sur les numéros non vérifiés ;
+  - phrases affichées en grand, luminosité au maximum, arabe de droite à gauche ;
+  - liste de départ à cocher ;
+  - dossier de voyage chiffré dans le trousseau, ouvert avec Face ID ou le code de l'iPhone, avec une fiche santé traduite à montrer à un soignant.
+- Gratuit : numéros, 11 phrases vitales, Ariane. Premium : phrases pratiques, liste complète, dossier.
+- 86 tests réussis.
+
+**Avocat du diable.**
+- Seul le 112 dans l'UE est vérifié. Les numéros hors UE viennent de ma mémoire : il faut les contrôler pays par pays avant la sortie publique, et l'application le signale d'ici là.
+- Les traductions sont les miennes : relecture native obligatoire.
+
+**À faire par Benjamin.** Lancer `xcodegen` (nouveaux fichiers, Face ID), compiler, essayer le mode Voyage ; trouver des relecteurs natifs (famille, amis, collègues) pour les 10 langues.

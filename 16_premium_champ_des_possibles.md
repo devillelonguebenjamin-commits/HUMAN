@@ -59,6 +59,8 @@ Règle inchangée : **tout ce qui protège reste gratuit** (alerter, consignes o
 
 Phrases d'urgence à montrer, dans 10 langues, relues par des traducteurs ; dossier de voyage hors ligne protégé par Face ID ; ambassades de France en données ouvertes ; liste de départ (Ariane, carte européenne d'assurance maladie, médecin) ; numéros d'urgence par pays vérifiés un par un.
 
+**Construit le 28/11/2026** : numéros d'urgence de 66 pays (112 vérifié pour l'UE, les autres « à confirmer »), 20 phrases en 10 langues à montrer en grand (11 vitales gratuites, traductions à faire relire), liste de départ, dossier de voyage chiffré avec Face ID et fiche santé traduite. Restent : ambassades sur la carte, vérification des numéros, relecture des traductions. Détails : `contenus/voyage/README.md`.
+
 ### 4.3 Mer
 
 « Mon bateau » et le matériel obligatoire de la Division 240 avec les dates de péremption ; message MAYDAY prérempli ; homme à la mer avec chronomètre et position ; plan de navigation laissé à terre.
@@ -84,7 +86,7 @@ Phrases d'urgence à montrer, dans 10 langues, relues par des traducteurs ; doss
 3. Refuges et points d'eau hors ligne (Refuges.info), avec crédit visible. Construit le 28/11/2026, en attente de l'accord de Refuges.info.
 4. Bulletin avalanche. Construit le 28/11/2026 ; en service dès que la clé Météo-France et le Worker sont en place.
 5. Rappels de péremption des stocks, et plusieurs profils d'enfants.
-6. Voyage, puis Mer.
+6. Voyage (construit le 28/11/2026, vérifications en cours), puis Mer.
 
 ## 6. Avocat du diable
 

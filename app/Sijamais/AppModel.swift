@@ -32,6 +32,8 @@ final class AppModel {
     let planFamilial: PlanFamilial?
     /// Espace enfants (contenu embarqué dans SijamaisCore).
     let enfants: EspaceEnfants?
+    /// Mode Voyage : numéros par pays, phrases, liste de départ.
+    let voyage: Voyage?
     /// Abonnement premium (StoreKit 2).
     let abonnement: Abonnement
     /// Cartes hors ligne de toute la France (téléchargement par département).
@@ -87,6 +89,7 @@ final class AppModel {
         parcours = Parcours.integre
         planFamilial = PlanFamilial.integre
         enfants = EspaceEnfants.integre
+        voyage = Voyage.integre
         abonnement = Abonnement()
         cartes = GestionCartes()
         avalanche = BulletinsAvalanche(adresseCartes: CartesFrance.integre?.adresseBase)

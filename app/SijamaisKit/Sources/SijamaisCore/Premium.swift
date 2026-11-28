@@ -43,8 +43,8 @@ public enum OffrePremium {
                 apports: ["11 modules de jeu en plus des modules gratuits", "Deux tranches d'âge : 6 à 10 ans et 10 à 14 ans", "Badges et suivi par le parent"]),
         Univers(id: "randonnee", titre: "Randonnée et montagne", resume: "Partir préparé, être retrouvé", symbole: "mountain.2.fill", disponible: true,
                 apports: ["Mes traces GPX : ouvrez une trace de Komoot, Visorando, Strava ou Garmin ; distance, dénivelé, profil, temps de marche estimé", "Fiche de sortie remplie depuis la trace et envoyée à un proche", "Compte à rebours du retour, avec rappel si vous tardez", "Cartes hors ligne de toute la France, département par département, avec vos traces dessus", "Refuges, cabanes, gîtes, abris et points d'eau sur la carte hors ligne (Refuges.info)", "Le risque avalanche du massif ajouté au message de la fiche de sortie"]),
-        Univers(id: "voyage", titre: "Voyage à l'étranger", resume: "Se faire comprendre et retrouver l'ambassade", symbole: "airplane", disponible: false,
-                apports: ["Phrases d'urgence à montrer, dans la langue du pays", "Dossier de voyage hors ligne, protégé par Face ID", "Ambassades et hôpitaux sur la carte"]),
+        Univers(id: "voyage", titre: "Voyage à l'étranger", resume: "Se faire comprendre et être prêt", symbole: "airplane", disponible: true,
+                apports: ["20 phrases à montrer en grand, dans 10 langues (les 11 phrases vitales restent gratuites)", "Dossier de voyage hors ligne, protégé par Face ID, avec une fiche santé traduite", "Liste de départ complète : papiers, assurance, santé, carte européenne d'assurance maladie", "Bientôt : ambassades de France sur la carte"]),
         Univers(id: "mer", titre: "Navigation en mer", resume: "Le bon matériel et le bon message", symbole: "sailboat.fill", disponible: false,
                 apports: ["« Mon bateau » : le matériel obligatoire à cocher", "Message MAYDAY prérempli", "Homme à la mer : fiche et chronomètre"]),
     ]
@@ -58,6 +58,7 @@ public enum OffrePremium {
         "« J'ai besoin d'aide » et les modules qui protègent, dans l'Espace enfants",
         "« Alerter les secours en montagne » : position GPS et message prêt à lire",
         "Le bulletin avalanche du jour de Météo-France, pour 36 massifs",
+        "En voyage : numéros d'urgence de 66 pays et 11 phrases vitales en 10 langues",
     ]
 
     /// Un module de l'Espace enfants est ouvert s'il est gratuit, ou si le foyer est abonné.

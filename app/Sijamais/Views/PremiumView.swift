@@ -27,6 +27,8 @@ struct PremiumView: View {
                 ForEach(OffrePremium.univers) { u in
                     if u.id == "randonnee" {
                         NavigationLink { RandonneeView() } label: { CarteUnivers(univers: u) }
+                    } else if u.id == "voyage" {
+                        NavigationLink { VoyageView() } label: { CarteUnivers(univers: u) }
                     } else {
                         CarteUnivers(univers: u)
                     }

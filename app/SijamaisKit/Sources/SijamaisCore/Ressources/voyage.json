@@ -1,0 +1,1724 @@
+{
+ "version": "1.0",
+ "date": "2026-11-28",
+ "avertissement": "Numéros marqués « à confirmer » : vérifiez sur la fiche Conseils aux voyageurs du pays avant de partir.",
+ "langues": [
+  {
+   "code": "en",
+   "nom": "Anglais",
+   "autonyme": "English",
+   "relu": false
+  },
+  {
+   "code": "es",
+   "nom": "Espagnol",
+   "autonyme": "Español",
+   "relu": false
+  },
+  {
+   "code": "it",
+   "nom": "Italien",
+   "autonyme": "Italiano",
+   "relu": false
+  },
+  {
+   "code": "de",
+   "nom": "Allemand",
+   "autonyme": "Deutsch",
+   "relu": false
+  },
+  {
+   "code": "pt",
+   "nom": "Portugais",
+   "autonyme": "Português",
+   "relu": false
+  },
+  {
+   "code": "nl",
+   "nom": "Néerlandais",
+   "autonyme": "Nederlands",
+   "relu": false
+  },
+  {
+   "code": "el",
+   "nom": "Grec",
+   "autonyme": "Ελληνικά",
+   "relu": false
+  },
+  {
+   "code": "hr",
+   "nom": "Croate",
+   "autonyme": "Hrvatski",
+   "relu": false
+  },
+  {
+   "code": "tr",
+   "nom": "Turc",
+   "autonyme": "Türkçe",
+   "relu": false
+  },
+  {
+   "code": "ar",
+   "nom": "Arabe",
+   "autonyme": "العربية",
+   "relu": false
+  }
+ ],
+ "phrases": [
+  {
+   "id": "aide",
+   "gratuit": true,
+   "fr": "Aidez-moi, s'il vous plaît !",
+   "traductions": {
+    "en": "Help me, please!",
+    "es": "¡Ayúdeme, por favor!",
+    "it": "Mi aiuti, per favore!",
+    "de": "Helfen Sie mir, bitte!",
+    "pt": "Ajude-me, por favor!",
+    "nl": "Help me, alstublieft!",
+    "el": "Βοηθήστε με, παρακαλώ!",
+    "hr": "Pomozite mi, molim vas!",
+    "tr": "Lütfen bana yardım edin!",
+    "ar": "ساعدوني من فضلكم!"
+   }
+  },
+  {
+   "id": "ambulance",
+   "gratuit": true,
+   "fr": "Appelez une ambulance !",
+   "traductions": {
+    "en": "Call an ambulance!",
+    "es": "¡Llame a una ambulancia!",
+    "it": "Chiami un'ambulanza!",
+    "de": "Rufen Sie einen Krankenwagen!",
+    "pt": "Chame uma ambulância!",
+    "nl": "Bel een ambulance!",
+    "el": "Καλέστε ασθενοφόρο!",
+    "hr": "Zovite hitnu pomoć!",
+    "tr": "Ambulans çağırın!",
+    "ar": "اتصلوا بالإسعاف!"
+   }
+  },
+  {
+   "id": "police",
+   "gratuit": true,
+   "fr": "Appelez la police !",
+   "traductions": {
+    "en": "Call the police!",
+    "es": "¡Llame a la policía!",
+    "it": "Chiami la polizia!",
+    "de": "Rufen Sie die Polizei!",
+    "pt": "Chame a polícia!",
+    "nl": "Bel de politie!",
+    "el": "Καλέστε την αστυνομία!",
+    "hr": "Zovite policiju!",
+    "tr": "Polisi arayın!",
+    "ar": "اتصلوا بالشرطة!"
+   }
+  },
+  {
+   "id": "incendie",
+   "gratuit": true,
+   "fr": "Il y a un incendie !",
+   "traductions": {
+    "en": "There is a fire!",
+    "es": "¡Hay un incendio!",
+    "it": "C'è un incendio!",
+    "de": "Es brennt!",
+    "pt": "Há um incêndio!",
+    "nl": "Er is brand!",
+    "el": "Υπάρχει φωτιά!",
+    "hr": "Izbio je požar!",
+    "tr": "Yangın var!",
+    "ar": "يوجد حريق!"
+   }
+  },
+  {
+   "id": "inconscient",
+   "gratuit": true,
+   "fr": "Cette personne a perdu connaissance.",
+   "traductions": {
+    "en": "This person has lost consciousness.",
+    "es": "Esta persona ha perdido el conocimiento.",
+    "it": "Questa persona ha perso conoscenza.",
+    "de": "Diese Person ist bewusstlos.",
+    "pt": "Esta pessoa perdeu a consciência.",
+    "nl": "Deze persoon is bewusteloos.",
+    "el": "Αυτό το άτομο έχασε τις αισθήσεις του.",
+    "hr": "Ova osoba je izgubila svijest.",
+    "tr": "Bu kişi bilincini kaybetti.",
+    "ar": "هذا الشخص فقد الوعي."
+   }
+  },
+  {
+   "id": "blesse",
+   "gratuit": true,
+   "fr": "Je suis blessé(e).",
+   "traductions": {
+    "en": "I am injured.",
+    "es": "Estoy herido/a.",
+    "it": "Sono ferito/a.",
+    "de": "Ich bin verletzt.",
+    "pt": "Estou ferido/a.",
+    "nl": "Ik ben gewond.",
+    "el": "Είμαι τραυματισμένος/η.",
+    "hr": "Ozlijeđen/a sam.",
+    "tr": "Yaralandım.",
+    "ar": "أنا مصاب/مصابة."
+   }
+  },
+  {
+   "id": "medecin",
+   "gratuit": true,
+   "fr": "J'ai besoin d'un médecin.",
+   "traductions": {
+    "en": "I need a doctor.",
+    "es": "Necesito un médico.",
+    "it": "Ho bisogno di un medico.",
+    "de": "Ich brauche einen Arzt.",
+    "pt": "Preciso de um médico.",
+    "nl": "Ik heb een dokter nodig.",
+    "el": "Χρειάζομαι γιατρό.",
+    "hr": "Trebam liječnika.",
+    "tr": "Bir doktora ihtiyacım var.",
+    "ar": "أحتاج إلى طبيب."
+   }
+  },
+  {
+   "id": "hopital",
+   "gratuit": true,
+   "fr": "Où est l'hôpital le plus proche ?",
+   "traductions": {
+    "en": "Where is the nearest hospital?",
+    "es": "¿Dónde está el hospital más cercano?",
+    "it": "Dov'è l'ospedale più vicino?",
+    "de": "Wo ist das nächste Krankenhaus?",
+    "pt": "Onde fica o hospital mais próximo?",
+    "nl": "Waar is het dichtstbijzijnde ziekenhuis?",
+    "el": "Πού είναι το πλησιέστερο νοσοκομείο;",
+    "hr": "Gdje je najbliža bolnica?",
+    "tr": "En yakın hastane nerede?",
+    "ar": "أين أقرب مستشفى؟"
+   }
+  },
+  {
+   "id": "allergie",
+   "gratuit": true,
+   "fr": "J'ai une allergie grave.",
+   "traductions": {
+    "en": "I have a severe allergy.",
+    "es": "Tengo una alergia grave.",
+    "it": "Ho una grave allergia.",
+    "de": "Ich habe eine schwere Allergie.",
+    "pt": "Tenho uma alergia grave.",
+    "nl": "Ik heb een ernstige allergie.",
+    "el": "Έχω σοβαρή αλλεργία.",
+    "hr": "Imam tešku alergiju.",
+    "tr": "Ciddi bir alerjim var.",
+    "ar": "لدي حساسية شديدة."
+   }
+  },
+  {
+   "id": "enfant",
+   "gratuit": true,
+   "fr": "Mon enfant a disparu.",
+   "traductions": {
+    "en": "My child is missing.",
+    "es": "Mi hijo/hija ha desaparecido.",
+    "it": "Mio figlio/mia figlia è scomparso/a.",
+    "de": "Mein Kind ist verschwunden.",
+    "pt": "O meu filho/a minha filha desapareceu.",
+    "nl": "Mijn kind is vermist.",
+    "el": "Το παιδί μου χάθηκε.",
+    "hr": "Moje dijete je nestalo.",
+    "tr": "Çocuğum kayboldu.",
+    "ar": "طفلي مفقود."
+   }
+  },
+  {
+   "id": "langue",
+   "gratuit": true,
+   "fr": "Je ne parle pas votre langue. Je viens de France.",
+   "traductions": {
+    "en": "I don't speak your language. I am from France.",
+    "es": "No hablo su idioma. Soy de Francia.",
+    "it": "Non parlo la sua lingua. Vengo dalla Francia.",
+    "de": "Ich spreche Ihre Sprache nicht. Ich komme aus Frankreich.",
+    "pt": "Não falo a sua língua. Venho da França.",
+    "nl": "Ik spreek uw taal niet. Ik kom uit Frankrijk.",
+    "el": "Δεν μιλάω τη γλώσσα σας. Είμαι από τη Γαλλία.",
+    "hr": "Ne govorim vaš jezik. Dolazim iz Francuske.",
+    "tr": "Dilinizi konuşmuyorum. Fransa'dan geliyorum.",
+    "ar": "لا أتكلم لغتكم. أنا من فرنسا."
+   }
+  },
+  {
+   "id": "pharmacie",
+   "gratuit": false,
+   "fr": "Où est la pharmacie la plus proche ?",
+   "traductions": {
+    "en": "Where is the nearest pharmacy?",
+    "es": "¿Dónde está la farmacia más cercana?",
+    "it": "Dov'è la farmacia più vicina?",
+    "de": "Wo ist die nächste Apotheke?",
+    "pt": "Onde fica a farmácia mais próxima?",
+    "nl": "Waar is de dichtstbijzijnde apotheek?",
+    "el": "Πού είναι το πλησιέστερο φαρμακείο;",
+    "hr": "Gdje je najbliža ljekarna?",
+    "tr": "En yakın eczane nerede?",
+    "ar": "أين أقرب صيدلية؟"
+   }
+  },
+  {
+   "id": "diabete",
+   "gratuit": false,
+   "fr": "J'ai du diabète.",
+   "traductions": {
+    "en": "I have diabetes.",
+    "es": "Tengo diabetes.",
+    "it": "Ho il diabete.",
+    "de": "Ich habe Diabetes.",
+    "pt": "Tenho diabetes.",
+    "nl": "Ik heb diabetes.",
+    "el": "Έχω διαβήτη.",
+    "hr": "Imam dijabetes.",
+    "tr": "Diyabetim var.",
+    "ar": "عندي مرض السكري."
+   }
+  },
+  {
+   "id": "enceinte",
+   "gratuit": false,
+   "fr": "Je suis enceinte.",
+   "traductions": {
+    "en": "I am pregnant.",
+    "es": "Estoy embarazada.",
+    "it": "Sono incinta.",
+    "de": "Ich bin schwanger.",
+    "pt": "Estou grávida.",
+    "nl": "Ik ben zwanger.",
+    "el": "Είμαι έγκυος.",
+    "hr": "Trudna sam.",
+    "tr": "Hamileyim.",
+    "ar": "أنا حامل."
+   }
+  },
+  {
+   "id": "medicament",
+   "gratuit": false,
+   "fr": "Je prends ce médicament tous les jours.",
+   "traductions": {
+    "en": "I take this medicine every day.",
+    "es": "Tomo este medicamento todos los días.",
+    "it": "Prendo questo farmaco tutti i giorni.",
+    "de": "Ich nehme dieses Medikament jeden Tag.",
+    "pt": "Tomo este medicamento todos os dias.",
+    "nl": "Ik neem dit medicijn elke dag.",
+    "el": "Παίρνω αυτό το φάρμακο κάθε μέρα.",
+    "hr": "Ovaj lijek uzimam svaki dan.",
+    "tr": "Bu ilacı her gün kullanıyorum.",
+    "ar": "آخذ هذا الدواء كل يوم."
+   }
+  },
+  {
+   "id": "passeport",
+   "gratuit": false,
+   "fr": "J'ai perdu mon passeport.",
+   "traductions": {
+    "en": "I have lost my passport.",
+    "es": "He perdido mi pasaporte.",
+    "it": "Ho perso il passaporto.",
+    "de": "Ich habe meinen Reisepass verloren.",
+    "pt": "Perdi o meu passaporte.",
+    "nl": "Ik ben mijn paspoort kwijt.",
+    "el": "Έχασα το διαβατήριό μου.",
+    "hr": "Izgubio/la sam putovnicu.",
+    "tr": "Pasaportumu kaybettim.",
+    "ar": "فقدت جواز سفري."
+   }
+  },
+  {
+   "id": "vol",
+   "gratuit": false,
+   "fr": "On m'a volé mes affaires.",
+   "traductions": {
+    "en": "My belongings have been stolen.",
+    "es": "Me han robado mis cosas.",
+    "it": "Mi hanno rubato le mie cose.",
+    "de": "Meine Sachen wurden gestohlen.",
+    "pt": "Roubaram as minhas coisas.",
+    "nl": "Mijn spullen zijn gestolen.",
+    "el": "Μου έκλεψαν τα πράγματά μου.",
+    "hr": "Ukrali su mi stvari.",
+    "tr": "Eşyalarım çalındı.",
+    "ar": "سُرقت أغراضي."
+   }
+  },
+  {
+   "id": "ambassade",
+   "gratuit": false,
+   "fr": "Où est l'ambassade (ou le consulat) de France ?",
+   "traductions": {
+    "en": "Where is the French embassy (or consulate)?",
+    "es": "¿Dónde está la embajada (o el consulado) de Francia?",
+    "it": "Dov'è l'ambasciata (o il consolato) di Francia?",
+    "de": "Wo ist die französische Botschaft (oder das Konsulat)?",
+    "pt": "Onde fica a embaixada (ou o consulado) da França?",
+    "nl": "Waar is de Franse ambassade (of het consulaat)?",
+    "el": "Πού είναι η πρεσβεία (ή το προξενείο) της Γαλλίας;",
+    "hr": "Gdje je francusko veleposlanstvo (ili konzulat)?",
+    "tr": "Fransa büyükelçiliği (veya konsolosluğu) nerede?",
+    "ar": "أين سفارة فرنسا (أو القنصلية)؟"
+   }
+  },
+  {
+   "id": "perdu",
+   "gratuit": false,
+   "fr": "Je suis perdu(e). Pouvez-vous m'aider ?",
+   "traductions": {
+    "en": "I am lost. Can you help me?",
+    "es": "Estoy perdido/a. ¿Puede ayudarme?",
+    "it": "Mi sono perso/a. Può aiutarmi?",
+    "de": "Ich habe mich verlaufen. Können Sie mir helfen?",
+    "pt": "Estou perdido/a. Pode ajudar-me?",
+    "nl": "Ik ben verdwaald. Kunt u mij helpen?",
+    "el": "Έχω χαθεί. Μπορείτε να με βοηθήσετε;",
+    "hr": "Izgubio/la sam se. Možete li mi pomoći?",
+    "tr": "Kayboldum. Bana yardım edebilir misiniz?",
+    "ar": "أنا تائه. هل يمكنك مساعدتي؟"
+   }
+  },
+  {
+   "id": "adresse",
+   "gratuit": false,
+   "fr": "Pouvez-vous écrire l'adresse, s'il vous plaît ?",
+   "traductions": {
+    "en": "Could you write down the address, please?",
+    "es": "¿Puede escribir la dirección, por favor?",
+    "it": "Può scrivere l'indirizzo, per favore?",
+    "de": "Können Sie bitte die Adresse aufschreiben?",
+    "pt": "Pode escrever o endereço, por favor?",
+    "nl": "Kunt u het adres opschrijven, alstublieft?",
+    "el": "Μπορείτε να γράψετε τη διεύθυνση, παρακαλώ;",
+    "hr": "Možete li napisati adresu, molim vas?",
+    "tr": "Adresi yazabilir misiniz, lütfen?",
+    "ar": "هل يمكنك كتابة العنوان من فضلك؟"
+   }
+  }
+ ],
+ "pays": [
+  {
+   "code": "ZA",
+   "nom": "Afrique du Sud",
+   "zone": "Afrique",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "10111",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "10177",
+     "verifie": false
+    },
+    {
+     "service": "Depuis un mobile",
+     "numero": "112",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "DZ",
+   "nom": "Algérie",
+   "zone": "Afrique",
+   "langue": "ar",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "17",
+     "verifie": false
+    },
+    {
+     "service": "Protection civile",
+     "numero": "14",
+     "verifie": false
+    },
+    {
+     "service": "Gendarmerie",
+     "numero": "1055",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "DE",
+   "nom": "Allemagne",
+   "zone": "Union européenne",
+   "langue": "de",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "AD",
+   "nom": "Andorre",
+   "zone": "Europe",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Urgences",
+     "numero": "112",
+     "verifie": false
+    },
+    {
+     "service": "Police",
+     "numero": "110",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance et pompiers",
+     "numero": "118",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "AR",
+   "nom": "Argentine",
+   "zone": "Amériques",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "911",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "107",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "100",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "AU",
+   "nom": "Australie",
+   "zone": "Océanie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "000",
+     "verifie": false
+    },
+    {
+     "service": "Depuis un mobile (aussi)",
+     "numero": "112",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "AT",
+   "nom": "Autriche",
+   "zone": "Union européenne",
+   "langue": "de",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "BE",
+   "nom": "Belgique",
+   "zone": "Union européenne",
+   "langue": "nl",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "BR",
+   "nom": "Brésil",
+   "zone": "Amériques",
+   "langue": "pt",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "190",
+     "verifie": false
+    },
+    {
+     "service": "SAMU",
+     "numero": "192",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "193",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "BG",
+   "nom": "Bulgarie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "KH",
+   "nom": "Cambodge",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "117",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "118",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "119",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CA",
+   "nom": "Canada",
+   "zone": "Amériques",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "911",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CV",
+   "nom": "Cap-Vert",
+   "zone": "Afrique",
+   "langue": "pt",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "132",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "130",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "131",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CL",
+   "nom": "Chili",
+   "zone": "Amériques",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "133",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "131",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "132",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CN",
+   "nom": "Chine",
+   "zone": "Asie",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "110",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "120",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "119",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CY",
+   "nom": "Chypre",
+   "zone": "Union européenne",
+   "langue": "el",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "KR",
+   "nom": "Corée du Sud",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "112",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance et pompiers",
+     "numero": "119",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "HR",
+   "nom": "Croatie",
+   "zone": "Union européenne",
+   "langue": "hr",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "CU",
+   "nom": "Cuba",
+   "zone": "Amériques",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "106",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "104",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "105",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CI",
+   "nom": "Côte d'Ivoire",
+   "zone": "Afrique",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "111",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "180",
+     "verifie": false
+    },
+    {
+     "service": "SAMU",
+     "numero": "185",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "DK",
+   "nom": "Danemark",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "ES",
+   "nom": "Espagne",
+   "zone": "Union européenne",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    },
+    {
+     "service": "Police nationale",
+     "numero": "091",
+     "verifie": false
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "EE",
+   "nom": "Estonie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "FI",
+   "nom": "Finlande",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "GR",
+   "nom": "Grèce",
+   "zone": "Union européenne",
+   "langue": "el",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    },
+    {
+     "service": "Police touristique",
+     "numero": "1571",
+     "verifie": false
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "HU",
+   "nom": "Hongrie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "IN",
+   "nom": "Inde",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "108",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "ID",
+   "nom": "Indonésie",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": false
+    },
+    {
+     "service": "Police",
+     "numero": "110",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "118",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "IE",
+   "nom": "Irlande",
+   "zone": "Union européenne",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "IS",
+   "nom": "Islande",
+   "zone": "Europe",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "IL",
+   "nom": "Israël",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "100",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "101",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "102",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "IT",
+   "nom": "Italie",
+   "zone": "Union européenne",
+   "langue": "it",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "JP",
+   "nom": "Japon",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "110",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance et pompiers",
+     "numero": "119",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "LV",
+   "nom": "Lettonie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "LT",
+   "nom": "Lituanie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "LU",
+   "nom": "Luxembourg",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "MG",
+   "nom": "Madagascar",
+   "zone": "Afrique",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "117",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "118",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "MT",
+   "nom": "Malte",
+   "zone": "Union européenne",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "MA",
+   "nom": "Maroc",
+   "zone": "Afrique",
+   "langue": "ar",
+   "numeros": [
+    {
+     "service": "Police (en ville)",
+     "numero": "19",
+     "verifie": false
+    },
+    {
+     "service": "Gendarmerie (hors ville)",
+     "numero": "177",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers et ambulance",
+     "numero": "15",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "MU",
+   "nom": "Maurice",
+   "zone": "Afrique",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "999",
+     "verifie": false
+    },
+    {
+     "service": "SAMU",
+     "numero": "114",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "115",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "MX",
+   "nom": "Mexique",
+   "zone": "Amériques",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "911",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "MC",
+   "nom": "Monaco",
+   "zone": "Europe",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Urgences",
+     "numero": "112",
+     "verifie": false
+    },
+    {
+     "service": "Police",
+     "numero": "17",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers et secours",
+     "numero": "18",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "NO",
+   "nom": "Norvège",
+   "zone": "Europe",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "112",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "113",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "110",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "NZ",
+   "nom": "Nouvelle-Zélande",
+   "zone": "Océanie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "111",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "NL",
+   "nom": "Pays-Bas",
+   "zone": "Union européenne",
+   "langue": "nl",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "PH",
+   "nom": "Philippines",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "911",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "PL",
+   "nom": "Pologne",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "PT",
+   "nom": "Portugal",
+   "zone": "Union européenne",
+   "langue": "pt",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "PE",
+   "nom": "Pérou",
+   "zone": "Amériques",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "105",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance (SAMU)",
+     "numero": "106",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "116",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "RO",
+   "nom": "Roumanie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "GB",
+   "nom": "Royaume-Uni",
+   "zone": "Europe",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "999",
+     "verifie": false
+    },
+    {
+     "service": "Toutes urgences (aussi)",
+     "numero": "112",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "DO",
+   "nom": "République dominicaine",
+   "zone": "Amériques",
+   "langue": "es",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "911",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "SK",
+   "nom": "Slovaquie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "SI",
+   "nom": "Slovénie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "LK",
+   "nom": "Sri Lanka",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "119",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "1990",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CH",
+   "nom": "Suisse",
+   "zone": "Europe",
+   "langue": "de",
+   "numeros": [
+    {
+     "service": "Urgences",
+     "numero": "112",
+     "verifie": false
+    },
+    {
+     "service": "Police",
+     "numero": "117",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "144",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "118",
+     "verifie": false
+    },
+    {
+     "service": "Hélicoptère de sauvetage (Rega)",
+     "numero": "1414",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "SE",
+   "nom": "Suède",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "SN",
+   "nom": "Sénégal",
+   "zone": "Afrique",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "17",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "18",
+     "verifie": false
+    },
+    {
+     "service": "SAMU",
+     "numero": "1515",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "CZ",
+   "nom": "Tchéquie",
+   "zone": "Union européenne",
+   "langue": null,
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": true
+    }
+   ],
+   "source": "112 : numéro d'urgence européen, valable dans toute l'Union"
+  },
+  {
+   "code": "TH",
+   "nom": "Thaïlande",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "191",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "1669",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "199",
+     "verifie": false
+    },
+    {
+     "service": "Police touristique",
+     "numero": "1155",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "TN",
+   "nom": "Tunisie",
+   "zone": "Afrique",
+   "langue": "ar",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "197",
+     "verifie": false
+    },
+    {
+     "service": "SAMU",
+     "numero": "190",
+     "verifie": false
+    },
+    {
+     "service": "Protection civile",
+     "numero": "198",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "TR",
+   "nom": "Turquie",
+   "zone": "Europe",
+   "langue": "tr",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "112",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "VN",
+   "nom": "Viêt Nam",
+   "zone": "Asie",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "113",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "114",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "115",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "EG",
+   "nom": "Égypte",
+   "zone": "Afrique",
+   "langue": "ar",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "122",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "123",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "180",
+     "verifie": false
+    },
+    {
+     "service": "Police touristique",
+     "numero": "126",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "AE",
+   "nom": "Émirats arabes unis",
+   "zone": "Asie",
+   "langue": "ar",
+   "numeros": [
+    {
+     "service": "Police",
+     "numero": "999",
+     "verifie": false
+    },
+    {
+     "service": "Ambulance",
+     "numero": "998",
+     "verifie": false
+    },
+    {
+     "service": "Pompiers",
+     "numero": "997",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  },
+  {
+   "code": "US",
+   "nom": "États-Unis",
+   "zone": "Amériques",
+   "langue": "en",
+   "numeros": [
+    {
+     "service": "Toutes urgences",
+     "numero": "911",
+     "verifie": false
+    }
+   ],
+   "source": "À vérifier sur diplomatie.gouv.fr"
+  }
+ ],
+ "depart": [
+  {
+   "id": "ariane",
+   "gratuit": true,
+   "titre": "S'inscrire sur Ariane",
+   "detail": "Le service du ministère des Affaires étrangères : vous recevez les alertes du pays, et l'ambassade peut vous joindre en cas de crise."
+  },
+  {
+   "id": "conseils",
+   "gratuit": true,
+   "titre": "Lire la fiche « Conseils aux voyageurs » du pays",
+   "detail": "Sur diplomatie.gouv.fr : sécurité, santé, formalités, zones déconseillées."
+  },
+  {
+   "id": "papiers",
+   "gratuit": false,
+   "titre": "Passeport ou carte d'identité valides",
+   "detail": "Vérifier la durée de validité exigée par le pays, et le visa."
+  },
+  {
+   "id": "ceam",
+   "gratuit": false,
+   "titre": "Carte européenne d'assurance maladie (pour l'Europe)",
+   "detail": "À demander sur ameli.fr, plusieurs semaines avant le départ [A VERIFIER : délai exact]."
+  },
+  {
+   "id": "assistance",
+   "gratuit": false,
+   "titre": "Assurance assistance et rapatriement",
+   "detail": "Vérifier ce que couvre votre carte bancaire ; noter le numéro d'assistance et le numéro de contrat."
+  },
+  {
+   "id": "sante",
+   "gratuit": false,
+   "titre": "Vaccins et traitements",
+   "detail": "En parler à un médecin bien avant le départ ; centre de vaccinations internationales si besoin."
+  },
+  {
+   "id": "medicaments",
+   "gratuit": false,
+   "titre": "Médicaments dans leur boîte, avec l'ordonnance, en bagage cabine",
+   "detail": ""
+  },
+  {
+   "id": "banque",
+   "gratuit": false,
+   "titre": "Numéro d'opposition de la carte bancaire",
+   "detail": "Le noter dans le dossier de voyage."
+  },
+  {
+   "id": "copies",
+   "gratuit": false,
+   "titre": "Copies des papiers",
+   "detail": "Dans le dossier de voyage, protégé par Face ID."
+  },
+  {
+   "id": "proche",
+   "gratuit": true,
+   "titre": "Laisser son itinéraire à un proche",
+   "detail": "Hébergements, vols, dates de retour."
+  },
+  {
+   "id": "permis",
+   "gratuit": false,
+   "titre": "Permis de conduire international, si vous louez une voiture hors d'Europe",
+   "detail": ""
+  },
+  {
+   "id": "energie",
+   "gratuit": false,
+   "titre": "Adaptateur de prise et batterie externe",
+   "detail": ""
+  }
+ ]
+}
