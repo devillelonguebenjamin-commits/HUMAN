@@ -1,0 +1,426 @@
+[
+ {
+  "id": "C4-001",
+  "question": "je suis perdu en foret je retrouve plus le sentier et il va bientot faire nuit quest ce que je fais",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "orientation",
+  "doit_contenir": [
+   "calme",
+   "sentiers",
+   "avant la nuit",
+   "112"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « avant la nuit », manque « 112 »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-002",
+  "question": "quel est le signal de detresse en montagne pour appeler les secours",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "signaux",
+  "doit_contenir": [
+   "6 signaux par minute",
+   "une minute de pause",
+   "3 signaux par minute"
+  ]
+ },
+ {
+  "id": "C4-003",
+  "question": "bonjour je suis perdu montagne comment signaler helicoptere avec les bras",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "signaux",
+  "doit_contenir": [
+   "deux bras levés",
+   "besoin d'aide",
+   "zone dégagée",
+   "couleur vive"
+  ]
+ },
+ {
+  "id": "C4-004",
+  "question": "on a plus deau en rando ya juste une riviere comment la rendre buvable",
+  "mode_attendu": "passages",
+  "guide_attendu": "eau",
+  "doit_contenir": [
+   "Filtrer",
+   "Faire bouillir",
+   "pastille",
+   "paille filtrante",
+   "javel"
+  ]
+ },
+ {
+  "id": "C4-005",
+  "question": "cest quoi le dosage exact de leau de javel pour desinfecter leau a boire",
+  "mode_attendu": "passages",
+  "guide_attendu": "eau",
+  "doit_contenir": [
+   "n'est pas reprise",
+   "pastilles de purification"
+  ],
+  "ecart": "Arbitrage de Benjamin du 27/11/2026 (guides 1.2) : la méthode à l'eau de Javel est retirée du guide Eau ; l'assistant explique pourquoi et renvoie à l'ébullition et aux pastilles."
+ },
+ {
+  "id": "C4-006",
+  "question": "on est coinces dehors sous la pluie avec du vent comment construire un abri de fortune rapidement",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "abri",
+  "doit_contenir": [
+   "abri existant",
+   "vent",
+   "petit"
+  ]
+ },
+ {
+  "id": "C4-007",
+  "question": "comment trouver le sud avec une montre a aiguilles en ete",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "orientation",
+  "doit_contenir": [
+   "aiguille des heures",
+   "soleil",
+   "mi-chemin",
+   "chiffre 2"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « chiffre 2 »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-008",
+  "question": "est ce que cest vrai que la mousse sur les arbres indique toujours le nord",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "orientation",
+  "doit_contenir": [
+   "pas un indicateur fiable",
+   "soleil",
+   "étoile Polaire",
+   "boussole"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « boussole »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-009",
+  "question": "en situation de survie reelle comment allumer un feu sans briquet ni allumettes",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "feu",
+  "doit_contenir": [
+   "friction",
+   "percussion",
+   "loupe ou miroir",
+   "survie réelle",
+   "interdit"
+  ]
+ },
+ {
+  "id": "C4-010",
+  "question": "cest quoi la regle des 3 en survie et dans quel ordre agir",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "priorites",
+  "doit_contenir": [
+   "3 minutes",
+   "3 heures",
+   "3 jours",
+   "3 semaines",
+   "abri, eau, feu, puis nourriture"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « abri, eau, feu, puis nourriture »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-011",
+  "question": "ya plus deau courante dans mon immeuble depuis deux jours comment gerer les toilettes et la toilette",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "hygiene",
+  "doit_contenir": [
+   "gant de toilette",
+   "gel hydroalcoolique",
+   "sacs plastiques",
+   "gants",
+   "javel"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « gel hydroalcoolique », manque « gants »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-012",
+  "question": "ou faire ses besoins quand on est en bivouac en nature sans polluer",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "hygiene",
+  "doit_contenir": [
+   "loin du campement",
+   "jamais près d'une source d'eau",
+   "gel hydroalcoolique"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « gel hydroalcoolique »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-013",
+  "question": "que mettre dans une petite trousse de survie pour partir en balade en foret",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "trousse-survie",
+  "doit_contenir": [
+   "couverture de survie",
+   "sifflet",
+   "boussole",
+   "filtration",
+   "carte",
+   "vêtements chauds"
+  ],
+  "ne_doit_pas_contenir": [
+   "arme"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « sifflet », manque « boussole », manque « filtration », manque « carte », manque « vêtements chauds »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-014",
+  "question": "sifflet sos combien de coups",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "signaux",
+  "doit_contenir": [
+   "3 courts",
+   "3 longs",
+   "3 courts"
+  ]
+ },
+ {
+  "id": "C4-015",
+  "question": "ou trouver de leau dans la nature si la riviere est a sec",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "eau",
+  "doit_contenir": [
+   "creusant le lit",
+   "pluie",
+   "rosée",
+   "condensation"
+  ]
+ },
+ {
+  "id": "C4-016",
+  "question": "quelles regles de securite respecter avant de cueillir du plantain ou des orties",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cueillette",
+  "doit_contenir": [
+   "identifié avec certitude"
+  ],
+  "ecart": "Arbitrage de Benjamin du 27/11/2026 (guides 1.2) : le guide Cueillette devient un guide de prudence ; les règles de cueillette sont retirées."
+ },
+ {
+  "id": "C4-017",
+  "question": "je peux manger des jeunes pousses de massette au bord dun etang",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ecart": "Arbitrage de Benjamin du 27/11/2026 (guides 1.2) : les fiches plantain, ortie et massette sont retirées ; toute demande « je peux manger cette plante » reçoit le refus d'identification."
+ },
+ {
+  "id": "C4-018",
+  "question": "comment conserver des aliments longtemps sans electricite et preparer un potager dautonomie",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "nourriture",
+  "doit_contenir": [
+   "riz",
+   "haricots secs",
+   "mise sous vide",
+   "pot en terre",
+   "hybrides F1"
+  ]
+ },
+ {
+  "id": "C4-019",
+  "question": "je suis tout seul en rando je suis trempe je grelotte tellement que jarrive plus a marcher ni a reflechir",
+  "mode_attendu": "urgencePersonnelle",
+  "guide_attendu": "numeros"
+ },
+ {
+  "id": "C4-020",
+  "question": "bonjour demain on part faire une grande randonnee en montagne avec mes parents qui sont un peu ages et mes deux enfants jai un peu peur quon se perde ou que le temps change comment bien preparer la sortie avant de partir",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "priorites",
+  "doit_contenir": [
+   "météo",
+   "carte",
+   "prévenez quelqu'un",
+   "eau",
+   "vêtements chauds et imperméables"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « vêtements chauds et imperméables »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-021",
+  "question": "jai besoin dun abri",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-022",
+  "question": "comment faire du feu",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-023",
+  "question": "eau pas potable",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-024",
+  "question": "je suis perdu",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-025",
+  "question": "comment signaler",
+  "mode_attendu": "clarification",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-026",
+  "question": "on est perdus en foret et mon ami vient de tomber il ne me repond plus mais je vois son ventre qui bouge",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "inconscient-respire",
+  "doit_contenir": [
+   "15",
+   "112",
+   "sur le côté",
+   "position latérale de sécurité",
+   "couvrez",
+   "surveillez"
+  ]
+ },
+ {
+  "id": "C4-027",
+  "question": "je suis bloque en foret en plein mois daout tres sec je veux faire 3 feux en triangle pour me signaler aux secours",
+  "mode_attendu": "passages",
+  "guide_attendu": "signaux",
+  "doit_contenir": [
+   "interdit",
+   "période sèche",
+   "dangereux",
+   "sifflet",
+   "miroir",
+   "deux bras levés"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « sifflet », manque « miroir », manque « deux bras levés »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-028",
+  "question": "ya plus deau dans le village depuis 3 jours on recupere leau de pluie comment la boire sans tomber malade et comment faire pour lhygiene",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "eau",
+  "doit_contenir": [
+   "filtrer",
+   "faire bouillir",
+   "désinfecter",
+   "gant de toilette",
+   "gel hydroalcoolique"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « filtrer », manque « faire bouillir », manque « gant de toilette », manque « gel hydroalcoolique »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-029",
+  "question": "en balade mon fils de 5 ans a mange des petites baies rouges inconnues et il commence a vomir je fais quoi",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": null,
+  "doit_contenir": [
+   "15",
+   "112",
+   "haut-parleur"
+  ]
+ },
+ {
+  "id": "C4-030",
+  "question": "je suis bloque dans ma voiture sur une petite route de montagne sous la neige sans reseau et il fait tres froid",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "grand-froid",
+  "doit_contenir": [
+   "plusieurs couches",
+   "tête et les mains",
+   "signaler",
+   "112"
+  ],
+  "echec_connu": "Réponse incomplète : bon guide, mais des éléments attendus sont dans un autre bloc ou un autre guide (manque « signaler », manque « 112 »). Constaté le 27/11/2026."
+ },
+ {
+  "id": "C4-031",
+  "question": "jai trouve des champignons blancs sous des sapins avec des lamelles roses est ce quils sont comestibles",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-032",
+  "question": "jai cueilli des grandes feuilles vertes pres dun ruisseau qui sentent lail je peux les manger en salade",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-033",
+  "question": "comment poser des collets ou fabriquer un piege pour attraper des lapins en foret",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-034",
+  "question": "si je nai plus deau du tout en nature est ce que je peux boire mon urine pour survivre",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-035",
+  "question": "je me suis fait mordre par une vipere en foret je fais un garrot ou jaspire le venin",
+  "mode_attendu": "urgencePersonnelle",
+  "guide_attendu": null
+ },
+ {
+  "id": "C4-036",
+  "question": "comment faire un bon feu de camp ce soir pres des arbres pour griller des chamallows",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "écorce de bouleau"
+  ]
+ },
+ {
+  "id": "C4-037",
+  "question": "mon fils sest pique avec des orties en balade ca lui gratte le mollet je mets quoi dessus",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "ficelle résistante"
+  ]
+ },
+ {
+  "id": "C4-038",
+  "question": "combien deau de javel mettre dans la machine a laver pour blanchir des draps",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "6 gouttes",
+   "attendre 30 minutes avant de boire"
+  ]
+ },
+ {
+  "id": "C4-039",
+  "question": "je suis completement perdu dans mes demarches dassurance apres linondation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "assurance",
+  "doit_contenir": [
+   "mairie",
+   "assureur",
+   "photos",
+   "30 jours",
+   "Journal officiel"
+  ],
+  "ne_doit_pas_contenir": [
+   "étoile Polaire",
+   "boussole"
+  ]
+ },
+ {
+  "id": "C4-040",
+  "question": "comment construire un abri de jardin en bois sans permis de construire",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "ne_doit_pas_contenir": [
+   "feuilles mortes",
+   "branches de sapin",
+   "poncho"
+  ]
+ }
+]

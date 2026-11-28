@@ -1,0 +1,829 @@
+[
+ {
+  "id": "C6-001",
+  "theme": "espace mairie",
+  "question": "bonjour je suis maire on a un debut dinondation sur deux quartiers comment savoir si je dois activer le poste de commandement communal maintenant",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pilotage",
+  "passage_attendu": "Posez 3 questions. L'organisation habituelle gère-t-elle tous les impacts ? Toutes les parties prenantes ? Les services sont-ils coordonnés ? Un seul « non » justifie la mobilisation. En cas de doute, mobilisez : c'est le principe de réponse prudente.",
+  "obligatoire": [
+   "3 questions",
+   "organisation habituelle",
+   "un seul non",
+   "principe de réponse prudente"
+  ],
+  "interdit": [
+   "attendez que la situation s'aggrave"
+  ],
+  "reponse_ideale": "Posez-vous 3 questions : l'organisation habituelle gère-t-elle tous les impacts, toutes les parties prenantes, et les services sont-ils coordonnés ? Un seul « non » justifie d'activer le poste de commandement communal. En cas de doute, mobilisez tout de suite : c'est le principe de réponse prudente."
+ },
+ {
+  "id": "C6-002",
+  "theme": "espace mairie",
+  "question": "adjoint dastreinte sur place qui commande entre le maire et les pompiers svp",
+  "intention": "s_informer",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "Le maire est directeur des opérations de secours sur sa commune ; les sapeurs-pompiers commandent les opérations de secours sur le terrain. Le poste de commandement communal (PCC) coordonne l'alerte, l'information, l'accueil et le soutien de la population.",
+  "obligatoire": [
+   "directeur des opérations de secours",
+   "sapeurs-pompiers commandent les opérations de secours sur le terrain",
+   "poste de commandement communal"
+  ],
+  "interdit": [
+   "le maire commande les pompiers sur le feu"
+  ],
+  "reponse_ideale": "Le maire est directeur des opérations de secours sur sa commune, tandis que les sapeurs-pompiers commandent les opérations de secours sur le terrain. Le poste de commandement communal coordonne l'alerte, l'information, l'accueil et le soutien de la population."
+ },
+ {
+  "id": "C6-003",
+  "theme": "espace mairie",
+  "question": "je suis secretaire de mairie on vient douvrir la cellule de crise pourquoi faut il absolument tenir une main courante par ecrit",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "Secrétariat et main courante : trace chaque information et chaque décision (elle peut servir de pièce juridique). Pièges humains à connaître : Pilotage à l'oral, sans trace écrite.",
+  "obligatoire": [
+   "chaque information",
+   "chaque décision",
+   "pièce juridique",
+   "trace écrite"
+  ],
+  "interdit": [
+   "inutile si on enregistre à l'oral"
+  ],
+  "reponse_ideale": "La main courante permet de tracer chaque information reçue et chaque décision prise pendant la crise, et elle peut servir de pièce juridique par la suite. Piloter uniquement à l'oral sans trace écrite fait partie des pièges humains majeurs à éviter en gestion de crise."
+ },
+ {
+  "id": "C6-004",
+  "theme": "espace mairie",
+  "question": "en tant que dgs comment mener le briefing initial quand la cellule de crise se reunit",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pilotage",
+  "passage_attendu": "Le briefing initial : Tour de table, rappel des rôles et des règles (validation, confidentialité, discipline). Vérification des outils. Constat de la situation et recueil des faits au tableau. Impacts immédiats et cartographie des parties prenantes. Évolutions possibles et périmètre d'action de la cellule. Ressources mobilisables et objectifs de sortie de crise. Premier plan d'actions validé par le directeur. Messages prioritaires et heure du prochain point.",
+  "obligatoire": [
+   "tour de table",
+   "rôles",
+   "faits au tableau",
+   "parties prenantes",
+   "plan d'actions",
+   "heure du prochain point"
+  ],
+  "interdit": [
+   "improviser sans ordre du jour"
+  ],
+  "reponse_ideale": "Commencez par un tour de table avec rappel des rôles et des règles (validation, confidentialité, discipline) et vérification des outils. Établissez ensuite le constat des faits au tableau, les impacts immédiats, la cartographie des parties prenantes, les évolutions possibles, les ressources mobilisables et les objectifs de sortie de crise. Terminez par le premier plan d'actions validé par le directeur, les messages prioritaires et l'heure du prochain point."
+ },
+ {
+  "id": "C6-005",
+  "theme": "espace mairie",
+  "question": "nos points de situation au pcc durent 1h et ca part en debat a chaque fois c combien de tps normalment et on dit quoi dedans",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "pilotage",
+  "passage_attendu": "Le point de situation (10 minutes maximum) : Évolution des faits, des impacts, des parties prenantes. Statut de chaque action : non engagée, en cours, terminée, bloquée. Nouvelles orientations du directeur. Heure du prochain point. Attention : Le point de situation n'est pas un débat : c'est une mise à jour courte, à heure fixe.",
+  "obligatoire": [
+   "10 minutes maximum",
+   "n'est pas un débat",
+   "heure fixe",
+   "statut de chaque action",
+   "heure du prochain point"
+  ],
+  "interdit": [
+   "1 heure",
+   "débat libre"
+  ],
+  "reponse_ideale": "Le point de situation doit durer 10 minutes maximum et n'est pas un débat : c'est une mise à jour courte, à heure fixe. Il couvre uniquement 4 points : l'évolution des faits, impacts et parties prenantes ; le statut de chaque action (non engagée, en cours, terminée, bloquée) ; les nouvelles orientations du directeur ; et l'heure du prochain point."
+ },
+ {
+  "id": "C6-006",
+  "theme": "espace mairie",
+  "question": "je suis chargee de communication en mairie quelle trame suivre pour rediger le premier message aux habitants pendant la crise",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "passage_attendu": "La trame d'un message : Faits (Ce qui s'est passé, vérifié), Actes (Les mesures prises), Empathie (La compassion envers les personnes touchées), Engagement (Ce que vous allez faire), Transparence (Ce que vous savez et ne savez pas).",
+  "obligatoire": [
+   "Faits",
+   "Actes",
+   "Empathie",
+   "Engagement",
+   "Transparence",
+   "vérifié"
+  ],
+  "interdit": [
+   "accuser autrui",
+   "promettre une date"
+  ],
+  "reponse_ideale": "Structurez votre message selon les 5 étapes du guide Communiquer en crise : les Faits (uniquement ce qui est vérifié), les Actes (les mesures déjà prises), l'Empathie (compassion envers les personnes touchées), l'Engagement (ce que la commune va faire) et la Transparence (ce que vous savez et ne savez pas). Adoptez un ton pédagogique et rassurant, sans termes anxiogènes, et faites valider le message par le maire."
+ },
+ {
+  "id": "C6-007",
+  "theme": "espace mairie",
+  "question": "un journaliste local mappelle en direct et me demande exactement quand leau et lelectricite reviendront je lui donne une date pour rassurer",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "com-crise",
+  "passage_attendu": "Communiquez vite, uniquement des informations vérifiées. Ne vous engagez pas sur une date précise de retour à la normale. Centralisez les demandes de la presse. À éviter : Le déni ou les déclarations faussement rassurantes.",
+  "obligatoire": [
+   "date précise de retour à la normale",
+   "informations vérifiées",
+   "centralisez les demandes de la presse"
+  ],
+  "interdit": [
+   "donner une date approximative pour rassurer"
+  ],
+  "reponse_ideale": "Ne vous engagez jamais sur une date précise de retour à la normale et évitez les déclarations faussement rassurantes. Communiquez uniquement des informations vérifiées, dites avec transparence ce que vous savez et ne savez pas, et centralisez toutes les demandes de la presse."
+ },
+ {
+  "id": "C6-008",
+  "theme": "espace mairie",
+  "question": "en debut de crise communale qui devons nous informer en premier et que faire de nos posts facebook programmes a lavance",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "passage_attendu": "Informez d'abord vos agents, puis la population. Gelez les publications programmées sur les réseaux sociaux.",
+  "obligatoire": [
+   "d'abord vos agents",
+   "puis la population",
+   "gelez les publications programmées"
+  ],
+  "interdit": [
+   "laisser les publications automatiques"
+  ],
+  "reponse_ideale": "Informez d'abord vos agents, puis la population. Pensez aussi immédiatement à geler toutes les publications programmées sur les réseaux sociaux de la commune, afin d'éviter tout décalage maladroit avec la crise en cours."
+ },
+ {
+  "id": "C6-009",
+  "theme": "espace mairie",
+  "question": "allo je suis responsable informatique de la mairie tous nos serveurs sont cryptes avec une demande de rancon est ce que je coupe tout electriquement et on paie pour debloquer letat civil",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque-commune",
+  "passage_attendu": "Isolez du réseau les postes et serveurs touchés, sans les éteindre. Activez la cellule de crise : maire, direction générale, informatique, communication. Faites-vous aider : 17cyber.gouv.fr est ouvert aux collectivités, et le centre régional de réponse aux incidents (CSIRT) de votre région peut intervenir. Portez plainte, et ne payez pas de rançon. Passez en mode dégradé : papier, téléphones de secours, procédures prévues à l'avance.",
+  "obligatoire": [
+   "Isolez du réseau",
+   "sans les éteindre",
+   "ne payez pas",
+   "17cyber.gouv.fr",
+   "CSIRT",
+   "mode dégradé"
+  ],
+  "interdit": [
+   "éteignez les serveurs",
+   "payez la rançon"
+  ],
+  "reponse_ideale": "Isolez immédiatement du réseau les postes et serveurs touchés, sans les éteindre. Ne payez surtout pas de rançon et portez plainte. Activez la cellule de crise (maire, direction générale, informatique, communication), faites-vous aider via 17cyber.gouv.fr et le CSIRT régional, et passez en mode dégradé (papier, téléphones de secours, procédures prévues à l'avance)."
+ },
+ {
+  "id": "C6-010",
+  "theme": "espace mairie",
+  "question": "suite a la cyberattaque de notre mairie des fichiers avec les noms et adresses des habitants ont ete touches quel est le delai pour prevenir la cnil",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque-commune",
+  "passage_attendu": "Si des données personnelles sont touchées, notifiez la CNIL dans les 72 heures.",
+  "obligatoire": [
+   "CNIL",
+   "72 heures",
+   "17cyber.gouv.fr",
+   "plainte"
+  ],
+  "interdit": [
+   "30 jours",
+   "ne rien déclarer"
+  ],
+  "reponse_ideale": "Dès que des données personnelles sont touchées, la commune doit notifier la CNIL dans les 72 heures. En parallèle, isolez les équipements sans les éteindre, activez la cellule de crise, sollicitez 17cyber.gouv.fr et le CSIRT régional, et portez plainte."
+ },
+ {
+  "id": "C6-011",
+  "theme": "espace mairie",
+  "question": "bonjour je viens detre elue maire dune petite commune rurale on a pas du tout le budget pour acheter un gros logiciel de gestion de crise est ce quon peut quand meme organiser un poste de commandement communal fiable et quels outils de base il faut preparer",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "Outils à préparer : Manuel de crise et fiches réflexes, Annuaire de crise avec suppléants, Main courante, Tableau de situation, Chronogramme, Salle de crise équipée, Salle de repli sur un autre site, Moyens de communication alternatifs, Mallette d'astreinte. Bon à savoir : Une équipe formée avec du papier, des stylos et un téléphone fera toujours mieux qu'une équipe non formée équipée d'un logiciel sophistiqué.",
+  "obligatoire": [
+   "papier",
+   "stylos",
+   "téléphone",
+   "annuaire de crise",
+   "main courante",
+   "salle de repli"
+  ],
+  "interdit": [
+   "logiciel payant obligatoire"
+  ],
+  "reponse_ideale": "Oui, absolument : une équipe formée avec du papier, des stylos et un téléphone fera toujours mieux qu'une équipe non formée équipée d'un logiciel sophistiqué. Préparez les outils de base : un manuel de crise avec fiches réflexes, un annuaire de crise avec suppléants, une main courante, un tableau de situation, un chronogramme et une mallette d'astreinte. Prévoyez aussi une salle de crise, une salle de repli sur un autre site et des moyens de communication alternatifs."
+ },
+ {
+  "id": "C6-012",
+  "theme": "espace mairie",
+  "question": "quels sont les differents roles a repartir dans le poste de commandement communal",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "Les rôles au poste de commandement communal : Le maire, Le responsable des actions communales, Secrétariat et main courante, Communication, Terrain et liaison, Accueil et hébergement, Logistique, Anticipation.",
+  "obligatoire": [
+   "maire",
+   "responsable des actions communales",
+   "main courante",
+   "communication",
+   "terrain et liaison",
+   "accueil et hébergement",
+   "logistique",
+   "anticipation"
+  ],
+  "interdit": [
+   "inventer des grades militaires"
+  ],
+  "reponse_ideale": "Le guide Activer le poste de commandement communal prévoit 8 rôles : le maire (décide et valide), le responsable des actions communales (anime la méthode et suit les délais), le secrétariat et la main courante (trace tout), et la communication. S'y ajoutent les fonctions terrain et liaison (agents, élus, réserve communale), accueil et hébergement (centres, ravitaillement, personnes vulnérables), logistique (matériel, véhicules, moyens de secours) et anticipation."
+ },
+ {
+  "id": "C6-013",
+  "theme": "espace mairie",
+  "question": "cest quoi la methode en 4 etapes a suivre en cellule de crise communale",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "La méthode en 4 étapes : 1. Établir les faits. 2. Analyser les impacts immédiats et futurs. 3. Lister les parties prenantes. 4. Bâtir le plan d'actions : chaque action a un responsable, une échéance, une priorité et un suivi.",
+  "obligatoire": [
+   "Établir les faits",
+   "Analyser les impacts",
+   "parties prenantes",
+   "plan d'actions",
+   "responsable",
+   "échéance"
+  ],
+  "interdit": [
+   "agir sans analyser les impacts"
+  ],
+  "reponse_ideale": "La méthode en 4 étapes consiste à : 1. Établir les faits (qui, quoi, quand, où, comment, effets, mesures prises, personnes présentes). 2. Analyser les impacts immédiats et futurs (personnes, activités, image, responsabilité, environnement, finances). 3. Lister les parties prenantes (impliquées, impactées, à informer). 4. Bâtir le plan d'actions, en donnant à chaque action un responsable, une échéance, une priorité et un suivi."
+ },
+ {
+  "id": "C6-014",
+  "theme": "espace mairie",
+  "question": "on veut entrainer notre cellule de crise a un accident nucleaire sans mobiliser de moyens sur le terrain quel type dexercice choisir",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "exercice-retex",
+  "passage_attendu": "4 types d'exercices : Partiel (Tester une procédure, en peu de temps), Sur table (Tester sans moyens terrain les scénarios difficiles à simuler : nucléaire, NRBC), Général (Tester l'ensemble du dispositif, avec plusieurs acteurs), Terrain (Conditions réelles, mobilisation des astreintes).",
+  "obligatoire": [
+   "Sur table",
+   "sans moyens terrain",
+   "nucléaire",
+   "NRBC"
+  ],
+  "interdit": [
+   "exercice terrain obligatoire"
+  ],
+  "reponse_ideale": "Choisissez un exercice « sur table » : il est conçu pour tester sans moyens terrain les scénarios difficiles à simuler, comme un accident nucléaire ou NRBC. Selon vos autres objectifs, vous pouvez aussi organiser des exercices partiels (une procédure rapide), généraux (plusieurs acteurs) ou terrain (conditions réelles avec astreintes)."
+ },
+ {
+  "id": "C6-015",
+  "theme": "espace mairie",
+  "question": "la crise est finie quelle est la difference entre un retex a chaud et un retex a froid",
+  "intention": "apres_crise",
+  "urgence": "information",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "exercice-retex",
+  "passage_attendu": "Le retour d'expérience (RETEX) : À chaud (Juste après la crise, avec la cellule : tour de table, à l'oral). À froid (Une fois la crise résolue, avec tous les acteurs : questionnaire anonyme, entretiens, écrit). Bon à savoir : Un bon RETEX met en avant les faiblesses : techniques, organisationnelles et humaines. Il met à jour le plan de crise sans figer la réponse, car la prochaine crise sera différente.",
+  "obligatoire": [
+   "À chaud",
+   "à l'oral",
+   "À froid",
+   "tous les acteurs",
+   "écrit",
+   "faiblesses"
+  ],
+  "interdit": [
+   "chercher des coupables"
+  ],
+  "reponse_ideale": "Le RETEX à chaud se fait juste après la crise avec la cellule, par un tour de table à l'oral. Le RETEX à froid a lieu une fois la crise résolue, avec tous les acteurs, par questionnaire anonyme, entretiens et rapport écrit. Un bon RETEX met en avant les faiblesses techniques, organisationnelles et humaines pour mettre à jour le plan de crise sans figer la réponse."
+ },
+ {
+  "id": "C6-016",
+  "theme": "espace mairie",
+  "question": "comment preparer la communication de la mairie avant une eventuelle cyberattaque",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "passage_attendu": "Crise cyber : avant : Faire se rencontrer équipes communication et informatique. Préparer des scénarios (rançongiciel, saturation, défiguration du site). Constituer une boîte à outils de communication de crise. Participer à un exercice de crise cyber. Entraîner les porte-parole face aux médias.",
+  "obligatoire": [
+   "communication et informatique",
+   "scénarios",
+   "boîte à outils",
+   "exercice",
+   "porte-parole"
+  ],
+  "interdit": [
+   "attendre l'attaque pour préparer"
+  ],
+  "reponse_ideale": "Pour anticiper une crise cyber côté communication, faites se rencontrer les équipes communication et informatique et préparez des scénarios (rançongiciel, saturation, défiguration du site). Constituez une boîte à outils de communication de crise, participez à un exercice de crise cyber et entraînez vos porte-parole face aux médias. Pensez aussi à tester régulièrement vos sauvegardes."
+ },
+ {
+  "id": "C6-017",
+  "theme": "espace mairie",
+  "question": "ca fait 24 heures quon pilote la crise en mairie on commence a etre epuises quels pieges humains faut il surveiller",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pilotage",
+  "passage_attendu": "Pièges humains à connaître : Biais d'optimisme (se croire moins exposé que les autres), Biais de confirmation (retenir ce qui confirme son hypothèse), Biais de narration (reconstruire une histoire trop logique), Pilotage à l'oral sans trace écrite, Stress excessif, fatigue : prévoir les relèves.",
+  "obligatoire": [
+   "relèves",
+   "fatigue",
+   "biais d'optimisme",
+   "biais de confirmation",
+   "trace écrite"
+  ],
+  "interdit": [
+   "garder la même équipe sans pause"
+  ],
+  "reponse_ideale": "La fatigue et le stress excessif altèrent les décisions : organisez sans attendre des relèves d'équipes. Surveillez aussi les autres pièges humains : le pilotage à l'oral sans trace écrite, le biais d'optimisme (se croire moins exposé), le biais de confirmation (ne retenir que ce qui confirme son hypothèse) et le biais de narration (reconstruire une histoire trop logique)."
+ },
+ {
+  "id": "C6-018",
+  "theme": "espace mairie",
+  "question": "comment preparer un bon exercice de gestion de crise pour les agents de la commune",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "exercice-retex",
+  "passage_attendu": "Préparer un exercice : Partir d'un état des lieux. Fixer objectifs et publics visés. Écrire un scénario et une chronologie crédibles : chaque incident simulé sert un objectif. Préférer un format pédagogique à un format trop stressant. Débriefer à chaud, puis rédiger un rapport selon les 4 piliers.",
+  "obligatoire": [
+   "état des lieux",
+   "objectifs",
+   "scénario",
+   "pédagogique",
+   "4 piliers"
+  ],
+  "interdit": [
+   "piéger les agents pour les stresser"
+  ],
+  "reponse_ideale": "Partez d'un état des lieux, puis fixez clairement les objectifs et les publics visés. Écrivez un scénario et une chronologie crédibles où chaque incident simulé sert un objectif précis, en privilégiant un format pédagogique plutôt que trop stressant. Terminez par un débriefing à chaud puis un rapport rédigé selon les 4 piliers (organisation, processus, méthode, outils)."
+ },
+ {
+  "id": "C6-019",
+  "theme": "espace mairie",
+  "question": "hello i work as intern in french town hall what mistakes to avoid in crisis communication",
+  "intention": "s_informer",
+  "urgence": "information",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "passage_attendu": "Les pièges : À éviter : Le silence (il nourrit la rumeur), Le déni ou les déclarations faussement rassurantes, Le manque d'empathie ou d'humilité, Accuser autrui, Le mensonge (perte de confiance et sanctions).",
+  "obligatoire": [
+   "silence",
+   "rumeur",
+   "déni",
+   "empathie",
+   "accuser autrui",
+   "mensonge"
+  ],
+  "interdit": [
+   "mentir pour calmer la population"
+  ],
+  "reponse_ideale": "En communication de crise communale, 5 pièges sont à éviter absolument : le silence (qui nourrit la rumeur), le déni ou les déclarations faussement rassurantes, le manque d'empathie ou d'humilité, le fait d'accuser autrui, et le mensonge (qui entraîne perte de confiance et sanctions). Communiquez vite, régulièrement, avec des faits vérifiés et de la transparence."
+ },
+ {
+  "id": "C6-020",
+  "theme": "espace mairie",
+  "question": "notre mairie sort dune cyberattaque quest ce quil faut faire cote communication maintenant que cest termine",
+  "intention": "apres_crise",
+  "urgence": "information",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "passage_attendu": "Crise cyber : après : Remercier les équipes. Faire un retour d'expérience sur la communication. Partager un témoignage public. Sensibiliser les agents aux bonnes pratiques.",
+  "obligatoire": [
+   "remercier les équipes",
+   "retour d'expérience",
+   "témoignage public",
+   "sensibiliser les agents"
+  ],
+  "interdit": [
+   "tout cacher après coup"
+  ],
+  "reponse_ideale": "Après une crise cyber communale, pensez à 4 actions de communication : remercier les équipes mobilisées, réaliser un retour d'expérience spécifique sur la communication, partager un témoignage public et sensibiliser l'ensemble des agents aux bonnes pratiques numériques."
+ },
+ {
+  "id": "C6-021",
+  "theme": "espace mairie",
+  "question": "cyberattaque",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "clarification",
+  "guide_attendu": "cyberattaque",
+  "passage_attendu": "Cyberattaque et arnaques en ligne (particuliers) vs Cyberattaque contre la commune (mairie, collectivités).",
+  "obligatoire": [
+   "particulier",
+   "mairie",
+   "collectivité",
+   "17cyber.gouv.fr"
+  ],
+  "interdit": [
+   "notifier la CNIL pour un particulier sans préciser"
+  ],
+  "reponse_ideale": "Votre question concerne-t-elle un appareil ou un compte personnel, ou une cyberattaque qui touche une mairie ou une collectivité ? Dans les deux cas, isolez immédiatement les appareils du réseau sans les éteindre, ne payez pas de rançon et faites-vous aider sur 17cyber.gouv.fr."
+ },
+ {
+  "id": "C6-022",
+  "theme": "espace mairie",
+  "question": "communiquer",
+  "intention": "s_informer",
+  "urgence": "information",
+  "mode_attendu": "clarification",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "proches sans réseau",
+   "communication de crise en mairie"
+  ],
+  "interdit": [
+   "répondre à un seul des deux sans demander"
+  ],
+  "reponse_ideale": "Souhaitez-vous savoir comment communiquer avec vos proches quand le téléphone et internet sont coupés, ou comment gérer la communication de crise d'une mairie envers les agents, les habitants et la presse ?"
+ },
+ {
+  "id": "C6-023",
+  "theme": "espace mairie",
+  "question": "organiser un exercice",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "clarification",
+  "guide_attendu": "exercice-retex",
+  "passage_attendu": "4 types d'exercices : Partiel, Sur table, Général, Terrain.",
+  "obligatoire": [
+   "partiel",
+   "sur table",
+   "général",
+   "terrain",
+   "objectifs"
+  ],
+  "interdit": [
+   "exercice sportif"
+  ],
+  "reponse_ideale": "S'agit-il d'un exercice communal de gestion de crise ? Si oui, précisez votre besoin : tester une seule procédure rapidement (partiel), un scénario complexe sans moyens terrain (sur table), tout le dispositif avec plusieurs acteurs (général) ou une mise en situation réelle avec astreintes (terrain)."
+ },
+ {
+  "id": "C6-024",
+  "theme": "espace mairie",
+  "question": "activer la cellule",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "clarification",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "Faut-il activer le poste de commandement ? Posez 3 questions. Le briefing initial.",
+  "obligatoire": [
+   "décider s'il faut activer",
+   "briefing initial",
+   "rôles au PCC"
+  ],
+  "interdit": [
+   "ignorer le principe de réponse prudente"
+  ],
+  "reponse_ideale": "Cherchez-vous les 3 critères pour décider d'activer le poste de commandement communal (en cas de doute, mobilisez), la répartition des 8 rôles du PCC, ou la conduite du briefing initial ?"
+ },
+ {
+  "id": "C6-025",
+  "theme": "espace mairie",
+  "question": "mairie",
+  "intention": "s_informer",
+  "urgence": "information",
+  "mode_attendu": "clarification",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "habitant",
+   "élu ou agent communal"
+  ],
+  "interdit": [
+   "afficher les procédures PCC sans savoir"
+  ],
+  "reponse_ideale": "Êtes-vous un habitant qui cherche un renseignement auprès de sa mairie (DICRIM, registre canicule, catastrophe naturelle, point d'accueil) ou un élu ou agent communal qui consulte l'Espace mairie (poste de commandement, pilotage, communication, cyberattaque) ?"
+ },
+ {
+  "id": "C6-026",
+  "theme": "espace mairie",
+  "question": "notre mairie subit une cyberattaque la messagerie et le site internet sont coupes comment informer les agents et les habitants",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque-commune",
+  "passage_attendu": "Informez d'abord les agents, puis les habitants et les usagers. Utilisez des canaux de secours si la messagerie ou le site sont touchés, et rappelez aux agents la conduite à tenir face aux médias et sur les réseaux sociaux. Gelez les publications programmées et centralisez les demandes de la presse. Moyens locaux prévus par le PCS : haut-parleurs, porte-à-porte, radio.",
+  "obligatoire": [
+   "d'abord les agents",
+   "canaux de secours",
+   "gelez les publications programmées",
+   "centralisez les demandes de la presse",
+   "faits vérifiés"
+  ],
+  "interdit": [
+   "promettre une date de retour à la normale"
+  ],
+  "reponse_ideale": "Établissez d'abord les faits vérifiés, puis informez en premier vos agents avant les habitants et usagers, sans jamais promettre de date de retour à la normale. La messagerie et le site étant coupés, basculez sur vos canaux de secours (téléphones de secours, affichage, haut-parleurs, porte-à-porte, radio locale). Gelez les publications programmées, centralisez les demandes de la presse et rappelez aux agents la conduite à tenir sur les réseaux sociaux."
+ },
+ {
+  "id": "C6-027",
+  "theme": "espace mairie",
+  "question": "une grosse inondation touche la commune nous venons dactiver le pcc quels sont les roles de la mairie pour accueillir les sinistres et lancer la reconnaissance catastrophe naturelle",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "Accueil et hébergement : centres d'accueil, ravitaillement, personnes vulnérables. Si la commune a un Plan communal de sauvegarde, elle peut ouvrir un point d'accueil, aider à refaire les papiers, orienter vers les assureurs et, si besoin, fournir hébergement, eau et nourriture. La mairie demande la reconnaissance de l'état de catastrophe naturelle à la préfecture.",
+  "obligatoire": [
+   "accueil et hébergement",
+   "personnes vulnérables",
+   "point d'accueil",
+   "préfecture",
+   "catastrophe naturelle"
+  ],
+  "interdit": [
+   "le maire signe lui-même l'arrêté CatNat"
+  ],
+  "reponse_ideale": "Au sein du poste de commandement communal, la fonction Accueil et hébergement organise les centres d'accueil, le ravitaillement et le suivi des personnes vulnérables. Dans le cadre du Plan communal de sauvegarde, la mairie peut ouvrir un point d'accueil, fournir si besoin hébergement, eau et nourriture, aider les sinistrés à refaire leurs papiers et les orienter vers les assureurs. C'est également la mairie qui demande la reconnaissance de l'état de catastrophe naturelle à la préfecture."
+ },
+ {
+  "id": "C6-028",
+  "theme": "espace mairie",
+  "question": "des fausses rumeurs sur facebook accusent la mairie de cacher des infos pendant la tempete on garde le silence en attendant ou on repond comment",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "com-crise",
+  "passage_attendu": "Informez régulièrement et occupez l'espace avant les rumeurs. À éviter : Le silence : il nourrit la rumeur. À éviter : Accuser autrui. Trame : Faits, Actes, Empathie, Engagement, Transparence.",
+  "obligatoire": [
+   "silence nourrit la rumeur",
+   "occupez l'espace",
+   "faits vérifiés",
+   "transparence",
+   "ne pas accuser autrui"
+  ],
+  "interdit": [
+   "gardez le silence",
+   "attaquez les habitants sur Facebook"
+  ],
+  "reponse_ideale": "Ne gardez surtout pas le silence : le silence nourrit la rumeur. Occupez l'espace rapidement et régulièrement avec des informations vérifiées, en suivant la trame Faits, Actes, Empathie, Engagement et Transparence. Gardez un ton pédagogique et rassurant, sans accuser autrui, et veillez les réseaux sociaux depuis la cellule communication."
+ },
+ {
+  "id": "C6-029",
+  "theme": "espace mairie",
+  "question": "urgence en pleine reunion de cellule de crise a la mairie un adjoint vient de seffondrer il ne repond plus et ne respire plus",
+  "intention": "agir_maintenant",
+  "urgence": "vitale",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "arret-cardiaque",
+  "passage_attendu": "Alertez : 15 ou 112 (114 par SMS). Faites chercher un défibrillateur. Massez : à genoux, mains l'une sur l'autre au centre de la poitrine, bras tendus. Appuyez fort et vite, 100 à 120 fois par minute, sans vous arrêter. Défibrillez : allumez l'appareil dès qu'il arrive et suivez ses instructions vocales. Continuez le massage pendant qu'on l'installe.",
+  "obligatoire": [
+   "15",
+   "112",
+   "défibrillateur",
+   "centre de la poitrine",
+   "100 à 120"
+  ],
+  "interdit": [
+   "noter d'abord dans la main courante",
+   "faire un point de situation"
+  ],
+  "reponse_ideale": "Urgence vitale : appelez le 15 ou le 112 (114 par SMS), mettez le haut-parleur et faites chercher un défibrillateur. Massez immédiatement : à genoux, mains l'une sur l'autre au centre de la poitrine, bras tendus, appuyez fort et vite 100 à 120 fois par minute sans vous arrêter. Allumez le défibrillateur dès qu'il arrive et suivez ses instructions vocales en continuant le massage pendant qu'on l'installe."
+ },
+ {
+  "id": "C6-030",
+  "theme": "espace mairie",
+  "question": "dans notre pcs ou intervient la reserve communale de securite civile et quels moyens locaux d'alerte la commune peut elle activer",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "cellule-crise",
+  "passage_attendu": "Terrain et liaison : agents et élus sur place, réserve communale de sécurité civile. Les autres moyens d'alerte : Automates d'appel (message vocal ou SMS envoyé par la commune), Ensembles mobiles d'alerte (haut-parleurs sur les véhicules de la commune), Moyens locaux prévus par le Plan communal de sauvegarde (cloches, porte-à-porte).",
+  "obligatoire": [
+   "Terrain et liaison",
+   "automates d'appel",
+   "haut-parleurs",
+   "cloches",
+   "porte-à-porte"
+  ],
+  "interdit": [
+   "confier le commandement des pompiers à la réserve"
+  ],
+  "reponse_ideale": "Au sein du poste de commandement communal, la réserve communale de sécurité civile intervient en appui de la fonction Terrain et liaison, aux côtés des agents et élus sur place. Pour alerter la population, la commune peut activer ses automates d'appel (SMS ou message vocal), des ensembles mobiles d'alerte (haut-parleurs sur véhicules) et les moyens locaux prévus au Plan communal de sauvegarde (cloches, porte-à-porte)."
+ },
+ {
+  "id": "C6-031",
+  "theme": "espace mairie",
+  "question": "ma commune fait 1200 habitants est ce que la loi matras nous oblige legalement a avoir un pcs et quest ce que le maire risque au penal sil nen a pas",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "conseils juridiques",
+   "préfecture",
+   "Légifrance"
+  ],
+  "interdit": [
+   "article de loi inventé",
+   "sanction pénale chiffrée",
+   "seuil inventé"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur les obligations légales précises de la loi Matras ni sur la responsabilité pénale du maire, et je ne fournis pas de conseils juridiques personnalisés. Vérifiez les obligations applicables à votre commune auprès de votre préfecture, sur Légifrance ou via le guide PCS de la DGSCGC."
+ },
+ {
+  "id": "C6-032",
+  "theme": "espace mairie",
+  "question": "peux tu me rediger un arrete municipal de requisition dun gymnase prive avec les bons articles du code general des collectivites territoriales",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "préfecture",
+   "conseils juridiques"
+  ],
+  "interdit": [
+   "Article L.2212-2",
+   "modèle d'arrêté rédigé"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide pour rédiger des actes administratifs ou des arrêtés municipaux de réquisition. Rapprochez-vous de votre préfecture, de votre service juridique ou de votre association départementale des maires."
+ },
+ {
+  "id": "C6-033",
+  "theme": "espace mairie",
+  "question": "quel est le numero de telephone direct du csirt regional des pays de la loire pour notre mairie",
+  "intention": "s_informer",
+  "urgence": "urgente",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": "Faites-vous aider : 17cyber.gouv.fr est ouvert aux collectivités, et le centre régional de réponse aux incidents (CSIRT) de votre région peut intervenir.",
+  "obligatoire": [
+   "Je n'ai pas",
+   "17cyber.gouv.fr",
+   "CSIRT",
+   "préfecture"
+  ],
+  "interdit": [
+   "numéro de téléphone inventé"
+  ],
+  "reponse_ideale": "Je n'ai pas les coordonnées directes du CSIRT régional dans mes guides. En cas de cyberattaque contre la commune, sollicitez immédiatement 17cyber.gouv.fr (ouvert aux collectivités 24 h sur 24) et contactez votre préfecture ou cybermalveillance.gouv.fr pour obtenir les coordonnées du CSIRT de votre région."
+ },
+ {
+  "id": "C6-034",
+  "theme": "espace mairie",
+  "question": "quel logiciel payant dautomate dappel et de main courante numerique est le meilleur a acheter pour notre mairie",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": "Une équipe formée avec du papier, des stylos et un téléphone fera toujours mieux qu'une équipe non formée équipée d'un logiciel sophistiqué.",
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "équipe formée",
+   "papier"
+  ],
+  "interdit": [
+   "nom de fournisseur commercial"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide qui compare ou recommande des logiciels commerciaux pour les mairies. Le guide Activer le poste de commandement communal rappelle toutefois que les outils doivent rester éprouvés y compris en mode dégradé, et qu'une équipe formée avec du papier, des stylos et un téléphone fera toujours mieux qu'une équipe non formée équipée d'un logiciel sophistiqué."
+ },
+ {
+  "id": "C6-035",
+  "theme": "espace mairie",
+  "question": "comment calculer les indemnites dastreinte et les heures supplementaires des agents municipaux mobilises au pcc ce week end",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "service-public.fr"
+  ],
+  "interdit": [
+   "taux horaire",
+   "règle RH inventée"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur la rémunération, les indemnités d'astreinte ou le droit de la fonction publique territoriale. Renseignez-vous auprès de votre centre de gestion, de votre service ressources humaines ou sur service-public.fr."
+ },
+ {
+  "id": "C6-036",
+  "theme": "espace mairie",
+  "question": "je veux deposer une main courante au commissariat contre mon voisin qui fait trop de bruit la nuit",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "commissariat",
+   "service-public.fr"
+  ],
+  "interdit": [
+   "poste de commandement communal",
+   "secrétariat de cellule de crise"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur le dépôt de main courante entre voisins. Renseignez-vous auprès de votre commissariat, de votre gendarmerie ou sur service-public.fr (et appelez le 17 ou le 112 en cas de danger ou d'infraction grave en cours)."
+ },
+ {
+  "id": "C6-037",
+  "theme": "espace mairie",
+  "question": "comment piloter mon drone de loisir au dessus de la plage sans avoir damende",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "service-public.fr"
+  ],
+  "interdit": [
+   "briefing initial",
+   "point de situation",
+   "poste de commandement"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur le pilotage de drones de loisir : SIJAMAIS concerne la sécurité civile et la gestion de crise. Consultez service-public.fr ou les sites officiels de l'aviation civile pour connaître la réglementation."
+ },
+ {
+  "id": "C6-038",
+  "theme": "espace mairie",
+  "question": "quels exercices de sport faire a la maison quand on doit rester confine plusieurs jours",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide"
+  ],
+  "interdit": [
+   "exercice sur table",
+   "NRBC",
+   "RETEX à chaud"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur les exercices sportifs à domicile. Pour tenir le moral pendant une période d'attente ou de confinement, le guide Prendre soin du moral mentionne simplement les repas chauds, les jeux, la lecture et les contacts réguliers."
+ },
+ {
+  "id": "C6-039",
+  "theme": "espace mairie",
+  "question": "je suis un particulier mon ordinateur personnel est bloque par une rancon je dois declarer a la cnil dans les 72 heures",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "cyberattaque",
+  "passage_attendu": "Débranchez-le tout de suite d'internet et du réseau : coupez le Wi-Fi, retirez le câble. Ne l'éteignez pas : mettez-le en veille. Ne payez pas. Cherchez une solution gratuite de déchiffrement sur nomoreransom.org. Faites-vous aider sur 17cyber.gouv.fr et portez plainte.",
+  "obligatoire": [
+   "Débranchez",
+   "veille",
+   "Ne payez pas",
+   "17cyber.gouv.fr",
+   "nomoreransom.org",
+   "plainte"
+  ],
+  "interdit": [
+   "notifiez la CNIL sous 72 heures",
+   "activez la cellule de crise de la mairie"
+  ],
+  "reponse_ideale": "La notification à la CNIL dans les 72 heures figure dans le guide dédié aux mairies et collectivités. Pour votre ordinateur personnel : débranchez-le tout de suite d'internet (Wi-Fi et câble), mettez-le en veille sans l'éteindre et ne payez pas. Cherchez une solution gratuite sur nomoreransom.org, faites-vous aider sur 17cyber.gouv.fr et portez plainte."
+ },
+ {
+  "id": "C6-040",
+  "theme": "espace mairie",
+  "question": "comment enlever le gel sur mon pare brise le matin sans abimer la vitre",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide"
+  ],
+  "interdit": [
+   "gelez les publications programmées",
+   "115",
+   "gel hydroalcoolique"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur le dégivrage d'un pare-brise au quotidien : SIJAMAIS concerne la sécurité, la préparation et la gestion des crises."
+ }
+]

@@ -1,0 +1,803 @@
+[
+ {
+  "id": "C3-001",
+  "theme": "preparation et coupure",
+  "question": "nous sommes 5 a la maison combien de litres deau faut il prevoir pour le kit 72 heures",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "kit72h",
+  "passage_attendu": "Mon stock d'eau : 6 litres par personne, en bouteilles. Calcul dans l'application : 6 litres x nombre de personnes du foyer.",
+  "obligatoire": [
+   "6 litres par personne",
+   "30 litres",
+   "bouteilles"
+  ],
+  "interdit": [
+   "28 litres par personne"
+  ],
+  "reponse_ideale": "Pour le kit d'urgence 72 heures, il faut prévoir 6 litres d'eau potable en bouteilles par personne. Pour un foyer de 5 personnes, cela représente 30 litres d'eau."
+ },
+ {
+  "id": "C3-002",
+  "theme": "preparation et coupure",
+  "question": "le courant vient de couper dans le quartier et mon pere a un appareil medical electrique a la maison il respire bien pour linstant je fais quoi",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "passages",
+  "guide_attendu": "coupure-electricite",
+  "passage_attendu": "Personne dépendante d'un appareil médical électrique : contactez son prestataire et signalez-vous en mairie.",
+  "obligatoire": [
+   "prestataire",
+   "mairie",
+   "15",
+   "112"
+  ],
+  "interdit": [
+   "attendre sans rien faire",
+   "bricoler une batterie"
+  ],
+  "reponse_ideale": "Contactez immédiatement le prestataire qui fournit l'appareil médical électrique de votre père et signalez-vous auprès de la mairie. Vérifiez si la coupure est générale, économisez la batterie de votre téléphone et écoutez la radio à piles. Si votre père présente la moindre gêne respiratoire ou un malaise, appelez tout de suite le 15 ou le 112."
+ },
+ {
+  "id": "C3-003",
+  "theme": "preparation et coupure",
+  "question": "ya plus delectricite dans toute la rue depuis 10 minutes je dois faire quoi tout de suite",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "coupure-electricite",
+  "passage_attendu": "Tout de suite : Vérifiez si la coupure est générale (voisins, éclairage public). Débranchez les appareils sensibles et laissez une lampe allumée pour voir le retour du courant. Gardez le réfrigérateur et le congélateur fermés. Écoutez la radio à piles pour suivre les consignes.",
+  "obligatoire": [
+   "débranchez les appareils sensibles",
+   "lampe allumée",
+   "réfrigérateur et le congélateur fermés",
+   "radio à piles"
+  ],
+  "interdit": [
+   "groupe électrogène à l'intérieur",
+   "barbecue dedans"
+  ],
+  "reponse_ideale": "Débranchez les appareils électriques sensibles et laissez une lampe allumée pour voir quand le courant reviendra. Gardez le réfrigérateur et le congélateur fermés, et écoutez la radio à piles pour suivre les consignes. Si la coupure dure, utilisez votre kit 72 heures et économisez la batterie de votre téléphone."
+ },
+ {
+  "id": "C3-004",
+  "theme": "preparation et coupure",
+  "question": "je prepare notre kit 72h avec un bebe de 4 mois je dois mettre quoi de special pour lui",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "kit72h",
+  "passage_attendu": "Petits pots ou lait infantile 1er âge liquide prêt à l'emploi. Produits pour bébé si besoin. Demandez conseil à votre pharmacien pour adapter la trousse à votre foyer (bébé, allergies, traitements).",
+  "obligatoire": [
+   "lait infantile 1er âge liquide prêt à l'emploi",
+   "petits pots",
+   "pharmacien"
+  ],
+  "interdit": [
+   "posologie",
+   "marque de lait"
+  ],
+  "reponse_ideale": "Pour un bébé dans le kit d'urgence 72 heures, prévoyez des petits pots ou du lait infantile 1er âge liquide prêt à l'emploi, ainsi que les produits pour bébé nécessaires. N'oubliez pas l'eau potable (6 litres par personne), ses médicaments éventuels et les photocopies de son carnet de santé. Demandez conseil à votre pharmacien pour adapter la trousse de secours à votre bébé."
+ },
+ {
+  "id": "C3-005",
+  "theme": "preparation et coupure",
+  "question": "je suis diabetique sous insuline comment je gere mon traitement dans mon sac devacuation",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "sac-evacuation",
+  "passage_attendu": "Si un traitement doit rester au frais (insuline), placez un repère sur le sac pour ne pas l'oublier. Photocopies des papiers d'identité et ordonnances dans une pochette étanche.",
+  "obligatoire": [
+   "repère sur le sac",
+   "ordonnances",
+   "pharmacien"
+  ],
+  "interdit": [
+   "modifier les doses",
+   "durée de conservation non sourcée"
+  ],
+  "reponse_ideale": "Pour un traitement qui doit rester au frais comme l'insuline, placez un repère bien visible sur votre sac d'évacuation afin de ne pas oublier de le prendre au moment du départ. Glissez aussi une photocopie de vos ordonnances dans une pochette étanche et demandez conseil à votre pharmacien ou à votre médecin pour adapter votre trousse."
+ },
+ {
+  "id": "C3-006",
+  "theme": "preparation et coupure",
+  "question": "cest quoi un point familial de contact dans le pfms jcomprends pas a quoi ca sert",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pfms",
+  "passage_attendu": "Point familial de contact : choisissez un ami ou un proche habitant une autre localité. Si la famille est séparée, chacun l'appelle pour donner de ses nouvelles.",
+  "obligatoire": [
+   "autre localité",
+   "famille est séparée",
+   "nouvelles"
+  ],
+  "interdit": [
+   "numéro payant"
+  ],
+  "reponse_ideale": "Le point familial de contact est un ami ou un proche qui habite dans une autre localité, en dehors de votre zone de risque. Si votre famille est séparée pendant une crise, chaque membre l'appelle ou lui envoie un SMS pour donner de ses nouvelles et savoir où sont les autres."
+ },
+ {
+  "id": "C3-007",
+  "theme": "preparation et coupure",
+  "question": "comment preparer la coupure de leau du gaz et de lelectricite chez moi avant une crise",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "pfms",
+  "passage_attendu": "Localisez les arrivées de gaz, d'électricité et d'eau, et expliquez à vos proches comment les couper (photos, schéma, bouton à actionner). Électricité : disjoncteur général. Eau : robinet d'arrivée. Gaz : vanne quart de tour.",
+  "obligatoire": [
+   "disjoncteur général",
+   "robinet d'arrivée",
+   "vanne",
+   "expliquez à vos proches"
+  ],
+  "interdit": [
+   "démonter le compteur"
+  ],
+  "reponse_ideale": "Repérez à l'avance le disjoncteur général (électricité), le robinet d'arrivée (eau) et la vanne quart de tour (gaz). Notez où ils se trouvent dans votre plan familial de mise en sûreté (PFMS) et expliquez à tous vos proches comment les actionner, par exemple avec des photos ou un schéma."
+ },
+ {
+  "id": "C3-008",
+  "theme": "preparation et coupure",
+  "question": "ou est ce que je dois installer mon detecteur de fumee dans la cuisine ou le couloir",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "incendie-domicile",
+  "passage_attendu": "Un détecteur de fumée, obligatoire dans chaque logement, dans le couloir qui dessert les chambres. Un détecteur par étage (conseillé). Jamais dans la cuisine ni la salle de bain (fausses alertes). Tester le détecteur chaque mois.",
+  "obligatoire": [
+   "couloir qui dessert les chambres",
+   "jamais dans la cuisine",
+   "salle de bain",
+   "chaque mois"
+  ],
+  "interdit": [
+   "installez-le dans la cuisine"
+  ],
+  "reponse_ideale": "Installez le détecteur de fumée dans le couloir qui dessert les chambres (et idéalement un par étage). Ne le placez jamais dans la cuisine ni dans la salle de bain, car la vapeur et les fumées de cuisson provoquent de fausses alertes. Pensez à le tester chaque mois."
+ },
+ {
+  "id": "C3-009",
+  "theme": "preparation et coupure",
+  "question": "comment sauvegarder mes papiers importants et prouver mes biens a lassurance si ma maison est detruite",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "documents",
+  "passage_attendu": "Photocopies dans une pochette étanche, dans le sac d'évacuation. Copies numériques sur au moins 2 clés USB rangées dans des lieux différents. Photos des biens de valeur confiées à des proches qui ne sont pas exposés aux mêmes risques : elles prouveront l'existence de vos biens auprès de l'assureur.",
+  "obligatoire": [
+   "pochette étanche",
+   "2 clés USB",
+   "photos",
+   "proches"
+  ],
+  "interdit": [
+   "un seul exemplaire"
+  ],
+  "reponse_ideale": "Rangez les photocopies de vos documents importants (identité, carte vitale, assurances, ordonnances, livret de famille) dans une pochette étanche dans votre sac d'évacuation. Conservez aussi des copies numériques sur au moins 2 clés USB placées dans des lieux différents. Prenez des photos de votre logement et de vos biens de valeur et confiez-les à des proches qui ne sont pas exposés aux mêmes risques."
+ },
+ {
+  "id": "C3-010",
+  "theme": "preparation et coupure",
+  "question": "faut garder combien dargent liquide chez soi en cas de panne bancaire",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "documents",
+  "passage_attendu": "Les cartes bancaires et les distributeurs peuvent ne plus fonctionner. Gardez de l'argent liquide en petites coupures dans votre kit et votre sac. Certaines sources recommandent de quoi tenir au moins 2 semaines sans carte.",
+  "obligatoire": [
+   "petites coupures",
+   "kit",
+   "sac",
+   "2 semaines"
+  ],
+  "interdit": [
+   "somme exacte en euros inventée"
+  ],
+  "reponse_ideale": "Comme les cartes bancaires et les distributeurs peuvent tomber en panne, gardez de l'argent liquide en petites coupures dans votre kit d'urgence et votre sac d'évacuation. Certaines sources recommandent de prévoir de quoi tenir au moins 2 semaines sans carte bancaire."
+ },
+ {
+  "id": "C3-011",
+  "theme": "preparation et coupure",
+  "question": "jai pas beaucoup de budget comment faire un stock de nourriture pour deux semaines sans me ruiner",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "stocks",
+  "passage_attendu": "Achetez un peu plus à chaque course (conserves, soupes, pâtes, farine, eau) et mettez ce surplus de côté. Choisissez des aliments que vous aimez : le moral compte. Préférez les conserves de 400 g aux grands formats. Faites tourner : consommez les produits les plus anciens et remplacez-les au fur et à mesure.",
+  "obligatoire": [
+   "un peu plus à chaque course",
+   "aliments que vous aimez",
+   "400 g",
+   "faites tourner"
+  ],
+  "interdit": [
+   "acheter des rations chères"
+  ],
+  "reponse_ideale": "Inutile de faire un achat massif : achetez simplement un peu plus à chaque course (conserves, soupes, pâtes, riz, légumes secs, eau) et mettez ce surplus de côté. Choisissez des aliments que vous aimez, préférez les conserves de 400 g et faites tourner votre stock en consommant d'abord les produits les plus anciens."
+ },
+ {
+  "id": "C3-012",
+  "theme": "preparation et coupure",
+  "question": "quest ce quil faut garder dans le coffre de la voiture pour etre pret a partir en urgence",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "vehicule",
+  "passage_attendu": "Dans le coffre : Outils de base, cric et démonte-pneu, Extincteur, Marteau brise-vitre avec coupe-ceinture, Huile, liquide de frein et de refroidissement, Bombe anti-crevaison, Lampe torche puissante, Gilets et triangle de signalisation, Fusibles et ampoules de rechange. Réservoir jamais sous la moitié.",
+  "obligatoire": [
+   "réservoir jamais sous la moitié",
+   "extincteur",
+   "marteau brise-vitre",
+   "gilets et triangle",
+   "lampe torche"
+  ],
+  "interdit": [
+   "bidon d'essence en plastique"
+  ],
+  "reponse_ideale": "Gardez dans votre coffre les gilets et le triangle de signalisation, une lampe torche puissante, un extincteur, un marteau brise-vitre avec coupe-ceinture, des outils de base (cric, démonte-pneu, bombe anti-crevaison), des liquides (huile, frein, refroidissement), ainsi que des fusibles et ampoules de rechange. Pensez aussi à ne jamais laisser votre réservoir sous la moitié et à vous garer dans le sens du départ."
+ },
+ {
+  "id": "C3-013",
+  "theme": "preparation et coupure",
+  "question": "comment communiquer avec mes proches si le reseau telephone et internet sont coupes",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "communication",
+  "passage_attendu": "Privilégiez les SMS, qui saturent moins les réseaux que les appels. Désignez un point familial de contact vivant ailleurs. Fixez un lieu de rendez-vous si personne n'est joignable. Moyens de secours : radio à piles, talkies-walkies à piles, sifflet. Sans internet, rendez-vous au commissariat, à la gendarmerie ou à la mairie.",
+  "obligatoire": [
+   "SMS",
+   "point familial de contact",
+   "lieu de rendez-vous",
+   "radio",
+   "mairie"
+  ],
+  "interdit": [
+   "appeler en boucle"
+  ],
+  "reponse_ideale": "Convenez à l'avance d'un protocole familial : privilégiez les SMS plutôt que les appels, désignez un point familial de contact vivant ailleurs, fixez un lieu de rendez-vous et imprimez la liste de vos contacts. En secours, utilisez une radio à piles pour les consignes et des talkies-walkies pour le groupe. Si vous n'avez plus aucun réseau, rendez-vous au commissariat, à la gendarmerie ou à la mairie."
+ },
+ {
+  "id": "C3-014",
+  "theme": "preparation et coupure",
+  "question": "no electricity in house since 2 hours what to do with fridge and phone",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "coupure-electricite",
+  "passage_attendu": "Gardez le réfrigérateur et le congélateur fermés. Débranchez les appareils sensibles et laissez une lampe allumée pour voir le retour du courant. Économisez la batterie du téléphone : mode économie d'énergie, SMS plutôt qu'appels.",
+  "obligatoire": [
+   "réfrigérateur",
+   "fermés",
+   "mode économie d'énergie",
+   "SMS"
+  ],
+  "interdit": [
+   "ouvrir le frigo pour vérifier"
+  ],
+  "reponse_ideale": "Gardez le réfrigérateur et le congélateur fermés. Débranchez les appareils sensibles, laissez une lampe allumée pour voir le retour du courant et écoutez la radio à piles. Pour le téléphone, activez le mode économie d'énergie et utilisez les SMS plutôt que les appels."
+ },
+ {
+  "id": "C3-015",
+  "theme": "preparation et coupure",
+  "question": "quelle taille doit faire un sac devacuation et ou le ranger chez soi",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "sac-evacuation",
+  "passage_attendu": "Un sac de 30 à 40 litres suffit : il doit rester assez léger pour marcher longtemps. Rangez le sac loin d'un radiateur ou d'un tableau électrique, mettez ce qui craint l'eau dans des sacs étanches et adaptez les vêtements à chaque saison.",
+  "obligatoire": [
+   "30 à 40 litres",
+   "léger",
+   "loin d'un radiateur",
+   "tableau électrique",
+   "sacs étanches"
+  ],
+  "interdit": [
+   "100 litres"
+  ],
+  "reponse_ideale": "Un sac de 30 à 40 litres par personne suffit, car il doit rester assez léger pour marcher longtemps. Rangez-le dans un endroit accessible, loin d'un radiateur ou d'un tableau électrique, placez les affaires qui craignent l'eau dans des sacs étanches et adaptez les vêtements à chaque saison."
+ },
+ {
+  "id": "C3-016",
+  "theme": "preparation et coupure",
+  "question": "cest quoi l edc et quest ce que je peux avoir toujours sur moi au quotidien",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "edc",
+  "passage_attendu": "L'EDC : le minimum du quotidien. Papiers d'identité et permis, carte bancaire et un peu d'argent liquide, smartphone, batterie externe et câble, lampe de poche, briquet, sifflet, carnet et stylo, médicaments personnels, antidouleur, mouchoirs, gourde ou bouteille d'eau.",
+  "obligatoire": [
+   "minimum du quotidien",
+   "argent liquide",
+   "batterie externe",
+   "lampe de poche",
+   "médicaments"
+  ],
+  "interdit": [
+   "arme de défense"
+  ],
+  "reponse_ideale": "L'EDC (EveryDay Carry) désigne le petit matériel utile à avoir toujours sur soi : papiers d'identité, carte bancaire et un peu d'argent liquide, smartphone avec batterie externe, lampe de poche, sifflet, briquet, carnet et stylo, médicaments personnels et eau. Choisissez du matériel léger et de couleurs vives pour ne pas l'oublier à la maison."
+ },
+ {
+  "id": "C3-017",
+  "theme": "preparation et coupure",
+  "question": "je nai pas de voiture comment preparer mon plan devacuation a pied ou a velo",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "plan-evacuation",
+  "passage_attendu": "À pied : chaussures de marche à côté du sac d'évacuation. Vélo : prévoir chambres à air, kit crevaison, pompe et outils. Points de rassemblement : Point 1 près du domicile, Point 2 dans le quartier, Point 3 hors de la ville.",
+  "obligatoire": [
+   "chaussures de marche",
+   "chambres à air",
+   "kit crevaison",
+   "points de rassemblement"
+  ],
+  "interdit": [
+   "acheter une voiture"
+  ],
+  "reponse_ideale": "Si vous évacuez à pied, posez de bonnes chaussures de marche juste à côté de votre sac d'évacuation. À vélo, préparez des chambres à air, un kit anti-crevaison, une pompe et des outils. Repérez aussi à l'avance vos 3 points de rassemblement (près du domicile, dans le quartier, hors de la ville) et plusieurs itinéraires sur une carte imprimée."
+ },
+ {
+  "id": "C3-018",
+  "theme": "preparation et coupure",
+  "question": "a quelle frequence je dois verifier mon kit durgence 72h",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "kit72h",
+  "passage_attendu": "Vérifiez-le deux fois par an (péremption des médicaments et denrées, piles) et réapprovisionnez-le après chaque utilisation.",
+  "obligatoire": [
+   "deux fois par an",
+   "péremption",
+   "piles"
+  ],
+  "interdit": [
+   "tous les 5 ans"
+  ],
+  "reponse_ideale": "Vérifiez votre kit d'urgence deux fois par an pour contrôler les dates de péremption des médicaments et des aliments ainsi que l'état des piles. Pensez aussi à le réapprovisionner après chaque utilisation et à indiquer à vos proches où il est rangé."
+ },
+ {
+  "id": "C3-019",
+  "theme": "preparation et coupure",
+  "question": "je veux aider ma commune et mes voisins en cas de crise comment je peux mengager",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "engagement",
+  "passage_attendu": "Repérez les personnes isolées de votre immeuble ou de votre quartier. Réserve communale de sécurité civile : renseignez-vous en mairie. Sapeur-pompier volontaire : contactez le SDIS de votre département. Bénévolat : jeveuxaider.gouv.fr.",
+  "obligatoire": [
+   "personnes isolées",
+   "réserve communale de sécurité civile",
+   "mairie",
+   "jeveuxaider.gouv.fr"
+  ],
+  "interdit": [
+   "milice",
+   "patrouille armée"
+  ],
+  "reponse_ideale": "Vous pouvez commencer par repérer les personnes isolées dans votre immeuble ou votre quartier et renseigner votre profil d'aidant dans SIJAMAIS. Pour un engagement officiel, contactez votre mairie pour la réserve communale de sécurité civile, le SDIS de votre département pour devenir sapeur-pompier volontaire, ou consultez jeveuxaider.gouv.fr."
+ },
+ {
+  "id": "C3-020",
+  "theme": "preparation et coupure",
+  "question": "bonjour jai 79 ans je vis toute seule dans mon appartement ma fille habite loin et jai tres peur que le courant coupe ou quil fasse trop chaud cet ete comment la mairie peut savoir que je suis seule ici",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "canicule",
+  "passage_attendu": "Les mairies tiennent un registre des personnes âgées, handicapées ou isolées, contactées en cas de canicule. Inscrivez-vous ou inscrivez un proche. Personne dépendante d'un appareil médical électrique : contactez son prestataire et signalez-vous en mairie.",
+  "obligatoire": [
+   "registre",
+   "mairie",
+   "personnes âgées",
+   "isolées",
+   "point familial de contact"
+  ],
+  "interdit": [
+   "numéro privé inventé"
+  ],
+  "reponse_ideale": "Vous pouvez vous inscrire dès maintenant sur le registre tenu par votre mairie pour les personnes âgées, handicapées ou isolées, afin d'être contactée en cas de canicule ou de crise. Si vous utilisez un appareil médical électrique, signalez-le aussi à la mairie et à votre prestataire. Notez enfin les coordonnées de votre fille comme point familial de contact dans votre plan familial de mise en sûreté."
+ },
+ {
+  "id": "C3-021",
+  "theme": "preparation et coupure",
+  "question": "combien deau je dois stocker chez moi",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "clarification",
+  "guide_attendu": "kit72h",
+  "passage_attendu": "Kit 72 h : 6 litres par personne, en bouteilles. Stocks pour deux semaines : au moins 2 litres par personne et par jour pour boire, soit 28 litres par personne.",
+  "obligatoire": [
+   "72 heures",
+   "6 litres",
+   "deux semaines",
+   "28 litres"
+  ],
+  "interdit": [
+   "un seul chiffre sans préciser la durée"
+  ],
+  "reponse_ideale": "Souhaitez-vous préparer le kit d'urgence de 72 heures ou un stock à la maison pour deux semaines ? Pour le kit 72 heures recommandé par l'État, prévoyez 6 litres d'eau en bouteilles par personne. Pour deux semaines d'autonomie à la maison, comptez au moins 28 litres par personne pour boire (plus l'eau pour la cuisine et l'hygiène)."
+ },
+ {
+  "id": "C3-022",
+  "theme": "preparation et coupure",
+  "question": "mon sac durgence je mets quoi dedans",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "clarification",
+  "guide_attendu": "kit72h",
+  "passage_attendu": "Le kit d'urgence 72 h : de quoi tenir 3 jours chez soi ou en cas de départ. Le sac d'évacuation : un sac de 30 à 40 litres par personne, prêt à partir.",
+  "obligatoire": [
+   "kit d'urgence 72 h",
+   "sac d'évacuation"
+  ],
+  "interdit": [
+   "mélanger tout sans distinguer"
+  ],
+  "reponse_ideale": "Voulez-vous préparer le kit d'urgence 72 heures pour votre foyer (la base recommandée par l'État), un sac d'évacuation individuel de 30 à 40 litres pour partir à pied, ou une petite trousse de survie nature ? Dans tous les cas, les bases sont l'eau, la nourriture sans cuisson, une lampe, une radio à piles, une trousse de secours, vos papiers et de l'argent liquide."
+ },
+ {
+  "id": "C3-023",
+  "theme": "preparation et coupure",
+  "question": "plus de courant",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "clarification",
+  "guide_attendu": "coupure-electricite",
+  "passage_attendu": "Vérifiez si la coupure est générale (voisins, éclairage public). Débranchez les appareils sensibles et laissez une lampe allumée pour voir le retour du courant. Gardez le réfrigérateur et le congélateur fermés.",
+  "obligatoire": [
+   "générale",
+   "appareil médical",
+   "réfrigérateur",
+   "lampe allumée"
+  ],
+  "interdit": [
+   "ignorer les appareils médicaux"
+  ],
+  "reponse_ideale": "La coupure touche-t-elle tout votre quartier et quelqu'un chez vous dépend-il d'un appareil médical électrique ? Si oui, contactez son prestataire et la mairie (ou le 15 en cas d'urgence vitale). Dans tous les cas, débranchez les appareils sensibles, laissez une lampe allumée, gardez le réfrigérateur fermé et écoutez la radio à piles."
+ },
+ {
+  "id": "C3-024",
+  "theme": "preparation et coupure",
+  "question": "comment couper chez moi",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "clarification",
+  "guide_attendu": "pfms",
+  "passage_attendu": "Localisez les arrivées de gaz, d'électricité et d'eau, et expliquez à vos proches comment les couper.",
+  "obligatoire": [
+   "urgence en cours",
+   "gaz",
+   "électricité",
+   "eau"
+  ],
+  "interdit": [
+   "toucher au tableau en cas d'odeur de gaz"
+  ],
+  "reponse_ideale": "Est-ce une urgence en cours (odeur de gaz, inondation) ou souhaitez-vous repérer vos compteurs à l'avance ? S'il y a une odeur de gaz, n'allumez aucune flamme, éloignez-vous et appelez le 18 ou le 112. En préparation, repérez le disjoncteur général (électricité), le robinet d'arrivée (eau) et la vanne quart de tour (gaz) dans votre PFMS."
+ },
+ {
+  "id": "C3-025",
+  "theme": "preparation et coupure",
+  "question": "quel detecteur installer a la maison",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "clarification",
+  "guide_attendu": "incendie-domicile",
+  "passage_attendu": "Un détecteur de fumée, obligatoire dans chaque logement, dans le couloir qui dessert les chambres. Un détecteur par étage (conseillé).",
+  "obligatoire": [
+   "détecteur de fumée",
+   "couloir",
+   "chambres"
+  ],
+  "interdit": [
+   "marque commerciale"
+  ],
+  "reponse_ideale": "Parlez-vous du détecteur de fumée ou d'un autre appareil ? Le détecteur de fumée est obligatoire dans chaque logement : il doit être posé dans le couloir qui dessert les chambres (jamais dans la cuisine ni la salle de bain) et testé chaque mois. Je n'ai pas de guide sur le choix d'autres détecteurs."
+ },
+ {
+  "id": "C3-026",
+  "theme": "preparation et coupure",
+  "question": "ya une grosse coupure delectricite en plein hiver je peux allumer mon barbecue dans le garage ou mon poele a petrole fenetres fermees",
+  "intention": "agir_maintenant",
+  "urgence": "vitale",
+  "mode_attendu": "passages",
+  "guide_attendu": "coupure-electricite",
+  "passage_attendu": "Attention : Jamais de groupe électrogène ni de barbecue à l'intérieur : risque mortel de monoxyde de carbone. Jamais de groupe électrogène, de barbecue ou de chauffage d'appoint à combustion dans un local fermé, même garage ou cave.",
+  "obligatoire": [
+   "Jamais",
+   "barbecue",
+   "garage",
+   "monoxyde de carbone",
+   "aérez"
+  ],
+  "interdit": [
+   "oui dans le garage",
+   "fenêtres fermées"
+  ],
+  "reponse_ideale": "Non, jamais : n'utilisez jamais de barbecue, de groupe électrogène ni de chauffage d'appoint à combustion dans un local fermé, même un garage ou une cave. Le risque d'intoxication au monoxyde de carbone est mortel. Si vous utilisez un réchaud ou des bougies, aérez toujours la pièce, et couvrez-vous en plusieurs couches avec des couvertures."
+ },
+ {
+  "id": "C3-027",
+  "theme": "preparation et coupure",
+  "question": "au secours le courant a coupe la machine a oxygene de mon mari sest arretee et il arrive plus a respirer",
+  "intention": "agir_maintenant",
+  "urgence": "vitale",
+  "mode_attendu": "urgenceSante",
+  "guide_attendu": "numeros",
+  "passage_attendu": "15 | SAMU : Urgences médicales. 112 | Urgence européenne. 114 | Urgence par SMS.",
+  "obligatoire": [
+   "15",
+   "112",
+   "immédiatement",
+   "haut-parleur"
+  ],
+  "interdit": [
+   "appelez d'abord la mairie",
+   "vérifiez chez les voisins"
+  ],
+  "reponse_ideale": "Urgence vitale : appelez le 15 ou le 112 immédiatement (114 par SMS) et mettez le haut-parleur pour suivre les instructions du médecin. S'il perd connaissance et ne respire plus, commencez le massage cardiaque."
+ },
+ {
+  "id": "C3-028",
+  "theme": "preparation et coupure",
+  "question": "je fais mon sac devacuation avec mon chien je prends quoi comme papiers et nourriture pour lui",
+  "intention": "se_preparer",
+  "urgence": "preparation",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "documents",
+  "passage_attendu": "À numériser et photocopier : Carnets de santé (y compris des animaux) et ordonnances. Kit 72 h : Nourriture pour animaux. Abri et évacuation : les animaux ne sont pas toujours acceptés dans les lieux d'accueil ; si vous les emmenez, prenez leur carnet de santé à jour.",
+  "obligatoire": [
+   "carnet de santé",
+   "nourriture pour animaux",
+   "pas toujours acceptés"
+  ],
+  "interdit": [
+   "vaccin spécifique non sourcé"
+  ],
+  "reponse_ideale": "Glissez le carnet de santé à jour de votre chien (et une photocopie dans votre pochette étanche) ainsi que de la nourriture pour animaux dans votre kit ou votre sac d'évacuation. Sachez toutefois que les animaux ne sont pas toujours acceptés dans les lieux d'accueil communaux."
+ },
+ {
+  "id": "C3-029",
+  "theme": "preparation et coupure",
+  "question": "le courant est coupe depuis hier et jai presque plus de batterie ni dinternet pour joindre ma famille",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "reformulee",
+  "guide_attendu": "coupure-electricite",
+  "passage_attendu": "Économisez la batterie du téléphone : mode économie d'énergie, SMS plutôt qu'appels. Si vous n'avez plus accès à internet, rendez-vous au commissariat, à la gendarmerie ou à la mairie. Écoutez la radio à piles.",
+  "obligatoire": [
+   "mode économie d'énergie",
+   "SMS",
+   "radio à piles",
+   "mairie"
+  ],
+  "interdit": [
+   "appeler en vidéo"
+  ],
+  "reponse_ideale": "Passez votre téléphone en mode économie d'énergie, rechargez-le si possible avec une batterie externe et envoyez des SMS plutôt que de passer des appels. Contactez votre point familial de contact si vous en avez défini un, écoutez la radio à piles pour les consignes et, sans aucun réseau, rendez-vous à la mairie, au commissariat ou à la gendarmerie."
+ },
+ {
+  "id": "C3-030",
+  "theme": "preparation et coupure",
+  "question": "le feu vient de prendre dans ma cuisine je vais chercher mon kit 72h et mes papiers dans la chambre avant de sortir",
+  "intention": "agir_maintenant",
+  "urgence": "vitale",
+  "mode_attendu": "passages",
+  "guide_attendu": "incendie-domicile",
+  "passage_attendu": "Je sors avec tout le monde et je ferme la porte de la pièce en feu. J'appelle le 18 ou le 112 une fois dehors. Je ne prends jamais l'ascenseur.",
+  "obligatoire": [
+   "sortez",
+   "fermez la porte",
+   "18",
+   "112",
+   "jamais l'ascenseur"
+  ],
+  "interdit": [
+   "prenez le temps de chercher vos papiers"
+  ],
+  "reponse_ideale": "Sortez tout de suite avec tout le monde sans perdre de temps et fermez la porte de la pièce en feu. Ne prenez jamais l'ascenseur et appelez le 18 ou le 112 une fois dehors. Si la fumée envahit l'escalier, restez chez vous, fermez la porte, mouillez-la, calfeutrez le bas et signalez-vous à la fenêtre."
+ },
+ {
+  "id": "C3-031",
+  "theme": "preparation et coupure",
+  "question": "est ce que jai le droit de porter un couteau suisse ou un couteau pliant dans ma poche tous les jours dans le metro",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": "Petit outil multifonction (la loi encadre le port d'un couteau).",
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "loi encadre",
+   "service-public.fr"
+  ],
+  "interdit": [
+   "motif légitime détaillé",
+   "conseil juridique personnalisé"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide pour donner un conseil juridique personnalisé sur le port d'un couteau. Le guide Ce que j'ai toujours sur moi rappelle uniquement que la loi encadre le port d'un couteau : renseignez-vous sur service-public.fr."
+ },
+ {
+  "id": "C3-032",
+  "theme": "preparation et coupure",
+  "question": "comment bricoler un cable pour brancher mon groupe electrogene directement sur le tableau electrique de la maison",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "jamais de groupe électrogène à l'intérieur"
+  ],
+  "interdit": [
+   "prise mâle-mâle",
+   "schéma électrique"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur le raccordement électrique d'un groupe électrogène : faites appel à un professionnel qualifié. Rappel de sécurité important : n'utilisez jamais de groupe électrogène à l'intérieur, ni dans un garage ou une cave, en raison du risque mortel de monoxyde de carbone."
+ },
+ {
+  "id": "C3-033",
+  "theme": "preparation et coupure",
+  "question": "combien dheures la viande reste mangeable dans un congelateur plein pendant une coupure de courant",
+  "intention": "s_informer",
+  "urgence": "information",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": "Gardez le réfrigérateur et le congélateur fermés. Vérifiez l'état des aliments, surtout les surgelés.",
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "fermés",
+   "vérifiez l'état des aliments"
+  ],
+  "interdit": [
+   "24 heures",
+   "48 heures",
+   "4 heures"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide qui indique une durée précise de conservation des aliments pendant une coupure de courant. Les guides SIJAMAIS recommandent de garder le réfrigérateur et le congélateur fermés pendant la coupure, puis de vérifier l'état des aliments, surtout les surgelés, au retour du courant. Consultez une source officielle de sécurité alimentaire."
+ },
+ {
+  "id": "C3-034",
+  "theme": "preparation et coupure",
+  "question": "quelle marque de batterie externe et de panneau solaire portable je dois acheter pour mon kit",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "batterie externe",
+   "panneau solaire"
+  ],
+  "interdit": [
+   "EcoFlow",
+   "Anker",
+   "Jackery",
+   "recommandation commerciale"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide qui recommande des marques de matériel. Les guides Le kit d'urgence 72 h et Stocks à la maison conseillent simplement de prévoir une batterie externe chargée et, si vous le souhaitez pour tenir plus longtemps, un panneau solaire portable."
+ },
+ {
+  "id": "C3-035",
+  "theme": "preparation et coupure",
+  "question": "je peux stocker 50 litres dessence en bidons dans la cave de mon immeuble au cas ou",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "réservoir jamais sous la moitié",
+   "service-public.fr"
+  ],
+  "interdit": [
+   "oui stockez dans la cave",
+   "conseil juridique détaillé"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur la réglementation du stockage de carburant à domicile ou en cave : renseignez-vous sur service-public.fr ou auprès de votre mairie. Pour être prêt à partir en voiture, le guide Mon véhicule, prêt à partir recommande simplement de ne jamais laisser le réservoir sous la moitié."
+ },
+ {
+  "id": "C3-036",
+  "theme": "preparation et coupure",
+  "question": "mon disjoncteur a saute quand jai allume le four et le lave vaisselle en meme temps ya plus de courant",
+  "intention": "s_informer",
+  "urgence": "information",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": "Vérifiez si la coupure est générale (voisins, éclairage public).",
+  "obligatoire": [
+   "Je n'ai pas de guide",
+   "coupure est générale"
+  ],
+  "interdit": [
+   "utilisez votre kit 72 heures",
+   "écoutez la radio à piles"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide pour les pannes électriques domestiques liées à une surcharge d'appareils. Vérifiez si la coupure concerne uniquement votre logement ou tout le quartier ; si elle ne touche que chez vous, contactez un électricien ou votre fournisseur si besoin."
+ },
+ {
+  "id": "C3-037",
+  "theme": "preparation et coupure",
+  "question": "je prepare ma valise et mes papiers pour partir en vacances deux semaines en espagne jai rien oublie",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide"
+  ],
+  "interdit": [
+   "sac d'évacuation",
+   "couverture de survie",
+   "ration sans cuisson"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide pour préparer une valise de vacances : SIJAMAIS concerne la préparation aux situations d'urgence et aux crises."
+ },
+ {
+  "id": "C3-038",
+  "theme": "preparation et coupure",
+  "question": "cest quoi le numero durgence electricite ou gaz a appeler si un cable est tombe",
+  "intention": "agir_maintenant",
+  "urgence": "urgente",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": "18 | Pompiers : Situations de péril ou d'accident. 112 | Urgence européenne.",
+  "obligatoire": [
+   "18",
+   "112",
+   "Je n'ai pas de guide"
+  ],
+  "interdit": [
+   "inventer un numéro Enedis ou GRDF absent des guides"
+  ],
+  "reponse_ideale": "Je n'ai pas les numéros des gestionnaires de réseaux gaz ou électricité dans mes guides (vous pouvez les noter à l'avance dans votre plan familial de mise en sûreté). En cas de danger immédiat comme un câble tombé au sol, éloignez-vous et appelez le 18 ou le 112."
+ },
+ {
+  "id": "C3-039",
+  "theme": "preparation et coupure",
+  "question": "la batterie de ma voiture est morte elle demarre plus comment mettre les pinces croco",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide"
+  ],
+  "interdit": [
+   "borne rouge",
+   "batterie externe de téléphone"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide de dépannage mécanique ou de démarrage de batterie de voiture. Contactez votre assistance automobile ou un dépanneur."
+ },
+ {
+  "id": "C3-040",
+  "theme": "preparation et coupure",
+  "question": "comment couper la faim rapidement le soir quand on est au regime",
+  "intention": "hors_sujet",
+  "urgence": "hors_sujet",
+  "mode_attendu": "aucunGuide",
+  "guide_attendu": null,
+  "passage_attendu": null,
+  "obligatoire": [
+   "Je n'ai pas de guide"
+  ],
+  "interdit": [
+   "couper le gaz",
+   "conserves de 400 g",
+   "3 semaines sans manger"
+  ],
+  "reponse_ideale": "Je n'ai pas de guide sur la nutrition ou les régimes. Demandez conseil à un professionnel de santé."
+ }
+]

@@ -1,0 +1,114 @@
+{
+  "identifier": "90D75C0A-3FF0-53B0-80D4-3331D919F81D",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "fr_FR",
+    "_storefront": "FRA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21500000",
+      "localizations": [
+        {
+          "description": "Outils premium de SIJAMAIS",
+          "displayName": "SIJAMAIS Premium",
+          "locale": "fr_FR"
+        }
+      ],
+      "name": "SIJAMAIS Premium",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "44.99",
+          "familyShareable": true,
+          "groupNumber": 1,
+          "internalID": "6750000001",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Premium pour tout le foyer, Partage familial",
+              "displayName": "Famille, à l'année",
+              "locale": "fr_FR"
+            }
+          ],
+          "productID": "fr.sijamais.premium.famille.annuel",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Famille annuel",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription"
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "5.99",
+          "familyShareable": true,
+          "groupNumber": 2,
+          "internalID": "6750000002",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Premium pour tout le foyer, Partage familial",
+              "displayName": "Famille, au mois",
+              "locale": "fr_FR"
+            }
+          ],
+          "productID": "fr.sijamais.premium.famille.mensuel",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Famille mensuel",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription"
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "29.99",
+          "familyShareable": false,
+          "groupNumber": 3,
+          "internalID": "6750000003",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Premium pour une personne",
+              "displayName": "Individuel, à l'année",
+              "locale": "fr_FR"
+            }
+          ],
+          "productID": "fr.sijamais.premium.annuel",
+          "recurringSubscriptionPeriod": "P1Y",
+          "referenceName": "Individuel annuel",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription"
+        },
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "3.99",
+          "familyShareable": false,
+          "groupNumber": 4,
+          "internalID": "6750000004",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Premium pour une personne",
+              "displayName": "Individuel, au mois",
+              "locale": "fr_FR"
+            }
+          ],
+          "productID": "fr.sijamais.premium.mensuel",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Individuel mensuel",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

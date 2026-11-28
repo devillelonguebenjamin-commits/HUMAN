@@ -1,0 +1,721 @@
+{
+ "version": "1",
+ "date": "2026-11-27",
+ "racine": "racine",
+ "noeuds": [
+  {
+   "id": "racine",
+   "question": "De quoi avez-vous besoin ?",
+   "options": [
+    {
+     "libelle": "Quelqu'un est en danger, maintenant",
+     "suivant": "danger",
+     "symbole": "cross.case.fill"
+    },
+    {
+     "libelle": "Une alerte est en cours",
+     "suivant": "alerte",
+     "symbole": "megaphone.fill"
+    },
+    {
+     "libelle": "Un événement près de chez moi",
+     "suivant": "evenement",
+     "symbole": "cloud.bolt.rain.fill"
+    },
+    {
+     "libelle": "Me préparer",
+     "suivant": "preparer",
+     "symbole": "bag.fill"
+    },
+    {
+     "libelle": "Après une crise",
+     "suivant": "apres",
+     "symbole": "house.fill"
+    },
+    {
+     "libelle": "Arnaque, piratage, fausse information",
+     "suivant": "cyber",
+     "symbole": "lock.shield.fill"
+    },
+    {
+     "libelle": "Dehors, dans la nature",
+     "suivant": "nature",
+     "symbole": "leaf.fill"
+    },
+    {
+     "libelle": "Je suis élu ou agent de la commune",
+     "suivant": "mairie",
+     "symbole": "building.columns.fill"
+    }
+   ]
+  },
+  {
+   "id": "danger",
+   "question": "Pour qui ?",
+   "options": [
+    {
+     "libelle": "Pour moi",
+     "question": "je n arrive plus a respirer",
+     "attendu": {
+      "guide": null,
+      "mode": "urgencePersonnelle"
+     },
+     "symbole": "person.fill"
+    },
+    {
+     "libelle": "Pour quelqu'un d'autre",
+     "suivant": "danger-proche",
+     "symbole": "person.2.fill"
+    }
+   ]
+  },
+  {
+   "id": "danger-proche",
+   "question": "Que se passe-t-il ?",
+   "options": [
+    {
+     "libelle": "Ne répond pas et ne respire pas",
+     "question": "il ne repond pas et ne respire pas",
+     "attendu": {
+      "guide": "arret-cardiaque",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "Ne répond pas mais respire",
+     "question": "il ne repond pas mais il respire",
+     "attendu": {
+      "guide": "inconscient-respire",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "Saigne beaucoup",
+     "question": "il saigne beaucoup",
+     "attendu": {
+      "guide": "saignement",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "S'étouffe",
+     "suivant": "etouffement"
+    },
+    {
+     "libelle": "S'est brûlé",
+     "question": "il s est brule",
+     "attendu": {
+      "guide": "brulure",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "Bouche de travers, bras qui ne se lève plus",
+     "question": "il a la bouche de travers et n arrive plus a lever le bras",
+     "attendu": {
+      "guide": null,
+      "mode": "aucunGuide"
+     }
+    },
+    {
+     "libelle": "Convulse, tremble de partout",
+     "question": "il fait une crise d epilepsie il tremble de partout",
+     "attendu": {
+      "guide": null,
+      "mode": "aucunGuide"
+     }
+    },
+    {
+     "libelle": "A avalé un produit ou des médicaments",
+     "question": "il a avale un produit menager",
+     "attendu": {
+      "guide": "numeros",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "Maux de tête et vertiges à plusieurs, appareil à combustion",
+     "question": "on a tous mal a la tete et des vertiges depuis qu on a allume le chauffage d appoint",
+     "attendu": {
+      "guide": "monoxyde",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "Parle de mourir, d'en finir",
+     "question": "mon proche dit qu il veut en finir",
+     "attendu": {
+      "guide": "moral",
+      "mode": "urgenceSante"
+     }
+    }
+   ]
+  },
+  {
+   "id": "etouffement",
+   "question": "Quel âge a la personne ?",
+   "options": [
+    {
+     "libelle": "Adulte ou enfant",
+     "question": "il s etouffe il ne peut plus parler",
+     "attendu": {
+      "guide": "etouffement",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "Bébé de moins d'un an",
+     "question": "mon bebe s etouffe",
+     "attendu": {
+      "guide": "etouffement",
+      "mode": "urgenceSante"
+     }
+    },
+    {
+     "libelle": "Il tousse et arrive à parler",
+     "question": "il a avale de travers il tousse mais il arrive a parler",
+     "attendu": {
+      "guide": "etouffement",
+      "mode": "urgenceSante"
+     }
+    }
+   ]
+  },
+  {
+   "id": "alerte",
+   "question": "Quelle alerte ?",
+   "options": [
+    {
+     "libelle": "Sirène (son montant et descendant)",
+     "question": "la sirene sonne que faire",
+     "attendu": {
+      "guide": "alerte",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Corne de brume près d'un barrage",
+     "question": "corne de brume barrage",
+     "attendu": {
+      "guide": "alerte",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Message FR-Alert sur mon téléphone",
+     "question": "message fr alert recu",
+     "attendu": {
+      "guide": "alerte",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "On nous dit de rester à l'abri",
+     "question": "les pompiers disent au haut parleur de rester chez soi",
+     "attendu": {
+      "guide": "reflexes",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Mes enfants sont à l'école",
+     "question": "alerte je vais chercher mes enfants a l ecole",
+     "attendu": {
+      "guide": "reflexes",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Comment savoir que l'alerte est finie",
+     "question": "fin d alerte comment savoir",
+     "attendu": {
+      "guide": "alerte",
+      "mode": "passages"
+     }
+    }
+   ]
+  },
+  {
+   "id": "evenement",
+   "question": "Que se passe-t-il ?",
+   "options": [
+    {
+     "libelle": "Inondation, l'eau monte",
+     "question": "l eau monte inondation que faire",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     },
+     "symbole": "drop.fill"
+    },
+    {
+     "libelle": "Tempête, orage, cyclone",
+     "question": "tempete orage que faire",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     },
+     "symbole": "wind"
+    },
+    {
+     "libelle": "Feu de forêt",
+     "suivant": "feu-foret",
+     "symbole": "flame.fill"
+    },
+    {
+     "libelle": "Le feu dans mon logement",
+     "question": "il y a le feu dans mon appartement",
+     "attendu": {
+      "guide": "incendie-domicile",
+      "mode": "urgenceSante"
+     },
+     "symbole": "house.fill"
+    },
+    {
+     "libelle": "Séisme",
+     "suivant": "seisme",
+     "symbole": "waveform.path.ecg"
+    },
+    {
+     "libelle": "Accident industriel, nuage toxique",
+     "question": "accident industriel nuage toxique que faire",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     },
+     "symbole": "smoke.fill"
+    },
+    {
+     "libelle": "Accident nucléaire",
+     "question": "accident nucleaire que faire",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     },
+     "symbole": "atom"
+    },
+    {
+     "libelle": "Attentat, coups de feu",
+     "question": "coups de feu attentat que faire",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     },
+     "symbole": "exclamationmark.shield.fill"
+    },
+    {
+     "libelle": "Coupure d'électricité",
+     "suivant": "coupure",
+     "symbole": "bolt.slash.fill"
+    },
+    {
+     "libelle": "Odeur de gaz",
+     "question": "ca sent le gaz chez moi",
+     "attendu": {
+      "guide": "reflexes",
+      "mode": "passages"
+     },
+     "symbole": "aqi.medium"
+    },
+    {
+     "libelle": "Forte chaleur, canicule",
+     "question": "canicule il fait tres chaud que faire",
+     "attendu": {
+      "guide": "canicule",
+      "mode": "passages"
+     },
+     "symbole": "sun.max.fill"
+    },
+    {
+     "libelle": "Grand froid",
+     "question": "grand froid que faire",
+     "attendu": {
+      "guide": "grand-froid",
+      "mode": "passages"
+     },
+     "symbole": "snowflake"
+    }
+   ]
+  },
+  {
+   "id": "feu-foret",
+   "question": "Où êtes-vous ?",
+   "options": [
+    {
+     "libelle": "Chez moi, le feu approche",
+     "question": "feu de foret pres de chez moi",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "En voiture",
+     "question": "en voiture face a un feu de foret",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     }
+    }
+   ]
+  },
+  {
+   "id": "seisme",
+   "question": "La secousse est-elle terminée ?",
+   "options": [
+    {
+     "libelle": "Non, ça tremble encore",
+     "question": "la terre tremble que faire",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Oui, le bâtiment est abîmé",
+     "question": "apres le seisme la maison est fissuree",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Je suis près de la mer",
+     "question": "seisme pres de la plage",
+     "attendu": {
+      "guide": "risques",
+      "mode": "passages"
+     }
+    }
+   ]
+  },
+  {
+   "id": "coupure",
+   "question": "Quelqu'un dépend-il d'un appareil médical électrique ?",
+   "options": [
+    {
+     "libelle": "Non",
+     "question": "coupure d electricite dans tout le quartier que faire",
+     "attendu": {
+      "guide": "coupure-electricite",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Oui, et tout va bien pour l'instant",
+     "question": "coupure de courant et mon pere a un appareil medical il respire bien",
+     "attendu": {
+      "guide": "coupure-electricite",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Oui, et il respire mal",
+     "question": "le courant a coupe sa machine a oxygene et il arrive plus a respirer",
+     "attendu": {
+      "guide": "numeros",
+      "mode": "urgenceSante"
+     }
+    }
+   ]
+  },
+  {
+   "id": "preparer",
+   "question": "Que voulez-vous préparer ?",
+   "options": [
+    {
+     "libelle": "Mon kit d'urgence 72 heures",
+     "question": "que mettre dans le kit d urgence 72 heures",
+     "attendu": {
+      "guide": "kit72h",
+      "mode": "passages"
+     },
+     "symbole": "bag.fill"
+    },
+    {
+     "libelle": "Mon sac d'évacuation",
+     "question": "que mettre dans le sac d evacuation",
+     "attendu": {
+      "guide": "sac-evacuation",
+      "mode": "passages"
+     },
+     "symbole": "backpack.fill"
+    },
+    {
+     "libelle": "Des stocks pour 2 semaines",
+     "question": "stock d eau pour deux semaines a la maison",
+     "attendu": {
+      "guide": "stocks",
+      "mode": "passages"
+     },
+     "symbole": "shippingbox.fill"
+    },
+    {
+     "libelle": "Mon plan familial",
+     "question": "comment preparer la coupure du gaz de l eau et de l electricite avant une crise",
+     "attendu": {
+      "guide": "pfms",
+      "mode": "passages"
+     },
+     "symbole": "person.3.fill"
+    },
+    {
+     "libelle": "Mes papiers et de l'argent liquide",
+     "question": "sauvegarder mes papiers et prouver mes biens",
+     "attendu": {
+      "guide": "documents",
+      "mode": "passages"
+     },
+     "symbole": "doc.fill"
+    },
+    {
+     "libelle": "Ma trousse de secours",
+     "question": "que mettre dans la trousse de premiers secours",
+     "attendu": {
+      "guide": "trousses",
+      "mode": "passages"
+     },
+     "symbole": "cross.case.fill"
+    },
+    {
+     "libelle": "Ma voiture",
+     "question": "que garder dans le coffre de la voiture pour etre pret a partir",
+     "attendu": {
+      "guide": "vehicule",
+      "mode": "passages"
+     },
+     "symbole": "car.fill"
+    },
+    {
+     "libelle": "Connaître les risques de ma commune",
+     "question": "comment savoir quels risques majeurs existent dans ma commune",
+     "attendu": {
+      "guide": "pfms",
+      "mode": "passages"
+     },
+     "symbole": "map.fill"
+    },
+    {
+     "libelle": "Apprendre les gestes qui sauvent",
+     "question": "ou apprendre les gestes de premiers secours",
+     "attendu": {
+      "guide": "engagement",
+      "mode": "passages"
+     },
+     "symbole": "heart.fill"
+    }
+   ]
+  },
+  {
+   "id": "apres",
+   "question": "De quoi avez-vous besoin ?",
+   "options": [
+    {
+     "libelle": "Rentrer chez moi",
+     "question": "apres l inondation peut on rentrer chez moi",
+     "attendu": {
+      "guide": "retour",
+      "mode": "passages"
+     },
+     "symbole": "house.fill"
+    },
+    {
+     "libelle": "L'assurance, la catastrophe naturelle",
+     "question": "declarer catastrophe naturelle assurance delai",
+     "attendu": {
+      "guide": "assurance",
+      "mode": "passages"
+     },
+     "symbole": "doc.text.fill"
+    },
+    {
+     "libelle": "Je n'ai pas le moral",
+     "question": "stress apres la crise prendre soin du moral",
+     "attendu": {
+      "guide": "moral",
+      "mode": "passages"
+     },
+     "symbole": "heart.fill"
+    },
+    {
+     "libelle": "Un enfant fait des cauchemars",
+     "question": "mon enfant fait des cauchemars depuis l evacuation",
+     "attendu": {
+      "guide": "moral",
+      "mode": "passages"
+     },
+     "symbole": "moon.fill"
+    },
+    {
+     "libelle": "J'ai des idées noires",
+     "question": "j ai des idees noires",
+     "attendu": {
+      "guide": "moral",
+      "mode": "urgencePersonnelle"
+     },
+     "symbole": "phone.fill"
+    }
+   ]
+  },
+  {
+   "id": "cyber",
+   "question": "Que se passe-t-il ?",
+   "options": [
+    {
+     "libelle": "Mon appareil est bloqué, on me demande une rançon",
+     "question": "mon ordinateur bloque demande une rancon",
+     "attendu": {
+      "guide": "cyberattaque",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Un de mes comptes est piraté",
+     "question": "mon compte mail a ete pirate",
+     "attendu": {
+      "guide": "cyberattaque",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "J'ai donné ma carte bancaire sur un faux site",
+     "question": "j ai donne ma carte bancaire sur un faux site",
+     "attendu": {
+      "guide": "cyberattaque",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "J'ai reçu un message suspect",
+     "question": "j ai recu un mail de ma banque qui demande mon code",
+     "attendu": {
+      "guide": "cyberattaque",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Une information me paraît fausse",
+     "question": "comment verifier une information avant de la partager",
+     "attendu": {
+      "guide": "desinformation",
+      "mode": "passages"
+     }
+    }
+   ]
+  },
+  {
+   "id": "nature",
+   "question": "Que se passe-t-il ?",
+   "options": [
+    {
+     "libelle": "Je suis perdu",
+     "question": "perdu en foret je retrouve plus le chemin",
+     "attendu": {
+      "guide": "orientation",
+      "mode": "passages"
+     },
+     "symbole": "location.fill"
+    },
+    {
+     "libelle": "Je veux me signaler aux secours",
+     "question": "comment me signaler aux secours helicoptere",
+     "attendu": {
+      "guide": "signaux",
+      "mode": "passages"
+     },
+     "symbole": "light.beacon.max.fill"
+    },
+    {
+     "libelle": "Trouver de l'eau, la rendre potable",
+     "question": "rendre l eau de riviere potable dans la nature",
+     "attendu": {
+      "guide": "eau",
+      "mode": "passages"
+     },
+     "symbole": "drop.fill"
+    },
+    {
+     "libelle": "Faire du feu pour survivre",
+     "question": "allumer un feu en situation de survie reelle",
+     "attendu": {
+      "guide": "feu",
+      "mode": "passages"
+     },
+     "symbole": "flame.fill"
+    },
+    {
+     "libelle": "Construire un abri",
+     "question": "construire un abri de fortune dans la nature",
+     "attendu": {
+      "guide": "abri",
+      "mode": "passages"
+     },
+     "symbole": "tent.fill"
+    },
+    {
+     "libelle": "J'ai très froid, je grelotte",
+     "question": "je suis trempe je grelotte j arrive plus a marcher",
+     "attendu": {
+      "guide": "numeros",
+      "mode": "urgencePersonnelle"
+     },
+     "symbole": "thermometer.snowflake"
+    }
+   ]
+  },
+  {
+   "id": "mairie",
+   "question": "De quoi avez-vous besoin ?",
+   "options": [
+    {
+     "libelle": "Faut-il activer le poste de commandement ?",
+     "question": "maire quand dois activer le poste de commandement communal",
+     "attendu": {
+      "guide": "pilotage",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Répartir les rôles",
+     "question": "maire quels roles repartir dans le poste de commandement communal",
+     "attendu": {
+      "guide": "cellule-crise",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Mener un point de situation",
+     "question": "nos points de situation au pcc durent trop longtemps",
+     "attendu": {
+      "guide": "pilotage",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Communiquer avec les habitants",
+     "question": "notre mairie quelle trame pour le message aux habitants",
+     "attendu": {
+      "guide": "com-crise",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "La mairie subit une cyberattaque",
+     "question": "les serveurs de la mairie sont chiffres que faire cnil",
+     "attendu": {
+      "guide": "cyberattaque-commune",
+      "mode": "passages"
+     }
+    },
+    {
+     "libelle": "Organiser un exercice",
+     "question": "comment preparer un exercice de crise pour les agents de la commune",
+     "attendu": {
+      "guide": "exercice-retex",
+      "mode": "passages"
+     }
+    }
+   ]
+  }
+ ]
+}

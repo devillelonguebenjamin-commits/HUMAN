@@ -1,0 +1,117 @@
+{
+ "meta": {
+  "date": "2026-11-27",
+  "statut": "BROUILLONS : non affichés dans l'application, non utilisés par l'assistant. À relire mot pour mot par un formateur agréé PSC1 avant toute intégration (arbitrage n° 1 du 27/11/2026).",
+  "origine": "Propositions du Claude évaluateur (cycles 1 et 4), reprises sans ajout. Chaque bloc porte [A VERIFIER] tant qu'il n'est pas relu.",
+  "source_a_verifier": "S17, Recommandations PSC1 et « gestes qui sauvent », ministère de l'Intérieur, 2023-12"
+ },
+ "guides": [
+  {
+   "id": "avc",
+   "cat": "urgence",
+   "titre": "Signes d'un AVC",
+   "resume": "Reconnaître un accident vasculaire cérébral et appeler tout de suite.",
+   "sensible": true,
+   "sources": [
+    "S17"
+   ],
+   "relecture": {
+    "statut": "brouillon"
+   },
+   "blocs": [
+    {
+     "t": "alert",
+     "body": "Urgence vitale : appelez le 15 ou le 112 (114 par SMS) immédiatement. [A VERIFIER]"
+    },
+    {
+     "t": "list",
+     "titre": "Les signes qui doivent alerter",
+     "items": [
+      "Visage paralysé ou bouche de travers.",
+      "Faiblesse ou engourdissement d'un bras ou d'une jambe.",
+      "Difficulté soudaine à parler ou à comprendre. [A VERIFIER]"
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Que faire tout de suite",
+     "items": [
+      "Appelez immédiatement le 15 ou le 112, même si les signes disparaissent.",
+      "Notez l'heure exacte d'apparition des premiers signes.",
+      "Allongez la personne si elle est consciente, ou mettez-la en position latérale de sécurité si elle est inconsciente et respire.",
+      "Ne lui donnez ni à boire, ni à manger, ni médicament. [A VERIFIER]"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "etouffement-nourrisson",
+   "cat": "urgence",
+   "titre": "Étouffement du nourrisson",
+   "resume": "Les gestes chez l'enfant de moins d'un an.",
+   "sensible": true,
+   "sources": [
+    "S17"
+   ],
+   "relecture": {
+    "statut": "brouillon"
+   },
+   "blocs": [
+    {
+     "t": "alert",
+     "body": "Nourrisson (moins d'un an) : ne faites jamais de compressions abdominales. [A VERIFIER]"
+    },
+    {
+     "t": "steps",
+     "titre": "Chez le nourrisson qui ne peut plus crier ni respirer",
+     "items": [
+      "Faites alerter le 15 ou le 112.",
+      "Couchez le nourrisson à plat ventre sur votre avant-bras, tête plus basse que le corps, en soutenant sa tête.",
+      "Donnez jusqu'à 5 claques fermes entre les omoplates avec le talon de la main.",
+      "Si cela ne suffit pas, retournez-le sur le dos sur votre autre avant-bras et effectuez jusqu'à 5 compressions thoraciques au centre de la poitrine avec deux doigts.",
+      "Alternez jusqu'à la sortie de l'objet. S'il perd connaissance, alertez et suivez les consignes du 15 pour le massage cardiaque. [A VERIFIER]"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hypothermie",
+   "cat": "urgence",
+   "titre": "Froid en nature et hypothermie",
+   "resume": "Reconnaître l'hypothermie et protéger la personne.",
+   "sensible": true,
+   "sources": [
+    "S17"
+   ],
+   "relecture": {
+    "statut": "brouillon"
+   },
+   "blocs": [
+    {
+     "t": "alert",
+     "body": "Urgence vitale : appelez le 15 ou le 112 (114 par SMS). [A VERIFIER]"
+    },
+    {
+     "t": "list",
+     "titre": "Les signes",
+     "items": [
+      "Frissons intenses (qui peuvent s'arrêter quand le froid s'aggrave), peau froide, fatigue extrême, confusion, difficulté à parler ou à marcher. [A VERIFIER]"
+     ]
+    },
+    {
+     "t": "steps",
+     "titre": "Que faire tout de suite",
+     "items": [
+      "Appelez le 15 ou le 112.",
+      "Mettez la personne à l'abri du vent et de la pluie, et isolez-la du sol.",
+      "Retirez les vêtements mouillés si possible et couvrez-la avec des vêtements secs et une couverture de survie (tête comprise).",
+      "Ne la frictionnez pas et ne lui donnez jamais d'alcool. Si elle est consciente et peut avaler, donnez une boisson chaude et sucrée. [A VERIFIER]"
+     ]
+    }
+   ]
+  }
+ ],
+ "non_rediges": {
+  "convulsions": "Aucune proposition de l'évaluateur : à rédiger avec le formateur PSC1. En attendant, l'assistant renvoie au 15 ou au 112."
+ }
+}

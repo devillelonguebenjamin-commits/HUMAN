@@ -14,14 +14,26 @@ Commencer par `00_SYNTHESE_DECISION.md` (deux pages), puis `questions_ouvertes.m
 | `05_finances.md` | Comparaison des modèles, économie unitaire, scénarios à 36 mois, emploi des fonds, emprunts |
 | `06_acquisition_marque.md` | Canaux, formats, charte éditoriale, noms de marque, plan de test et seuils |
 | `07_risques_decision.md` | Matrice des risques, critères d'arrêt, sorties, recommandation et niveau de confiance |
-| `modele_financier.xlsx` | Modèle à trois scénarios, formules et hypothèses modifiables |
-| `registre_hypotheses.md` | 37 hypothèses, méthode de validation, confiance, effet sur la décision |
+| `08_analyse_haven.md` | Analyse de l'application HAVEN à partir de captures d'écran |
+| `09_application_iphone.md` | Pivot vers l'application iPhone gratuite avec version complète : produit, technique, finances, piste des communes, revenu du fondateur |
+| `10_veille_officielle.md` | Sources officielles françaises, droit de réutilisation, place dans l'application, organisation de la veille |
+| `11_module_communication_hors_reseau.md` | Analyse et plan du module de messagerie hors réseau (Bluetooth, Wi-Fi Aware, Meshtastic), à valider |
+| `12_assistant_ia_local.md` | Assistant IA local : modèle d'Apple, trois niveaux, règle « rien qui ne soit pas dans un guide », tests à mener |
+| `13_reseau_entraide.md` | Réseau d'entraide (compétences et moyens des habitants) : analyse RGPD, risques, dispositif en deux temps |
+| `14_cartes_hors_ligne.md` | Cartes hors ligne : pourquoi pas encore, sources prêtes à l'emploi (Protomaps, IGN, Géo'DAE), plan de travail |
+| `app/` | **Code de l'application iPhone** (SwiftUI) et de son cœur `SijamaisKit` testé ; mode d'emploi dans `app/README.md` |
+| `contenus/guides/` | Guides de l'application : version 1.0 fournie par Benjamin, revue, version 1.1 (JSON et fichier Word `SIJAMAIS_guides_v1.1.docx` pour Claude Design) |
+| `prompts/claude_design_schemas_guides.md` | Prompt Claude Design : 24 schémas pédagogiques et mise en page des guides, règles pour les photos |
+| `prototype/maquette_app/` | Maquette HTML cliquable de l'application (version 0.1) |
+| `modele_financier.xlsx` | Modèle version 2 (application iPhone), trois scénarios, formules et hypothèses modifiables |
+| `archives/` | Modèle version 1 (pack et téléphone) et son générateur |
+| `registre_hypotheses.md` | 47 hypothèses, méthode de validation, confiance, effet sur la décision |
 | `sources.md` | 74 sources datées et classées par fiabilité |
 | `plan_30_jours.md` | Actions jour par jour, budget, indicateurs et seuils |
 | `questions_ouvertes.md` | Ce que seul le fondateur peut trancher |
 | `JOURNAL.md` | Décisions, changements de cap, limites du travail |
 | `prototype/landing/` | Page d'atterrissage de test, prête à publier |
 | `prototype/mvp_logiciel/` | Spécification technique et maquette fonctionnelle de la recherche hors ligne |
-| `outils/` | Générateur du modèle financier, relevé de prix |
+| `outils/` | Générateur du modèle financier version 2, relevé de prix |
 
 Conventions : montants en euros hors taxe sauf mention contraire. [FAIT] donnée vérifiée et sourcée, [EST] estimation calculée, [HYP] hypothèse à tester, [INT] intuition.

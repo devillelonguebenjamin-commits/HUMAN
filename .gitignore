@@ -1,3 +1,16 @@
 __pycache__/
 *.pyc
 outils/releves_prix.csv
+
+# Application iPhone
+app/*.xcodeproj
+app/**/xcuserdata/
+app/SijamaisKit/.build/
+app/SijamaisKit/.swiftpm/
+.DS_Store
+
+# Fichiers de carte (trop lourds pour le dépôt)
+*.pmtiles
+*.geojson
+cartes_france/
+essais/

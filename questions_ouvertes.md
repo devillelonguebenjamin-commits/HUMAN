@@ -1,6 +1,103 @@
 # Questions ouvertes
 
-Rédigé le 12 novembre 2026. Ce que toi seul peux trancher, classé par effet sur la décision. Pour chaque question, j'indique l'hypothèse que j'ai retenue en attendant ta réponse, et ce qui change si tu réponds autrement.
+Mis à jour le 18 novembre 2026.
+
+## Réponses reçues
+
+| N° | Question | Réponse de Benjamin |
+|---|---|---|
+| 1 | Produit logiciel plutôt que matériel ? | Oui : application locale sur téléphones ordinaires, inspirée de HAVEN, avec partie gratuite |
+| 2 | Durée sans revenu ? | 3 à 4 mois. Conséquence : un revenu est à organiser à partir du mois 4 |
+| 3 | Contenus chaque semaine ? | Oui |
+| 4 | Nom de travail ? | MECUM |
+| Nouvelle | Plateforme ? | iPhone d'abord, pas d'Android au lancement |
+| Nouvelle | Identité visuelle ? | Ne pas faire "IA". A traiter dans un second temps |
+| A | Mac ? | Reçu le 23/11/2026 : MacBook Air M5, 24 Go de mémoire (sert aussi à l'activité d'automatisation IA) |
+| B | Chômage ? | Environ 1 000 € par mois. Demande de révision et d'ARCE envisagée (estimation : 20 000 € en deux fois) |
+| C | Après le mois 4 ? | Temps partiel, avec d'autres projets de création |
+
+## A vérifier maintenant
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| D | Quel téléphone as-tu ? | Ta tablette est un iPad standard de 2021 (réponse du 13/11/2026), sans Apple Intelligence. Sauf si tu as un iPhone 15 Pro ou plus récent, l'iPhone de test (550 €) est nécessaire |
+| E | Connais-tu des élus ou des secrétaires de mairie dans ton département ? | Accélère le test de la piste des communes |
+| F | Quel est le montant exact de tes droits restants (France Travail) ? En attente au 13/11/2026, ne bloque pas le test | Ton estimation de 20 000 € d'ARCE me paraît trop haute : avec 1 000 € par mois et 18 mois maximum, l'ARCE plafonnerait vers 10 800 € |
+| G | Maintien des allocations ou ARCE ? | Exclusifs. Je recommande le maintien. Décision à prendre avec France Travail et l'expert-comptable avant la création |
+| H | Mac acheté à ton nom avant la création, ou au nom de la société après ? | TVA récupérable dans le second cas. Un MacBook Air de 16 Go suffit pour SIJAMAIS |
+| I | Combien de jours par semaine garantis-tu à SIJAMAIS une fois à temps partiel ? | Je propose deux jours et demi au minimum, inscrits dans les critères d'arrêt |
+
+## Réseau d'entraide (26 novembre 2026)
+
+**Décision du 26/11/2026 : recommandations E1 à E5 validées par Benjamin.**
+
+Détail dans `13_reseau_entraide.md`, section 7.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| E1 | Profil d'aidant local, partagé par QR code, dès la v1 ? | Oui |
+| E2 | Réseau d'entraide communal, la mairie étant responsable du fichier ? | Oui, piste pour La Baule |
+| E3 | Renoncer à une carte publique nationale des aidants ? | Oui |
+| E4 | Recommander SAUV Life et Staying Alive ? | Oui |
+| E5 | Validation par l'avocat puis par le délégué à la protection des données de la commune pilote ? | Oui |
+
+## Assistant IA local (26 novembre 2026)
+
+**Décision du 26/11/2026 : recommandations IA1 à IA4 validées par Benjamin** (« on va faire comme ça »).
+
+Détail dans `12_assistant_ia_local.md`, section 7.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| IA1 | Modèle d'Apple seul en v1, sans modèle embarqué ? | Oui |
+| IA2 | Règle « l'assistant ne dit rien qui ne soit pas dans un guide » ? | Oui |
+| IA3 | Modèle d'Apple dans le nuage pour le premium, quand il y a du réseau ? | Non en v1 |
+| IA4 | Acheter l'iPhone de test (15 Pro ou plus récent) avant le devis du développeur ? | Oui |
+
+## Module de communication hors réseau (18 novembre 2026)
+
+**Décision du 24/11/2026 : module reporté.** Benjamin ne l'explore pas pour l'instant. Les questions R1 à R7 restent ouvertes pour plus tard.
+
+Détail et recommandations dans `11_module_communication_hors_reseau.md`, section 11.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| R1 | Module dans la v1 ou dans une v1.1 ? | v1.1, étape 0 en parallèle |
+| R2 | Wi-Fi Aware à la place de Multipeer et de Wi-Fi Direct ? | Oui |
+| R3 | Relais iPhone fiable surtout application ouverte, LoRa pour l'arrière-plan ? | Oui, limite imposée par Apple |
+| R4 | Abandon du canal internet pour l'instant ? | Oui |
+| R5 | Meshtastic sous GPL-3.0 : autorisation, logiciel libre ou renvoi vers l'application officielle ? | Avocat et demande écrite à Meshtastic |
+| R6 | Lancer l'étape 0 (cœur testable sans Mac) ? | Oui |
+| R7 | Offre payante « réseau de relais » pour les communes ? | Oui, à chiffrer |
+
+## Collectivités et recommandations officielles (18 novembre 2026)
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| O | Acceptes-tu la règle : tout contenu issu d'une source publique reste gratuit, y compris dans les modes voyage, mer et montagne ? | Condition pour qu'une mairie ou une préfecture recommande l'application. Le premium porte alors sur nos outils et nos contenus propres |
+| P | Te rappelles-tu où tu as vu les « kits envoyés par l'État » (courrier, télévision, mairie) ? | Je n'ai trouvé ni envoi de kits ni envoi postal du guide. Si ta mairie a distribué quelque chose, c'est une source locale à intégrer |
+| Q | Connais-tu une association agréée de sécurité civile (Croix-Rouge, Protection civile, sapeurs-pompiers) prête à relire les fiches ? | Caution qui convainc les collectivités |
+
+## Nom de marque (18 novembre 2026) : résolu, SIJAMAIS retenu
+
+OKAOU, AUKAZOU et PARÉ écartés (voir `JOURNAL.md`). Les questions J, K et L ci-dessous sont caduques. Reste ouvert :
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| M | Conseil en propriété industrielle ? | **Décision du 24/11/2026 : pas d'avis écrit.** Benjamin dépose lui-même la marque à l'INPI avant le 30/11/2026 (classes 9, 41, 42, environ 270 €). Recherche TMview du 25/11 : « SIJAMAIS » seule marque trouvée, expirée (AGF, 2000, classes 36, 38, 42) ; « SI JAMAIS » enregistrée au Canada (classes 35, 36, 41, courtiers d'assurance), sans effet en France. Restent à lire : les 2 résultats de l'office européen (EUIPO) et ceux de l'INPI |
+| N | Prends-tu `sijamais.eu` (7,49 € hors taxe) ? | Seule adresse sobre disponible. `.fr` et `.com` sont réservés |
+
+Anciennes questions, caduques :
+
+| N° | Question | Pourquoi elle compte |
+|---|---|---|
+| J | Veux-tu tenter d'acquérir ou de licencier la marque OKAOU n° 4881052 par l'intermédiaire d'un conseil en propriété industrielle ? | Seule voie réaliste pour garder le nom. Deux titulaires sont concernés : voir `JOURNAL.md` |
+| K | Quel budget maximal pour un rachat ou une licence ? | Une marque se cède de quelques centaines à plusieurs milliers d'euros [EST faible] |
+| L | Quel plan B retiens-tu si aucun accord avant le jour 22 ? | MECUM par défaut, ou un nom qui change la sonorité |
+
+## Questions initiales (12 novembre 2026)
+
+Les questions 1 à 4 ci-dessous sont tranchées. Les suivantes restent ouvertes. Ce que toi seul peux trancher, classé par effet sur la décision. Pour chaque question, j'indique l'hypothèse que j'ai retenue en attendant ta réponse, et ce qui change si tu réponds autrement.
 
 ## Priorité 1 : à trancher avant le jour 1
 
@@ -44,3 +141,17 @@ Rédigé le 12 novembre 2026. Ce que toi seul peux trancher, classé par effet s
 | Prix et pages des concurrents américains | Sites de Survival Node, Prepper Disk, HAVEN (non lisibles depuis mon environnement, informations obtenues par moteur de recherche) |
 | Réception FM des téléphones candidats | Fiche technique du fabricant, puis essai |
 | Situation actuelle de Crosscall | Registre du commerce, presse économique |
+
+## Premium et Espace enfants (27 novembre 2026)
+
+Détail dans `15_premium_rando_mer_voyage_kids.md`.
+
+**Décision du 27/11/2026 : Benjamin accepte les cinq recommandations.** Courriers PK5 rédigés dans `courriers/`, non envoyés.
+
+| N° | Question | Ma recommandation |
+|---|---|---|
+| PK1 | « Navigation » = plaisance en mer (et pas orientation à pied) ? | Oui, l'orientation est rangée dans le mode randonnée |
+| PK2 | Ordre des modes : enfants, randonnée, voyage, mer ? | Oui |
+| PK3 | Espace enfants : écran d'aide gratuit, parcours et jeux dans la version famille ? | Oui |
+| PK4 | Profil enfant dans l'application plutôt que catégorie « Enfants » de l'App Store ou application séparée ? | Profil dans l'application ; application séparée à étudier plus tard |
+| PK5 | Lancer les demandes à l'IGN (SCAN 25), au Shom (marées), au ministère des Affaires étrangères (conseils aux voyageurs) ? | Oui, avant d'écrire le code de ces modes |

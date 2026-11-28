@@ -1,0 +1,235 @@
+import Foundation
+
+/// Mise en forme du texte pour la recherche : minuscules, sans accents, sans ponctuation.
+public enum Normalisation {
+    private static let accents: [Character: String] = [
+        "à": "a", "â": "a", "ä": "a", "á": "a", "ã": "a",
+        "ç": "c",
+        "é": "e", "è": "e", "ê": "e", "ë": "e",
+        "î": "i", "ï": "i", "í": "i",
+        "ô": "o", "ö": "o", "ó": "o",
+        "ù": "u", "û": "u", "ü": "u", "ú": "u",
+        "ÿ": "y", "ñ": "n",
+        "œ": "oe", "æ": "ae",
+    ]
+
+    public static func normaliser(_ texte: String) -> String {
+        var sortie = ""
+        sortie.reserveCapacity(texte.count)
+        for c in texte.lowercased() {
+            if let r = accents[c] {
+                sortie += r
+            } else if c.isASCII, c.isLetter || c.isNumber {
+                sortie.append(c)
+            } else {
+                sortie.append(" ")
+            }
+        }
+        return sortie
+    }
+}
+
+/// Résultat d'une recherche dans les guides.
+public struct ResultatRecherche: Sendable {
+    public let guide: Guide?
+    public let passages: [String]
+    public let score: Int
+    /// Vrai pour une question de santé ou d'urgence vitale : aucune reformulation, bandeau 15 et 112.
+    public let sensible: Bool
+
+    /// Lignes à afficher : les étapes exactes du guide pour une question sensible, sinon les passages trouvés.
+    public var lignesAAfficher: [String] {
+        if sensible, let g = guide, !g.premieresEtapes.isEmpty { return g.premieresEtapes }
+        return passages
+    }
+}
+
+/// Recherche hors ligne dans les guides : niveau 1 de l'assistant, disponible sur tous les iPhone.
+/// Même logique que la maquette (prototype/maquette_app), pour que les tests restent comparables.
+public struct MoteurRecherche: Sendable {
+    private struct Morceau: Sendable {
+        let texte: String
+        let normalise: String
+        /// Numéro du bloc dans le guide, et vrai si le bloc se montre en entier (étapes, ou liste courte).
+        let bloc: Int
+        let entier: Bool
+        let titreBloc: String
+        let alerte: Bool
+    }
+    private struct Entree: Sendable {
+        let guide: Guide
+        let titreNormalise: String
+        let morceaux: [Morceau]
+    }
+
+    private let entrees: [Entree]
+    public let seuil: Int
+    /// Les guides par identifiant, pour le triage.
+    public let guidesParId: [String: Guide]
+
+    public init(bibliotheque: GuideLibrary, seuil: Int = 3) {
+        self.seuil = seuil
+        guidesParId = Dictionary(bibliotheque.guides.map { ($0.id, $0) }, uniquingKeysWith: { a, _ in a })
+        entrees = bibliotheque.guides.map { g in
+            var m: [Morceau] = []
+            for (ib, b) in g.blocs.enumerated() {
+                let textes = b.textesRecherche
+                var entier = false
+                var alerte = false
+                switch b {
+                case .steps, .plant: entier = true
+                case .list, .risk, .keyValue: entier = textes.count <= 6
+                case .alert: alerte = true
+                default: entier = false
+                }
+                for t in textes {
+                    m.append(Morceau(texte: t, normalise: " " + Normalisation.normaliser(b.titreBloc + " " + t), bloc: ib, entier: entier, titreBloc: b.titreBloc, alerte: alerte))
+                }
+            }
+            return Entree(guide: g, titreNormalise: " " + Normalisation.normaliser(g.titre + " " + g.resume), morceaux: m)
+        }
+    }
+
+    static let motsVides: Set<String> = Set("""
+    a au aux avec ce ces cet cette comment dans de des du elle en est et il ils j je l la le les leur lui ma mais me mes moi mon ne nos notre nous on ou par pas pour qu que quel quelle quels quelles qui quoi sa se ses si son sur ta te tes toi ton tu un une vos votre vous y d c s n m t faire fait faut dois doit peut peux suis sont etre avoir ai ont quand plus tout tous toute depuis hier aujourd hui chez
+    """.split(separator: " ").map(String.init))
+
+    static let synonymes: [String: [String]] = [
+        "courant": ["electricite", "coupure"], "lumiere": ["electricite", "coupure"], "panne": ["coupure", "electricite"],
+        "respire": ["respirer", "arret", "cardiaque", "massage"], "respirer": ["arret", "cardiaque"],
+        "saigne": ["saignement", "plaie"], "sang": ["saignement"], "evanoui": ["inconsciente"], "repond": ["inconsciente"],
+        "sirene": ["alerte", "signal", "sirene"], "sonne": ["sirene", "alerte"],
+        "rancon": ["rancon", "bloque"], "ordinateur": ["appareil", "rancon"], "pirate": ["piratage", "compte"], "arnaque": ["arnaques", "suspect"],
+        "potable": ["purifier", "eau", "bouillir"], "boire": ["eau"], "kit": ["kit", "urgence"], "sac": ["kit", "sac"],
+        "chaud": ["canicule", "chaleur"], "chaleur": ["canicule"], "degres": ["canicule", "chaleur"], "froid": ["grand", "froid"],
+        "nord": ["orientation", "nord"], "perdu": ["orientation"],
+        "inondation": ["inondation"], "monte": ["inondation", "crue", "hauteur"], "crue": ["inondation"], "deborde": ["inondation", "crue"],
+        "gaz": ["reseaux", "arrivees", "couper"], "couper": ["reseaux", "arrivees"],
+        "eau": ["eau"], "feu": ["feu"], "brule": ["brulure"], "etouffe": ["etouffement"], "avale": ["etouffement"],
+        "massage": ["massez", "masser", "compressions"], "rythme": ["minute", "fois"],
+        "peur": ["moral", "stress"], "angoisse": ["moral", "stress"], "panique": ["moral", "stress"], "stresse": ["moral", "stress"], "triste": ["moral"],
+        "assurance": ["assurance", "catastrophe"], "iode": ["iode", "nucleaire"], "seisme": ["seisme"], "tempete": ["tempete"],
+        // Cycle 1 (27/11/2026) : mots courants et anglais.
+        "sourd": ["114", "sms"], "sourde": ["114", "sms"], "malentendant": ["114", "sms"], "samu": ["15", "samu"], "pompiers": ["18", "pompiers"],
+        "pharmacie": ["trousse", "familiale"], "trousse": ["trousse", "familiale"], "apprendre": ["former", "formation", "gestes"],
+        "formation": ["former", "formation"], "applis": ["applications", "sauv"], "appli": ["applications", "sauv"],
+        "sdf": ["abri", "115"], "abri": ["abri", "115"], "cauchemar": ["moral", "stress"], "cauchemars": ["moral", "stress"],
+        "dae": ["defibrillateur"], "reanimation": ["massage", "cardiaque"], "pls": ["laterale", "securite"],
+        "tourniquet": ["garrot"], "heimlich": ["etouffement", "poing"], "cloque": ["brulure"], "ebouillante": ["brulure"],
+        "burn": ["brulure"], "burned": ["brulure"], "bleeding": ["saignement"], "choking": ["etouffement"], "breathe": ["respirer"],
+        "breathing": ["respirer"], "buvable": ["potable", "purifier", "filtrer", "bouillir"], "aider": ["jeveuxaider", "benevolat"], "faim": ["nourriture", "manger", "stock"], "radicalise": ["radicalisation"], "radicalisation": ["radicalisation"], "chats": ["animaux"], "chiens": ["animaux"], "unconscious": ["inconsciente"], "fire": ["feu", "incendie"], "flood": ["inondation"],
+    ]
+
+    /// Expressions de plusieurs mots (cycle 1) : cherchées dans la question préparée, elles ajoutent des mots du guide.
+    static let expressions: [(String, [String])] = [
+        ("repond plus", ["inconsciente"]), ("coeur arrete", ["arret", "cardiaque"]), ("crise cardiaque", ["arret", "cardiaque"]),
+        ("pisse le sang", ["saignement"]), ("coupure profonde", ["saignement", "plaie"]), ("objet plante", ["saignement", "retirez"]),
+        ("tombe dans les pommes", ["inconsciente"]), ("avale de travers", ["etouffement", "tousser"]), ("fausse route", ["etouffement"]),
+        ("intoxication gaz", ["monoxyde"]), ("poele a petrole", ["monoxyde"]), ("peux pas parler", ["114", "sms"]), ("peut pas parler", ["114", "sms"]),
+        ("secours en mer", ["196"]), ("samu social", ["115", "abri"]), ("sans abri", ["abri", "115"]), ("idees noires", ["3114", "moral"]),
+        ("premiers secours", ["former", "formation", "gestes"]), ("pas bien", ["moral"]),
+        // Cycle 2 (27/11/2026).
+        ("risques majeurs", ["georisques", "dicrim", "ddrm"]), ("ma commune", ["dicrim", "georisques"]), ("fr alert", ["fr", "alert"]),
+        ("corne de brume", ["barrage"]), ("tremblement de terre", ["seisme"]), ("nuage toxique", ["pollue", "calfeutrez"]),
+    ]
+
+    static let termesSensibles: [String] = [
+        "respire", "respirer", "saigne", "saignement", "sang", "inconscient", "inconsciente", "evanoui", "evanouie",
+        "brule", "brulure", "etouffe", "etouffement", "malaise", "douleur", "poitrine", "fracture", "avale", "poison",
+        "convulse", "convulsion",
+    ]
+
+    static func mots(_ texte: String) -> [String] {
+        Triage.preparer(texte).split(separator: " ").map(String.init).filter { $0.count > 1 && !motsVides.contains($0) }
+    }
+
+    /// Racine grossière : retire la dernière lettre des mots longs, puis un e, s ou x final.
+    static func racine(_ mot: String) -> String {
+        guard mot.count > 5 else { return mot }
+        var r = String(mot.dropLast())
+        if let d = r.last, "esx".contains(d) { r.removeLast() }
+        return r
+    }
+
+    /// Vrai si la personne parle d'elle-même (« je n'arrive plus à respirer », « j'ai mal à la poitrine »).
+    public static func parleDeSoi(_ question: String) -> Bool {
+        let tous = Normalisation.normaliser(question).split(separator: " ").map(String.init)
+        return tous.contains { ["je", "j", "moi", "me", "m"].contains($0) }
+    }
+
+    public static func estSensible(_ question: String) -> Bool {
+        mots(question).contains { m in termesSensibles.contains { m.hasPrefix($0) } }
+    }
+
+    /// Les 5 guides de l'Espace mairie : exclus de la recherche des particuliers (cycle 6).
+    public static let guidesMairie: Set<String> = ["cellule-crise", "pilotage", "com-crise", "cyberattaque-commune", "exercice-retex"]
+
+    /// Nombre de passages affichés (cycle 3 : 3 passages ne suffisaient pas pour les guides de préparation).
+    public static let nombrePassages = 5
+    /// Plafond de lignes affichées après ajout des procédures entières.
+    public static let maxLignes = 14
+
+    /// Compose les lignes affichées (cycles 3 à 6) :
+    /// une procédure ou une liste courte ne se montre jamais à moitié, et garde son titre ;
+    /// les mises en garde du guide s'affichent toujours ; les blocs les plus pertinents passent en premier.
+    private static func composer(_ morceaux: [Morceau], choisis: [(Int, Int)]) -> [String] {
+        guard !choisis.isEmpty else { return [] }
+        var scoreBloc: [Int: Int] = [:]
+        var seuls: [Int: Set<Int>] = [:]
+        var entiers = Set<Int>()
+        for (i, sc) in choisis {
+            let m = morceaux[i]
+            scoreBloc[m.bloc] = max(scoreBloc[m.bloc] ?? 0, sc)
+            if m.entier { entiers.insert(m.bloc) } else { seuls[m.bloc, default: []].insert(i) }
+        }
+        func lignes(_ b: Int) -> [String] {
+            let ms = morceaux.enumerated().filter { $0.element.bloc == b }
+            if entiers.contains(b) || morceaux[ms[0].offset].alerte {
+                let titre = ms[0].element.titreBloc
+                return (titre.isEmpty || morceaux[ms[0].offset].alerte ? [] : [titre]) + ms.map(\.element.texte)
+            }
+            return ms.filter { seuls[b]?.contains($0.offset) == true }.map(\.element.texte)
+        }
+        let alertes = Set(morceaux.filter(\.alerte).map(\.bloc))
+        var budget = maxLignes - alertes.reduce(0) { $0 + lignes($1).count }
+        var garder = alertes
+        for b in scoreBloc.keys.sorted(by: { scoreBloc[$0]! != scoreBloc[$1]! ? scoreBloc[$0]! > scoreBloc[$1]! : $0 < $1 }) where !garder.contains(b) {
+            let n = lignes(b).count
+            if n <= budget || garder.count == alertes.count { garder.insert(b); budget -= n }
+        }
+        return garder.sorted().flatMap(lignes)
+    }
+
+    /// `mairie` : nil = détection automatique ; true = seulement l'Espace mairie ; false = seulement les guides des particuliers.
+    /// `tous` : interrupteur « Espace mairie » des réglages ; les guides de la commune s'ajoutent à ceux des particuliers.
+    public func chercher(_ question: String, dans guideId: String? = nil, mairie: Bool? = nil, tous: Bool = false) -> ResultatRecherche {
+        let espaceMairie = mairie ?? Triage.estMairie(question)
+        let ms = Self.mots(question)
+        var etendus = ms
+        for m in ms { etendus += Self.synonymes[m] ?? [] }
+        let prepare = Triage.preparer(question)
+        for (e, ajouts) in Self.expressions where prepare.contains(" " + e + " ") { etendus += ajouts }
+        var vus = Set<String>()
+        let racines = etendus.map(Self.racine).filter { vus.insert($0).inserted }
+        let sensible = ms.contains { m in Self.termesSensibles.contains { m.hasPrefix($0) } }
+
+        var meilleur: (entree: Entree, total: Int, passages: [String])?
+        for e in entrees where guideId == nil || e.guide.id == guideId {
+            if guideId == nil && !(tous && !espaceMairie) && Self.guidesMairie.contains(e.guide.id) != espaceMairie { continue }
+            let scores = e.morceaux.enumerated().map { (i, m) in
+                (i, m, racines.reduce(0) { $0 + (m.normalise.contains(" " + $1) ? 1 : 0) }) // au début d'un mot : « marche » ne trouve pas « démarche »
+            }
+            let tries = scores.sorted { $0.2 != $1.2 ? $0.2 > $1.2 : $0.0 < $1.0 } // à égalité, l'ordre du guide est gardé
+            let titre = racines.reduce(0) { $0 + (e.titreNormalise.contains(" " + $1) ? 2 : 0) }
+            let total = titre + tries.prefix(3).reduce(0) { $0 + $1.2 }
+            if meilleur == nil || total > meilleur!.total {
+                let choisis = Array(tries.filter { $0.2 > 0 }.prefix(guideId == nil ? Self.nombrePassages : 8))
+                meilleur = (e, total, Self.composer(e.morceaux, choisis: choisis.map { ($0.0, $0.2) }))
+            }
+        }
+        guard let m = meilleur, m.total >= (guideId == nil ? seuil : 0) else {
+            return ResultatRecherche(guide: nil, passages: [], score: meilleur?.total ?? 0, sensible: sensible)
+        }
+        return ResultatRecherche(guide: m.entree.guide, passages: m.passages, score: m.total, sensible: sensible)
+    }
+}

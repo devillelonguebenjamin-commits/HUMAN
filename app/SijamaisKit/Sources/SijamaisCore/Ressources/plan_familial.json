@@ -1,0 +1,233 @@
+{
+ "version": "1",
+ "date": "2026-11-27",
+ "guide": "pfms",
+ "etapes": [
+  {
+   "id": "commune",
+   "titre": "Ma commune",
+   "type": "texte",
+   "question": "Dans quelle commune habitez-vous ?",
+   "aide": "Votre mairie publie le DICRIM, qui liste les risques de la commune. Le site georisques.gouv.fr les donne aussi.",
+   "champ": "pfms.pfms-risques.0",
+   "exemple": "La Baule-Escoublac",
+   "choix": []
+  },
+  {
+   "id": "risques",
+   "titre": "Mes risques",
+   "type": "risques",
+   "question": "Quels risques concernent votre commune ?",
+   "aide": "Partout en France, chacun est exposé au minimum aux tempêtes et aux accidents de transport de matières dangereuses : ils sont déjà cochés. Gardez les 4 plus importants pour vous ; la consigne du guide s'ajoute à chacun.",
+   "champs": [
+    "pfms.pfms-risques.1",
+    "pfms.pfms-risques.2",
+    "pfms.pfms-risques.3",
+    "pfms.pfms-risques.4"
+   ],
+   "max": 4,
+   "choix": [
+    {
+     "libelle": "Tempête, orage",
+     "valeur": "Tempête, orage : Abritez-vous dans un bâtiment en dur.",
+     "parDefaut": true
+    },
+    {
+     "libelle": "Transport de matières dangereuses",
+     "valeur": "Transport de matières dangereuses : Sinon, abritez-vous dans un bâtiment clos tout proche, fermez tout et arrêtez la ventilation.",
+     "parDefaut": true
+    },
+    {
+     "libelle": "Inondation",
+     "valeur": "Inondation : Ne prenez pas votre voiture : quelques centimètres d'eau suffisent à l'emporter."
+    },
+    {
+     "libelle": "Feu de forêt",
+     "valeur": "Feu de forêt : Quittez le massif immédiatement ou abritez-vous dans un bâtiment en dur : vous y êtes plus en sécurité."
+    },
+    {
+     "libelle": "Séisme",
+     "valeur": "Séisme : Pendant : abritez-vous près d'un mur porteur ou sous un meuble solide, loin des fenêtres."
+    },
+    {
+     "libelle": "Accident industriel",
+     "valeur": "Accident industriel : Abritez-vous dans le bâtiment clos le plus proche. Si vous êtes en voiture, rejoignez un bâtiment."
+    },
+    {
+     "libelle": "Accident nucléaire",
+     "valeur": "Accident nucléaire : Ne prenez l'iode que sur instruction du préfet."
+    },
+    {
+     "libelle": "Rupture de barrage",
+     "valeur": "Rupture de barrage : Au signal « corne de brume » : évacuez et gagnez les points hauts."
+    },
+    {
+     "libelle": "Mouvement de terrain, avalanche",
+     "valeur": "Mouvement de terrain, avalanche : Éloignez-vous des fortes pentes et des fonds de vallée."
+    },
+    {
+     "libelle": "Tsunami",
+     "valeur": "Tsunami : Dès l'alerte, rejoignez un point haut ou éloignez-vous des côtes."
+    }
+   ]
+  },
+  {
+   "id": "electricite",
+   "titre": "Couper l'électricité",
+   "type": "choix",
+   "question": "Où se trouve votre tableau électrique ?",
+   "aide": "Pour couper : basculer le disjoncteur général sur O. Montrez-le à chaque membre du foyer.",
+   "champ": "pfms.pfms-reseaux.0",
+   "gabarit": "{choix} : basculer le disjoncteur général sur O",
+   "choix": [
+    {
+     "libelle": "Dans l'entrée"
+    },
+    {
+     "libelle": "Dans le garage"
+    },
+    {
+     "libelle": "Dans la cave"
+    },
+    {
+     "libelle": "Dans un placard"
+    },
+    {
+     "libelle": "Ailleurs"
+    }
+   ]
+  },
+  {
+   "id": "gaz",
+   "titre": "Couper le gaz",
+   "type": "choix",
+   "question": "Où se trouve la vanne de gaz ?",
+   "aide": "Pour couper : fermer la vanne d'un quart de tour.",
+   "champ": "pfms.pfms-reseaux.1",
+   "gabarit": "{choix} : fermer la vanne d'un quart de tour",
+   "choix": [
+    {
+     "libelle": "Pas de gaz chez moi",
+     "valeur": "Pas de gaz"
+    },
+    {
+     "libelle": "Près du compteur, dehors"
+    },
+    {
+     "libelle": "Dans la cuisine"
+    },
+    {
+     "libelle": "Dans la cave"
+    },
+    {
+     "libelle": "Ailleurs"
+    }
+   ]
+  },
+  {
+   "id": "eau",
+   "titre": "Couper l'eau",
+   "type": "choix",
+   "question": "Où se trouve le robinet d'arrivée d'eau ?",
+   "aide": "Pour couper : tourner le robinet d'arrivée d'eau. En cas d'inondation ou de séisme, coupez aussi l'eau.",
+   "champ": "pfms.pfms-reseaux.2",
+   "gabarit": "{choix} : tourner le robinet d'arrivée d'eau",
+   "choix": [
+    {
+     "libelle": "Près du compteur d'eau"
+    },
+    {
+     "libelle": "Sous l'évier"
+    },
+    {
+     "libelle": "Dans la cave"
+    },
+    {
+     "libelle": "Dans un placard"
+    },
+    {
+     "libelle": "Ailleurs"
+    }
+   ]
+  },
+  {
+   "id": "abri",
+   "titre": "Me mettre à l'abri",
+   "type": "choix",
+   "question": "Où vous mettrez-vous à l'abri dans le logement ?",
+   "aide": "Air pollué (accident industriel, nucléaire) : une pièce avec le moins d'ouvertures possible, proche des sanitaires. Inondation : un espace en hauteur (étage, mezzanine).",
+   "champ": "pfms.pfms-lieux.0",
+   "choix": [
+    {
+     "libelle": "La salle de bain"
+    },
+    {
+     "libelle": "Une chambre avec peu de fenêtres"
+    },
+    {
+     "libelle": "À l'étage"
+    },
+    {
+     "libelle": "Ailleurs"
+    }
+   ]
+  },
+  {
+   "id": "evacuation",
+   "titre": "Évacuer",
+   "type": "texte",
+   "question": "Où aller si on doit évacuer ?",
+   "aide": "La mairie fixe à l'avance les lieux d'évacuation (gymnase, point haut de la commune). Demandez-les, et testez l'itinéraire en famille.",
+   "champ": "pfms.pfms-lieux.2",
+   "exemple": "Gymnase municipal, rue ...",
+   "choix": []
+  },
+  {
+   "id": "point-contact",
+   "titre": "Point familial de contact",
+   "type": "texte",
+   "question": "Qui appeler si la famille est séparée ?",
+   "aide": "Choisissez un ami ou un proche habitant une autre localité. Si la famille est séparée, chacun l'appelle pour donner de ses nouvelles.",
+   "champ": "pfms.pfms-contacts.10",
+   "exemple": "Tante Marie, 06 ...",
+   "choix": []
+  },
+  {
+   "id": "mairie",
+   "titre": "Contacts",
+   "type": "texte",
+   "question": "Le téléphone de votre mairie ?",
+   "champ": "pfms.pfms-contacts.0",
+   "exemple": "02 ...",
+   "choix": []
+  },
+  {
+   "id": "medecin",
+   "titre": "Contacts",
+   "type": "texte",
+   "question": "Votre médecin de famille ?",
+   "champ": "pfms.pfms-contacts.7",
+   "exemple": "Dr ..., 02 ...",
+   "choix": []
+  },
+  {
+   "id": "ecole",
+   "titre": "Contacts",
+   "type": "texte",
+   "question": "L'école de vos enfants ?",
+   "aide": "En cas d'alerte, n'allez pas chercher vos enfants à l'école : les équipes pédagogiques s'en occupent. Notez quand même son téléphone.",
+   "champ": "pfms.pfms-contacts.8",
+   "exemple": "École ..., 02 ...",
+   "choix": []
+  },
+  {
+   "id": "assurance",
+   "titre": "Contacts",
+   "type": "texte",
+   "question": "Votre assurance habitation ?",
+   "champ": "pfms.pfms-contacts.6",
+   "exemple": "Nom, téléphone, n° de contrat",
+   "choix": []
+  }
+ ]
+}

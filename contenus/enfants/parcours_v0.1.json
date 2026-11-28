@@ -1,0 +1,783 @@
+{
+ "meta": {
+  "app": "SIJAMAIS",
+  "titre": "Espace enfants : parcours",
+  "version": "0.1",
+  "date": "2026-11-27",
+  "langue": "fr",
+  "avertissement": "Version de travail, non relue : ni par un enseignant, ni par un formateur PSC1. Ne pas diffuser en l'état.",
+  "offre": "Écran « J'ai besoin d'aide », carte « Montrer à un adulte », modules « Appeler les secours », « Alerter les secours » et « Besoin d'en parler » : gratuits. Autres modules, plusieurs profils et suivi par le parent : version famille.",
+  "sources": {
+   "S2": {
+    "titre": "Tous responsables. Face aux risques, agissons",
+    "editeur": "SGDSN (Premier ministre)",
+    "date": "2025-11-20",
+    "url": "https://www.info.gouv.fr/risques/se-preparer-a-une-situation-durgence"
+   },
+   "S17": {
+    "titre": "Recommandations PSC1 et « gestes qui sauvent »",
+    "editeur": "Ministère de l'Intérieur, sécurité civile",
+    "date": "2023-12",
+    "url": "https://www.interieur.gouv.fr/Le-ministere/Securite-civile/Documentation-technique/Secourisme-et-associations/Les-recommandations-et-les-referentiels"
+   },
+   "S26": {
+    "titre": "Quels sont les numéros en cas d'urgence et les numéros d'écoute ?",
+    "editeur": "Service-public.gouv.fr",
+    "date": "2026-08-25",
+    "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33954"
+   },
+   "K1": {
+    "titre": "Apprendre à porter secours, premier degré",
+    "editeur": "Ministère de l'Éducation nationale (Éduscol)",
+    "date": "repères de juillet 2022",
+    "url": "https://eduscol.education.gouv.fr/4950/apprendre-porter-secours-premier-degre"
+   },
+   "K2": {
+    "titre": "Sensibilisation aux gestes qui sauvent et formation aux premiers secours",
+    "editeur": "Ministère de l'Éducation nationale (Éduscol)",
+    "date": null,
+    "url": "https://eduscol.education.gouv.fr/6986/sensibilisation-aux-gestes-qui-sauvent-et-formation-aux-premiers-secours"
+   },
+   "K3": {
+    "titre": "Plan particulier de mise en sûreté unifié (circulaire du 8 juin 2023)",
+    "editeur": "Ministère de l'Éducation nationale",
+    "date": "2023-06-08",
+    "url": "https://www.education.gouv.fr/bo/2023/Hebdo26/MENE2307453C"
+   },
+   "K4": {
+    "titre": "Allô 119, enfance en danger",
+    "editeur": "Gouvernement (info.gouv.fr, allo119.gouv.fr)",
+    "date": null,
+    "url": "https://www.info.gouv.fr/actualite/allo-119-enfant-en-danger-il-faut-en-parler"
+   },
+   "K5": {
+    "titre": "Agressions, (cyber)harcèlement, violences : des numéros existent",
+    "editeur": "Ministère des Solidarités",
+    "date": null,
+    "url": "https://www.solidarites.gouv.fr/agressions-cyberharcelement-violences-si-tu-besoin-daide-des-numeros-existent"
+   }
+  },
+  "regles": [
+   "Aucun lien Amazon, aucun achat, aucun lien vers l'extérieur dans l'Espace enfants.",
+   "Aucune statistique d'usage, aucun compte, aucune donnée envoyée.",
+   "Pas d'assistant libre : seulement les parcours écrits à l'avance.",
+   "Sortir de l'Espace enfants demande un contrôle parental.",
+   "Pas de contenu « attentat-intrusion » : l'école ne l'emploie pas avec les plus jeunes et demande de rester discret auprès des familles.",
+   "Illustrations dessinées, jamais de photo d'accident ni d'image générée."
+  ]
+ },
+ "aide": {
+  "titre": "J'ai besoin d'aide",
+  "gratuit": true,
+  "boutons": [
+   {
+    "label": "Appeler papa ou maman",
+    "action": "parent",
+    "couleur": "c-v"
+   },
+   {
+    "label": "Appeler le 112",
+    "action": "112",
+    "couleur": "c-r"
+   },
+   {
+    "label": "Je suis perdu",
+    "action": "carte",
+    "couleur": "c-b"
+   }
+  ],
+  "carte_adulte": {
+   "titre": "Montrer à un adulte",
+   "phrase": "Bonjour. Je m'appelle {prenom}. Je suis perdu ou j'ai besoin d'aide. Pouvez-vous appeler mes parents ?",
+   "champs": [
+    "Prénom",
+    "Téléphone d'un parent",
+    "Deuxième téléphone",
+    "Allergies ou maladie à connaître"
+   ],
+   "stockage": "Seulement sur ce téléphone, chiffré. Rien n'est envoyé."
+  }
+ },
+ "tranches": [
+  {
+   "id": "6-10",
+   "titre": "6 à 10 ans",
+   "sous_titre": "À faire avec un parent",
+   "modules": [
+    {
+     "id": "p-appeler",
+     "titre": "Appeler les secours",
+     "resume": "Le 112 et ce qu'il faut dire",
+     "picto": "croix",
+     "couleur": "c-r",
+     "gratuit": true,
+     "niveau": "officiel",
+     "sources": [
+      "S26",
+      "K1"
+     ],
+     "lecon": [
+      "Le numéro à retenir, c'est le 112. Il marche partout en Europe.",
+      "Tu peux aussi faire le 15 si quelqu'un est malade ou blessé, le 18 s'il y a le feu, le 17 si quelqu'un te fait peur ou te veut du mal.",
+      "Même si le téléphone est verrouillé, tu peux appeler : touche « Urgence » en bas de l'écran.",
+      "Au téléphone, dis ton prénom, où tu es, et ce qui se passe. Réponds aux questions.",
+      "Ne raccroche pas le premier : c'est la personne des secours qui raccroche.",
+      "On n'appelle jamais pour jouer : pendant ce temps, quelqu'un qui a vraiment besoin d'aide attend."
+     ],
+     "quiz": [
+      {
+       "situation": "Mamie est tombée dans la cuisine. Elle ne te répond pas.",
+       "choix": [
+        {
+         "t": "J'appelle le 112 ou le 15.",
+         "juste": true,
+         "pourquoi": "Oui. Quand quelqu'un ne répond pas, il faut appeler tout de suite."
+        },
+        {
+         "t": "J'attends qu'elle se réveille.",
+         "juste": false,
+         "pourquoi": "Non. Il ne faut pas attendre : appelle le 112 ou le 15."
+        },
+        {
+         "t": "Je vais jouer dans ma chambre.",
+         "juste": false,
+         "pourquoi": "Non. Mamie a besoin d'aide : appelle le 112 ou le 15."
+        }
+       ]
+      },
+      {
+       "situation": "La personne des secours te pose beaucoup de questions.",
+       "choix": [
+        {
+         "t": "Je réponds et je reste au téléphone.",
+         "juste": true,
+         "pourquoi": "Oui. Ses questions servent à envoyer la bonne aide, au bon endroit."
+        },
+        {
+         "t": "Je raccroche vite pour aller aider.",
+         "juste": false,
+         "pourquoi": "Non. Reste au téléphone : c'est elle qui raccroche la première."
+        }
+       ]
+      },
+      {
+       "situation": "Ton copain veut appeler le 18 pour rire.",
+       "choix": [
+        {
+         "t": "Je lui dis que non, c'est interdit.",
+         "juste": true,
+         "pourquoi": "Oui. Pendant ce temps, quelqu'un qui a vraiment besoin d'aide attend."
+        },
+        {
+         "t": "Je l'aide à composer le numéro.",
+         "juste": false,
+         "pourquoi": "Non. On n'appelle jamais les secours pour jouer."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Formulation du 17 pour un enfant de 6 ans (« quelqu'un te fait peur »), à valider par un enseignant"
+     ]
+    },
+    {
+     "id": "p-proteger",
+     "titre": "Faire attention au danger",
+     "resume": "Avant d'aider, je regarde autour de moi",
+     "picto": "coupure",
+     "couleur": "c-j",
+     "gratuit": false,
+     "niveau": "pratique",
+     "sources": [
+      "K1"
+     ],
+     "lecon": [
+      "Avant d'aider quelqu'un, regarde s'il y a un danger : une route, du feu, de la fumée, un fil électrique, de l'eau.",
+      "S'il y a un danger, ne t'approche pas. Tu ne dois pas être blessé à ton tour.",
+      "Éloigne-toi, va chercher un adulte et appelle le 112."
+     ],
+     "quiz": [
+      {
+       "situation": "Un copain est tombé de vélo au milieu de la route.",
+       "choix": [
+        {
+         "t": "Je cours le chercher sur la route.",
+         "juste": false,
+         "pourquoi": "Non. Les voitures sont un danger pour toi aussi. Reste au bord et appelle un adulte."
+        },
+        {
+         "t": "Je reste sur le trottoir et j'appelle un adulte.",
+         "juste": true,
+         "pourquoi": "Oui. D'abord ne pas se mettre en danger, ensuite alerter."
+        }
+       ]
+      },
+      {
+       "situation": "Tu vois de la fumée sortir d'une pièce.",
+       "choix": [
+        {
+         "t": "Je sors de la maison et je préviens un adulte.",
+         "juste": true,
+         "pourquoi": "Oui. Sors, ne reviens pas chercher tes affaires, et fais appeler le 18 ou le 112."
+        },
+        {
+         "t": "J'ouvre la porte pour regarder.",
+         "juste": false,
+         "pourquoi": "Non. Derrière la porte, il peut y avoir le feu. Sors et préviens un adulte."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Rédaction SIJAMAIS d'après les repères « Apprendre à porter secours » (axe « protéger ») : vérifier le vocabulaire des fiches de cycle 2"
+     ]
+    },
+    {
+     "id": "p-aider",
+     "titre": "Aider un blessé",
+     "resume": "Rester avec lui en attendant les secours",
+     "picto": "croix",
+     "couleur": "c-r",
+     "gratuit": false,
+     "niveau": "pratique",
+     "sources": [
+      "K1",
+      "S17"
+     ],
+     "lecon": [
+      "Reste près de la personne blessée et parle-lui doucement. Dis-lui que les secours arrivent.",
+      "Ne la bouge pas, sauf si elle est en danger.",
+      "Si elle a froid, couvre-la avec un manteau ou une couverture.",
+      "Si ça saigne beaucoup, appuie fort sur la blessure avec un tissu propre, ou demande à un adulte de le faire."
+     ],
+     "quiz": [
+      {
+       "situation": "Ta sœur s'est fait mal à la jambe. Les secours sont appelés.",
+       "choix": [
+        {
+         "t": "Je reste avec elle et je lui parle.",
+         "juste": true,
+         "pourquoi": "Oui. Être là et parler rassure beaucoup."
+        },
+        {
+         "t": "Je la laisse seule pour aller voir dehors.",
+         "juste": false,
+         "pourquoi": "Non. Reste avec elle jusqu'à l'arrivée des secours ou d'un adulte."
+        }
+       ]
+      },
+      {
+       "situation": "Le genou de ton copain saigne beaucoup.",
+       "choix": [
+        {
+         "t": "J'appuie fort dessus avec un tissu propre.",
+         "juste": true,
+         "pourquoi": "Oui. Appuyer fort arrête le sang. Et on appelle le 15 ou le 112."
+        },
+        {
+         "t": "Je regarde sans rien faire.",
+         "juste": false,
+         "pourquoi": "Non. Appuie fort avec un tissu propre et fais appeler les secours."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Compression d'une plaie par un enfant de 6 à 10 ans : à valider par un formateur PSC1 et au regard des fiches APS de cycle 3"
+     ]
+    },
+    {
+     "id": "p-sirene",
+     "titre": "Quand la sirène sonne",
+     "resume": "Me mettre à l'abri, comme à l'école",
+     "picto": "sirene",
+     "couleur": "c-j",
+     "gratuit": false,
+     "niveau": "officiel",
+     "sources": [
+      "S2",
+      "K3"
+     ],
+     "lecon": [
+      "Le premier mercredi du mois, à midi, la sirène sonne pour un essai. Ce n'est pas une alerte.",
+      "Si la sirène sonne un autre jour : rentre dans un bâtiment et reste à l'intérieur.",
+      "Ferme les portes et les fenêtres, et écoute les adultes.",
+      "À l'école, tu t'entraînes à te mettre à l'abri : fais comme à l'exercice. Les maîtres et les maîtresses s'occupent de toi.",
+      "Tes parents ne viendront pas te chercher tout de suite, et c'est normal : ils savent que tu es à l'abri."
+     ],
+     "quiz": [
+      {
+       "situation": "Mercredi, à midi, la sirène sonne une seule fois.",
+       "choix": [
+        {
+         "t": "C'est sûrement l'essai du mois.",
+         "juste": true,
+         "pourquoi": "Oui. Chaque premier mercredi du mois, la sirène est testée à midi."
+        },
+        {
+         "t": "Je pars en courant chez moi.",
+         "juste": false,
+         "pourquoi": "Non. C'est l'essai du mois. En cas de vraie alerte, on rentre dans le bâtiment le plus proche."
+        }
+       ]
+      },
+      {
+       "situation": "La sirène sonne pendant la classe.",
+       "choix": [
+        {
+         "t": "Je fais comme à l'exercice et j'écoute la maîtresse.",
+         "juste": true,
+         "pourquoi": "Oui. Tu t'es entraîné pour ça."
+        },
+        {
+         "t": "J'appelle maman pour qu'elle vienne.",
+         "juste": false,
+         "pourquoi": "Non. Les adultes de l'école s'occupent de toi, et les téléphones doivent rester libres pour les secours."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Heure de l'essai mensuel des sirènes (midi) à confirmer sur la page officielle",
+      "Vocabulaire des postures du PPMS unifié à reprendre mot pour mot (fascicules Éduscol non lus)"
+     ]
+    },
+    {
+     "id": "p-courant",
+     "titre": "Le courant est coupé",
+     "resume": "Pas de bougie, une lampe de poche",
+     "picto": "eclair",
+     "couleur": "c-j",
+     "gratuit": false,
+     "niveau": "officiel",
+     "sources": [
+      "S2"
+     ],
+     "lecon": [
+      "Quand le courant est coupé, il fait noir, mais ce n'est pas dangereux.",
+      "Prends une lampe de poche. N'allume pas de bougie : une flamme peut mettre le feu.",
+      "N'ouvre pas le réfrigérateur et le congélateur : ils restent froids plus longtemps fermés.",
+      "Reste avec un adulte, ou appelle tes parents si tu es seul."
+     ],
+     "quiz": [
+      {
+       "situation": "Le soir, toutes les lumières s'éteignent.",
+       "choix": [
+        {
+         "t": "Je prends la lampe de poche.",
+         "juste": true,
+         "pourquoi": "Oui. Une lampe, c'est sans danger."
+        },
+        {
+         "t": "J'allume une bougie toute seule.",
+         "juste": false,
+         "pourquoi": "Non. Une flamme peut mettre le feu. Prends une lampe de poche."
+        }
+       ]
+      }
+     ],
+     "a_relire": []
+    },
+    {
+     "id": "p-orage",
+     "titre": "L'orage",
+     "resume": "À l'abri, loin des fenêtres",
+     "picto": "vent",
+     "couleur": "c-j",
+     "gratuit": false,
+     "niveau": "officiel",
+     "sources": [
+      "S2"
+     ],
+     "lecon": [
+      "Le tonnerre fait beaucoup de bruit, mais dans une maison tu es à l'abri.",
+      "Dehors, rentre dans un bâtiment. Ne reste jamais sous un arbre tout seul au milieu d'un champ.",
+      "Dedans, éloigne-toi des grandes fenêtres.",
+      "Tu as peur ? C'est normal. Va voir un adulte et parlez-en ensemble."
+     ],
+     "quiz": [
+      {
+       "situation": "Tu joues au parc et l'orage arrive.",
+       "choix": [
+        {
+         "t": "Je m'abrite sous le grand arbre.",
+         "juste": false,
+         "pourquoi": "Non. La foudre peut tomber sur un arbre isolé. Rentre dans un bâtiment."
+        },
+        {
+         "t": "Je rentre dans un bâtiment.",
+         "juste": true,
+         "pourquoi": "Oui. Un bâtiment en dur, c'est l'abri le plus sûr."
+        }
+       ]
+      }
+     ],
+     "a_relire": []
+    },
+    {
+     "id": "p-perdu",
+     "titre": "Je suis perdu",
+     "resume": "À qui demander de l'aide",
+     "picto": "famille",
+     "couleur": "c-v",
+     "gratuit": false,
+     "niveau": "pratique",
+     "sources": [],
+     "lecon": [
+      "Si tu ne vois plus tes parents, arrête-toi et reste où tu es.",
+      "Demande de l'aide à une personne qui travaille là (avec un badge ou un uniforme), ou à une maman ou un papa avec des enfants.",
+      "Ne pars avec personne en dehors du magasin ou du parc.",
+      "Apprends par cœur le numéro de téléphone de tes parents. Ta carte « Montrer à un adulte » l'affiche aussi."
+     ],
+     "quiz": [
+      {
+       "situation": "Dans le magasin, tu ne vois plus papa.",
+       "choix": [
+        {
+         "t": "Je m'arrête et je demande à une caissière.",
+         "juste": true,
+         "pourquoi": "Oui. Les personnes qui travaillent là savent comment faire appeler ton papa."
+        },
+        {
+         "t": "Je sors chercher la voiture.",
+         "juste": false,
+         "pourquoi": "Non. Reste dans le magasin et demande de l'aide à quelqu'un qui y travaille."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Aucune source officielle trouvée : conseil pratique à faire relire par un enseignant et un policier ou gendarme référent"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "10-14",
+   "titre": "10 à 14 ans",
+   "sous_titre": "Sur ton propre iPhone",
+   "modules": [
+    {
+     "id": "g-alerter",
+     "titre": "Alerter les secours",
+     "resume": "112, 15, 17, 18, 114 et le bon message",
+     "picto": "croix",
+     "couleur": "c-r",
+     "gratuit": true,
+     "niveau": "officiel",
+     "sources": [
+      "S26",
+      "K2"
+     ],
+     "lecon": [
+      "112 : urgence européenne, regroupe SAMU, pompiers et police. 15 : SAMU. 18 : pompiers. 17 : police secours.",
+      "114 : par SMS. Pour les personnes sourdes ou malentendantes, ou pour alerter sans faire de bruit.",
+      "Téléphone verrouillé ? Le bouton « Urgence » de l'écran de verrouillage permet quand même d'appeler.",
+      "Le message : qui tu es, où tu es (adresse précise), ce qui se passe, combien de personnes sont touchées. Puis tu réponds aux questions.",
+      "Ne raccroche jamais le premier. Si on te rappelle depuis le 0 800 112 112, décroche : ce sont les secours."
+     ],
+     "quiz": [
+      {
+       "situation": "Tu ne peux pas parler sans être entendu, mais tu dois alerter.",
+       "choix": [
+        {
+         "t": "J'envoie un SMS au 114.",
+         "juste": true,
+         "pourquoi": "Oui. Le 114 permet d'alerter par SMS, en silence."
+        },
+        {
+         "t": "Je ne fais rien.",
+         "juste": false,
+         "pourquoi": "Non. Le 114 existe pour ça : un SMS suffit."
+        }
+       ]
+      },
+      {
+       "situation": "Le téléphone d'un adulte inconscient est verrouillé.",
+       "choix": [
+        {
+         "t": "Je touche « Urgence » sur l'écran de verrouillage.",
+         "juste": true,
+         "pourquoi": "Oui. Pas besoin du code pour appeler le 112."
+        },
+        {
+         "t": "Je cherche le code partout.",
+         "juste": false,
+         "pourquoi": "Non. Le bouton « Urgence » appelle sans code."
+        }
+       ]
+      },
+      {
+       "situation": "Un numéro « 0 800 112 112 » t'appelle juste après ton appel au 112.",
+       "choix": [
+        {
+         "t": "Je décroche.",
+         "juste": true,
+         "pourquoi": "Oui. C'est le numéro par lequel les services d'urgence rappellent."
+        },
+        {
+         "t": "Je ne réponds pas, je ne connais pas ce numéro.",
+         "juste": false,
+         "pourquoi": "Si : décroche, ce sont les secours qui te rappellent."
+        }
+       ]
+      }
+     ],
+     "a_relire": []
+    },
+    {
+     "id": "g-gestes",
+     "titre": "Les gestes qui sauvent",
+     "resume": "Protéger, alerter, comprimer, masser",
+     "picto": "dae",
+     "couleur": "c-v",
+     "gratuit": false,
+     "niveau": "officiel",
+     "sources": [
+      "S17",
+      "K2"
+     ],
+     "lecon": [
+      "Protéger : avant tout, supprime ou évite le danger, pour toi et pour la victime.",
+      "Saignement abondant : appuie fort et sans relâcher sur la plaie, avec un tissu propre ou la main protégée par un sac plastique. Allonge la victime et fais alerter.",
+      "Elle ne répond pas mais respire : tourne-la sur le côté, tête en arrière, bouche vers le sol (position latérale de sécurité). Alerte et surveille.",
+      "Elle ne répond pas et ne respire pas : alerte (15 ou 112), masse au centre de la poitrine, fort et vite, et fais chercher un défibrillateur.",
+      "Le défibrillateur parle : allume-le et suis ses instructions. Tout le monde peut l'utiliser.",
+      "Au collège, la sensibilisation aux gestes qui sauvent dure deux heures. Le PSC1 peut aussi être proposé : demande-le."
+     ],
+     "quiz": [
+      {
+       "situation": "Un adulte s'effondre. Il ne répond pas et ne respire pas.",
+       "choix": [
+        {
+         "t": "J'appelle le 15 ou le 112, je masse et je fais chercher un défibrillateur.",
+         "juste": true,
+         "pourquoi": "Oui. Sans massage, il ne peut pas s'en sortir. Tu ne peux pas aggraver la situation."
+        },
+        {
+         "t": "Je le mets sur le côté et j'attends.",
+         "juste": false,
+         "pourquoi": "Non. La position sur le côté, c'est quand la personne respire. S'il ne respire pas : alerter, masser, défibriller."
+        }
+       ]
+      },
+      {
+       "situation": "Une personne ne répond pas, mais son ventre se soulève.",
+       "choix": [
+        {
+         "t": "Je la tourne sur le côté et j'alerte.",
+         "juste": true,
+         "pourquoi": "Oui. Elle respire : position latérale de sécurité, puis alerte."
+        },
+        {
+         "t": "Je commence le massage cardiaque.",
+         "juste": false,
+         "pourquoi": "Non. Elle respire. On la tourne sur le côté et on surveille."
+        }
+       ]
+      },
+      {
+       "situation": "Un défibrillateur arrive, mais tu ne l'as jamais utilisé.",
+       "choix": [
+        {
+         "t": "Je l'allume et je fais ce qu'il dit.",
+         "juste": true,
+         "pourquoi": "Oui. Il donne toutes les instructions à voix haute."
+        },
+        {
+         "t": "Je le laisse, c'est pour les médecins.",
+         "juste": false,
+         "pourquoi": "Non. Il est fait pour être utilisé par tout le monde."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Relecture obligatoire par un formateur PSC1 avant toute diffusion, comme les guides de premiers secours"
+     ]
+    },
+    {
+     "id": "g-alerte",
+     "titre": "Alerte et risques majeurs",
+     "resume": "Sirène, FR-Alert, et les bons réflexes",
+     "picto": "sirene",
+     "couleur": "c-j",
+     "gratuit": false,
+     "niveau": "officiel",
+     "sources": [
+      "S2"
+     ],
+     "lecon": [
+      "La sirène d'alerte : trois sons montants et descendants d'1 minute 41, séparés de 5 secondes. La fin d'alerte : un son continu de 30 secondes.",
+      "FR-Alert : une notification avec un son spécial arrive toute seule sur ton téléphone si tu es dans la zone en danger.",
+      "Les réflexes : rejoindre un bâtiment, rester loin des fenêtres, n'allumer aucune flamme, ne pas sortir sans consigne.",
+      "Téléphone le moins possible : les lignes doivent rester libres pour les secours. Un SMS à tes parents suffit.",
+      "Écoute la radio (ici, France Info, France Inter) pour connaître les consignes."
+     ],
+     "quiz": [
+      {
+       "situation": "FR-Alert sonne pendant que tu rentres du collège à pied.",
+       "choix": [
+        {
+         "t": "J'entre dans le bâtiment le plus proche et je lis le message.",
+         "juste": true,
+         "pourquoi": "Oui. Se mettre à l'abri, puis suivre les consignes du message."
+        },
+        {
+         "t": "Je partage le message sur tous mes groupes.",
+         "juste": false,
+         "pourquoi": "Non. D'abord se mettre à l'abri. Et les autres reçoivent l'alerte eux aussi."
+        }
+       ]
+      },
+      {
+       "situation": "Tu es seul à la maison pendant une alerte.",
+       "choix": [
+        {
+         "t": "J'appelle mes parents toutes les deux minutes.",
+         "juste": false,
+         "pourquoi": "Non. Les lignes doivent rester libres. Envoie un SMS : « Je suis à la maison, à l'abri »."
+        },
+        {
+         "t": "J'envoie un SMS à mes parents et j'écoute la radio.",
+         "juste": true,
+         "pourquoi": "Oui. Ils sont rassurés, et tu connais les consignes."
+        }
+       ]
+      }
+     ],
+     "a_relire": []
+    },
+    {
+     "id": "g-maison",
+     "titre": "Seul à la maison",
+     "resume": "Feu, fumée, gaz, inondation",
+     "picto": "flamme",
+     "couleur": "c-o",
+     "gratuit": false,
+     "niveau": "officiel",
+     "sources": [
+      "S2"
+     ],
+     "lecon": [
+      "Le feu prend : sors, ferme la porte de la pièce en feu, appelle le 18 ou le 112 une fois dehors. Ne prends jamais l'ascenseur.",
+      "La fumée remplit l'escalier : reste chez toi, ferme la porte, mouille-la, bouche le bas avec un tissu et montre-toi à la fenêtre.",
+      "Ça sent le gaz : n'allume rien, ne touche à aucun interrupteur, sors et appelle depuis dehors.",
+      "L'eau monte : ne descends pas à la cave ni au parking, monte le plus haut possible.",
+      "Plusieurs personnes ont mal à la tête et envie de vomir dans la maison : ouvre les fenêtres, sors, et appelle le 15, le 18 ou le 112 (monoxyde de carbone)."
+     ],
+     "quiz": [
+      {
+       "situation": "La fumée envahit la cage d'escalier de ton immeuble.",
+       "choix": [
+        {
+         "t": "Je descends l'escalier en courant.",
+         "juste": false,
+         "pourquoi": "Non. La fumée est le plus grand danger. Reste chez toi, porte fermée et mouillée."
+        },
+        {
+         "t": "Je reste chez moi, je ferme la porte et je me montre à la fenêtre.",
+         "juste": true,
+         "pourquoi": "Oui. Une porte fermée protège de la fumée. Les pompiers viendront te chercher."
+        }
+       ]
+      },
+      {
+       "situation": "En rentrant, ça sent fort le gaz.",
+       "choix": [
+        {
+         "t": "J'allume la lumière pour voir d'où ça vient.",
+         "juste": false,
+         "pourquoi": "Non. Une étincelle peut provoquer une explosion. Ne touche à rien et ressors."
+        },
+        {
+         "t": "Je ressors sans rien toucher et j'appelle dehors.",
+         "juste": true,
+         "pourquoi": "Oui. Dehors, appelle le 112 ou un adulte."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Consigne « odeur de gaz » : aucune source de l'État dans les guides actuels ; reprendre les consignes officielles des distributeurs de gaz"
+     ]
+    },
+    {
+     "id": "g-rumeurs",
+     "titre": "Rumeurs et fausses alertes",
+     "resume": "Vérifier avant de partager",
+     "picto": "bulle",
+     "couleur": "c-b",
+     "gratuit": false,
+     "niveau": "officiel",
+     "sources": [
+      "S2"
+     ],
+     "lecon": [
+      "Pendant une crise, de fausses informations circulent, parfois exprès. De fausses vidéos peuvent aussi être fabriquées.",
+      "Avant de croire ou de partager, demande-toi : qui l'a envoyée ? La source est-elle officielle ? Un grand média en parle-t-il ? Dans quel but ?",
+      "Les consignes officielles viennent de la préfecture, de la mairie, des secours, de la radio et de FR-Alert."
+     ],
+     "quiz": [
+      {
+       "situation": "Une vidéo dit qu'il faut quitter la ville tout de suite. Elle vient d'un compte inconnu.",
+       "choix": [
+        {
+         "t": "Je la partage pour prévenir tout le monde.",
+         "juste": false,
+         "pourquoi": "Non. Rien ne dit qu'elle est vraie. Vérifie sur une source officielle."
+        },
+        {
+         "t": "Je vérifie à la radio ou sur le site de la préfecture.",
+         "juste": true,
+         "pourquoi": "Oui. Seules les consignes officielles comptent."
+        }
+       ]
+      }
+     ],
+     "a_relire": []
+    },
+    {
+     "id": "g-ecoute",
+     "titre": "Besoin d'en parler",
+     "resume": "119, 3018, et à qui t'adresser",
+     "picto": "bulle",
+     "couleur": "c-b",
+     "gratuit": true,
+     "niveau": "officiel",
+     "sources": [
+      "K4",
+      "K5",
+      "S26"
+     ],
+     "lecon": [
+      "119 : Allô enfance en danger. Gratuit, 24 heures sur 24, tous les jours. Il n'apparaît pas sur la facture. On peut appeler même si on n'est pas sûr.",
+      "Sur allo119.gouv.fr, un tchat est ouvert aux moins de 21 ans.",
+      "3018 : harcèlement et cyberharcèlement. Il existe aussi une application 3018.",
+      "Si tu es en danger tout de suite : 17 ou 112."
+     ],
+     "quiz": [
+      {
+       "situation": "Un ami te dit qu'on le frappe chez lui, mais il n'est pas sûr de vouloir en parler.",
+       "choix": [
+        {
+         "t": "On peut appeler le 119 ensemble, même sans être sûr.",
+         "juste": true,
+         "pourquoi": "Oui. Le 119 écoute, conseille, et c'est gratuit et confidentiel."
+        },
+        {
+         "t": "Je garde le secret, ce n'est pas mes affaires.",
+         "juste": false,
+         "pourquoi": "Non. Un enfant en danger a besoin d'aide. Le 119 est fait pour ça."
+        }
+       ]
+      }
+     ],
+     "a_relire": [
+      "Horaires du tchat du 119 à vérifier sur allo119.gouv.fr avant diffusion"
+     ]
+    }
+   ]
+  }
+ ]
+}

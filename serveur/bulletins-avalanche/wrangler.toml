@@ -1,0 +1,15 @@
+# Service des bulletins avalanche (Cloudflare Workers, offre gratuite).
+name = "sijamais-bulletins-avalanche"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+# Le bucket des cartes : les bulletins sont déposés dans son dossier bulletins/.
+[[r2_buckets]]
+binding = "CARTES"
+bucket_name = "sijamais-cartes"
+
+# Horaires en UTC. Bulletin publié vers 16 h, heure de Paris (15 h UTC en hiver) :
+# un passage à 15 h 40 UTC, un second à 17 h 10 UTC pour les bulletins en retard ou amendés,
+# et un le matin à 6 h 20 UTC pour les rectificatifs.
+[triggers]
+crons = ["40 15 * * *", "10 17 * * *", "20 6 * * *"]

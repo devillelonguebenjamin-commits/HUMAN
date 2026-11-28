@@ -1,0 +1,191 @@
+import Foundation
+
+/// Réponse affichée par l'assistant.
+public struct ReponseAssistant: Sendable, Equatable {
+    public enum Mode: Sendable, Equatable {
+        /// La personne décrit sa propre urgence de santé : appeler les secours, tout de suite.
+        case urgencePersonnelle
+        /// Étapes exactes d'un guide de santé, sans reformulation (niveau 3).
+        case urgenceSante
+        /// Texte rédigé par le modèle d'Apple à partir des passages (niveau 2).
+        case reformulee
+        /// Passages du guide affichés tels quels (niveau 1).
+        case passages
+        /// Aucun guide pertinent, ou hors périmètre : `texte` donne alors l'orientation (15, pharmacien, mairie...).
+        case aucunGuide
+        /// Demande ambiguë : `texte` est la question posée en retour, `options` les boutons de réponse.
+        case clarification
+    }
+
+    public let mode: Mode
+    public let texte: String?
+    public let lignes: [String]
+    public let guideId: String?
+    public let guideTitre: String?
+    public let urgenceVitale: Bool
+    /// Boutons de réponse rapide (mode clarification).
+    public let options: [OptionClarification]
+    /// Question écrite en anglais : l'écran ajoute « Emergency: call 112 ».
+    public let enAnglais: Bool
+
+    public init(mode: Mode, texte: String?, lignes: [String], guideId: String?, guideTitre: String?, urgenceVitale: Bool,
+                options: [OptionClarification] = [], enAnglais: Bool = false) {
+        self.mode = mode
+        self.texte = texte
+        self.lignes = lignes
+        self.guideId = guideId
+        self.guideTitre = guideTitre
+        self.urgenceVitale = urgenceVitale
+        self.options = options
+        self.enAnglais = enAnglais
+    }
+
+    func enAnglais(_ oui: Bool) -> ReponseAssistant {
+        ReponseAssistant(mode: mode, texte: texte, lignes: lignes, guideId: guideId, guideTitre: guideTitre, urgenceVitale: urgenceVitale, options: options, enAnglais: oui)
+    }
+}
+
+/// Ce que le modèle de langage doit renvoyer (génération guidée côté iPhone).
+public struct ReformulationModele: Sendable, Equatable {
+    public let texte: String
+    public let guidesCites: [String]
+
+    public init(texte: String, guidesCites: [String]) {
+        self.texte = texte
+        self.guidesCites = guidesCites
+    }
+}
+
+/// Un modèle capable de reformuler des passages. Sur iPhone : le modèle d'Apple (Foundation Models).
+public protocol Reformulateur: Sendable {
+    /// Vrai si le modèle est utilisable sur cet appareil (iPhone compatible, Apple Intelligence activée).
+    var estDisponible: Bool { get }
+    func reformuler(question: String, passages: [String], guideId: String) async throws -> ReformulationModele
+}
+
+/// Règles de l'assistant (voir 12_assistant_ia_local.md) :
+/// rien qui ne soit pas dans un guide ; santé : jamais de reformulation ; tout refus ou doute : passages du guide.
+public struct Assistant: Sendable {
+    public static let consignes = """
+    Tu es l'assistant de l'application SIJAMAIS. Tu réponds en français, en cinq phrases au plus, \
+    uniquement à partir des passages fournis. Si les passages ne répondent pas à la question, dis-le. \
+    Tu cites l'identifiant de chaque guide utilisé. Tu ne donnes aucun conseil médical au-delà des passages. \
+    Réponds directement à la personne, au vouvoiement : ne parle jamais des passages, des guides ni de leurs noms. \
+    Si les passages ne répondent pas à la question, écris seulement : SANS_REPONSE
+    """
+
+    /// Réponses où le modèle dit que les passages ne répondent pas (essai de Benjamin du 27/11/2026) : on affiche « pas de guide ».
+    static let tournuresSansReponse = ["sans reponse", "ne mentionnent pas", "ne mentionne pas", "ne contient aucune", "ne contiennent aucune", "aucune information",
+                                       "ne repondent pas", "n est decrite", "n est decrit", "pas d information"]
+    /// Réponses qui commentent les passages au lieu de répondre : refusées, on montre le guide.
+    static let tournuresMeta = ["passages fournis", "les passages", "le passage", "premier guide", "deuxieme guide", "selon le guide", "le guide stocks"]
+
+    static func contient(_ texte: String, _ liste: [String]) -> Bool {
+        let t = " " + Normalisation.normaliser(texte).split(separator: " ").joined(separator: " ") + " "
+        return liste.contains { t.contains(" " + $0) }
+    }
+
+    /// Vrai si le modèle dit, d'une façon ou d'une autre, que les passages ne répondent pas.
+    public static func estSansReponse(_ texte: String) -> Bool { contient(texte, tournuresSansReponse) }
+
+    public static let longueurMaxReformulation = 900
+
+    /// Guides jamais reformulés, en plus des guides de santé (cycles 2 à 6) : dosages, gestes irréversibles,
+    /// décisions de la commune. Une nuance mal rendue peut tuer ou détruire des preuves.
+    public static let sansReformulation: Set<String> = ["risques", "eau", "cueillette", "retour", "cyberattaque", "cyberattaque-commune", "assurance", "monoxyde"]
+
+    public static let messageUrgencePersonnelle = "Appelez le 15 ou le 112 maintenant. Si vous ne pouvez pas parler, envoyez un SMS au 114. Restez en ligne et suivez les consignes des secours."
+
+    private let moteur: MoteurRecherche
+    private let reformulateur: Reformulateur?
+
+    public init(moteur: MoteurRecherche, reformulateur: Reformulateur?) {
+        self.moteur = moteur
+        self.reformulateur = reformulateur
+    }
+
+    /// Invite envoyée au modèle : la question et les passages, rien d'autre.
+    public static func invite(question: String, passages: [String], guideId: String) -> String {
+        var s = "Question : \(question)\n\nPassages du guide « \(guideId) » :\n"
+        for (i, p) in passages.enumerated() { s += "\(i + 1). \(p)\n" }
+        return s
+    }
+
+    /// Une reformulation n'est acceptée que si elle cite le guide fourni, et lui seul, et reste courte.
+    public static func reformulationAcceptable(_ r: ReformulationModele, guideId: String) -> Bool {
+        let texte = r.texte.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !texte.isEmpty, texte.count <= longueurMaxReformulation else { return false }
+        guard !r.guidesCites.isEmpty, r.guidesCites.allSatisfy({ $0 == guideId }) else { return false }
+        return !contient(texte, tournuresMeta)
+    }
+
+    /// `espaceMairie` : interrupteur des réglages (élus et agents) ; les 5 guides de la commune entrent dans la recherche.
+    public func repondre(_ question: String, espaceMairie: Bool = false) async -> ReponseAssistant {
+        let anglais = Triage.semblerAnglais(question)
+        return await repondreSansLangue(question, tous: espaceMairie).enAnglais(anglais)
+    }
+
+    private func repondreSansLangue(_ question: String, tous: Bool) async -> ReponseAssistant {
+        let guides = moteur.guidesParId
+        switch Triage.decider(question, guides: guides) {
+        case let .horsPerimetre(message, vital):
+            return ReponseAssistant(mode: .aucunGuide, texte: message, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: vital)
+        case let .clarification(q, options):
+            return ReponseAssistant(mode: .clarification, texte: q, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: true, options: options)
+        case .urgencePersonnelle:
+            return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: "numeros", guideTitre: guides["numeros"]?.titre, urgenceVitale: true)
+        case let .sante(id, lignes):
+            return ReponseAssistant(mode: .urgenceSante, texte: nil, lignes: lignes, guideId: id, guideTitre: guides[id]?.titre, urgenceVitale: true)
+        case let .detressePsy(soi, lignes):
+            return ReponseAssistant(mode: soi ? .urgencePersonnelle : .urgenceSante, texte: soi ? Triage.messageDetressePsy : Triage.messageDetressePsyProche,
+                                    lignes: lignes, guideId: "moral", guideTitre: guides["moral"]?.titre, urgenceVitale: true)
+        case let .consigne(id, lignes, vital):
+            // Risque majeur : passages exacts, jamais reformulés (une nuance mal rendue peut tuer).
+            return ReponseAssistant(mode: .passages, texte: nil, lignes: lignes, guideId: id, guideTitre: guides[id]?.titre, urgenceVitale: vital)
+        case let .guide(id):
+            let r = moteur.chercher(question, dans: id)
+            guard let g = r.guide ?? guides[id] else { return await rechercher(question) }
+            let passages = r.passages.isEmpty ? Array(g.blocs.flatMap(\.textesRecherche).prefix(MoteurRecherche.maxLignes)) : r.passages
+            return await informer(question: question, guide: g, passages: passages)
+        case let .recherche(texte):
+            return await rechercher(texte, tous: tous)
+        }
+    }
+
+    private func rechercher(_ question: String, tous: Bool = false) async -> ReponseAssistant {
+        let r = moteur.chercher(question, tous: tous)
+        if r.sensible && MoteurRecherche.parleDeSoi(question) {
+            return ReponseAssistant(mode: .urgencePersonnelle, texte: Self.messageUrgencePersonnelle, lignes: [], guideId: r.guide?.id, guideTitre: r.guide?.titre, urgenceVitale: true)
+        }
+        guard let g = r.guide else {
+            return ReponseAssistant(mode: .aucunGuide, texte: nil, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: r.sensible)
+        }
+        if r.sensible {
+            return ReponseAssistant(mode: .urgenceSante, texte: nil, lignes: r.lignesAAfficher, guideId: g.id, guideTitre: g.titre, urgenceVitale: true)
+        }
+        return await informer(question: question, guide: g, passages: r.passages)
+    }
+
+    /// Question d'information : passages du guide, reformulés par le modèle d'Apple quand c'est permis.
+    private func informer(question: String, guide g: Guide, passages trouves: [String]) async -> ReponseAssistant {
+        var lignes = trouves
+        // Guide Moral : la ligne du 3114 est toujours affichée (cycle 2).
+        if g.id == "moral", let l3114 = Triage.lignes("moral", contenant: "3114", moteur.guidesParId).first, !lignes.contains(l3114) {
+            lignes.append(l3114)
+        }
+        let passages = ReponseAssistant(mode: .passages, texte: nil, lignes: lignes, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
+        guard let modele = reformulateur, modele.estDisponible, !g.sensible, !Self.sansReformulation.contains(g.id) else { return passages }
+        do {
+            let ref = try await modele.reformuler(question: question, passages: lignes, guideId: g.id)
+            if Self.estSansReponse(ref.texte) {
+                // Le modèle juge que le guide ne répond pas : on le dit, au lieu d'afficher un commentaire sur les passages.
+                return ReponseAssistant(mode: .aucunGuide, texte: nil, lignes: [], guideId: nil, guideTitre: nil, urgenceVitale: false)
+            }
+            guard Self.reformulationAcceptable(ref, guideId: g.id) else { return passages }
+            return ReponseAssistant(mode: .reformulee, texte: ref.texte, lignes: lignes, guideId: g.id, guideTitre: g.titre, urgenceVitale: false)
+        } catch {
+            // Refus des garde-fous, erreur, modèle indisponible : on montre le guide, sans rien inventer.
+            return passages
+        }
+    }
+}
