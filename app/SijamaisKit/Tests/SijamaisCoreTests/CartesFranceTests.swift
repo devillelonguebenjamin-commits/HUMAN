@@ -26,7 +26,8 @@ final class CartesFranceTests: XCTestCase {
         XCTAssertTrue(CartesFrance.peutTelecharger("44", principal: "44", abonne: false))
         XCTAssertFalse(CartesFrance.peutTelecharger("29", principal: "44", abonne: false))
         XCTAssertTrue(CartesFrance.peutTelecharger("29", principal: "44", abonne: true))
-        XCTAssertNil(cartes.adresse("44"), "pas d'hébergement tant que l'adresse est vide")
+        XCTAssertEqual(cartes.adresse("44")?.absoluteString, cartes.adresseBase + "44.pmtiles")
+        XCTAssertTrue(cartes.adresseBase.hasPrefix("https://") && cartes.adresseBase.hasSuffix("/"))
     }
 
     func testCompositionDuStyle() throws {
