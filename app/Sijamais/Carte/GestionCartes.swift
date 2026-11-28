@@ -163,11 +163,11 @@ final class GestionCartes: NSObject, URLSessionDownloadDelegate {
         guard let base = france?.adresseBase, let points = catalogue?.points?[code] else { return }
         for (genre, f) in [("secours", points.secours), ("refuges", points.refuges)] {
             guard let f, let u = URL(string: (base.hasSuffix("/") ? base : base + "/") + f.fichier),
-                  let (donnees, reponse) = try? await URLSession.shared.data(from: u),
-                  (reponse as? HTTPURLResponse)?.statusCode == 200,
-                  SHA256.hash(data: donnees).map({ String(format: "%02x", $0) }).joined() == f.sha256 else { continue }
+                  let resultat = try? await URLSession.shared.data(from: u),
+                  (resultat.1 as? HTTPURLResponse)?.statusCode == 200,
+                  SHA256.hash(data: resultat.0).map({ String(format: "%02x", $0) }).joined() == f.sha256 else { continue }
             let cible = Self.fichierPoints(code, genre)
-            try? donnees.write(to: cible, options: .atomic)
+            try? resultat.0.write(to: cible, options: .atomic)
             var valeurs = URLResourceValues()
             valeurs.isExcludedFromBackup = true
             var c = cible

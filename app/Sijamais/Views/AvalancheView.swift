@@ -10,7 +10,7 @@ struct AvalancheView: View {
         var deps: [String] = []
         if let p = modele.cartes.principal { deps.append(p) }
         if let t = modele.traceSurCarte, let premier = t.points.first,
-           let d = modele.cartes.france?.departement(lat: premier.latitude, lon: premier.longitude) {
+           let d = modele.cartes.france?.departement(latitude: premier.latitude, longitude: premier.longitude) {
             deps.append(d.code)
         }
         return BulletinAvalanche.massifs.filter { m in !modele.avalanche.favoris.contains(m.id) && m.departements.contains { deps.contains($0) } }
